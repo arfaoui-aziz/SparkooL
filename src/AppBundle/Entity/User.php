@@ -1,7 +1,7 @@
 <?php
 
 namespace AppBundle\Entity;
-use Doctrine\ORM\Query\Expr\Base;
+
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 

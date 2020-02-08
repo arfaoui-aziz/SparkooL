@@ -311,6 +311,16 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        // back
+        if ('/back' === $pathinfo) {
+            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'back',);
+        }
+
+        // front
+        if ('/front' === $pathinfo) {
+            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::frontAction',  '_route' => 'front',);
+        }
+
         if ('/' === $pathinfo && !$allow) {
             throw new Symfony\Component\Routing\Exception\NoConfigurationException();
         }

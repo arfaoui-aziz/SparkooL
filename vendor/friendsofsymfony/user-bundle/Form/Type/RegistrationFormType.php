@@ -51,6 +51,15 @@ class RegistrationFormType extends AbstractType
                     'Female'=>'Female',
                 ],
             ])
+            ->add('roles',ChoiceType::class,[
+                'choices'=>[
+                    'Please Select*'=>false,
+                    'Admin'=>'ROLE_ADMIN',
+                    'Super Admin'=>'ROLE_SUPER_ADMIN',
+                    'User'=>'ROLE_USER',
+                ],
+                'required' =>true ,'multiple' => true,
+            ])
             ->add('joiningDate')
             ->add('phone')
             ->add('address',TextareaType::class)

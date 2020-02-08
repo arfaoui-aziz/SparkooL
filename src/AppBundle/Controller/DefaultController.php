@@ -8,9 +8,20 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends Controller
 {
-
+    /**
+     * @Route("/back", name="back")
+     */
     public function indexAction(Request $request)
     {
-
+        // replace this example code with whatever you need
+        return $this->render('base.html.twig');
+    }
+    /**
+     * @Route("/front", name="front")
+     */
+    public function frontAction(Request $request)
+    {
+        // replace this example code with whatever you need
+        return $this->render('baseFront.html.twig');
     }
 }

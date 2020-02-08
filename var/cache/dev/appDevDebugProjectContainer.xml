@@ -571,6 +571,12 @@
     <service id="AppBundle\Controller\DefaultController" class="AppBundle\Controller\DefaultController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
+    <service id="AppBundle\Redirection\AfterLoginRedirection" class="AppBundle\Redirection\AfterLoginRedirection" public="false" autowire="true" autoconfigure="true">
+      <argument type="service" id="router.default"/>
+    </service>
+    <service id="redirect.after.login" class="AppBundle\Redirection\AfterLoginRedirection" public="false" autowire="true" autoconfigure="true">
+      <argument type="service" id="router.default"/>
+    </service>
     <service id="controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
       <tag name="monolog.logger" channel="request"/>
       <argument type="service" id="kernel"/>
@@ -2375,9 +2381,16 @@
         <argument>null</argument>
       </call>
       <call method="add">
-        <argument type="service" id="security.request_matcher.x0_yxqh"/>
+        <argument type="service" id="security.request_matcher.tq0yblp"/>
         <argument type="collection">
           <argument>ROLE_ADMIN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id="security.request_matcher..3c8r.7"/>
+        <argument type="collection">
+          <argument>ROLE_USER</argument>
         </argument>
         <argument>null</argument>
       </call>
@@ -2755,21 +2768,16 @@
       <argument type="service" id="security.encoder_factory.generic"/>
       <argument>true</argument>
     </service>
-    <service id="security.authentication.success_handler.main.form_login" class="Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler" public="false">
-      <argument type="service" id="security.http_utils"/>
-      <argument type="collection"/>
-      <call method="setOptions">
-        <argument type="collection">
-          <argument key="login_path">/</argument>
-          <argument key="always_use_default_target_path">false</argument>
-          <argument key="default_target_path">/</argument>
-          <argument key="target_path_parameter">_target_path</argument>
-          <argument key="use_referer">false</argument>
-        </argument>
-      </call>
-      <call method="setProviderKey">
-        <argument>main</argument>
-      </call>
+    <service id="security.authentication.success_handler.main.form_login" class="Symfony\Component\Security\Http\Authentication\CustomAuthenticationSuccessHandler" public="false">
+      <argument type="service" id="redirect.after.login"/>
+      <argument type="collection">
+        <argument key="login_path">/</argument>
+        <argument key="always_use_default_target_path">false</argument>
+        <argument key="default_target_path">/</argument>
+        <argument key="target_path_parameter">_target_path</argument>
+        <argument key="use_referer">false</argument>
+      </argument>
+      <argument>main</argument>
     </service>
     <service id="security.authentication.failure_handler.main.form_login" class="Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler" public="false">
       <argument type="service" id="http_kernel"/>
@@ -2897,8 +2905,11 @@
     <service id="security.request_matcher.h4hgfxz" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
       <argument>^/resetting</argument>
     </service>
-    <service id="security.request_matcher.x0_yxqh" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-      <argument>^/admin/</argument>
+    <service id="security.request_matcher.tq0yblp" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/back</argument>
+    </service>
+    <service id="security.request_matcher..3c8r.7" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/front</argument>
     </service>
     <service id="security.command.user_password_encoder" class="Symfony\Bundle\SecurityBundle\Command\UserPasswordEncoderCommand" public="false">
       <tag name="console.command" command="security:encode-password"/>
