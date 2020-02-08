@@ -412,7 +412,7 @@ class __TwigTemplate_8731caffc39c74254925395b4f351119690d71ff85aadcf9bee33daa7bd
                 <i class=\"fa fa-envelope fa-lg fa-fw\" aria-hidden=\"true\"></i>
             </div>
             <div class=\"inputWithIcon\">
-                <input type=\"password\" id=\"password\" placeholder=\"Passeword\" name=\"_password\" required=\"required\" autocomplete=\"current-password\" />
+                <input type=\"password\" id=\"password\" placeholder=\"Password\" name=\"_password\" required=\"required\" autocomplete=\"current-password\" />
                 <i class=\"fa fa-key\"></i>
                 <!--      Show/hide password  -->
                 <span>
@@ -885,7 +885,7 @@ class __TwigTemplate_8731caffc39c74254925395b4f351119690d71ff85aadcf9bee33daa7bd
                 <i class=\"fa fa-envelope fa-lg fa-fw\" aria-hidden=\"true\"></i>
             </div>
             <div class=\"inputWithIcon\">
-                <input type=\"password\" id=\"password\" placeholder=\"Passeword\" name=\"_password\" required=\"required\" autocomplete=\"current-password\" />
+                <input type=\"password\" id=\"password\" placeholder=\"Password\" name=\"_password\" required=\"required\" autocomplete=\"current-password\" />
                 <i class=\"fa fa-key\"></i>
                 <!--      Show/hide password  -->
                 <span>

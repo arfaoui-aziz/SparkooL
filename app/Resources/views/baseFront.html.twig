@@ -116,7 +116,12 @@
                     <!-- Header Buttons
                     ============================================= -->
                     <div class="header-buttons d-none d-sm-inline-block">
-                        <a href="#slider" data-scrollto="#slider" data-offset="-80" class="button button-rounded button-white button-light button-small m-0">LOGIN</a>
+                        {% if is_granted('ROLE_USER') %}
+                    <a> {{ app.user.username }} &nbsp;&nbsp;&nbsp;</a>
+                        <a href="{{ path('fos_user_security_logout')}}" class="button button-rounded button-white button-light button-small m-0">Log Out</a>
+                        {% else %}
+                            <a href="{{ path('fos_user_security_login') }}"   class="button button-rounded button-white button-light button-small m-0">LOGIN</a>
+                        {% endif %}
                     </div>
 
                     <!-- Top Search
@@ -138,7 +143,7 @@
 
     <!-- Slider
     ============================================= -->
-    <section id="slider" class="slider-element bgcolor clearfix" style="height: auto; padding: 60px 0; background: url('demos/movers/images/bg-2.png') no-repeat center center / 100% 100%;">
+    <section id="slider" class="slider-element bgcolor clearfix" style="height: auto; padding: 60px 0; background: url("{{ asset('FrontEnd\img\bg-2.png')}}") no-repeat center center / 100% 100%;">
 
         <div class="container" style="z-index: 2">
             <div class="center">
@@ -215,167 +220,7 @@
                                         <button type="submit" name="home-moving-form-submit" class="btn bgcolor text-white t500 btn-block py-2 mt-2">SUBMIT</button>
                                     </div>
 
-                                    <input type="hidden" name="prefix" value="home-moving-form-">
-                                    <input type="hidden" name="subject" value="Home Moving Request">
-                                    <input type="hidden" name="html_title" value="Home Moving">
-                                </form>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="office-moving" role="tabpanel" aria-labelledby="office-moving-tab">
-                            <p class="mb-4">Share your Office Shifting details by Filling out an Easy Form. Get Free Quotes from Verified Packers &amp; Movers Instantly.</p>
-                            <div class="form-widget">
-                                <div class="form-result"></div>
-                                <form class="row office-moving-form position-relative mb-0" action="include/form.php" method="post" enctype="multipart/form-data">
-                                    <div class="form-process"></div>
 
-                                    <div class="col-sm-6 input-group form-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text nobg"><i class="icon-truck1"></i></span>
-                                        </div>
-                                        <input type="text" name="office-moving-form-location-from" id="office-moving-form-location-from" class="form-control required" value="" placeholder="Location From">
-                                    </div>
-
-                                    <div class="col-sm-6 input-group form-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text nobg"><i class="icon-line2-map"></i></span>
-                                        </div>
-                                        <input type="text" name="office-moving-form-location-to" id="office-moving-form-location-to" class="form-control required" value="" placeholder="Location To">
-                                    </div>
-
-                                    <div class="col-sm-6 input-group form-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text nobg"><i class="icon-line2-user"></i></span>
-                                        </div>
-                                        <input type="text" name="office-moving-form-name" id="office-moving-form-name" class="form-control required" value="" placeholder="Your Full Name">
-                                    </div>
-
-                                    <div class="col-sm-6 input-group form-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text nobg"><i class="icon-line2-envelope"></i></span>
-                                        </div>
-                                        <input type="email" name="office-moving-form-email" id="office-moving-form-email" class="form-control required" value="" placeholder="Your Email">
-                                    </div>
-
-                                    <div class="col-sm-6 input-group form-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text nobg"><i class="icon-line2-call-out"></i></span>
-                                        </div>
-                                        <input type="text" name="office-moving-form-phone" id="office-moving-form-phone" class="form-control required" value="" placeholder="Your Phone Number">
-                                    </div>
-
-                                    <div class="col-sm-6 input-group form-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text nobg"><i class="icon-line2-calendar"></i></span>
-                                        </div>
-                                        <input type="text" class="form-control home-date required" name="office-moving-form-date" id="office-moving-form-date" value="" placeholder="Your Date">
-                                    </div>
-
-                                    <div class="col-12 hidden">
-                                        <input type="text" id="office-moving-form-botcheck" name="office-moving-form-botcheck" value="" />
-                                    </div>
-
-                                    <div class="col-12">
-                                        <button type="submit" name="office-moving-form-submit" class="btn bgcolor text-white t500 btn-block py-2 mt-2">Contact Us</button>
-                                    </div>
-
-                                    <input type="hidden" name="prefix" value="office-moving-form-">
-                                    <input type="hidden" name="subject" value="Office Moving Request">
-                                    <input type="hidden" name="html_title" value="Office Moving">
-                                </form>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="others-moving" role="tabpanel" aria-labelledby="others-moving-tab">
-                            <div class="form-widget">
-                                <div class="form-result"></div>
-                                <form class="row others-moving-form position-relative mb-0" action="include/form.php" method="post" enctype="multipart/form-data">
-                                    <div class="form-process"></div>
-
-                                    <div class="col-12 input-group form-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text nobg"><img src="{{ asset('FrontEnd/demos/movers/images/baggage.png')}}" height="18" alt="baggage Icon"></span>
-                                        </div>
-                                        <select class="required custom-select" name="others-moving-form-service" id="others-moving-form-service">
-                                            <option value="" disabled selected>-- Select Your Service --</option>
-                                            <option value="International Moving">International Moving</option>
-                                            <option value="Pet Moving">Pet Moving</option>
-                                            <option value="Car Moving">Car Moving</option>
-                                            <option value="Hire Mover Truck">Hire Mover Truck</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-sm-6 input-group form-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text nobg"><i class="icon-line2-social-dropbox"></i></span>
-                                        </div>
-                                        <input type="text" name="others-moving-form-item" id="others-moving-form-item" class="form-control required" value="" placeholder="Your Item">
-                                    </div>
-
-                                    <div class="col-sm-6 input-group form-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text text-muted nobg"><i class="icon-user-circle1"></i></span>
-                                        </div>
-                                        <select class="required custom-select" name="others-moving-form-movers" id="others-moving-form-movers">
-                                            <option value="" disabled selected>-- Select Movers --</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-sm-6 input-group form-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text nobg"><i class="icon-truck1"></i></span>
-                                        </div>
-                                        <input type="text" name="others-moving-form-location-from" id="others-moving-form-location-from" class="form-control required" value="" placeholder="Location From">
-                                    </div>
-
-                                    <div class="col-sm-6 input-group form-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text nobg"><i class="icon-line2-map"></i></span>
-                                        </div>
-                                        <input type="text" name="others-moving-form-location-to" id="others-moving-form-location-to" class="form-control required" value="" placeholder="Location To">
-                                    </div>
-
-                                    <div class="col-sm-6 input-group form-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text nobg"><i class="icon-line2-user"></i></span>
-                                        </div>
-                                        <input type="text" name="others-moving-form-name" id="others-moving-form-name" class="form-control required" value="" placeholder="Your Full Name">
-                                    </div>
-
-                                    <div class="col-sm-6 input-group form-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text nobg"><i class="icon-line2-envelope"></i></span>
-                                        </div>
-                                        <input type="email" name="others-moving-form-email" id="others-moving-form-email" class="form-control required" value="" placeholder="Your Email">
-                                    </div>
-
-                                    <div class="col-sm-6 input-group form-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text nobg"><i class="icon-line2-call-out"></i></span>
-                                        </div>
-                                        <input type="text" name="others-moving-form-phone" id="others-moving-form-phone" class="form-control required" value="" placeholder="Your Phone Number">
-                                    </div>
-
-                                    <div class="col-sm-6 input-group form-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text nobg"><i class="icon-line2-calendar"></i></span>
-                                        </div>
-                                        <input type="text" class="form-control home-date required" name="others-moving-form-date" id="others-moving-form-date" value="" placeholder="Your Date">
-                                    </div>
-
-                                    <div class="col-12 hidden">
-                                        <input type="text" id="others-moving-form-botcheck" name="others-moving-form-botcheck" value="" />
-                                    </div>
-
-                                    <div class="col-12">
-                                        <button type="submit" name="others-moving-form-submit" class="btn bgcolor text-white t500 btn-block py-2 mt-2">Contact Us</button>
-                                    </div>
-
-                                    <input type="hidden" name="prefix" value="others-moving-form-">
-                                    <input type="hidden" name="subject" value="Others Service Request">
-                                    <input type="hidden" name="html_title" value="Others Service">
                                 </form>
                             </div>
                         </div>
@@ -405,7 +250,7 @@
 
     <!-- Content
     ============================================= -->
-    <section id="content">
+  {% block body %}  <section id="content">
 
         <div class="content-wrap pb-0">
 
@@ -686,28 +531,29 @@
 
             <div class="clear"></div>
 
-            <div class="section dark pt-0 mb-0 bgcolor" >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1960 206.8" class="bg-white">
-                    <path class="svg-themecolor" style="opacity:0.2;" d="M0,142.8A2337.49,2337.49,0,0,1,297.5,56.3C569.33-3.53,783.89.22,849.5,2.3c215.78,6.86,382.12,45.39,503.25,73.45,158.87,36.8,283.09,79.13,458.75,54.55A816.49,816.49,0,0,0,1983,86.8v110H0Z"/>
-                    <path class="svg-themecolor" d="M.5,152.8s498-177,849-150,1031,238,1134,94v110H.5Z"/>
-                </svg>
 
-                <div class="row align-items-center justify-content-center center my-4">
-
-                    <div class="col-sm-8">
-
-                        <h2 class="t600 ls0 nott mb-3" style="font-size: 44px; line-height: 1.3">Join SparkooL
-                            Now</h2>
-                        <a href="#" class="button button-white button-light button-rounded t500 m-0">Apply Now</a>
-                    </div>
-
-                </div>
-
-            </div>
         </div>
 
-    </section><!-- #content end -->
+    </section><!-- #content end -->{% endblock %}
 
+    <div class="section dark pt-0 mb-0 bgcolor" >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1960 206.8" class="bg-white">
+            <path class="svg-themecolor" style="opacity:0.2;" d="M0,142.8A2337.49,2337.49,0,0,1,297.5,56.3C569.33-3.53,783.89.22,849.5,2.3c215.78,6.86,382.12,45.39,503.25,73.45,158.87,36.8,283.09,79.13,458.75,54.55A816.49,816.49,0,0,0,1983,86.8v110H0Z"/>
+            <path class="svg-themecolor" d="M.5,152.8s498-177,849-150,1031,238,1134,94v110H.5Z"/>
+        </svg>
+
+        <div class="row align-items-center justify-content-center center my-4">
+
+            <div class="col-sm-8">
+
+                <h2 class="t600 ls0 nott mb-3" style="font-size: 44px; line-height: 1.3">Join SparkooL
+                    Now</h2>
+                <a href="#" class="button button-white button-light button-rounded t500 m-0">Apply Now</a>
+            </div>
+
+        </div>
+
+    </div>
     <!-- Footer
     ============================================= -->
     <footer id="footer" class="mt-0" style="background-color: #111c22;">

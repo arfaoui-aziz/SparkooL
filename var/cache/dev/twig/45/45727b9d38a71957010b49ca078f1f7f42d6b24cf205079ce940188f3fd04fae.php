@@ -21,6 +21,7 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
         $this->parent = false;
 
         $this->blocks = [
+            'body' => [$this, 'block_body'],
         ];
     }
 
@@ -229,8 +230,27 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
                     <!-- Header Buttons
                     ============================================= -->
                     <div class=\"header-buttons d-none d-sm-inline-block\">
-                        <a href=\"#slider\" data-scrollto=\"#slider\" data-offset=\"-80\" class=\"button button-rounded button-white button-light button-small m-0\">LOGIN</a>
-                    </div>
+                        ";
+        // line 119
+        if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("ROLE_USER")) {
+            // line 120
+            echo "                    <a> ";
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", []), "username", []), "html", null, true);
+            echo " &nbsp;&nbsp;&nbsp;</a>
+                        <a href=\"";
+            // line 121
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fos_user_security_logout");
+            echo "\" class=\"button button-rounded button-white button-light button-small m-0\">Log Out</a>
+                        ";
+        } else {
+            // line 123
+            echo "                            <a href=\"";
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fos_user_security_login");
+            echo "\"   class=\"button button-rounded button-white button-light button-small m-0\">LOGIN</a>
+                        ";
+        }
+        // line 125
+        echo "                    </div>
 
                     <!-- Top Search
                     ============================================= -->
@@ -251,7 +271,10 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
 
     <!-- Slider
     ============================================= -->
-    <section id=\"slider\" class=\"slider-element bgcolor clearfix\" style=\"height: auto; padding: 60px 0; background: url('demos/movers/images/bg-2.png') no-repeat center center / 100% 100%;\">
+    <section id=\"slider\" class=\"slider-element bgcolor clearfix\" style=\"height: auto; padding: 60px 0; background: url(\"";
+        // line 146
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEndimgg-2.png"), "html", null, true);
+        echo "\") no-repeat center center / 100% 100%;\">
 
         <div class=\"container\" style=\"z-index: 2\">
             <div class=\"center\">
@@ -328,170 +351,7 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
                                         <button type=\"submit\" name=\"home-moving-form-submit\" class=\"btn bgcolor text-white t500 btn-block py-2 mt-2\">SUBMIT</button>
                                     </div>
 
-                                    <input type=\"hidden\" name=\"prefix\" value=\"home-moving-form-\">
-                                    <input type=\"hidden\" name=\"subject\" value=\"Home Moving Request\">
-                                    <input type=\"hidden\" name=\"html_title\" value=\"Home Moving\">
-                                </form>
-                            </div>
-                        </div>
-                        <div class=\"tab-pane fade\" id=\"office-moving\" role=\"tabpanel\" aria-labelledby=\"office-moving-tab\">
-                            <p class=\"mb-4\">Share your Office Shifting details by Filling out an Easy Form. Get Free Quotes from Verified Packers &amp; Movers Instantly.</p>
-                            <div class=\"form-widget\">
-                                <div class=\"form-result\"></div>
-                                <form class=\"row office-moving-form position-relative mb-0\" action=\"include/form.php\" method=\"post\" enctype=\"multipart/form-data\">
-                                    <div class=\"form-process\"></div>
 
-                                    <div class=\"col-sm-6 input-group form-group\">
-                                        <div class=\"input-group-prepend\">
-                                            <span class=\"input-group-text nobg\"><i class=\"icon-truck1\"></i></span>
-                                        </div>
-                                        <input type=\"text\" name=\"office-moving-form-location-from\" id=\"office-moving-form-location-from\" class=\"form-control required\" value=\"\" placeholder=\"Location From\">
-                                    </div>
-
-                                    <div class=\"col-sm-6 input-group form-group\">
-                                        <div class=\"input-group-prepend\">
-                                            <span class=\"input-group-text nobg\"><i class=\"icon-line2-map\"></i></span>
-                                        </div>
-                                        <input type=\"text\" name=\"office-moving-form-location-to\" id=\"office-moving-form-location-to\" class=\"form-control required\" value=\"\" placeholder=\"Location To\">
-                                    </div>
-
-                                    <div class=\"col-sm-6 input-group form-group\">
-                                        <div class=\"input-group-prepend\">
-                                            <span class=\"input-group-text nobg\"><i class=\"icon-line2-user\"></i></span>
-                                        </div>
-                                        <input type=\"text\" name=\"office-moving-form-name\" id=\"office-moving-form-name\" class=\"form-control required\" value=\"\" placeholder=\"Your Full Name\">
-                                    </div>
-
-                                    <div class=\"col-sm-6 input-group form-group\">
-                                        <div class=\"input-group-prepend\">
-                                            <span class=\"input-group-text nobg\"><i class=\"icon-line2-envelope\"></i></span>
-                                        </div>
-                                        <input type=\"email\" name=\"office-moving-form-email\" id=\"office-moving-form-email\" class=\"form-control required\" value=\"\" placeholder=\"Your Email\">
-                                    </div>
-
-                                    <div class=\"col-sm-6 input-group form-group\">
-                                        <div class=\"input-group-prepend\">
-                                            <span class=\"input-group-text nobg\"><i class=\"icon-line2-call-out\"></i></span>
-                                        </div>
-                                        <input type=\"text\" name=\"office-moving-form-phone\" id=\"office-moving-form-phone\" class=\"form-control required\" value=\"\" placeholder=\"Your Phone Number\">
-                                    </div>
-
-                                    <div class=\"col-sm-6 input-group form-group\">
-                                        <div class=\"input-group-prepend\">
-                                            <span class=\"input-group-text nobg\"><i class=\"icon-line2-calendar\"></i></span>
-                                        </div>
-                                        <input type=\"text\" class=\"form-control home-date required\" name=\"office-moving-form-date\" id=\"office-moving-form-date\" value=\"\" placeholder=\"Your Date\">
-                                    </div>
-
-                                    <div class=\"col-12 hidden\">
-                                        <input type=\"text\" id=\"office-moving-form-botcheck\" name=\"office-moving-form-botcheck\" value=\"\" />
-                                    </div>
-
-                                    <div class=\"col-12\">
-                                        <button type=\"submit\" name=\"office-moving-form-submit\" class=\"btn bgcolor text-white t500 btn-block py-2 mt-2\">Contact Us</button>
-                                    </div>
-
-                                    <input type=\"hidden\" name=\"prefix\" value=\"office-moving-form-\">
-                                    <input type=\"hidden\" name=\"subject\" value=\"Office Moving Request\">
-                                    <input type=\"hidden\" name=\"html_title\" value=\"Office Moving\">
-                                </form>
-                            </div>
-                        </div>
-                        <div class=\"tab-pane fade\" id=\"others-moving\" role=\"tabpanel\" aria-labelledby=\"others-moving-tab\">
-                            <div class=\"form-widget\">
-                                <div class=\"form-result\"></div>
-                                <form class=\"row others-moving-form position-relative mb-0\" action=\"include/form.php\" method=\"post\" enctype=\"multipart/form-data\">
-                                    <div class=\"form-process\"></div>
-
-                                    <div class=\"col-12 input-group form-group\">
-                                        <div class=\"input-group-prepend\">
-                                            <span class=\"input-group-text nobg\"><img src=\"";
-        // line 295
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/demos/movers/images/baggage.png"), "html", null, true);
-        echo "\" height=\"18\" alt=\"baggage Icon\"></span>
-                                        </div>
-                                        <select class=\"required custom-select\" name=\"others-moving-form-service\" id=\"others-moving-form-service\">
-                                            <option value=\"\" disabled selected>-- Select Your Service --</option>
-                                            <option value=\"International Moving\">International Moving</option>
-                                            <option value=\"Pet Moving\">Pet Moving</option>
-                                            <option value=\"Car Moving\">Car Moving</option>
-                                            <option value=\"Hire Mover Truck\">Hire Mover Truck</option>
-                                        </select>
-                                    </div>
-
-                                    <div class=\"col-sm-6 input-group form-group\">
-                                        <div class=\"input-group-prepend\">
-                                            <span class=\"input-group-text nobg\"><i class=\"icon-line2-social-dropbox\"></i></span>
-                                        </div>
-                                        <input type=\"text\" name=\"others-moving-form-item\" id=\"others-moving-form-item\" class=\"form-control required\" value=\"\" placeholder=\"Your Item\">
-                                    </div>
-
-                                    <div class=\"col-sm-6 input-group form-group\">
-                                        <div class=\"input-group-prepend\">
-                                            <span class=\"input-group-text text-muted nobg\"><i class=\"icon-user-circle1\"></i></span>
-                                        </div>
-                                        <select class=\"required custom-select\" name=\"others-moving-form-movers\" id=\"others-moving-form-movers\">
-                                            <option value=\"\" disabled selected>-- Select Movers --</option>
-                                            <option value=\"1\">1</option>
-                                            <option value=\"2\">2</option>
-                                            <option value=\"3\">3</option>
-                                            <option value=\"4\">4</option>
-                                        </select>
-                                    </div>
-
-                                    <div class=\"col-sm-6 input-group form-group\">
-                                        <div class=\"input-group-prepend\">
-                                            <span class=\"input-group-text nobg\"><i class=\"icon-truck1\"></i></span>
-                                        </div>
-                                        <input type=\"text\" name=\"others-moving-form-location-from\" id=\"others-moving-form-location-from\" class=\"form-control required\" value=\"\" placeholder=\"Location From\">
-                                    </div>
-
-                                    <div class=\"col-sm-6 input-group form-group\">
-                                        <div class=\"input-group-prepend\">
-                                            <span class=\"input-group-text nobg\"><i class=\"icon-line2-map\"></i></span>
-                                        </div>
-                                        <input type=\"text\" name=\"others-moving-form-location-to\" id=\"others-moving-form-location-to\" class=\"form-control required\" value=\"\" placeholder=\"Location To\">
-                                    </div>
-
-                                    <div class=\"col-sm-6 input-group form-group\">
-                                        <div class=\"input-group-prepend\">
-                                            <span class=\"input-group-text nobg\"><i class=\"icon-line2-user\"></i></span>
-                                        </div>
-                                        <input type=\"text\" name=\"others-moving-form-name\" id=\"others-moving-form-name\" class=\"form-control required\" value=\"\" placeholder=\"Your Full Name\">
-                                    </div>
-
-                                    <div class=\"col-sm-6 input-group form-group\">
-                                        <div class=\"input-group-prepend\">
-                                            <span class=\"input-group-text nobg\"><i class=\"icon-line2-envelope\"></i></span>
-                                        </div>
-                                        <input type=\"email\" name=\"others-moving-form-email\" id=\"others-moving-form-email\" class=\"form-control required\" value=\"\" placeholder=\"Your Email\">
-                                    </div>
-
-                                    <div class=\"col-sm-6 input-group form-group\">
-                                        <div class=\"input-group-prepend\">
-                                            <span class=\"input-group-text nobg\"><i class=\"icon-line2-call-out\"></i></span>
-                                        </div>
-                                        <input type=\"text\" name=\"others-moving-form-phone\" id=\"others-moving-form-phone\" class=\"form-control required\" value=\"\" placeholder=\"Your Phone Number\">
-                                    </div>
-
-                                    <div class=\"col-sm-6 input-group form-group\">
-                                        <div class=\"input-group-prepend\">
-                                            <span class=\"input-group-text nobg\"><i class=\"icon-line2-calendar\"></i></span>
-                                        </div>
-                                        <input type=\"text\" class=\"form-control home-date required\" name=\"others-moving-form-date\" id=\"others-moving-form-date\" value=\"\" placeholder=\"Your Date\">
-                                    </div>
-
-                                    <div class=\"col-12 hidden\">
-                                        <input type=\"text\" id=\"others-moving-form-botcheck\" name=\"others-moving-form-botcheck\" value=\"\" />
-                                    </div>
-
-                                    <div class=\"col-12\">
-                                        <button type=\"submit\" name=\"others-moving-form-submit\" class=\"btn bgcolor text-white t500 btn-block py-2 mt-2\">Contact Us</button>
-                                    </div>
-
-                                    <input type=\"hidden\" name=\"prefix\" value=\"others-moving-form-\">
-                                    <input type=\"hidden\" name=\"subject\" value=\"Others Service Request\">
-                                    <input type=\"hidden\" name=\"html_title\" value=\"Others Service\">
                                 </form>
                             </div>
                         </div>
@@ -499,7 +359,7 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
                 </div>
                 <div class=\"col-lg-5 d-none d-lg-flex flex-wrap justify-content-center\">
                     <img src=\"";
-        // line 385
+        // line 230
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/img/ed2.png"), "html", null, true);
         echo "\" alt=\"Image 1\" class=\"d-flex align-self-end ml-5 mt-3\">
 
@@ -524,7 +384,175 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
 
     <!-- Content
     ============================================= -->
-    <section id=\"content\">
+  ";
+        // line 253
+        $this->displayBlock('body', $context, $blocks);
+        // line 538
+        echo "
+    <div class=\"section dark pt-0 mb-0 bgcolor\" >
+        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1960 206.8\" class=\"bg-white\">
+            <path class=\"svg-themecolor\" style=\"opacity:0.2;\" d=\"M0,142.8A2337.49,2337.49,0,0,1,297.5,56.3C569.33-3.53,783.89.22,849.5,2.3c215.78,6.86,382.12,45.39,503.25,73.45,158.87,36.8,283.09,79.13,458.75,54.55A816.49,816.49,0,0,0,1983,86.8v110H0Z\"/>
+            <path class=\"svg-themecolor\" d=\"M.5,152.8s498-177,849-150,1031,238,1134,94v110H.5Z\"/>
+        </svg>
+
+        <div class=\"row align-items-center justify-content-center center my-4\">
+
+            <div class=\"col-sm-8\">
+
+                <h2 class=\"t600 ls0 nott mb-3\" style=\"font-size: 44px; line-height: 1.3\">Join SparkooL
+                    Now</h2>
+                <a href=\"#\" class=\"button button-white button-light button-rounded t500 m-0\">Apply Now</a>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- Footer
+    ============================================= -->
+    <footer id=\"footer\" class=\"mt-0\" style=\"background-color: #111c22;\">
+        <div class=\"container my-4\">
+            <div class=\"row py-5\">
+                <div class=\"col-lg-2 align-self-center mb-5 mb-lg-0\">
+                    <a href=\"#\"></a>
+                    <img src=\"";
+        // line 564
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/img/LogoFooter.png"), "html", null, true);
+        echo "\" class=\"img-fluid\" alt=\"Demo SEO\" width=\"100\" />
+                    </a>
+                </div>
+                <div class=\"col-lg-3 mb-4 mb-lg-0\">
+                    <h4 class=\"font-weight-normal text-color-light text-5 ls-0 mb-4\">Contact Details</h4>
+                    <ul class=\"list list-unstyled\">
+                        <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div><span class=\"text-color-light\">Address:</span> Street Name, City Name, Tunis</div></li>
+                        <li class=\"d-flex align-items-baseline\"><i class=\"fab fa-whatsapp text-color-primary mr-3\"></i><div><span class=\"text-color-light\">Phone:</span> +71 xxx-xxx</div></li>
+                        <li class=\"d-flex align-items-baseline\"><i class=\"far fa-envelope text-color-primary mr-3\"></i><div><span class=\"text-color-light\">Email:</span> <a href=\"mailto:mail@example.com\">SparkooL@gmail.com</a></div></li>
+                    </ul>
+                </div>
+                <div class=\"col-lg-3 mb-4 mb-lg-0\">
+                    <h4 class=\"font-weight-normal text-color-light text-5 ls-0 mb-4\">Navigations</h4>
+                    <ul class=\"list list-unstyled\">
+                        <li class=\"mb-1\">
+                            <a class=\"link-hover-style-1 active\" data-hash data-hash-offset=\"95\" href=\"#home\">Home</a>
+                        </li>
+                        <li class=\"mb-1\">
+                            <a class=\"link-hover-style-1\"  data-hash data-hash-offset=\"95\" href=\"#about\">About Us</a>
+                        </li>
+                        <li class=\"mb-1\">
+                            <a class=\"link-hover-style-1\"  data-hash data-hash-offset=\"95\" href=\"#solutions\">Program</a>
+                        </li>
+                        <li class=\"mb-1\">
+                            <a class=\"link-hover-style-1\"  data-hash data-hash-offset=\"95\" href=\"#pricing\">School Life</a>
+                        </li>
+                        <li class=\"mb-1\">
+                            <a class=\"link-hover-style-1\"  data-hash data-hash-offset=\"95\" href=\"#reviews\">News & Events</a>
+                        </li>
+                        <li class=\"mb-1\">
+                            <a class=\"link-hover-style-1\"  data-hash data-hash-offset=\"95\" href=\"#news\">Admission</a>
+                        </li>
+                        <li class=\"mb-1\">
+                            <a class=\"link-hover-style-1\"  data-hash data-hash-offset=\"95\" href=\"#news\">Contact US</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class=\"col-lg-4\">
+                    <h4 class=\"font-weight-normal text-color-light text-5 ls-0 mb-4\">Newsletter</h4>
+                    <p>Enter your email address and get our offers and plans in to your mail.</p>
+                    <div class=\"alert alert-success d-none\" id=\"newsletterSuccess\">
+                        <strong>Success!</strong> You've been added to our email list.
+                    </div>
+                    <div class=\"alert alert-danger d-none\" id=\"newsletterError\"></div>
+                    <form id=\"newsletterForm\" action=\"php/newsletter-subscribe.php\" method=\"POST\" class=\"mw-100\">
+                        <div class=\"input-group\">
+                            <input class=\"form-control form-control-sm text-color-light custom-bg-color-1 rounded-0 border-0 px-4 text-3\" placeholder=\"Email Address...\" name=\"newsletterEmail\" id=\"newsletterEmail\" type=\"text\">
+                            <span class=\"input-group-append\">
+\t\t\t\t\t\t\t\t\t\t<button class=\"btn btn-primary text-color-light text-2 rounded-0 py-3 px-4\" type=\"submit\"><strong>SUBSCRIBE</strong></button>
+\t\t\t\t\t\t\t\t\t</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class=\"footer-copyright footer-copyright-style-2\">
+            <div class=\"container py-2\">
+                <div class=\"row justify-content-between py-4\">
+                    <div class=\"col-auto\">
+                        <p>© Copyright SparkIT 2020. All Rights Reserved.</p>
+                    </div>
+                    <div class=\"col-auto\">
+                        <ul class=\"footer-social-icons social-icons social-icons-clean social-icons-icon-light ml-3\">
+                            <li class=\"social-icons-facebook\"><a href=\"http://www.facebook.com/\" target=\"_blank\" title=\"Facebook\"><i class=\"fab fa-facebook-f\"></i></a></li>
+                            <li class=\"social-icons-twitter\"><a href=\"http://www.twitter.com/\" target=\"_blank\" title=\"Twitter\"><i class=\"fab fa-twitter\"></i></a></li>
+                            <li class=\"social-icons-linkedin\"><a href=\"http://www.linkedin.com/\" target=\"_blank\" title=\"Linkedin\"><i class=\"fab fa-linkedin-in\"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</div><!-- #wrapper end -->
+
+<!-- Go To Top
+============================================= -->
+<div id=\"gotoTop\" class=\"icon-angle-up\"></div>
+
+<!-- External JavaScripts
+============================================= -->
+<script src=\"";
+        // line 645
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/js/jquery.js"), "html", null, true);
+        echo "\"></script>
+<script src=\"";
+        // line 646
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/js/plugins.js"), "html", null, true);
+        echo "\"></script>
+
+<!-- DatePicker JS -->
+<script src=\"";
+        // line 649
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/js/components/datepicker.js"), "html", null, true);
+        echo "\"></script>
+
+<!-- Footer Scripts
+============================================= -->
+<script src=\"";
+        // line 653
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/js/functions.js"), "html", null, true);
+        echo "\"></script>
+
+<script>
+
+    jQuery('.home-date').datepicker({
+        autoclose: true,
+        startDate: \"today\",
+    });
+</script>
+
+
+</body>
+</html>
+
+
+
+";
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+    }
+
+    // line 253
+    public function block_body($context, array $blocks = [])
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        echo "  <section id=\"content\">
 
         <div class=\"content-wrap pb-0\">
 
@@ -543,7 +571,7 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
                         <div class=\"row align-items-center\">
                             <div class=\"col-sm-6\">
                                 <img src=\"";
-        // line 426
+        // line 271
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/demos/movers/images/others/4.png"), "html", null, true);
         echo "\" alt=\"Image 1\" class=\"\">
                             </div>
@@ -561,7 +589,7 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
                             </div>
                             <div class=\"col-sm-6\">
                                 <img src=\"";
-        // line 441
+        // line 286
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/img/cal.png"), "html", null, true);
         echo "\" alt=\"Image 1\" class=\"\">
                             </div>
@@ -569,7 +597,7 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
                         <div class=\"row align-items-center mt-5\">
                             <div class=\"col-sm-6\">
                                 <img src=\"";
-        // line 446
+        // line 291
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/img/Rock.png"), "html", null, true);
         echo "\" alt=\"Image 1\" class=\"\">
                             </div>
@@ -590,7 +618,7 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
                 <div class=\"col-lg-3 col-md-6 center col-padding\" style=\"background-color: #F2F2F2;\">
                     <div>
                         <img src=\"";
-        // line 464
+        // line 309
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/img/read.png"), "html", null, true);
         echo "\" width=\"160px\" height=\"160px\"><br><br>
                         <div class=\"counter\"><span data-from=\"10\" data-to=\"165\" data-refresh-interval=\"50\" data-speed=\"2000\"></span>+</div>
@@ -601,7 +629,7 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
                 <div class=\"col-lg-3 col-md-6 center col-padding\" style=\"background-color: #F2F2F2;\">
                     <div>
                         <img src=\"";
-        // line 472
+        // line 317
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/img/teacher.png"), "html", null, true);
         echo "\" width=\"160px\" height=\"160px\"><br><br>
                         <div class=\"counter\"><span data-from=\"10\" data-to=\"45\" data-refresh-interval=\"50\" data-speed=\"2500\"></span>+</div>
@@ -612,7 +640,7 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
                 <div class=\"col-lg-3 col-md-6 center col-padding\" style=\"background-color: #F2F2F2;\">
                     <div>
                         <img src=\"";
-        // line 480
+        // line 325
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/img/employee.png"), "html", null, true);
         echo "\" width=\"160px\" height=\"160px\"><br><br>
                         <div class=\"counter\"><span data-from=\"10\" data-to=\"50\" data-refresh-interval=\"25\" data-speed=\"3000\"></span>+</div>
@@ -623,7 +651,7 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
                 <div class=\"col-lg-3 col-md-6 center col-padding\" style=\"background-color: #F2F2F2;\">
                     <div>
                         <img src=\"";
-        // line 488
+        // line 333
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/img/book.png"), "html", null, true);
         echo "\" width=\"160px\" height=\"160px\"><br><br>
                         <div class=\"counter\"><span data-from=\"10\" data-to=\"100\" data-refresh-interval=\"30\" data-speed=\"2700\"></span>+</div>
@@ -762,7 +790,7 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
                         </div>
                         <div class=\"grid-bg d-none d-md-block\">
                             <img src=\"";
-        // line 624
+        // line 469
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/demos/movers/images/dot-grid.svg"), "html", null, true);
         echo "\" alt=\"Dot Image\">
                         </div>
@@ -829,161 +857,15 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
 
             <div class=\"clear\"></div>
 
-            <div class=\"section dark pt-0 mb-0 bgcolor\" >
-                <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1960 206.8\" class=\"bg-white\">
-                    <path class=\"svg-themecolor\" style=\"opacity:0.2;\" d=\"M0,142.8A2337.49,2337.49,0,0,1,297.5,56.3C569.33-3.53,783.89.22,849.5,2.3c215.78,6.86,382.12,45.39,503.25,73.45,158.87,36.8,283.09,79.13,458.75,54.55A816.49,816.49,0,0,0,1983,86.8v110H0Z\"/>
-                    <path class=\"svg-themecolor\" d=\"M.5,152.8s498-177,849-150,1031,238,1134,94v110H.5Z\"/>
-                </svg>
 
-                <div class=\"row align-items-center justify-content-center center my-4\">
-
-                    <div class=\"col-sm-8\">
-
-                        <h2 class=\"t600 ls0 nott mb-3\" style=\"font-size: 44px; line-height: 1.3\">Join SparkooL
-                            Now</h2>
-                        <a href=\"#\" class=\"button button-white button-light button-rounded t500 m-0\">Apply Now</a>
-                    </div>
-
-                </div>
-
-            </div>
         </div>
 
-    </section><!-- #content end -->
-
-    <!-- Footer
-    ============================================= -->
-    <footer id=\"footer\" class=\"mt-0\" style=\"background-color: #111c22;\">
-        <div class=\"container my-4\">
-            <div class=\"row py-5\">
-                <div class=\"col-lg-2 align-self-center mb-5 mb-lg-0\">
-                    <a href=\"#\"></a>
-                    <img src=\"";
-        // line 718
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/img/LogoFooter.png"), "html", null, true);
-        echo "\" class=\"img-fluid\" alt=\"Demo SEO\" width=\"100\" />
-                    </a>
-                </div>
-                <div class=\"col-lg-3 mb-4 mb-lg-0\">
-                    <h4 class=\"font-weight-normal text-color-light text-5 ls-0 mb-4\">Contact Details</h4>
-                    <ul class=\"list list-unstyled\">
-                        <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div><span class=\"text-color-light\">Address:</span> Street Name, City Name, Tunis</div></li>
-                        <li class=\"d-flex align-items-baseline\"><i class=\"fab fa-whatsapp text-color-primary mr-3\"></i><div><span class=\"text-color-light\">Phone:</span> +71 xxx-xxx</div></li>
-                        <li class=\"d-flex align-items-baseline\"><i class=\"far fa-envelope text-color-primary mr-3\"></i><div><span class=\"text-color-light\">Email:</span> <a href=\"mailto:mail@example.com\">SparkooL@gmail.com</a></div></li>
-                    </ul>
-                </div>
-                <div class=\"col-lg-3 mb-4 mb-lg-0\">
-                    <h4 class=\"font-weight-normal text-color-light text-5 ls-0 mb-4\">Navigations</h4>
-                    <ul class=\"list list-unstyled\">
-                        <li class=\"mb-1\">
-                            <a class=\"link-hover-style-1 active\" data-hash data-hash-offset=\"95\" href=\"#home\">Home</a>
-                        </li>
-                        <li class=\"mb-1\">
-                            <a class=\"link-hover-style-1\"  data-hash data-hash-offset=\"95\" href=\"#about\">About Us</a>
-                        </li>
-                        <li class=\"mb-1\">
-                            <a class=\"link-hover-style-1\"  data-hash data-hash-offset=\"95\" href=\"#solutions\">Program</a>
-                        </li>
-                        <li class=\"mb-1\">
-                            <a class=\"link-hover-style-1\"  data-hash data-hash-offset=\"95\" href=\"#pricing\">School Life</a>
-                        </li>
-                        <li class=\"mb-1\">
-                            <a class=\"link-hover-style-1\"  data-hash data-hash-offset=\"95\" href=\"#reviews\">News & Events</a>
-                        </li>
-                        <li class=\"mb-1\">
-                            <a class=\"link-hover-style-1\"  data-hash data-hash-offset=\"95\" href=\"#news\">Admission</a>
-                        </li>
-                        <li class=\"mb-1\">
-                            <a class=\"link-hover-style-1\"  data-hash data-hash-offset=\"95\" href=\"#news\">Contact US</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class=\"col-lg-4\">
-                    <h4 class=\"font-weight-normal text-color-light text-5 ls-0 mb-4\">Newsletter</h4>
-                    <p>Enter your email address and get our offers and plans in to your mail.</p>
-                    <div class=\"alert alert-success d-none\" id=\"newsletterSuccess\">
-                        <strong>Success!</strong> You've been added to our email list.
-                    </div>
-                    <div class=\"alert alert-danger d-none\" id=\"newsletterError\"></div>
-                    <form id=\"newsletterForm\" action=\"php/newsletter-subscribe.php\" method=\"POST\" class=\"mw-100\">
-                        <div class=\"input-group\">
-                            <input class=\"form-control form-control-sm text-color-light custom-bg-color-1 rounded-0 border-0 px-4 text-3\" placeholder=\"Email Address...\" name=\"newsletterEmail\" id=\"newsletterEmail\" type=\"text\">
-                            <span class=\"input-group-append\">
-\t\t\t\t\t\t\t\t\t\t<button class=\"btn btn-primary text-color-light text-2 rounded-0 py-3 px-4\" type=\"submit\"><strong>SUBSCRIBE</strong></button>
-\t\t\t\t\t\t\t\t\t</span>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class=\"footer-copyright footer-copyright-style-2\">
-            <div class=\"container py-2\">
-                <div class=\"row justify-content-between py-4\">
-                    <div class=\"col-auto\">
-                        <p>© Copyright SparkIT 2020. All Rights Reserved.</p>
-                    </div>
-                    <div class=\"col-auto\">
-                        <ul class=\"footer-social-icons social-icons social-icons-clean social-icons-icon-light ml-3\">
-                            <li class=\"social-icons-facebook\"><a href=\"http://www.facebook.com/\" target=\"_blank\" title=\"Facebook\"><i class=\"fab fa-facebook-f\"></i></a></li>
-                            <li class=\"social-icons-twitter\"><a href=\"http://www.twitter.com/\" target=\"_blank\" title=\"Twitter\"><i class=\"fab fa-twitter\"></i></a></li>
-                            <li class=\"social-icons-linkedin\"><a href=\"http://www.linkedin.com/\" target=\"_blank\" title=\"Linkedin\"><i class=\"fab fa-linkedin-in\"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-</div><!-- #wrapper end -->
-
-<!-- Go To Top
-============================================= -->
-<div id=\"gotoTop\" class=\"icon-angle-up\"></div>
-
-<!-- External JavaScripts
-============================================= -->
-<script src=\"";
-        // line 799
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/js/jquery.js"), "html", null, true);
-        echo "\"></script>
-<script src=\"";
-        // line 800
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/js/plugins.js"), "html", null, true);
-        echo "\"></script>
-
-<!-- DatePicker JS -->
-<script src=\"";
-        // line 803
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/js/components/datepicker.js"), "html", null, true);
-        echo "\"></script>
-
-<!-- Footer Scripts
-============================================= -->
-<script src=\"";
-        // line 807
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/js/functions.js"), "html", null, true);
-        echo "\"></script>
-
-<script>
-
-    jQuery('.home-date').datepicker({
-        autoclose: true,
-        startDate: \"today\",
-    });
-</script>
-
-
-</body>
-</html>
-
-
-
-";
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
+    </section><!-- #content end -->";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
     }
 
@@ -999,7 +881,7 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
 
     public function getDebugInfo()
     {
-        return array (  964 => 807,  957 => 803,  951 => 800,  947 => 799,  863 => 718,  766 => 624,  627 => 488,  616 => 480,  605 => 472,  594 => 464,  573 => 446,  565 => 441,  547 => 426,  503 => 385,  410 => 295,  179 => 67,  175 => 66,  147 => 41,  140 => 37,  136 => 36,  132 => 35,  126 => 32,  121 => 30,  117 => 29,  113 => 28,  109 => 27,  104 => 25,  100 => 24,  96 => 23,  89 => 19,  85 => 18,  81 => 17,  77 => 16,  73 => 15,  69 => 14,  65 => 13,  61 => 12,  57 => 11,  53 => 10,  49 => 9,  45 => 8,  36 => 1,);
+        return array (  794 => 469,  655 => 333,  644 => 325,  633 => 317,  622 => 309,  601 => 291,  593 => 286,  575 => 271,  547 => 253,  520 => 653,  513 => 649,  507 => 646,  503 => 645,  419 => 564,  391 => 538,  389 => 253,  363 => 230,  276 => 146,  253 => 125,  247 => 123,  242 => 121,  237 => 120,  235 => 119,  180 => 67,  176 => 66,  148 => 41,  141 => 37,  137 => 36,  133 => 35,  127 => 32,  122 => 30,  118 => 29,  114 => 28,  110 => 27,  105 => 25,  101 => 24,  97 => 23,  90 => 19,  86 => 18,  82 => 17,  78 => 16,  74 => 15,  70 => 14,  66 => 13,  62 => 12,  58 => 11,  54 => 10,  50 => 9,  46 => 8,  37 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -1130,7 +1012,12 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
                     <!-- Header Buttons
                     ============================================= -->
                     <div class=\"header-buttons d-none d-sm-inline-block\">
-                        <a href=\"#slider\" data-scrollto=\"#slider\" data-offset=\"-80\" class=\"button button-rounded button-white button-light button-small m-0\">LOGIN</a>
+                        {% if is_granted('ROLE_USER') %}
+                    <a> {{ app.user.username }} &nbsp;&nbsp;&nbsp;</a>
+                        <a href=\"{{ path('fos_user_security_logout')}}\" class=\"button button-rounded button-white button-light button-small m-0\">Log Out</a>
+                        {% else %}
+                            <a href=\"{{ path('fos_user_security_login') }}\"   class=\"button button-rounded button-white button-light button-small m-0\">LOGIN</a>
+                        {% endif %}
                     </div>
 
                     <!-- Top Search
@@ -1152,7 +1039,7 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
 
     <!-- Slider
     ============================================= -->
-    <section id=\"slider\" class=\"slider-element bgcolor clearfix\" style=\"height: auto; padding: 60px 0; background: url('demos/movers/images/bg-2.png') no-repeat center center / 100% 100%;\">
+    <section id=\"slider\" class=\"slider-element bgcolor clearfix\" style=\"height: auto; padding: 60px 0; background: url(\"{{ asset('FrontEnd\\img\\bg-2.png')}}\") no-repeat center center / 100% 100%;\">
 
         <div class=\"container\" style=\"z-index: 2\">
             <div class=\"center\">
@@ -1229,167 +1116,7 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
                                         <button type=\"submit\" name=\"home-moving-form-submit\" class=\"btn bgcolor text-white t500 btn-block py-2 mt-2\">SUBMIT</button>
                                     </div>
 
-                                    <input type=\"hidden\" name=\"prefix\" value=\"home-moving-form-\">
-                                    <input type=\"hidden\" name=\"subject\" value=\"Home Moving Request\">
-                                    <input type=\"hidden\" name=\"html_title\" value=\"Home Moving\">
-                                </form>
-                            </div>
-                        </div>
-                        <div class=\"tab-pane fade\" id=\"office-moving\" role=\"tabpanel\" aria-labelledby=\"office-moving-tab\">
-                            <p class=\"mb-4\">Share your Office Shifting details by Filling out an Easy Form. Get Free Quotes from Verified Packers &amp; Movers Instantly.</p>
-                            <div class=\"form-widget\">
-                                <div class=\"form-result\"></div>
-                                <form class=\"row office-moving-form position-relative mb-0\" action=\"include/form.php\" method=\"post\" enctype=\"multipart/form-data\">
-                                    <div class=\"form-process\"></div>
 
-                                    <div class=\"col-sm-6 input-group form-group\">
-                                        <div class=\"input-group-prepend\">
-                                            <span class=\"input-group-text nobg\"><i class=\"icon-truck1\"></i></span>
-                                        </div>
-                                        <input type=\"text\" name=\"office-moving-form-location-from\" id=\"office-moving-form-location-from\" class=\"form-control required\" value=\"\" placeholder=\"Location From\">
-                                    </div>
-
-                                    <div class=\"col-sm-6 input-group form-group\">
-                                        <div class=\"input-group-prepend\">
-                                            <span class=\"input-group-text nobg\"><i class=\"icon-line2-map\"></i></span>
-                                        </div>
-                                        <input type=\"text\" name=\"office-moving-form-location-to\" id=\"office-moving-form-location-to\" class=\"form-control required\" value=\"\" placeholder=\"Location To\">
-                                    </div>
-
-                                    <div class=\"col-sm-6 input-group form-group\">
-                                        <div class=\"input-group-prepend\">
-                                            <span class=\"input-group-text nobg\"><i class=\"icon-line2-user\"></i></span>
-                                        </div>
-                                        <input type=\"text\" name=\"office-moving-form-name\" id=\"office-moving-form-name\" class=\"form-control required\" value=\"\" placeholder=\"Your Full Name\">
-                                    </div>
-
-                                    <div class=\"col-sm-6 input-group form-group\">
-                                        <div class=\"input-group-prepend\">
-                                            <span class=\"input-group-text nobg\"><i class=\"icon-line2-envelope\"></i></span>
-                                        </div>
-                                        <input type=\"email\" name=\"office-moving-form-email\" id=\"office-moving-form-email\" class=\"form-control required\" value=\"\" placeholder=\"Your Email\">
-                                    </div>
-
-                                    <div class=\"col-sm-6 input-group form-group\">
-                                        <div class=\"input-group-prepend\">
-                                            <span class=\"input-group-text nobg\"><i class=\"icon-line2-call-out\"></i></span>
-                                        </div>
-                                        <input type=\"text\" name=\"office-moving-form-phone\" id=\"office-moving-form-phone\" class=\"form-control required\" value=\"\" placeholder=\"Your Phone Number\">
-                                    </div>
-
-                                    <div class=\"col-sm-6 input-group form-group\">
-                                        <div class=\"input-group-prepend\">
-                                            <span class=\"input-group-text nobg\"><i class=\"icon-line2-calendar\"></i></span>
-                                        </div>
-                                        <input type=\"text\" class=\"form-control home-date required\" name=\"office-moving-form-date\" id=\"office-moving-form-date\" value=\"\" placeholder=\"Your Date\">
-                                    </div>
-
-                                    <div class=\"col-12 hidden\">
-                                        <input type=\"text\" id=\"office-moving-form-botcheck\" name=\"office-moving-form-botcheck\" value=\"\" />
-                                    </div>
-
-                                    <div class=\"col-12\">
-                                        <button type=\"submit\" name=\"office-moving-form-submit\" class=\"btn bgcolor text-white t500 btn-block py-2 mt-2\">Contact Us</button>
-                                    </div>
-
-                                    <input type=\"hidden\" name=\"prefix\" value=\"office-moving-form-\">
-                                    <input type=\"hidden\" name=\"subject\" value=\"Office Moving Request\">
-                                    <input type=\"hidden\" name=\"html_title\" value=\"Office Moving\">
-                                </form>
-                            </div>
-                        </div>
-                        <div class=\"tab-pane fade\" id=\"others-moving\" role=\"tabpanel\" aria-labelledby=\"others-moving-tab\">
-                            <div class=\"form-widget\">
-                                <div class=\"form-result\"></div>
-                                <form class=\"row others-moving-form position-relative mb-0\" action=\"include/form.php\" method=\"post\" enctype=\"multipart/form-data\">
-                                    <div class=\"form-process\"></div>
-
-                                    <div class=\"col-12 input-group form-group\">
-                                        <div class=\"input-group-prepend\">
-                                            <span class=\"input-group-text nobg\"><img src=\"{{ asset('FrontEnd/demos/movers/images/baggage.png')}}\" height=\"18\" alt=\"baggage Icon\"></span>
-                                        </div>
-                                        <select class=\"required custom-select\" name=\"others-moving-form-service\" id=\"others-moving-form-service\">
-                                            <option value=\"\" disabled selected>-- Select Your Service --</option>
-                                            <option value=\"International Moving\">International Moving</option>
-                                            <option value=\"Pet Moving\">Pet Moving</option>
-                                            <option value=\"Car Moving\">Car Moving</option>
-                                            <option value=\"Hire Mover Truck\">Hire Mover Truck</option>
-                                        </select>
-                                    </div>
-
-                                    <div class=\"col-sm-6 input-group form-group\">
-                                        <div class=\"input-group-prepend\">
-                                            <span class=\"input-group-text nobg\"><i class=\"icon-line2-social-dropbox\"></i></span>
-                                        </div>
-                                        <input type=\"text\" name=\"others-moving-form-item\" id=\"others-moving-form-item\" class=\"form-control required\" value=\"\" placeholder=\"Your Item\">
-                                    </div>
-
-                                    <div class=\"col-sm-6 input-group form-group\">
-                                        <div class=\"input-group-prepend\">
-                                            <span class=\"input-group-text text-muted nobg\"><i class=\"icon-user-circle1\"></i></span>
-                                        </div>
-                                        <select class=\"required custom-select\" name=\"others-moving-form-movers\" id=\"others-moving-form-movers\">
-                                            <option value=\"\" disabled selected>-- Select Movers --</option>
-                                            <option value=\"1\">1</option>
-                                            <option value=\"2\">2</option>
-                                            <option value=\"3\">3</option>
-                                            <option value=\"4\">4</option>
-                                        </select>
-                                    </div>
-
-                                    <div class=\"col-sm-6 input-group form-group\">
-                                        <div class=\"input-group-prepend\">
-                                            <span class=\"input-group-text nobg\"><i class=\"icon-truck1\"></i></span>
-                                        </div>
-                                        <input type=\"text\" name=\"others-moving-form-location-from\" id=\"others-moving-form-location-from\" class=\"form-control required\" value=\"\" placeholder=\"Location From\">
-                                    </div>
-
-                                    <div class=\"col-sm-6 input-group form-group\">
-                                        <div class=\"input-group-prepend\">
-                                            <span class=\"input-group-text nobg\"><i class=\"icon-line2-map\"></i></span>
-                                        </div>
-                                        <input type=\"text\" name=\"others-moving-form-location-to\" id=\"others-moving-form-location-to\" class=\"form-control required\" value=\"\" placeholder=\"Location To\">
-                                    </div>
-
-                                    <div class=\"col-sm-6 input-group form-group\">
-                                        <div class=\"input-group-prepend\">
-                                            <span class=\"input-group-text nobg\"><i class=\"icon-line2-user\"></i></span>
-                                        </div>
-                                        <input type=\"text\" name=\"others-moving-form-name\" id=\"others-moving-form-name\" class=\"form-control required\" value=\"\" placeholder=\"Your Full Name\">
-                                    </div>
-
-                                    <div class=\"col-sm-6 input-group form-group\">
-                                        <div class=\"input-group-prepend\">
-                                            <span class=\"input-group-text nobg\"><i class=\"icon-line2-envelope\"></i></span>
-                                        </div>
-                                        <input type=\"email\" name=\"others-moving-form-email\" id=\"others-moving-form-email\" class=\"form-control required\" value=\"\" placeholder=\"Your Email\">
-                                    </div>
-
-                                    <div class=\"col-sm-6 input-group form-group\">
-                                        <div class=\"input-group-prepend\">
-                                            <span class=\"input-group-text nobg\"><i class=\"icon-line2-call-out\"></i></span>
-                                        </div>
-                                        <input type=\"text\" name=\"others-moving-form-phone\" id=\"others-moving-form-phone\" class=\"form-control required\" value=\"\" placeholder=\"Your Phone Number\">
-                                    </div>
-
-                                    <div class=\"col-sm-6 input-group form-group\">
-                                        <div class=\"input-group-prepend\">
-                                            <span class=\"input-group-text nobg\"><i class=\"icon-line2-calendar\"></i></span>
-                                        </div>
-                                        <input type=\"text\" class=\"form-control home-date required\" name=\"others-moving-form-date\" id=\"others-moving-form-date\" value=\"\" placeholder=\"Your Date\">
-                                    </div>
-
-                                    <div class=\"col-12 hidden\">
-                                        <input type=\"text\" id=\"others-moving-form-botcheck\" name=\"others-moving-form-botcheck\" value=\"\" />
-                                    </div>
-
-                                    <div class=\"col-12\">
-                                        <button type=\"submit\" name=\"others-moving-form-submit\" class=\"btn bgcolor text-white t500 btn-block py-2 mt-2\">Contact Us</button>
-                                    </div>
-
-                                    <input type=\"hidden\" name=\"prefix\" value=\"others-moving-form-\">
-                                    <input type=\"hidden\" name=\"subject\" value=\"Others Service Request\">
-                                    <input type=\"hidden\" name=\"html_title\" value=\"Others Service\">
                                 </form>
                             </div>
                         </div>
@@ -1419,7 +1146,7 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
 
     <!-- Content
     ============================================= -->
-    <section id=\"content\">
+  {% block body %}  <section id=\"content\">
 
         <div class=\"content-wrap pb-0\">
 
@@ -1700,28 +1427,29 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
 
             <div class=\"clear\"></div>
 
-            <div class=\"section dark pt-0 mb-0 bgcolor\" >
-                <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1960 206.8\" class=\"bg-white\">
-                    <path class=\"svg-themecolor\" style=\"opacity:0.2;\" d=\"M0,142.8A2337.49,2337.49,0,0,1,297.5,56.3C569.33-3.53,783.89.22,849.5,2.3c215.78,6.86,382.12,45.39,503.25,73.45,158.87,36.8,283.09,79.13,458.75,54.55A816.49,816.49,0,0,0,1983,86.8v110H0Z\"/>
-                    <path class=\"svg-themecolor\" d=\"M.5,152.8s498-177,849-150,1031,238,1134,94v110H.5Z\"/>
-                </svg>
 
-                <div class=\"row align-items-center justify-content-center center my-4\">
-
-                    <div class=\"col-sm-8\">
-
-                        <h2 class=\"t600 ls0 nott mb-3\" style=\"font-size: 44px; line-height: 1.3\">Join SparkooL
-                            Now</h2>
-                        <a href=\"#\" class=\"button button-white button-light button-rounded t500 m-0\">Apply Now</a>
-                    </div>
-
-                </div>
-
-            </div>
         </div>
 
-    </section><!-- #content end -->
+    </section><!-- #content end -->{% endblock %}
 
+    <div class=\"section dark pt-0 mb-0 bgcolor\" >
+        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1960 206.8\" class=\"bg-white\">
+            <path class=\"svg-themecolor\" style=\"opacity:0.2;\" d=\"M0,142.8A2337.49,2337.49,0,0,1,297.5,56.3C569.33-3.53,783.89.22,849.5,2.3c215.78,6.86,382.12,45.39,503.25,73.45,158.87,36.8,283.09,79.13,458.75,54.55A816.49,816.49,0,0,0,1983,86.8v110H0Z\"/>
+            <path class=\"svg-themecolor\" d=\"M.5,152.8s498-177,849-150,1031,238,1134,94v110H.5Z\"/>
+        </svg>
+
+        <div class=\"row align-items-center justify-content-center center my-4\">
+
+            <div class=\"col-sm-8\">
+
+                <h2 class=\"t600 ls0 nott mb-3\" style=\"font-size: 44px; line-height: 1.3\">Join SparkooL
+                    Now</h2>
+                <a href=\"#\" class=\"button button-white button-light button-rounded t500 m-0\">Apply Now</a>
+            </div>
+
+        </div>
+
+    </div>
     <!-- Footer
     ============================================= -->
     <footer id=\"footer\" class=\"mt-0\" style=\"background-color: #111c22;\">

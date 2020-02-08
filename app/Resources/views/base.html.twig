@@ -79,8 +79,13 @@
                     <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                        aria-expanded="false">
                         <div class="admin-title">
-                            <h5 class="item-title">Aziz Arfaoui</h5>
+                            {% if is_granted('ROLE_USER') %}
+                            <h5 class="item-title">{{ app.user.username }}</h5>
                             <span>Admin</span>
+                            {% else %}
+                            <h5 class="item-title">{{ app.user.roles[0] }}</h5>
+                            <span>Admin</span>
+                            {% endif %}
                         </div>
                         <div class="admin-img">
                             <img src="{{ asset('fonts/man.png') }}" width="40px" alt="Admin">
@@ -88,7 +93,11 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
                         <div class="item-header">
-                            <h6 class="item-title">Arfaoui Aziz</h6>
+                            {% if is_granted('ROLE_USER') %}
+                            <h6 class="item-title">{{ app.user.username }}</h6>
+                            {% else %}
+                                <h6 class="item-title">Aziz Arfaoui </h6>
+                            {% endif %}
                         </div>
                         <div class="item-content">
                             <ul class="settings-list">
@@ -96,7 +105,11 @@
                                 <li><a href="#"><i class="flaticon-list"></i>Task</a></li>
                                 <li><a href="#"><i class="flaticon-chat-comment-oval-speech-bubble-with-text-lines"></i>Message</a></li>
                                 <li><a href="#"><i class="flaticon-gear-loading"></i>Account Settings</a></li>
+                                {% if is_granted('ROLE_USER') %}
+                                <li><a href="{{ path('fos_user_security_logout') }}"><i class="flaticon-turn-off"></i>Log Out</a></li>
+                                {% else %}
                                 <li><a href="#"><i class="flaticon-turn-off"></i>Log Out</a></li>
+                                {% endif %}
                             </ul>
                         </div>
                     </div>
@@ -250,8 +263,14 @@
                                 </div>
                             </div>
                             <div class="item-content">
-                                <div class="item-title">Aziz Arfaoui</div>
+                                {% if is_granted('ROLE_USER') %}
+                                <div class="item-title">{{ app.user.username }}</div>
+                                    <div class="item-title1">{{ app.user.roles[0] }}</div>
+                                {% else %}
+                                    <div class="item-title">Aziz Arfaoui</div>
+
                                 <div class="item-title1">ADMIN</div>
+                                {% endif %}
                             </div>
 
                         </div>

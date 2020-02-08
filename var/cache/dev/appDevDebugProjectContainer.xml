@@ -2390,7 +2390,7 @@
       <call method="add">
         <argument type="service" id="security.request_matcher..3c8r.7"/>
         <argument type="collection">
-          <argument>ROLE_USER</argument>
+          <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
         </argument>
         <argument>null</argument>
       </call>
