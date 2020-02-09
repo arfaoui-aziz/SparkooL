@@ -273,7 +273,10 @@ class __TwigTemplate_8f765fceded69333cd071fdae14d7b265cb94c9263816c43f32c380b734
             // line 141
             echo twig_escape_filter($this->env, $this->getAttribute($context["u"], "userType", []), "html", null, true);
             echo "</div>
-                                    <a href=\"Modifier\">More Details</a>
+                                    <a href=\"";
+            // line 142
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_UpdateAccount", ["id" => $this->getAttribute($context["u"], "id", [])]), "html", null, true);
+            echo "\">More Details</a>
                                 </div>
                             </div>
 
@@ -411,7 +414,7 @@ class __TwigTemplate_8f765fceded69333cd071fdae14d7b265cb94c9263816c43f32c380b734
 
     public function getDebugInfo()
     {
-        return array (  352 => 197,  345 => 193,  336 => 189,  329 => 185,  317 => 176,  287 => 148,  274 => 141,  268 => 140,  261 => 136,  256 => 133,  252 => 131,  248 => 129,  246 => 128,  242 => 126,  238 => 125,  211 => 101,  204 => 97,  200 => 96,  192 => 91,  184 => 86,  175 => 80,  168 => 76,  157 => 68,  148 => 62,  139 => 56,  130 => 50,  122 => 45,  115 => 41,  108 => 37,  101 => 33,  92 => 27,  85 => 23,  80 => 21,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  355 => 197,  348 => 193,  339 => 189,  332 => 185,  320 => 176,  290 => 148,  278 => 142,  274 => 141,  268 => 140,  261 => 136,  256 => 133,  252 => 131,  248 => 129,  246 => 128,  242 => 126,  238 => 125,  211 => 101,  204 => 97,  200 => 96,  192 => 91,  184 => 86,  175 => 80,  168 => 76,  157 => 68,  148 => 62,  139 => 56,  130 => 50,  122 => 45,  115 => 41,  108 => 37,  101 => 33,  92 => 27,  85 => 23,  80 => 21,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -565,7 +568,7 @@ class __TwigTemplate_8f765fceded69333cd071fdae14d7b265cb94c9263816c43f32c380b734
                                 <div class=\"media-body space-md\">
                                     <h5 class=\"item-title\">{{u.firstName }} {{ u.lastName }}</h5>
                                     <div class=\"item-subtitle\">{{u.userType}}</div>
-                                    <a href=\"Modifier\">More Details</a>
+                                    <a href=\"{{ path('admin_UpdateAccount',{'id':u.id}) }}\">More Details</a>
                                 </div>
                             </div>
 

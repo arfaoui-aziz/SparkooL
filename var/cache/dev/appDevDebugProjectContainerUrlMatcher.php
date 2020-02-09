@@ -107,20 +107,28 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // admin_AddAccount
-        if ('/admin' === $trimmedPathinfo) {
-            $ret = array (  '_controller' => 'AdminBundle\\Controller\\AccountController::AddAccountAction',  '_route' => 'admin_AddAccount',);
-            if ('/' === substr($pathinfo, -1)) {
-                // no-op
-            } elseif ('GET' !== $canonicalMethod) {
-                goto not_admin_AddAccount;
-            } else {
-                return array_replace($ret, $this->redirect($rawPathinfo.'/', 'admin_AddAccount'));
+        elseif (0 === strpos($pathinfo, '/admin')) {
+            // admin_AddAccount
+            if ('/admin' === $trimmedPathinfo) {
+                $ret = array (  '_controller' => 'AdminBundle\\Controller\\AccountController::AddAccountAction',  '_route' => 'admin_AddAccount',);
+                if ('/' === substr($pathinfo, -1)) {
+                    // no-op
+                } elseif ('GET' !== $canonicalMethod) {
+                    goto not_admin_AddAccount;
+                } else {
+                    return array_replace($ret, $this->redirect($rawPathinfo.'/', 'admin_AddAccount'));
+                }
+
+                return $ret;
+            }
+            not_admin_AddAccount:
+
+            // admin_UpdateAccount
+            if (0 === strpos($pathinfo, '/admin/UpdateAccount') && preg_match('#^/admin/UpdateAccount/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_UpdateAccount']), array (  '_controller' => 'AdminBundle\\Controller\\AccountController::UpdateAccountAction',));
             }
 
-            return $ret;
         }
-        not_admin_AddAccount:
 
         // fos_user_security_login
         if ('' === $trimmedPathinfo) {

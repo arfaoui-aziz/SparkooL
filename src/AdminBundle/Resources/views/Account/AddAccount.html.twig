@@ -139,7 +139,7 @@
                                 <div class="media-body space-md">
                                     <h5 class="item-title">{{u.firstName }} {{ u.lastName }}</h5>
                                     <div class="item-subtitle">{{u.userType}}</div>
-                                    <a href="Modifier">More Details</a>
+                                    <a href="{{ path('admin_UpdateAccount',{'id':u.id}) }}">More Details</a>
                                 </div>
                             </div>
 

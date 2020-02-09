@@ -19,6 +19,7 @@ class AccountController extends Controller
         if($form->isSubmitted() && $form->isValid())
         {
 
+            $pic = $form['picture']->getData();
             $id = $user->getId();
             $firstName = $user->getFirstName();
             $lastName = $user->getLastName();
@@ -27,6 +28,7 @@ class AccountController extends Controller
             $user->setPassword($pwd);
             $user->setUsername($username);
             $user->setEnabled(1);
+            $user->setPicture($pic);
             $em->persist($user);
             $em->flush();
             return $this->redirectToRoute("admin_AddAccount");
@@ -34,5 +36,22 @@ class AccountController extends Controller
         }
         return $this->render('@Admin\Account\AddAccount.html.twig',array('form'=>$form->createView(), 'allUsers'=>$allUsers));
     }
-    
+
+    public function UpdateAccountAction($id,Request $request){
+        $em = $this->getDoctrine()->getManager();
+        $user =  $em->getRepository(User::class)->find($id);
+        $form = $this->createForm(AccountFormType::class,$user);
+        $form->handleRequest($request);
+        if($form->isValid())
+        {
+            $firstName = $user->getFirstName();
+            $lastName = $user->getLastName();
+            $username = $firstName.'.'.$lastName;
+            $user->setUsername($username);
+            $em->persist($user);
+            $em->flush();
+            return $this->redirectToRoute("admin_AddAccount");
+        }
+        return $this->render('@Admin\Account\UpdateAccount.html.twig',array('form'=>$form->createView()));
+    }
 }
