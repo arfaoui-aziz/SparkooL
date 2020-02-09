@@ -1,0 +1,24 @@
+sonia_homepage:
+    path:     /
+    defaults: { _controller: SoniaBundle:Default:index }
+afficherEvent:
+    path:     /afficherEvent
+    defaults: { _controller: SoniaBundle:Event:AfficherEvent }
+ajouterEvent:
+    path:     /ajouterEvent
+    defaults: { _controller: SoniaBundle:Event:AjouterEvent }
+ajouterActivite:
+    path:     /ajouterActivite
+    defaults: { _controller: SoniaBundle:Event:AjouterActivite }
+ajouterTrip:
+    path:     /ajouterTrip
+    defaults: { _controller: SoniaBundle:Event:AjouterFieldTrip }
+ajouterCompetiton:
+    path:     /ajouterCompetiton
+    defaults: { _controller: SoniaBundle:Event:AjouterCompetition }
+modifierEvent:
+    path:     /modifierEvent/{id}
+    defaults: { _controller: SoniaBundle:Event:UpdateEvent }
+supprimerEvent:
+    path:     /supprimerEvent/{id}
+    defaults: { _controller: SoniaBundle:Event:DeleteEvent }

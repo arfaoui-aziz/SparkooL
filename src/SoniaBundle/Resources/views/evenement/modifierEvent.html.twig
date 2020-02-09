@@ -1,0 +1,248 @@
+{% extends 'base.html.twig'%}
+{% block body %}
+
+    <div class="dashboard-content-one">
+        <!-- Breadcubs Area Start Here -->
+        <div class="breadcrumbs-area">
+            <h3>Events</h3>
+
+        </div>
+        <!-- Breadcubs Area End Here -->
+        <!-- Student Table Area Start Here -->
+        <div class="card height-auto">
+            <div class="card-body">
+                <div class="heading-layout1">
+                    <div class="item-title">
+                        <h3>All Events Data</h3>
+                    </div>
+
+                </div>
+
+                <form class="new-added-form" method="POST">
+                    {{   form_start(f) }}
+                    {% if type == "Evenement" %}
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label>Name *</label>
+                            {{ form_widget (f.nomEvent, {'attr': {'class':'form-control'}}) }}
+                        </div>
+
+
+
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label>Description *</label>
+                            {{ form_widget (f.description , {'attr': {'class':'form-control','placeholder':'ed'}}) }}
+                        </div>
+
+
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label>Date *</label>
+                            {{ form_widget (f.dateEvent , {'attr': {'class':'form-control','placeholder':'dd/mm/yyyy',
+                            }}) }}
+                        </div>
+
+
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label>Place of Event *</label>
+                            {{ form_widget (f.placeEvent , {'attr': {'class':'form-control'}}) }}
+                        </div>
+
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label>Participant *</label>
+                            {{ form_widget (f.nbParticipants , {'attr': {'class':'form-control'}}) }}
+                        </div>
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label> Budget *</label>
+                            {{ form_widget (f.budget , {'attr': {'class':'form-control'}}) }}
+                        </div>  &nbsp;
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label > </label>
+                            <br>
+
+                        {{ form_widget(f.Add,{'label':'Update' }) }}
+                        </div>
+
+                    </div>
+
+                    {% elseif type == "Sport Activity" %}
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label>Name *</label>
+                            {{ form_widget (f.nomEvent, {'attr': {'class':'form-control'}}) }}
+                        </div>
+
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label>Description *</label>
+                            {{ form_widget (f.description , {'attr': {'class':'form-control','placeholder':'ed'}}) }}
+                        </div>
+
+
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label>Date *</label>
+                            {{ form_widget (f.dateEvent , {'attr': {'class':'form-control','placeholder':'dd/mm/yyyy',
+                            }}) }}
+                        </div>
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label>Place of Event *</label>
+                            {{ form_widget (f.placeEvent , {'attr': {'class':'form-control'}}) }}
+                        </div>
+
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label>Participant *</label>
+                            {{ form_widget (f.nbParticipants , {'attr': {'class':'form-control'}}) }}
+                        </div>
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label> Theme *</label>
+                            {{ form_widget (f.theme , {'attr': {'class':'form-control'}}) }}
+                        </div>
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label> Budget *</label>
+                            {{ form_widget (f.budget , {'attr': {'class':'form-control'}}) }}
+                        </div>  &nbsp;
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label > </label>
+                            <br>
+
+                            {{ form_widget(f.Add,{'label':'Update' }) }}
+                        </div>
+
+                    </div>
+
+
+                    {% elseif type == "Field Trip" %}
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label>Name *</label>
+                            {{ form_widget (f.nomEvent, {'attr': {'class':'form-control'}}) }}
+                        </div>
+
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label>Description *</label>
+                            {{ form_widget (f.description , {'attr': {'class':'form-control','placeholder':'ed'}}) }}
+                        </div>
+
+
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label>Date *</label>
+                            {{ form_widget (f.dateEvent , {'attr': {'class':'form-control','placeholder':'dd/mm/yyyy',
+                            }}) }}
+                        </div>
+
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label>Participant *</label>
+                            {{ form_widget (f.nbParticipants , {'attr': {'class':'form-control'}}) }}
+                        </div>
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label> Destination *</label>
+                            {{ form_widget (f.destination , {'attr': {'class':'form-control'}}) }}
+                        </div>
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label> Budget *</label>
+                            {{ form_widget (f.budget , {'attr': {'class':'form-control'}}) }}
+                        </div>  &nbsp;
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label > </label>
+                            <br>
+
+                            {{ form_widget(f.Add,{'label':'Update' }) }}
+                        </div>
+
+                    </div>
+
+                    {% else %}
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label>Name *</label>
+                            {{ form_widget (f.nomEvent, {'attr': {'class':'form-control'}}) }}
+                        </div>
+
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label>Description *</label>
+                            {{ form_widget (f.description , {'attr': {'class':'form-control','placeholder':'ed'}}) }}
+                        </div>
+
+
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label>Date *</label>
+                            {{ form_widget (f.dateEvent , {'attr': {'class':'form-control','placeholder':'dd/mm/yyyy',
+                            }}) }}
+                        </div>
+
+
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label>Place of Event *</label>
+                            {{ form_widget (f.placeEvent , {'attr': {'class':'form-control'}}) }}
+                        </div>
+
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label>Participant *</label>
+                            {{ form_widget (f.nbParticipants , {'attr': {'class':'form-control'}}) }}
+                        </div>
+
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label> Theme *</label>
+                            {{ form_widget (f.theme , {'attr': {'class':'form-control'}}) }}
+                        </div>
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label> Award *</label>
+                            {{ form_widget (f.award , {'attr': {'class':'form-control'}}) }}
+                        </div>
+
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label> Budget *</label>
+                            {{ form_widget (f.budget , {'attr': {'class':'form-control'}}) }}
+                        </div>  &nbsp;
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label > </label>
+                            <br>
+
+                            {{ form_widget(f.Add,{'label':'Update' }) }}
+                        </div>
+
+                    </div>
+                    {% endif %}
+                    {{form_end(f,{'render_rest': false})}}
+
+                </form>
+                <section class="content-header">
+                    <div class="container">
+                        <div class="row">
+
+
+
+                        </div>
+                    </div>
+                </section>
+                <!-- Student Table Area End Here -->
+                <footer class="footer-wrap-layout1">
+                    <div class="copyright">© Copyrights <a href="#">SparkIT</a> 2020. All rights reserved</div>
+                </footer>
+            </div>
+        </div>
+        <!-- Page Area End Here -->
+    </div>
+{% endblock  %}
+

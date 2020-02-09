@@ -1,3 +1,7 @@
+sonia:
+    resource: "@SoniaBundle/Resources/config/routing.yml"
+    prefix:   /sonia
+
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 app:

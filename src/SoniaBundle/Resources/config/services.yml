@@ -1,0 +1,4 @@
+services:
+#    sonia.example:
+#        class: SoniaBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

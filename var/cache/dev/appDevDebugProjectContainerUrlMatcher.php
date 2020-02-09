@@ -107,6 +107,62 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        elseif (0 === strpos($pathinfo, '/sonia')) {
+            // sonia_homepage
+            if ('/sonia' === $trimmedPathinfo) {
+                $ret = array (  '_controller' => 'SoniaBundle\\Controller\\DefaultController::indexAction',  '_route' => 'sonia_homepage',);
+                if ('/' === substr($pathinfo, -1)) {
+                    // no-op
+                } elseif ('GET' !== $canonicalMethod) {
+                    goto not_sonia_homepage;
+                } else {
+                    return array_replace($ret, $this->redirect($rawPathinfo.'/', 'sonia_homepage'));
+                }
+
+                return $ret;
+            }
+            not_sonia_homepage:
+
+            // afficherEvent
+            if ('/sonia/afficherEvent' === $pathinfo) {
+                return array (  '_controller' => 'SoniaBundle\\Controller\\EventController::AfficherEventAction',  '_route' => 'afficherEvent',);
+            }
+
+            if (0 === strpos($pathinfo, '/sonia/ajouter')) {
+                // ajouterEvent
+                if ('/sonia/ajouterEvent' === $pathinfo) {
+                    return array (  '_controller' => 'SoniaBundle\\Controller\\EventController::AjouterEventAction',  '_route' => 'ajouterEvent',);
+                }
+
+                // ajouterActivite
+                if ('/sonia/ajouterActivite' === $pathinfo) {
+                    return array (  '_controller' => 'SoniaBundle\\Controller\\EventController::AjouterActiviteAction',  '_route' => 'ajouterActivite',);
+                }
+
+                // ajouterTrip
+                if ('/sonia/ajouterTrip' === $pathinfo) {
+                    return array (  '_controller' => 'SoniaBundle\\Controller\\EventController::AjouterFieldTripAction',  '_route' => 'ajouterTrip',);
+                }
+
+                // ajouterCompetiton
+                if ('/sonia/ajouterCompetiton' === $pathinfo) {
+                    return array (  '_controller' => 'SoniaBundle\\Controller\\EventController::AjouterCompetitionAction',  '_route' => 'ajouterCompetiton',);
+                }
+
+            }
+
+            // modifierEvent
+            if (0 === strpos($pathinfo, '/sonia/modifierEvent') && preg_match('#^/sonia/modifierEvent/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'modifierEvent']), array (  '_controller' => 'SoniaBundle\\Controller\\EventController::UpdateEventAction',));
+            }
+
+            // supprimerEvent
+            if (0 === strpos($pathinfo, '/sonia/supprimerEvent') && preg_match('#^/sonia/supprimerEvent/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'supprimerEvent']), array (  '_controller' => 'SoniaBundle\\Controller\\EventController::DeleteEventAction',));
+            }
+
+        }
+
         // fos_user_security_login
         if ('' === $trimmedPathinfo) {
             $ret = array (  '_controller' => 'fos_user.security.controller:loginAction',  '_route' => 'fos_user_security_login',);
