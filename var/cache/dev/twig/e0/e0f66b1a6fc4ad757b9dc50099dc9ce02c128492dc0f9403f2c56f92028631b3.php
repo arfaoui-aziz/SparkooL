@@ -580,8 +580,11 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
                                     class=\"flaticon-chat\"></i><span>Messeage</span></a>
                     </li>
                     <li class=\"nav-item\">
-                        <a href=\"account-settings.html\" class=\"nav-link\"><i
-                                    class=\"flaticon-settings\"></i><span>Account</span></a>
+                        <a href=\"";
+        // line 445
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_AddAccount");
+        echo "\" class=\"nav-link\"><i
+                                    class=\"flaticon-settings\"></i><span>Add Account</span></a>
                     </li>
                 </ul>
             </div>
@@ -1025,7 +1028,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
 
     public function getDebugInfo()
     {
-        return array (  1004 => 472,  995 => 471,  767 => 525,  747 => 508,  727 => 491,  708 => 474,  706 => 471,  687 => 454,  678 => 453,  663 => 773,  657 => 770,  652 => 768,  647 => 766,  642 => 764,  637 => 762,  632 => 760,  627 => 758,  622 => 756,  617 => 754,  612 => 752,  607 => 750,  602 => 748,  595 => 743,  593 => 453,  412 => 274,  406 => 270,  401 => 268,  396 => 267,  394 => 266,  386 => 261,  369 => 247,  296 => 177,  278 => 162,  260 => 147,  242 => 132,  221 => 113,  217 => 111,  211 => 109,  209 => 108,  200 => 101,  196 => 99,  190 => 97,  188 => 96,  180 => 91,  176 => 89,  169 => 86,  162 => 83,  160 => 82,  122 => 47,  107 => 35,  102 => 33,  97 => 31,  92 => 29,  87 => 27,  82 => 25,  77 => 23,  72 => 21,  67 => 19,  62 => 17,  56 => 14,  51 => 12,  38 => 1,);
+        return array (  1007 => 472,  998 => 471,  770 => 525,  750 => 508,  730 => 491,  711 => 474,  709 => 471,  690 => 454,  681 => 453,  666 => 773,  660 => 770,  655 => 768,  650 => 766,  645 => 764,  640 => 762,  635 => 760,  630 => 758,  625 => 756,  620 => 754,  615 => 752,  610 => 750,  605 => 748,  598 => 743,  596 => 453,  585 => 445,  412 => 274,  406 => 270,  401 => 268,  396 => 267,  394 => 266,  386 => 261,  369 => 247,  296 => 177,  278 => 162,  260 => 147,  242 => 132,  221 => 113,  217 => 111,  211 => 109,  209 => 108,  200 => 101,  196 => 99,  190 => 97,  188 => 96,  180 => 91,  176 => 89,  169 => 86,  162 => 83,  160 => 82,  122 => 47,  107 => 35,  102 => 33,  97 => 31,  92 => 29,  87 => 27,  82 => 25,  77 => 23,  72 => 21,  67 => 19,  62 => 17,  56 => 14,  51 => 12,  38 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -1482,8 +1485,8 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
                                     class=\"flaticon-chat\"></i><span>Messeage</span></a>
                     </li>
                     <li class=\"nav-item\">
-                        <a href=\"account-settings.html\" class=\"nav-link\"><i
-                                    class=\"flaticon-settings\"></i><span>Account</span></a>
+                        <a href=\"{{ path('admin_AddAccount') }}\" class=\"nav-link\"><i
+                                    class=\"flaticon-settings\"></i><span>Add Account</span></a>
                     </li>
                 </ul>
             </div>

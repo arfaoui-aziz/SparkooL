@@ -18,6 +18,7 @@
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
+      <parameter key="AdminBundle">AdminBundle\AdminBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -69,6 +70,11 @@
         <parameter key="parent">null</parameter>
         <parameter key="path">C:\wamp64\www\SparkIT\vendor\friendsofsymfony\user-bundle</parameter>
         <parameter key="namespace">FOS\UserBundle</parameter>
+      </parameter>
+      <parameter key="AdminBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">C:\wamp64\www\SparkIT\src\AdminBundle</parameter>
+        <parameter key="namespace">AdminBundle</parameter>
       </parameter>
       <parameter key="DebugBundle" type="collection">
         <parameter key="parent">null</parameter>
@@ -1711,6 +1717,14 @@
         <argument>2048</argument>
       </call>
       <call method="addListener">
+        <argument>console.command</argument>
+        <argument type="collection">
+          <argument type="service" id="debug.debug_handlers_listener"/>
+          <argument>configure</argument>
+        </argument>
+        <argument>2048</argument>
+      </call>
+      <call method="addListener">
         <argument>kernel.request</argument>
         <argument type="collection">
           <argument type="service" id="router_listener"/>
@@ -3075,6 +3089,14 @@
       <call method="addPath">
         <argument>C:\wamp64\www\SparkIT\vendor\friendsofsymfony\user-bundle/Resources/views</argument>
         <argument>!FOSUser</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\SparkIT\src\AdminBundle/Resources/views</argument>
+        <argument>Admin</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\SparkIT\src\AdminBundle/Resources/views</argument>
+        <argument>!Admin</argument>
       </call>
       <call method="addPath">
         <argument>C:\wamp64\www\SparkIT\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>

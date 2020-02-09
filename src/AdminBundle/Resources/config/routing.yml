@@ -1,0 +1,3 @@
+admin_AddAccount:
+    path:     /
+    defaults: { _controller: AdminBundle:Account:AddAccount }

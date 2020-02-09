@@ -107,6 +107,21 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        // admin_AddAccount
+        if ('/admin' === $trimmedPathinfo) {
+            $ret = array (  '_controller' => 'AdminBundle\\Controller\\AccountController::AddAccountAction',  '_route' => 'admin_AddAccount',);
+            if ('/' === substr($pathinfo, -1)) {
+                // no-op
+            } elseif ('GET' !== $canonicalMethod) {
+                goto not_admin_AddAccount;
+            } else {
+                return array_replace($ret, $this->redirect($rawPathinfo.'/', 'admin_AddAccount'));
+            }
+
+            return $ret;
+        }
+        not_admin_AddAccount:
+
         // fos_user_security_login
         if ('' === $trimmedPathinfo) {
             $ret = array (  '_controller' => 'fos_user.security.controller:loginAction',  '_route' => 'fos_user_security_login',);
