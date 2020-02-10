@@ -4,3 +4,12 @@ admin_AddAccount:
 admin_UpdateAccount:
     path:     /UpdateAccount/{id}
     defaults: { _controller: AdminBundle:Account:UpdateAccount }
+admin_AddClasse:
+    path:     /AddClasse
+    defaults: { _controller: AdminBundle:Classe:AddClasse }
+admin_DeleteClasse:
+    path:     /DeleteClasse/{classId}
+    defaults: { _controller: AdminBundle:Classe:DeleteClasse }
+admin_UpdateClasse:
+    path:     /UpdateClasse/{classId}
+    defaults: { _controller: AdminBundle:Classe:UpdateClasse }

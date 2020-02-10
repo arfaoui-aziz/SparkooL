@@ -594,8 +594,15 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
         ";
         // line 453
         $this->displayBlock('body', $context, $blocks);
-        // line 743
-        echo "
+        // line 736
+        echo "            <!-- Footer Area Start Here -->
+            <footer class=\"footer-wrap-layout1\">
+                <div class=\"copyright\">© Copyrights <a href=\"#\">SparkIT</a> 2020. All rights reserved</div>
+            </footer>
+            <!-- Footer Area End Here -->
+
+
+
         </div>
     </div>
     <!-- Page Area End Here -->
@@ -665,6 +672,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
         // line 773
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/main.js"), "html", null, true);
         echo " \" ></script>
+</div>
 </body>
 </html>
 
@@ -978,13 +986,6 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
                 </div>
             </div>
             <!-- Dashboard Content End Here -->
-
-            <!-- Footer Area Start Here -->
-            <footer class=\"footer-wrap-layout1\">
-                <div class=\"copyright\">© Copyrights <a href=\"#\">SparkIT</a> 2020. All rights reserved</div>
-            </footer>
-            <!-- Footer Area End Here -->
-
             ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -1028,7 +1029,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
 
     public function getDebugInfo()
     {
-        return array (  1007 => 472,  998 => 471,  770 => 525,  750 => 508,  730 => 491,  711 => 474,  709 => 471,  690 => 454,  681 => 453,  666 => 773,  660 => 770,  655 => 768,  650 => 766,  645 => 764,  640 => 762,  635 => 760,  630 => 758,  625 => 756,  620 => 754,  615 => 752,  610 => 750,  605 => 748,  598 => 743,  596 => 453,  585 => 445,  412 => 274,  406 => 270,  401 => 268,  396 => 267,  394 => 266,  386 => 261,  369 => 247,  296 => 177,  278 => 162,  260 => 147,  242 => 132,  221 => 113,  217 => 111,  211 => 109,  209 => 108,  200 => 101,  196 => 99,  190 => 97,  188 => 96,  180 => 91,  176 => 89,  169 => 86,  162 => 83,  160 => 82,  122 => 47,  107 => 35,  102 => 33,  97 => 31,  92 => 29,  87 => 27,  82 => 25,  77 => 23,  72 => 21,  67 => 19,  62 => 17,  56 => 14,  51 => 12,  38 => 1,);
+        return array (  1008 => 472,  999 => 471,  778 => 525,  758 => 508,  738 => 491,  719 => 474,  717 => 471,  698 => 454,  689 => 453,  673 => 773,  667 => 770,  662 => 768,  657 => 766,  652 => 764,  647 => 762,  642 => 760,  637 => 758,  632 => 756,  627 => 754,  622 => 752,  617 => 750,  612 => 748,  598 => 736,  596 => 453,  585 => 445,  412 => 274,  406 => 270,  401 => 268,  396 => 267,  394 => 266,  386 => 261,  369 => 247,  296 => 177,  278 => 162,  260 => 147,  242 => 132,  221 => 113,  217 => 111,  211 => 109,  209 => 108,  200 => 101,  196 => 99,  190 => 97,  188 => 96,  180 => 91,  176 => 89,  169 => 86,  162 => 83,  160 => 82,  122 => 47,  107 => 35,  102 => 33,  97 => 31,  92 => 29,  87 => 27,  82 => 25,  77 => 23,  72 => 21,  67 => 19,  62 => 17,  56 => 14,  51 => 12,  38 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -1775,14 +1776,14 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
                 </div>
             </div>
             <!-- Dashboard Content End Here -->
-
+            {% endblock %}
             <!-- Footer Area Start Here -->
             <footer class=\"footer-wrap-layout1\">
                 <div class=\"copyright\">© Copyrights <a href=\"#\">SparkIT</a> 2020. All rights reserved</div>
             </footer>
             <!-- Footer Area End Here -->
 
-            {% endblock %}
+
 
         </div>
     </div>
@@ -1814,6 +1815,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
 
     <!-- Custom Js -->
     <script  src=\" {{ asset('js/main.js') }} \" ></script>
+</div>
 </body>
 </html>
 
