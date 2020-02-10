@@ -44,10 +44,7 @@ class AccountController extends Controller
         $form->handleRequest($request);
         if($form->isValid())
         {
-            $firstName = $user->getFirstName();
-            $lastName = $user->getLastName();
-            $username = $firstName.'.'.$lastName;
-            $user->setUsername($username);
+
             $em->persist($user);
             $em->flush();
             return $this->redirectToRoute("admin_AddAccount");
