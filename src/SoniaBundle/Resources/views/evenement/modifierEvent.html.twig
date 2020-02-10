@@ -26,9 +26,7 @@
                             <label>Name *</label>
                             {{ form_widget (f.nomEvent, {'attr': {'class':'form-control'}}) }}
                         </div>
-
-
-
+                        {%  do f.typeEvent.setRendered() %}
 
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>Description *</label>
@@ -36,14 +34,11 @@
                         </div>
 
 
-
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>Date *</label>
                             {{ form_widget (f.dateEvent , {'attr': {'class':'form-control','placeholder':'dd/mm/yyyy',
                             }}) }}
                         </div>
-
-
 
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>Place of Event *</label>
@@ -55,6 +50,10 @@
                             <label>Participant *</label>
                             {{ form_widget (f.nbParticipants , {'attr': {'class':'form-control'}}) }}
                         </div>
+
+                        {%  do f.theme.setRendered() %}
+                        {%  do f.destination.setRendered() %}
+                        {%  do f.award.setRendered() %}
 
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label> Budget *</label>
@@ -75,6 +74,7 @@
                             <label>Name *</label>
                             {{ form_widget (f.nomEvent, {'attr': {'class':'form-control'}}) }}
                         </div>
+                        {%  do f.typeEvent.setRendered() %}
 
 
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
@@ -105,6 +105,10 @@
                             <label> Theme *</label>
                             {{ form_widget (f.theme , {'attr': {'class':'form-control'}}) }}
                         </div>
+
+                        {%  do f.destination.setRendered() %}
+                        {%  do f.award.setRendered() %}
+
 
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label> Budget *</label>
@@ -126,7 +130,7 @@
                             <label>Name *</label>
                             {{ form_widget (f.nomEvent, {'attr': {'class':'form-control'}}) }}
                         </div>
-
+                        {%  do f.typeEvent.setRendered() %}
 
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>Description *</label>
@@ -140,6 +144,7 @@
                             {{ form_widget (f.dateEvent , {'attr': {'class':'form-control','placeholder':'dd/mm/yyyy',
                             }}) }}
                         </div>
+                        {%  do f.placeEvent.setRendered() %}
 
 
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
@@ -147,10 +152,14 @@
                             {{ form_widget (f.nbParticipants , {'attr': {'class':'form-control'}}) }}
                         </div>
 
+                        {%  do f.theme.setRendered() %}
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label> Destination *</label>
                             {{ form_widget (f.destination , {'attr': {'class':'form-control'}}) }}
                         </div>
+
+                        {%  do f.destination.setRendered() %}
+                        {%  do f.award.setRendered() %}
 
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label> Budget *</label>
@@ -172,6 +181,7 @@
                             {{ form_widget (f.nomEvent, {'attr': {'class':'form-control'}}) }}
                         </div>
 
+                        {%  do f.typeEvent.setRendered() %}
 
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>Description *</label>
@@ -205,10 +215,12 @@
                             {{ form_widget (f.theme , {'attr': {'class':'form-control'}}) }}
                         </div>
 
+                        {%  do f.destination.setRendered() %}
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label> Award *</label>
                             {{ form_widget (f.award , {'attr': {'class':'form-control'}}) }}
                         </div>
+
 
 
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
@@ -224,7 +236,7 @@
 
                     </div>
                     {% endif %}
-                    {{form_end(f,{'render_rest': false})}}
+                    {{form_end(f)}}
 
                 </form>
                 <section class="content-header">

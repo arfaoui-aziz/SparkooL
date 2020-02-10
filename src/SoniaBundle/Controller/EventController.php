@@ -26,7 +26,6 @@ class EventController extends Controller
         $Form=$this->createForm(EventType::class,$event);
         $Form->handleRequest($request);
         if($Form->isSubmitted() && $Form->isValid()){
-
             $em=$this->getDoctrine()->getManager();
             $event->setTypeEvent("Evenement");
             $em->persist($event);
@@ -115,7 +114,6 @@ class EventController extends Controller
             ));
     }
 
-
     function UpdateEventAction(Request $request,$id){
         $em=$this->getDoctrine()->getManager();
         $event=$this->getDoctrine()->getRepository(Event::class)->find($id);
@@ -125,12 +123,13 @@ class EventController extends Controller
         if($Form->isSubmitted() && $Form->isValid())
         {
                     $event->setTypeEvent($type);
+                    $em->persist($event);
                     $em->flush();
                     return $this->redirectToRoute('afficherEvent');
                 }
 
                 return $this->render('@Sonia/evenement/modifierEvent.html.twig',
-                    array('f' => $Form->createView(),'type'=>$type));
+                    array('f' =>$Form->createView(),'type'=>$type));
             }
 
 

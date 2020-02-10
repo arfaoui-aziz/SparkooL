@@ -22,3 +22,15 @@ modifierEvent:
 supprimerEvent:
     path:     /supprimerEvent/{id}
     defaults: { _controller: SoniaBundle:Event:DeleteEvent }
+afficherClub:
+    path:     /afficherClub
+    defaults: { _controller: SoniaBundle:Club:AfficherClub }
+ajouterClub:
+    path:     /ajouterClub
+    defaults: { _controller: SoniaBundle:Club:AjouterClub }
+modifierClub:
+    path:     /modifierClub/{id}
+    defaults: { _controller: SoniaBundle:Club:UpdateClub }
+supprimerClub:
+    path:     /supprimerClub/{id}
+    defaults: { _controller: SoniaBundle:Club:DeleteClub }

@@ -538,11 +538,17 @@ class __TwigTemplate_f124f732e66ef448c2e0c51144508e7835539fbbcd0c5bea913d062f6da
                                 </ul>
                             </li>
                             <li class=\"nav-item\">
-                                <a href=\"#\" class=\"nav-link\"><i class=\"fas fa-angle-right\"></i>All
+                                <a href=\"";
+        // line 388
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("afficherClub");
+        echo "\" class=\"nav-link\"><i class=\"fas fa-angle-right\"></i>All
                                     Clubs</a>
                             </li>
                             <li class=\"nav-item\">
-                                <a href=\"#\" class=\"nav-link\"><i class=\"fas fa-angle-right\"></i>Add New
+                                <a href=\"";
+        // line 392
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("ajouterClub");
+        echo "\" class=\"nav-link\"><i class=\"fas fa-angle-right\"></i>Add New
                                     Club</a>
                             </li>
 
@@ -1079,7 +1085,7 @@ class __TwigTemplate_f124f732e66ef448c2e0c51144508e7835539fbbcd0c5bea913d062f6da
 
     public function getDebugInfo()
     {
-        return array (  1058 => 511,  1049 => 510,  821 => 564,  801 => 547,  781 => 530,  762 => 513,  760 => 510,  741 => 493,  732 => 492,  717 => 812,  711 => 809,  706 => 807,  701 => 805,  696 => 803,  691 => 801,  686 => 799,  681 => 797,  676 => 795,  671 => 793,  666 => 791,  661 => 789,  656 => 787,  649 => 782,  647 => 492,  535 => 383,  529 => 380,  523 => 377,  516 => 373,  506 => 366,  412 => 274,  406 => 270,  401 => 268,  396 => 267,  394 => 266,  386 => 261,  369 => 247,  296 => 177,  278 => 162,  260 => 147,  242 => 132,  221 => 113,  217 => 111,  211 => 109,  209 => 108,  200 => 101,  196 => 99,  190 => 97,  188 => 96,  180 => 91,  176 => 89,  169 => 86,  162 => 83,  160 => 82,  122 => 47,  107 => 35,  102 => 33,  97 => 31,  92 => 29,  87 => 27,  82 => 25,  77 => 23,  72 => 21,  67 => 19,  62 => 17,  56 => 14,  51 => 12,  38 => 1,);
+        return array (  1064 => 511,  1055 => 510,  827 => 564,  807 => 547,  787 => 530,  768 => 513,  766 => 510,  747 => 493,  738 => 492,  723 => 812,  717 => 809,  712 => 807,  707 => 805,  702 => 803,  697 => 801,  692 => 799,  687 => 797,  682 => 795,  677 => 793,  672 => 791,  667 => 789,  662 => 787,  655 => 782,  653 => 492,  550 => 392,  543 => 388,  535 => 383,  529 => 380,  523 => 377,  516 => 373,  506 => 366,  412 => 274,  406 => 270,  401 => 268,  396 => 267,  394 => 266,  386 => 261,  369 => 247,  296 => 177,  278 => 162,  260 => 147,  242 => 132,  221 => 113,  217 => 111,  211 => 109,  209 => 108,  200 => 101,  196 => 99,  190 => 97,  188 => 96,  180 => 91,  176 => 89,  169 => 86,  162 => 83,  160 => 82,  122 => 47,  107 => 35,  102 => 33,  97 => 31,  92 => 29,  87 => 27,  82 => 25,  77 => 23,  72 => 21,  67 => 19,  62 => 17,  56 => 14,  51 => 12,  38 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -1479,11 +1485,11 @@ class __TwigTemplate_f124f732e66ef448c2e0c51144508e7835539fbbcd0c5bea913d062f6da
                                 </ul>
                             </li>
                             <li class=\"nav-item\">
-                                <a href=\"#\" class=\"nav-link\"><i class=\"fas fa-angle-right\"></i>All
+                                <a href=\"{{ path('afficherClub') }}\" class=\"nav-link\"><i class=\"fas fa-angle-right\"></i>All
                                     Clubs</a>
                             </li>
                             <li class=\"nav-item\">
-                                <a href=\"#\" class=\"nav-link\"><i class=\"fas fa-angle-right\"></i>Add New
+                                <a href=\"{{ path('ajouterClub') }}\" class=\"nav-link\"><i class=\"fas fa-angle-right\"></i>Add New
                                     Club</a>
                             </li>
 

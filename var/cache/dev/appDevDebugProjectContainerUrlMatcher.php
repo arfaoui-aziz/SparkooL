@@ -123,30 +123,43 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
             not_sonia_homepage:
 
-            // afficherEvent
-            if ('/sonia/afficherEvent' === $pathinfo) {
-                return array (  '_controller' => 'SoniaBundle\\Controller\\EventController::AfficherEventAction',  '_route' => 'afficherEvent',);
-            }
-
-            if (0 === strpos($pathinfo, '/sonia/ajouter')) {
-                // ajouterEvent
-                if ('/sonia/ajouterEvent' === $pathinfo) {
-                    return array (  '_controller' => 'SoniaBundle\\Controller\\EventController::AjouterEventAction',  '_route' => 'ajouterEvent',);
+            if (0 === strpos($pathinfo, '/sonia/a')) {
+                // afficherEvent
+                if ('/sonia/afficherEvent' === $pathinfo) {
+                    return array (  '_controller' => 'SoniaBundle\\Controller\\EventController::AfficherEventAction',  '_route' => 'afficherEvent',);
                 }
 
-                // ajouterActivite
-                if ('/sonia/ajouterActivite' === $pathinfo) {
-                    return array (  '_controller' => 'SoniaBundle\\Controller\\EventController::AjouterActiviteAction',  '_route' => 'ajouterActivite',);
+                // afficherClub
+                if ('/sonia/afficherClub' === $pathinfo) {
+                    return array (  '_controller' => 'SoniaBundle\\Controller\\ClubController::AfficherClubAction',  '_route' => 'afficherClub',);
                 }
 
-                // ajouterTrip
-                if ('/sonia/ajouterTrip' === $pathinfo) {
-                    return array (  '_controller' => 'SoniaBundle\\Controller\\EventController::AjouterFieldTripAction',  '_route' => 'ajouterTrip',);
-                }
+                if (0 === strpos($pathinfo, '/sonia/ajouter')) {
+                    // ajouterEvent
+                    if ('/sonia/ajouterEvent' === $pathinfo) {
+                        return array (  '_controller' => 'SoniaBundle\\Controller\\EventController::AjouterEventAction',  '_route' => 'ajouterEvent',);
+                    }
 
-                // ajouterCompetiton
-                if ('/sonia/ajouterCompetiton' === $pathinfo) {
-                    return array (  '_controller' => 'SoniaBundle\\Controller\\EventController::AjouterCompetitionAction',  '_route' => 'ajouterCompetiton',);
+                    // ajouterActivite
+                    if ('/sonia/ajouterActivite' === $pathinfo) {
+                        return array (  '_controller' => 'SoniaBundle\\Controller\\EventController::AjouterActiviteAction',  '_route' => 'ajouterActivite',);
+                    }
+
+                    // ajouterTrip
+                    if ('/sonia/ajouterTrip' === $pathinfo) {
+                        return array (  '_controller' => 'SoniaBundle\\Controller\\EventController::AjouterFieldTripAction',  '_route' => 'ajouterTrip',);
+                    }
+
+                    // ajouterCompetiton
+                    if ('/sonia/ajouterCompetiton' === $pathinfo) {
+                        return array (  '_controller' => 'SoniaBundle\\Controller\\EventController::AjouterCompetitionAction',  '_route' => 'ajouterCompetiton',);
+                    }
+
+                    // ajouterClub
+                    if ('/sonia/ajouterClub' === $pathinfo) {
+                        return array (  '_controller' => 'SoniaBundle\\Controller\\ClubController::AjouterClubAction',  '_route' => 'ajouterClub',);
+                    }
+
                 }
 
             }
@@ -156,9 +169,19 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $this->mergeDefaults(array_replace($matches, ['_route' => 'modifierEvent']), array (  '_controller' => 'SoniaBundle\\Controller\\EventController::UpdateEventAction',));
             }
 
+            // modifierClub
+            if (0 === strpos($pathinfo, '/sonia/modifierClub') && preg_match('#^/sonia/modifierClub/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'modifierClub']), array (  '_controller' => 'SoniaBundle\\Controller\\ClubController::UpdateClubAction',));
+            }
+
             // supprimerEvent
             if (0 === strpos($pathinfo, '/sonia/supprimerEvent') && preg_match('#^/sonia/supprimerEvent/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, ['_route' => 'supprimerEvent']), array (  '_controller' => 'SoniaBundle\\Controller\\EventController::DeleteEventAction',));
+            }
+
+            // supprimerClub
+            if (0 === strpos($pathinfo, '/sonia/supprimerClub') && preg_match('#^/sonia/supprimerClub/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'supprimerClub']), array (  '_controller' => 'SoniaBundle\\Controller\\ClubController::DeleteClubAction',));
             }
 
         }
