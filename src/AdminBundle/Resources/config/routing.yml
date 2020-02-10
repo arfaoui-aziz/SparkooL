@@ -13,3 +13,6 @@ admin_DeleteClasse:
 admin_UpdateClasse:
     path:     /UpdateClasse/{classId}
     defaults: { _controller: AdminBundle:Classe:UpdateClasse }
+admin_AddSubject:
+    path:     /AddSubject
+    defaults: { _controller: AdminBundle:Subject:AddSubject }

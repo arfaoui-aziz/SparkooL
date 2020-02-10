@@ -29,6 +29,14 @@ class Classe
     private $className;
 
     /**
+     *
+     * @return string
+     */
+    public function __toString(){
+        return $this->className;
+    }
+
+    /**
      * @return int
      */
     public function getClassId()

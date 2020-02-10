@@ -138,6 +138,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'AdminBundle\\Controller\\ClasseController::AddClasseAction',  '_route' => 'admin_AddClasse',);
             }
 
+            // admin_AddSubject
+            if ('/admin/AddSubject' === $pathinfo) {
+                return array (  '_controller' => 'AdminBundle\\Controller\\SubjectController::AddSubjectAction',  '_route' => 'admin_AddSubject',);
+            }
+
             // admin_DeleteClasse
             if (0 === strpos($pathinfo, '/admin/DeleteClasse') && preg_match('#^/admin/DeleteClasse/(?P<classId>[^/]++)$#sD', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_DeleteClasse']), array (  '_controller' => 'AdminBundle\\Controller\\ClasseController::DeleteClasseAction',));

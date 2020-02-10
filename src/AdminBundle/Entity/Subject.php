@@ -3,6 +3,9 @@
 namespace AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\JoinColumn;
+use Doctrine\ORM\Mapping\JoinTable;
+use Doctrine\ORM\Mapping\ManyToMany;
 
 /**
  * Subject
@@ -34,6 +37,37 @@ class Subject
      * @ORM\Column(name="coefficient", type="integer")
      */
     private $coefficient;
+
+    /**
+     * Many Users have Many Groups.
+     * @ManyToMany(targetEntity="Classe")
+     * @JoinTable(name="subject_byClasse",
+     *      joinColumns={@JoinColumn(name="subject_id", referencedColumnName="subject_id")},
+     *      inverseJoinColumns={@JoinColumn(name="class_id", referencedColumnName="class_id")}
+     *      )
+     */
+    private $classes;
+
+    /**
+     * @return mixed
+     */
+    public function getClasses()
+    {
+        return $this->classes;
+    }
+
+    /**
+     * @param mixed $classes
+     */
+    public function setClasses($classes)
+    {
+        $this->classes = $classes;
+    }
+
+    public function __construct()
+    {
+        $this->classes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * @return int
