@@ -124,9 +124,17 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             not_sonia_homepage:
 
             if (0 === strpos($pathinfo, '/sonia/a')) {
-                // afficherEvent
-                if ('/sonia/afficherEvent' === $pathinfo) {
-                    return array (  '_controller' => 'SoniaBundle\\Controller\\EventController::AfficherEventAction',  '_route' => 'afficherEvent',);
+                if (0 === strpos($pathinfo, '/sonia/afficherEvent')) {
+                    // afficherEvent
+                    if ('/sonia/afficherEvent' === $pathinfo) {
+                        return array (  '_controller' => 'SoniaBundle\\Controller\\EventController::AfficherEventAction',  '_route' => 'afficherEvent',);
+                    }
+
+                    // afficherEventFront
+                    if ('/sonia/afficherEventFront' === $pathinfo) {
+                        return array (  '_controller' => 'SoniaBundle\\Controller\\EventController::AfficherEventFrontAction',  '_route' => 'afficherEventFront',);
+                    }
+
                 }
 
                 // afficherClub

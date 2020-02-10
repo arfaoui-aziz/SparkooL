@@ -143,4 +143,15 @@ class EventController extends Controller
         return $this->redirectToRoute('afficherEvent');
     }
 
+    #-------------------------------------FRONT--------------------------
+    public function AfficherEventFrontAction()
+    {
+        $var=$this->getDoctrine()->getRepository(Event::class)->findAll();
+        return $this->render('@Sonia/front/affichereventfront.html.twig',
+            array(
+                'var'=>$var
+            ));
+
+    }
+
 }

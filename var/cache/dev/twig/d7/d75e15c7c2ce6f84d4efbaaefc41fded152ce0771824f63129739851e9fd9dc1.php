@@ -221,8 +221,20 @@ class __TwigTemplate_ce504cef2babb47f0967bc5b1456a622105c2144773d3a8d5318b5fea72
 
                             </ul>
                         </li>
-                        <li><a href=\"#\"><div>School Life</div></a></li>
-                        <li><a href=\"#\"><div>News & Events</div></a></li>
+                        <li><a href=\"#\"><div>School Life</div></a>
+                        <ul>
+                            <li><a href=\"#\"><div><i class=\"fas fa-users\"></i>Clubs</div></a></li>
+                        </ul>
+                        </li>
+                        <li><a href=\"#\"><div>News & Events</div></a>
+                        <ul>
+                            <li><a href=\"";
+        // line 117
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("afficherEventFront");
+        echo "\"><div><i class=\"far fa-calendar-alt\"></i>Events</div></a></li>
+                        </ul>
+                        </li>
+
                         <li><a href=\"#\"><div>Admissions</div></a></li>
                         <li><a href=\"#\"><div>Contact Us</div></a></li>
                     </ul>
@@ -231,25 +243,25 @@ class __TwigTemplate_ce504cef2babb47f0967bc5b1456a622105c2144773d3a8d5318b5fea72
                     ============================================= -->
                     <div class=\"header-buttons d-none d-sm-inline-block\">
                         ";
-        // line 119
+        // line 128
         if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("ROLE_USER")) {
-            // line 120
+            // line 129
             echo "                    <a> ";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", []), "username", []), "html", null, true);
             echo " &nbsp;&nbsp;&nbsp;</a>
                         <a href=\"";
-            // line 121
+            // line 130
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fos_user_security_logout");
             echo "\" class=\"button button-rounded button-white button-light button-small m-0\">Log Out</a>
                         ";
         } else {
-            // line 123
+            // line 132
             echo "                            <a href=\"";
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fos_user_security_login");
             echo "\"   class=\"button button-rounded button-white button-light button-small m-0\">LOGIN</a>
                         ";
         }
-        // line 125
+        // line 134
         echo "                    </div>
 
                     <!-- Top Search
@@ -272,7 +284,7 @@ class __TwigTemplate_ce504cef2babb47f0967bc5b1456a622105c2144773d3a8d5318b5fea72
     <!-- Slider
     ============================================= -->
     <section id=\"slider\" class=\"slider-element bgcolor clearfix\" style=\"height: auto; padding: 60px 0; background: url(\"";
-        // line 146
+        // line 155
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEndimgg-2.png"), "html", null, true);
         echo "\") no-repeat center center / 100% 100%;\">
 
@@ -359,7 +371,7 @@ class __TwigTemplate_ce504cef2babb47f0967bc5b1456a622105c2144773d3a8d5318b5fea72
                 </div>
                 <div class=\"col-lg-5 d-none d-lg-flex flex-wrap justify-content-center\">
                     <img src=\"";
-        // line 230
+        // line 239
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/img/ed2.png"), "html", null, true);
         echo "\" alt=\"Image 1\" class=\"d-flex align-self-end ml-5 mt-3\">
 
@@ -385,9 +397,9 @@ class __TwigTemplate_ce504cef2babb47f0967bc5b1456a622105c2144773d3a8d5318b5fea72
     <!-- Content
     ============================================= -->
   ";
-        // line 253
+        // line 262
         $this->displayBlock('body', $context, $blocks);
-        // line 538
+        // line 547
         echo "
     <div class=\"section dark pt-0 mb-0 bgcolor\" >
         <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1960 206.8\" class=\"bg-white\">
@@ -415,7 +427,7 @@ class __TwigTemplate_ce504cef2babb47f0967bc5b1456a622105c2144773d3a8d5318b5fea72
                 <div class=\"col-lg-2 align-self-center mb-5 mb-lg-0\">
                     <a href=\"#\"></a>
                     <img src=\"";
-        // line 564
+        // line 573
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/img/LogoFooter.png"), "html", null, true);
         echo "\" class=\"img-fluid\" alt=\"Demo SEO\" width=\"100\" />
                     </a>
@@ -499,24 +511,24 @@ class __TwigTemplate_ce504cef2babb47f0967bc5b1456a622105c2144773d3a8d5318b5fea72
 <!-- External JavaScripts
 ============================================= -->
 <script src=\"";
-        // line 645
+        // line 654
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/js/jquery.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 646
+        // line 655
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/js/plugins.js"), "html", null, true);
         echo "\"></script>
 
 <!-- DatePicker JS -->
 <script src=\"";
-        // line 649
+        // line 658
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/js/components/datepicker.js"), "html", null, true);
         echo "\"></script>
 
 <!-- Footer Scripts
 ============================================= -->
 <script src=\"";
-        // line 653
+        // line 662
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/js/functions.js"), "html", null, true);
         echo "\"></script>
 
@@ -543,7 +555,7 @@ class __TwigTemplate_ce504cef2babb47f0967bc5b1456a622105c2144773d3a8d5318b5fea72
 
     }
 
-    // line 253
+    // line 262
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -571,7 +583,7 @@ class __TwigTemplate_ce504cef2babb47f0967bc5b1456a622105c2144773d3a8d5318b5fea72
                         <div class=\"row align-items-center\">
                             <div class=\"col-sm-6\">
                                 <img src=\"";
-        // line 271
+        // line 280
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/demos/movers/images/others/4.png"), "html", null, true);
         echo "\" alt=\"Image 1\" class=\"\">
                             </div>
@@ -589,7 +601,7 @@ class __TwigTemplate_ce504cef2babb47f0967bc5b1456a622105c2144773d3a8d5318b5fea72
                             </div>
                             <div class=\"col-sm-6\">
                                 <img src=\"";
-        // line 286
+        // line 295
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/img/cal.png"), "html", null, true);
         echo "\" alt=\"Image 1\" class=\"\">
                             </div>
@@ -597,7 +609,7 @@ class __TwigTemplate_ce504cef2babb47f0967bc5b1456a622105c2144773d3a8d5318b5fea72
                         <div class=\"row align-items-center mt-5\">
                             <div class=\"col-sm-6\">
                                 <img src=\"";
-        // line 291
+        // line 300
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/img/Rock.png"), "html", null, true);
         echo "\" alt=\"Image 1\" class=\"\">
                             </div>
@@ -618,7 +630,7 @@ class __TwigTemplate_ce504cef2babb47f0967bc5b1456a622105c2144773d3a8d5318b5fea72
                 <div class=\"col-lg-3 col-md-6 center col-padding\" style=\"background-color: #F2F2F2;\">
                     <div>
                         <img src=\"";
-        // line 309
+        // line 318
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/img/read.png"), "html", null, true);
         echo "\" width=\"160px\" height=\"160px\"><br><br>
                         <div class=\"counter\"><span data-from=\"10\" data-to=\"165\" data-refresh-interval=\"50\" data-speed=\"2000\"></span>+</div>
@@ -629,7 +641,7 @@ class __TwigTemplate_ce504cef2babb47f0967bc5b1456a622105c2144773d3a8d5318b5fea72
                 <div class=\"col-lg-3 col-md-6 center col-padding\" style=\"background-color: #F2F2F2;\">
                     <div>
                         <img src=\"";
-        // line 317
+        // line 326
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/img/teacher.png"), "html", null, true);
         echo "\" width=\"160px\" height=\"160px\"><br><br>
                         <div class=\"counter\"><span data-from=\"10\" data-to=\"45\" data-refresh-interval=\"50\" data-speed=\"2500\"></span>+</div>
@@ -640,7 +652,7 @@ class __TwigTemplate_ce504cef2babb47f0967bc5b1456a622105c2144773d3a8d5318b5fea72
                 <div class=\"col-lg-3 col-md-6 center col-padding\" style=\"background-color: #F2F2F2;\">
                     <div>
                         <img src=\"";
-        // line 325
+        // line 334
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/img/employee.png"), "html", null, true);
         echo "\" width=\"160px\" height=\"160px\"><br><br>
                         <div class=\"counter\"><span data-from=\"10\" data-to=\"50\" data-refresh-interval=\"25\" data-speed=\"3000\"></span>+</div>
@@ -651,7 +663,7 @@ class __TwigTemplate_ce504cef2babb47f0967bc5b1456a622105c2144773d3a8d5318b5fea72
                 <div class=\"col-lg-3 col-md-6 center col-padding\" style=\"background-color: #F2F2F2;\">
                     <div>
                         <img src=\"";
-        // line 333
+        // line 342
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/img/book.png"), "html", null, true);
         echo "\" width=\"160px\" height=\"160px\"><br><br>
                         <div class=\"counter\"><span data-from=\"10\" data-to=\"100\" data-refresh-interval=\"30\" data-speed=\"2700\"></span>+</div>
@@ -790,7 +802,7 @@ class __TwigTemplate_ce504cef2babb47f0967bc5b1456a622105c2144773d3a8d5318b5fea72
                         </div>
                         <div class=\"grid-bg d-none d-md-block\">
                             <img src=\"";
-        // line 469
+        // line 478
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/demos/movers/images/dot-grid.svg"), "html", null, true);
         echo "\" alt=\"Dot Image\">
                         </div>
@@ -881,7 +893,7 @@ class __TwigTemplate_ce504cef2babb47f0967bc5b1456a622105c2144773d3a8d5318b5fea72
 
     public function getDebugInfo()
     {
-        return array (  794 => 469,  655 => 333,  644 => 325,  633 => 317,  622 => 309,  601 => 291,  593 => 286,  575 => 271,  547 => 253,  520 => 653,  513 => 649,  507 => 646,  503 => 645,  419 => 564,  391 => 538,  389 => 253,  363 => 230,  276 => 146,  253 => 125,  247 => 123,  242 => 121,  237 => 120,  235 => 119,  180 => 67,  176 => 66,  148 => 41,  141 => 37,  137 => 36,  133 => 35,  127 => 32,  122 => 30,  118 => 29,  114 => 28,  110 => 27,  105 => 25,  101 => 24,  97 => 23,  90 => 19,  86 => 18,  82 => 17,  78 => 16,  74 => 15,  70 => 14,  66 => 13,  62 => 12,  58 => 11,  54 => 10,  50 => 9,  46 => 8,  37 => 1,);
+        return array (  806 => 478,  667 => 342,  656 => 334,  645 => 326,  634 => 318,  613 => 300,  605 => 295,  587 => 280,  559 => 262,  532 => 662,  525 => 658,  519 => 655,  515 => 654,  431 => 573,  403 => 547,  401 => 262,  375 => 239,  288 => 155,  265 => 134,  259 => 132,  254 => 130,  249 => 129,  247 => 128,  233 => 117,  180 => 67,  176 => 66,  148 => 41,  141 => 37,  137 => 36,  133 => 35,  127 => 32,  122 => 30,  118 => 29,  114 => 28,  110 => 27,  105 => 25,  101 => 24,  97 => 23,  90 => 19,  86 => 18,  82 => 17,  78 => 16,  74 => 15,  70 => 14,  66 => 13,  62 => 12,  58 => 11,  54 => 10,  50 => 9,  46 => 8,  37 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -1003,8 +1015,17 @@ class __TwigTemplate_ce504cef2babb47f0967bc5b1456a622105c2144773d3a8d5318b5fea72
 
                             </ul>
                         </li>
-                        <li><a href=\"#\"><div>School Life</div></a></li>
-                        <li><a href=\"#\"><div>News & Events</div></a></li>
+                        <li><a href=\"#\"><div>School Life</div></a>
+                        <ul>
+                            <li><a href=\"#\"><div><i class=\"fas fa-users\"></i>Clubs</div></a></li>
+                        </ul>
+                        </li>
+                        <li><a href=\"#\"><div>News & Events</div></a>
+                        <ul>
+                            <li><a href=\"{{ path('afficherEventFront') }}\"><div><i class=\"far fa-calendar-alt\"></i>Events</div></a></li>
+                        </ul>
+                        </li>
+
                         <li><a href=\"#\"><div>Admissions</div></a></li>
                         <li><a href=\"#\"><div>Contact Us</div></a></li>
                     </ul>

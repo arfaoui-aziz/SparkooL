@@ -22,6 +22,9 @@ modifierEvent:
 supprimerEvent:
     path:     /supprimerEvent/{id}
     defaults: { _controller: SoniaBundle:Event:DeleteEvent }
+afficherEventFront:
+    path:     /afficherEventFront
+    defaults: { _controller: SoniaBundle:Event:AfficherEventFront }
 afficherClub:
     path:     /afficherClub
     defaults: { _controller: SoniaBundle:Club:AfficherClub }
