@@ -107,6 +107,44 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        // addTeacher
+        if ('/addTeacher' === $pathinfo) {
+            return array (  '_controller' => 'TeacherBundle\\Controller\\TeacherController::AddTeacherAction',  '_route' => 'addTeacher',);
+        }
+
+        // addDiploma
+        if (0 === strpos($pathinfo, '/addDiploma') && preg_match('#^/addDiploma/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, ['_route' => 'addDiploma']), array (  '_controller' => 'TeacherBundle\\Controller\\DiplomaController::AddDiplomaAction',));
+        }
+
+        if (0 === strpos($pathinfo, '/showTeacher')) {
+            // showTeacher
+            if ('/showTeacher' === $pathinfo) {
+                return array (  '_controller' => 'TeacherBundle\\Controller\\TeacherController::ShowTeacherAction',  '_route' => 'showTeacher',);
+            }
+
+            // showTeacherDetails
+            if (0 === strpos($pathinfo, '/showTeacherDetails') && preg_match('#^/showTeacherDetails/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'showTeacherDetails']), array (  '_controller' => 'TeacherBundle\\Controller\\TeacherController::ShowTeacherDetailsAction',));
+            }
+
+        }
+
+        // modifyTeacher
+        if ('/modifyTeacher' === $pathinfo) {
+            return array (  '_controller' => 'TeacherBundle\\Controller\\TeacherController::ModifyTeacherAction',  '_route' => 'modifyTeacher',);
+        }
+
+        // deleteTeacher
+        if (0 === strpos($pathinfo, '/deleteTeacher') && preg_match('#^/deleteTeacher/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, ['_route' => 'deleteTeacher']), array (  '_controller' => 'TeacherBundle\\Controller\\TeacherController::DeleteTeacherAction',));
+        }
+
+        // updateTeacher
+        if (0 === strpos($pathinfo, '/updateTeacher') && preg_match('#^/updateTeacher/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, ['_route' => 'updateTeacher']), array (  '_controller' => 'TeacherBundle\\Controller\\TeacherController::UpdateTeacherAction',));
+        }
+
         // fos_user_security_login
         if ('' === $trimmedPathinfo) {
             $ret = array (  '_controller' => 'fos_user.security.controller:loginAction',  '_route' => 'fos_user_security_login',);

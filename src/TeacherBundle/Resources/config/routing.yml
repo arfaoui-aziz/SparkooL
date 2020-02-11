@@ -1,0 +1,22 @@
+addTeacher:
+    path:     /addTeacher
+    defaults: { _controller: TeacherBundle:Teacher:AddTeacher }
+showTeacher:
+    path:     /showTeacher
+    defaults: { _controller: TeacherBundle:Teacher:ShowTeacher }
+showTeacherDetails:
+    path:     /showTeacherDetails/{id}
+    defaults: { _controller: TeacherBundle:Teacher:ShowTeacherDetails }
+modifyTeacher:
+    path:     /modifyTeacher
+    defaults: { _controller: TeacherBundle:Teacher:ModifyTeacher }
+deleteTeacher:
+    path:     /deleteTeacher/{id}
+    defaults: { _controller: TeacherBundle:Teacher:DeleteTeacher }
+updateTeacher:
+    path:     /updateTeacher/{id}
+    defaults: { _controller: TeacherBundle:Teacher:UpdateTeacher }
+
+addDiploma:
+    path:     /addDiploma/{id}
+    defaults: { _controller: TeacherBundle:Diploma:AddDiploma }

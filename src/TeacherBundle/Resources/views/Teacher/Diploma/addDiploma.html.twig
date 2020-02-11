@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <div class="dashboard-content-one">
+        <!-- Breadcubs Area Start Here -->
+        <div class="breadcrumbs-area">
+            <h3>Diploma</h3>
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>Add New Diploma</li>
+            </ul>
+        </div>
+        <!-- Breadcubs Area End Here -->
+        <!-- Add New Teacher Area Start Here -->
+        <div class="card height-auto">
+            <div class="card-body">
+                <div class="heading-layout1">
+                    <div class="item-title">
+                        <h3>Add New Diploma</h3>
+                    </div>
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" href="#" role="button"
+                           data-toggle="dropdown" aria-expanded="false">...</a>
+
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
+                            <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                            <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                        </div>
+                    </div>
+                </div>
+                <form class="new-added-form" method="post">
+                    {{ form_start(form) }}
+
+                    <div class="row">
+                        {{ form_row(form._token) }}
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label>Entitled *</label>
+                            {{ form_widget (form.intitule , {'attr': {'class':'form-control'}}) }}
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label>Institute *</label>
+                            {{ form_widget (form.ecole , {'attr': {'class':'form-control'}}) }}
+
+                        </div>
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label>Speciality *</label>
+                            {{ form_widget (form.specialite , {'attr': {'class':'select2'}}) }}
+
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label>Level</label>
+                            {{ form_widget (form.niveau , {'attr': {'class':'form-control'}}) }}
+
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label>Date obtained *</label>
+                            {{ form_widget (form.joiningDate , {'attr': {'class':'form-control air-datepicker','placeholder':'dd/mm/yyyy', 'data-position':'bottom right'} }  ) }}
+
+                            <i class="far fa-calendar-alt"></i>
+                        </div>
+
+
+                        <div class="col-lg-6 col-12 form-group mg-t-30">
+                            <label class="text-dark-medium">Upload Student Photo (150px X 150px)</label>
+                            <label class="file" title="">
+                                {{ form_widget (form.picture , {'attr': {'onchange':"this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))"}}) }}
+                            </label>
+                            <div class="col-12 form-group mg-t-8">
+                                {{ form_widget(form.Save) }}
+                                {{ form_widget(form.Reset) }}
+                            </div>
+                        </div>
+                        {{ form_end(form, {'render_rest': false}) }}
+                </form>
+            </div>
+        </div>
+        <!-- Add New Teacher Area End Here -->
+        <footer class="footer-wrap-layout1">
+            <div class="copyright">© Copyrights <a href="#">akkhor</a> 2019. All rights reserved. Designed by <a href="#">PsdBosS</a></div>
+        </footer>
+    </div>
+{% endblock body %}
