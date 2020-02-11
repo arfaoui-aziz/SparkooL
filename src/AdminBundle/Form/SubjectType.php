@@ -19,6 +19,9 @@ class SubjectType extends AbstractType
             ->add('Add',SubmitType::class , [
                 'attr' => ['class' => 'btn-fill-lg btn-gradient-yellow btn-hover-bluedark'],
             ])
+            ->add('Update',SubmitType::class , [
+                'attr' => ['class' => 'btn-fill-lg btn-gradient-yellow btn-hover-bluedark'],
+            ])
             ->add('Reset',ResetType::class, [
                 'attr' => ['class' => 'btn-fill-lg bg-blue-dark btn-hover-yellow'],
             ]);

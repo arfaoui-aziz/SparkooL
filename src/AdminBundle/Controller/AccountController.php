@@ -42,9 +42,8 @@ class AccountController extends Controller
         $user =  $em->getRepository(User::class)->find($id);
         $form = $this->createForm(AccountFormType::class,$user);
         $form->handleRequest($request);
-        if($form->isValid())
+        if($form->isSubmitted() && $form->isValid())
         {
-
             $em->persist($user);
             $em->flush();
             return $this->redirectToRoute("admin_AddAccount");

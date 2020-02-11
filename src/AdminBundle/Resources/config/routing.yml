@@ -16,3 +16,9 @@ admin_UpdateClasse:
 admin_AddSubject:
     path:     /AddSubject
     defaults: { _controller: AdminBundle:Subject:AddSubject }
+admin_UpdateSubject:
+    path:     /UpdateSubject/{subjectId}
+    defaults: { _controller: AdminBundle:Subject:UpdateSubject }
+admin_DeleteSubject:
+    path:     /DeleteSubject/{subjectId}
+    defaults: { _controller: AdminBundle:Subject:DeleteSubject }

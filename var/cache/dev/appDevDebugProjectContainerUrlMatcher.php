@@ -123,14 +123,22 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
             not_admin_AddAccount:
 
-            // admin_UpdateAccount
-            if (0 === strpos($pathinfo, '/admin/UpdateAccount') && preg_match('#^/admin/UpdateAccount/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_UpdateAccount']), array (  '_controller' => 'AdminBundle\\Controller\\AccountController::UpdateAccountAction',));
-            }
+            if (0 === strpos($pathinfo, '/admin/Update')) {
+                // admin_UpdateAccount
+                if (0 === strpos($pathinfo, '/admin/UpdateAccount') && preg_match('#^/admin/UpdateAccount/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_UpdateAccount']), array (  '_controller' => 'AdminBundle\\Controller\\AccountController::UpdateAccountAction',));
+                }
 
-            // admin_UpdateClasse
-            if (0 === strpos($pathinfo, '/admin/UpdateClasse') && preg_match('#^/admin/UpdateClasse/(?P<classId>[^/]++)$#sD', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_UpdateClasse']), array (  '_controller' => 'AdminBundle\\Controller\\ClasseController::UpdateClasseAction',));
+                // admin_UpdateClasse
+                if (0 === strpos($pathinfo, '/admin/UpdateClasse') && preg_match('#^/admin/UpdateClasse/(?P<classId>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_UpdateClasse']), array (  '_controller' => 'AdminBundle\\Controller\\ClasseController::UpdateClasseAction',));
+                }
+
+                // admin_UpdateSubject
+                if (0 === strpos($pathinfo, '/admin/UpdateSubject') && preg_match('#^/admin/UpdateSubject/(?P<subjectId>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_UpdateSubject']), array (  '_controller' => 'AdminBundle\\Controller\\SubjectController::UpdateSubjectAction',));
+                }
+
             }
 
             // admin_AddClasse
@@ -146,6 +154,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             // admin_DeleteClasse
             if (0 === strpos($pathinfo, '/admin/DeleteClasse') && preg_match('#^/admin/DeleteClasse/(?P<classId>[^/]++)$#sD', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_DeleteClasse']), array (  '_controller' => 'AdminBundle\\Controller\\ClasseController::DeleteClasseAction',));
+            }
+
+            // admin_DeleteSubject
+            if (0 === strpos($pathinfo, '/admin/DeleteSubject') && preg_match('#^/admin/DeleteSubject/(?P<subjectId>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_DeleteSubject']), array (  '_controller' => 'AdminBundle\\Controller\\SubjectController::DeleteSubjectAction',));
             }
 
         }

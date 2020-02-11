@@ -94,25 +94,59 @@ class __TwigTemplate_93b539aaab13a6c6602497968b223e7ce975a574d2b8e48cade1e4a5b9c
                                 <th>
                                     <div class=\"form-check\">
                                         <input type=\"checkbox\" class=\"form-check-input checkAll\">
-                                        <label class=\"form-check-label\">Class ID</label>
+                                        <label class=\"form-check-label\">Subject ID</label>
                                     </div>
                                 </th>
-                                <th>Class Name</th>
+                                <th>Subject Name</th>
+                                <th>Subject Coefficient</th>
+                                <th>Classes</th>
 
 
                                 <th></th>
                             </tr>
                             </thead>
                             <tbody>
-                          <!--for -->
-                                <tr>
+        ";
+        // line 79
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["allSubjects"] ?? $this->getContext($context, "allSubjects")));
+        foreach ($context['_seq'] as $context["_key"] => $context["as"]) {
+            // line 80
+            echo "                                <tr>
                                     <td>
                                         <div class=\"form-check\">
                                             <input type=\"checkbox\" class=\"form-check-input\">
-                                            <label class=\"form-check-label\">#121</label>
+                                            <label class=\"form-check-label\">#";
+            // line 84
+            echo twig_escape_filter($this->env, $this->getAttribute($context["as"], "subjectId", []), "html", null, true);
+            echo "</label>
                                         </div>
                                     </td>
-                                    <td>151</td>
+                                    <td>";
+            // line 87
+            echo twig_escape_filter($this->env, $this->getAttribute($context["as"], "subjectName", []), "html", null, true);
+            echo "</td>
+                                    <td>";
+            // line 88
+            echo twig_escape_filter($this->env, $this->getAttribute($context["as"], "coefficient", []), "html", null, true);
+            echo "</td>
+                                    <td>
+                                        ";
+            // line 90
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["as"], "classes", []));
+            foreach ($context['_seq'] as $context["_key"] => $context["asb"]) {
+                // line 91
+                echo "                                        ";
+                echo twig_escape_filter($this->env, $context["asb"], "html", null, true);
+                echo "
+";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['asb'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 93
+            echo "                                    </td>
 
 
                                     <td>
@@ -122,17 +156,28 @@ class __TwigTemplate_93b539aaab13a6c6602497968b223e7ce975a574d2b8e48cade1e4a5b9c
                                                 <span class=\"flaticon-more-button-of-three-dots\"></span>
                                             </a>
                                             <div class=\"dropdown-menu dropdown-menu-right\">
-                                                <a class=\"dropdown-item\" href=\"#\"><i
+                                                <a class=\"dropdown-item\" href=\"";
+            // line 103
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_DeleteSubject", ["subjectId" => $this->getAttribute($context["as"], "subjectId", [])]), "html", null, true);
+            echo "\"><i
                                                             class=\"fas fa-times text-orange-red\"></i>Delete</a>
-                                                <a class=\"dropdown-item\" href=\"#\"><i
+                                                <a class=\"dropdown-item\"  href=\"";
+            // line 105
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_UpdateSubject", ["subjectId" => $this->getAttribute($context["as"], "subjectId", [])]), "html", null, true);
+            echo "\"><i
                                                             class=\"fas fa-cogs text-dark-pastel-green\"></i>Update</a>
 
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
-                           <!--end for -->
-                            </tbody>
+                         ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['as'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 113
+        echo "                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -233,7 +278,7 @@ class __TwigTemplate_93b539aaab13a6c6602497968b223e7ce975a574d2b8e48cade1e4a5b9c
 
     public function getDebugInfo()
     {
-        return array (  212 => 50,  208 => 49,  204 => 48,  193 => 40,  184 => 34,  176 => 29,  168 => 24,  164 => 23,  161 => 22,  152 => 21,  83 => 53,  81 => 21,  61 => 3,  52 => 2,  30 => 1,);
+        return array (  257 => 50,  253 => 49,  249 => 48,  238 => 40,  229 => 34,  221 => 29,  213 => 24,  209 => 23,  206 => 22,  197 => 21,  180 => 113,  166 => 105,  161 => 103,  149 => 93,  140 => 91,  136 => 90,  131 => 88,  127 => 87,  121 => 84,  115 => 80,  111 => 79,  83 => 53,  81 => 21,  61 => 3,  52 => 2,  30 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -312,25 +357,33 @@ class __TwigTemplate_93b539aaab13a6c6602497968b223e7ce975a574d2b8e48cade1e4a5b9c
                                 <th>
                                     <div class=\"form-check\">
                                         <input type=\"checkbox\" class=\"form-check-input checkAll\">
-                                        <label class=\"form-check-label\">Class ID</label>
+                                        <label class=\"form-check-label\">Subject ID</label>
                                     </div>
                                 </th>
-                                <th>Class Name</th>
+                                <th>Subject Name</th>
+                                <th>Subject Coefficient</th>
+                                <th>Classes</th>
 
 
                                 <th></th>
                             </tr>
                             </thead>
                             <tbody>
-                          <!--for -->
+        {% for as in allSubjects %}
                                 <tr>
                                     <td>
                                         <div class=\"form-check\">
                                             <input type=\"checkbox\" class=\"form-check-input\">
-                                            <label class=\"form-check-label\">#121</label>
+                                            <label class=\"form-check-label\">#{{as.subjectId}}</label>
                                         </div>
                                     </td>
-                                    <td>151</td>
+                                    <td>{{ as.subjectName }}</td>
+                                    <td>{{ as.coefficient }}</td>
+                                    <td>
+                                        {% for asb in as.classes  %}
+                                        {{ asb }}
+{% endfor %}
+                                    </td>
 
 
                                     <td>
@@ -340,16 +393,16 @@ class __TwigTemplate_93b539aaab13a6c6602497968b223e7ce975a574d2b8e48cade1e4a5b9c
                                                 <span class=\"flaticon-more-button-of-three-dots\"></span>
                                             </a>
                                             <div class=\"dropdown-menu dropdown-menu-right\">
-                                                <a class=\"dropdown-item\" href=\"#\"><i
+                                                <a class=\"dropdown-item\" href=\"{{ path('admin_DeleteSubject',{'subjectId':as.subjectId}) }}\"><i
                                                             class=\"fas fa-times text-orange-red\"></i>Delete</a>
-                                                <a class=\"dropdown-item\" href=\"#\"><i
+                                                <a class=\"dropdown-item\"  href=\"{{ path('admin_UpdateSubject',{'subjectId':as.subjectId}) }}\"><i
                                                             class=\"fas fa-cogs text-dark-pastel-green\"></i>Update</a>
 
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
-                           <!--end for -->
+                         {% endfor %}
                             </tbody>
                         </table>
                     </div>
