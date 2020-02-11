@@ -25,146 +25,89 @@
      <link rel="stylesheet" href=" {{ asset('style.css') }} " >
      <!-- Modernize js -->
      <script href=" {{ asset('js/modernizr-3.6.0.min.js') }} "></script>
-         <!-- Breadcubs Area End Here -->
-         <!-- Student Table Area Start Here -->
+     <!-- Breadcubs Area End Here -->
+     <!-- Student Table Area Start Here -->
 
+     <div class="card-body">
+         <div class="heading-layout1">
+             <div class="item-title">
+                 <h2 class="text-black h2 t600 mb-2">All Events Data</h2>
+             </div>
+
+         </div>
+
+         {% for message in app.flashes('info') %}
+             <div class="alert alert-success">
+                 {{ message }}
+             </div>
+
+         {% endfor %}
+
+         <!-- event Table Area Start Here -->
+         {% for ff in var %}
+         <div class="card height-auto">
              <div class="card-body">
-                 <div class="heading-layout1">
-                     <div class="item-title">
-                         <h2 class="text-black h2 t600 mb-2">All Events Data</h2>
+
+
+                 <div class="single-info-details">
+
+                     <div class="item-img">
+
+                         <img src="{{ asset('img/figure/event.png') }}" alt="teacher">
                      </div>
-
-                 </div>
-
-
-                 <form class="mg-b-20">
-                     <div class="row gutters-8">
-                         <div class="col-3-xxxl col-xl-3 col-lg-3 col-12 form-group">
-                             <input type="text" placeholder="Search by Roll ..." class="form-control">
-                         </div>
-                         <div class="col-4-xxxl col-xl-4 col-lg-3 col-12 form-group">
-                             <input type="text" placeholder="Search by Name ..." class="form-control">
-                         </div>
-                         <div class="col-4-xxxl col-xl-3 col-lg-3 col-12 form-group">
-                             <input type="text" placeholder="Search by Class ..." class="form-control">
-                         </div>
-                         <div class="header-buttons d-none d-sm-inline-block">
-                             <a href="#slider" data-scrollto="#slider" data-offset="-80" class="button button-rounded button-white button-light button-small m-0">Search</a>
-                         </div>
-                     </div>
-                 </form>
-
-
-                 <!-- event Table Area Start Here -->
-                 {% for ff in var %}
-                 <div class="card height-auto">
-                     <div class="card-body">
-
-                         <div class="heading-layout1">
-                             <div class="item-title">
-                                 <h3>About The Event</h3>
-                             </div>
-
-                         </div>
-
-                         <div class="single-info-details">
-
-                             <div class="item-img">
-
-                                 <img src="{{ asset('img/figure/event.png') }}" alt="teacher">
-                             </div>
-                             <div class="item-content">
-                                 <div class="header-inline item-header">
-                                     <h3 class="text-dark-medium font-medium">{{  ff.nomEvent }}</h3>
-                                     <div class="header-elements">
-                                         <ul>
-                                             <li><a href="#"><i class="far fa-edit"></i></a></li>
-                                             <li><a href="#"><i class="fas fa-print"></i></a></li>
-                                             <li><a href="#"><i class="fas fa-download"></i></a></li>
-                                         </ul>
-                                     </div>
-                                 </div>
-
-                                 <div class="info-table table-responsive">
-                                     <table class="table text-nowrap">
-
-                                         <tbody>
-
-                                         <tr>
-                                             <td>Name:</td>
-                                             <td class="font-medium text-dark-medium">{{ ff.nomEvent }}</td>
-                                         </tr>
-                                         <tr>
-                                             <td>Type:</td>
-                                             <td class="font-medium text-dark-medium">{{ ff.typeEvent }}</td>
-                                         </tr>
-                                         <tr>
-                                             <td>Description: </td>
-                                             <td class="font-medium text-dark-medium">{{ ff.description}}</td>
-                                         </tr>
-                                         <tr>
-                                             <td>Date:</td>
-                                             <td class="font-medium text-dark-medium">{{ ff.dateEvent}}</td>
-                                         </tr>
-                                         <tr>
-                                             <td>Place:</td>
-                                             <td class="font-medium text-dark-medium">{{ ff.placeEvent}}</td>
-                                         </tr>
-                                         <tr>
-                                             <td>Participants:</td>
-                                             <td class="font-medium text-dark-medium">{{ ff.nbParticipants}}</td>
-                                         </tr>
-                                         <tr>
-                                             <td>Theme:</td>
-                                             <td class="font-medium text-dark-medium">{{ ff.theme}}</td>
-                                         </tr>
-                                         <tr>
-                                             <td>Destination:</td>
-                                             <td class="font-medium text-dark-medium">{{ ff.destination}}</td>
-                                         </tr>
-                                         <tr>
-                                             <td>Award</td>
-                                             <td class="font-medium text-dark-medium">{{ ff.award}}</td>
-                                         </tr>
-                                         <tr>
-                                             <td>Budget:</td>
-                                             <td class="font-medium text-dark-medium">{{ ff.budget}}</td>
-                                         </tr>
-
-
-                                     </table>
-
-
-
-                                     </tbody>
-                                 </div>
-                                 <div class="item-title">
-
-                                 <div class="header-buttons d-none d-sm-inline-block">
-                                     <a href="#slider" data-scrollto="#slider" data-offset="-80" class="button button-rounded button-white button-light button-small m-0">Participate</a>
-                                 </div> </div>
+                     <div class="item-content">
+                         <div class="header-inline item-header">
+                             <h3 class="text-dark-medium font-medium">{{  ff.nomEvent }}</h3>
+                             <div class="header-elements">
+                                 <ul>
+                                     <li><a href="{{ path('afficherEventDetail',{'id':ff.id }) }}"><i class="fas fa-search-plus"></i></a></li>
+                                 </ul>
                              </div>
                          </div>
+
+                         <div class="info-table table-responsive">
+                             <table class="table text-nowrap">
+                                 <tbody>
+                                 <tr>
+                                     <td>Name:</td>
+                                     <td class="font-medium text-dark-medium">{{ ff.nomEvent }}</td>
+                                 </tr>
+                                 <tr>
+                                     <td>Type:</td>
+                                     <td class="font-medium text-dark-medium">{{ ff.typeEvent }}</td>
+                                 </tr>
+                                 <tr>
+                                     <td>Description: </td>
+                                     <td class="font-medium text-dark-medium">{{ ff.description}}</td>
+                                 </tr>
+
+                             </tbody>
+
+                             </table>
+                         </div>
+
                      </div>
                  </div>
-
              </div>
          </div>
+
+     </div>
+     </div>
      {% endfor %}
      <!-- ends Here -->
 
 
 
-         <section class="content-header">
-             <div class="container">
-                 <div class="row">
+     <section class="content-header">
+         <div class="container">
+             <div class="row">
 
 
 
-                 </div>
              </div>
-         </section>
-         <!-- Student Table Area End Here -->
+         </div>
+     </section>
+     <!-- Student Table Area End Here -->
 
      </div>
      </div>

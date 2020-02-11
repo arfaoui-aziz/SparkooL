@@ -245,6 +245,13 @@ class User extends BaseUser
     }
 
     /**
+     *
+     * @return string
+     */
+    public function __toString(){
+        return $this->username;
+    }
+    /**
      * Set address
      *
      * @param string $address
@@ -411,5 +418,6 @@ class User extends BaseUser
     {
         return $this->occupation;
     }
+
 }
 

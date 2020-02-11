@@ -2,8 +2,11 @@
 
 namespace SoniaBundle\Controller;
 
+use AppBundle\Entity\User;
 use SoniaBundle\Entity\Event;
+use SoniaBundle\Entity\Particcipation;
 use SoniaBundle\Form\EventType;
+use SoniaBundle\Form\ParticcipationType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -151,6 +154,41 @@ class EventController extends Controller
             array(
                 'var'=>$var
             ));
+
+    }
+
+    public function DetailEventAction($id)
+    {
+
+        $event=$this->getDoctrine()->getManager()->getRepository(Event::class)->find($id);
+
+        return $this->render('@Sonia/front/afficherEventDetail.html.twig',
+            array('var'=>$event));
+
+
+    }
+
+    function ParticipateAction(Request $request,$id){
+
+        $em=$this->getDoctrine()->getManager();
+        $event=$this->getDoctrine()->getRepository(Event::class)->find($id);
+        $user=$this->getUser();
+
+        $nb = $event->getNbParticipants()-1;
+        $event->setNbParticipants($nb);
+
+        $event->addEventUser($user);
+
+        $em->persist($event);
+        $em->flush();
+
+
+        $this->addFlash(
+            'info' , 'Thank You For Your Participation!'
+        );
+
+
+        return $this->redirectToRoute('afficherEventFront');
 
     }
 

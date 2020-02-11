@@ -25,6 +25,12 @@ supprimerEvent:
 afficherEventFront:
     path:     /afficherEventFront
     defaults: { _controller: SoniaBundle:Event:AfficherEventFront }
+afficherEventDetail:
+    path:     /afficherEventDetail/{id}
+    defaults: { _controller: SoniaBundle:Event:DetailEvent }
+ParticiperEvent:
+    path:     /ParticiperEvent/{id}
+    defaults: { _controller: SoniaBundle:Event:Participate }
 afficherClub:
     path:     /afficherClub
     defaults: { _controller: SoniaBundle:Club:AfficherClub }

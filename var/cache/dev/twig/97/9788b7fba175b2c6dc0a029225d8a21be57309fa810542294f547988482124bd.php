@@ -116,259 +116,197 @@ class __TwigTemplate_611c0020354a480586b148a22c3d204e679d4171c277bce3d756f259f8b
         // line 27
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/modernizr-3.6.0.min.js"), "html", null, true);
         echo " \"></script>
-         <!-- Breadcubs Area End Here -->
-         <!-- Student Table Area Start Here -->
+     <!-- Breadcubs Area End Here -->
+     <!-- Student Table Area Start Here -->
 
-             <div class=\"card-body\">
-                 <div class=\"heading-layout1\">
-                     <div class=\"item-title\">
-                         <h2 class=\"text-black h2 t600 mb-2\">All Events Data</h2>
-                     </div>
+     <div class=\"card-body\">
+         <div class=\"heading-layout1\">
+             <div class=\"item-title\">
+                 <h2 class=\"text-black h2 t600 mb-2\">All Events Data</h2>
+             </div>
 
-                 </div>
+         </div>
 
-
-                 <form class=\"mg-b-20\">
-                     <div class=\"row gutters-8\">
-                         <div class=\"col-3-xxxl col-xl-3 col-lg-3 col-12 form-group\">
-                             <input type=\"text\" placeholder=\"Search by Roll ...\" class=\"form-control\">
-                         </div>
-                         <div class=\"col-4-xxxl col-xl-4 col-lg-3 col-12 form-group\">
-                             <input type=\"text\" placeholder=\"Search by Name ...\" class=\"form-control\">
-                         </div>
-                         <div class=\"col-4-xxxl col-xl-3 col-lg-3 col-12 form-group\">
-                             <input type=\"text\" placeholder=\"Search by Class ...\" class=\"form-control\">
-                         </div>
-                         <div class=\"header-buttons d-none d-sm-inline-block\">
-                             <a href=\"#slider\" data-scrollto=\"#slider\" data-offset=\"-80\" class=\"button button-rounded button-white button-light button-small m-0\">Search</a>
-                         </div>
-                     </div>
-                 </form>
-
-
-                 <!-- event Table Area Start Here -->
+         ";
+        // line 39
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "flashes", [0 => "info"], "method"));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 40
+            echo "             <div class=\"alert alert-success\">
                  ";
-        // line 59
+            // line 41
+            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+            echo "
+             </div>
+
+         ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 45
+        echo "
+         <!-- event Table Area Start Here -->
+         ";
+        // line 47
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["var"] ?? $this->getContext($context, "var")));
         foreach ($context['_seq'] as $context["_key"] => $context["ff"]) {
-            // line 60
-            echo "                 <div class=\"card height-auto\">
-                     <div class=\"card-body\">
+            // line 48
+            echo "         <div class=\"card height-auto\">
+             <div class=\"card-body\">
 
-                         <div class=\"heading-layout1\">
-                             <div class=\"item-title\">
-                                 <h3>About The Event</h3>
-                             </div>
 
-                         </div>
+                 <div class=\"single-info-details\">
 
-                         <div class=\"single-info-details\">
+                     <div class=\"item-img\">
 
-                             <div class=\"item-img\">
-
-                                 <img src=\"";
-            // line 74
+                         <img src=\"";
+            // line 56
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/figure/event.png"), "html", null, true);
             echo "\" alt=\"teacher\">
-                             </div>
-                             <div class=\"item-content\">
-                                 <div class=\"header-inline item-header\">
-                                     <h3 class=\"text-dark-medium font-medium\">";
-            // line 78
+                     </div>
+                     <div class=\"item-content\">
+                         <div class=\"header-inline item-header\">
+                             <h3 class=\"text-dark-medium font-medium\">";
+            // line 60
             echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "nomEvent", []), "html", null, true);
             echo "</h3>
-                                     <div class=\"header-elements\">
-                                         <ul>
-                                             <li><a href=\"#\"><i class=\"far fa-edit\"></i></a></li>
-                                             <li><a href=\"#\"><i class=\"fas fa-print\"></i></a></li>
-                                             <li><a href=\"#\"><i class=\"fas fa-download\"></i></a></li>
-                                         </ul>
-                                     </div>
-                                 </div>
-
-                                 <div class=\"info-table table-responsive\">
-                                     <table class=\"table text-nowrap\">
-
-                                         <tbody>
-
-                                         <tr>
-                                             <td>Name:</td>
-                                             <td class=\"font-medium text-dark-medium\">";
-            // line 95
-            echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "nomEvent", []), "html", null, true);
-            echo "</td>
-                                         </tr>
-                                         <tr>
-                                             <td>Type:</td>
-                                             <td class=\"font-medium text-dark-medium\">";
-            // line 99
-            echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "typeEvent", []), "html", null, true);
-            echo "</td>
-                                         </tr>
-                                         <tr>
-                                             <td>Description: </td>
-                                             <td class=\"font-medium text-dark-medium\">";
-            // line 103
-            echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "description", []), "html", null, true);
-            echo "</td>
-                                         </tr>
-                                         <tr>
-                                             <td>Date:</td>
-                                             <td class=\"font-medium text-dark-medium\">";
-            // line 107
-            echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "dateEvent", []), "html", null, true);
-            echo "</td>
-                                         </tr>
-                                         <tr>
-                                             <td>Place:</td>
-                                             <td class=\"font-medium text-dark-medium\">";
-            // line 111
-            echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "placeEvent", []), "html", null, true);
-            echo "</td>
-                                         </tr>
-                                         <tr>
-                                             <td>Participants:</td>
-                                             <td class=\"font-medium text-dark-medium\">";
-            // line 115
-            echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "nbParticipants", []), "html", null, true);
-            echo "</td>
-                                         </tr>
-                                         <tr>
-                                             <td>Theme:</td>
-                                             <td class=\"font-medium text-dark-medium\">";
-            // line 119
-            echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "theme", []), "html", null, true);
-            echo "</td>
-                                         </tr>
-                                         <tr>
-                                             <td>Destination:</td>
-                                             <td class=\"font-medium text-dark-medium\">";
-            // line 123
-            echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "destination", []), "html", null, true);
-            echo "</td>
-                                         </tr>
-                                         <tr>
-                                             <td>Award</td>
-                                             <td class=\"font-medium text-dark-medium\">";
-            // line 127
-            echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "award", []), "html", null, true);
-            echo "</td>
-                                         </tr>
-                                         <tr>
-                                             <td>Budget:</td>
-                                             <td class=\"font-medium text-dark-medium\">";
-            // line 131
-            echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "budget", []), "html", null, true);
-            echo "</td>
-                                         </tr>
-
-
-                                     </table>
-
-
-
-                                     </tbody>
-                                 </div>
-                                 <div class=\"item-title\">
-
-                                 <div class=\"header-buttons d-none d-sm-inline-block\">
-                                     <a href=\"#slider\" data-scrollto=\"#slider\" data-offset=\"-80\" class=\"button button-rounded button-white button-light button-small m-0\">Participate</a>
-                                 </div> </div>
+                             <div class=\"header-elements\">
+                                 <ul>
+                                     <li><a href=\"";
+            // line 63
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("afficherEventDetail", ["id" => $this->getAttribute($context["ff"], "id", [])]), "html", null, true);
+            echo "\"><i class=\"fas fa-search-plus\"></i></a></li>
+                                 </ul>
                              </div>
                          </div>
+
+                         <div class=\"info-table table-responsive\">
+                             <table class=\"table text-nowrap\">
+                                 <tbody>
+                                 <tr>
+                                     <td>Name:</td>
+                                     <td class=\"font-medium text-dark-medium\">";
+            // line 73
+            echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "nomEvent", []), "html", null, true);
+            echo "</td>
+                                 </tr>
+                                 <tr>
+                                     <td>Type:</td>
+                                     <td class=\"font-medium text-dark-medium\">";
+            // line 77
+            echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "typeEvent", []), "html", null, true);
+            echo "</td>
+                                 </tr>
+                                 <tr>
+                                     <td>Description: </td>
+                                     <td class=\"font-medium text-dark-medium\">";
+            // line 81
+            echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "description", []), "html", null, true);
+            echo "</td>
+                                 </tr>
+
+                             </tbody>
+
+                             </table>
+                         </div>
+
                      </div>
                  </div>
-
              </div>
          </div>
+
+     </div>
+     </div>
      ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['ff'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 154
+        // line 97
         echo "     <!-- ends Here -->
 
 
 
-         <section class=\"content-header\">
-             <div class=\"container\">
-                 <div class=\"row\">
+     <section class=\"content-header\">
+         <div class=\"container\">
+             <div class=\"row\">
 
 
 
-                 </div>
              </div>
-         </section>
-         <!-- Student Table Area End Here -->
+         </div>
+     </section>
+     <!-- Student Table Area End Here -->
 
      </div>
      </div>
      <!-- Page Area End Here -->
      <script src=\" ";
-        // line 172
+        // line 115
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery-3.3.1.min.js"), "html", null, true);
         echo " \" ></script>
      <!-- Plugins js -->
      <script src=\" ";
-        // line 174
+        // line 117
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/plugins.js"), "html", null, true);
         echo " \" ></script>
      <!-- Popper js -->
      <script src=\" ";
-        // line 176
+        // line 119
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/popper.min.js"), "html", null, true);
         echo " \"></script>
      <!-- Bootstrap js -->
      <script src=\" ";
-        // line 178
+        // line 121
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/bootstrap.min.js"), "html", null, true);
         echo " \" ></script>
      <!-- Counterup Js -->
      <script src=\" ";
-        // line 180
+        // line 123
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.counterup.min.js"), "html", null, true);
         echo " \" ></script>
      <!-- Moment Js -->
      <script  src=\" ";
-        // line 182
+        // line 125
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/moment.min.js"), "html", null, true);
         echo " \" ></script>
      <!-- Scroll Up Js -->
      <script src=\" ";
-        // line 184
+        // line 127
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.scrollUp.min.js"), "html", null, true);
         echo " \" ></script>
      <!-- Waypoints Js -->
      <script  src=\" ";
-        // line 186
+        // line 129
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.waypoints.min.js"), "html", null, true);
         echo " \" ></script>
      <!-- Select 2 Js -->
      <script src=\"";
-        // line 188
+        // line 131
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/select2.min.js"), "html", null, true);
         echo "\"></script>
      <!-- Date Picker Js -->
      <script src=\"";
-        // line 190
+        // line 133
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/datepicker.min.js"), "html", null, true);
         echo "\"></script>
      <!-- Full Calender Js -->
      <script src=\" ";
-        // line 192
+        // line 135
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/fullcalendar.min.js"), "html", null, true);
         echo " \"></script>
      <!-- Chart Js -->
      <script  src=\" ";
-        // line 194
+        // line 137
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/Chart.min.js"), "html", null, true);
         echo " \" ></script>
 
      <!-- Custom Js -->
      <script  src=\" ";
-        // line 197
+        // line 140
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/main.js"), "html", null, true);
         echo " \" ></script>
  ";
@@ -392,7 +330,7 @@ class __TwigTemplate_611c0020354a480586b148a22c3d204e679d4171c277bce3d756f259f8b
 
     public function getDebugInfo()
     {
-        return array (  372 => 197,  366 => 194,  361 => 192,  356 => 190,  351 => 188,  346 => 186,  341 => 184,  336 => 182,  331 => 180,  326 => 178,  321 => 176,  316 => 174,  311 => 172,  291 => 154,  262 => 131,  255 => 127,  248 => 123,  241 => 119,  234 => 115,  227 => 111,  220 => 107,  213 => 103,  206 => 99,  199 => 95,  179 => 78,  172 => 74,  156 => 60,  152 => 59,  117 => 27,  112 => 25,  107 => 23,  102 => 21,  97 => 19,  92 => 17,  87 => 15,  82 => 13,  77 => 11,  72 => 9,  66 => 6,  60 => 4,  51 => 3,  29 => 1,);
+        return array (  310 => 140,  304 => 137,  299 => 135,  294 => 133,  289 => 131,  284 => 129,  279 => 127,  274 => 125,  269 => 123,  264 => 121,  259 => 119,  254 => 117,  249 => 115,  229 => 97,  207 => 81,  200 => 77,  193 => 73,  180 => 63,  174 => 60,  167 => 56,  157 => 48,  153 => 47,  149 => 45,  139 => 41,  136 => 40,  132 => 39,  117 => 27,  112 => 25,  107 => 23,  102 => 21,  97 => 19,  92 => 17,  87 => 15,  82 => 13,  77 => 11,  72 => 9,  66 => 6,  60 => 4,  51 => 3,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -432,146 +370,89 @@ class __TwigTemplate_611c0020354a480586b148a22c3d204e679d4171c277bce3d756f259f8b
      <link rel=\"stylesheet\" href=\" {{ asset('style.css') }} \" >
      <!-- Modernize js -->
      <script href=\" {{ asset('js/modernizr-3.6.0.min.js') }} \"></script>
-         <!-- Breadcubs Area End Here -->
-         <!-- Student Table Area Start Here -->
+     <!-- Breadcubs Area End Here -->
+     <!-- Student Table Area Start Here -->
 
+     <div class=\"card-body\">
+         <div class=\"heading-layout1\">
+             <div class=\"item-title\">
+                 <h2 class=\"text-black h2 t600 mb-2\">All Events Data</h2>
+             </div>
+
+         </div>
+
+         {% for message in app.flashes('info') %}
+             <div class=\"alert alert-success\">
+                 {{ message }}
+             </div>
+
+         {% endfor %}
+
+         <!-- event Table Area Start Here -->
+         {% for ff in var %}
+         <div class=\"card height-auto\">
              <div class=\"card-body\">
-                 <div class=\"heading-layout1\">
-                     <div class=\"item-title\">
-                         <h2 class=\"text-black h2 t600 mb-2\">All Events Data</h2>
+
+
+                 <div class=\"single-info-details\">
+
+                     <div class=\"item-img\">
+
+                         <img src=\"{{ asset('img/figure/event.png') }}\" alt=\"teacher\">
                      </div>
-
-                 </div>
-
-
-                 <form class=\"mg-b-20\">
-                     <div class=\"row gutters-8\">
-                         <div class=\"col-3-xxxl col-xl-3 col-lg-3 col-12 form-group\">
-                             <input type=\"text\" placeholder=\"Search by Roll ...\" class=\"form-control\">
-                         </div>
-                         <div class=\"col-4-xxxl col-xl-4 col-lg-3 col-12 form-group\">
-                             <input type=\"text\" placeholder=\"Search by Name ...\" class=\"form-control\">
-                         </div>
-                         <div class=\"col-4-xxxl col-xl-3 col-lg-3 col-12 form-group\">
-                             <input type=\"text\" placeholder=\"Search by Class ...\" class=\"form-control\">
-                         </div>
-                         <div class=\"header-buttons d-none d-sm-inline-block\">
-                             <a href=\"#slider\" data-scrollto=\"#slider\" data-offset=\"-80\" class=\"button button-rounded button-white button-light button-small m-0\">Search</a>
-                         </div>
-                     </div>
-                 </form>
-
-
-                 <!-- event Table Area Start Here -->
-                 {% for ff in var %}
-                 <div class=\"card height-auto\">
-                     <div class=\"card-body\">
-
-                         <div class=\"heading-layout1\">
-                             <div class=\"item-title\">
-                                 <h3>About The Event</h3>
-                             </div>
-
-                         </div>
-
-                         <div class=\"single-info-details\">
-
-                             <div class=\"item-img\">
-
-                                 <img src=\"{{ asset('img/figure/event.png') }}\" alt=\"teacher\">
-                             </div>
-                             <div class=\"item-content\">
-                                 <div class=\"header-inline item-header\">
-                                     <h3 class=\"text-dark-medium font-medium\">{{  ff.nomEvent }}</h3>
-                                     <div class=\"header-elements\">
-                                         <ul>
-                                             <li><a href=\"#\"><i class=\"far fa-edit\"></i></a></li>
-                                             <li><a href=\"#\"><i class=\"fas fa-print\"></i></a></li>
-                                             <li><a href=\"#\"><i class=\"fas fa-download\"></i></a></li>
-                                         </ul>
-                                     </div>
-                                 </div>
-
-                                 <div class=\"info-table table-responsive\">
-                                     <table class=\"table text-nowrap\">
-
-                                         <tbody>
-
-                                         <tr>
-                                             <td>Name:</td>
-                                             <td class=\"font-medium text-dark-medium\">{{ ff.nomEvent }}</td>
-                                         </tr>
-                                         <tr>
-                                             <td>Type:</td>
-                                             <td class=\"font-medium text-dark-medium\">{{ ff.typeEvent }}</td>
-                                         </tr>
-                                         <tr>
-                                             <td>Description: </td>
-                                             <td class=\"font-medium text-dark-medium\">{{ ff.description}}</td>
-                                         </tr>
-                                         <tr>
-                                             <td>Date:</td>
-                                             <td class=\"font-medium text-dark-medium\">{{ ff.dateEvent}}</td>
-                                         </tr>
-                                         <tr>
-                                             <td>Place:</td>
-                                             <td class=\"font-medium text-dark-medium\">{{ ff.placeEvent}}</td>
-                                         </tr>
-                                         <tr>
-                                             <td>Participants:</td>
-                                             <td class=\"font-medium text-dark-medium\">{{ ff.nbParticipants}}</td>
-                                         </tr>
-                                         <tr>
-                                             <td>Theme:</td>
-                                             <td class=\"font-medium text-dark-medium\">{{ ff.theme}}</td>
-                                         </tr>
-                                         <tr>
-                                             <td>Destination:</td>
-                                             <td class=\"font-medium text-dark-medium\">{{ ff.destination}}</td>
-                                         </tr>
-                                         <tr>
-                                             <td>Award</td>
-                                             <td class=\"font-medium text-dark-medium\">{{ ff.award}}</td>
-                                         </tr>
-                                         <tr>
-                                             <td>Budget:</td>
-                                             <td class=\"font-medium text-dark-medium\">{{ ff.budget}}</td>
-                                         </tr>
-
-
-                                     </table>
-
-
-
-                                     </tbody>
-                                 </div>
-                                 <div class=\"item-title\">
-
-                                 <div class=\"header-buttons d-none d-sm-inline-block\">
-                                     <a href=\"#slider\" data-scrollto=\"#slider\" data-offset=\"-80\" class=\"button button-rounded button-white button-light button-small m-0\">Participate</a>
-                                 </div> </div>
+                     <div class=\"item-content\">
+                         <div class=\"header-inline item-header\">
+                             <h3 class=\"text-dark-medium font-medium\">{{  ff.nomEvent }}</h3>
+                             <div class=\"header-elements\">
+                                 <ul>
+                                     <li><a href=\"{{ path('afficherEventDetail',{'id':ff.id }) }}\"><i class=\"fas fa-search-plus\"></i></a></li>
+                                 </ul>
                              </div>
                          </div>
+
+                         <div class=\"info-table table-responsive\">
+                             <table class=\"table text-nowrap\">
+                                 <tbody>
+                                 <tr>
+                                     <td>Name:</td>
+                                     <td class=\"font-medium text-dark-medium\">{{ ff.nomEvent }}</td>
+                                 </tr>
+                                 <tr>
+                                     <td>Type:</td>
+                                     <td class=\"font-medium text-dark-medium\">{{ ff.typeEvent }}</td>
+                                 </tr>
+                                 <tr>
+                                     <td>Description: </td>
+                                     <td class=\"font-medium text-dark-medium\">{{ ff.description}}</td>
+                                 </tr>
+
+                             </tbody>
+
+                             </table>
+                         </div>
+
                      </div>
                  </div>
-
              </div>
          </div>
+
+     </div>
+     </div>
      {% endfor %}
      <!-- ends Here -->
 
 
 
-         <section class=\"content-header\">
-             <div class=\"container\">
-                 <div class=\"row\">
+     <section class=\"content-header\">
+         <div class=\"container\">
+             <div class=\"row\">
 
 
 
-                 </div>
              </div>
-         </section>
-         <!-- Student Table Area End Here -->
+         </div>
+     </section>
+     <!-- Student Table Area End Here -->
 
      </div>
      </div>

@@ -10,4 +10,10 @@ namespace SoniaBundle\Repository;
  */
 class EventRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findDistinct($id)
+    {
+        $Query=$this->getEntityManager()->createQuery("select A from AppBundle:User A where A.id != :id ")
+            ->setParameter('id','%'.$id.'%');
+        return $Query->getResult();
+    }
 }

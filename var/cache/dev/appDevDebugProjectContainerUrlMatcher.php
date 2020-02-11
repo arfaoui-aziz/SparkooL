@@ -135,6 +135,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                         return array (  '_controller' => 'SoniaBundle\\Controller\\EventController::AfficherEventFrontAction',  '_route' => 'afficherEventFront',);
                     }
 
+                    // afficherEventDetail
+                    if (0 === strpos($pathinfo, '/sonia/afficherEventDetail') && preg_match('#^/sonia/afficherEventDetail/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, ['_route' => 'afficherEventDetail']), array (  '_controller' => 'SoniaBundle\\Controller\\EventController::DetailEventAction',));
+                    }
+
                 }
 
                 // afficherClub
@@ -190,6 +195,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             // supprimerClub
             if (0 === strpos($pathinfo, '/sonia/supprimerClub') && preg_match('#^/sonia/supprimerClub/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, ['_route' => 'supprimerClub']), array (  '_controller' => 'SoniaBundle\\Controller\\ClubController::DeleteClubAction',));
+            }
+
+            // ParticiperEvent
+            if (0 === strpos($pathinfo, '/sonia/ParticiperEvent') && preg_match('#^/sonia/ParticiperEvent/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'ParticiperEvent']), array (  '_controller' => 'SoniaBundle\\Controller\\EventController::ParticipateAction',));
             }
 
         }

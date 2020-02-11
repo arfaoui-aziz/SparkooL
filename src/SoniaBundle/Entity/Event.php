@@ -2,7 +2,14 @@
 
 namespace SoniaBundle\Entity;
 
+
+use AppBundle\Entity\User;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\JoinColumn;
+use Doctrine\ORM\Mapping\JoinTable;
+use Doctrine\ORM\Mapping\ManyToMany;
+
 
 /**
  * Event
@@ -90,6 +97,43 @@ class Event
      * @ORM\Column(name="budget", type="float", nullable=true)
      */
     private $budget;
+
+    /**
+     * Many Users have Many Groups.
+     * @ManyToMany(targetEntity="AppBundle\Entity\User")
+     * @JoinTable(name="User_byEvent",
+     *      joinColumns={@JoinColumn(name="event_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@JoinColumn(name="user_id", referencedColumnName="id")}
+     *      )
+     */
+          private $users;
+
+    /**
+     * Default constructor, initializes collections
+     */
+    public function __construct()
+    {
+        $this->users = new ArrayCollection();
+    }
+
+    public function addEventUser(User $user) {
+
+//Avoid duplication
+        if ($this->users->contains($user ))
+        { return ;}
+
+        $this->users[] = $user;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getUsers()
+    {
+        return $this->users;
+    }
+
+
 
     /**
      * @return float
@@ -326,5 +370,8 @@ class Event
     {
         return $this->destination;
     }
+
+
+
 }
 
