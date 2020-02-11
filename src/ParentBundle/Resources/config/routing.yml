@@ -1,0 +1,21 @@
+
+inscription_parent:
+    path:     /inscri
+    defaults: { _controller: ParentBundle:Parent:AjoutParent }
+
+afficher_parent:
+    path:     /afficher
+    defaults: { _controller: ParentBundle:Parent:AfficherParent }
+
+
+modifier_parent:
+    path:     /modifier/{id}
+    defaults: { _controller: ParentBundle:Parent:ModifierParent }
+
+supprimer_parent:
+    path:     /supprimer/{id}
+    defaults: { _controller: ParentBundle:Parent:SupprimerParent }
+
+detail_parent:
+    path:     /detail/{id}
+    defaults: { _controller: ParentBundle:Parent:DetailParent }

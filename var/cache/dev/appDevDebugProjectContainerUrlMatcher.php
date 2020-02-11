@@ -107,6 +107,31 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        // inscription_parent
+        if ('/inscri' === $pathinfo) {
+            return array (  '_controller' => 'ParentBundle\\Controller\\ParentController::AjoutParentAction',  '_route' => 'inscription_parent',);
+        }
+
+        // afficher_parent
+        if ('/afficher' === $pathinfo) {
+            return array (  '_controller' => 'ParentBundle\\Controller\\ParentController::AfficherParentAction',  '_route' => 'afficher_parent',);
+        }
+
+        // modifier_parent
+        if (0 === strpos($pathinfo, '/modifier') && preg_match('#^/modifier/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, ['_route' => 'modifier_parent']), array (  '_controller' => 'ParentBundle\\Controller\\ParentController::ModifierParentAction',));
+        }
+
+        // supprimer_parent
+        if (0 === strpos($pathinfo, '/supprimer') && preg_match('#^/supprimer/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, ['_route' => 'supprimer_parent']), array (  '_controller' => 'ParentBundle\\Controller\\ParentController::SupprimerParentAction',));
+        }
+
+        // detail_parent
+        if (0 === strpos($pathinfo, '/detail') && preg_match('#^/detail/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, ['_route' => 'detail_parent']), array (  '_controller' => 'ParentBundle\\Controller\\ParentController::DetailParentAction',));
+        }
+
         // fos_user_security_login
         if ('' === $trimmedPathinfo) {
             $ret = array (  '_controller' => 'fos_user.security.controller:loginAction',  '_route' => 'fos_user_security_login',);
