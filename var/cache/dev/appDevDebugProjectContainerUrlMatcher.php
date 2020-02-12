@@ -141,14 +141,22 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
             }
 
-            // admin_AddClasse
-            if ('/admin/AddClasse' === $pathinfo) {
-                return array (  '_controller' => 'AdminBundle\\Controller\\ClasseController::AddClasseAction',  '_route' => 'admin_AddClasse',);
-            }
+            elseif (0 === strpos($pathinfo, '/admin/Add')) {
+                // admin_AddClasse
+                if ('/admin/AddClasse' === $pathinfo) {
+                    return array (  '_controller' => 'AdminBundle\\Controller\\ClasseController::AddClasseAction',  '_route' => 'admin_AddClasse',);
+                }
 
-            // admin_AddSubject
-            if ('/admin/AddSubject' === $pathinfo) {
-                return array (  '_controller' => 'AdminBundle\\Controller\\SubjectController::AddSubjectAction',  '_route' => 'admin_AddSubject',);
+                // admin_AddSubject
+                if ('/admin/AddSubject' === $pathinfo) {
+                    return array (  '_controller' => 'AdminBundle\\Controller\\SubjectController::AddSubjectAction',  '_route' => 'admin_AddSubject',);
+                }
+
+                // admin_AddSchedule
+                if ('/admin/AddSchedule' === $pathinfo) {
+                    return array (  '_controller' => 'AdminBundle\\Controller\\ScheduleController::AddScheduleAction',  '_route' => 'admin_AddSchedule',);
+                }
+
             }
 
             // admin_DeleteClasse

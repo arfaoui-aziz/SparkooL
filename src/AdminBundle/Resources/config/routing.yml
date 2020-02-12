@@ -22,3 +22,6 @@ admin_UpdateSubject:
 admin_DeleteSubject:
     path:     /DeleteSubject/{subjectId}
     defaults: { _controller: AdminBundle:Subject:DeleteSubject }
+admin_AddSchedule:
+    path:     /AddSchedule
+    defaults: { _controller: AdminBundle:Schedule:AddSchedule }
