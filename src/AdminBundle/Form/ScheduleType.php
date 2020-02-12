@@ -36,8 +36,7 @@ class ScheduleType extends AbstractType
                 ],
                 'required' =>true
             ])
-            ->add('week')
-            ->add('classe', EntityType::class,[
+          ->add('classe', EntityType::class,[
                 'class' => 'AdminBundle\Entity\Classe',
                 'placeholder' => 'Select Class *',
                 'mapped' => true

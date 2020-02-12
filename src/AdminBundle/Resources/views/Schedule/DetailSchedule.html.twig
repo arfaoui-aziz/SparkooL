@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+
+<div class="dashboard-content-one">
+    <!-- Breadcubs Area Start Here -->
+    <div class="breadcrumbs-area">
+        <h3> School Schedule</h3>
+
+    </div>
+    <!-- Breadcubs Area End Here -->
+    <!-- Class Routine Area Start Here -->
+    <div class="row">
+    <link rel="stylesheet" href="{{ asset('schedule.css')}}">
+
+    <div class="Timetable">
+        <table class="Timetable__table">
+
+            <thead>
+            <tr>
+                <th colspan="10"></th>
+            </tr>
+            </thead>
+
+            <tbody>
+
+            <tr class="Timetable__time">
+                <th class="Timetable__room"></th>
+                <th>08:00</th>
+                <th>10:00</th>
+                <th>11:00</th>
+                <th>12:00</th>
+                <th>12:00 ->14:00 </th>
+                <th>15:00</th>
+                <th>16:00</th>
+                <th>17:00</th>
+                <th>18:00</th>
+            </tr>
+{% for sch in schedule %}
+            <tr>
+                <th class="Timetable__room">{{ sch .day }}</th>
+
+                <td colspan="2"> <div class="Allocation pdp">
+                        <span class="Allocation__title">{{ sch.seance1 }}</span>
+
+                    </div></td>
+                <td colspan="2">
+                    <div class="Allocation">
+                        <span class="Allocation__title">{{ sch.seance2 }}</span>
+
+                    </div>
+                </td>
+                <td colspan="1"></td>
+                <td colspan="2">
+                    <div class="Allocation please">
+                        <span class="Allocation__title">{{ sch.seance3 }}</span>
+
+                    </div>
+                </td>
+                <td colspan="2">
+                    <div class="Allocation pdp">
+                        <span class="Allocation__title">{{ sch.seance4 }}</span>
+
+                    </div>
+                </td>
+            </tr>
+{% endfor %}
+
+
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+{% endblock %}
+
+
+
+

@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>SparkIT Dashboard</title>
+
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
@@ -33,6 +34,7 @@
     <link rel="stylesheet" href=" {{ asset('style.css') }} " >
     <!-- Modernize js -->
     <script href=" {{ asset('js/modernizr-3.6.0.min.js') }} "></script>
+
 </head>
 <body>
 <!-- Preloader Start Here -->
@@ -399,7 +401,7 @@
                                     class="flaticon-open-book"></i><span>Subject</span></a>
                     </li>
                     <li class="nav-item">
-                        <a href="class-routine.html" class="nav-link"><i class="flaticon-calendar"></i><span>Class
+                        <a href="{{ path('admin_AddSchedule') }}" class="nav-link"><i class="flaticon-calendar"></i><span>Class
                                     Routine</span></a>
                     </li>
                     <li class="nav-item">
@@ -764,6 +766,7 @@
     <script  src=" {{ asset('js/Chart.min.js') }} " ></script>
     <!-- Custom Js -->
     <script  src=" {{ asset('js/main.js') }} " ></script>
+
 </div>
 </body>
 </html>

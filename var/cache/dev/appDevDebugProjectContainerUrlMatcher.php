@@ -159,14 +159,27 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
             }
 
-            // admin_DeleteClasse
-            if (0 === strpos($pathinfo, '/admin/DeleteClasse') && preg_match('#^/admin/DeleteClasse/(?P<classId>[^/]++)$#sD', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_DeleteClasse']), array (  '_controller' => 'AdminBundle\\Controller\\ClasseController::DeleteClasseAction',));
+            elseif (0 === strpos($pathinfo, '/admin/Delete')) {
+                // admin_DeleteClasse
+                if (0 === strpos($pathinfo, '/admin/DeleteClasse') && preg_match('#^/admin/DeleteClasse/(?P<classId>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_DeleteClasse']), array (  '_controller' => 'AdminBundle\\Controller\\ClasseController::DeleteClasseAction',));
+                }
+
+                // admin_DeleteSubject
+                if (0 === strpos($pathinfo, '/admin/DeleteSubject') && preg_match('#^/admin/DeleteSubject/(?P<subjectId>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_DeleteSubject']), array (  '_controller' => 'AdminBundle\\Controller\\SubjectController::DeleteSubjectAction',));
+                }
+
+                // admin_DeleteSchedule
+                if (0 === strpos($pathinfo, '/admin/DeleteSchedule') && preg_match('#^/admin/DeleteSchedule/(?P<scheduleId>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_DeleteSchedule']), array (  '_controller' => 'AdminBundle\\Controller\\ScheduleController::DeleteScheduleAction',));
+                }
+
             }
 
-            // admin_DeleteSubject
-            if (0 === strpos($pathinfo, '/admin/DeleteSubject') && preg_match('#^/admin/DeleteSubject/(?P<subjectId>[^/]++)$#sD', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_DeleteSubject']), array (  '_controller' => 'AdminBundle\\Controller\\SubjectController::DeleteSubjectAction',));
+            // admin_DetailSchedule
+            if (0 === strpos($pathinfo, '/admin/DetailSchedule') && preg_match('#^/admin/DetailSchedule/(?P<classeId>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_DetailSchedule']), array (  '_controller' => 'AdminBundle\\Controller\\ScheduleController::DetailScheduleAction',));
             }
 
         }

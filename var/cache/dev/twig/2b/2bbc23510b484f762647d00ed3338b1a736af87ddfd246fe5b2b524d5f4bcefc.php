@@ -100,45 +100,39 @@ class __TwigTemplate_8bb8d7ba5dd14a092f78cd2e988f53507aeb41f59cb4467c3eb28ba719f
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "day", []), 'widget', ["attr" => ["class" => "select2"]]);
         echo "
                                 </div>
-                                <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
-                                    <label>Week *</label>
-                                    ";
-        // line 35
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "week", []), 'widget', ["attr" => ["class" => "form-control"]]);
-        echo "
-                                </div>
+
                                 <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                                     <label>Classe *</label>
                                     ";
-        // line 39
+        // line 36
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "classe", []), 'widget', ["attr" => ["class" => "select2"]]);
         echo "
                                 </div>
                                 <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                                     <label>Seance 1 *</label>
                                     ";
-        // line 43
+        // line 40
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "seance1", []), 'widget', ["attr" => ["class" => "form-control form-control-lg"]]);
         echo "
                                 </div>
                                 <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                                     <label>Seance 2 * </label>
                                     ";
-        // line 47
+        // line 44
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "seance2", []), 'widget', ["attr" => ["class" => "form-control form-control-lg"]]);
         echo "
                                 </div>
                                 <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                                     <label>Seance 3 * </label>
                                     ";
-        // line 51
+        // line 48
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "seance3", []), 'widget', ["attr" => ["class" => "form-control form-control-lg"]]);
         echo "
                                 </div>
                                 <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                                     <label>Seance 4 *</label>
                                     ";
-        // line 55
+        // line 52
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "seance4", []), 'widget', ["attr" => ["class" => "form-control form-control-lg"]]);
         echo "
                                 </div>
@@ -147,11 +141,11 @@ class __TwigTemplate_8bb8d7ba5dd14a092f78cd2e988f53507aeb41f59cb4467c3eb28ba719f
 
                             </div>
                             ";
-        // line 61
+        // line 58
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "Add", []), 'widget');
         echo "
                             ";
-        // line 62
+        // line 59
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end');
         echo "
                         </form>
@@ -170,25 +164,42 @@ class __TwigTemplate_8bb8d7ba5dd14a092f78cd2e988f53507aeb41f59cb4467c3eb28ba719f
                                 <th>
                                     <div class=\"form-check\">
                                         <input type=\"checkbox\" class=\"form-check-input checkAll\">
-                                        <label class=\"form-check-label\">Class ID</label>
+                                        <label class=\"form-check-label\">Schedule ID</label>
                                     </div>
                                 </th>
-                                <th>Class Name</th>
+                                <th>Class </th>
+
 
 
                                 <th></th>
                             </tr>
                             </thead>
                             <tbody>
-                   <!-- For star here-->
-                                <tr>
+                            ";
+        // line 87
+        $context["newArray"] = [];
+        // line 88
+        echo "                  ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["allSchedules"] ?? $this->getContext($context, "allSchedules")));
+        foreach ($context['_seq'] as $context["_key"] => $context["s"]) {
+            // line 89
+            if (!twig_in_filter($this->getAttribute($this->getAttribute($context["s"], "classe", []), "className", []), ($context["newArray"] ?? $this->getContext($context, "newArray")))) {
+                // line 90
+                echo "                                <tr>
                                     <td>
                                         <div class=\"form-check\">
                                             <input type=\"checkbox\" class=\"form-check-input\">
-                                            <label class=\"form-check-label\">#1245</label>
+                                            <label class=\"form-check-label\">#";
+                // line 94
+                echo twig_escape_filter($this->env, $this->getAttribute($context["s"], "scheduleId", []), "html", null, true);
+                echo "</label>
                                         </div>
                                     </td>
-                                    <td>45454545</td>
+                                    <td>";
+                // line 97
+                echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["s"], "classe", []), "className", []), "html", null, true);
+                echo "</td>
 
 
                                     <td>
@@ -198,17 +209,41 @@ class __TwigTemplate_8bb8d7ba5dd14a092f78cd2e988f53507aeb41f59cb4467c3eb28ba719f
                                                 <span class=\"flaticon-more-button-of-three-dots\"></span>
                                             </a>
                                             <div class=\"dropdown-menu dropdown-menu-right\">
-                                                <a class=\"dropdown-item\" href=\"#\"><i
+                                                <a class=\"dropdown-item\"  href=\"";
+                // line 107
+                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_DetailSchedule", ["classeId" => $this->getAttribute($this->getAttribute($context["s"], "classe", []), "classId", [])]), "html", null, true);
+                echo "\"><i
+                                                            class=\"fas fa-cogs text-dark-pastel-green\"></i> &nbsp; See Schedule</a>
+
+                                                <a class=\"dropdown-item\" href=\"";
+                // line 110
+                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_DeleteSchedule", ["scheduleId" => $this->getAttribute($context["s"], "scheduleId", [])]), "html", null, true);
+                echo "\"><i
                                                             class=\"fas fa-times text-orange-red\"></i>Delete</a>
+
                                                 <a class=\"dropdown-item\" href=\"#\"><i
                                                             class=\"fas fa-cogs text-dark-pastel-green\"></i>Update</a>
+
 
                                             </div>
                                         </div>
                                     </td>
+
                                 </tr>
-                           <!--end for -->
-                            </tbody>
+                      ";
+                // line 122
+                $context["newArray"] = twig_array_merge(($context["newArray"] ?? $this->getContext($context, "newArray")), [0 => $this->getAttribute($this->getAttribute($context["s"], "classe", []), "className", [])]);
+                // line 123
+                echo "                      ";
+            }
+            // line 124
+            echo "                          ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['s'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 125
+        echo "                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -228,7 +263,7 @@ class __TwigTemplate_8bb8d7ba5dd14a092f78cd2e988f53507aeb41f59cb4467c3eb28ba719f
 
     }
 
-    // line 129
+    // line 137
     public function block_jq($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -258,7 +293,7 @@ class __TwigTemplate_8bb8d7ba5dd14a092f78cd2e988f53507aeb41f59cb4467c3eb28ba719f
 
     public function getDebugInfo()
     {
-        return array (  232 => 129,  155 => 62,  151 => 61,  142 => 55,  135 => 51,  128 => 47,  121 => 43,  114 => 39,  107 => 35,  100 => 31,  92 => 26,  68 => 5,  64 => 4,  61 => 3,  52 => 2,  30 => 1,);
+        return array (  267 => 137,  246 => 125,  240 => 124,  237 => 123,  235 => 122,  220 => 110,  214 => 107,  201 => 97,  195 => 94,  189 => 90,  187 => 89,  182 => 88,  180 => 87,  149 => 59,  145 => 58,  136 => 52,  129 => 48,  122 => 44,  115 => 40,  108 => 36,  100 => 31,  92 => 26,  68 => 5,  64 => 4,  61 => 3,  52 => 2,  30 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -303,10 +338,7 @@ class __TwigTemplate_8bb8d7ba5dd14a092f78cd2e988f53507aeb41f59cb4467c3eb28ba719f
                                     <label>Day *</label>
                                     {{ form_widget (form.day , {'attr': {'class':'select2'}}) }}
                                 </div>
-                                <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
-                                    <label>Week *</label>
-                                    {{ form_widget (form.week , {'attr': {'class':'form-control'}}) }}
-                                </div>
+
                                 <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                                     <label>Classe *</label>
                                     {{ form_widget (form.classe , {'attr': {'class':'select2'}}) }}
@@ -349,25 +381,28 @@ class __TwigTemplate_8bb8d7ba5dd14a092f78cd2e988f53507aeb41f59cb4467c3eb28ba719f
                                 <th>
                                     <div class=\"form-check\">
                                         <input type=\"checkbox\" class=\"form-check-input checkAll\">
-                                        <label class=\"form-check-label\">Class ID</label>
+                                        <label class=\"form-check-label\">Schedule ID</label>
                                     </div>
                                 </th>
-                                <th>Class Name</th>
+                                <th>Class </th>
+
 
 
                                 <th></th>
                             </tr>
                             </thead>
                             <tbody>
-                   <!-- For star here-->
+                            {% set newArray = [] %}
+                  {% for s in allSchedules %}
+{% if s.classe.className not in newArray %}
                                 <tr>
                                     <td>
                                         <div class=\"form-check\">
                                             <input type=\"checkbox\" class=\"form-check-input\">
-                                            <label class=\"form-check-label\">#1245</label>
+                                            <label class=\"form-check-label\">#{{ s.scheduleId }}</label>
                                         </div>
                                     </td>
-                                    <td>45454545</td>
+                                    <td>{{ s.classe.className }}</td>
 
 
                                     <td>
@@ -377,16 +412,24 @@ class __TwigTemplate_8bb8d7ba5dd14a092f78cd2e988f53507aeb41f59cb4467c3eb28ba719f
                                                 <span class=\"flaticon-more-button-of-three-dots\"></span>
                                             </a>
                                             <div class=\"dropdown-menu dropdown-menu-right\">
-                                                <a class=\"dropdown-item\" href=\"#\"><i
+                                                <a class=\"dropdown-item\"  href=\"{{ path('admin_DetailSchedule',{'classeId':s.classe.classId}) }}\"><i
+                                                            class=\"fas fa-cogs text-dark-pastel-green\"></i> &nbsp; See Schedule</a>
+
+                                                <a class=\"dropdown-item\" href=\"{{ path('admin_DeleteSchedule',{'scheduleId':s.scheduleId}) }}\"><i
                                                             class=\"fas fa-times text-orange-red\"></i>Delete</a>
+
                                                 <a class=\"dropdown-item\" href=\"#\"><i
                                                             class=\"fas fa-cogs text-dark-pastel-green\"></i>Update</a>
+
 
                                             </div>
                                         </div>
                                     </td>
+
                                 </tr>
-                           <!--end for -->
+                      {% set newArray = newArray|merge([s.classe.className])  %}
+                      {% endif %}
+                          {% endfor %}
                             </tbody>
                         </table>
                     </div>

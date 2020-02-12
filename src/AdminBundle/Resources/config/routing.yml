@@ -25,3 +25,9 @@ admin_DeleteSubject:
 admin_AddSchedule:
     path:     /AddSchedule
     defaults: { _controller: AdminBundle:Schedule:AddSchedule }
+admin_DeleteSchedule:
+    path:     /DeleteSchedule/{scheduleId}
+    defaults: { _controller: AdminBundle:Schedule:DeleteSchedule }
+admin_DetailSchedule:
+    path:     /DetailSchedule/{classeId}
+    defaults: { _controller: AdminBundle:Schedule:DetailSchedule }

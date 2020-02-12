@@ -14,6 +14,8 @@ class ScheduleController extends Controller
     public function AddScheduleAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
+        $allSchedules = $em->getRepository(Schedule::class)->findAll();
+        $em = $this->getDoctrine()->getManager();
         $schedule = new Schedule();
         $form = $this->createForm(ScheduleType::class,$schedule);
         $form->handleRequest($request);
@@ -21,8 +23,22 @@ class ScheduleController extends Controller
             {
                 $em->persist($schedule);
                 $em->flush();
-
+                return $this->redirectToRoute("admin_AddSchedule");
             }
-            return $this->render('@Admin\Schedule\AddSchedule.html.twig',array('form'=>$form->createView()) );
+            return $this->render('@Admin\Schedule\AddSchedule.html.twig',array('form'=>$form->createView(),'allSchedules'=>$allSchedules) );
     }
+    public function DeleteScheduleAction($scheduleId){
+        $em=$this->getDoctrine()->getManager();
+        $schedule =  $em->getRepository(Schedule::class)->find($scheduleId);
+        $em->remove($schedule);
+        $em->flush();
+        return $this->redirectToRoute("admin_AddSchedule");
+    }
+    public function DetailScheduleAction($classeId){
+        $em=$this->getDoctrine()->getManager();
+        $schedule =  $em->getRepository(Schedule::class)->findByClasse($classeId);
+
+        return $this->render('@Admin\Schedule\DetailSchedule.html.twig',array('schedule'=>$schedule) );
+    }
+
 }
