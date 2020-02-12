@@ -13,6 +13,7 @@ use Doctrine\ORM\Mapping\ManyToMany;
  * @ORM\Table(name="subject")
  * @ORM\Entity(repositoryClass="AdminBundle\Repository\SubjectRepository")
  */
+
 class Subject
 {
     /**
@@ -38,14 +39,17 @@ class Subject
      */
     private $coefficient;
 
+
+
     /**
      * Many Users have Many Groups.
-     * @ManyToMany(targetEntity="Classe")
+     * @ManyToMany(targetEntity="Classe",inversedBy="subjects")
      * @JoinTable(name="subject_byClasse",
      *      joinColumns={@JoinColumn(name="subject_id", referencedColumnName="subject_id")},
      *      inverseJoinColumns={@JoinColumn(name="class_id", referencedColumnName="class_id")}
      *      )
      */
+
     private $classes;
 
     /**
@@ -54,6 +58,14 @@ class Subject
     public function getClasses()
     {
         return $this->classes;
+    }
+
+    /**
+     *
+     * @return string
+     */
+    public function __toString(){
+        return $this->subjectName;
     }
 
     /**

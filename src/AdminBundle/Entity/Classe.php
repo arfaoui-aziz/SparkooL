@@ -3,6 +3,7 @@
 namespace AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\ManyToMany;
 
 /**
  * Classe
@@ -44,6 +45,31 @@ class Classe
         return $this->classId;
     }
 
+    /**
+     * Many Groups have Many Users.
+     * @ManyToMany(targetEntity="Subject", mappedBy="classes")
+     */
+    private $subjects;
+
+    public function __construct() {
+        $this->subjects = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSubjects()
+    {
+        return $this->subjects;
+    }
+
+    /**
+     * @param mixed $subjects
+     */
+    public function setSubjects($subjects)
+    {
+        $this->subjects = $subjects;
+    }
 
 
     /**

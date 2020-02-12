@@ -15,7 +15,8 @@ class SubjectType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('subjectName')->add('coefficient')->add('classes')
+        $builder->add('subjectName')->add('coefficient')
+            ->add('classes')
             ->add('Add',SubmitType::class , [
                 'attr' => ['class' => 'btn-fill-lg btn-gradient-yellow btn-hover-bluedark'],
             ])
@@ -25,6 +26,7 @@ class SubjectType extends AbstractType
             ->add('Reset',ResetType::class, [
                 'attr' => ['class' => 'btn-fill-lg bg-blue-dark btn-hover-yellow'],
             ]);
+
     }/**
      * {@inheritdoc}
      */
