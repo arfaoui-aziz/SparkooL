@@ -66,7 +66,6 @@ class Schedule
     private $week;
 
     /**
-     * One Product has One Shipment.
      * @OneToOne(targetEntity="Classe")
      * @JoinColumn(name="class_id", referencedColumnName="class_id")
      */

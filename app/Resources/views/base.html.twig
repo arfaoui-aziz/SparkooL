@@ -736,7 +736,10 @@
     </div>
     <!-- Page Area End Here -->
     <!-- jquery-->
+
+{% block jq %}
     <script src=" {{ asset('js/jquery-3.3.1.min.js') }} " ></script>
+    {% endblock %}
     <!-- Plugins js -->
     <script src=" {{ asset('js/plugins.js') }} " ></script>
     <!-- Popper js -->
@@ -759,7 +762,6 @@
     <script src=" {{ asset('js/fullcalendar.min.js') }} "></script>
     <!-- Chart Js -->
     <script  src=" {{ asset('js/Chart.min.js') }} " ></script>
-
     <!-- Custom Js -->
     <script  src=" {{ asset('js/main.js') }} " ></script>
 </div>

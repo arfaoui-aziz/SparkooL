@@ -1,1 +1,129 @@
-{{ form(form) }}
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <script src=" {{ asset('js/jquery-3.3.1.min.js') }} " ></script>
+    <script  src=" {{ asset('dynamicForm.js') }} " ></script>
+    <div class="dashboard-content-one">
+    <!-- Breadcubs Area Start Here -->
+    <div class="breadcrumbs-area">
+        <h3>All School Schedules</h3>
+
+    </div>
+    <!-- Breadcubs Area End Here -->
+    <!-- Class Routine Area Start Here -->
+    <div class="row">
+        <div class="col-4-xxxl col-12">
+            <div class="card height-auto">
+                <div class="card-body">
+                    <div class="heading-layout1">
+                        <div class="item-title">
+                            <h3>Add School Schedule </h3>
+                        </div>
+                        <br><br>
+                    </div>
+
+                        <form class="new-added-form" method="post" >
+                            {{ form_start(form) }}
+                            <div class="row">
+
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Day *</label>
+                                    {{ form_widget (form.day , {'attr': {'class':'select2'}}) }}
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Week *</label>
+                                    {{ form_widget (form.week , {'attr': {'class':'form-control'}}) }}
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Classe *</label>
+                                    {{ form_widget (form.classe , {'attr': {'class':'select2'}}) }}
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Seance 1 *</label>
+                                    {{ form_widget (form.seance1 , {'attr': {'class':'form-control form-control-lg'}}) }}
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Seance 2 * </label>
+                                    {{ form_widget (form.seance2 , {'attr': {'class':'form-control form-control-lg'}}) }}
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Seance 3 * </label>
+                                    {{ form_widget (form.seance3 , {'attr': {'class':'form-control form-control-lg'}}) }}
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Seance 4 *</label>
+                                    {{ form_widget (form.seance4 , {'attr': {'class':'form-control form-control-lg'}}) }}
+                                </div>
+
+
+
+                            </div>
+                            {{ form_widget(form.Add) }}
+                            {{ form_end(form) }}
+                        </form>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-8-xxxl col-12">
+            <div class="card height-auto">
+                <div class="card-body">
+
+                    <div class="table-responsive">
+                        <table class="table display data-table text-nowrap">
+                            <thead>
+                            <tr>
+                                <th>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input checkAll">
+                                        <label class="form-check-label">Class ID</label>
+                                    </div>
+                                </th>
+                                <th>Class Name</th>
+
+
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                   <!-- For star here-->
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input">
+                                            <label class="form-check-label">#1245</label>
+                                        </div>
+                                    </td>
+                                    <td>45454545</td>
+
+
+                                    <td>
+                                        <div class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                               aria-expanded="false">
+                                                <span class="flaticon-more-button-of-three-dots"></span>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item" href="#"><i
+                                                            class="fas fa-times text-orange-red"></i>Delete</a>
+                                                <a class="dropdown-item" href="#"><i
+                                                            class="fas fa-cogs text-dark-pastel-green"></i>Update</a>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                           <!--end for -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  MyScript -->
+
+
+{% endblock %}
+        {% block jq %} {% endblock %}

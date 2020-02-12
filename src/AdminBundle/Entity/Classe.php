@@ -50,7 +50,6 @@ class Classe
      * @ManyToMany(targetEntity="Subject", mappedBy="classes")
      */
     private $subjects;
-
     public function __construct() {
         $this->subjects = new \Doctrine\Common\Collections\ArrayCollection();
     }

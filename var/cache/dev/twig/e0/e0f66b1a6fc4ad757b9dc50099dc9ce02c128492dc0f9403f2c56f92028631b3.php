@@ -23,6 +23,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
         $this->blocks = [
             'body' => [$this, 'block_body'],
             'header' => [$this, 'block_header'],
+            'jq' => [$this, 'block_jq'],
         ];
     }
 
@@ -604,69 +605,69 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
     </div>
     <!-- Page Area End Here -->
     <!-- jquery-->
+
+";
+        // line 740
+        $this->displayBlock('jq', $context, $blocks);
+        // line 743
+        echo "    <!-- Plugins js -->
     <script src=\" ";
-        // line 739
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery-3.3.1.min.js"), "html", null, true);
-        echo " \" ></script>
-    <!-- Plugins js -->
-    <script src=\" ";
-        // line 741
+        // line 744
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/plugins.js"), "html", null, true);
         echo " \" ></script>
     <!-- Popper js -->
     <script src=\" ";
-        // line 743
+        // line 746
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/popper.min.js"), "html", null, true);
         echo " \"></script>
     <!-- Bootstrap js -->
     <script src=\" ";
-        // line 745
+        // line 748
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/bootstrap.min.js"), "html", null, true);
         echo " \" ></script>
     <!-- Counterup Js -->
     <script src=\" ";
-        // line 747
+        // line 750
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.counterup.min.js"), "html", null, true);
         echo " \" ></script>
     <!-- Moment Js -->
     <script  src=\" ";
-        // line 749
+        // line 752
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/moment.min.js"), "html", null, true);
         echo " \" ></script>
     <!-- Scroll Up Js -->
     <script src=\" ";
-        // line 751
+        // line 754
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.scrollUp.min.js"), "html", null, true);
         echo " \" ></script>
     <!-- Waypoints Js -->
     <script  src=\" ";
-        // line 753
+        // line 756
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.waypoints.min.js"), "html", null, true);
         echo " \" ></script>
     <!-- Select 2 Js -->
     <script src=\"";
-        // line 755
+        // line 758
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/select2.min.js"), "html", null, true);
         echo "\"></script>
     <!-- Date Picker Js -->
     <script src=\"";
-        // line 757
+        // line 760
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/datepicker.min.js"), "html", null, true);
         echo "\"></script>
     <!-- Full Calender Js -->
     <script src=\" ";
-        // line 759
+        // line 762
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/fullcalendar.min.js"), "html", null, true);
         echo " \"></script>
     <!-- Chart Js -->
     <script  src=\" ";
-        // line 761
+        // line 764
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/Chart.min.js"), "html", null, true);
         echo " \" ></script>
-
     <!-- Custom Js -->
     <script  src=\" ";
-        // line 764
+        // line 766
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/main.js"), "html", null, true);
         echo " \" ></script>
 </div>
@@ -1014,6 +1015,28 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
 
     }
 
+    // line 740
+    public function block_jq($context, array $blocks = [])
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "jq"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "jq"));
+
+        // line 741
+        echo "    <script src=\" ";
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery-3.3.1.min.js"), "html", null, true);
+        echo " \" ></script>
+    ";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
     public function getTemplateName()
     {
         return "base.html.twig";
@@ -1026,7 +1049,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
 
     public function getDebugInfo()
     {
-        return array (  1005 => 463,  996 => 462,  775 => 516,  755 => 499,  735 => 482,  716 => 465,  714 => 462,  695 => 445,  686 => 444,  670 => 764,  664 => 761,  659 => 759,  654 => 757,  649 => 755,  644 => 753,  639 => 751,  634 => 749,  629 => 747,  624 => 745,  619 => 743,  614 => 741,  609 => 739,  595 => 727,  593 => 444,  582 => 436,  541 => 398,  533 => 393,  412 => 274,  406 => 270,  401 => 268,  396 => 267,  394 => 266,  386 => 261,  369 => 247,  296 => 177,  278 => 162,  260 => 147,  242 => 132,  221 => 113,  217 => 111,  211 => 109,  209 => 108,  200 => 101,  196 => 99,  190 => 97,  188 => 96,  180 => 91,  176 => 89,  169 => 86,  162 => 83,  160 => 82,  122 => 47,  107 => 35,  102 => 33,  97 => 31,  92 => 29,  87 => 27,  82 => 25,  77 => 23,  72 => 21,  67 => 19,  62 => 17,  56 => 14,  51 => 12,  38 => 1,);
+        return array (  1028 => 741,  1019 => 740,  1006 => 463,  997 => 462,  776 => 516,  756 => 499,  736 => 482,  717 => 465,  715 => 462,  696 => 445,  687 => 444,  671 => 766,  666 => 764,  661 => 762,  656 => 760,  651 => 758,  646 => 756,  641 => 754,  636 => 752,  631 => 750,  626 => 748,  621 => 746,  616 => 744,  613 => 743,  611 => 740,  596 => 727,  594 => 444,  583 => 436,  542 => 398,  534 => 393,  413 => 274,  407 => 270,  402 => 268,  397 => 267,  395 => 266,  387 => 261,  370 => 247,  297 => 177,  279 => 162,  261 => 147,  243 => 132,  222 => 113,  218 => 111,  212 => 109,  210 => 108,  201 => 101,  197 => 99,  191 => 97,  189 => 96,  181 => 91,  177 => 89,  170 => 86,  163 => 83,  161 => 82,  123 => 47,  108 => 35,  103 => 33,  98 => 31,  93 => 29,  88 => 27,  83 => 25,  78 => 23,  73 => 21,  68 => 19,  63 => 17,  57 => 14,  52 => 12,  39 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -1777,7 +1800,10 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
     </div>
     <!-- Page Area End Here -->
     <!-- jquery-->
+
+{% block jq %}
     <script src=\" {{ asset('js/jquery-3.3.1.min.js') }} \" ></script>
+    {% endblock %}
     <!-- Plugins js -->
     <script src=\" {{ asset('js/plugins.js') }} \" ></script>
     <!-- Popper js -->
@@ -1800,7 +1826,6 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
     <script src=\" {{ asset('js/fullcalendar.min.js') }} \"></script>
     <!-- Chart Js -->
     <script  src=\" {{ asset('js/Chart.min.js') }} \" ></script>
-
     <!-- Custom Js -->
     <script  src=\" {{ asset('js/main.js') }} \" ></script>
 </div>
