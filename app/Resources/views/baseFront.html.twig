@@ -116,10 +116,16 @@
                     <!-- Header Buttons
                     ============================================= -->
                     <div class="header-buttons d-none d-sm-inline-block">
-                        {% if is_granted('ROLE_USER') %}
+                        {% if is_granted('ROLE_SUPER_ADMIN') %}
                     <a> {{ app.user.username }} &nbsp;&nbsp;&nbsp;</a>
-                        <a href="{{ path('fos_user_security_logout')}}" class="button button-rounded button-white button-light button-small m-0">Log Out</a>
-                        {% else %}
+                            <a href="{{ path('back') }}"   class="button button-rounded button-white button-light button-small m-0">Admin Panel</a>
+                            <a href="{{ path('fos_user_security_logout') }}"   class="button button-rounded button-white button-light button-small m-0">LOGOUT</a>
+                        {% elseif  is_granted('ROLE_ADMIN') %}
+                            <a href="{{ path('back') }}"   class="button button-rounded button-white button-light button-small m-0">Admin Panel</a>
+                            <a href="{{ path('fos_user_security_logout') }}"   class="button button-rounded button-white button-light button-small m-0">LOGOUT</a>
+                        {% elseif  is_granted('ROLE_USER') %}
+                            <a href="{{ path('fos_user_security_logout') }}"   class="button button-rounded button-white button-light button-small m-0">LOGOUT</a>
+                            {% else %}
                             <a href="{{ path('fos_user_security_login') }}"   class="button button-rounded button-white button-light button-small m-0">LOGIN</a>
                         {% endif %}
                     </div>

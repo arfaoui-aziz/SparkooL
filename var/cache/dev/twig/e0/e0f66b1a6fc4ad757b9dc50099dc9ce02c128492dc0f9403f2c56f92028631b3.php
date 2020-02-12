@@ -119,7 +119,10 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
     <div class=\"navbar navbar-expand-md header-menu-one bg-light\">
         <div class=\"nav-bar-header-one\">
             <div class=\"header-logo\">
-                <a href=\"index.html\">
+                <a href=\"";
+        // line 48
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("front");
+        echo "\">
                     <img src=\"";
         // line 49
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/LogoPrinc.png"), "html", null, true);
@@ -160,26 +163,33 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
                         <div class=\"admin-title\">
                             ";
         // line 84
-        if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("ROLE_USER")) {
+        if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("ROLE_SUPER_ADMIN")) {
             // line 85
             echo "                            <h5 class=\"item-title\">";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", []), "username", []), "html", null, true);
             echo "</h5>
-                            <span>Admin</span>
+                                <span>SuperAdmin</span>
+
+                                ";
+        } elseif ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("ROLE_ADMIN")) {
+            // line 89
+            echo "                                    <h5 class=\"item-title\">";
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", []), "username", []), "html", null, true);
+            echo "</h5>
+                                    <div class=\"item-title1\">Admin</div>
+
                             ";
         } else {
-            // line 88
-            echo "                            <h5 class=\"item-title\">";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", []), "roles", []), 0, [], "array"), "html", null, true);
-            echo "</h5>
+            // line 93
+            echo "                            <h5 class=\"item-title\">Aziz Arfaoui</h5>
                             <span>Admin</span>
                             ";
         }
-        // line 91
+        // line 96
         echo "                        </div>
                         <div class=\"admin-img\">
                             <img src=\"";
-        // line 93
+        // line 98
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("fonts/man.png"), "html", null, true);
         echo "\" width=\"40px\" alt=\"Admin\">
                         </div>
@@ -187,19 +197,19 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
                     <div class=\"dropdown-menu dropdown-menu-right\">
                         <div class=\"item-header\">
                             ";
-        // line 98
+        // line 103
         if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("ROLE_USER")) {
-            // line 99
+            // line 104
             echo "                            <h6 class=\"item-title\">";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", []), "username", []), "html", null, true);
             echo "</h6>
                             ";
         } else {
-            // line 101
+            // line 106
             echo "                                <h6 class=\"item-title\">Aziz Arfaoui </h6>
                             ";
         }
-        // line 103
+        // line 108
         echo "                        </div>
                         <div class=\"item-content\">
                             <ul class=\"settings-list\">
@@ -208,19 +218,19 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
                                 <li><a href=\"#\"><i class=\"flaticon-chat-comment-oval-speech-bubble-with-text-lines\"></i>Message</a></li>
                                 <li><a href=\"#\"><i class=\"flaticon-gear-loading\"></i>Account Settings</a></li>
                                 ";
-        // line 110
+        // line 115
         if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("ROLE_USER")) {
-            // line 111
+            // line 116
             echo "                                <li><a href=\"";
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fos_user_security_logout");
             echo "\"><i class=\"flaticon-turn-off\"></i>Log Out</a></li>
                                 ";
         } else {
-            // line 113
+            // line 118
             echo "                                <li><a href=\"#\"><i class=\"flaticon-turn-off\"></i>Log Out</a></li>
                                 ";
         }
-        // line 115
+        // line 120
         echo "                            </ul>
                         </div>
                     </div>
@@ -241,7 +251,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
                             <div class=\"media\">
                                 <div class=\"item-img bg-skyblue author-online\">
                                     <img src=\"";
-        // line 134
+        // line 139
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/figure/student11.png"), "html", null, true);
         echo "\" alt=\"img\">
                                 </div>
@@ -259,7 +269,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
                             <div class=\"media\">
                                 <div class=\"item-img bg-yellow author-online\">
                                     <img src=\"";
-        // line 149
+        // line 154
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/figure/student12.png"), "html", null, true);
         echo "\" alt=\"img\">
                                 </div>
@@ -277,7 +287,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
                             <div class=\"media\">
                                 <div class=\"item-img bg-pink\">
                                     <img src=\" ";
-        // line 164
+        // line 169
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/figure/student13.png"), "html", null, true);
         echo "\" alt=\"img\">
                                 </div>
@@ -295,7 +305,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
                             <div class=\"media\">
                                 <div class=\"item-img bg-violet-blue\">
                                     <img src=\"";
-        // line 179
+        // line 184
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/figure/student11.png"), "html", null, true);
         echo "\" alt=\"img\">
                                 </div>
@@ -368,7 +378,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
             <div class=\"mobile-sidebar-header d-md-none\">
                 <div class=\"header-logo\">
                     <a href=\"index.html\"><img src=\"";
-        // line 249
+        // line 254
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/logo1.png"), "html", null, true);
         echo "\" alt=\"logo\"></a>
                 </div>
@@ -385,7 +395,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
                                 <div class=\"col-6\">
                                     <div class=\"item-icon bg-ash\">
                                         <img src=\"";
-        // line 263
+        // line 268
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("fonts/man.png"), "html", null, true);
         echo "\" >
                                     </div>
@@ -393,25 +403,36 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
                             </div>
                             <div class=\"item-content\">
                                 ";
-        // line 268
+        // line 273
         if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("ROLE_USER")) {
-            // line 269
+            // line 274
             echo "                                <div class=\"item-title\">";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", []), "username", []), "html", null, true);
             echo "</div>
-                                    <div class=\"item-title1\">";
-            // line 270
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", []), "roles", []), 0, [], "array"), "html", null, true);
-            echo "</div>
                                 ";
+            // line 275
+            if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("ROLE_ADMIN")) {
+                // line 276
+                echo "                                    <div class=\"item-title1\">Admin</div>
+                                    ";
+            }
+            // line 278
+            echo "                                    ";
+            if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("ROLE_SUPER_ADMIN")) {
+                // line 279
+                echo "                                        <div class=\"item-title1\">SuperAdmin</div>
+                                    ";
+            }
+            // line 281
+            echo "                                ";
         } else {
-            // line 272
+            // line 282
             echo "                                    <div class=\"item-title\">Aziz Arfaoui</div>
 
                                 <div class=\"item-title1\">ADMIN</div>
                                 ";
         }
-        // line 276
+        // line 286
         echo "                            </div>
 
                         </div>
@@ -425,7 +446,10 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
                         <a href=\"#\" class=\"nav-link\"><i class=\"flaticon-dashboard\"></i><span>Dashboard</span></a>
                         <ul class=\"nav sub-group-menu\">
                             <li class=\"nav-item\">
-                                <a href=\"index.html\" class=\"nav-link\"><i class=\"fas fa-angle-right\"></i>Admin</a>
+                                <a href=\"";
+        // line 299
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("back");
+        echo "\" class=\"nav-link\"><i class=\"fas fa-angle-right\"></i>Admin</a>
                             </li>
                             <li class=\"nav-item\">
                                 <a href=\"index3.html\" class=\"nav-link\"><i
@@ -532,7 +556,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
                     </li>
                     <li class=\"nav-item \">
                         <a href=\"";
-        // line 395
+        // line 405
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_AddClasse");
         echo "\" class=\"nav-link\"><i
                                     class=\"flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler\"></i><span>Class</span></a>
@@ -540,14 +564,14 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
                     </li>
                     <li class=\"nav-item\">
                         <a href=\"";
-        // line 400
+        // line 410
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_AddSubject");
         echo "\" class=\"nav-link\"><i
                                     class=\"flaticon-open-book\"></i><span>Subject</span></a>
                     </li>
                     <li class=\"nav-item\">
                         <a href=\"";
-        // line 404
+        // line 414
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_AddSchedule");
         echo "\" class=\"nav-link\"><i class=\"flaticon-calendar\"></i><span>Class
                                     Routine</span></a>
@@ -584,7 +608,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
                     </li>
                     <li class=\"nav-item\">
                         <a href=\"";
-        // line 438
+        // line 448
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_AddAccount");
         echo "\" class=\"nav-link\"><i
                                     class=\"flaticon-settings\"></i><span>Add Account</span></a>
@@ -595,9 +619,9 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
         <!-- Sidebar Area End Here -->
 
         ";
-        // line 446
+        // line 456
         $this->displayBlock('body', $context, $blocks);
-        // line 729
+        // line 739
         echo "            <!-- Footer Area Start Here -->
             <footer class=\"footer-wrap-layout1\">
                 <div class=\"copyright\">© Copyrights <a href=\"#\">SparkIT</a> 2020. All rights reserved</div>
@@ -612,67 +636,67 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
     <!-- jquery-->
 
 ";
-        // line 742
+        // line 752
         $this->displayBlock('jq', $context, $blocks);
-        // line 745
+        // line 755
         echo "    <!-- Plugins js -->
     <script src=\" ";
-        // line 746
+        // line 756
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/plugins.js"), "html", null, true);
         echo " \" ></script>
     <!-- Popper js -->
     <script src=\" ";
-        // line 748
+        // line 758
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/popper.min.js"), "html", null, true);
         echo " \"></script>
     <!-- Bootstrap js -->
     <script src=\" ";
-        // line 750
+        // line 760
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/bootstrap.min.js"), "html", null, true);
         echo " \" ></script>
     <!-- Counterup Js -->
     <script src=\" ";
-        // line 752
+        // line 762
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.counterup.min.js"), "html", null, true);
         echo " \" ></script>
     <!-- Moment Js -->
     <script  src=\" ";
-        // line 754
+        // line 764
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/moment.min.js"), "html", null, true);
         echo " \" ></script>
     <!-- Scroll Up Js -->
     <script src=\" ";
-        // line 756
+        // line 766
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.scrollUp.min.js"), "html", null, true);
         echo " \" ></script>
     <!-- Waypoints Js -->
     <script  src=\" ";
-        // line 758
+        // line 768
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.waypoints.min.js"), "html", null, true);
         echo " \" ></script>
     <!-- Select 2 Js -->
     <script src=\"";
-        // line 760
+        // line 770
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/select2.min.js"), "html", null, true);
         echo "\"></script>
     <!-- Date Picker Js -->
     <script src=\"";
-        // line 762
+        // line 772
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/datepicker.min.js"), "html", null, true);
         echo "\"></script>
     <!-- Full Calender Js -->
     <script src=\" ";
-        // line 764
+        // line 774
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/fullcalendar.min.js"), "html", null, true);
         echo " \"></script>
     <!-- Chart Js -->
     <script  src=\" ";
-        // line 766
+        // line 776
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/Chart.min.js"), "html", null, true);
         echo " \" ></script>
     <!-- Custom Js -->
     <script  src=\" ";
-        // line 768
+        // line 778
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/main.js"), "html", null, true);
         echo " \" ></script>
 
@@ -689,7 +713,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
 
     }
 
-    // line 446
+    // line 456
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -698,7 +722,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 447
+        // line 457
         echo "        <div class=\"dashboard-content-one\">
             <!-- Breadcubs Area Start Here -->
             <div class=\"breadcrumbs-area\">
@@ -717,9 +741,9 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
 
                                 <div class=\"item-icon bg-light-blue \">
                                     ";
-        // line 464
+        // line 474
         $this->displayBlock('header', $context, $blocks);
-        // line 467
+        // line 477
         echo "                                </div>
 
                             </div>
@@ -738,7 +762,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
                             <div class=\"col-6\">
                                 <div class=\"item-icon bg-light-blue\">
                                     <img src=\"";
-        // line 484
+        // line 494
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("fonts/teacher.png"), "html", null, true);
         echo "\">
                                 </div>
@@ -758,7 +782,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
                             <div class=\"col-6\">
                                 <div class=\"item-icon bg-light-yellow\">
                                     <img src=\"";
-        // line 501
+        // line 511
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("fonts/mother.png"), "html", null, true);
         echo "\" width=\"60\">
                                 </div>
@@ -778,7 +802,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
                             <div class=\"col-6\">
                                 <div class=\"item-icon bg-light-red\">
                                     <img src=\"";
-        // line 518
+        // line 528
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("fonts/boss.png"), "html", null, true);
         echo "\" width=\"55px\" >
                                 </div>
@@ -999,7 +1023,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
 
     }
 
-    // line 464
+    // line 474
     public function block_header($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -1008,7 +1032,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
-        // line 465
+        // line 475
         echo "                                        <img src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("fonts/student.png"), "html", null, true);
         echo "\" >
@@ -1021,7 +1045,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
 
     }
 
-    // line 742
+    // line 752
     public function block_jq($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -1030,7 +1054,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "jq"));
 
-        // line 743
+        // line 753
         echo "    <script src=\" ";
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery-3.3.1.min.js"), "html", null, true);
         echo " \" ></script>
@@ -1055,7 +1079,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
 
     public function getDebugInfo()
     {
-        return array (  1034 => 743,  1025 => 742,  1012 => 465,  1003 => 464,  782 => 518,  762 => 501,  742 => 484,  723 => 467,  721 => 464,  702 => 447,  693 => 446,  676 => 768,  671 => 766,  666 => 764,  661 => 762,  656 => 760,  651 => 758,  646 => 756,  641 => 754,  636 => 752,  631 => 750,  626 => 748,  621 => 746,  618 => 745,  616 => 742,  601 => 729,  599 => 446,  588 => 438,  551 => 404,  544 => 400,  536 => 395,  415 => 276,  409 => 272,  404 => 270,  399 => 269,  397 => 268,  389 => 263,  372 => 249,  299 => 179,  281 => 164,  263 => 149,  245 => 134,  224 => 115,  220 => 113,  214 => 111,  212 => 110,  203 => 103,  199 => 101,  193 => 99,  191 => 98,  183 => 93,  179 => 91,  172 => 88,  165 => 85,  163 => 84,  125 => 49,  109 => 36,  104 => 34,  99 => 32,  94 => 30,  89 => 28,  84 => 26,  79 => 24,  74 => 22,  69 => 20,  64 => 18,  58 => 15,  53 => 13,  39 => 1,);
+        return array (  1058 => 753,  1049 => 752,  1036 => 475,  1027 => 474,  806 => 528,  786 => 511,  766 => 494,  747 => 477,  745 => 474,  726 => 457,  717 => 456,  700 => 778,  695 => 776,  690 => 774,  685 => 772,  680 => 770,  675 => 768,  670 => 766,  665 => 764,  660 => 762,  655 => 760,  650 => 758,  645 => 756,  642 => 755,  640 => 752,  625 => 739,  623 => 456,  612 => 448,  575 => 414,  568 => 410,  560 => 405,  451 => 299,  436 => 286,  430 => 282,  427 => 281,  423 => 279,  420 => 278,  416 => 276,  414 => 275,  409 => 274,  407 => 273,  399 => 268,  382 => 254,  309 => 184,  291 => 169,  273 => 154,  255 => 139,  234 => 120,  230 => 118,  224 => 116,  222 => 115,  213 => 108,  209 => 106,  203 => 104,  201 => 103,  193 => 98,  189 => 96,  184 => 93,  176 => 89,  168 => 85,  166 => 84,  128 => 49,  124 => 48,  109 => 36,  104 => 34,  99 => 32,  94 => 30,  89 => 28,  84 => 26,  79 => 24,  74 => 22,  69 => 20,  64 => 18,  58 => 15,  53 => 13,  39 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -1115,7 +1139,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
     <div class=\"navbar navbar-expand-md header-menu-one bg-light\">
         <div class=\"nav-bar-header-one\">
             <div class=\"header-logo\">
-                <a href=\"index.html\">
+                <a href=\"{{ path('front') }}\">
                     <img src=\"{{ asset('img/LogoPrinc.png') }}\" alt=\"logo\" width=\"155px\" height=\"40px\">
                 </a>
             </div>
@@ -1151,11 +1175,16 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
                     <a class=\"navbar-nav-link dropdown-toggle\" href=\"#\" role=\"button\" data-toggle=\"dropdown\"
                        aria-expanded=\"false\">
                         <div class=\"admin-title\">
-                            {% if is_granted('ROLE_USER') %}
+                            {% if is_granted('ROLE_SUPER_ADMIN') %}
                             <h5 class=\"item-title\">{{ app.user.username }}</h5>
-                            <span>Admin</span>
+                                <span>SuperAdmin</span>
+
+                                {% elseif  is_granted('ROLE_ADMIN')%}
+                                    <h5 class=\"item-title\">{{ app.user.username }}</h5>
+                                    <div class=\"item-title1\">Admin</div>
+
                             {% else %}
-                            <h5 class=\"item-title\">{{ app.user.roles[0] }}</h5>
+                            <h5 class=\"item-title\">Aziz Arfaoui</h5>
                             <span>Admin</span>
                             {% endif %}
                         </div>
@@ -1337,7 +1366,12 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
                             <div class=\"item-content\">
                                 {% if is_granted('ROLE_USER') %}
                                 <div class=\"item-title\">{{ app.user.username }}</div>
-                                    <div class=\"item-title1\">{{ app.user.roles[0] }}</div>
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <div class=\"item-title1\">Admin</div>
+                                    {% endif %}
+                                    {% if is_granted('ROLE_SUPER_ADMIN') %}
+                                        <div class=\"item-title1\">SuperAdmin</div>
+                                    {% endif %}
                                 {% else %}
                                     <div class=\"item-title\">Aziz Arfaoui</div>
 
@@ -1356,7 +1390,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
                         <a href=\"#\" class=\"nav-link\"><i class=\"flaticon-dashboard\"></i><span>Dashboard</span></a>
                         <ul class=\"nav sub-group-menu\">
                             <li class=\"nav-item\">
-                                <a href=\"index.html\" class=\"nav-link\"><i class=\"fas fa-angle-right\"></i>Admin</a>
+                                <a href=\"{{ path('back')}}\" class=\"nav-link\"><i class=\"fas fa-angle-right\"></i>Admin</a>
                             </li>
                             <li class=\"nav-item\">
                                 <a href=\"index3.html\" class=\"nav-link\"><i

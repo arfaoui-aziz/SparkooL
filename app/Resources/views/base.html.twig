@@ -45,7 +45,7 @@
     <div class="navbar navbar-expand-md header-menu-one bg-light">
         <div class="nav-bar-header-one">
             <div class="header-logo">
-                <a href="index.html">
+                <a href="{{ path('front') }}">
                     <img src="{{ asset('img/LogoPrinc.png') }}" alt="logo" width="155px" height="40px">
                 </a>
             </div>
@@ -81,11 +81,16 @@
                     <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                        aria-expanded="false">
                         <div class="admin-title">
-                            {% if is_granted('ROLE_USER') %}
+                            {% if is_granted('ROLE_SUPER_ADMIN') %}
                             <h5 class="item-title">{{ app.user.username }}</h5>
-                            <span>Admin</span>
+                                <span>SuperAdmin</span>
+
+                                {% elseif  is_granted('ROLE_ADMIN')%}
+                                    <h5 class="item-title">{{ app.user.username }}</h5>
+                                    <div class="item-title1">Admin</div>
+
                             {% else %}
-                            <h5 class="item-title">{{ app.user.roles[0] }}</h5>
+                            <h5 class="item-title">Aziz Arfaoui</h5>
                             <span>Admin</span>
                             {% endif %}
                         </div>
@@ -267,7 +272,12 @@
                             <div class="item-content">
                                 {% if is_granted('ROLE_USER') %}
                                 <div class="item-title">{{ app.user.username }}</div>
-                                    <div class="item-title1">{{ app.user.roles[0] }}</div>
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <div class="item-title1">Admin</div>
+                                    {% endif %}
+                                    {% if is_granted('ROLE_SUPER_ADMIN') %}
+                                        <div class="item-title1">SuperAdmin</div>
+                                    {% endif %}
                                 {% else %}
                                     <div class="item-title">Aziz Arfaoui</div>
 
@@ -286,7 +296,7 @@
                         <a href="#" class="nav-link"><i class="flaticon-dashboard"></i><span>Dashboard</span></a>
                         <ul class="nav sub-group-menu">
                             <li class="nav-item">
-                                <a href="index.html" class="nav-link"><i class="fas fa-angle-right"></i>Admin</a>
+                                <a href="{{ path('back')}}" class="nav-link"><i class="fas fa-angle-right"></i>Admin</a>
                             </li>
                             <li class="nav-item">
                                 <a href="index3.html" class="nav-link"><i
