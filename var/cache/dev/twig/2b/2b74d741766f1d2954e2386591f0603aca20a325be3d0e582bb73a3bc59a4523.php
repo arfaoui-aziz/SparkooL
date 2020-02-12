@@ -177,18 +177,12 @@ class __TwigTemplate_8f765fceded69333cd071fdae14d7b265cb94c9263816c43f32c380b734
 
                         </div>
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
-                            <label>Picture *</label>
-                            <label class=\"file\" title=\"\">
-                            ";
-        // line 86
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "picture", []), 'widget', ["attr" => ["onchange" => "this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))"]]);
-        echo "
-                            </label> </div>
+                           </div>
 
                         <div class=\"col-lg-6 col-12 form-group\">
                             <label>Address *</label>
                             ";
-        // line 91
+        // line 88
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "address", []), 'widget', ["attr" => ["class" => "textarea form-control", "cols" => "10", "rows" => "4"]]);
         echo "
 
@@ -196,18 +190,18 @@ class __TwigTemplate_8f765fceded69333cd071fdae14d7b265cb94c9263816c43f32c380b734
 
                         <div class=\"col-12 form-group mg-t-8\">
                             ";
-        // line 96
+        // line 93
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "Add", []), 'widget');
         echo "
                             ";
-        // line 97
+        // line 94
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "Reset", []), 'widget');
         echo "
 
                         </div>
                     </div>
                     ";
-        // line 101
+        // line 98
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end', ["render_rest" => false]);
         echo "
                 </form>
@@ -234,49 +228,65 @@ class __TwigTemplate_8f765fceded69333cd071fdae14d7b265cb94c9263816c43f32c380b734
                     </div>
                     <div class=\"all-user-box\">
                         ";
-        // line 125
+        // line 122
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["allUsers"] ?? $this->getContext($context, "allUsers")));
         foreach ($context['_seq'] as $context["_key"] => $context["u"]) {
-            // line 126
+            // line 123
             echo "
 
 ";
-            // line 128
+            // line 125
             if (($this->getAttribute($context["u"], "id", []) == $this->getAttribute($this->getAttribute(($context["allUsers"] ?? $this->getContext($context, "allUsers")), 0, [], "array"), "id", []))) {
-                // line 129
+                // line 126
                 echo "                        <div class=\"media media-none--xs active\">
                             ";
             } else {
-                // line 131
+                // line 128
                 echo "                            <div class=\"media media-none--xs\">
                                 ";
             }
-            // line 133
+            // line 130
             echo "
                                 <div class=\"item-img\">
 
-                                        <img src=\" ";
-            // line 136
-            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/figure/user1.jpg"), "html", null, true);
-            echo "\" class=\"media-img-auto\" alt=\"user\">
-
+                                    ";
+            // line 133
+            if (($this->getAttribute($context["u"], "gender", []) == "Male")) {
+                // line 134
+                echo "                                        <img src=\" ";
+                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/figure/user1.jpg"), "html", null, true);
+                echo "\" class=\"media-img-auto\" alt=\"user\">
+                                    ";
+            } else {
+                // line 136
+                echo "                                        <img src=\" ";
+                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/figure/user4.jpg"), "html", null, true);
+                echo "\" class=\"media-img-auto\" alt=\"user\">
+                                    ";
+            }
+            // line 138
+            echo "
                                 </div>
                                 <div class=\"media-body space-md\">
                                     <h5 class=\"item-title\">";
-            // line 140
+            // line 141
             echo twig_escape_filter($this->env, $this->getAttribute($context["u"], "firstName", []), "html", null, true);
             echo " ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["u"], "lastName", []), "html", null, true);
             echo "</h5>
                                     <div class=\"item-subtitle\">";
-            // line 141
+            // line 142
             echo twig_escape_filter($this->env, $this->getAttribute($context["u"], "userType", []), "html", null, true);
             echo "</div>
                                     <a href=\"";
-            // line 142
+            // line 143
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_UpdateAccount", ["id" => $this->getAttribute($context["u"], "id", [])]), "html", null, true);
-            echo "\">More Details</a>
+            echo "\" class=\"btn btn-outline-info\">More Details</a>
+                                    <a href=\"";
+            // line 144
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_DeleteAccount", ["id" => $this->getAttribute($context["u"], "id", [])]), "html", null, true);
+            echo "\" class=\"btn btn-outline-danger\">Delete User</a>
                                 </div>
                             </div>
 
@@ -286,7 +296,7 @@ class __TwigTemplate_8f765fceded69333cd071fdae14d7b265cb94c9263816c43f32c380b734
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['u'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 148
+        // line 150
         echo "
 
 
@@ -301,22 +311,13 @@ class __TwigTemplate_8f765fceded69333cd071fdae14d7b265cb94c9263816c43f32c380b734
                             <div class=\"item-title\">
                                 <h3>User Details</h3>
                             </div>
-                            <div class=\"dropdown\">
-                                <a class=\"dropdown-toggle\" href=\"#\" role=\"button\"
-                                   data-toggle=\"dropdown\" aria-expanded=\"false\">...</a>
 
-                                <div class=\"dropdown-menu dropdown-menu-right\">
-                                    <a class=\"dropdown-item\" href=\"Delete\">
-                                        <i class=\"fas fa-times text-orange-red\"></i>Delete Employee</a>
-                                    <a class=\"dropdown-item\"  href=\"Modifier\"><i class=\"fas fa-cogs text-dark-pastel-green\"></i>Edit</a>
-                                </div>
-                            </div>
                         </div>
                         <div class=\"user-details-box\">
                             <div class=\"item-img\">
 
                                     <img src=\" ";
-        // line 176
+        // line 169
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/figure/user.jpg"), "html", null, true);
         echo "\" class=\"media-img-auto\" alt=\"user\">
 
@@ -328,14 +329,14 @@ class __TwigTemplate_8f765fceded69333cd071fdae14d7b265cb94c9263816c43f32c380b734
                                         <tr>
                                             <td>ID No:</td>
                                             <td class=\"font-medium text-dark-medium\">";
-        // line 185
+        // line 178
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["allUsers"] ?? $this->getContext($context, "allUsers")), 0, [], "array"), "id", []), "html", null, true);
         echo "</td>
                                         </tr>
                                         <tr>
                                             <td>Name:</td>
                                             <td class=\"font-medium text-dark-medium\">";
-        // line 189
+        // line 182
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["allUsers"] ?? $this->getContext($context, "allUsers")), 0, [], "array"), "firstName", []), "html", null, true);
         echo " ";
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["allUsers"] ?? $this->getContext($context, "allUsers")), 0, [], "array"), "lastName", []), "html", null, true);
@@ -344,14 +345,14 @@ class __TwigTemplate_8f765fceded69333cd071fdae14d7b265cb94c9263816c43f32c380b734
                                         <tr>
                                             <td>User Type:</td>
                                             <td class=\"font-medium text-dark-medium\">";
-        // line 193
+        // line 186
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["allUsers"] ?? $this->getContext($context, "allUsers")), 0, [], "array"), "userType", []), "html", null, true);
         echo " </td>
                                         </tr>
                                         <tr>
                                             <td>Gender:</td>
                                             <td class=\"font-medium text-dark-medium\">";
-        // line 197
+        // line 190
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["allUsers"] ?? $this->getContext($context, "allUsers")), 0, [], "array"), "gender", []), "html", null, true);
         echo "</td>
                                         </tr>
@@ -414,7 +415,7 @@ class __TwigTemplate_8f765fceded69333cd071fdae14d7b265cb94c9263816c43f32c380b734
 
     public function getDebugInfo()
     {
-        return array (  355 => 197,  348 => 193,  339 => 189,  332 => 185,  320 => 176,  290 => 148,  278 => 142,  274 => 141,  268 => 140,  261 => 136,  256 => 133,  252 => 131,  248 => 129,  246 => 128,  242 => 126,  238 => 125,  211 => 101,  204 => 97,  200 => 96,  192 => 91,  184 => 86,  175 => 80,  168 => 76,  157 => 68,  148 => 62,  139 => 56,  130 => 50,  122 => 45,  115 => 41,  108 => 37,  101 => 33,  92 => 27,  85 => 23,  80 => 21,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  356 => 190,  349 => 186,  340 => 182,  333 => 178,  321 => 169,  300 => 150,  288 => 144,  284 => 143,  280 => 142,  274 => 141,  269 => 138,  263 => 136,  257 => 134,  255 => 133,  250 => 130,  246 => 128,  242 => 126,  240 => 125,  236 => 123,  232 => 122,  205 => 98,  198 => 94,  194 => 93,  186 => 88,  175 => 80,  168 => 76,  157 => 68,  148 => 62,  139 => 56,  130 => 50,  122 => 45,  115 => 41,  108 => 37,  101 => 33,  92 => 27,  85 => 23,  80 => 21,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -510,10 +511,7 @@ class __TwigTemplate_8f765fceded69333cd071fdae14d7b265cb94c9263816c43f32c380b734
 
                         </div>
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
-                            <label>Picture *</label>
-                            <label class=\"file\" title=\"\">
-                            {{ form_widget (form.picture , {'attr': {'onchange':\"this.parentNode.setAttribute('title', this.value.replace(/^.*[\\\\/]/, ''))\"}}) }}
-                            </label> </div>
+                           </div>
 
                         <div class=\"col-lg-6 col-12 form-group\">
                             <label>Address *</label>
@@ -562,13 +560,18 @@ class __TwigTemplate_8f765fceded69333cd071fdae14d7b265cb94c9263816c43f32c380b734
 
                                 <div class=\"item-img\">
 
+                                    {% if u.gender == \"Male\" %}
                                         <img src=\" {{ asset('img/figure/user1.jpg') }}\" class=\"media-img-auto\" alt=\"user\">
+                                    {% else %}
+                                        <img src=\" {{ asset('img/figure/user4.jpg') }}\" class=\"media-img-auto\" alt=\"user\">
+                                    {% endif %}
 
                                 </div>
                                 <div class=\"media-body space-md\">
                                     <h5 class=\"item-title\">{{u.firstName }} {{ u.lastName }}</h5>
                                     <div class=\"item-subtitle\">{{u.userType}}</div>
-                                    <a href=\"{{ path('admin_UpdateAccount',{'id':u.id}) }}\">More Details</a>
+                                    <a href=\"{{ path('admin_UpdateAccount',{'id':u.id}) }}\" class=\"btn btn-outline-info\">More Details</a>
+                                    <a href=\"{{ path('admin_DeleteAccount',{'id':u.id}) }}\" class=\"btn btn-outline-danger\">Delete User</a>
                                 </div>
                             </div>
 
@@ -588,16 +591,7 @@ class __TwigTemplate_8f765fceded69333cd071fdae14d7b265cb94c9263816c43f32c380b734
                             <div class=\"item-title\">
                                 <h3>User Details</h3>
                             </div>
-                            <div class=\"dropdown\">
-                                <a class=\"dropdown-toggle\" href=\"#\" role=\"button\"
-                                   data-toggle=\"dropdown\" aria-expanded=\"false\">...</a>
 
-                                <div class=\"dropdown-menu dropdown-menu-right\">
-                                    <a class=\"dropdown-item\" href=\"Delete\">
-                                        <i class=\"fas fa-times text-orange-red\"></i>Delete Employee</a>
-                                    <a class=\"dropdown-item\"  href=\"Modifier\"><i class=\"fas fa-cogs text-dark-pastel-green\"></i>Edit</a>
-                                </div>
-                            </div>
                         </div>
                         <div class=\"user-details-box\">
                             <div class=\"item-img\">

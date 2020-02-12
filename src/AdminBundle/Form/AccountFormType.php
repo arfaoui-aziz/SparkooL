@@ -18,9 +18,11 @@ class AccountFormType extends AbstractType
         $builder->add('userType',ChoiceType::class,[
             'choices'=>[
                 'Please Select*'=>false,
+                'Administrator'=>'Administrator',
                 'Responsable Etudiant'=>'Responsable Etudiant',
                 'Responsable enseignant'=>'Responsable enseignant',
                 'Responsable parent'=>'Responsable parent',
+                'User'=>'User',
             ],
             'required' =>true
         ])

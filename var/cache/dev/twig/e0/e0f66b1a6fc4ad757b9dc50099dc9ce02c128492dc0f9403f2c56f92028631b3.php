@@ -23,6 +23,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
         $this->blocks = [
             'body' => [$this, 'block_body'],
             'header' => [$this, 'block_header'],
+            'footer' => [$this, 'block_footer'],
             'jq' => [$this, 'block_jq'],
         ];
     }
@@ -216,7 +217,10 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
                                 <li><a href=\"#\"><i class=\"flaticon-user\"></i>My Profile</a></li>
                                 <li><a href=\"#\"><i class=\"flaticon-list\"></i>Task</a></li>
                                 <li><a href=\"#\"><i class=\"flaticon-chat-comment-oval-speech-bubble-with-text-lines\"></i>Message</a></li>
-                                <li><a href=\"#\"><i class=\"flaticon-gear-loading\"></i>Account Settings</a></li>
+                                <li><a href=\"";
+        // line 114
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_AccountSettings");
+        echo "\"><i class=\"flaticon-gear-loading\"></i>Account Settings</a></li>
                                 ";
         // line 115
         if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("ROLE_USER")) {
@@ -623,10 +627,11 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
         $this->displayBlock('body', $context, $blocks);
         // line 739
         echo "            <!-- Footer Area Start Here -->
-            <footer class=\"footer-wrap-layout1\">
-                <div class=\"copyright\">© Copyrights <a href=\"#\">SparkIT</a> 2020. All rights reserved</div>
-            </footer>
-            <!-- Footer Area End Here -->
+            ";
+        // line 740
+        $this->displayBlock('footer', $context, $blocks);
+        // line 745
+        echo "            <!-- Footer Area End Here -->
 
 
 
@@ -636,67 +641,67 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
     <!-- jquery-->
 
 ";
-        // line 752
+        // line 754
         $this->displayBlock('jq', $context, $blocks);
-        // line 755
+        // line 757
         echo "    <!-- Plugins js -->
     <script src=\" ";
-        // line 756
+        // line 758
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/plugins.js"), "html", null, true);
         echo " \" ></script>
     <!-- Popper js -->
     <script src=\" ";
-        // line 758
+        // line 760
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/popper.min.js"), "html", null, true);
         echo " \"></script>
     <!-- Bootstrap js -->
     <script src=\" ";
-        // line 760
+        // line 762
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/bootstrap.min.js"), "html", null, true);
         echo " \" ></script>
     <!-- Counterup Js -->
     <script src=\" ";
-        // line 762
+        // line 764
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.counterup.min.js"), "html", null, true);
         echo " \" ></script>
     <!-- Moment Js -->
     <script  src=\" ";
-        // line 764
+        // line 766
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/moment.min.js"), "html", null, true);
         echo " \" ></script>
     <!-- Scroll Up Js -->
     <script src=\" ";
-        // line 766
+        // line 768
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.scrollUp.min.js"), "html", null, true);
         echo " \" ></script>
     <!-- Waypoints Js -->
     <script  src=\" ";
-        // line 768
+        // line 770
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.waypoints.min.js"), "html", null, true);
         echo " \" ></script>
     <!-- Select 2 Js -->
     <script src=\"";
-        // line 770
+        // line 772
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/select2.min.js"), "html", null, true);
         echo "\"></script>
     <!-- Date Picker Js -->
     <script src=\"";
-        // line 772
+        // line 774
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/datepicker.min.js"), "html", null, true);
         echo "\"></script>
     <!-- Full Calender Js -->
     <script src=\" ";
-        // line 774
+        // line 776
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/fullcalendar.min.js"), "html", null, true);
         echo " \"></script>
     <!-- Chart Js -->
     <script  src=\" ";
-        // line 776
+        // line 778
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/Chart.min.js"), "html", null, true);
         echo " \" ></script>
     <!-- Custom Js -->
     <script  src=\" ";
-        // line 778
+        // line 780
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/main.js"), "html", null, true);
         echo " \" ></script>
 
@@ -859,7 +864,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
 
                             </div>
                             <hr style=\"border-width:4px;\">
-                            <p>No students absent</p>
+                            <p class=\"noabs\">No students absent</p>
                         </div>
 
                     </div>
@@ -1045,7 +1050,29 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
 
     }
 
-    // line 752
+    // line 740
+    public function block_footer($context, array $blocks = [])
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
+
+        // line 741
+        echo "            <footer class=\"footer-wrap-layout1\">
+                <div class=\"copyright\">© Copyrights <a href=\"#\">SparkIT</a> 2020. All rights reserved</div>
+            </footer>
+            ";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 754
     public function block_jq($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -1054,7 +1081,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "jq"));
 
-        // line 753
+        // line 755
         echo "    <script src=\" ";
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery-3.3.1.min.js"), "html", null, true);
         echo " \" ></script>
@@ -1079,7 +1106,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
 
     public function getDebugInfo()
     {
-        return array (  1058 => 753,  1049 => 752,  1036 => 475,  1027 => 474,  806 => 528,  786 => 511,  766 => 494,  747 => 477,  745 => 474,  726 => 457,  717 => 456,  700 => 778,  695 => 776,  690 => 774,  685 => 772,  680 => 770,  675 => 768,  670 => 766,  665 => 764,  660 => 762,  655 => 760,  650 => 758,  645 => 756,  642 => 755,  640 => 752,  625 => 739,  623 => 456,  612 => 448,  575 => 414,  568 => 410,  560 => 405,  451 => 299,  436 => 286,  430 => 282,  427 => 281,  423 => 279,  420 => 278,  416 => 276,  414 => 275,  409 => 274,  407 => 273,  399 => 268,  382 => 254,  309 => 184,  291 => 169,  273 => 154,  255 => 139,  234 => 120,  230 => 118,  224 => 116,  222 => 115,  213 => 108,  209 => 106,  203 => 104,  201 => 103,  193 => 98,  189 => 96,  184 => 93,  176 => 89,  168 => 85,  166 => 84,  128 => 49,  124 => 48,  109 => 36,  104 => 34,  99 => 32,  94 => 30,  89 => 28,  84 => 26,  79 => 24,  74 => 22,  69 => 20,  64 => 18,  58 => 15,  53 => 13,  39 => 1,);
+        return array (  1085 => 755,  1076 => 754,  1063 => 741,  1054 => 740,  1041 => 475,  1032 => 474,  811 => 528,  791 => 511,  771 => 494,  752 => 477,  750 => 474,  731 => 457,  722 => 456,  705 => 780,  700 => 778,  695 => 776,  690 => 774,  685 => 772,  680 => 770,  675 => 768,  670 => 766,  665 => 764,  660 => 762,  655 => 760,  650 => 758,  647 => 757,  645 => 754,  634 => 745,  632 => 740,  629 => 739,  627 => 456,  616 => 448,  579 => 414,  572 => 410,  564 => 405,  455 => 299,  440 => 286,  434 => 282,  431 => 281,  427 => 279,  424 => 278,  420 => 276,  418 => 275,  413 => 274,  411 => 273,  403 => 268,  386 => 254,  313 => 184,  295 => 169,  277 => 154,  259 => 139,  238 => 120,  234 => 118,  228 => 116,  226 => 115,  222 => 114,  214 => 108,  210 => 106,  204 => 104,  202 => 103,  194 => 98,  190 => 96,  185 => 93,  177 => 89,  169 => 85,  167 => 84,  129 => 49,  125 => 48,  110 => 36,  105 => 34,  100 => 32,  95 => 30,  90 => 28,  85 => 26,  80 => 24,  75 => 22,  70 => 20,  65 => 18,  59 => 15,  54 => 13,  40 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -1205,7 +1232,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
                                 <li><a href=\"#\"><i class=\"flaticon-user\"></i>My Profile</a></li>
                                 <li><a href=\"#\"><i class=\"flaticon-list\"></i>Task</a></li>
                                 <li><a href=\"#\"><i class=\"flaticon-chat-comment-oval-speech-bubble-with-text-lines\"></i>Message</a></li>
-                                <li><a href=\"#\"><i class=\"flaticon-gear-loading\"></i>Account Settings</a></li>
+                                <li><a href=\"{{ path('admin_AccountSettings') }}\"><i class=\"flaticon-gear-loading\"></i>Account Settings</a></li>
                                 {% if is_granted('ROLE_USER') %}
                                 <li><a href=\"{{ path('fos_user_security_logout') }}\"><i class=\"flaticon-turn-off\"></i>Log Out</a></li>
                                 {% else %}
@@ -1674,7 +1701,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
 
                             </div>
                             <hr style=\"border-width:4px;\">
-                            <p>No students absent</p>
+                            <p class=\"noabs\">No students absent</p>
                         </div>
 
                     </div>
@@ -1831,9 +1858,11 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
             <!-- Dashboard Content End Here -->
             {% endblock %}
             <!-- Footer Area Start Here -->
+            {% block footer %}
             <footer class=\"footer-wrap-layout1\">
                 <div class=\"copyright\">© Copyrights <a href=\"#\">SparkIT</a> 2020. All rights reserved</div>
             </footer>
+            {% endblock %}
             <!-- Footer Area End Here -->
 
 

@@ -82,10 +82,7 @@
 
                                 </div>
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label>Picture *</label>
-                                    <label class="file" title="">
-                                        {{ form_widget (form.picture , {'attr': {'onchange':"this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))"}}) }}
-                                    </label> </div>
+                                    </div>
 
                                 <div class="col-lg-6 col-12 form-group">
                                     <label>Address *</label>
@@ -104,6 +101,132 @@
                     </div>
                 </div>
             </div>
+
+
+
+            <div class="col-4-xxxl col-xl-5">
+                <div class="card account-settings-box height-auto">
+                    <div class="card-body">
+                        <div class="heading-layout1 mg-b-20">
+                            <div class="item-title">
+                                <h3>All User</h3>
+                            </div>
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" href="#" role="button"
+                                   data-toggle="dropdown" aria-expanded="false">...</a>
+
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="all-user-box">
+                            {% for u in allUsers %}
+
+
+                            {% if u.id == user.id %}
+                            <div class="media media-none--xs active">
+                                {% else %}
+                                <div class="media media-none--xs">
+                                    {% endif %}
+
+                                    <div class="item-img">
+
+                                        {% if u.gender == "Male" %}
+                                            <img src=" {{ asset('img/figure/user1.jpg') }}" class="media-img-auto" alt="user">
+                                        {% else %}
+                                            <img src=" {{ asset('img/figure/user4.jpg') }}" class="media-img-auto" alt="user">
+                                        {% endif %}
+
+                                    </div>
+                                    <div class="media-body space-md">
+                                        <h5 class="item-title">{{u.firstName }} {{ u.lastName }}</h5>
+                                        <div class="item-subtitle">{{u.userType}}</div>
+                                        <a href="{{ path('admin_UpdateAccount',{'id':u.id}) }}">More Details</a><br>
+                                        <a href="{{ path('admin_DeleteAccount',{'id':u.id}) }}">Delete User</a>
+                                    </div>
+                                </div>
+
+
+                                {% endfor %}
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8-xxxl col-xl-7">
+                    <div class="card account-settings-box">
+                        <div class="card-body">
+                            <div class="heading-layout1 mg-b-20">
+                                <div class="item-title">
+                                    <h3>User Details</h3>
+                                </div>
+
+                            </div>
+                            <div class="user-details-box">
+                                <div class="item-img">
+                                    {% if user.gender == "Male" %}
+                                    <img src=" {{ asset('img/figure/user.jpg') }}" class="media-img-auto" alt="user">
+                                    {% else %}
+                                        <img src=" {{ asset('img/figure/student.png') }}" class="media-img-auto" alt="user">
+                                    {% endif %}
+                                </div>
+                                <div class="item-content">
+                                    <div class="info-table table-responsive">
+                                        <table class="table text-nowrap">
+                                            <tbody>
+                                            <tr>
+                                                <td>ID No:</td>
+                                                <td class="font-medium text-dark-medium">{{ user.id }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Name:</td>
+                                                <td class="font-medium text-dark-medium">{{user.firstName }} {{ user.lastName }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>User Type:</td>
+                                                <td class="font-medium text-dark-medium">{{ user.userType }} </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Gender:</td>
+                                                <td class="font-medium text-dark-medium">{{ user.gender }}</td>
+                                            </tr>
+
+
+
+                                            <tr>
+                                                <td>Joining Date:</td>
+                                                <td class="font-medium text-dark-medium">{{ user.joiningDate }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>E-mail:</td>
+                                                <td class="font-medium text-dark-medium">{{user.email}}</td>
+                                            </tr>
+
+
+
+                                            <tr>
+                                                <td>Address:</td>
+                                                <td class="font-medium text-dark-medium">{{ user.address }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Phone:</td>
+                                                <td class="font-medium text-dark-medium">{{ user.phone }}</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Account Settings Area End Here -->
 
             <!-- Account Settings Area End Here -->
             <footer class="footer-wrap-layout1">

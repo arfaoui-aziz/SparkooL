@@ -19,7 +19,7 @@ class AccountController extends Controller
         if($form->isSubmitted() && $form->isValid())
         {
 
-            $pic = $form['picture']->getData();
+
             $id = $user->getId();
             $firstName = $user->getFirstName();
             $lastName = $user->getLastName();
@@ -65,7 +65,6 @@ class AccountController extends Controller
             $user->setPassword($pwd);
             $user->setUsername($username);
             $user->setEnabled(1);
-            $user->setPicture($pic);
             $em->persist($user);
             $em->flush();
             return $this->redirectToRoute("admin_AddAccount");
@@ -76,6 +75,7 @@ class AccountController extends Controller
 
     public function UpdateAccountAction($id,Request $request){
         $em = $this->getDoctrine()->getManager();
+        $allUsers = $em->getRepository(User::class)->findAll();
         $user =  $em->getRepository(User::class)->find($id);
         $form = $this->createForm(AccountFormType::class,$user);
         $form->handleRequest($request);
@@ -86,6 +86,34 @@ class AccountController extends Controller
             $em->flush();
             return $this->redirectToRoute("admin_AddAccount");
         }
-        return $this->render('@Admin\Account\UpdateAccount.html.twig',array('form'=>$form->createView()));
+        return $this->render('@Admin\Account\UpdateAccount.html.twig',array('form'=>$form->createView(),'allUsers'=>$allUsers,'user'=>$user));
     }
+
+    public function DeleteAccountAction($id){
+        $em=$this->getDoctrine()->getManager();
+        $user = $em->getRepository(User::class)->find($id);
+        $em->remove($user);
+        $em->flush();
+        return $this->redirectToRoute("admin_AddAccount");
+    }
+    public function AccountSettingsAction(Request $request){
+        $em=$this->getDoctrine()->getManager();
+        $activeuser = $this->getUser()->getId();
+        $user = $em->getRepository(User::class)->find($activeuser);
+        $username =  $request->get('username');
+        $email =  $request->get('email');
+        $password = $request->get('password');
+        if($request->isMethod("POST")) {
+     $user->setUsername($username);
+     $user->setEmail($email);
+     $pwd=password_hash($password, PASSWORD_BCRYPT);
+     $user->setPassword($pwd);
+     $em->persist($user);
+     $em->flush();
+            return $this->redirectToRoute("admin_AccountSettings");
+        }
+        return $this->render('@Admin\Account\AccountSettings.html.twig',array('activeUser'=>$user));
+    }
+
+
 }

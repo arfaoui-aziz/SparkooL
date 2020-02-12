@@ -67,8 +67,6 @@ class RegistrationFormType extends AbstractType
             ->add('address',TextareaType::class)
             ->add('birthDay')
             ->add('BloodGroup')
-          
-            ->add('picture',FileType::class, array('data_class' => null))
             ->add('occupation')
             ->add('email', EmailType::class, array('label' => 'form.email', 'translation_domain' => 'FOSUserBundle'))
             ->add('username', null, array('label' => 'form.username', 'translation_domain' => 'FOSUserBundle'))

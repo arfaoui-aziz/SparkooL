@@ -379,7 +379,10 @@ class __TwigTemplate_8731caffc39c74254925395b4f351119690d71ff85aadcf9bee33daa7bd
 <div class=\"container\" id=\"container\">
     <div class=\"form-container sign-up-container\">
         <form action=\"#\">
-            <a href=\"#\">
+            <a href=\"";
+        // line 340
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("front");
+        echo "\">
                 <img src=\"LogoFooter.png\">
                 <br><br>
                 <button>Visit SparkooL</button>
@@ -513,7 +516,7 @@ class __TwigTemplate_8731caffc39c74254925395b4f351119690d71ff85aadcf9bee33daa7bd
 
     public function getDebugInfo()
     {
-        return array (  427 => 370,  410 => 356,  407 => 355,  401 => 353,  399 => 352,  392 => 348,  375 => 334,  44 => 5,  38 => 3,  36 => 2,);
+        return array (  430 => 370,  413 => 356,  410 => 355,  404 => 353,  402 => 352,  395 => 348,  384 => 340,  375 => 334,  44 => 5,  38 => 3,  36 => 2,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -865,7 +868,7 @@ class __TwigTemplate_8731caffc39c74254925395b4f351119690d71ff85aadcf9bee33daa7bd
 <div class=\"container\" id=\"container\">
     <div class=\"form-container sign-up-container\">
         <form action=\"#\">
-            <a href=\"#\">
+            <a href=\"{{ path('front') }}\">
                 <img src=\"LogoFooter.png\">
                 <br><br>
                 <button>Visit SparkooL</button>

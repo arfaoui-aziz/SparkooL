@@ -81,10 +81,7 @@
 
                         </div>
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
-                            <label>Picture *</label>
-                            <label class="file" title="">
-                            {{ form_widget (form.picture , {'attr': {'onchange':"this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))"}}) }}
-                            </label> </div>
+                           </div>
 
                         <div class="col-lg-6 col-12 form-group">
                             <label>Address *</label>
@@ -133,13 +130,18 @@
 
                                 <div class="item-img">
 
+                                    {% if u.gender == "Male" %}
                                         <img src=" {{ asset('img/figure/user1.jpg') }}" class="media-img-auto" alt="user">
+                                    {% else %}
+                                        <img src=" {{ asset('img/figure/user4.jpg') }}" class="media-img-auto" alt="user">
+                                    {% endif %}
 
                                 </div>
                                 <div class="media-body space-md">
                                     <h5 class="item-title">{{u.firstName }} {{ u.lastName }}</h5>
                                     <div class="item-subtitle">{{u.userType}}</div>
-                                    <a href="{{ path('admin_UpdateAccount',{'id':u.id}) }}">More Details</a>
+                                    <a href="{{ path('admin_UpdateAccount',{'id':u.id}) }}" class="btn btn-outline-info">More Details</a>
+                                    <a href="{{ path('admin_DeleteAccount',{'id':u.id}) }}" class="btn btn-outline-danger">Delete User</a>
                                 </div>
                             </div>
 
@@ -159,16 +161,7 @@
                             <div class="item-title">
                                 <h3>User Details</h3>
                             </div>
-                            <div class="dropdown">
-                                <a class="dropdown-toggle" href="#" role="button"
-                                   data-toggle="dropdown" aria-expanded="false">...</a>
 
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="Delete">
-                                        <i class="fas fa-times text-orange-red"></i>Delete Employee</a>
-                                    <a class="dropdown-item"  href="Modifier"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                </div>
-                            </div>
                         </div>
                         <div class="user-details-box">
                             <div class="item-img">
