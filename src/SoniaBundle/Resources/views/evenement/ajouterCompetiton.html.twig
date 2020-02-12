@@ -28,7 +28,7 @@
                     <div class="row">
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>Name *</label>
-                            {{ form_widget (f.nomEvent, {'attr': {'class':'form-control'}}) }}
+                            {{ form_widget (f.nomEvent, {'attr': {'class':'form-control''placeholder':'Kids Event'}}) }}
                         </div>
 
                         {%  do f.typeEvent.setRendered() %}
@@ -36,7 +36,7 @@
 
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>Description *</label>
-                            {{ form_widget (f.description , {'attr': {'class':'form-control','placeholder':'ed'}}) }}
+                            {{ form_widget (f.description , {'attr': {'class':'form-control','placeholder':'The Competition is about'}}) }}
                         </div>
 
 
@@ -48,7 +48,7 @@
 
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>Place of Event *</label>
-                            {{ form_widget (f.placeEvent , {'attr': {'class':'form-control'}}) }}
+                            {{ form_widget (f.placeEvent , {'attr': {'class':'form-control''placeholder':'Classroom'}}) }}
                         </div>
 
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
@@ -60,7 +60,7 @@
 
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label> Theme *</label>
-                            {{ form_widget (f.theme , {'attr': {'class':'form-control'}}) }}
+                            {{ form_widget (f.theme , {'attr': {'class':'form-control''placeholder':'Food'}}) }}
                         </div>
 
                         {%  do f.destination.setRendered() %}
@@ -76,8 +76,13 @@
                             {{ form_widget (f.budget , {'attr': {'class':'form-control'}}) }}
                         </div>
 
-
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label> Price of Participation *</label>
+                            {{ form_widget (f.price , {'attr': {'class':'form-control''placeholder':'Free'}}) }}
+                        </div>
+<br>
                     </div>
+
                     {{form_end(f)}}
                 </form>
                 <section class="content-header">

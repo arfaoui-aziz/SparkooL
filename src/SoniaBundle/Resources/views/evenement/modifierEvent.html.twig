@@ -55,10 +55,15 @@
                         {%  do f.destination.setRendered() %}
                         {%  do f.award.setRendered() %}
 
+
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label> Budget *</label>
                             {{ form_widget (f.budget , {'attr': {'class':'form-control'}}) }}
                         </div>  &nbsp;
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label> Price of Participation *</label>
+                            {{ form_widget (f.price , {'attr': {'class':'form-control','placeholder':'Free'}}) }}
+                        </div>
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label > </label>
                             <br>
@@ -114,6 +119,8 @@
                             <label> Budget *</label>
                             {{ form_widget (f.budget , {'attr': {'class':'form-control'}}) }}
                         </div>  &nbsp;
+                        {%  do f.price.setRendered() %}
+
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label > </label>
                             <br>
@@ -161,10 +168,15 @@
                         {%  do f.destination.setRendered() %}
                         {%  do f.award.setRendered() %}
 
+
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label> Budget *</label>
                             {{ form_widget (f.budget , {'attr': {'class':'form-control'}}) }}
                         </div>  &nbsp;
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label> Price of Participation *</label>
+                            {{ form_widget (f.price , {'attr': {'class':'form-control' ,'placeholder':'Free'}}) }}
+                        </div>
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label > </label>
                             <br>
@@ -227,6 +239,10 @@
                             <label> Budget *</label>
                             {{ form_widget (f.budget , {'attr': {'class':'form-control'}}) }}
                         </div>  &nbsp;
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label> Price of Participation *</label>
+                            {{ form_widget (f.price , {'attr': {'class':'form-control','placeholder':'Free' }}) }}
+                        </div>
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label > </label>
                             <br>

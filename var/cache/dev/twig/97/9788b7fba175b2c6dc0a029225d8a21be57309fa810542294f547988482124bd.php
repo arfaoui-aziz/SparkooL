@@ -57,63 +57,65 @@ class __TwigTemplate_611c0020354a480586b148a22c3d204e679d4171c277bce3d756f259f8b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "     <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\" ";
+        echo "
+     <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\" ";
+        // line 5
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/favicon.png"), "html", null, true);
         echo " \">
      <!-- Normalize CSS -->
      <link rel=\"stylesheet\" href=\" ";
-        // line 6
+        // line 7
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("css/normalize.css"), "html", null, true);
         echo "\">
 
      <!-- Main CSS -->
      <link rel=\"stylesheet\"  href=\" ";
-        // line 9
+        // line 10
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("css/main.css"), "html", null, true);
         echo " \">
      <!-- Bootstrap CSS -->
      <link rel=\"stylesheet\" href=\" ";
-        // line 11
+        // line 12
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("css/bootstrap.min.css"), "html", null, true);
         echo " \" >
      <!-- Fontawesome CSS -->
      <link rel=\"stylesheet\" href=\" ";
-        // line 13
+        // line 14
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("css/all.min.css"), "html", null, true);
         echo " \">
      <!-- Flaticon CSS -->
      <link rel=\"stylesheet\"  href=\" ";
-        // line 15
+        // line 16
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("fonts/flaticon.css"), "html", null, true);
         echo " \" >
      <!-- Full Calender CSS -->
      <link rel=\"stylesheet\" href=\" ";
-        // line 17
+        // line 18
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("css/fullcalendar.min.css"), "html", null, true);
         echo " \">
      <!-- Animate CSS -->
      <link rel=\"stylesheet\" href=\" ";
-        // line 19
+        // line 20
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("css/animate.min.css"), "html", null, true);
         echo " \" >
      <!-- Select 2 CSS -->
      <link rel=\"stylesheet\" href=\"";
-        // line 21
+        // line 22
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("css/select2.min.css"), "html", null, true);
         echo " \">
      <!-- Date Picker CSS -->
      <link rel=\"stylesheet\" href=\"";
-        // line 23
+        // line 24
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("css/datepicker.min.css"), "html", null, true);
         echo "\">
      <!-- Custom CSS -->
      <link rel=\"stylesheet\" href=\" ";
-        // line 25
+        // line 26
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("style.css"), "html", null, true);
         echo " \" >
      <!-- Modernize js -->
      <script href=\" ";
-        // line 27
+        // line 28
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/modernizr-3.6.0.min.js"), "html", null, true);
         echo " \"></script>
      <!-- Breadcubs Area End Here -->
@@ -128,14 +130,14 @@ class __TwigTemplate_611c0020354a480586b148a22c3d204e679d4171c277bce3d756f259f8b
          </div>
 
          ";
-        // line 39
+        // line 40
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "flashes", [0 => "info"], "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 40
+            // line 41
             echo "             <div class=\"alert alert-success\">
                  ";
-            // line 41
+            // line 42
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
             echo "
              </div>
@@ -145,9 +147,8 @@ class __TwigTemplate_611c0020354a480586b148a22c3d204e679d4171c277bce3d756f259f8b
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 45
-        echo "
-         <!-- event Table Area Start Here -->
+        // line 46
+        echo "         <!-- event Table Area Start Here -->
          ";
         // line 47
         $context['_parent'] = $context;
@@ -330,7 +331,7 @@ class __TwigTemplate_611c0020354a480586b148a22c3d204e679d4171c277bce3d756f259f8b
 
     public function getDebugInfo()
     {
-        return array (  310 => 140,  304 => 137,  299 => 135,  294 => 133,  289 => 131,  284 => 129,  279 => 127,  274 => 125,  269 => 123,  264 => 121,  259 => 119,  254 => 117,  249 => 115,  229 => 97,  207 => 81,  200 => 77,  193 => 73,  180 => 63,  174 => 60,  167 => 56,  157 => 48,  153 => 47,  149 => 45,  139 => 41,  136 => 40,  132 => 39,  117 => 27,  112 => 25,  107 => 23,  102 => 21,  97 => 19,  92 => 17,  87 => 15,  82 => 13,  77 => 11,  72 => 9,  66 => 6,  60 => 4,  51 => 3,  29 => 1,);
+        return array (  311 => 140,  305 => 137,  300 => 135,  295 => 133,  290 => 131,  285 => 129,  280 => 127,  275 => 125,  270 => 123,  265 => 121,  260 => 119,  255 => 117,  250 => 115,  230 => 97,  208 => 81,  201 => 77,  194 => 73,  181 => 63,  175 => 60,  168 => 56,  158 => 48,  154 => 47,  151 => 46,  141 => 42,  138 => 41,  134 => 40,  119 => 28,  114 => 26,  109 => 24,  104 => 22,  99 => 20,  94 => 18,  89 => 16,  84 => 14,  79 => 12,  74 => 10,  68 => 7,  63 => 5,  60 => 4,  51 => 3,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -346,6 +347,7 @@ class __TwigTemplate_611c0020354a480586b148a22c3d204e679d4171c277bce3d756f259f8b
         return new Source("{% extends 'baseFront.html.twig'%}
 
  {% block body %}
+
      <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\" {{ asset('img/favicon.png') }} \">
      <!-- Normalize CSS -->
      <link rel=\"stylesheet\" href=\" {{ asset('css/normalize.css') }}\">
@@ -387,7 +389,6 @@ class __TwigTemplate_611c0020354a480586b148a22c3d204e679d4171c277bce3d756f259f8b
              </div>
 
          {% endfor %}
-
          <!-- event Table Area Start Here -->
          {% for ff in var %}
          <div class=\"card height-auto\">

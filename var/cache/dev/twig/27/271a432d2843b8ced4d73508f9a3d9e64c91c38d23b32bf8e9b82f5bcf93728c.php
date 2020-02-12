@@ -136,64 +136,69 @@ class __TwigTemplate_82c801c8ffd5734c18146acce9138cf56146312e3cdd259bc76a4a114c5
                              <th>Destination</th>
                              <th>Award</th>
                              <th>Budget</th>
+                             <th>Price</th>
 
                              <th></th>
                          </tr>
                          </thead>
 
                          ";
-        // line 72
+        // line 73
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["var"] ?? $this->getContext($context, "var")));
         foreach ($context['_seq'] as $context["_key"] => $context["ff"]) {
-            // line 73
+            // line 74
             echo "
                              <tbody>
 
                              <tr>
                                  <td>  ";
-            // line 77
+            // line 78
             echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "id", []), "html", null, true);
             echo " </td>
                                  <td>";
-            // line 78
+            // line 79
             echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "nomEvent", []), "html", null, true);
             echo "</td>
                                  <td>";
-            // line 79
+            // line 80
             echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "typeEvent", []), "html", null, true);
             echo "</td>
                                  <td>";
-            // line 80
+            // line 81
             echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "description", []), "html", null, true);
             echo "</td>
                                  <td>";
-            // line 81
+            // line 82
             echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "dateEvent", []), "html", null, true);
             echo "</td>
                                  <td>";
-            // line 82
+            // line 83
             echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "placeEvent", []), "html", null, true);
             echo "</td>
                                  <td>";
-            // line 83
+            // line 84
             echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "nbParticipants", []), "html", null, true);
             echo "</td>
                                  <td>";
-            // line 84
+            // line 85
             echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "theme", []), "html", null, true);
             echo "</td>
                                  <td>";
-            // line 85
+            // line 86
             echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "destination", []), "html", null, true);
             echo "</td>
                                  <td>";
-            // line 86
+            // line 87
             echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "award", []), "html", null, true);
             echo "</td>
                                  <td>";
-            // line 87
+            // line 88
             echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "budget", []), "html", null, true);
+            echo "</td>
+                                 <td>";
+            // line 89
+            echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "price", []), "html", null, true);
             echo "</td>
 
                                  <td>
@@ -204,17 +209,17 @@ class __TwigTemplate_82c801c8ffd5734c18146acce9138cf56146312e3cdd259bc76a4a114c5
                                          </a>
                                          <div class=\"dropdown-menu dropdown-menu-right\">
                                              <a class=\"dropdown-item\" href=\"";
-            // line 96
+            // line 98
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("supprimerEvent", ["id" => $this->getAttribute($context["ff"], "id", [])]), "html", null, true);
             echo "\"><i
                                                          class=\"fas fa-times text-orange-red\"></i> Delete</a>
                                              <a class=\"dropdown-item\" href=\"";
-            // line 98
+            // line 100
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("modifierEvent", ["id" => $this->getAttribute($context["ff"], "id", [])]), "html", null, true);
             echo "\"><i
                                                          class=\"fas fa-cogs text-dark-pastel-green\"></i> Edit</a>
                                              <a class=\"dropdown-item\" href=\"";
-            // line 100
+            // line 102
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("afficherEvent");
             echo "\"><i
                                                          class=\"fas fa-redo-alt text-orange-peel\"></i> Refresh</a>
@@ -230,7 +235,7 @@ class __TwigTemplate_82c801c8ffd5734c18146acce9138cf56146312e3cdd259bc76a4a114c5
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['ff'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 110
+        // line 112
         echo "                     </table>
                  </div>
              </div>
@@ -277,7 +282,7 @@ class __TwigTemplate_82c801c8ffd5734c18146acce9138cf56146312e3cdd259bc76a4a114c5
 
     public function getDebugInfo()
     {
-        return array (  234 => 110,  218 => 100,  213 => 98,  208 => 96,  196 => 87,  192 => 86,  188 => 85,  184 => 84,  180 => 83,  176 => 82,  172 => 81,  168 => 80,  164 => 79,  160 => 78,  156 => 77,  150 => 73,  146 => 72,  106 => 34,  96 => 30,  93 => 29,  89 => 28,  72 => 14,  60 => 4,  51 => 3,  29 => 1,);
+        return array (  239 => 112,  223 => 102,  218 => 100,  213 => 98,  201 => 89,  197 => 88,  193 => 87,  189 => 86,  185 => 85,  181 => 84,  177 => 83,  173 => 82,  169 => 81,  165 => 80,  161 => 79,  157 => 78,  151 => 74,  147 => 73,  106 => 34,  96 => 30,  93 => 29,  89 => 28,  72 => 14,  60 => 4,  51 => 3,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -356,6 +361,7 @@ class __TwigTemplate_82c801c8ffd5734c18146acce9138cf56146312e3cdd259bc76a4a114c5
                              <th>Destination</th>
                              <th>Award</th>
                              <th>Budget</th>
+                             <th>Price</th>
 
                              <th></th>
                          </tr>
@@ -377,6 +383,7 @@ class __TwigTemplate_82c801c8ffd5734c18146acce9138cf56146312e3cdd259bc76a4a114c5
                                  <td>{{ ff.destination}}</td>
                                  <td>{{ ff.award}}</td>
                                  <td>{{ ff.budget}}</td>
+                                 <td>{{ ff.price}}</td>
 
                                  <td>
                                      <div class=\"dropdown\">

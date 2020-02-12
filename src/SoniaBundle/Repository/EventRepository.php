@@ -1,7 +1,7 @@
 <?php
 
 namespace SoniaBundle\Repository;
-
+use Doctrine\ORM\EntityRepository;
 /**
  * EventRepository
  *
@@ -16,4 +16,16 @@ class EventRepository extends \Doctrine\ORM\EntityRepository
             ->setParameter('id','%'.$id.'%');
         return $Query->getResult();
     }
+
+    public function findT($event,$idU)
+    {
+        $query= $this->getEntityManager()
+            ->createQuery(
+            "SELECT * FROM user_byevent A where A.event_id ==  :event and A.user_id == :idU")
+            ->setParameter('event',$event)->setParameter('idU',$idU)
+            ;
+        return $query->getResult();
+
+    }
+
 }

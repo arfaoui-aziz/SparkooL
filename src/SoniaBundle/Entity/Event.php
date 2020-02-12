@@ -10,6 +10,10 @@ use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\JoinTable;
 use Doctrine\ORM\Mapping\ManyToMany;
 
+/**
+ * @ORM\Entity(repositoryClass="SoniaBundle\Repository\EventRepository")
+ */
+
 
 /**
  * Event
@@ -97,6 +101,13 @@ class Event
      * @ORM\Column(name="budget", type="float", nullable=true)
      */
     private $budget;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="price", type="float", nullable=true)
+     */
+    private $price;
 
     /**
      * Many Users have Many Groups.
@@ -369,6 +380,22 @@ class Event
     public function getDestination()
     {
         return $this->destination;
+    }
+
+    /**
+     * @return float
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * @param float $price
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
     }
 
 

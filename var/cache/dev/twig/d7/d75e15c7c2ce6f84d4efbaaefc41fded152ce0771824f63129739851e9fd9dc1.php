@@ -223,7 +223,10 @@ class __TwigTemplate_ce504cef2babb47f0967bc5b1456a622105c2144773d3a8d5318b5fea72
                         </li>
                         <li><a href=\"#\"><div>School Life</div></a>
                         <ul>
-                            <li><a href=\"#\"><div><i class=\"fas fa-users\"></i>Clubs</div></a></li>
+                            <li><a href=\"";
+        // line 112
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("afficherClubFront");
+        echo "\"><div><i class=\"fas fa-users\"></i>Clubs</div></a></li>
                         </ul>
                         </li>
                         <li><a href=\"#\"><div>News & Events</div></a>
@@ -893,7 +896,7 @@ class __TwigTemplate_ce504cef2babb47f0967bc5b1456a622105c2144773d3a8d5318b5fea72
 
     public function getDebugInfo()
     {
-        return array (  806 => 478,  667 => 342,  656 => 334,  645 => 326,  634 => 318,  613 => 300,  605 => 295,  587 => 280,  559 => 262,  532 => 662,  525 => 658,  519 => 655,  515 => 654,  431 => 573,  403 => 547,  401 => 262,  375 => 239,  288 => 155,  265 => 134,  259 => 132,  254 => 130,  249 => 129,  247 => 128,  233 => 117,  180 => 67,  176 => 66,  148 => 41,  141 => 37,  137 => 36,  133 => 35,  127 => 32,  122 => 30,  118 => 29,  114 => 28,  110 => 27,  105 => 25,  101 => 24,  97 => 23,  90 => 19,  86 => 18,  82 => 17,  78 => 16,  74 => 15,  70 => 14,  66 => 13,  62 => 12,  58 => 11,  54 => 10,  50 => 9,  46 => 8,  37 => 1,);
+        return array (  809 => 478,  670 => 342,  659 => 334,  648 => 326,  637 => 318,  616 => 300,  608 => 295,  590 => 280,  562 => 262,  535 => 662,  528 => 658,  522 => 655,  518 => 654,  434 => 573,  406 => 547,  404 => 262,  378 => 239,  291 => 155,  268 => 134,  262 => 132,  257 => 130,  252 => 129,  250 => 128,  236 => 117,  228 => 112,  180 => 67,  176 => 66,  148 => 41,  141 => 37,  137 => 36,  133 => 35,  127 => 32,  122 => 30,  118 => 29,  114 => 28,  110 => 27,  105 => 25,  101 => 24,  97 => 23,  90 => 19,  86 => 18,  82 => 17,  78 => 16,  74 => 15,  70 => 14,  66 => 13,  62 => 12,  58 => 11,  54 => 10,  50 => 9,  46 => 8,  37 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -1017,7 +1020,7 @@ class __TwigTemplate_ce504cef2babb47f0967bc5b1456a622105c2144773d3a8d5318b5fea72
                         </li>
                         <li><a href=\"#\"><div>School Life</div></a>
                         <ul>
-                            <li><a href=\"#\"><div><i class=\"fas fa-users\"></i>Clubs</div></a></li>
+                            <li><a href=\"{{ path('afficherClubFront') }}\"><div><i class=\"fas fa-users\"></i>Clubs</div></a></li>
                         </ul>
                         </li>
                         <li><a href=\"#\"><div>News & Events</div></a>

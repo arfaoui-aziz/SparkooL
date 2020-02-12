@@ -1,6 +1,7 @@
 {% extends 'baseFront.html.twig'%}
 
  {% block body %}
+
      <link rel="shortcut icon" type="image/x-icon" href=" {{ asset('img/favicon.png') }} ">
      <!-- Normalize CSS -->
      <link rel="stylesheet" href=" {{ asset('css/normalize.css') }}">
@@ -42,7 +43,6 @@
              </div>
 
          {% endfor %}
-
          <!-- event Table Area Start Here -->
          {% for ff in var %}
          <div class="card height-auto">

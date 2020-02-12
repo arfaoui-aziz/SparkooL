@@ -155,18 +155,21 @@ class __TwigTemplate_11e295138c59c7fdb941429193275d616ada29d7c57e54a701f17f73169
         echo "                        ";
         $this->getAttribute($this->getAttribute(($context["f"] ?? $this->getContext($context, "f")), "award", []), "setRendered", [], "method");
         // line 72
+        echo "                        ";
+        $this->getAttribute($this->getAttribute(($context["f"] ?? $this->getContext($context, "f")), "price", []), "setRendered", [], "method");
+        // line 73
         echo "
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label> Budget *</label>
                             ";
-        // line 75
+        // line 76
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["f"] ?? $this->getContext($context, "f")), "budget", []), 'widget', ["attr" => ["class" => "form-control"]]);
         echo "
                         </div>
 
                     </div>
                     ";
-        // line 79
+        // line 80
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["f"] ?? $this->getContext($context, "f")), 'form_end');
         echo "
                 </form>
@@ -210,7 +213,7 @@ class __TwigTemplate_11e295138c59c7fdb941429193275d616ada29d7c57e54a701f17f73169
 
     public function getDebugInfo()
     {
-        return array (  170 => 79,  163 => 75,  158 => 72,  155 => 71,  153 => 70,  146 => 66,  136 => 59,  127 => 53,  116 => 45,  107 => 39,  101 => 35,  99 => 34,  93 => 31,  86 => 27,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  173 => 80,  166 => 76,  161 => 73,  158 => 72,  155 => 71,  153 => 70,  146 => 66,  136 => 59,  127 => 53,  116 => 45,  107 => 39,  101 => 35,  99 => 34,  93 => 31,  86 => 27,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -294,6 +297,7 @@ class __TwigTemplate_11e295138c59c7fdb941429193275d616ada29d7c57e54a701f17f73169
 
                         {%  do f.destination.setRendered() %}
                         {%  do f.award.setRendered() %}
+                        {%  do f.price.setRendered() %}
 
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label> Budget *</label>

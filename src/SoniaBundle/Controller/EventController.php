@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
 class EventController extends Controller
 {
     public function AfficherEventAction()
-    {
+    {  $ss=0;
         $var=$this->getDoctrine()->getRepository(Event::class)->findAll();
         return $this->render('@Sonia/evenement/afficherevent.html.twig',
             array(
@@ -159,37 +159,42 @@ class EventController extends Controller
 
     public function DetailEventAction($id)
     {
+       $event=$this->getDoctrine()->getManager()->getRepository(Event::class)->find($id);
+        $idU= $this->getUser()->getId() ;
+        $em = $this->getDoctrine()->getManager();
+        $connection = $em->getConnection();
+        $statement = $connection->prepare("SELECT * FROM user_byevent ");
 
-        $event=$this->getDoctrine()->getManager()->getRepository(Event::class)->find($id);
+        $statement->execute();
+        $results = $statement->fetchAll();
 
+        $test=0;
         return $this->render('@Sonia/front/afficherEventDetail.html.twig',
-            array('var'=>$event));
-
+            array('var'=>$event,'results'=>$results ,'idUser'=>$idU , 'test'=>$test));
 
     }
 
     function ParticipateAction(Request $request,$id){
 
         $em=$this->getDoctrine()->getManager();
-        $event=$this->getDoctrine()->getRepository(Event::class)->find($id);
-        $user=$this->getUser();
+        $event= $this->getDoctrine()->getRepository(Event::class)->find($id);
+            $user = $this->getUser();
+            $nb = $event->getNbParticipants() - 1;
+            $event->setNbParticipants($nb);
 
-        $nb = $event->getNbParticipants()-1;
-        $event->setNbParticipants($nb);
+            $event->addEventUser($user);
 
-        $event->addEventUser($user);
+            $em->persist($event);
+            $em->flush();
 
-        $em->persist($event);
-        $em->flush();
-
-
-        $this->addFlash(
-            'info' , 'Thank You For Your Participation!'
-        );
+            $this->addFlash(
+                'info', 'Thank You For Your Participation!'
+            );
 
 
         return $this->redirectToRoute('afficherEventFront');
 
     }
+   
 
 }

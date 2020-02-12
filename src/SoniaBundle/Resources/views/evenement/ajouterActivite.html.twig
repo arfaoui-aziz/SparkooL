@@ -28,7 +28,7 @@
                     <div class="row">
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>Name *</label>
-                            {{ form_widget (f.nomEvent, {'attr': {'class':'form-control'}}) }}
+                            {{ form_widget (f.nomEvent, {'attr': {'class':'form-control''placeholder':'Kids Activity'}}) }}
                         </div>
 
                         {%  do f.typeEvent.setRendered() %}
@@ -36,7 +36,7 @@
 
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>Description *</label>
-                            {{ form_widget (f.description , {'attr': {'class':'form-control','placeholder':'ed'}}) }}
+                            {{ form_widget (f.description , {'attr': {'class':'form-control','placeholder':'The Activity is about'}}) }}
                         </div>
 
 
@@ -49,8 +49,8 @@
 
 
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
-                            <label>Local of Event *</label>
-                            {{ form_widget (f.placeEvent , {'attr': {'class':'form-control'}}) }}
+                            <label>Place of Event *</label>
+                            {{ form_widget (f.placeEvent , {'attr': {'class':'form-control''placeholder':'Classroom'}}) }}
                         </div>
 
 
@@ -63,12 +63,13 @@
 
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label> Theme *</label>
-                            {{ form_widget (f.theme , {'attr': {'class':'form-control'}}) }}
+                            {{ form_widget (f.theme , {'attr': {'class':'form-control''placeholder':'Soccer'}}) }}
                         </div>
 
 
                         {%  do f.destination.setRendered() %}
                         {%  do f.award.setRendered() %}
+                        {%  do f.price.setRendered() %}
 
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label> Budget *</label>

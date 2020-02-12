@@ -166,10 +166,18 @@ class __TwigTemplate_6e8f04636d2a766bfdc77b8627fc4fcec75f9679b9c4e6c98ed26707bda
         echo "
                         </div>
 
-
-                    </div>
-                    ";
+                        <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
+                            <label> Price of Participation *</label>
+                            ";
         // line 81
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["f"] ?? $this->getContext($context, "f")), "price", []), 'widget', ["attr" => ["class" => "form-control"]]);
+        echo "
+                        </div>
+<br>
+                    </div>
+
+                    ";
+        // line 86
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["f"] ?? $this->getContext($context, "f")), 'form_end');
         echo "
                 </form>
@@ -213,7 +221,7 @@ class __TwigTemplate_6e8f04636d2a766bfdc77b8627fc4fcec75f9679b9c4e6c98ed26707bda
 
     public function getDebugInfo()
     {
-        return array (  173 => 81,  165 => 76,  157 => 71,  151 => 67,  149 => 66,  143 => 63,  133 => 56,  125 => 51,  116 => 45,  107 => 39,  101 => 35,  99 => 34,  93 => 31,  86 => 27,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  181 => 86,  173 => 81,  165 => 76,  157 => 71,  151 => 67,  149 => 66,  143 => 63,  133 => 56,  125 => 51,  116 => 45,  107 => 39,  101 => 35,  99 => 34,  93 => 31,  86 => 27,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -304,8 +312,13 @@ class __TwigTemplate_6e8f04636d2a766bfdc77b8627fc4fcec75f9679b9c4e6c98ed26707bda
                             {{ form_widget (f.budget , {'attr': {'class':'form-control'}}) }}
                         </div>
 
-
+                        <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
+                            <label> Price of Participation *</label>
+                            {{ form_widget (f.price , {'attr': {'class':'form-control'}}) }}
+                        </div>
+<br>
                     </div>
+
                     {{form_end(f)}}
                 </form>
                 <section class=\"content-header\">

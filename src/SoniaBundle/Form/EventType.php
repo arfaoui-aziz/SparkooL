@@ -3,6 +3,7 @@
 namespace SoniaBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -25,6 +26,7 @@ class EventType extends AbstractType
             ->add('destination')
             ->add('award')
             ->add('budget')
+            ->add('price')
             ->add('Add',SubmitType::class ,  [
                 'attr'=>  [
                     'class' => 'btn-fill-lg btn-gradient-yellow btn-hover-bluedark'  ]]);

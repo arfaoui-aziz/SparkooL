@@ -1,9 +1,13 @@
 <?php
 
 namespace SoniaBundle\Entity;
+use AppBundle\Entity\User;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-
+use Doctrine\ORM\Mapping\JoinColumn;
+use Doctrine\ORM\Mapping\JoinTable;
+use Doctrine\ORM\Mapping\ManyToMany;
 /**
  * Club
  *
@@ -55,6 +59,34 @@ class Club
      * @ORM\Column(name="dateCreation", type="string", length=255)
      */
     private $dateCreation;
+
+
+    /**
+     * Many Users have Many Groups.
+     * @ManyToMany(targetEntity="AppBundle\Entity\User")
+     * @JoinTable(name="User_byClub",
+     *      joinColumns={@JoinColumn(name="club_id", referencedColumnName="idClub")},
+     *      inverseJoinColumns={@JoinColumn(name="user_id", referencedColumnName="id")}
+     *      )
+     */
+    private $clubs;
+
+    /**
+     * Default constructor, initializes collections
+     */
+    public function __construct()
+    {
+        $this->clubs = new ArrayCollection();
+    }
+
+    public function addClubUser(User $user) {
+
+//Avoid duplication
+        if ($this->clubs->contains($user))
+        { return ;}
+
+        $this->clubs[] = $user;
+    }
 
 
 

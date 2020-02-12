@@ -110,9 +110,21 @@
                              </table>
                          </div>
 
-                             <span class="input-group-append">
+                {%  for r in results %}
+                    {% if  r.user_id == idUser and  r.event_id == var.id  %}
+
+                        {% set test=1  %}
+
+                    {% endif %}
+                {% endfor %}
+
+                         {% if test ==0 %}
+
+                            <span  class="input-group-append">
 										<a  href="{{ path('ParticiperEvent',{'id':var.id }) }}" class="btn btn-primary text-color-light text-2 rounded-0 py-3 px-4" type="submit"><strong>Participate</strong></a>
-									</span>
+
+                             </span>
+                          {% endif %}
 
                          </div>
                      </div>

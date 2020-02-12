@@ -142,12 +142,25 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
                 }
 
-                // afficherClub
-                if ('/sonia/afficherClub' === $pathinfo) {
-                    return array (  '_controller' => 'SoniaBundle\\Controller\\ClubController::AfficherClubAction',  '_route' => 'afficherClub',);
+                elseif (0 === strpos($pathinfo, '/sonia/afficherClub')) {
+                    // afficherClub
+                    if ('/sonia/afficherClub' === $pathinfo) {
+                        return array (  '_controller' => 'SoniaBundle\\Controller\\ClubController::AfficherClubAction',  '_route' => 'afficherClub',);
+                    }
+
+                    // afficherClubFront
+                    if ('/sonia/afficherClubFront' === $pathinfo) {
+                        return array (  '_controller' => 'SoniaBundle\\Controller\\ClubController::AfficherClubFrontAction',  '_route' => 'afficherClubFront',);
+                    }
+
+                    // afficherClubDetail
+                    if (0 === strpos($pathinfo, '/sonia/afficherClubDetail') && preg_match('#^/sonia/afficherClubDetail/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, ['_route' => 'afficherClubDetail']), array (  '_controller' => 'SoniaBundle\\Controller\\ClubController::AfficherClubDetailAction',));
+                    }
+
                 }
 
-                if (0 === strpos($pathinfo, '/sonia/ajouter')) {
+                elseif (0 === strpos($pathinfo, '/sonia/ajouter')) {
                     // ajouterEvent
                     if ('/sonia/ajouterEvent' === $pathinfo) {
                         return array (  '_controller' => 'SoniaBundle\\Controller\\EventController::AjouterEventAction',  '_route' => 'ajouterEvent',);
@@ -200,6 +213,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             // ParticiperEvent
             if (0 === strpos($pathinfo, '/sonia/ParticiperEvent') && preg_match('#^/sonia/ParticiperEvent/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, ['_route' => 'ParticiperEvent']), array (  '_controller' => 'SoniaBundle\\Controller\\EventController::ParticipateAction',));
+            }
+
+            // participateClub
+            if (0 === strpos($pathinfo, '/sonia/participateClub') && preg_match('#^/sonia/participateClub/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'participateClub']), array (  '_controller' => 'SoniaBundle\\Controller\\ClubController::ParticipateClubAction',));
             }
 
         }

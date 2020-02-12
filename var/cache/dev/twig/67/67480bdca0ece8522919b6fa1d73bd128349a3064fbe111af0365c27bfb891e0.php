@@ -158,12 +158,20 @@ class __TwigTemplate_1a1630eb882a30fa392172fe4ecd58c0fbf439e755ec5d0e3d4aa4f3354
                             ";
         // line 71
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["f"] ?? $this->getContext($context, "f")), "budget", []), 'widget', ["attr" => ["class" => "form-control"]]);
+        echo " </div>
+
+                            <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
+                                <label> Price of Participation *</label>
+                                ";
+        // line 75
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["f"] ?? $this->getContext($context, "f")), "price", []), 'widget', ["attr" => ["class" => "form-control"]]);
         echo "
-                        </div>
+                            </div>
+                       
 
                     </div>
                     ";
-        // line 75
+        // line 80
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["f"] ?? $this->getContext($context, "f")), 'form_end');
         echo "
                 </form>
@@ -207,7 +215,7 @@ class __TwigTemplate_1a1630eb882a30fa392172fe4ecd58c0fbf439e755ec5d0e3d4aa4f3354
 
     public function getDebugInfo()
     {
-        return array (  167 => 75,  160 => 71,  155 => 68,  153 => 67,  146 => 63,  141 => 60,  139 => 59,  131 => 54,  126 => 51,  124 => 50,  116 => 45,  107 => 39,  101 => 35,  99 => 34,  93 => 31,  86 => 27,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  175 => 80,  167 => 75,  160 => 71,  155 => 68,  153 => 67,  146 => 63,  141 => 60,  139 => 59,  131 => 54,  126 => 51,  124 => 50,  116 => 45,  107 => 39,  101 => 35,  99 => 34,  93 => 31,  86 => 27,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -290,8 +298,13 @@ class __TwigTemplate_1a1630eb882a30fa392172fe4ecd58c0fbf439e755ec5d0e3d4aa4f3354
 
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label> Budget *</label>
-                            {{ form_widget (f.budget , {'attr': {'class':'form-control'}}) }}
-                        </div>
+                            {{ form_widget (f.budget , {'attr': {'class':'form-control'}}) }} </div>
+
+                            <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
+                                <label> Price of Participation *</label>
+                                {{ form_widget (f.price , {'attr': {'class':'form-control'}}) }}
+                            </div>
+                       
 
                     </div>
                     {{form_end(f)}}
