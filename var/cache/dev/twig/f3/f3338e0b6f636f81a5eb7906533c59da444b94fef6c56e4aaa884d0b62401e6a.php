@@ -60,7 +60,7 @@ class __TwigTemplate_7666006be5ff0abcd42970ee97af98a3075e74ac2cc530a66bd952d0dd3
         echo "    <div class=\"dashboard-content-one\">
         <!-- Breadcubs Area Start Here -->
         <div class=\"breadcrumbs-area\">
-            <h3>Teacher</h3>
+            <h3>Teacher Informations</h3>
 
         </div>
         <!-- Breadcubs Area End Here -->
@@ -69,7 +69,7 @@ class __TwigTemplate_7666006be5ff0abcd42970ee97af98a3075e74ac2cc530a66bd952d0dd3
             <div class=\"card-body\">
                 <div class=\"heading-layout1\">
                     <div class=\"item-title\">
-                        <h3>About Me</h3>
+                        <h3>More Informations</h3>
                     </div>
 
                 </div>
@@ -94,8 +94,13 @@ class __TwigTemplate_7666006be5ff0abcd42970ee97af98a3075e74ac2cc530a66bd952d0dd3
         // line 28
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("updateTeacher", ["id" => $this->getAttribute(($context["var"] ?? $this->getContext($context, "var")), "id", [])]), "html", null, true);
         echo "\"><i class=\"far fa-edit\"></i></a></li>
+                                    <li><a href=\"";
+        // line 29
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("showAbsence", ["id" => $this->getAttribute(($context["var"] ?? $this->getContext($context, "var")), "id", [])]), "html", null, true);
+        echo "\"><i class=\"fas fa-check-square\"></i></a></li>
+                                    <li><a href=\"#\"><i class=\"fas fa-check-square\"></i></a></li>
                                     <li><a href=\"#\"><i class=\"fas fa-print\"></i></a></li>
-                                    <li><a href=\"#\"><i class=\"fas fa-download\"></i></a></li>
+
                                 </ul>
                             </div>
                         </div>
@@ -109,56 +114,56 @@ class __TwigTemplate_7666006be5ff0abcd42970ee97af98a3075e74ac2cc530a66bd952d0dd3
                                 <tr>
                                     <td>First Name:</td>
                                     <td class=\"font-medium text-dark-medium\">";
-        // line 43
+        // line 45
         echo twig_escape_filter($this->env, $this->getAttribute(($context["var"] ?? $this->getContext($context, "var")), "firstName", []), "html", null, true);
         echo "</td>
                                 </tr>
                                 <tr>
                                     <td>Last Name:</td>
                                     <td class=\"font-medium text-dark-medium\">";
-        // line 47
+        // line 49
         echo twig_escape_filter($this->env, $this->getAttribute(($context["var"] ?? $this->getContext($context, "var")), "lastName", []), "html", null, true);
         echo "</td>
                                 </tr>
                                 <tr>
                                     <td>E-mail:</td>
                                     <td class=\"font-medium text-dark-medium\">";
-        // line 51
+        // line 53
         echo twig_escape_filter($this->env, $this->getAttribute(($context["var"] ?? $this->getContext($context, "var")), "email", []), "html", null, true);
         echo "</td>
                                 </tr>
                                 <tr>
                                     <td>Gender:</td>
                                     <td class=\"font-medium text-dark-medium\">";
-        // line 55
+        // line 57
         echo twig_escape_filter($this->env, $this->getAttribute(($context["var"] ?? $this->getContext($context, "var")), "gender", []), "html", null, true);
         echo "</td>
                                 </tr>
                                 <tr>
                                     <td>Phone:</td>
                                     <td class=\"font-medium text-dark-medium\">";
-        // line 59
+        // line 61
         echo twig_escape_filter($this->env, $this->getAttribute(($context["var"] ?? $this->getContext($context, "var")), "phone", []), "html", null, true);
         echo "</td>
                                 </tr>
                                 <tr>
                                     <td>Adress:</td>
                                     <td class=\"font-medium text-dark-medium\">";
-        // line 63
+        // line 65
         echo twig_escape_filter($this->env, $this->getAttribute(($context["var"] ?? $this->getContext($context, "var")), "address", []), "html", null, true);
         echo "</td>
                                 </tr>
                                 <tr>
                                     <td>Birth Day:</td>
                                     <td class=\"font-medium text-dark-medium\">";
-        // line 67
+        // line 69
         echo twig_escape_filter($this->env, $this->getAttribute(($context["var"] ?? $this->getContext($context, "var")), "birthDay", []), "html", null, true);
         echo "</td>
                                 </tr>
                                 <tr>
                                     <td>Joining Date:</td>
                                     <td class=\"font-medium text-dark-medium\">";
-        // line 71
+        // line 73
         echo twig_escape_filter($this->env, $this->getAttribute(($context["var"] ?? $this->getContext($context, "var")), "joiningDate", []), "html", null, true);
         echo "</td>
                                 </tr>
@@ -174,14 +179,68 @@ class __TwigTemplate_7666006be5ff0abcd42970ee97af98a3075e74ac2cc530a66bd952d0dd3
 
                             <!-- diplome -->
                             <hr>
+                            <div class=\"item-content\">
+                                <div class=\"header-inline item-header\">
+                                    <h3 class=\"text-dark-medium font-medium\">Diploma Informations</h3>                                    <div class=\"header-elements\">
+                                        <ul>
+                                            <li><a href=\"";
+        // line 91
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("updateDiploma", ["id" => $this->getAttribute(($context["dip"] ?? $this->getContext($context, "dip")), "id", [])]), "html", null, true);
+        echo "\"><i class=\"far fa-edit\"></i></a></li>
+                                            <li><a href=\"#\"><i class=\"fas fa-print\"></i></a></li>
+                                            <li><a href=\"#\"><i class=\"fas fa-download\"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             <table class=\"table text-nowrap\">
 
-                                <h3 class=\"text-dark-medium font-medium\">Diploma Informations</h3>
+
+
                                 <tbody>
+
+                                <tr>
+                                    <td>Entitled:</td>
+                                    <td class=\"font-medium text-dark-medium\">";
+        // line 105
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["dip"] ?? $this->getContext($context, "dip")), "intitule", []), "html", null, true);
+        echo "</td>
+                                </tr>
+                                <tr>
+                                    <td>Institute:</td>
+                                    <td class=\"font-medium text-dark-medium\">";
+        // line 109
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["dip"] ?? $this->getContext($context, "dip")), "ecole", []), "html", null, true);
+        echo "</td>
+                                </tr>
+                                <tr>
+                                    <td>Speciality:</td>
+                                    <td class=\"font-medium text-dark-medium\">";
+        // line 113
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["dip"] ?? $this->getContext($context, "dip")), "specialite", []), "html", null, true);
+        echo "</td>
+                                </tr>
+                                <tr>
+                                    <td>Level:</td>
+                                    <td class=\"font-medium text-dark-medium\">";
+        // line 117
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["dip"] ?? $this->getContext($context, "dip")), "niveau", []), "html", null, true);
+        echo "</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Date obtained:</td>
+                                    <td class=\"font-medium text-dark-medium\">";
+        // line 122
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["dip"] ?? $this->getContext($context, "dip")), "dateObtentation", []), "html", null, true);
+        echo "</td>
+                                </tr>
 
                                 </tbody>
 
                             </table>
+
+
+
                         </div>
                     </div>
                 </div>
@@ -213,7 +272,7 @@ class __TwigTemplate_7666006be5ff0abcd42970ee97af98a3075e74ac2cc530a66bd952d0dd3
 
     public function getDebugInfo()
     {
-        return array (  162 => 71,  155 => 67,  148 => 63,  141 => 59,  134 => 55,  127 => 51,  120 => 47,  113 => 43,  95 => 28,  87 => 25,  80 => 21,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  234 => 122,  226 => 117,  219 => 113,  212 => 109,  205 => 105,  188 => 91,  167 => 73,  160 => 69,  153 => 65,  146 => 61,  139 => 57,  132 => 53,  125 => 49,  118 => 45,  99 => 29,  95 => 28,  87 => 25,  80 => 21,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -231,7 +290,7 @@ class __TwigTemplate_7666006be5ff0abcd42970ee97af98a3075e74ac2cc530a66bd952d0dd3
     <div class=\"dashboard-content-one\">
         <!-- Breadcubs Area Start Here -->
         <div class=\"breadcrumbs-area\">
-            <h3>Teacher</h3>
+            <h3>Teacher Informations</h3>
 
         </div>
         <!-- Breadcubs Area End Here -->
@@ -240,7 +299,7 @@ class __TwigTemplate_7666006be5ff0abcd42970ee97af98a3075e74ac2cc530a66bd952d0dd3
             <div class=\"card-body\">
                 <div class=\"heading-layout1\">
                     <div class=\"item-title\">
-                        <h3>About Me</h3>
+                        <h3>More Informations</h3>
                     </div>
 
                 </div>
@@ -254,8 +313,10 @@ class __TwigTemplate_7666006be5ff0abcd42970ee97af98a3075e74ac2cc530a66bd952d0dd3
                             <div class=\"header-elements\">
                                 <ul>
                                     <li><a href=\"{{ path('updateTeacher',{'id':var.id }) }}\"><i class=\"far fa-edit\"></i></a></li>
+                                    <li><a href=\"{{ path('showAbsence',{'id':var.id }) }}\"><i class=\"fas fa-check-square\"></i></a></li>
+                                    <li><a href=\"#\"><i class=\"fas fa-check-square\"></i></a></li>
                                     <li><a href=\"#\"><i class=\"fas fa-print\"></i></a></li>
-                                    <li><a href=\"#\"><i class=\"fas fa-download\"></i></a></li>
+
                                 </ul>
                             </div>
                         </div>
@@ -310,14 +371,50 @@ class __TwigTemplate_7666006be5ff0abcd42970ee97af98a3075e74ac2cc530a66bd952d0dd3
 
                             <!-- diplome -->
                             <hr>
+                            <div class=\"item-content\">
+                                <div class=\"header-inline item-header\">
+                                    <h3 class=\"text-dark-medium font-medium\">Diploma Informations</h3>                                    <div class=\"header-elements\">
+                                        <ul>
+                                            <li><a href=\"{{ path('updateDiploma',{'id':dip.id }) }}\"><i class=\"far fa-edit\"></i></a></li>
+                                            <li><a href=\"#\"><i class=\"fas fa-print\"></i></a></li>
+                                            <li><a href=\"#\"><i class=\"fas fa-download\"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             <table class=\"table text-nowrap\">
 
-                                <h3 class=\"text-dark-medium font-medium\">Diploma Informations</h3>
+
+
                                 <tbody>
+
+                                <tr>
+                                    <td>Entitled:</td>
+                                    <td class=\"font-medium text-dark-medium\">{{ dip.intitule }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Institute:</td>
+                                    <td class=\"font-medium text-dark-medium\">{{ dip.ecole }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Speciality:</td>
+                                    <td class=\"font-medium text-dark-medium\">{{ dip.specialite }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Level:</td>
+                                    <td class=\"font-medium text-dark-medium\">{{ dip.niveau }}</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Date obtained:</td>
+                                    <td class=\"font-medium text-dark-medium\">{{ dip.dateObtentation }}</td>
+                                </tr>
 
                                 </tbody>
 
                             </table>
+
+
+
                         </div>
                     </div>
                 </div>

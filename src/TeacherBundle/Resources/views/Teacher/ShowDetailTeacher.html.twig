@@ -3,7 +3,7 @@
     <div class="dashboard-content-one">
         <!-- Breadcubs Area Start Here -->
         <div class="breadcrumbs-area">
-            <h3>Teacher</h3>
+            <h3>Teacher Informations</h3>
 
         </div>
         <!-- Breadcubs Area End Here -->
@@ -12,7 +12,7 @@
             <div class="card-body">
                 <div class="heading-layout1">
                     <div class="item-title">
-                        <h3>About Me</h3>
+                        <h3>More Informations</h3>
                     </div>
 
                 </div>
@@ -26,8 +26,10 @@
                             <div class="header-elements">
                                 <ul>
                                     <li><a href="{{ path('updateTeacher',{'id':var.id }) }}"><i class="far fa-edit"></i></a></li>
+                                    <li><a href="{{ path('showAbsence',{'id':var.id }) }}"><i class="fas fa-check-square"></i></a></li>
+                                    <li><a href="#"><i class="fas fa-check-square"></i></a></li>
                                     <li><a href="#"><i class="fas fa-print"></i></a></li>
-                                    <li><a href="#"><i class="fas fa-download"></i></a></li>
+
                                 </ul>
                             </div>
                         </div>
@@ -82,14 +84,50 @@
 
                             <!-- diplome -->
                             <hr>
+                            <div class="item-content">
+                                <div class="header-inline item-header">
+                                    <h3 class="text-dark-medium font-medium">Diploma Informations</h3>                                    <div class="header-elements">
+                                        <ul>
+                                            <li><a href="{{ path('updateDiploma',{'id':dip.id }) }}"><i class="far fa-edit"></i></a></li>
+                                            <li><a href="#"><i class="fas fa-print"></i></a></li>
+                                            <li><a href="#"><i class="fas fa-download"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             <table class="table text-nowrap">
 
-                                <h3 class="text-dark-medium font-medium">Diploma Informations</h3>
+
+
                                 <tbody>
+
+                                <tr>
+                                    <td>Entitled:</td>
+                                    <td class="font-medium text-dark-medium">{{ dip.intitule }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Institute:</td>
+                                    <td class="font-medium text-dark-medium">{{ dip.ecole }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Speciality:</td>
+                                    <td class="font-medium text-dark-medium">{{ dip.specialite }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Level:</td>
+                                    <td class="font-medium text-dark-medium">{{ dip.niveau }}</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Date obtained:</td>
+                                    <td class="font-medium text-dark-medium">{{ dip.dateObtentation }}</td>
+                                </tr>
 
                                 </tbody>
 
                             </table>
+
+
+
                         </div>
                     </div>
                 </div>

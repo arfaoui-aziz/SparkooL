@@ -174,9 +174,9 @@ class __TwigTemplate_df7bdc957a0872c252f4d7007dc54f8b317dff0f7f5bc2eaec9c90fbf0c
                                                     class=\"fas fa-times text-orange-red\"></i> Delete</a>
                                         <a class=\"dropdown-item\" href=\"";
             // line 86
-            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("modifyTeacher", ["id" => $this->getAttribute($context["i"], "id", [])]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("addAbsanceTeacher", ["id" => $this->getAttribute($context["i"], "id", [])]), "html", null, true);
             echo "\"><i
-                                                    class=\"fas fa-cogs text-dark-pastel-green\"></i> Edit</a>
+                                                    class=\"fas fa-check-square text-dark-pastel-green\"></i> Add Absence/Delay</a>
                                         <a class=\"dropdown-item\" href=\"";
             // line 88
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("showTeacherDetails", ["id" => $this->getAttribute($context["i"], "id", [])]), "html", null, true);
@@ -322,8 +322,8 @@ class __TwigTemplate_df7bdc957a0872c252f4d7007dc54f8b317dff0f7f5bc2eaec9c90fbf0c
                                     <div class=\"dropdown-menu dropdown-menu-right\">
                                         <a class=\"dropdown-item\" href=\"{{ path('deleteTeacher',{'id':i.id }) }}\"><i
                                                     class=\"fas fa-times text-orange-red\"></i> Delete</a>
-                                        <a class=\"dropdown-item\" href=\"{{ path('modifyTeacher',{'id':i.id }) }}\"><i
-                                                    class=\"fas fa-cogs text-dark-pastel-green\"></i> Edit</a>
+                                        <a class=\"dropdown-item\" href=\"{{ path('addAbsanceTeacher',{'id':i.id }) }}\"><i
+                                                    class=\"fas fa-check-square text-dark-pastel-green\"></i> Add Absence/Delay</a>
                                         <a class=\"dropdown-item\" href=\"{{ path('showTeacherDetails',{'id':i.id }) }}\"><i
                                                     class=\"fas fa-eye text-orange-peel\"></i> Show Details</a>
                                     </div>

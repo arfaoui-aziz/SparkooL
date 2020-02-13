@@ -4,7 +4,9 @@ namespace TeacherBundle\Controller;
 use AppBundle\Entity\User;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use TeacherBundle\Entity\Diploma;
 use TeacherBundle\Entity\Teacher;
+use TeacherBundle\Form\DiplomaType;
 use TeacherBundle\Form\TeacherType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
@@ -48,10 +50,13 @@ class TeacherController extends Controller
             $user->setUserType("Teacher");
             $em->persist($user);
             $em->flush();
-            return $this->redirectToRoute('addDiploma',[$id]);
+            return $this->redirectToRoute('addDiploma',['id' => $id]);
 
         }
         return $this->render('@Teacher/Teacher/addTeacher.html.twig',array('form'=>$form->createView(), 'allUsers'=>$allUsers));
+
+
+
     }
 
     public function ShowTeacherDetailsAction($id)
@@ -60,8 +65,10 @@ class TeacherController extends Controller
 
         $em= $this->getDoctrine()->getManager();
         $var =$em->getRepository('AppBundle:User')->find($id);
+        $dip =$em->getRepository('TeacherBundle:Diploma')->findOneBy(array('teacher'=>$id));
+        $ab =$em->getRepository('TeacherBundle:AbsentTeacher')->findOneBy(array('teacher'=>$id));
         return $this->render('@Teacher/Teacher/showDetailTeacher.html.twig',array(
-            'var'=> $var));
+            'var'=> $var,'dip'=>$dip,'ab'=>$ab));
 
     }
 
@@ -96,5 +103,29 @@ class TeacherController extends Controller
 
         return $this->render('@Teacher/Teacher/updateTeacher.html.twig',
             array('form' =>$form->createView()));
+    }
+
+
+
+
+    public function ShowTeacherDetailsFAction($id)
+    {
+
+
+        $em= $this->getDoctrine()->getManager();
+        $var =$em->getRepository('AppBundle:User')->find($id);
+        $dip =$em->getRepository('TeacherBundle:Diploma')->findOneBy(array('teacher'=>$id));
+        $ab =$em->getRepository('TeacherBundle:AbsentTeacher')->findOneBy(array('teacher'=>$id));
+        return $this->render('@Teacher/Teacher/Front/showTeacherDetailsF.html.twig',array(
+            'var'=> $var,'dip'=>$dip,'ab'=>$ab));
+
+    }
+    public function InterfaceAction($id)
+    {
+
+
+
+        return $this->render('@Teacher/Teacher/Front/interfaceTeacher.html.twig');
+
     }
 }

@@ -198,7 +198,7 @@ class __TwigTemplate_22c1fbabd220839712bc38d3f8e85e6f11720f78105fce06904318d2705
         // line 98
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end', ["render_rest" => false]);
         echo "
-                </form>
+
             </div>
         </div>
         <!-- Add New Teacher Area End Here -->
@@ -338,7 +338,7 @@ class __TwigTemplate_22c1fbabd220839712bc38d3f8e85e6f11720f78105fce06904318d2705
                         </div>
                     </div>
                     {{ form_end(form, {'render_rest': false}) }}
-                </form>
+
             </div>
         </div>
         <!-- Add New Teacher Area End Here -->

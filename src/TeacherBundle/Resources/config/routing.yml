@@ -20,3 +20,27 @@ updateTeacher:
 addDiploma:
     path:     /addDiploma/{id}
     defaults: { _controller: TeacherBundle:Diploma:AddDiploma }
+
+updateDiploma:
+    path:     /updateDiploma/{id}
+    defaults: { _controller: TeacherBundle:Diploma:UpdateDiploma }
+
+addAbsanceTeacher:
+    path:     /addAbsanceTeacher/{id}
+    defaults: { _controller: TeacherBundle:AbsentTeacher:AddAbsanceTeacher }
+
+showAbsence:
+    path:     /showAbsence/{id}
+    defaults: { _controller: TeacherBundle:AbsentTeacher:ShowAbsence }
+
+deleteAbsence:
+    path:     /DeleteAbsence/{id}/{id2}
+    defaults: { _controller: TeacherBundle:AbsentTeacher:DeleteAbsence }
+
+showTeacherDetailsF:
+    path:     /showTeacherDetailsF/{id}
+    defaults: { _controller: TeacherBundle:Teacher:ShowTeacherDetailsF }
+
+interfaceTeacher:
+    path:     /interfaceTeacher/{id}
+    defaults: { _controller: TeacherBundle:Teacher:Interface }

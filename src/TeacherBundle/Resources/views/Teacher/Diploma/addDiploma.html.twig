@@ -54,12 +54,12 @@
                         </div>
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>Level</label>
-                            {{ form_widget (form.niveau , {'attr': {'class':'form-control'}}) }}
+                            {{ form_widget (form.niveau , {'attr': {'class':'select2'}}) }}
 
                         </div>
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>Date obtained *</label>
-                            {{ form_widget (form.joiningDate , {'attr': {'class':'form-control air-datepicker','placeholder':'dd/mm/yyyy', 'data-position':'bottom right'} }  ) }}
+                            {{ form_widget (form.dateObtentation , {'attr': {'class':'form-control air-datepicker','placeholder':'dd/mm/yyyy', 'data-position':'bottom right'} }  ) }}
 
                             <i class="far fa-calendar-alt"></i>
                         </div>
@@ -68,13 +68,13 @@
                         <div class="col-lg-6 col-12 form-group mg-t-30">
                             <label class="text-dark-medium">Upload Student Photo (150px X 150px)</label>
                             <label class="file" title="">
-                                {{ form_widget (form.picture , {'attr': {'onchange':"this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))"}}) }}
                             </label>
                             <div class="col-12 form-group mg-t-8">
                                 {{ form_widget(form.Save) }}
                                 {{ form_widget(form.Reset) }}
                             </div>
                         </div>
+                        {{ form_widget (form.teacher , { 'attr': {'class': 'hidden'} }) }}
                         {{ form_end(form, {'render_rest': false}) }}
                 </form>
             </div>

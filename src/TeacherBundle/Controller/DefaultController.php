@@ -4,7 +4,7 @@ namespace TeacherBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class DefaultController extends Controller
+class fDefaultController extends Controller
 {
     public function indexAction()
     {
