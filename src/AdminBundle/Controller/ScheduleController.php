@@ -40,5 +40,10 @@ class ScheduleController extends Controller
 
         return $this->render('@Admin\Schedule\DetailSchedule.html.twig',array('schedule'=>$schedule) );
     }
+    public function ScheduleFrontAction(){
+        $em=$this->getDoctrine()->getManager();
+        $schedule =  $em->getRepository(Schedule::class)->findByClasse(8);
+        return $this->render('@Admin\Front\FrontSchedule.html.twig',array('schedule'=>$schedule));
+    }
 
 }

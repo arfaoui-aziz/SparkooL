@@ -190,6 +190,16 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     return array (  '_controller' => 'AdminBundle\\Controller\\ScheduleController::AddScheduleAction',  '_route' => 'admin_AddSchedule',);
                 }
 
+                // admin_AddReclamation
+                if ('/admin/AddReclamation' === $pathinfo) {
+                    return array (  '_controller' => 'AdminBundle\\Controller\\ReclamationController::AddReclamationAction',  '_route' => 'admin_AddReclamation',);
+                }
+
+            }
+
+            // admin_ScheduleFront
+            if ('/admin/ScheduleFront' === $pathinfo) {
+                return array (  '_controller' => 'AdminBundle\\Controller\\ScheduleController::ScheduleFrontAction',  '_route' => 'admin_ScheduleFront',);
             }
 
         }

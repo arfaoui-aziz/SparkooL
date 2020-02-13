@@ -625,12 +625,12 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
         ";
         // line 456
         $this->displayBlock('body', $context, $blocks);
-        // line 739
+        // line 714
         echo "            <!-- Footer Area Start Here -->
             ";
-        // line 740
+        // line 715
         $this->displayBlock('footer', $context, $blocks);
-        // line 745
+        // line 720
         echo "            <!-- Footer Area End Here -->
 
 
@@ -641,67 +641,67 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
     <!-- jquery-->
 
 ";
-        // line 754
+        // line 729
         $this->displayBlock('jq', $context, $blocks);
-        // line 757
+        // line 732
         echo "    <!-- Plugins js -->
     <script src=\" ";
-        // line 758
+        // line 733
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/plugins.js"), "html", null, true);
         echo " \" ></script>
     <!-- Popper js -->
     <script src=\" ";
-        // line 760
+        // line 735
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/popper.min.js"), "html", null, true);
         echo " \"></script>
     <!-- Bootstrap js -->
     <script src=\" ";
-        // line 762
+        // line 737
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/bootstrap.min.js"), "html", null, true);
         echo " \" ></script>
     <!-- Counterup Js -->
     <script src=\" ";
-        // line 764
+        // line 739
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.counterup.min.js"), "html", null, true);
         echo " \" ></script>
     <!-- Moment Js -->
     <script  src=\" ";
-        // line 766
+        // line 741
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/moment.min.js"), "html", null, true);
         echo " \" ></script>
     <!-- Scroll Up Js -->
     <script src=\" ";
-        // line 768
+        // line 743
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.scrollUp.min.js"), "html", null, true);
         echo " \" ></script>
     <!-- Waypoints Js -->
     <script  src=\" ";
-        // line 770
+        // line 745
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.waypoints.min.js"), "html", null, true);
         echo " \" ></script>
     <!-- Select 2 Js -->
     <script src=\"";
-        // line 772
+        // line 747
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/select2.min.js"), "html", null, true);
         echo "\"></script>
     <!-- Date Picker Js -->
     <script src=\"";
-        // line 774
+        // line 749
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/datepicker.min.js"), "html", null, true);
         echo "\"></script>
     <!-- Full Calender Js -->
     <script src=\" ";
-        // line 776
+        // line 751
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/fullcalendar.min.js"), "html", null, true);
         echo " \"></script>
     <!-- Chart Js -->
     <script  src=\" ";
-        // line 778
+        // line 753
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/Chart.min.js"), "html", null, true);
         echo " \" ></script>
     <!-- Custom Js -->
     <script  src=\" ";
-        // line 780
+        // line 755
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/main.js"), "html", null, true);
         echo " \" ></script>
 
@@ -976,44 +976,38 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
                         <div class=\"card-body\">
                             <div class=\"heading-layout1 mg-b-17\">
                                 <div class=\"item-title\">
-                                    <h3>Notice Board</h3>
+                                    <h3>Reclamation Board</h3>
                                 </div>
 
                             </div>
                             <div class=\"notice-box-wrap\">
-                                <div class=\"notice-list\">
-                                    <div class=\"post-date bg-skyblue\">16 June, 2019</div>
-                                    <h6 class=\"notice-title\"><a href=\"#\">Great School manag mene esom text of the
-                                            printing.</a></h6>
-                                    <div class=\"entry-meta\"> Jennyfar Lopez / <span>5 min ago</span></div>
+                                ";
+        // line 700
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["allRec"] ?? $this->getContext($context, "allRec")));
+        foreach ($context['_seq'] as $context["_key"] => $context["ar"]) {
+            // line 701
+            echo "                                <div class=\"notice-list\">
+                                    <div class=\"post-date bg-skyblue\">";
+            // line 702
+            echo twig_escape_filter($this->env, $this->getAttribute($context["ar"], "userRec", []), "html", null, true);
+            echo "</div>
+                                    <h6 class=\"notice-title\"><a href=\"#\">";
+            // line 703
+            echo twig_escape_filter($this->env, $this->getAttribute($context["ar"], "contenu", []), "html", null, true);
+            echo "</a></h6>
+                                    <div class=\"entry-meta\"> ";
+            // line 704
+            echo twig_escape_filter($this->env, $this->getAttribute($context["ar"], "sujet", []), "html", null, true);
+            echo "</div>
                                 </div>
-                                <div class=\"notice-list\">
-                                    <div class=\"post-date bg-yellow\">16 June, 2019</div>
-                                    <h6 class=\"notice-title\"><a href=\"#\">Great School manag printing.</a></h6>
-                                    <div class=\"entry-meta\"> Jennyfar Lopez / <span>5 min ago</span></div>
-                                </div>
-                                <div class=\"notice-list\">
-                                    <div class=\"post-date bg-pink\">16 June, 2019</div>
-                                    <h6 class=\"notice-title\"><a href=\"#\">Great School manag meneesom.</a></h6>
-                                    <div class=\"entry-meta\"> Jennyfar Lopez / <span>5 min ago</span></div>
-                                </div>
-                                <div class=\"notice-list\">
-                                    <div class=\"post-date bg-skyblue\">16 June, 2019</div>
-                                    <h6 class=\"notice-title\"><a href=\"#\">Great School manag mene esom text of the
-                                            printing.</a></h6>
-                                    <div class=\"entry-meta\"> Jennyfar Lopez / <span>5 min ago</span></div>
-                                </div>
-                                <div class=\"notice-list\">
-                                    <div class=\"post-date bg-yellow\">16 June, 2019</div>
-                                    <h6 class=\"notice-title\"><a href=\"#\">Great School manag printing.</a></h6>
-                                    <div class=\"entry-meta\"> Jennyfar Lopez / <span>5 min ago</span></div>
-                                </div>
-                                <div class=\"notice-list\">
-                                    <div class=\"post-date bg-pink\">16 June, 2019</div>
-                                    <h6 class=\"notice-title\"><a href=\"#\">Great School manag meneesom.</a></h6>
-                                    <div class=\"entry-meta\"> Jennyfar Lopez / <span>5 min ago</span></div>
-                                </div>
-                            </div>
+                                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['ar'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 707
+        echo "                            </div>
                         </div>
                     </div>
                 </div>
@@ -1050,7 +1044,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
 
     }
 
-    // line 740
+    // line 715
     public function block_footer($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -1059,7 +1053,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 741
+        // line 716
         echo "            <footer class=\"footer-wrap-layout1\">
                 <div class=\"copyright\">© Copyrights <a href=\"#\">SparkIT</a> 2020. All rights reserved</div>
             </footer>
@@ -1072,7 +1066,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
 
     }
 
-    // line 754
+    // line 729
     public function block_jq($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -1081,7 +1075,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "jq"));
 
-        // line 755
+        // line 730
         echo "    <script src=\" ";
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery-3.3.1.min.js"), "html", null, true);
         echo " \" ></script>
@@ -1106,7 +1100,7 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
 
     public function getDebugInfo()
     {
-        return array (  1085 => 755,  1076 => 754,  1063 => 741,  1054 => 740,  1041 => 475,  1032 => 474,  811 => 528,  791 => 511,  771 => 494,  752 => 477,  750 => 474,  731 => 457,  722 => 456,  705 => 780,  700 => 778,  695 => 776,  690 => 774,  685 => 772,  680 => 770,  675 => 768,  670 => 766,  665 => 764,  660 => 762,  655 => 760,  650 => 758,  647 => 757,  645 => 754,  634 => 745,  632 => 740,  629 => 739,  627 => 456,  616 => 448,  579 => 414,  572 => 410,  564 => 405,  455 => 299,  440 => 286,  434 => 282,  431 => 281,  427 => 279,  424 => 278,  420 => 276,  418 => 275,  413 => 274,  411 => 273,  403 => 268,  386 => 254,  313 => 184,  295 => 169,  277 => 154,  259 => 139,  238 => 120,  234 => 118,  228 => 116,  226 => 115,  222 => 114,  214 => 108,  210 => 106,  204 => 104,  202 => 103,  194 => 98,  190 => 96,  185 => 93,  177 => 89,  169 => 85,  167 => 84,  129 => 49,  125 => 48,  110 => 36,  105 => 34,  100 => 32,  95 => 30,  90 => 28,  85 => 26,  80 => 24,  75 => 22,  70 => 20,  65 => 18,  59 => 15,  54 => 13,  40 => 1,);
+        return array (  1079 => 730,  1070 => 729,  1057 => 716,  1048 => 715,  1035 => 475,  1026 => 474,  1010 => 707,  1001 => 704,  997 => 703,  993 => 702,  990 => 701,  986 => 700,  811 => 528,  791 => 511,  771 => 494,  752 => 477,  750 => 474,  731 => 457,  722 => 456,  705 => 755,  700 => 753,  695 => 751,  690 => 749,  685 => 747,  680 => 745,  675 => 743,  670 => 741,  665 => 739,  660 => 737,  655 => 735,  650 => 733,  647 => 732,  645 => 729,  634 => 720,  632 => 715,  629 => 714,  627 => 456,  616 => 448,  579 => 414,  572 => 410,  564 => 405,  455 => 299,  440 => 286,  434 => 282,  431 => 281,  427 => 279,  424 => 278,  420 => 276,  418 => 275,  413 => 274,  411 => 273,  403 => 268,  386 => 254,  313 => 184,  295 => 169,  277 => 154,  259 => 139,  238 => 120,  234 => 118,  228 => 116,  226 => 115,  222 => 114,  214 => 108,  210 => 106,  204 => 104,  202 => 103,  194 => 98,  190 => 96,  185 => 93,  177 => 89,  169 => 85,  167 => 84,  129 => 49,  125 => 48,  110 => 36,  105 => 34,  100 => 32,  95 => 30,  90 => 28,  85 => 26,  80 => 24,  75 => 22,  70 => 20,  65 => 18,  59 => 15,  54 => 13,  40 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -1813,43 +1807,18 @@ class __TwigTemplate_1b6336740ac29a501201a66da4014d1940fa591fc64da8f49d296305f7b
                         <div class=\"card-body\">
                             <div class=\"heading-layout1 mg-b-17\">
                                 <div class=\"item-title\">
-                                    <h3>Notice Board</h3>
+                                    <h3>Reclamation Board</h3>
                                 </div>
 
                             </div>
                             <div class=\"notice-box-wrap\">
+                                {% for ar in allRec %}
                                 <div class=\"notice-list\">
-                                    <div class=\"post-date bg-skyblue\">16 June, 2019</div>
-                                    <h6 class=\"notice-title\"><a href=\"#\">Great School manag mene esom text of the
-                                            printing.</a></h6>
-                                    <div class=\"entry-meta\"> Jennyfar Lopez / <span>5 min ago</span></div>
+                                    <div class=\"post-date bg-skyblue\">{{ar.userRec}}</div>
+                                    <h6 class=\"notice-title\"><a href=\"#\">{{ ar.contenu }}</a></h6>
+                                    <div class=\"entry-meta\"> {{ ar.sujet }}</div>
                                 </div>
-                                <div class=\"notice-list\">
-                                    <div class=\"post-date bg-yellow\">16 June, 2019</div>
-                                    <h6 class=\"notice-title\"><a href=\"#\">Great School manag printing.</a></h6>
-                                    <div class=\"entry-meta\"> Jennyfar Lopez / <span>5 min ago</span></div>
-                                </div>
-                                <div class=\"notice-list\">
-                                    <div class=\"post-date bg-pink\">16 June, 2019</div>
-                                    <h6 class=\"notice-title\"><a href=\"#\">Great School manag meneesom.</a></h6>
-                                    <div class=\"entry-meta\"> Jennyfar Lopez / <span>5 min ago</span></div>
-                                </div>
-                                <div class=\"notice-list\">
-                                    <div class=\"post-date bg-skyblue\">16 June, 2019</div>
-                                    <h6 class=\"notice-title\"><a href=\"#\">Great School manag mene esom text of the
-                                            printing.</a></h6>
-                                    <div class=\"entry-meta\"> Jennyfar Lopez / <span>5 min ago</span></div>
-                                </div>
-                                <div class=\"notice-list\">
-                                    <div class=\"post-date bg-yellow\">16 June, 2019</div>
-                                    <h6 class=\"notice-title\"><a href=\"#\">Great School manag printing.</a></h6>
-                                    <div class=\"entry-meta\"> Jennyfar Lopez / <span>5 min ago</span></div>
-                                </div>
-                                <div class=\"notice-list\">
-                                    <div class=\"post-date bg-pink\">16 June, 2019</div>
-                                    <h6 class=\"notice-title\"><a href=\"#\">Great School manag meneesom.</a></h6>
-                                    <div class=\"entry-meta\"> Jennyfar Lopez / <span>5 min ago</span></div>
-                                </div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>

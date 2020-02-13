@@ -37,3 +37,9 @@ admin_DeleteSchedule:
 admin_DetailSchedule:
     path:     /DetailSchedule/{classeId}
     defaults: { _controller: AdminBundle:Schedule:DetailSchedule }
+admin_AddReclamation:
+    path:     /AddReclamation
+    defaults: { _controller: AdminBundle:Reclamation:AddReclamation }
+admin_ScheduleFront:
+    path:     /ScheduleFront
+    defaults: { _controller: AdminBundle:Schedule:ScheduleFront }
