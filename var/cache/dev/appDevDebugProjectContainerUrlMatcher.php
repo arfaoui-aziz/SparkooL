@@ -107,6 +107,62 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        elseif (0 === strpos($pathinfo, '/etudiant')) {
+            // etudiant_homepage
+            if ('/etudiant' === $trimmedPathinfo) {
+                $ret = array (  '_controller' => 'EtudiantBundle\\Controller\\DefaultController::indexAction',  '_route' => 'etudiant_homepage',);
+                if ('/' === substr($pathinfo, -1)) {
+                    // no-op
+                } elseif ('GET' !== $canonicalMethod) {
+                    goto not_etudiant_homepage;
+                } else {
+                    return array_replace($ret, $this->redirect($rawPathinfo.'/', 'etudiant_homepage'));
+                }
+
+                return $ret;
+            }
+            not_etudiant_homepage:
+
+            // etudiant_inscrit
+            if ('/etudiant/inscrit' === $pathinfo) {
+                return array (  '_controller' => 'EtudiantBundle\\Controller\\EtudiantController::etudiantinscritAction',  '_route' => 'etudiant_inscrit',);
+            }
+
+            // etudiant_created
+            if ('/etudiant/created' === $pathinfo) {
+                return array (  '_controller' => 'EtudiantBundle\\Controller\\EtudiantController::accoutcreatedAction',  '_route' => 'etudiant_created',);
+            }
+
+            if (0 === strpos($pathinfo, '/etudiant/a')) {
+                // etudiant_approve
+                if ('/etudiant/approve' === $pathinfo) {
+                    return array (  '_controller' => 'EtudiantBundle\\Controller\\EtudiantController::accoutaprovingAction',  '_route' => 'etudiant_approve',);
+                }
+
+                // etudiant_approving
+                if (0 === strpos($pathinfo, '/etudiant/aproved') && preg_match('#^/etudiant/aproved/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudiant_approving']), array (  '_controller' => 'EtudiantBundle\\Controller\\EtudiantController::approveEtudiantAction',));
+                }
+
+                // etudiant_affectto
+                if (0 === strpos($pathinfo, '/etudiant/affectto') && preg_match('#^/etudiant/affectto/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudiant_affectto']), array (  '_controller' => 'EtudiantBundle\\Controller\\EtudiantController::affecttoclassAction',));
+                }
+
+            }
+
+            // etudiant_delete
+            if (0 === strpos($pathinfo, '/etudiant/delete') && preg_match('#^/etudiant/delete/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudiant_delete']), array (  '_controller' => 'EtudiantBundle\\Controller\\EtudiantController::deleteapproveAction',));
+            }
+
+            // etudiant_list
+            if ('/etudiant/listeStudents' === $pathinfo) {
+                return array (  '_controller' => 'EtudiantBundle\\Controller\\EtudiantController::allstudentsAction',  '_route' => 'etudiant_list',);
+            }
+
+        }
+
         // fos_user_security_login
         if ('' === $trimmedPathinfo) {
             $ret = array (  '_controller' => 'fos_user.security.controller:loginAction',  '_route' => 'fos_user_security_login',);

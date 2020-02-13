@@ -46,7 +46,7 @@ class RegistrationFormType extends AbstractType
             ->add('lastName')
             ->add('gender',ChoiceType::class,[
                 'choices'=>[
-                    'Please Select*'=>false,
+                    'Select Gender*'=>false,
                     'Male'=>'Male',
                     'Female'=>'Female',
                 ],

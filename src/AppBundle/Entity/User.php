@@ -106,6 +106,76 @@ class User extends BaseUser
     private $occupation;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="placeobirth", type="string", length=255, nullable=true)
+     */
+    private $placeobirth;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="academicyear", type="string", length=255, nullable=true)
+     */
+    private $academicyear;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="EtudiantBundle\Entity\Classe")
+     * @ORM\JoinColumn(name="classe_id",referencedColumnName="id")
+     */
+    private $classe;
+
+    /**
+     * @return mixed
+     */
+    public function getClasse()
+    {
+        return $this->classe;
+    }
+
+    /**
+     * @param mixed $classe
+     */
+    public function setClasse($classe)
+    {
+        $this->classe = $classe;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAcademicyear()
+    {
+        return $this->academicyear;
+    }
+
+    /**
+     * @param string $academicyear
+     */
+    public function setAcademicyear($academicyear)
+    {
+        $this->academicyear = $academicyear;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getPlaceobirth()
+    {
+        return $this->placeobirth;
+    }
+
+    /**
+     * @param string $placeobirth
+     */
+    public function setPlaceobirth($placeobirth)
+    {
+        $this->placeobirth = $placeobirth;
+    }
+
+
+    /**
      * @return string
      */
     public function getId()
