@@ -82,3 +82,5 @@ fos_user:
     from_email:
         address: "sparkool.sparkit@gmail.com"
         sender_name: "SparkooL"
+
+gregwar_captcha: ~

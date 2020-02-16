@@ -99,6 +99,8 @@ class ComposerStaticInitae1f920b2fe0ef9350b4cd4bfba2c5f1
             'GuzzleHttp\\Psr7\\' => 16,
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
+            'Gregwar\\CaptchaBundle\\' => 22,
+            'Gregwar\\' => 8,
         ),
         'F' => 
         array (
@@ -118,6 +120,7 @@ class ComposerStaticInitae1f920b2fe0ef9350b4cd4bfba2c5f1
         'C' => 
         array (
             'Composer\\CaBundle\\' => 18,
+            'CMEN\\GoogleChartsBundle\\' => 24,
         ),
     );
 
@@ -274,6 +277,14 @@ class ComposerStaticInitae1f920b2fe0ef9350b4cd4bfba2c5f1
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
+        'Gregwar\\CaptchaBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/gregwar/captcha-bundle',
+        ),
+        'Gregwar\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/gregwar/captcha/src/Gregwar',
+        ),
         'Fig\\Link\\' => 
         array (
             0 => __DIR__ . '/..' . '/fig/link-util/src',
@@ -313,6 +324,10 @@ class ComposerStaticInitae1f920b2fe0ef9350b4cd4bfba2c5f1
         'Composer\\CaBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/composer/ca-bundle/src',
+        ),
+        'CMEN\\GoogleChartsBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/cmen/google-charts-bundle',
         ),
     );
 

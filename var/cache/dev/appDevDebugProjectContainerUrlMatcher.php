@@ -141,7 +141,12 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
             }
 
-            elseif (0 === strpos($pathinfo, '/admin/Delete')) {
+            // admin_UserDetails
+            if ('/admin/UserDetails' === $pathinfo) {
+                return array (  '_controller' => 'AdminBundle\\Controller\\AccountController::UserDetailsAction',  '_route' => 'admin_UserDetails',);
+            }
+
+            if (0 === strpos($pathinfo, '/admin/Delete')) {
                 // admin_DeleteAccount
                 if (0 === strpos($pathinfo, '/admin/DeleteAccount') && preg_match('#^/admin/DeleteAccount/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
                     return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_DeleteAccount']), array (  '_controller' => 'AdminBundle\\Controller\\AccountController::DeleteAccountAction',));
@@ -169,30 +174,38 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_DetailSchedule']), array (  '_controller' => 'AdminBundle\\Controller\\ScheduleController::DetailScheduleAction',));
             }
 
-            // admin_AccountSettings
-            if ('/admin/AccountSettings' === $pathinfo) {
-                return array (  '_controller' => 'AdminBundle\\Controller\\AccountController::AccountSettingsAction',  '_route' => 'admin_AccountSettings',);
-            }
-
-            if (0 === strpos($pathinfo, '/admin/Add')) {
-                // admin_AddClasse
-                if ('/admin/AddClasse' === $pathinfo) {
-                    return array (  '_controller' => 'AdminBundle\\Controller\\ClasseController::AddClasseAction',  '_route' => 'admin_AddClasse',);
+            if (0 === strpos($pathinfo, '/admin/A')) {
+                // admin_AccountSettings
+                if ('/admin/AccountSettings' === $pathinfo) {
+                    return array (  '_controller' => 'AdminBundle\\Controller\\AccountController::AccountSettingsAction',  '_route' => 'admin_AccountSettings',);
                 }
 
-                // admin_AddSubject
-                if ('/admin/AddSubject' === $pathinfo) {
-                    return array (  '_controller' => 'AdminBundle\\Controller\\SubjectController::AddSubjectAction',  '_route' => 'admin_AddSubject',);
+                // admin_AllAccounts
+                if ('/admin/AllAccounts' === $pathinfo) {
+                    return array (  '_controller' => 'AdminBundle\\Controller\\AccountController::AllAccountsAction',  '_route' => 'admin_AllAccounts',);
                 }
 
-                // admin_AddSchedule
-                if ('/admin/AddSchedule' === $pathinfo) {
-                    return array (  '_controller' => 'AdminBundle\\Controller\\ScheduleController::AddScheduleAction',  '_route' => 'admin_AddSchedule',);
-                }
+                if (0 === strpos($pathinfo, '/admin/Add')) {
+                    // admin_AddClasse
+                    if ('/admin/AddClasse' === $pathinfo) {
+                        return array (  '_controller' => 'AdminBundle\\Controller\\ClasseController::AddClasseAction',  '_route' => 'admin_AddClasse',);
+                    }
 
-                // admin_AddReclamation
-                if ('/admin/AddReclamation' === $pathinfo) {
-                    return array (  '_controller' => 'AdminBundle\\Controller\\ReclamationController::AddReclamationAction',  '_route' => 'admin_AddReclamation',);
+                    // admin_AddSubject
+                    if ('/admin/AddSubject' === $pathinfo) {
+                        return array (  '_controller' => 'AdminBundle\\Controller\\SubjectController::AddSubjectAction',  '_route' => 'admin_AddSubject',);
+                    }
+
+                    // admin_AddSchedule
+                    if ('/admin/AddSchedule' === $pathinfo) {
+                        return array (  '_controller' => 'AdminBundle\\Controller\\ScheduleController::AddScheduleAction',  '_route' => 'admin_AddSchedule',);
+                    }
+
+                    // admin_AddReclamation
+                    if ('/admin/AddReclamation' === $pathinfo) {
+                        return array (  '_controller' => 'AdminBundle\\Controller\\ReclamationController::AddReclamationAction',  '_route' => 'admin_AddReclamation',);
+                    }
+
                 }
 
             }
@@ -200,6 +213,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             // admin_ScheduleFront
             if ('/admin/ScheduleFront' === $pathinfo) {
                 return array (  '_controller' => 'AdminBundle\\Controller\\ScheduleController::ScheduleFrontAction',  '_route' => 'admin_ScheduleFront',);
+            }
+
+            // chart
+            if ('/admin/chart' === $pathinfo) {
+                return array (  '_controller' => 'AdminBundle:Charts:index',  '_route' => 'chart',);
             }
 
         }

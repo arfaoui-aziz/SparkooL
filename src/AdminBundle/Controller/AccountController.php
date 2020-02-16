@@ -115,5 +115,15 @@ class AccountController extends Controller
         return $this->render('@Admin\Account\AccountSettings.html.twig',array('activeUser'=>$user));
     }
 
+    public function AllAccountsAction(){
+        $em = $this->getDoctrine()->getManager();
+        $allUsers = $em->getRepository(User::class)->findAll();
+        return $this->render('@Admin\Account\AllAccounts.html.twig',array('allUsers'=>$allUsers));
+    }
+    public function UserDetailsAction(){
+
+        return $this->render('@Admin\Account\UserDetails.html.twig');
+    }
+
 
 }

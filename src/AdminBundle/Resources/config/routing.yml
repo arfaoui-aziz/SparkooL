@@ -10,6 +10,12 @@ admin_DeleteAccount:
 admin_AccountSettings:
     path:     /AccountSettings
     defaults: { _controller: AdminBundle:Account:AccountSettings }
+admin_AllAccounts:
+    path:     /AllAccounts
+    defaults: { _controller: AdminBundle:Account:AllAccounts }
+admin_UserDetails:
+    path:     /UserDetails
+    defaults: { _controller: AdminBundle:Account:UserDetails }
 admin_AddClasse:
     path:     /AddClasse
     defaults: { _controller: AdminBundle:Classe:AddClasse }
@@ -43,3 +49,6 @@ admin_AddReclamation:
 admin_ScheduleFront:
     path:     /ScheduleFront
     defaults: { _controller: AdminBundle:Schedule:ScheduleFront }
+chart:
+    path:     /chart
+    defaults: { _controller: AdminBundle:Charts:index }

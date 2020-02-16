@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\ResetType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Gregwar\CaptchaBundle\Type\CaptchaType;
 
 class AccountFormType extends AbstractType
 {
@@ -32,7 +33,9 @@ class AccountFormType extends AbstractType
     ])
         ->add('Reset',ResetType::class, [
             'attr' => ['class' => 'btn-fill-lg bg-blue-dark btn-hover-yellow'],
-        ]);
+        ])
+            /***** Gregwar Captcha Bundle ***/
+        ->add('captcha',CaptchaType::class,array('background_color' => [255, 255, 255] ));
     }
     public function getParent()
     {

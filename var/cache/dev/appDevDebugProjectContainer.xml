@@ -19,6 +19,8 @@
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
       <parameter key="AdminBundle">AdminBundle\AdminBundle</parameter>
+      <parameter key="CMENGoogleChartsBundle">CMEN\GoogleChartsBundle\CMENGoogleChartsBundle</parameter>
+      <parameter key="GregwarCaptchaBundle">Gregwar\CaptchaBundle\GregwarCaptchaBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -75,6 +77,16 @@
         <parameter key="parent">null</parameter>
         <parameter key="path">C:\wamp64\www\SparkIT\src\AdminBundle</parameter>
         <parameter key="namespace">AdminBundle</parameter>
+      </parameter>
+      <parameter key="CMENGoogleChartsBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">C:\wamp64\www\SparkIT\vendor\cmen\google-charts-bundle</parameter>
+        <parameter key="namespace">CMEN\GoogleChartsBundle</parameter>
+      </parameter>
+      <parameter key="GregwarCaptchaBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">C:\wamp64\www\SparkIT\vendor\gregwar\captcha-bundle</parameter>
+        <parameter key="namespace">Gregwar\CaptchaBundle</parameter>
       </parameter>
       <parameter key="DebugBundle" type="collection">
         <parameter key="parent">null</parameter>
@@ -178,6 +190,7 @@
     <parameter key="security.authentication.hide_user_not_found">true</parameter>
     <parameter key="twig.exception_listener.controller">twig.controller.exception:showAction</parameter>
     <parameter key="twig.form.resources" type="collection">
+      <parameter>@GregwarCaptcha/captcha.html.twig</parameter>
       <parameter>form_div_layout.html.twig</parameter>
     </parameter>
     <parameter key="twig.default_path">C:\wamp64\www\SparkIT/templates</parameter>
@@ -387,6 +400,48 @@
       <parameter>ResetPassword</parameter>
       <parameter>Default</parameter>
     </parameter>
+    <parameter key="cmen_google_charts.version">current</parameter>
+    <parameter key="cmen_google_charts.language"></parameter>
+    <parameter key="gregwar_captcha.captcha_type.class">Gregwar\CaptchaBundle\Type\CaptchaType</parameter>
+    <parameter key="gregwar_captcha.captcha_generator.class">Gregwar\CaptchaBundle\Generator\CaptchaGenerator</parameter>
+    <parameter key="gregwar_captcha.image_file_handler.class">Gregwar\CaptchaBundle\Generator\ImageFileHandler</parameter>
+    <parameter key="gregwar_captcha.captcha_builder.class">Gregwar\Captcha\CaptchaBuilder</parameter>
+    <parameter key="gregwar_captcha.phrase_builder.class">Gregwar\Captcha\PhraseBuilder</parameter>
+    <parameter key="gregwar_captcha.config" type="collection">
+      <parameter key="length">5</parameter>
+      <parameter key="width">130</parameter>
+      <parameter key="height">50</parameter>
+      <parameter key="font">C:\wamp64\www\SparkIT\vendor\gregwar\captcha-bundle\DependencyInjection/../Generator/Font/captcha.ttf</parameter>
+      <parameter key="keep_value">false</parameter>
+      <parameter key="charset">abcdefhjkmnprstuvwxyz23456789</parameter>
+      <parameter key="as_file">false</parameter>
+      <parameter key="as_url">false</parameter>
+      <parameter key="reload">false</parameter>
+      <parameter key="image_folder">captcha</parameter>
+      <parameter key="web_path">C:\wamp64\www\SparkIT\app/../web</parameter>
+      <parameter key="gc_freq">100</parameter>
+      <parameter key="expiration">60</parameter>
+      <parameter key="quality">50</parameter>
+      <parameter key="invalid_message">Bad code value</parameter>
+      <parameter key="bypass_code">null</parameter>
+      <parameter key="whitelist_key">captcha_whitelist_key</parameter>
+      <parameter key="humanity">0</parameter>
+      <parameter key="distortion">true</parameter>
+      <parameter key="max_front_lines">null</parameter>
+      <parameter key="max_behind_lines">null</parameter>
+      <parameter key="interpolation">true</parameter>
+      <parameter key="text_color" type="collection"/>
+      <parameter key="background_color" type="collection"/>
+      <parameter key="background_images" type="collection"/>
+      <parameter key="disabled">false</parameter>
+      <parameter key="ignore_all_effects">false</parameter>
+      <parameter key="session_key">captcha</parameter>
+    </parameter>
+    <parameter key="gregwar_captcha.config.image_folder">captcha</parameter>
+    <parameter key="gregwar_captcha.config.web_path">C:\wamp64\www\SparkIT\app/../web</parameter>
+    <parameter key="gregwar_captcha.config.gc_freq">100</parameter>
+    <parameter key="gregwar_captcha.config.expiration">60</parameter>
+    <parameter key="gregwar_captcha.config.whitelist_key">captcha_whitelist_key</parameter>
     <parameter key="web_profiler.debug_toolbar.position">bottom</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
@@ -847,6 +902,7 @@
         <argument>Symfony\Component\Form\Extension\Core\Type</argument>
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
         <argument>FOS\UserBundle\Form\Type</argument>
+        <argument></argument>
       </argument>
       <argument type="collection">
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
@@ -858,6 +914,7 @@
         <argument>FOS\UserBundle\Form\Type\RegistrationFormType</argument>
         <argument>FOS\UserBundle\Form\Type\ChangePasswordFormType</argument>
         <argument>FOS\UserBundle\Form\Type\ResettingFormType</argument>
+        <argument>Gregwar\CaptchaBundle\Type\CaptchaType</argument>
       </argument>
       <argument type="collection">
         <argument>Symfony\Component\Form\Extension\Core\Type\TransformationFailureExtension</argument>
@@ -1073,7 +1130,7 @@
       <argument type="service" id="form.resolved_type_factory"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id="service_locator.2na.p6f"/>
+      <argument type="service" id="service_locator.rco3rgj"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -2982,6 +3039,9 @@
         <argument type="service" id="doctrine.twig.doctrine_extension"/>
       </call>
       <call method="addExtension">
+        <argument type="service" id="CMEN\GoogleChartsBundle\Twig\GoogleChartsExtension"/>
+      </call>
+      <call method="addExtension">
         <argument type="service" id="twig.extension.webprofiler"/>
       </call>
       <call method="addGlobal">
@@ -3089,6 +3149,14 @@
       <call method="addPath">
         <argument>C:\wamp64\www\SparkIT\src\AdminBundle/Resources/views</argument>
         <argument>!Admin</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\SparkIT\vendor\gregwar\captcha-bundle/Resources/views</argument>
+        <argument>GregwarCaptcha</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\SparkIT\vendor\gregwar\captcha-bundle/Resources/views</argument>
+        <argument>!GregwarCaptcha</argument>
       </call>
       <call method="addPath">
         <argument>C:\wamp64\www\SparkIT\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
@@ -4090,6 +4158,46 @@
         <argument type="service" id="service_container"/>
       </call>
     </service>
+    <service id="CMEN\GoogleChartsBundle\Output\Javascript\DateOutput" class="CMEN\GoogleChartsBundle\Output\Javascript\DateOutput" public="false"/>
+    <service id="CMEN\GoogleChartsBundle\Output\Javascript\OptionsOutput" class="CMEN\GoogleChartsBundle\Output\Javascript\OptionsOutput" public="false">
+      <argument type="service" id="CMEN\GoogleChartsBundle\Output\Javascript\DateOutput"/>
+    </service>
+    <service id="CMEN\GoogleChartsBundle\Output\Javascript\DataOutput" class="CMEN\GoogleChartsBundle\Output\Javascript\DataOutput" public="false">
+      <argument type="service" id="CMEN\GoogleChartsBundle\Output\Javascript\DateOutput"/>
+    </service>
+    <service id="CMEN\GoogleChartsBundle\Output\Javascript\EventsOutput" class="CMEN\GoogleChartsBundle\Output\Javascript\EventsOutput" public="false"/>
+    <service id="CMEN\GoogleChartsBundle\Output\Javascript\ChartOutput" class="CMEN\GoogleChartsBundle\Output\Javascript\ChartOutput" public="false">
+      <argument>current</argument>
+      <argument></argument>
+      <argument type="service" id="CMEN\GoogleChartsBundle\Output\Javascript\OptionsOutput"/>
+      <argument type="service" id="CMEN\GoogleChartsBundle\Output\Javascript\DataOutput"/>
+      <argument type="service" id="CMEN\GoogleChartsBundle\Output\Javascript\EventsOutput"/>
+    </service>
+    <service id="CMEN\GoogleChartsBundle\Twig\GoogleChartsExtension" class="CMEN\GoogleChartsBundle\Twig\GoogleChartsExtension" public="false">
+      <tag name="twig.extension"/>
+      <argument type="service" id="CMEN\GoogleChartsBundle\Output\Javascript\ChartOutput"/>
+    </service>
+    <service id="captcha.type" class="Gregwar\CaptchaBundle\Type\CaptchaType" public="true">
+      <tag name="form.type" alias="captcha"/>
+      <argument type="service" id="session"/>
+      <argument type="service" id="gregwar_captcha.generator"/>
+      <argument type="service" id="translator"/>
+      <argument>%gregwar_captcha.config%</argument>
+    </service>
+    <service id="gregwar_captcha.generator" class="Gregwar\CaptchaBundle\Generator\CaptchaGenerator" public="true">
+      <argument type="service" id="router.default"/>
+      <argument type="service" id="gregwar_captcha.captcha_builder"/>
+      <argument type="service" id="gregwar_captcha.phrase_builder"/>
+      <argument type="service" id="gregwar_captcha.image_file_handler"/>
+    </service>
+    <service id="gregwar_captcha.image_file_handler" class="Gregwar\CaptchaBundle\Generator\ImageFileHandler" public="true">
+      <argument>captcha</argument>
+      <argument>C:\wamp64\www\SparkIT\app/../web</argument>
+      <argument>100</argument>
+      <argument>60</argument>
+    </service>
+    <service id="gregwar_captcha.captcha_builder" class="Gregwar\Captcha\CaptchaBuilder" public="true"/>
+    <service id="gregwar_captcha.phrase_builder" class="Gregwar\Captcha\PhraseBuilder" public="true"/>
     <service id="twig.extension.dump" class="Symfony\Bridge\Twig\Extension\DumpExtension" public="false">
       <tag name="twig.extension"/>
       <argument type="service" id="var_dumper.cloner"/>
@@ -4257,9 +4365,10 @@
         <argument key="inline" type="service" id="fragment.renderer.inline"/>
       </argument>
     </service>
-    <service id="service_locator.2na.p6f" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.rco3rgj" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="Gregwar\CaptchaBundle\Type\CaptchaType" type="service" id="captcha.type"/>
         <argument key="FOS\UserBundle\Form\Type\ChangePasswordFormType" type="service" id="fos_user.change_password.form.type"/>
         <argument key="FOS\UserBundle\Form\Type\ProfileFormType" type="service" id="fos_user.profile.form.type"/>
         <argument key="FOS\UserBundle\Form\Type\RegistrationFormType" type="service" id="fos_user.registration.form.type"/>

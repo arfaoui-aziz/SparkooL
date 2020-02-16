@@ -34,6 +34,8 @@
     <link rel="stylesheet" href=" {{ asset('style.css') }} " >
     <!-- Modernize js -->
     <script href=" {{ asset('js/modernizr-3.6.0.min.js') }} "></script>
+    <!-- Chart JS -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 </head>
 <body>
@@ -436,13 +438,14 @@
                                     class="flaticon-bus-side-view"></i><span>Transport</span></a>
                     </li>
 
-                    <li class="nav-item">
-                        <a href="notice-board.html" class="nav-link"><i
-                                    class="flaticon-script"></i><span>Notice</span></a>
-                    </li>
+
                     <li class="nav-item">
                         <a href="messaging.html" class="nav-link"><i
                                     class="flaticon-chat"></i><span>Messeage</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ path('admin_AllAccounts') }}" class="nav-link"><i
+                                    class="flaticon-multiple-users-silhouette"></i><span>All Accounts</span></a>
                     </li>
                     <li class="nav-item">
                         <a href="{{ path('admin_AddAccount') }}" class="nav-link"><i
@@ -590,21 +593,29 @@
                         <div class="card-body">
                             <div class="heading-layout1">
                                 <div class="item-title">
-                                    <h3>Students</h3>
+                                    <h3>Users Gender Chart</h3>    <br>
                                 </div>
+                            </div>
+                            <div id="GenderChart"  >
 
+                                <script type="text/javascript">
+                                    {{ gc_draw(piechart, 'GenderChart') }}
+                                </script>
                             </div>
-                            <div class="doughnut-chart-wrap">
-                                <canvas id="student-doughnut-chart" width="100" height="300"></canvas>
-                            </div>
+
+
+
+
+
+
                             <div class="student-report">
                                 <div class="student-count pseudo-bg-blue">
-                                    <h4 class="item-title">Female Students</h4>
-                                    <div class="item-number">30 %</div>
+                                    <h4 class="item-title">Female Users</h4>
+                                    <div class="item-number">{{FemalePercentage}} %</div>
                                 </div>
                                 <div class="student-count pseudo-bg-yellow">
-                                    <h4 class="item-title">Male Students</h4>
-                                    <div class="item-number">70 %</div>
+                                    <h4 class="item-title">Male Users</h4>
+                                    <div class="item-number"> {{MalePercentage}} %</div>
                                 </div>
                             </div>
                         </div>
@@ -710,15 +721,15 @@
                 </div>
             </div>
             <!-- Dashboard Content End Here -->
-            {% endblock %}
+
             <!-- Footer Area Start Here -->
-            {% block footer %}
+
             <footer class="footer-wrap-layout1">
                 <div class="copyright">© Copyrights <a href="#">SparkIT</a> 2020. All rights reserved</div>
             </footer>
-            {% endblock %}
-            <!-- Footer Area End Here -->
 
+            <!-- Footer Area End Here -->
+            {% endblock %}
 
 
         </div>
@@ -753,6 +764,7 @@
     <script  src=" {{ asset('js/Chart.min.js') }} " ></script>
     <!-- Custom Js -->
     <script  src=" {{ asset('js/main.js') }} " ></script>
+
 
 </div>
 </body>
