@@ -225,10 +225,10 @@ class __TwigTemplate_289b66d266808dd8066bd98474d413a2f458bb30f850ec640a7ed0f8d2d
         echo "</td>
                                  </tr>
                                  <tr>
-                                     <td>Budget:</td>
+                                     <td>Price of Participation:</td>
                                      <td class=\"font-medium text-dark-medium\">";
         // line 105
-        echo twig_escape_filter($this->env, $this->getAttribute(($context["var"] ?? $this->getContext($context, "var")), "budget", []), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["var"] ?? $this->getContext($context, "var")), "price", []), "html", null, true);
         echo "</td>
                                  </tr>
 
@@ -251,32 +251,39 @@ class __TwigTemplate_289b66d266808dd8066bd98474d413a2f458bb30f850ec640a7ed0f8d2d
                 // line 116
                 $context["test"] = 1;
                 // line 117
-                echo "
+                echo "                        <span  class=\"input-group-append\">
+\t\t\t\t\t\t\t\t\t\t<a  href=\"";
+                // line 118
+                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("CancelparticipEvent", ["id" => $this->getAttribute(($context["var"] ?? $this->getContext($context, "var")), "id", [])]), "html", null, true);
+                echo "\" class=\"btn btn-primary text-color-light text-2 rounded-0 py-3 px-4\" type=\"submit\"><strong>Cancel Participation</strong></a>
+
+                             </span>
+
                     ";
             }
-            // line 119
+            // line 123
             echo "                ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['r'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 120
+        // line 124
         echo "
                          ";
-        // line 121
+        // line 125
         if ((($context["test"] ?? $this->getContext($context, "test")) == 0)) {
-            // line 122
+            // line 126
             echo "
                             <span  class=\"input-group-append\">
 \t\t\t\t\t\t\t\t\t\t<a  href=\"";
-            // line 124
+            // line 128
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("ParticiperEvent", ["id" => $this->getAttribute(($context["var"] ?? $this->getContext($context, "var")), "id", [])]), "html", null, true);
             echo "\" class=\"btn btn-primary text-color-light text-2 rounded-0 py-3 px-4\" type=\"submit\"><strong>Participate</strong></a>
 
                              </span>
                           ";
         }
-        // line 128
+        // line 132
         echo "
                          </div>
                      </div>
@@ -306,68 +313,68 @@ class __TwigTemplate_289b66d266808dd8066bd98474d413a2f458bb30f850ec640a7ed0f8d2d
      </div>
      <!-- Page Area End Here -->
      <script src=\" ";
-        // line 156
+        // line 160
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery-3.3.1.min.js"), "html", null, true);
         echo " \" ></script>
      <!-- Plugins js -->
      <script src=\" ";
-        // line 158
+        // line 162
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/plugins.js"), "html", null, true);
         echo " \" ></script>
      <!-- Popper js -->
      <script src=\" ";
-        // line 160
+        // line 164
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/popper.min.js"), "html", null, true);
         echo " \"></script>
      <!-- Bootstrap js -->
      <script src=\" ";
-        // line 162
+        // line 166
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/bootstrap.min.js"), "html", null, true);
         echo " \" ></script>
      <!-- Counterup Js -->
      <script src=\" ";
-        // line 164
+        // line 168
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.counterup.min.js"), "html", null, true);
         echo " \" ></script>
      <!-- Moment Js -->
      <script  src=\" ";
-        // line 166
+        // line 170
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/moment.min.js"), "html", null, true);
         echo " \" ></script>
      <!-- Scroll Up Js -->
      <script src=\" ";
-        // line 168
+        // line 172
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.scrollUp.min.js"), "html", null, true);
         echo " \" ></script>
      <!-- Waypoints Js -->
      <script  src=\" ";
-        // line 170
+        // line 174
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.waypoints.min.js"), "html", null, true);
         echo " \" ></script>
      <!-- Select 2 Js -->
      <script src=\"";
-        // line 172
+        // line 176
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/select2.min.js"), "html", null, true);
         echo "\"></script>
      <!-- Date Picker Js -->
      <script src=\"";
-        // line 174
+        // line 178
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/datepicker.min.js"), "html", null, true);
         echo "\"></script>
      <!-- Full Calender Js -->
      <script src=\" ";
-        // line 176
+        // line 180
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/fullcalendar.min.js"), "html", null, true);
         echo " \"></script>
      <!-- Chart Js -->
      <script  src=\" ";
-        // line 178
+        // line 182
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/Chart.min.js"), "html", null, true);
         echo " \" ></script>
 
      <!-- Custom Js -->
      <script  src=\" ";
-        // line 181
+        // line 185
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/main.js"), "html", null, true);
         echo " \" ></script>
  ";
@@ -391,7 +398,7 @@ class __TwigTemplate_289b66d266808dd8066bd98474d413a2f458bb30f850ec640a7ed0f8d2d
 
     public function getDebugInfo()
     {
-        return array (  371 => 181,  365 => 178,  360 => 176,  355 => 174,  350 => 172,  345 => 170,  340 => 168,  335 => 166,  330 => 164,  325 => 162,  320 => 160,  315 => 158,  310 => 156,  280 => 128,  273 => 124,  269 => 122,  267 => 121,  264 => 120,  258 => 119,  254 => 117,  252 => 116,  249 => 115,  246 => 114,  242 => 113,  231 => 105,  224 => 101,  217 => 97,  210 => 93,  203 => 89,  196 => 85,  189 => 81,  182 => 77,  175 => 73,  168 => 69,  149 => 53,  142 => 49,  117 => 27,  112 => 25,  107 => 23,  102 => 21,  97 => 19,  92 => 17,  87 => 15,  82 => 13,  77 => 11,  72 => 9,  66 => 6,  60 => 4,  51 => 3,  29 => 1,);
+        return array (  378 => 185,  372 => 182,  367 => 180,  362 => 178,  357 => 176,  352 => 174,  347 => 172,  342 => 170,  337 => 168,  332 => 166,  327 => 164,  322 => 162,  317 => 160,  287 => 132,  280 => 128,  276 => 126,  274 => 125,  271 => 124,  265 => 123,  257 => 118,  254 => 117,  252 => 116,  249 => 115,  246 => 114,  242 => 113,  231 => 105,  224 => 101,  217 => 97,  210 => 93,  203 => 89,  196 => 85,  189 => 81,  182 => 77,  175 => 73,  168 => 69,  149 => 53,  142 => 49,  117 => 27,  112 => 25,  107 => 23,  102 => 21,  97 => 19,  92 => 17,  87 => 15,  82 => 13,  77 => 11,  72 => 9,  66 => 6,  60 => 4,  51 => 3,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -507,8 +514,8 @@ class __TwigTemplate_289b66d266808dd8066bd98474d413a2f458bb30f850ec640a7ed0f8d2d
                                      <td class=\"font-medium text-dark-medium\">{{ var.award}}</td>
                                  </tr>
                                  <tr>
-                                     <td>Budget:</td>
-                                     <td class=\"font-medium text-dark-medium\">{{ var.budget}}</td>
+                                     <td>Price of Participation:</td>
+                                     <td class=\"font-medium text-dark-medium\">{{ var.price}}</td>
                                  </tr>
 
                                  </tbody>
@@ -520,6 +527,10 @@ class __TwigTemplate_289b66d266808dd8066bd98474d413a2f458bb30f850ec640a7ed0f8d2d
                     {% if  r.user_id == idUser and  r.event_id == var.id  %}
 
                         {% set test=1  %}
+                        <span  class=\"input-group-append\">
+\t\t\t\t\t\t\t\t\t\t<a  href=\"{{ path('CancelparticipEvent',{'id':var.id }) }}\" class=\"btn btn-primary text-color-light text-2 rounded-0 py-3 px-4\" type=\"submit\"><strong>Cancel Participation</strong></a>
+
+                             </span>
 
                     {% endif %}
                 {% endfor %}

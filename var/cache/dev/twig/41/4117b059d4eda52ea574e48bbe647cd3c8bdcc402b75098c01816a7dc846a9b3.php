@@ -90,7 +90,7 @@ class __TwigTemplate_d58f59531c6bfb96fb86a9d05f67d861f1769dfdbc9207b5969e58d2cee
                             <label>Name *</label>
                             ";
         // line 31
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["f"] ?? $this->getContext($context, "f")), "nomEvent", []), 'widget', ["attr" => ["class" => "form-control"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["f"] ?? $this->getContext($context, "f")), "nomEvent", []), 'widget', ["attr" => ["class" => "form-control", "placeholder" => "Kids Event"]]);
         echo "
                         </div>
 
@@ -255,7 +255,7 @@ class __TwigTemplate_d58f59531c6bfb96fb86a9d05f67d861f1769dfdbc9207b5969e58d2cee
                     <div class=\"row\">
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>Name *</label>
-                            {{ form_widget (f.nomEvent, {'attr': {'class':'form-control'}}) }}
+                            {{ form_widget (f.nomEvent, {'attr': {'class':'form-control','placeholder':'Kids Event'}}) }}
                         </div>
 
                         {%  do f.typeEvent.setRendered() %}

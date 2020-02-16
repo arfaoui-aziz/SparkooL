@@ -22,6 +22,9 @@ modifierEvent:
 supprimerEvent:
     path:     /supprimerEvent/{id}
     defaults: { _controller: SoniaBundle:Event:DeleteEvent }
+ajax:
+    path:     /ajax
+    defaults: { _controller: SoniaBundle:Event:search }
 afficherEventFront:
     path:     /afficherEventFront
     defaults: { _controller: SoniaBundle:Event:AfficherEventFront }
@@ -31,6 +34,13 @@ afficherEventDetail:
 ParticiperEvent:
     path:     /ParticiperEvent/{id}
     defaults: { _controller: SoniaBundle:Event:Participate }
+CancelparticipEvent:
+    path:     /CancelparticipEvent/{id}
+    defaults: { _controller: SoniaBundle:Event:CancelParticipEvent }
+ajaxFront:
+    path:     /ajaxFront
+    defaults: { _controller: SoniaBundle:Event:searchFront }
+
 afficherClub:
     path:     /afficherClub
     defaults: { _controller: SoniaBundle:Club:AfficherClub }

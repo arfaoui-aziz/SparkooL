@@ -9,7 +9,9 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\JoinTable;
 use Doctrine\ORM\Mapping\ManyToMany;
-
+use SBC\NotificationsBundle\Builder\NotificationBuilder;
+use SBC\NotificationsBundle\Model\NotifiableInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity(repositoryClass="SoniaBundle\Repository\EventRepository")
  */
@@ -21,7 +23,7 @@ use Doctrine\ORM\Mapping\ManyToMany;
  * @ORM\Table(name="event")
  * @ORM\Entity(repositoryClass="SoniaBundle\Repository\EventRepository")
  */
-class Event
+class Event implements NotifiableInterface
 {
     /**
      * @var int
@@ -97,14 +99,19 @@ class Event
 
     /**
      * @var float
-     *
+     *@Assert\GreaterThan(
+     *     value =0,
+     * )
      * @ORM\Column(name="budget", type="float", nullable=true)
      */
     private $budget;
 
     /**
      * @var float
-     *
+     *@Assert\GreaterThan(
+     *     value =0,
+     *     message = "price > 0"
+     * )
      * @ORM\Column(name="price", type="float", nullable=true)
      */
     private $price;
@@ -398,6 +405,32 @@ class Event
         $this->price = $price;
     }
 
+    public function notificationsOnCreate(NotificationBuilder $builder)
+    {
+        $notif = new Notification();
+        $notif->setTitle('New Event')
+            ->setDescription($this->nomEvent)
+            ->setRoute('afficherEvent')
+            ->setParameters(array('id' => $this->id));
+        $builder->addNotification($notif);
+        return $builder;
+    }
+
+    public function notificationsOnUpdate(NotificationBuilder $builder)
+    {
+        $notif = new Notification();
+        $notif->setTitle('Updated Event')
+            ->setDescription($this->nomEvent)
+            ->setRoute('modifierEvent')
+            ->setParameters(array('id' => $this->id));
+        $builder->addNotification($notif);
+        return $builder;
+    }
+
+    public function notificationsOnDelete(NotificationBuilder $builder)
+    {
+        return $builder;
+    }
 
 
 }

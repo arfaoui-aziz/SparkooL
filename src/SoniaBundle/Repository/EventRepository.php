@@ -9,7 +9,7 @@ use Doctrine\ORM\EntityRepository;
  * repository methods below.
  */
 class EventRepository extends \Doctrine\ORM\EntityRepository
-{
+{/*
     public function findDistinct($id)
     {
         $Query=$this->getEntityManager()->createQuery("select A from AppBundle:User A where A.id != :id ")
@@ -19,13 +19,30 @@ class EventRepository extends \Doctrine\ORM\EntityRepository
 
     public function findT($event,$idU)
     {
-        $query= $this->getEntityManager()
-            ->createQuery(
-            "SELECT * FROM user_byevent A where A.event_id ==  :event and A.user_id == :idU")
-            ->setParameter('event',$event)->setParameter('idU',$idU)
-            ;
+        $query = $this->getEntityManager()
+            ->createQuery("SELECT A FROM user_byevent A WHERE A.user_id = :idU AND A.event_id = :event ")
+            ->setParameter('event', $event)->setParameter('idU', $idU);
         return $query->getResult();
+    }*/
 
+    public function findEntitiesByString($str){
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT p
+                FROM SoniaBundle:Event p
+                WHERE p.nomEvent LIKE :str or p.typeEvent LIKE :str or  p.dateEvent LIKE :str'
+            )
+            ->setParameter('str', '%'.$str.'%')
+            ->getResult();
     }
-
+    public function findEntitiesByStringFront($str){
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT p
+                FROM SoniaBundle:Event p
+                WHERE p.nomEvent LIKE :str'
+            )
+            ->setParameter('str', '%'.$str.'%')
+            ->getResult();
+    }
 }

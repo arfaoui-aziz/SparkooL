@@ -61,10 +61,13 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: '%mailer_transport%'
-    host: '%mailer_host%'
-    username: '%mailer_user%'
-    password: '%mailer_password%'
+    transport: smtp
+    encryption: ssl
+    auth_mode: login
+    port: 465
+    host: smtp.gmail.com
+    username: sparkool.sparkit@gmail.com
+    password: 123456Admin
     spool: { type: memory }
 
 sensio_framework_extra:
@@ -79,3 +82,9 @@ fos_user:
     from_email:
         address: "sparkool.sparkit@gmail.com"
         sender_name: "SparkooL"
+# NotificationsBundle configuration
+notifications:
+    app_id:     948338
+    app_key:    852b3ecc08612fdd1a1d
+    app_secret: 36c0d37b346669b62edc
+    cluster:    eu

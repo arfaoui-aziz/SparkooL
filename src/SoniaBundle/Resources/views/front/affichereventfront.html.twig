@@ -1,3 +1,5 @@
+
+
 {% extends 'baseFront.html.twig'%}
 
  {% block body %}
@@ -27,9 +29,40 @@
      <!-- Modernize js -->
      <script href=" {{ asset('js/modernizr-3.6.0.min.js') }} "></script>
      <!-- Breadcubs Area End Here -->
+
+
      <!-- Student Table Area Start Here -->
 
+
      <div class="card-body">
+         <!-- SEEEEARCH ---------->
+
+         <link rel="stylesheet" href=" {{ asset('css/SEARCH.css') }} " >
+         <div class="item-title">
+             <h2 class="text-black h2 t600 mb-2">What Event Are You Looking For?</h2>
+         </div>
+
+
+
+         <div class="input-group md-form form-sm form-1 pl-0">
+             <div class="input-group-prepend">
+    <span class="input-group-text cyan lighten-2" id="basic-text1"><i class="fas fa-search text-white" aria-hidden="true"></i></span>
+             </div>
+             <input  id="search" class="form-control my-0 py-1" type="text" placeholder="Search" aria-label="Search">
+         </div>
+         <ul class="nav" id="side-menu">
+             <li>
+
+                 <ul class="nav nav-second-level" id="entitiesNav">
+                 </ul>
+             </li>
+         </ul>
+
+
+<br> <br> <br>
+
+
+
          <div class="heading-layout1">
              <div class="item-title">
                  <h2 class="text-black h2 t600 mb-2">All Events Data</h2>
@@ -37,12 +70,83 @@
 
          </div>
 
+
+         <!--MESSAGE -->
          {% for message in app.flashes('info') %}
              <div class="alert alert-success">
                  {{ message }}
              </div>
 
          {% endfor %}
+
+
+
+<!-- recherche -->
+
+         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+         <script type="text/javascript">
+             jQuery(document).ready(function() {
+                 var searchRequest = null;
+
+                 $("#search").keyup(function() {
+                     var minlength = 1;
+                     var that = this;
+                     var value = $(this).val();
+                     var entitySelector = $("#entitiesNav").html('');
+                     if (value.length >= minlength ) {
+
+                         if (searchRequest != null)
+                             searchRequest.abort();
+
+
+                         searchRequest = $.ajax({
+                             type: "GET",
+                             url: "{{ path('ajaxFront') }}",
+                             data: {
+                                 'q' : value
+                             },
+                             dataType: "text",
+                             success: function(msg){
+                                 //we need to check if the value is the same
+                                 if (value===$(that).val()) {
+                                     var result = JSON.parse(msg);
+                                     $.each(result, function(key, arr) {
+                                         $.each(arr, function(id, value) {
+                                             if (key === 'posts') {
+                                                 if (id !== 'error') {
+                                                     console.log(value[1]);
+                                                     //value[0]: nomEvent et value[1]: typeEvent
+
+
+var large =  '<div class="card height-auto"> <div class="card-body"><div class="single-info-details"> <div class="item-img"><img src="{{ asset('img/figure/event.png') }}" alt="teacher"></div> <div class="item-content">  <div class="header-inline item-header">    <h3 class="text-dark-medium font-medium">'+value[0]+'</h3><div class="header-elements"><ul> <li><a href="#"><i class="fas fa-search-plus"></i></a></li> </ul> </div> </div> <div class="info-table table-responsive"> <table class="table text-nowrap"> <tbody> <tr> <td>Name:</td> <td class="font-medium text-dark-medium">'+value[0]+'</td> </tr> <tr> <td>Type:</td> <td class="font-medium text-dark-medium">'+value[1]+'</td> </tr> </tbody> </table> </div> </div> </div> </div> </div> </div> </div>';
+
+                                                     entitySelector.append(large);
+                                                 } else {
+                                                     entitySelector.append('<li class="errorLi">'+value+'</li>');
+                                                 }
+                                             }
+                                         });
+                                     });
+                                 }
+                             }
+                         });
+                     }
+                 });
+             });
+         </script>
+
+
+
+
+
+
+
+
+
+
+
+
          <!-- event Table Area Start Here -->
          {% for ff in var %}
          <div class="card height-auto">
@@ -136,6 +240,7 @@
      <!-- Chart Js -->
      <script  src=" {{ asset('js/Chart.min.js') }} " ></script>
 
+     <script  src=" {{ asset('css/normalize.css') }} " ></script>
      <!-- Custom Js -->
      <script  src=" {{ asset('js/main.js') }} " ></script>
  {% endblock %}

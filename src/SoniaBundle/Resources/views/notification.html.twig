@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notification Dropdown</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }} ">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".notification_icon .fa-bell").click(function(){
+                $(".dropdown").toggleClass("active");
+            })
+        });
+    </script>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="notification_wrap">
+        <div class="notification_icon">
+            <i class="far fa-bell"></i>
+        </div>
+        <div class="dropdown">
+            {% for notif in notifications %}
+            <div class="notify_item">
+                <div class="notify_img">
+                    <img src="{{ asset('img/figure/event.png') }}" alt="profile_pic" style="width: 50px">
+                </div>
+                <div class="notify_info">
+                    <p>{{ notif.title }}<span>{{ notif.description }}</span></p>
+                    <span class="notify_time">1{{ notif.date | date }}</span>
+                </div>
+            </div>
+
+{% endfor %}
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -68,6 +68,7 @@
             </div><!-- #logo end -->
 
             <ul class="header-extras">
+
                 <li>
                     <i class="i-plain icon-call nomargin"></i>
                     <div class="he-text t400 text-white-50">
@@ -81,8 +82,14 @@
                         Email Us:
                         <span><a href="mailto:info@canvas.com" target="_top" class="text-white t500">SparkooL@gmail.com</a></span>
                     </div>
+
                 </li>
+
+
+
+
             </ul>
+
 
         </div>
 
@@ -95,6 +102,9 @@
                 <div class="container clearfix">
 
                     <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+
+
 
                     <ul>
                         <li class="current"><a href="#"><div>Home</div></a></li>
@@ -120,10 +130,14 @@
 
                         <li><a href="#"><div>Admissions</div></a></li>
                         <li><a href="#"><div>Contact Us</div></a></li>
+
+
                     </ul>
 
                     <!-- Header Buttons
                     ============================================= -->
+
+
                     <div class="header-buttons d-none d-sm-inline-block">
                         {% if is_granted('ROLE_USER') %}
                     <a> {{ app.user.username }} &nbsp;&nbsp;&nbsp;</a>
@@ -131,7 +145,9 @@
                         {% else %}
                             <a href="{{ path('fos_user_security_login') }}"   class="button button-rounded button-white button-light button-small m-0">LOGIN</a>
                         {% endif %}
+
                     </div>
+
 
                     <!-- Top Search
                     ============================================= -->
@@ -142,9 +158,42 @@
                         </form>
                     </div><!-- #top-search end -->
 
+
+
                 </div>
 
+
+                <!-- NOTIF-->
+
+
+                {{ render(controller('SoniaBundle:Notification:display')) }}
+
+                {# Call NotificationsBundles's assets #}
+                {{ notifications_assets() }}
+                <script>
+                    /**
+                     * After calling notifications_assets() "pusher" is now available
+                     * and you can use it this way
+                     */
+
+                        // select the channel you want to listen to
+                    var channel = pusher.subscribe("notifications");// notifications channel
+                    channel.bind("my-event", function(data) {
+                        console.log('from notifications channel', data);
+                    });
+
+                    var channel = pusher.subscribe("messages");// messages channel
+                    channel.bind("my-event", function(data) {
+                        console.log('from messages channel', data);
+                    });
+                </script>
+
+
+
+
+
             </nav><!-- #primary-menu end -->
+
 
         </div>
 
@@ -259,7 +308,8 @@
 
     <!-- Content
     ============================================= -->
-  {% block body %}  <section id="content">
+
+        {% block body %}  <section id="content">
 
         <div class="content-wrap pb-0">
 

@@ -87,9 +87,16 @@ class Club
 
         $this->clubs[] = $user;
     }
+/*
+    public function removeTournament(Tournament $tournament)
+    {
+        if ($this->tournaments->contains($tournament)) {
+            $this->tournaments->removeElement($tournament);
+            $tournament->removeTeam($this);
+        }
+    }
 
-
-
+*/
     /**
      * Set nomClub
      *

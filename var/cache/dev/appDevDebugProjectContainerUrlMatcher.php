@@ -188,6 +188,19 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
                 }
 
+                elseif (0 === strpos($pathinfo, '/sonia/ajax')) {
+                    // ajax
+                    if ('/sonia/ajax' === $pathinfo) {
+                        return array (  '_controller' => 'SoniaBundle\\Controller\\EventController::searchAction',  '_route' => 'ajax',);
+                    }
+
+                    // ajaxFront
+                    if ('/sonia/ajaxFront' === $pathinfo) {
+                        return array (  '_controller' => 'SoniaBundle\\Controller\\EventController::searchFrontAction',  '_route' => 'ajaxFront',);
+                    }
+
+                }
+
             }
 
             // modifierEvent
@@ -213,6 +226,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             // ParticiperEvent
             if (0 === strpos($pathinfo, '/sonia/ParticiperEvent') && preg_match('#^/sonia/ParticiperEvent/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, ['_route' => 'ParticiperEvent']), array (  '_controller' => 'SoniaBundle\\Controller\\EventController::ParticipateAction',));
+            }
+
+            // CancelparticipEvent
+            if (0 === strpos($pathinfo, '/sonia/CancelparticipEvent') && preg_match('#^/sonia/CancelparticipEvent/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'CancelparticipEvent']), array (  '_controller' => 'SoniaBundle\\Controller\\EventController::CancelParticipEventAction',));
             }
 
             // participateClub
