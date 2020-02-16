@@ -17,28 +17,52 @@
                     </div>
 
                 </div>
-                <form class="new-added-form" method="post">
+                <form class="new-added-form" method="post" novalidate>
                     {{ form_start(form) }}
                     <div class="row">
                         {{ form_row(form._token) }}
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
-                            <label>ID *</label>
-
+                            <label   >ID *</label>
+                            {% if form_errors(form.id)|length <= 0 %}
                             {{ form_widget (form.id , {'attr': {'class':'form-control'}}) }}
-
+                            {% else %}
+                                {{ form_widget (form.id , {'attr': {'class':'form-control is-invalid'}}) }}
+                            <div class="invalid-feedback">
+                                {{ form_errors(form.id) }}
+                            </div>
+{% endif %}
                         </div>
 
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>First Name *</label>
+                            {% if form_errors(form.firstName)|length <= 0 %}
                             {{ form_widget (form.firstName , {'attr': {'class':'form-control'} }) }}
+                            {% else %}
+                            {{ form_widget (form.firstName , {'attr': {'class':'form-control is-invalid'} }) }}
+                                <div class="invalid-feedback">
+                                    {{ form_errors(form.firstName) }}
+                                </div>
+
+                            {% endif %}
                         </div>
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>Last Name *</label>
+                            {% if form_errors(form.lastName)|length <= 0 %}
                             {{ form_widget (form.lastName , {'attr': {'class':'form-control'}}) }}
+                            {% else %}
+                                {{ form_widget (form.lastName , {'attr': {'class':'form-control is-invalid'}}) }}
+                                <div class="invalid-feedback">
+                                    {{ form_errors(form.lastName) }}
+                                </div>
+                            {% endif %}
                         </div>
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>Gender *</label>
                             {{ form_widget (form.gender , {'attr': {'class':'select2'}}) }}
+
+                            <div class="invalid">
+                            {{ form_errors(form.gender) }}
+                            </div>
                         </div>
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>Role *</label>
@@ -48,36 +72,74 @@
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>User Type *</label>
                             {{ form_widget (form.userType , {'attr': {'class':'select2'}}) }}
+                            <div class="invalid">
+                            {{ form_errors(form.userType) }}
+                            </div>
                         </div>
 
 
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>Joining Date *</label>
-                            {{ form_widget (form.joiningDate , {'attr': {'class':'form-control air-datepicker','placeholder':'dd/mm/yyyy', 'data-position':'bottom right'} }  ) }}
-
+                            {% if form_errors(form.joiningDate)|length <= 0 %}
+                            {{ form_widget (form.joiningDate , {'attr': {'class':'form-control air-datepicker ','placeholder':'dd/mm/yyyy', 'data-position':'bottom right'} }  ) }}
                             <i class="far fa-calendar-alt"></i>
+                            {% else %}
+                                {{ form_widget (form.joiningDate , {'attr': {'class':'form-control air-datepicker is-invalid ','placeholder':'dd/mm/yyyy', 'data-position':'bottom right'} }  ) }}
+                                <i class="far fa-calendar-alt"></i>
+                                <div class="invalid-feedback">
+                                    {{ form_errors(form.joiningDate) }}
+                                </div>
+                            {% endif %}
                         </div>
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>BirthDay *</label>
+                            {% if form_errors(form.birthDay)|length <= 0 %}
                             {{ form_widget (form.birthDay , {'attr': {'class':'form-control air-datepicker','placeholder':'dd/mm/yyyy', 'data-position':'bottom right'} }  ) }}
-
-                            <i class="far fa-calendar-alt"></i>
+                           <i class="far fa-calendar-alt"></i>
+                            {% else %}
+                                {{ form_widget (form.birthDay , {'attr': {'class':'form-control air-datepicker is-invalid','placeholder':'dd/mm/yyyy', 'data-position':'bottom right'} }  ) }}
+                                <i class="far fa-calendar-alt"></i>
+                                <div class="invalid-feedback">
+                                    {{ form_errors(form.birthDay) }}
+                                </div>
+                            {% endif %}
                         </div>
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>E-Mail</label>
+                            {% if form_errors(form.email)|length <= 0 %}
                             {{ form_widget (form.email , {'attr': {'class':'form-control'}}) }}
-
+                      {% else %}
+                            {{ form_widget (form.email , {'attr': {'class':'form-control is-invalid'}}) }}
+                            <div class="invalid-feedback">
+                                {{ form_errors(form.email) }}
+                            </div>
+{% endif %}
                         </div>
 
 
 
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>Phone</label>
+                            {% if form_errors(form.phone)|length <= 0 %}
                             {{ form_widget (form.phone , {'attr': {'class':'form-control'}}) }}
+                            {% else %}
+                                {{ form_widget (form.phone , {'attr': {'class':'form-control is-invalid'}}) }}
+                                <div class="invalid-feedback">
+                                    {{ form_errors(form.phone) }}
+                                </div>
+                            {% endif %}
                         </div>
+
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>Salaire *</label>
+                            {% if form_errors(form.salaire)|length <= 0 %}
                             {{ form_widget (form.salaire , {'attr': {'class':'form-control'}}) }}
+                            {% else %}
+                                {{ form_widget (form.salaire , {'attr': {'class':'form-control is-invalid'}}) }}
+                                <div class="invalid-feedback">
+                                    {{ form_errors(form.salaire) }}
+                                </div>
+                            {% endif %}
 
                         </div>
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
@@ -85,7 +147,14 @@
 
                         <div class="col-lg-6 col-12 form-group">
                             <label>Address *</label>
+                            {% if form_errors(form.address)|length <= 0 %}
                             {{ form_widget (form.address , {'attr': {'class':'textarea form-control','cols':'10','rows':'4'}}) }}
+                            {% else %}
+                                {{ form_widget (form.address , {'attr': {'class':'textarea form-control is-invalid','cols':'10','rows':'4'}}) }}
+                                <div class="invalid-feedback">
+                                    {{ form_errors(form.address) }}
+                                </div>
+                            {% endif %}
 
                         </div>
 

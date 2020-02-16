@@ -14,7 +14,6 @@ class ClasseController extends Controller
     {
         $em=$this->getDoctrine()->getManager();
         $allClasses = $em->getRepository(Classe::class)->findAll();
-
         $degree =  $request->get('degree');
         $section =  $request->get('section');
         $className = $degree.''.$section;

@@ -1,23 +1,33 @@
 <?php
 
 namespace AppBundle\Entity;
-
+use Symfony\Component\Validator\Constraints as Assert;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * User
  *
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
+ * @UniqueEntity("id",message="This ID is already Used , ID most be Unique")
+ * @UniqueEntity("email",message="This Email Address is already used")
+ * @UniqueEntity("phone",message="Phone Number Already Exist")
  */
 class User extends BaseUser
 {
     /**
      * @var string
-     *
      * @ORM\Column(name="id", type="string", length=255)
      * @ORM\Id
+     * @Assert\NotBlank(message="Please insert an ID")
+     * @Assert\Length(
+     *     min= "3",
+     *     max= "9",
+     *     minMessage = "ID must be at least {{ limit }} characters long",
+     *     maxMessage = "ID cannot be longer than {{ limit }} characters"
+     * )
      */
     protected $id;
 
@@ -25,6 +35,14 @@ class User extends BaseUser
      * @var string
      *
      * @ORM\Column(name="firstName", type="string", length=255)
+     * @Assert\NotBlank(message="Please Insert a First Name")
+     * @Assert\Length(
+     *     min= "3",
+     *     max= "15",
+     *     minMessage = "First Name must be at least {{ limit }} characters long",
+     *     maxMessage = "First Name  cannot be longer than {{ limit }} characters"
+     * )
+     * @Assert\Type(type="ctype_alpha",message="First Name Most contain only characters")
      */
     private $firstName;
 
@@ -32,6 +50,14 @@ class User extends BaseUser
      * @var string
      *
      * @ORM\Column(name="lastName", type="string", length=255)
+     * @Assert\NotBlank(message="Please Insert a Last Name")
+     * @Assert\Length(
+     *     min= "3",
+     *     max= "15",
+     *     minMessage = "Last Name must be at least {{ limit }} characters long",
+     *     maxMessage = "Last Name  cannot be longer than {{ limit }} characters"
+     * )
+     * @Assert\Type(type="ctype_alpha",message="Last Name Most contain only characters")
      */
     private $lastName;
 
@@ -39,6 +65,7 @@ class User extends BaseUser
      * @var string
      *
      * @ORM\Column(name="gender", type="string", length=255)
+     * @Assert\Choice({"Male", "Female"},message="Please Select a Gender")
      */
     private $gender;
 
@@ -46,6 +73,7 @@ class User extends BaseUser
      * @var string
      *
      * @ORM\Column(name="userType", type="string", length=255, nullable=true)
+     * @Assert\Choice({"Administrator" ,"Responsable Etudiant", "Responsable enseignant","Responsable parent","User"},message="Please Select a valid User Type")
      */
     private $userType;
 
@@ -65,7 +93,7 @@ class User extends BaseUser
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank(message="Please Insert a phone number")
      * @ORM\Column(name="phone", type="string", length=255, nullable=true, unique=true)
      */
     private $phone;
@@ -86,14 +114,13 @@ class User extends BaseUser
 
     /**
      * @var float
-     *
      * @ORM\Column(name="salaire", type="float", nullable=true)
+     * @Assert\Type(type="float",message="Salaire most contain only numbers")
      */
     private $salaire;
 
     /**
      * @var string
-     *
      * @ORM\Column(name="birthDay", type="string", length=255)
      */
     private $birthDay;

@@ -74,7 +74,7 @@ class __TwigTemplate_8f765fceded69333cd071fdae14d7b265cb94c9263816c43f32c380b734
                     </div>
 
                 </div>
-                <form class=\"new-added-form\" method=\"post\">
+                <form class=\"new-added-form\" method=\"post\" novalidate>
                     ";
         // line 21
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_start');
@@ -85,40 +85,100 @@ class __TwigTemplate_8f765fceded69333cd071fdae14d7b265cb94c9263816c43f32c380b734
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "_token", []), 'row');
         echo "
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
-                            <label>ID *</label>
-
+                            <label   >ID *</label>
                             ";
-        // line 27
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "id", []), 'widget', ["attr" => ["class" => "form-control"]]);
-        echo "
-
-                        </div>
+        // line 26
+        if ((twig_length_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "id", []), 'errors')) <= 0)) {
+            // line 27
+            echo "                            ";
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "id", []), 'widget', ["attr" => ["class" => "form-control"]]);
+            echo "
+                            ";
+        } else {
+            // line 29
+            echo "                                ";
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "id", []), 'widget', ["attr" => ["class" => "form-control is-invalid"]]);
+            echo "
+                            <div class=\"invalid-feedback\">
+                                ";
+            // line 31
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "id", []), 'errors');
+            echo "
+                            </div>
+";
+        }
+        // line 34
+        echo "                        </div>
 
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>First Name *</label>
                             ";
-        // line 33
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "firstName", []), 'widget', ["attr" => ["class" => "form-control"]]);
-        echo "
-                        </div>
+        // line 38
+        if ((twig_length_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "firstName", []), 'errors')) <= 0)) {
+            // line 39
+            echo "                            ";
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "firstName", []), 'widget', ["attr" => ["class" => "form-control"]]);
+            echo "
+                            ";
+        } else {
+            // line 41
+            echo "                            ";
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "firstName", []), 'widget', ["attr" => ["class" => "form-control is-invalid"]]);
+            echo "
+                                <div class=\"invalid-feedback\">
+                                    ";
+            // line 43
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "firstName", []), 'errors');
+            echo "
+                                </div>
+
+                            ";
+        }
+        // line 47
+        echo "                        </div>
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>Last Name *</label>
                             ";
-        // line 37
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "lastName", []), 'widget', ["attr" => ["class" => "form-control"]]);
-        echo "
-                        </div>
+        // line 50
+        if ((twig_length_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "lastName", []), 'errors')) <= 0)) {
+            // line 51
+            echo "                            ";
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "lastName", []), 'widget', ["attr" => ["class" => "form-control"]]);
+            echo "
+                            ";
+        } else {
+            // line 53
+            echo "                                ";
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "lastName", []), 'widget', ["attr" => ["class" => "form-control is-invalid"]]);
+            echo "
+                                <div class=\"invalid-feedback\">
+                                    ";
+            // line 55
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "lastName", []), 'errors');
+            echo "
+                                </div>
+                            ";
+        }
+        // line 58
+        echo "                        </div>
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>Gender *</label>
                             ";
-        // line 41
+        // line 61
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "gender", []), 'widget', ["attr" => ["class" => "select2"]]);
         echo "
+
+                            <div class=\"invalid\">
+                            ";
+        // line 64
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "gender", []), 'errors');
+        echo "
+                            </div>
                         </div>
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>Role *</label>
                             ";
-        // line 45
+        // line 69
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "roles", []), 'widget', ["attr" => ["class" => "select2"]]);
         echo "
                         </div>
@@ -126,55 +186,151 @@ class __TwigTemplate_8f765fceded69333cd071fdae14d7b265cb94c9263816c43f32c380b734
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>User Type *</label>
                             ";
-        // line 50
+        // line 74
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "userType", []), 'widget', ["attr" => ["class" => "select2"]]);
         echo "
+                            <div class=\"invalid\">
+                            ";
+        // line 76
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "userType", []), 'errors');
+        echo "
+                            </div>
                         </div>
 
 
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>Joining Date *</label>
                             ";
-        // line 56
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "joiningDate", []), 'widget', ["attr" => ["class" => "form-control air-datepicker", "placeholder" => "dd/mm/yyyy", "data-position" => "bottom right"]]);
-        echo "
-
+        // line 83
+        if ((twig_length_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "joiningDate", []), 'errors')) <= 0)) {
+            // line 84
+            echo "                            ";
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "joiningDate", []), 'widget', ["attr" => ["class" => "form-control air-datepicker ", "placeholder" => "dd/mm/yyyy", "data-position" => "bottom right"]]);
+            echo "
                             <i class=\"far fa-calendar-alt\"></i>
-                        </div>
+                            ";
+        } else {
+            // line 87
+            echo "                                ";
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "joiningDate", []), 'widget', ["attr" => ["class" => "form-control air-datepicker is-invalid ", "placeholder" => "dd/mm/yyyy", "data-position" => "bottom right"]]);
+            echo "
+                                <i class=\"far fa-calendar-alt\"></i>
+                                <div class=\"invalid-feedback\">
+                                    ";
+            // line 90
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "joiningDate", []), 'errors');
+            echo "
+                                </div>
+                            ";
+        }
+        // line 93
+        echo "                        </div>
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>BirthDay *</label>
                             ";
-        // line 62
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "birthDay", []), 'widget', ["attr" => ["class" => "form-control air-datepicker", "placeholder" => "dd/mm/yyyy", "data-position" => "bottom right"]]);
-        echo "
-
-                            <i class=\"far fa-calendar-alt\"></i>
-                        </div>
+        // line 96
+        if ((twig_length_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "birthDay", []), 'errors')) <= 0)) {
+            // line 97
+            echo "                            ";
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "birthDay", []), 'widget', ["attr" => ["class" => "form-control air-datepicker", "placeholder" => "dd/mm/yyyy", "data-position" => "bottom right"]]);
+            echo "
+                           <i class=\"far fa-calendar-alt\"></i>
+                            ";
+        } else {
+            // line 100
+            echo "                                ";
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "birthDay", []), 'widget', ["attr" => ["class" => "form-control air-datepicker is-invalid", "placeholder" => "dd/mm/yyyy", "data-position" => "bottom right"]]);
+            echo "
+                                <i class=\"far fa-calendar-alt\"></i>
+                                <div class=\"invalid-feedback\">
+                                    ";
+            // line 103
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "birthDay", []), 'errors');
+            echo "
+                                </div>
+                            ";
+        }
+        // line 106
+        echo "                        </div>
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>E-Mail</label>
                             ";
-        // line 68
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "email", []), 'widget', ["attr" => ["class" => "form-control"]]);
-        echo "
-
-                        </div>
+        // line 109
+        if ((twig_length_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "email", []), 'errors')) <= 0)) {
+            // line 110
+            echo "                            ";
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "email", []), 'widget', ["attr" => ["class" => "form-control"]]);
+            echo "
+                      ";
+        } else {
+            // line 112
+            echo "                            ";
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "email", []), 'widget', ["attr" => ["class" => "form-control is-invalid"]]);
+            echo "
+                            <div class=\"invalid-feedback\">
+                                ";
+            // line 114
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "email", []), 'errors');
+            echo "
+                            </div>
+";
+        }
+        // line 117
+        echo "                        </div>
 
 
 
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>Phone</label>
                             ";
-        // line 76
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "phone", []), 'widget', ["attr" => ["class" => "form-control"]]);
-        echo "
-                        </div>
+        // line 123
+        if ((twig_length_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "phone", []), 'errors')) <= 0)) {
+            // line 124
+            echo "                            ";
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "phone", []), 'widget', ["attr" => ["class" => "form-control"]]);
+            echo "
+                            ";
+        } else {
+            // line 126
+            echo "                                ";
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "phone", []), 'widget', ["attr" => ["class" => "form-control is-invalid"]]);
+            echo "
+                                <div class=\"invalid-feedback\">
+                                    ";
+            // line 128
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "phone", []), 'errors');
+            echo "
+                                </div>
+                            ";
+        }
+        // line 131
+        echo "                        </div>
+
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>Salaire *</label>
                             ";
-        // line 80
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "salaire", []), 'widget', ["attr" => ["class" => "form-control"]]);
+        // line 135
+        if ((twig_length_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "salaire", []), 'errors')) <= 0)) {
+            // line 136
+            echo "                            ";
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "salaire", []), 'widget', ["attr" => ["class" => "form-control"]]);
+            echo "
+                            ";
+        } else {
+            // line 138
+            echo "                                ";
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "salaire", []), 'widget', ["attr" => ["class" => "form-control is-invalid"]]);
+            echo "
+                                <div class=\"invalid-feedback\">
+                                    ";
+            // line 140
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "salaire", []), 'errors');
+            echo "
+                                </div>
+                            ";
+        }
+        // line 143
         echo "
-
                         </div>
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                            </div>
@@ -182,26 +338,44 @@ class __TwigTemplate_8f765fceded69333cd071fdae14d7b265cb94c9263816c43f32c380b734
                         <div class=\"col-lg-6 col-12 form-group\">
                             <label>Address *</label>
                             ";
-        // line 88
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "address", []), 'widget', ["attr" => ["class" => "textarea form-control", "cols" => "10", "rows" => "4"]]);
+        // line 150
+        if ((twig_length_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "address", []), 'errors')) <= 0)) {
+            // line 151
+            echo "                            ";
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "address", []), 'widget', ["attr" => ["class" => "textarea form-control", "cols" => "10", "rows" => "4"]]);
+            echo "
+                            ";
+        } else {
+            // line 153
+            echo "                                ";
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "address", []), 'widget', ["attr" => ["class" => "textarea form-control is-invalid", "cols" => "10", "rows" => "4"]]);
+            echo "
+                                <div class=\"invalid-feedback\">
+                                    ";
+            // line 155
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "address", []), 'errors');
+            echo "
+                                </div>
+                            ";
+        }
+        // line 158
         echo "
-
                         </div>
 
                         <div class=\"col-12 form-group mg-t-8\">
                             ";
-        // line 93
+        // line 162
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "Add", []), 'widget');
         echo "
                             ";
-        // line 94
+        // line 163
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "Reset", []), 'widget');
         echo "
 
                         </div>
                     </div>
                     ";
-        // line 98
+        // line 167
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end', ["render_rest" => false]);
         echo "
                 </form>
@@ -228,63 +402,63 @@ class __TwigTemplate_8f765fceded69333cd071fdae14d7b265cb94c9263816c43f32c380b734
                     </div>
                     <div class=\"all-user-box\">
                         ";
-        // line 122
+        // line 191
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["allUsers"] ?? $this->getContext($context, "allUsers")));
         foreach ($context['_seq'] as $context["_key"] => $context["u"]) {
-            // line 123
+            // line 192
             echo "
 
 ";
-            // line 125
+            // line 194
             if (($this->getAttribute($context["u"], "id", []) == $this->getAttribute($this->getAttribute(($context["allUsers"] ?? $this->getContext($context, "allUsers")), 0, [], "array"), "id", []))) {
-                // line 126
+                // line 195
                 echo "                        <div class=\"media media-none--xs active\">
                             ";
             } else {
-                // line 128
+                // line 197
                 echo "                            <div class=\"media media-none--xs\">
                                 ";
             }
-            // line 130
+            // line 199
             echo "
                                 <div class=\"item-img\">
 
                                     ";
-            // line 133
+            // line 202
             if (($this->getAttribute($context["u"], "gender", []) == "Male")) {
-                // line 134
+                // line 203
                 echo "                                        <img src=\" ";
                 echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/figure/user1.jpg"), "html", null, true);
                 echo "\" class=\"media-img-auto\" alt=\"user\">
                                     ";
             } else {
-                // line 136
+                // line 205
                 echo "                                        <img src=\" ";
                 echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/figure/user4.jpg"), "html", null, true);
                 echo "\" class=\"media-img-auto\" alt=\"user\">
                                     ";
             }
-            // line 138
+            // line 207
             echo "
                                 </div>
                                 <div class=\"media-body space-md\">
                                     <h5 class=\"item-title\">";
-            // line 141
+            // line 210
             echo twig_escape_filter($this->env, $this->getAttribute($context["u"], "firstName", []), "html", null, true);
             echo " ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["u"], "lastName", []), "html", null, true);
             echo "</h5>
                                     <div class=\"item-subtitle\">";
-            // line 142
+            // line 211
             echo twig_escape_filter($this->env, $this->getAttribute($context["u"], "userType", []), "html", null, true);
             echo "</div>
                                     <a href=\"";
-            // line 143
+            // line 212
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_UpdateAccount", ["id" => $this->getAttribute($context["u"], "id", [])]), "html", null, true);
             echo "\" class=\"btn btn-outline-info\">More Details</a>
                                     <a href=\"";
-            // line 144
+            // line 213
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_DeleteAccount", ["id" => $this->getAttribute($context["u"], "id", [])]), "html", null, true);
             echo "\" class=\"btn btn-outline-danger\">Delete User</a>
                                 </div>
@@ -296,7 +470,7 @@ class __TwigTemplate_8f765fceded69333cd071fdae14d7b265cb94c9263816c43f32c380b734
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['u'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 150
+        // line 219
         echo "
 
 
@@ -317,7 +491,7 @@ class __TwigTemplate_8f765fceded69333cd071fdae14d7b265cb94c9263816c43f32c380b734
                             <div class=\"item-img\">
 
                                     <img src=\" ";
-        // line 169
+        // line 238
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/figure/user.jpg"), "html", null, true);
         echo "\" class=\"media-img-auto\" alt=\"user\">
 
@@ -329,14 +503,14 @@ class __TwigTemplate_8f765fceded69333cd071fdae14d7b265cb94c9263816c43f32c380b734
                                         <tr>
                                             <td>ID No:</td>
                                             <td class=\"font-medium text-dark-medium\">";
-        // line 178
+        // line 247
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["allUsers"] ?? $this->getContext($context, "allUsers")), 0, [], "array"), "id", []), "html", null, true);
         echo "</td>
                                         </tr>
                                         <tr>
                                             <td>Name:</td>
                                             <td class=\"font-medium text-dark-medium\">";
-        // line 182
+        // line 251
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["allUsers"] ?? $this->getContext($context, "allUsers")), 0, [], "array"), "firstName", []), "html", null, true);
         echo " ";
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["allUsers"] ?? $this->getContext($context, "allUsers")), 0, [], "array"), "lastName", []), "html", null, true);
@@ -345,14 +519,14 @@ class __TwigTemplate_8f765fceded69333cd071fdae14d7b265cb94c9263816c43f32c380b734
                                         <tr>
                                             <td>User Type:</td>
                                             <td class=\"font-medium text-dark-medium\">";
-        // line 186
+        // line 255
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["allUsers"] ?? $this->getContext($context, "allUsers")), 0, [], "array"), "userType", []), "html", null, true);
         echo " </td>
                                         </tr>
                                         <tr>
                                             <td>Gender:</td>
                                             <td class=\"font-medium text-dark-medium\">";
-        // line 190
+        // line 259
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["allUsers"] ?? $this->getContext($context, "allUsers")), 0, [], "array"), "gender", []), "html", null, true);
         echo "</td>
                                         </tr>
@@ -415,7 +589,7 @@ class __TwigTemplate_8f765fceded69333cd071fdae14d7b265cb94c9263816c43f32c380b734
 
     public function getDebugInfo()
     {
-        return array (  356 => 190,  349 => 186,  340 => 182,  333 => 178,  321 => 169,  300 => 150,  288 => 144,  284 => 143,  280 => 142,  274 => 141,  269 => 138,  263 => 136,  257 => 134,  255 => 133,  250 => 130,  246 => 128,  242 => 126,  240 => 125,  236 => 123,  232 => 122,  205 => 98,  198 => 94,  194 => 93,  186 => 88,  175 => 80,  168 => 76,  157 => 68,  148 => 62,  139 => 56,  130 => 50,  122 => 45,  115 => 41,  108 => 37,  101 => 33,  92 => 27,  85 => 23,  80 => 21,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  530 => 259,  523 => 255,  514 => 251,  507 => 247,  495 => 238,  474 => 219,  462 => 213,  458 => 212,  454 => 211,  448 => 210,  443 => 207,  437 => 205,  431 => 203,  429 => 202,  424 => 199,  420 => 197,  416 => 195,  414 => 194,  410 => 192,  406 => 191,  379 => 167,  372 => 163,  368 => 162,  362 => 158,  356 => 155,  350 => 153,  344 => 151,  342 => 150,  333 => 143,  327 => 140,  321 => 138,  315 => 136,  313 => 135,  307 => 131,  301 => 128,  295 => 126,  289 => 124,  287 => 123,  279 => 117,  273 => 114,  267 => 112,  261 => 110,  259 => 109,  254 => 106,  248 => 103,  241 => 100,  234 => 97,  232 => 96,  227 => 93,  221 => 90,  214 => 87,  207 => 84,  205 => 83,  195 => 76,  190 => 74,  182 => 69,  174 => 64,  168 => 61,  163 => 58,  157 => 55,  151 => 53,  145 => 51,  143 => 50,  138 => 47,  131 => 43,  125 => 41,  119 => 39,  117 => 38,  111 => 34,  105 => 31,  99 => 29,  93 => 27,  91 => 26,  85 => 23,  80 => 21,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -447,28 +621,52 @@ class __TwigTemplate_8f765fceded69333cd071fdae14d7b265cb94c9263816c43f32c380b734
                     </div>
 
                 </div>
-                <form class=\"new-added-form\" method=\"post\">
+                <form class=\"new-added-form\" method=\"post\" novalidate>
                     {{ form_start(form) }}
                     <div class=\"row\">
                         {{ form_row(form._token) }}
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
-                            <label>ID *</label>
-
+                            <label   >ID *</label>
+                            {% if form_errors(form.id)|length <= 0 %}
                             {{ form_widget (form.id , {'attr': {'class':'form-control'}}) }}
-
+                            {% else %}
+                                {{ form_widget (form.id , {'attr': {'class':'form-control is-invalid'}}) }}
+                            <div class=\"invalid-feedback\">
+                                {{ form_errors(form.id) }}
+                            </div>
+{% endif %}
                         </div>
 
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>First Name *</label>
+                            {% if form_errors(form.firstName)|length <= 0 %}
                             {{ form_widget (form.firstName , {'attr': {'class':'form-control'} }) }}
+                            {% else %}
+                            {{ form_widget (form.firstName , {'attr': {'class':'form-control is-invalid'} }) }}
+                                <div class=\"invalid-feedback\">
+                                    {{ form_errors(form.firstName) }}
+                                </div>
+
+                            {% endif %}
                         </div>
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>Last Name *</label>
+                            {% if form_errors(form.lastName)|length <= 0 %}
                             {{ form_widget (form.lastName , {'attr': {'class':'form-control'}}) }}
+                            {% else %}
+                                {{ form_widget (form.lastName , {'attr': {'class':'form-control is-invalid'}}) }}
+                                <div class=\"invalid-feedback\">
+                                    {{ form_errors(form.lastName) }}
+                                </div>
+                            {% endif %}
                         </div>
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>Gender *</label>
                             {{ form_widget (form.gender , {'attr': {'class':'select2'}}) }}
+
+                            <div class=\"invalid\">
+                            {{ form_errors(form.gender) }}
+                            </div>
                         </div>
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>Role *</label>
@@ -478,36 +676,74 @@ class __TwigTemplate_8f765fceded69333cd071fdae14d7b265cb94c9263816c43f32c380b734
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>User Type *</label>
                             {{ form_widget (form.userType , {'attr': {'class':'select2'}}) }}
+                            <div class=\"invalid\">
+                            {{ form_errors(form.userType) }}
+                            </div>
                         </div>
 
 
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>Joining Date *</label>
-                            {{ form_widget (form.joiningDate , {'attr': {'class':'form-control air-datepicker','placeholder':'dd/mm/yyyy', 'data-position':'bottom right'} }  ) }}
-
+                            {% if form_errors(form.joiningDate)|length <= 0 %}
+                            {{ form_widget (form.joiningDate , {'attr': {'class':'form-control air-datepicker ','placeholder':'dd/mm/yyyy', 'data-position':'bottom right'} }  ) }}
                             <i class=\"far fa-calendar-alt\"></i>
+                            {% else %}
+                                {{ form_widget (form.joiningDate , {'attr': {'class':'form-control air-datepicker is-invalid ','placeholder':'dd/mm/yyyy', 'data-position':'bottom right'} }  ) }}
+                                <i class=\"far fa-calendar-alt\"></i>
+                                <div class=\"invalid-feedback\">
+                                    {{ form_errors(form.joiningDate) }}
+                                </div>
+                            {% endif %}
                         </div>
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>BirthDay *</label>
+                            {% if form_errors(form.birthDay)|length <= 0 %}
                             {{ form_widget (form.birthDay , {'attr': {'class':'form-control air-datepicker','placeholder':'dd/mm/yyyy', 'data-position':'bottom right'} }  ) }}
-
-                            <i class=\"far fa-calendar-alt\"></i>
+                           <i class=\"far fa-calendar-alt\"></i>
+                            {% else %}
+                                {{ form_widget (form.birthDay , {'attr': {'class':'form-control air-datepicker is-invalid','placeholder':'dd/mm/yyyy', 'data-position':'bottom right'} }  ) }}
+                                <i class=\"far fa-calendar-alt\"></i>
+                                <div class=\"invalid-feedback\">
+                                    {{ form_errors(form.birthDay) }}
+                                </div>
+                            {% endif %}
                         </div>
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>E-Mail</label>
+                            {% if form_errors(form.email)|length <= 0 %}
                             {{ form_widget (form.email , {'attr': {'class':'form-control'}}) }}
-
+                      {% else %}
+                            {{ form_widget (form.email , {'attr': {'class':'form-control is-invalid'}}) }}
+                            <div class=\"invalid-feedback\">
+                                {{ form_errors(form.email) }}
+                            </div>
+{% endif %}
                         </div>
 
 
 
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>Phone</label>
+                            {% if form_errors(form.phone)|length <= 0 %}
                             {{ form_widget (form.phone , {'attr': {'class':'form-control'}}) }}
+                            {% else %}
+                                {{ form_widget (form.phone , {'attr': {'class':'form-control is-invalid'}}) }}
+                                <div class=\"invalid-feedback\">
+                                    {{ form_errors(form.phone) }}
+                                </div>
+                            {% endif %}
                         </div>
+
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>Salaire *</label>
+                            {% if form_errors(form.salaire)|length <= 0 %}
                             {{ form_widget (form.salaire , {'attr': {'class':'form-control'}}) }}
+                            {% else %}
+                                {{ form_widget (form.salaire , {'attr': {'class':'form-control is-invalid'}}) }}
+                                <div class=\"invalid-feedback\">
+                                    {{ form_errors(form.salaire) }}
+                                </div>
+                            {% endif %}
 
                         </div>
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
@@ -515,7 +751,14 @@ class __TwigTemplate_8f765fceded69333cd071fdae14d7b265cb94c9263816c43f32c380b734
 
                         <div class=\"col-lg-6 col-12 form-group\">
                             <label>Address *</label>
+                            {% if form_errors(form.address)|length <= 0 %}
                             {{ form_widget (form.address , {'attr': {'class':'textarea form-control','cols':'10','rows':'4'}}) }}
+                            {% else %}
+                                {{ form_widget (form.address , {'attr': {'class':'textarea form-control is-invalid','cols':'10','rows':'4'}}) }}
+                                <div class=\"invalid-feedback\">
+                                    {{ form_errors(form.address) }}
+                                </div>
+                            {% endif %}
 
                         </div>
 
