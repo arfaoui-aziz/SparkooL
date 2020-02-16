@@ -6,6 +6,8 @@ use AdminBundle\Form\AccountFormType;
 use AppBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
 
 class AccountController extends Controller
 {
@@ -121,9 +123,23 @@ class AccountController extends Controller
         return $this->render('@Admin\Account\AllAccounts.html.twig',array('allUsers'=>$allUsers));
     }
     public function UserDetailsAction(){
-
         return $this->render('@Admin\Account\UserDetails.html.twig');
     }
+    public function DisplayPDFAction(Request $request){
+        $snappy = $this->get('knp_snappy.pdf');
+        $html = $this->render('@Admin\Account\UserDetails.html.twig',array(
+            'base_dir' => $this->get('kernel')->getRootDir() . '/../web' . $request->getBasePath()
+        ));
+        $filename = 'firstPDF';
 
+        return new Response(
+            $snappy->getOutputFromHtml($html),
+            200,
+            array(
+                'Content-Type'          => 'application/pdf',
+                'Content-Disposition'   => 'inline; filename="'.$filename.'.pdf"'
+            )
+        );
+    }
 
 }

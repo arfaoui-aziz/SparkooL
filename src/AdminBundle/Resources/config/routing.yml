@@ -16,6 +16,9 @@ admin_AllAccounts:
 admin_UserDetails:
     path:     /UserDetails
     defaults: { _controller: AdminBundle:Account:UserDetails }
+admin_DisplayPDF:
+    path:     /DisplayPDF
+    defaults: { _controller: AdminBundle:Account:DisplayPDF }
 admin_AddClasse:
     path:     /AddClasse
     defaults: { _controller: AdminBundle:Classe:AddClasse }

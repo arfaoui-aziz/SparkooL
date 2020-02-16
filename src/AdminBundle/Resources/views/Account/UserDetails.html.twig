@@ -1,4 +1,29 @@
 {% extends 'base.html.twig' %}
+
+{% block css %}
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href=" {{ asset('img/favicon.png') }} ">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href=" {{ base_dir ~ asset('css/normalize.css') }}">
+    <!-- Main CSS -->
+    <link rel="stylesheet"  href=" {{ base_dir ~ asset('css/main.css') }} ">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href=" {{ base_dir ~ asset('css/bootstrap.min.css') }} " >
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href=" {{ base_dir ~ asset('css/all.min.css') }} ">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet"  href=" {{ base_dir ~ asset('fonts/flaticon.css') }} " >
+    <!-- Full Calender CSS -->
+    <link rel="stylesheet" href=" {{ base_dir ~ asset('css/fullcalendar.min.css') }} ">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href=" {{ base_dir ~ asset('css/animate.min.css') }} " >
+    <!-- Select 2 CSS -->
+    <link rel="stylesheet" href="{{ base_dir ~ asset('css/select2.min.css') }} ">
+    <!-- Date Picker CSS -->
+    <link rel="stylesheet" href="{{  base_dir ~ asset('css/datepicker.min.css') }}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href=" {{ base_dir ~ asset('style.css') }} " >
+{% endblock %}
 {% block body %}
 <div class="dashboard-content-one">
     <!-- Breadcubs Area Start Here -->
@@ -23,7 +48,7 @@
                         <div class="header-elements">
                             <ul>
                                 <li><a href="#"><i class="far fa-edit" ></i></a></li>
-                                <li><a href="#"><i class="fas fa-file-pdf"></i></a></li>
+                                <li><a href="{{ path('admin_DisplayPDF') }}"><i class="fas fa-file-pdf"></i></a></li>
                                 <li><a href="#"><i class="fas fa-download"></i></a></li>
                             </ul>
                         </div>
