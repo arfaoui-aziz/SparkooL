@@ -122,12 +122,12 @@ class AccountController extends Controller
         $allUsers = $em->getRepository(User::class)->findAll();
         return $this->render('@Admin\Account\AllAccounts.html.twig',array('allUsers'=>$allUsers));
     }
-    public function UserDetailsAction(){
+    public function UserDetailsAction(Request $request){
         return $this->render('@Admin\Account\UserDetails.html.twig');
     }
     public function DisplayPDFAction(Request $request){
         $snappy = $this->get('knp_snappy.pdf');
-        $html = $this->render('@Admin\Account\UserDetails.html.twig',array(
+        $html = $this->renderView('@Admin\Account\DownloadPDF.html.twig',array(
             'base_dir' => $this->get('kernel')->getRootDir() . '/../web' . $request->getBasePath()
         ));
         $filename = 'firstPDF';

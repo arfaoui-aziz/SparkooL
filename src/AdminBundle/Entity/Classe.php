@@ -4,12 +4,14 @@ namespace AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\ManyToMany;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Classe
  *
  * @ORM\Table(name="classe")
  * @ORM\Entity(repositoryClass="AdminBundle\Repository\ClasseRepository")
+ * @UniqueEntity("className",message="This Class is already Added")
  */
 class Classe
 {

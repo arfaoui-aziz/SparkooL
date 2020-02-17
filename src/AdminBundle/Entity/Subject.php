@@ -6,12 +6,14 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\JoinTable;
 use Doctrine\ORM\Mapping\ManyToMany;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Subject
  *
  * @ORM\Table(name="subject")
  * @ORM\Entity(repositoryClass="AdminBundle\Repository\SubjectRepository")
+ * @UniqueEntity("subjectName",message="subject Already Added")
  */
 
 class Subject
