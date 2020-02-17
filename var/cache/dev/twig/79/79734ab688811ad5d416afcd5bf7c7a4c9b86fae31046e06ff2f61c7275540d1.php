@@ -176,9 +176,15 @@ class __TwigTemplate_df7bdc957a0872c252f4d7007dc54f8b317dff0f7f5bc2eaec9c90fbf0c
             // line 86
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("addAbsanceTeacher", ["id" => $this->getAttribute($context["i"], "id", [])]), "html", null, true);
             echo "\"><i
-                                                    class=\"fas fa-check-square text-dark-pastel-green\"></i> Add Absence/Delay</a>
+                                                    class=\"fas fa-calendar-check text-dark-pastel-green\"></i> Add Absence</a>
                                         <a class=\"dropdown-item\" href=\"";
             // line 88
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("addAbsanceTeacher", ["id" => $this->getAttribute($context["i"], "id", [])]), "html", null, true);
+            echo "\"><i
+                                                    class=\"fas fa-check-square text-dark-pastel-green\"></i> Add Delay</a>
+
+                                        <a class=\"dropdown-item\" href=\"";
+            // line 91
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("showTeacherDetails", ["id" => $this->getAttribute($context["i"], "id", [])]), "html", null, true);
             echo "\"><i
                                                     class=\"fas fa-eye text-orange-peel\"></i> Show Details</a>
@@ -192,7 +198,7 @@ class __TwigTemplate_df7bdc957a0872c252f4d7007dc54f8b317dff0f7f5bc2eaec9c90fbf0c
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 96
+        // line 99
         echo "                    </table>
                 </div>
             </div>
@@ -224,7 +230,7 @@ class __TwigTemplate_df7bdc957a0872c252f4d7007dc54f8b317dff0f7f5bc2eaec9c90fbf0c
 
     public function getDebugInfo()
     {
-        return array (  196 => 96,  182 => 88,  177 => 86,  172 => 84,  161 => 76,  156 => 74,  152 => 73,  148 => 72,  144 => 71,  140 => 70,  136 => 69,  129 => 65,  119 => 57,  115 => 56,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  202 => 99,  188 => 91,  182 => 88,  177 => 86,  172 => 84,  161 => 76,  156 => 74,  152 => 73,  148 => 72,  144 => 71,  140 => 70,  136 => 69,  129 => 65,  119 => 57,  115 => 56,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -323,7 +329,10 @@ class __TwigTemplate_df7bdc957a0872c252f4d7007dc54f8b317dff0f7f5bc2eaec9c90fbf0c
                                         <a class=\"dropdown-item\" href=\"{{ path('deleteTeacher',{'id':i.id }) }}\"><i
                                                     class=\"fas fa-times text-orange-red\"></i> Delete</a>
                                         <a class=\"dropdown-item\" href=\"{{ path('addAbsanceTeacher',{'id':i.id }) }}\"><i
-                                                    class=\"fas fa-check-square text-dark-pastel-green\"></i> Add Absence/Delay</a>
+                                                    class=\"fas fa-calendar-check text-dark-pastel-green\"></i> Add Absence</a>
+                                        <a class=\"dropdown-item\" href=\"{{ path('addAbsanceTeacher',{'id':i.id }) }}\"><i
+                                                    class=\"fas fa-check-square text-dark-pastel-green\"></i> Add Delay</a>
+
                                         <a class=\"dropdown-item\" href=\"{{ path('showTeacherDetails',{'id':i.id }) }}\"><i
                                                     class=\"fas fa-eye text-orange-peel\"></i> Show Details</a>
                                     </div>

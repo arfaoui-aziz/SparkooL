@@ -46,11 +46,11 @@
 
                      <div class="item-img">
 
-                         <img src="{{ asset('img/figure/youth.png') }}" alt="teacher">
+                         <img src="{{ asset('img/figure/teacher.jpg') }}" alt="teacher">
                      </div>
                      <div class="item-content">
                          <div class="header-inline item-header">
-                             <h3 class="text-dark-medium font-medium">{{  var.id }}</h3>
+                             <h3 class="text-dark-medium font-medium">{{  var.firstName }} {{  var.lastName }}</h3>
                              <div class="header-elements">
                                  <ul>
                                      <li><a href="#"><i class="fas fa-print"></i></a></li>
@@ -100,6 +100,53 @@
                                  </tbody>
 
                              </table>
+                             <hr>
+                             <div class="item-content">
+                                 <div class="header-inline item-header">
+                                     <h3 class="text-dark-medium font-medium">Diploma Informations</h3>                                    <div class="header-elements">
+                                         <ul>
+                                             <li><a href="{{ path('updateDiploma',{'id':dip.id }) }}"><i class="far fa-edit"></i></a></li>
+                                             <li><a href="#"><i class="fas fa-print"></i></a></li>
+                                             <li><a href="#"><i class="fas fa-download"></i></a></li>
+                                         </ul>
+                                     </div>
+                                 </div>
+                                 <table class="table text-nowrap">
+
+
+
+                                     <tbody>
+
+                                     <tr>
+                                         <td>Entitled:</td>
+                                         <td class="font-medium text-dark-medium">{{ dip.intitule }}</td>
+                                     </tr>
+                                     <tr>
+                                         <td>Institute:</td>
+                                         <td class="font-medium text-dark-medium">{{ dip.ecole }}</td>
+                                     </tr>
+                                     <tr>
+                                         <td>Speciality:</td>
+                                         <td class="font-medium text-dark-medium">{{ dip.specialite }}</td>
+                                     </tr>
+                                     <tr>
+                                         <td>Level:</td>
+                                         <td class="font-medium text-dark-medium">{{ dip.niveau }}</td>
+                                     </tr>
+
+                                     <tr>
+                                         <td>Date obtained:</td>
+                                         <td class="font-medium text-dark-medium">{{ dip.dateObtentation }}</td>
+                                     </tr>
+
+                                     </tbody>
+
+                                 </table>
+
+
+
+                             </div>
+                         </div>
 
 
 

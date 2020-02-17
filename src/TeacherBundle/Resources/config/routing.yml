@@ -44,3 +44,11 @@ showTeacherDetailsF:
 interfaceTeacher:
     path:     /interfaceTeacher/{id}
     defaults: { _controller: TeacherBundle:Teacher:Interface }
+
+updateLogin:
+    path:     /updateLogin/{id}
+    defaults: { _controller: TeacherBundle:Teacher:UpdateLogin }
+
+addReclamation:
+    path:     /addReclamation
+    defaults: { _controller: TeacherBundle:Reclamation:AddReclamation }

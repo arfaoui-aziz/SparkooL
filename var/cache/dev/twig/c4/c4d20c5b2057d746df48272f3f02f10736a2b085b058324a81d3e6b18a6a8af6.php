@@ -120,7 +120,7 @@ class __TwigTemplate_1c2854b1b0a3d2695f718d769329d90519ca0467b52d326fb700289b5ae
                             <label>Speciality *</label>
                             ";
         // line 52
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "specialite", []), 'widget', ["attr" => ["class" => "select2"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "specialite", []), 'widget', ["attr" => ["class" => "form-control"]]);
         echo "
 
                         </div>
@@ -260,7 +260,7 @@ class __TwigTemplate_1c2854b1b0a3d2695f718d769329d90519ca0467b52d326fb700289b5ae
 
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>Speciality *</label>
-                            {{ form_widget (form.specialite , {'attr': {'class':'select2'}}) }}
+                            {{ form_widget (form.specialite , {'attr': {'class':'form-control'}}) }}
 
                         </div>
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">

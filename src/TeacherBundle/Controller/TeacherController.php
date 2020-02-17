@@ -128,4 +128,23 @@ class TeacherController extends Controller
         return $this->render('@Teacher/Teacher/Front/interfaceTeacher.html.twig');
 
     }
+
+    public function UpdateLoginAction(Request $request,$id)
+    {
+        $em=$this->getDoctrine()->getManager();
+        $var=$this->getDoctrine()->getRepository(User::class)->find($id);
+        $form=$this->createForm(TeacherType::class,$var);
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid())
+        {
+
+            $em->persist($var);
+            $em->flush();
+
+            return $this->redirectToRoute('showTeacher');
+        }
+
+        return $this->render('@Teacher/Teacher/Front/udateLogin.html.twig',
+            array('form' =>$form->createView()));
+    }
 }

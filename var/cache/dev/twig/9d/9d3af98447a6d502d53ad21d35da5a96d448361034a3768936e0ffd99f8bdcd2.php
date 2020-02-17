@@ -226,8 +226,14 @@ class __TwigTemplate_4ae240a64639b29c11c0a6d23c9648e201f6e74699bed0d2bae32452040
                         </li>
                         <li><a href=\"#\"><div>School Life</div></a></li>
                         <li><a href=\"#\"><div>News & Events</div></a></li>
-                        <li><a href=\"#\"><div>Admissions</div></a></li>
-                        <li><a href=\"#\"><div>Contact Us</div></a></li>
+                        <li><a href=\"";
+        // line 112
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("addReclamation", ["id" => $this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", []), "id", [])]), "html", null, true);
+        echo "\"><div>Complain</div></a></li>
+                        <li><a href=\"";
+        // line 113
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("updateLogin", ["id" => $this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", []), "id", [])]), "html", null, true);
+        echo "\"><div>Account</div></a></li>
                     </ul>
 
                     <!-- Header Buttons
@@ -351,7 +357,7 @@ class __TwigTemplate_4ae240a64639b29c11c0a6d23c9648e201f6e74699bed0d2bae32452040
                         <strong>Success!</strong> You've been added to our email list.
                     </div>
                     <div class=\"alert alert-danger d-none\" id=\"newsletterError\"></div>
-                    <form id=\"newsletterForm\" action=\"php/newsletter-subscribe.php\" method=\"POST\" class=\"mw-100\">
+                    <form id=\"newsletterForm\"  method=\"POST\" class=\"mw-100\">
                         <div class=\"input-group\">
                             <input class=\"form-control form-control-sm text-color-light custom-bg-color-1 rounded-0 border-0 px-4 text-3\" placeholder=\"Email Address...\" name=\"newsletterEmail\" id=\"newsletterEmail\" type=\"text\">
                             <span class=\"input-group-append\">
@@ -410,13 +416,7 @@ class __TwigTemplate_4ae240a64639b29c11c0a6d23c9648e201f6e74699bed0d2bae32452040
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/js/functions.js"), "html", null, true);
         echo "\"></script>
 
-<script>
 
-    jQuery('.home-date').datepicker({
-        autoclose: true,
-        startDate: \"today\",
-    });
-</script>
 
 
 </body>
@@ -465,7 +465,7 @@ class __TwigTemplate_4ae240a64639b29c11c0a6d23c9648e201f6e74699bed0d2bae32452040
 
                         <div class=\"form-widget\">
                             <div class=\"form-result\"></div>
-                            <form class=\"row home-moving-form position-relative mb-0\" action=\"include/form.php\" method=\"post\" enctype=\"multipart/form-data\">
+                            <form class=\"row home-moving-form position-relative mb-0\" method=\"post\" >
                                 <div class=\"form-process\"></div>
 
                                 <div class=\"col-sm-6 input-group form-group\">
@@ -883,7 +883,7 @@ class __TwigTemplate_4ae240a64639b29c11c0a6d23c9648e201f6e74699bed0d2bae32452040
 
     public function getDebugInfo()
     {
-        return array (  796 => 469,  657 => 333,  646 => 325,  635 => 317,  624 => 309,  603 => 291,  595 => 286,  577 => 271,  534 => 231,  446 => 147,  437 => 146,  410 => 653,  403 => 649,  397 => 646,  393 => 645,  309 => 564,  281 => 538,  279 => 146,  256 => 125,  250 => 123,  245 => 121,  240 => 120,  238 => 119,  217 => 101,  180 => 67,  176 => 66,  148 => 41,  141 => 37,  137 => 36,  133 => 35,  127 => 32,  122 => 30,  118 => 29,  114 => 28,  110 => 27,  105 => 25,  101 => 24,  97 => 23,  90 => 19,  86 => 18,  82 => 17,  78 => 16,  74 => 15,  70 => 14,  66 => 13,  62 => 12,  58 => 11,  54 => 10,  50 => 9,  46 => 8,  37 => 1,);
+        return array (  796 => 469,  657 => 333,  646 => 325,  635 => 317,  624 => 309,  603 => 291,  595 => 286,  577 => 271,  534 => 231,  446 => 147,  437 => 146,  416 => 653,  409 => 649,  403 => 646,  399 => 645,  315 => 564,  287 => 538,  285 => 146,  262 => 125,  256 => 123,  251 => 121,  246 => 120,  244 => 119,  235 => 113,  231 => 112,  217 => 101,  180 => 67,  176 => 66,  148 => 41,  141 => 37,  137 => 36,  133 => 35,  127 => 32,  122 => 30,  118 => 29,  114 => 28,  110 => 27,  105 => 25,  101 => 24,  97 => 23,  90 => 19,  86 => 18,  82 => 17,  78 => 16,  74 => 15,  70 => 14,  66 => 13,  62 => 12,  58 => 11,  54 => 10,  50 => 9,  46 => 8,  37 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -1007,8 +1007,8 @@ class __TwigTemplate_4ae240a64639b29c11c0a6d23c9648e201f6e74699bed0d2bae32452040
                         </li>
                         <li><a href=\"#\"><div>School Life</div></a></li>
                         <li><a href=\"#\"><div>News & Events</div></a></li>
-                        <li><a href=\"#\"><div>Admissions</div></a></li>
-                        <li><a href=\"#\"><div>Contact Us</div></a></li>
+                        <li><a href=\"{{ path('addReclamation',{'id':app.user.id }) }}\"><div>Complain</div></a></li>
+                        <li><a href=\"{{ path('updateLogin',{'id':app.user.id }) }}\"><div>Account</div></a></li>
                     </ul>
 
                     <!-- Header Buttons
@@ -1062,7 +1062,7 @@ class __TwigTemplate_4ae240a64639b29c11c0a6d23c9648e201f6e74699bed0d2bae32452040
 
                         <div class=\"form-widget\">
                             <div class=\"form-result\"></div>
-                            <form class=\"row home-moving-form position-relative mb-0\" action=\"include/form.php\" method=\"post\" enctype=\"multipart/form-data\">
+                            <form class=\"row home-moving-form position-relative mb-0\" method=\"post\" >
                                 <div class=\"form-process\"></div>
 
                                 <div class=\"col-sm-6 input-group form-group\">
@@ -1503,7 +1503,7 @@ class __TwigTemplate_4ae240a64639b29c11c0a6d23c9648e201f6e74699bed0d2bae32452040
                         <strong>Success!</strong> You've been added to our email list.
                     </div>
                     <div class=\"alert alert-danger d-none\" id=\"newsletterError\"></div>
-                    <form id=\"newsletterForm\" action=\"php/newsletter-subscribe.php\" method=\"POST\" class=\"mw-100\">
+                    <form id=\"newsletterForm\"  method=\"POST\" class=\"mw-100\">
                         <div class=\"input-group\">
                             <input class=\"form-control form-control-sm text-color-light custom-bg-color-1 rounded-0 border-0 px-4 text-3\" placeholder=\"Email Address...\" name=\"newsletterEmail\" id=\"newsletterEmail\" type=\"text\">
                             <span class=\"input-group-append\">
@@ -1550,13 +1550,7 @@ class __TwigTemplate_4ae240a64639b29c11c0a6d23c9648e201f6e74699bed0d2bae32452040
 ============================================= -->
 <script src=\"{{ asset('FrontEnd/js/functions.js') }}\"></script>
 
-<script>
 
-    jQuery('.home-date').datepicker({
-        autoclose: true,
-        startDate: \"today\",
-    });
-</script>
 
 
 </body>

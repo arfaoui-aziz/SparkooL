@@ -36,6 +36,9 @@ class TeacherType extends AbstractType
             ->add('Save',SubmitType::class , [
                 'attr' => ['class' => 'btn-fill-lg btn-gradient-yellow btn-hover-bluedark'],
             ])
+            ->add('Confirm',SubmitType::class , [
+                'attr' => ['class' => 'btn bgcolor text-white t500 btn-block py-2 mt-2'],
+            ])
             ->add('Reset',ResetType::class, [
                 'attr' => ['class' => 'btn-fill-lg bg-blue-dark btn-hover-yellow']
             ]);

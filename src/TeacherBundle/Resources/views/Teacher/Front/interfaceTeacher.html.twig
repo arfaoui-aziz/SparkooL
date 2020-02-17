@@ -109,8 +109,8 @@
                         </li>
                         <li><a href="#"><div>School Life</div></a></li>
                         <li><a href="#"><div>News & Events</div></a></li>
-                        <li><a href="#"><div>Admissions</div></a></li>
-                        <li><a href="#"><div>Contact Us</div></a></li>
+                        <li><a href="{{ path('addReclamation',{'id':app.user.id }) }}"><div>Complain</div></a></li>
+                        <li><a href="{{ path('updateLogin',{'id':app.user.id }) }}"><div>Account</div></a></li>
                     </ul>
 
                     <!-- Header Buttons
@@ -164,7 +164,7 @@
 
                         <div class="form-widget">
                             <div class="form-result"></div>
-                            <form class="row home-moving-form position-relative mb-0" action="include/form.php" method="post" enctype="multipart/form-data">
+                            <form class="row home-moving-form position-relative mb-0" method="post" >
                                 <div class="form-process"></div>
 
                                 <div class="col-sm-6 input-group form-group">
@@ -605,7 +605,7 @@
                         <strong>Success!</strong> You've been added to our email list.
                     </div>
                     <div class="alert alert-danger d-none" id="newsletterError"></div>
-                    <form id="newsletterForm" action="php/newsletter-subscribe.php" method="POST" class="mw-100">
+                    <form id="newsletterForm"  method="POST" class="mw-100">
                         <div class="input-group">
                             <input class="form-control form-control-sm text-color-light custom-bg-color-1 rounded-0 border-0 px-4 text-3" placeholder="Email Address..." name="newsletterEmail" id="newsletterEmail" type="text">
                             <span class="input-group-append">
@@ -652,13 +652,7 @@
 ============================================= -->
 <script src="{{ asset('FrontEnd/js/functions.js') }}"></script>
 
-<script>
 
-    jQuery('.home-date').datepicker({
-        autoclose: true,
-        startDate: "today",
-    });
-</script>
 
 
 </body>

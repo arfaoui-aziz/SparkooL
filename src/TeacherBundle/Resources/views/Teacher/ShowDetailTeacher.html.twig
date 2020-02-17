@@ -3,7 +3,7 @@
     <div class="dashboard-content-one">
         <!-- Breadcubs Area Start Here -->
         <div class="breadcrumbs-area">
-            <h3>Teacher Informations</h3>
+            <h3>Teacher Details</h3>
 
         </div>
         <!-- Breadcubs Area End Here -->
@@ -26,8 +26,8 @@
                             <div class="header-elements">
                                 <ul>
                                     <li><a href="{{ path('updateTeacher',{'id':var.id }) }}"><i class="far fa-edit"></i></a></li>
-                                    <li><a href="{{ path('showAbsence',{'id':var.id }) }}"><i class="fas fa-check-square"></i></a></li>
-                                    <li><a href="#"><i class="fas fa-check-square"></i></a></li>
+                                    <li><a href="{{ path('showAbsence',{'id':var.id }) }}"><i class="fas fa-calendar-check"></i></a></li>
+                                    <li><a href=""><i class="fas fa-check-square"></i></a></li>
                                     <li><a href="#"><i class="fas fa-print"></i></a></li>
 
                                 </ul>
@@ -89,8 +89,7 @@
                                     <h3 class="text-dark-medium font-medium">Diploma Informations</h3>                                    <div class="header-elements">
                                         <ul>
                                             <li><a href="{{ path('updateDiploma',{'id':dip.id }) }}"><i class="far fa-edit"></i></a></li>
-                                            <li><a href="#"><i class="fas fa-print"></i></a></li>
-                                            <li><a href="#"><i class="fas fa-download"></i></a></li>
+
                                         </ul>
                                     </div>
                                 </div>
