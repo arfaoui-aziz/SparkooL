@@ -4,17 +4,21 @@
     <div class="dashboard-content-one">
         <!-- Breadcubs Area Start Here -->
         <div class="breadcrumbs-area">
-            <h3>Teacher</h3>
-
+            <h3>Teachers</h3>
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <a href="{{ path('showTeacher') }}"><li>All Teachers</li></a>
+            </ul>
         </div>
+
         <!-- Breadcubs Area End Here -->
         <!-- Teacher Table Area Start Here -->
         <div class="card height-auto">
             <div class="card-body">
                 <div class="heading-layout1">
-                    <div class="item-title">
-                        <h3>All Teachers Data</h3>
-                    </div>
+
 
                 </div>
                 <form class="mg-b-20">
@@ -85,7 +89,7 @@
                                                     class="fas fa-times text-orange-red"></i> Delete</a>
                                         <a class="dropdown-item" href="{{ path('addAbsanceTeacher',{'id':i.id }) }}"><i
                                                     class="fas fa-calendar-check text-dark-pastel-green"></i> Add Absence</a>
-                                        <a class="dropdown-item" href="{{ path('addAbsanceTeacher',{'id':i.id }) }}"><i
+                                        <a class="dropdown-item" href="{{ path('addDelayTeacher',{'id':i.id }) }}"><i
                                                     class="fas fa-check-square text-dark-pastel-green"></i> Add Delay</a>
 
                                         <a class="dropdown-item" href="{{ path('showTeacherDetails',{'id':i.id }) }}"><i

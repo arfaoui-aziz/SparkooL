@@ -66,6 +66,13 @@ class __TwigTemplate_3124d37d6643216f5723739c72295af13fc384a7f926cc24c6cbf3b4a2b
                 <li>
                     <a href=\"index.html\">Home</a>
                 </li>
+                <li><a href=\"";
+        // line 12
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("showTeacher");
+        echo "\">All Teachers</a></li>
+                </li>
+
+               <li> <a href=\"\">Teacher Dtails</a></li>
                 <li>Update Teacher Informations</li>
             </ul>
         </div>
@@ -90,33 +97,33 @@ class __TwigTemplate_3124d37d6643216f5723739c72295af13fc384a7f926cc24c6cbf3b4a2b
                 </div>
                 <form class=\"new-added-form\" method=\"post\">
                     ";
-        // line 35
+        // line 39
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_start');
         echo "
 
                     <div class=\"row\">
                         ";
-        // line 38
+        // line 42
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "_token", []), 'row');
         echo "
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>ID *</label>
                             ";
-        // line 41
+        // line 45
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "id", []), 'widget', ["attr" => ["class" => "form-control"]]);
         echo "
                         </div>
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>First Name *</label>
                             ";
-        // line 45
+        // line 49
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "firstName", []), 'widget', ["attr" => ["class" => "form-control"]]);
         echo "
                         </div>
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>Last Name *</label>
                             ";
-        // line 49
+        // line 53
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "lastName", []), 'widget', ["attr" => ["class" => "form-control"]]);
         echo "
 
@@ -125,7 +132,7 @@ class __TwigTemplate_3124d37d6643216f5723739c72295af13fc384a7f926cc24c6cbf3b4a2b
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>Gender *</label>
                             ";
-        // line 55
+        // line 59
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "gender", []), 'widget', ["attr" => ["class" => "select2"]]);
         echo "
 
@@ -133,7 +140,7 @@ class __TwigTemplate_3124d37d6643216f5723739c72295af13fc384a7f926cc24c6cbf3b4a2b
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>E-Mail</label>
                             ";
-        // line 60
+        // line 64
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "email", []), 'widget', ["attr" => ["class" => "form-control"]]);
         echo "
 
@@ -141,7 +148,7 @@ class __TwigTemplate_3124d37d6643216f5723739c72295af13fc384a7f926cc24c6cbf3b4a2b
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>Joining Date *</label>
                             ";
-        // line 65
+        // line 69
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "joiningDate", []), 'widget', ["attr" => ["class" => "form-control air-datepicker", "placeholder" => "dd/mm/yyyy", "data-position" => "bottom right"]]);
         echo "
 
@@ -150,7 +157,7 @@ class __TwigTemplate_3124d37d6643216f5723739c72295af13fc384a7f926cc24c6cbf3b4a2b
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>Date Of Birth *</label>
                             ";
-        // line 71
+        // line 75
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "birthDay", []), 'widget', ["attr" => ["class" => "form-control air-datepicker", "placeholder" => "dd/mm/yyyy", "data-position" => "bottom right"]]);
         echo "                            <i class=\"far fa-calendar-alt\"></i>
                         </div>
@@ -163,14 +170,14 @@ class __TwigTemplate_3124d37d6643216f5723739c72295af13fc384a7f926cc24c6cbf3b4a2b
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>Address</label>
                             ";
-        // line 81
+        // line 85
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "address", []), 'widget', ["attr" => ["class" => "form-control"]]);
         echo "
                         </div>
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>Phone</label>
                             ";
-        // line 85
+        // line 89
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "phone", []), 'widget', ["attr" => ["class" => "form-control"]]);
         echo "
                         </div>
@@ -179,27 +186,27 @@ class __TwigTemplate_3124d37d6643216f5723739c72295af13fc384a7f926cc24c6cbf3b4a2b
                             <label class=\"text-dark-medium\">Upload Student Photo (150px X 150px)</label>
                             <label class=\"file\" title=\"\">
                                 ";
-        // line 91
+        // line 95
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "picture", []), 'widget', ["attr" => ["onchange" => "this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))"]]);
         echo "
                             </label>
                             <div class=\"col-12 form-group mg-t-8\">
                                 ";
-        // line 94
+        // line 98
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "Save", []), 'widget');
         echo "
                                 ";
-        // line 95
+        // line 99
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "Reset", []), 'widget');
         echo "
                             </div>
                         </div>
                         ";
-        // line 98
+        // line 102
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "username", []), 'widget', ["attr" => ["class" => "hidden"]]);
         echo "
                         ";
-        // line 99
+        // line 103
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end', ["render_rest" => false]);
         echo "
                 </form>
@@ -231,7 +238,7 @@ class __TwigTemplate_3124d37d6643216f5723739c72295af13fc384a7f926cc24c6cbf3b4a2b
 
     public function getDebugInfo()
     {
-        return array (  203 => 99,  199 => 98,  193 => 95,  189 => 94,  183 => 91,  174 => 85,  167 => 81,  154 => 71,  145 => 65,  137 => 60,  129 => 55,  120 => 49,  113 => 45,  106 => 41,  100 => 38,  94 => 35,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  210 => 103,  206 => 102,  200 => 99,  196 => 98,  190 => 95,  181 => 89,  174 => 85,  161 => 75,  152 => 69,  144 => 64,  136 => 59,  127 => 53,  120 => 49,  113 => 45,  107 => 42,  101 => 39,  71 => 12,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -255,6 +262,10 @@ class __TwigTemplate_3124d37d6643216f5723739c72295af13fc384a7f926cc24c6cbf3b4a2b
                 <li>
                     <a href=\"index.html\">Home</a>
                 </li>
+                <li><a href=\"{{ path('showTeacher') }}\">All Teachers</a></li>
+                </li>
+
+               <li> <a href=\"\">Teacher Dtails</a></li>
                 <li>Update Teacher Informations</li>
             </ul>
         </div>

@@ -117,7 +117,7 @@
                     ============================================= -->
                     <div class="header-buttons d-none d-sm-inline-block">
                         {% if is_granted('ROLE_USER') %}
-                            <a> {{ app.user.username }} &nbsp;&nbsp;&nbsp;</a>
+                            <a> {{ app.user.username }} </a>
                             <a href="{{ path('fos_user_security_logout')}}" class="button button-rounded button-white button-light button-small m-0">Log Out</a>
                         {% else %}
                             <a href="{{ path('fos_user_security_login') }}"   class="button button-rounded button-white button-light button-small m-0">LOGIN</a>

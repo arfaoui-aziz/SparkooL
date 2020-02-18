@@ -61,12 +61,15 @@ class __TwigTemplate_22c1fbabd220839712bc38d3f8e85e6f11720f78105fce06904318d2705
     <div class=\"dashboard-content-one\">
         <!-- Breadcubs Area Start Here -->
         <div class=\"breadcrumbs-area\">
-            <h3>Teacher</h3>
+            <h3>Teachers</h3>
             <ul>
                 <li>
                     <a href=\"index.html\">Home</a>
                 </li>
-                <li>Add New Teacher</li>
+                <a href=\"";
+        // line 12
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("addTeacher");
+        echo "\"><li>Add Teacher</li></a>
             </ul>
         </div>
         <!-- Breadcubs Area End Here -->
@@ -227,7 +230,7 @@ class __TwigTemplate_22c1fbabd220839712bc38d3f8e85e6f11720f78105fce06904318d2705
 
     public function getDebugInfo()
     {
-        return array (  199 => 98,  193 => 95,  189 => 94,  183 => 91,  174 => 85,  167 => 81,  154 => 71,  145 => 65,  137 => 60,  129 => 55,  120 => 49,  113 => 45,  106 => 41,  100 => 38,  94 => 35,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  202 => 98,  196 => 95,  192 => 94,  186 => 91,  177 => 85,  170 => 81,  157 => 71,  148 => 65,  140 => 60,  132 => 55,  123 => 49,  116 => 45,  109 => 41,  103 => 38,  97 => 35,  71 => 12,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -246,12 +249,12 @@ class __TwigTemplate_22c1fbabd220839712bc38d3f8e85e6f11720f78105fce06904318d2705
     <div class=\"dashboard-content-one\">
         <!-- Breadcubs Area Start Here -->
         <div class=\"breadcrumbs-area\">
-            <h3>Teacher</h3>
+            <h3>Teachers</h3>
             <ul>
                 <li>
                     <a href=\"index.html\">Home</a>
                 </li>
-                <li>Add New Teacher</li>
+                <a href=\"{{ path('addTeacher') }}\"><li>Add Teacher</li></a>
             </ul>
         </div>
         <!-- Breadcubs Area End Here -->

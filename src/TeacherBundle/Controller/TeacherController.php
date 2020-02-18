@@ -132,16 +132,21 @@ class TeacherController extends Controller
     public function UpdateLoginAction(Request $request,$id)
     {
         $em=$this->getDoctrine()->getManager();
+        $var=new User();
         $var=$this->getDoctrine()->getRepository(User::class)->find($id);
         $form=$this->createForm(TeacherType::class,$var);
         $form->handleRequest($request);
+
         if($form->isSubmitted() && $form->isValid())
         {
+            $pwd=$var->getPassword();
+            $pass=password_hash($pwd, PASSWORD_BCRYPT);
+            $var->setPassword($pass);
 
             $em->persist($var);
             $em->flush();
 
-            return $this->redirectToRoute('showTeacher');
+            return $this->redirectToRoute('interfaceTeacher',['id' => $id]);
         }
 
         return $this->render('@Teacher/Teacher/Front/udateLogin.html.twig',

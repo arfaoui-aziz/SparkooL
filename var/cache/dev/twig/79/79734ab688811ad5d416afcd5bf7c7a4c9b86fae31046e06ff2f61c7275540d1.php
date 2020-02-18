@@ -61,17 +61,24 @@ class __TwigTemplate_df7bdc957a0872c252f4d7007dc54f8b317dff0f7f5bc2eaec9c90fbf0c
     <div class=\"dashboard-content-one\">
         <!-- Breadcubs Area Start Here -->
         <div class=\"breadcrumbs-area\">
-            <h3>Teacher</h3>
-
+            <h3>Teachers</h3>
+            <ul>
+                <li>
+                    <a href=\"index.html\">Home</a>
+                </li>
+                <a href=\"";
+        // line 12
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("showTeacher");
+        echo "\"><li>All Teachers</li></a>
+            </ul>
         </div>
+
         <!-- Breadcubs Area End Here -->
         <!-- Teacher Table Area Start Here -->
         <div class=\"card height-auto\">
             <div class=\"card-body\">
                 <div class=\"heading-layout1\">
-                    <div class=\"item-title\">
-                        <h3>All Teachers Data</h3>
-                    </div>
+
 
                 </div>
                 <form class=\"mg-b-20\">
@@ -111,11 +118,11 @@ class __TwigTemplate_df7bdc957a0872c252f4d7007dc54f8b317dff0f7f5bc2eaec9c90fbf0c
                         </tr>
                         </thead>
                         ";
-        // line 56
+        // line 60
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["var"] ?? $this->getContext($context, "var")));
         foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-            // line 57
+            // line 61
             echo "                        <tbody>
 
                         <tr>
@@ -125,39 +132,39 @@ class __TwigTemplate_df7bdc957a0872c252f4d7007dc54f8b317dff0f7f5bc2eaec9c90fbf0c
 
 
                                         <label class=\"form-check-label\">";
-            // line 65
+            // line 69
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "id", []), "html", null, true);
             echo "</label>
 
                                 </div>
                             </td>
                             <td>";
-            // line 69
+            // line 73
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "picture", []), "html", null, true);
             echo "</td>
                             <td>";
-            // line 70
+            // line 74
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "firstName", []), "html", null, true);
             echo "</td>
                             <td>";
-            // line 71
+            // line 75
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "lastName", []), "html", null, true);
             echo "</td>
                             <td>";
-            // line 72
+            // line 76
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "gender", []), "html", null, true);
             echo "</td>
                             <td>";
-            // line 73
+            // line 77
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "address", []), "html", null, true);
             echo "</td>
                             <td>";
-            // line 74
+            // line 78
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "phone", []), "html", null, true);
             echo "</td>
 
                             <td>";
-            // line 76
+            // line 80
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "email", []), "html", null, true);
             echo "</td>
                             <td>
@@ -168,23 +175,23 @@ class __TwigTemplate_df7bdc957a0872c252f4d7007dc54f8b317dff0f7f5bc2eaec9c90fbf0c
                                     </a>
                                     <div class=\"dropdown-menu dropdown-menu-right\">
                                         <a class=\"dropdown-item\" href=\"";
-            // line 84
+            // line 88
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("deleteTeacher", ["id" => $this->getAttribute($context["i"], "id", [])]), "html", null, true);
             echo "\"><i
                                                     class=\"fas fa-times text-orange-red\"></i> Delete</a>
                                         <a class=\"dropdown-item\" href=\"";
-            // line 86
+            // line 90
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("addAbsanceTeacher", ["id" => $this->getAttribute($context["i"], "id", [])]), "html", null, true);
             echo "\"><i
                                                     class=\"fas fa-calendar-check text-dark-pastel-green\"></i> Add Absence</a>
                                         <a class=\"dropdown-item\" href=\"";
-            // line 88
-            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("addAbsanceTeacher", ["id" => $this->getAttribute($context["i"], "id", [])]), "html", null, true);
+            // line 92
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("addDelayTeacher", ["id" => $this->getAttribute($context["i"], "id", [])]), "html", null, true);
             echo "\"><i
                                                     class=\"fas fa-check-square text-dark-pastel-green\"></i> Add Delay</a>
 
                                         <a class=\"dropdown-item\" href=\"";
-            // line 91
+            // line 95
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("showTeacherDetails", ["id" => $this->getAttribute($context["i"], "id", [])]), "html", null, true);
             echo "\"><i
                                                     class=\"fas fa-eye text-orange-peel\"></i> Show Details</a>
@@ -198,7 +205,7 @@ class __TwigTemplate_df7bdc957a0872c252f4d7007dc54f8b317dff0f7f5bc2eaec9c90fbf0c
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 99
+        // line 103
         echo "                    </table>
                 </div>
             </div>
@@ -230,7 +237,7 @@ class __TwigTemplate_df7bdc957a0872c252f4d7007dc54f8b317dff0f7f5bc2eaec9c90fbf0c
 
     public function getDebugInfo()
     {
-        return array (  202 => 99,  188 => 91,  182 => 88,  177 => 86,  172 => 84,  161 => 76,  156 => 74,  152 => 73,  148 => 72,  144 => 71,  140 => 70,  136 => 69,  129 => 65,  119 => 57,  115 => 56,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  209 => 103,  195 => 95,  189 => 92,  184 => 90,  179 => 88,  168 => 80,  163 => 78,  159 => 77,  155 => 76,  151 => 75,  147 => 74,  143 => 73,  136 => 69,  126 => 61,  122 => 60,  71 => 12,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -249,17 +256,21 @@ class __TwigTemplate_df7bdc957a0872c252f4d7007dc54f8b317dff0f7f5bc2eaec9c90fbf0c
     <div class=\"dashboard-content-one\">
         <!-- Breadcubs Area Start Here -->
         <div class=\"breadcrumbs-area\">
-            <h3>Teacher</h3>
-
+            <h3>Teachers</h3>
+            <ul>
+                <li>
+                    <a href=\"index.html\">Home</a>
+                </li>
+                <a href=\"{{ path('showTeacher') }}\"><li>All Teachers</li></a>
+            </ul>
         </div>
+
         <!-- Breadcubs Area End Here -->
         <!-- Teacher Table Area Start Here -->
         <div class=\"card height-auto\">
             <div class=\"card-body\">
                 <div class=\"heading-layout1\">
-                    <div class=\"item-title\">
-                        <h3>All Teachers Data</h3>
-                    </div>
+
 
                 </div>
                 <form class=\"mg-b-20\">
@@ -330,7 +341,7 @@ class __TwigTemplate_df7bdc957a0872c252f4d7007dc54f8b317dff0f7f5bc2eaec9c90fbf0c
                                                     class=\"fas fa-times text-orange-red\"></i> Delete</a>
                                         <a class=\"dropdown-item\" href=\"{{ path('addAbsanceTeacher',{'id':i.id }) }}\"><i
                                                     class=\"fas fa-calendar-check text-dark-pastel-green\"></i> Add Absence</a>
-                                        <a class=\"dropdown-item\" href=\"{{ path('addAbsanceTeacher',{'id':i.id }) }}\"><i
+                                        <a class=\"dropdown-item\" href=\"{{ path('addDelayTeacher',{'id':i.id }) }}\"><i
                                                     class=\"fas fa-check-square text-dark-pastel-green\"></i> Add Delay</a>
 
                                         <a class=\"dropdown-item\" href=\"{{ path('showTeacherDetails',{'id':i.id }) }}\"><i

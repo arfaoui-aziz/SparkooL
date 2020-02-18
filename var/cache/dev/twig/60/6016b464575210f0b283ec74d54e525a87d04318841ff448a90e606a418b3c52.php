@@ -76,15 +76,14 @@ class __TwigTemplate_f84a59600669576b0c45537c77227f9f9d82159781b6d74d6a4c30ffa4c
                 <div class=\"tab-content rounded-bottom shadow bg-white py-4 px-5\">
                     <div class=\"tab-pane fade show active\" id=\"home-moving\" role=\"tabpanel\" aria-labelledby=\"home-moving-tab\">
 
-                        <div class=\"form-widget\">
                             <div class=\"form-result\"></div>
                             <form class=\"row home-moving-form position-relative mb-0\" method=\"post\">
                                 ";
-        // line 24
+        // line 23
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_start');
         echo "
                                 ";
-        // line 25
+        // line 24
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "_token", []), 'row');
         echo "
                                 <div class=\"form-process\"></div>
@@ -94,7 +93,7 @@ class __TwigTemplate_f84a59600669576b0c45537c77227f9f9d82159781b6d74d6a4c30ffa4c
                                         <span class=\"input-group-text nobg\"><i class=\"icon-line2-user\"></i></span>
                                     </div>
                                     ";
-        // line 32
+        // line 31
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "username", []), 'widget', ["attr" => ["class" => "form-control"]]);
         echo "
                                 </div>
@@ -103,46 +102,49 @@ class __TwigTemplate_f84a59600669576b0c45537c77227f9f9d82159781b6d74d6a4c30ffa4c
                                     <div class=\"input-group-prepend\">
                                         <span class=\"input-group-text nobg\"><i class=\"fas fa-key\"></i></span>
                                     </div>
-                                    <input type=\"text\" name=\"home-moving-form-location-to\" id=\"home-moving-form-location-to\" class=\"form-control required\" value=\"\" placeholder=\"New Password\">
+                                    ";
+        // line 38
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "password", []), 'widget', ["attr" => ["class" => "form-control"]]);
+        echo "
                                 </div>
                                 ";
-        // line 41
+        // line 40
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "email", []), 'widget', ["attr" => ["class" => "hidden"]]);
         echo "
                                 ";
-        // line 42
+        // line 41
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "id", []), 'widget', ["attr" => ["class" => "hidden"]]);
         echo "
                                 ";
-        // line 43
+        // line 42
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "firstName", []), 'widget', ["attr" => ["class" => "hidden"]]);
         echo "
                                 ";
-        // line 44
+        // line 43
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "lastName", []), 'widget', ["attr" => ["class" => "hidden"]]);
         echo "
                                 ";
-        // line 45
+        // line 44
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "gender", []), 'widget', ["attr" => ["class" => "hidden"]]);
         echo "
                                 ";
-        // line 46
+        // line 45
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "joiningDate", []), 'widget', ["attr" => ["class" => "hidden"]]);
         echo "
                                 ";
-        // line 47
+        // line 46
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "address", []), 'widget', ["attr" => ["class" => "hidden"]]);
         echo "
                                 ";
-        // line 48
+        // line 47
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "phone", []), 'widget', ["attr" => ["class" => "hidden"]]);
         echo "
                                 ";
-        // line 49
+        // line 48
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "picture", []), 'widget', ["attr" => ["class" => "hidden"]]);
         echo "
                                 ";
-        // line 50
+        // line 49
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "birthDay", []), 'widget', ["attr" => ["class" => "hidden"]]);
         echo "
 
@@ -160,23 +162,23 @@ class __TwigTemplate_f84a59600669576b0c45537c77227f9f9d82159781b6d74d6a4c30ffa4c
 
                                 <div class=\"col-12\">
                                     ";
-        // line 65
+        // line 64
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "Confirm", []), 'widget');
         echo "
                                 </div>
 
 ";
-        // line 68
+        // line 67
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end', ["render_rest" => false]);
         echo "
                             </form>
-                        </div>
+
                     </div>
                 </div>
             </div>
             <div class=\"col-lg-5 d-none d-lg-flex flex-wrap justify-content-center\">
                 <img src=\"";
-        // line 75
+        // line 74
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/img/ed2.png"), "html", null, true);
         echo "\" alt=\"Image 1\" class=\"d-flex align-self-end ml-5 mt-3\">
 
@@ -219,7 +221,7 @@ class __TwigTemplate_f84a59600669576b0c45537c77227f9f9d82159781b6d74d6a4c30ffa4c
 
     public function getDebugInfo()
     {
-        return array (  180 => 75,  170 => 68,  164 => 65,  146 => 50,  142 => 49,  138 => 48,  134 => 47,  130 => 46,  126 => 45,  122 => 44,  118 => 43,  114 => 42,  110 => 41,  98 => 32,  88 => 25,  84 => 24,  60 => 4,  51 => 3,  29 => 1,);
+        return array (  182 => 74,  172 => 67,  166 => 64,  148 => 49,  144 => 48,  140 => 47,  136 => 46,  132 => 45,  128 => 44,  124 => 43,  120 => 42,  116 => 41,  112 => 40,  107 => 38,  97 => 31,  87 => 24,  83 => 23,  60 => 4,  51 => 3,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -252,7 +254,6 @@ class __TwigTemplate_f84a59600669576b0c45537c77227f9f9d82159781b6d74d6a4c30ffa4c
                 <div class=\"tab-content rounded-bottom shadow bg-white py-4 px-5\">
                     <div class=\"tab-pane fade show active\" id=\"home-moving\" role=\"tabpanel\" aria-labelledby=\"home-moving-tab\">
 
-                        <div class=\"form-widget\">
                             <div class=\"form-result\"></div>
                             <form class=\"row home-moving-form position-relative mb-0\" method=\"post\">
                                 {{ form_start(form) }}
@@ -270,7 +271,7 @@ class __TwigTemplate_f84a59600669576b0c45537c77227f9f9d82159781b6d74d6a4c30ffa4c
                                     <div class=\"input-group-prepend\">
                                         <span class=\"input-group-text nobg\"><i class=\"fas fa-key\"></i></span>
                                     </div>
-                                    <input type=\"text\" name=\"home-moving-form-location-to\" id=\"home-moving-form-location-to\" class=\"form-control required\" value=\"\" placeholder=\"New Password\">
+                                    {{ form_widget (form.password , {'attr': {'class':'form-control'}}) }}
                                 </div>
                                 {{ form_widget (form.email , {'attr': {'class': 'hidden'}}) }}
                                 {{ form_widget (form.id , {'attr': {'class': 'hidden'}}) }}
@@ -301,7 +302,7 @@ class __TwigTemplate_f84a59600669576b0c45537c77227f9f9d82159781b6d74d6a4c30ffa4c
 
 {{ form_end(form,{'render_rest': false}) }}
                             </form>
-                        </div>
+
                     </div>
                 </div>
             </div>

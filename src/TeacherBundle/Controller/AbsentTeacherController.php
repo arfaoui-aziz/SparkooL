@@ -63,4 +63,5 @@ class AbsentTeacherController extends Controller
         return $this->redirectToRoute('showAbsence',['id' => $id2]);
 
     }
+
 }

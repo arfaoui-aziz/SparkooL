@@ -29,13 +29,27 @@ addAbsanceTeacher:
     path:     /addAbsanceTeacher/{id}
     defaults: { _controller: TeacherBundle:AbsentTeacher:AddAbsanceTeacher }
 
+addDelayTeacher:
+  path:     /addDelayTeacher/{id}
+  defaults: { _controller: TeacherBundle:DelayTeacher:AddDelayTeacher }
+
+
 showAbsence:
     path:     /showAbsence/{id}
     defaults: { _controller: TeacherBundle:AbsentTeacher:ShowAbsence }
 
+
+showDelay:
+  path:     /showDelay/{id}
+  defaults: { _controller: TeacherBundle:DelayTeacher:ShowDelay }
+
 deleteAbsence:
     path:     /DeleteAbsence/{id}/{id2}
     defaults: { _controller: TeacherBundle:AbsentTeacher:DeleteAbsence }
+
+deleteDelay:
+  path:     /DeleteDelay/{id}/{id2}
+  defaults: { _controller: TeacherBundle:DelayTeacher:DeleteDelay }
 
 showTeacherDetailsF:
     path:     /showTeacherDetailsF/{id}
@@ -52,3 +66,4 @@ updateLogin:
 addReclamation:
     path:     /addReclamation
     defaults: { _controller: TeacherBundle:Reclamation:AddReclamation }
+
