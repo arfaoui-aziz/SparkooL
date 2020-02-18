@@ -34,3 +34,12 @@ etudiant_accountdisable :
 etudiant_submitreclamation :
     path:     /reclamation
     defaults: { _controller: EtudiantBundle:Reclamation:submitReclamation }
+etudaint_addsubject :
+    path:     /addsubject
+    defaults: { _controller: EtudiantBundle:Forum:AddSubject}
+etudaint_subjectreview :
+    path:     /allsubjects
+    defaults: { _controller: EtudiantBundle:Forum:getSubjects}
+etudaint_subjectapprove :
+    path:     /subjectaprove/{id}
+    defaults: { _controller: EtudiantBundle:Forum:approveSubject}

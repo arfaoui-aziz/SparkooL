@@ -154,9 +154,19 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     return array (  '_controller' => 'EtudiantBundle\\Controller\\EtudiantController::AddStudentManuallyAction',  '_route' => 'etudiant_addmanually',);
                 }
 
+                // etudaint_addsubject
+                if ('/etudiant/addsubject' === $pathinfo) {
+                    return array (  '_controller' => 'EtudiantBundle\\Controller\\ForumController::AddSubjectAction',  '_route' => 'etudaint_addsubject',);
+                }
+
                 // etudiant_accountSetting
                 if (0 === strpos($pathinfo, '/etudiant/accountSetting') && preg_match('#^/etudiant/accountSetting/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
                     return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudiant_accountSetting']), array (  '_controller' => 'EtudiantBundle\\Controller\\EtudiantController::AccountsettingsAction',));
+                }
+
+                // etudaint_subjectreview
+                if ('/etudiant/allsubjects' === $pathinfo) {
+                    return array (  '_controller' => 'EtudiantBundle\\Controller\\ForumController::getSubjectsAction',  '_route' => 'etudaint_subjectreview',);
                 }
 
             }
@@ -179,6 +189,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             // etudiant_submitreclamation
             if ('/etudiant/reclamation' === $pathinfo) {
                 return array (  '_controller' => 'EtudiantBundle\\Controller\\ReclamationController::submitReclamationAction',  '_route' => 'etudiant_submitreclamation',);
+            }
+
+            // etudaint_subjectapprove
+            if (0 === strpos($pathinfo, '/etudiant/subjectaprove') && preg_match('#^/etudiant/subjectaprove/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudaint_subjectapprove']), array (  '_controller' => 'EtudiantBundle\\Controller\\ForumController::approveSubjectAction',));
             }
 
         }
