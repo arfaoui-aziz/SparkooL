@@ -147,19 +147,11 @@ class __TwigTemplate_813ff4014bd6d34e3170db482e3dc6c3bde3bc0b48ad8039e3a20f8b029
         echo "
 
        </div>
-       <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
-        <label>Joining Date *</label>
-        ";
-        // line 72
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "joiningDate", []), 'widget', ["attr" => ["class" => "form-control air-datepicker", "placeholder" => "dd/mm/yyyy", "data-position" => "bottom right"]]);
-        echo "
-
-        <i class=\"far fa-calendar-alt\"></i>
-       </div>
+      
        <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
         <label>Date Of Birth *</label>
         ";
-        // line 78
+        // line 73
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "birthDay", []), 'widget', ["attr" => ["class" => "form-control air-datepicker", "placeholder" => "dd/mm/yyyy", "data-position" => "bottom right"]]);
         echo "                            <i class=\"far fa-calendar-alt\"></i>
        </div>
@@ -172,14 +164,14 @@ class __TwigTemplate_813ff4014bd6d34e3170db482e3dc6c3bde3bc0b48ad8039e3a20f8b029
        <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
         <label>Address</label>
         ";
-        // line 88
+        // line 83
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "address", []), 'widget', ["attr" => ["class" => "form-control"]]);
         echo "
        </div>
        <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
         <label>Phone</label>
         ";
-        // line 92
+        // line 87
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "phone", []), 'widget', ["attr" => ["class" => "form-control"]]);
         echo "
        </div>
@@ -188,23 +180,23 @@ class __TwigTemplate_813ff4014bd6d34e3170db482e3dc6c3bde3bc0b48ad8039e3a20f8b029
         <label class=\"text-dark-medium\">Upload Student Photo (150px X 150px)</label>
         <label class=\"file\" title=\"\">
          ";
-        // line 98
+        // line 93
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "picture", []), 'widget', ["attr" => ["onchange" => "this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))"]]);
         echo "
         </label>
         <div class=\"col-12 form-group mg-t-8\">
          ";
-        // line 101
+        // line 96
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "Save", []), 'widget');
         echo "
          ";
-        // line 102
+        // line 97
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "Reset", []), 'widget');
         echo "
         </div>
        </div>
        ";
-        // line 105
+        // line 100
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end', ["render_rest" => false]);
         echo "
      </form>
@@ -238,7 +230,7 @@ class __TwigTemplate_813ff4014bd6d34e3170db482e3dc6c3bde3bc0b48ad8039e3a20f8b029
 
     public function getDebugInfo()
     {
-        return array (  208 => 105,  202 => 102,  198 => 101,  192 => 98,  183 => 92,  176 => 88,  163 => 78,  154 => 72,  146 => 67,  137 => 61,  129 => 56,  120 => 50,  113 => 46,  106 => 42,  100 => 39,  94 => 36,  60 => 4,  51 => 3,  29 => 1,);
+        return array (  200 => 100,  194 => 97,  190 => 96,  184 => 93,  175 => 87,  168 => 83,  155 => 73,  146 => 67,  137 => 61,  129 => 56,  120 => 50,  113 => 46,  106 => 42,  100 => 39,  94 => 36,  60 => 4,  51 => 3,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -320,12 +312,7 @@ class __TwigTemplate_813ff4014bd6d34e3170db482e3dc6c3bde3bc0b48ad8039e3a20f8b029
         {{ form_widget (form.occupation , {'attr': {'class':'form-control'}}) }}
 
        </div>
-       <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
-        <label>Joining Date *</label>
-        {{ form_widget (form.joiningDate , {'attr': {'class':'form-control air-datepicker','placeholder':'dd/mm/yyyy', 'data-position':'bottom right'} }  ) }}
-
-        <i class=\"far fa-calendar-alt\"></i>
-       </div>
+      
        <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
         <label>Date Of Birth *</label>
         {{ form_widget (form.birthDay , {'attr': {'class':'form-control air-datepicker','placeholder':'dd/mm/yyyy', 'data-position':'bottom right'} }  ) }}                            <i class=\"far fa-calendar-alt\"></i>

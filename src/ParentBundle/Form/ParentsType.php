@@ -40,7 +40,10 @@ class ParentsType extends AbstractType
             ])
             ->add('Reset',ResetType::class, [
                 'attr' => ['class' => 'btn-fill-lg bg-blue-dark btn-hover-yellow']
-            ]);
+            ])
+        ->add('Submit',SubmitType::class , [
+        'attr' => ['class' => 'btn bgcolor text-white t500 btn-block py-2 mt-2'],
+    ]);
     }
     public function getParent()
     {
