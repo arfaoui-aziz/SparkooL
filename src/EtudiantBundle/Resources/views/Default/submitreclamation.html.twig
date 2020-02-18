@@ -1,0 +1,88 @@
+{% extends 'baseFront.html.twig' %}
+
+{% block formetud%}
+<section id="slider" class="slider-element bgcolor clearfix" style="height: auto; padding: 60px 0; background: url("{{ asset('FrontEnd\img\bg-2.png')}}") no-repeat center center / 100% 100%;">
+
+<div class="container" style="z-index: 2">
+    <div class="center">
+        <h2 class="text-white h2 t600 mb-2">Welcome to SparkooL .</h2>
+        <p class="text-white-50">SparkooL Is An All In­-One School Management Application</p>
+    </div>
+    <div class="row topmargin justify-content-end clearfix">
+        <div class="col-lg-6">
+            <ul class="nav nav-tabs nav-justified flex-column border-bottom-0 flex-md-row bgcolor mt-4" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link py-3" id="home-moving-tab" data-toggle="tab" href="#home-moving" role="tab" aria-controls="home-moving" aria-selected="true">
+                        Attendance form
+                    </a>
+                </li>
+
+            </ul>
+
+
+
+            <div class="tab-content rounded-bottom shadow bg-white py-4 px-5">
+
+                <div class="tab-pane fade show active" id="home-moving" role="tabpanel" aria-labelledby="home-moving-tab">
+
+
+
+                    <form class="row home-moving-form position-relative mb-0"  method="post" >
+                        {{ form_start(form)}}
+
+                        <div class=" input-group form-group">
+
+                            {{ form_widget(form.reclamation , {'attr': {'class':'form-control required','placeholder':'Type Your Reclamation'}}) }}
+
+                        </div>
+
+                        <div class=" input-group form-group">
+
+                        </div>
+                        <div class=" input-group form-group">
+                            <label for="primary" class="btn btn-info    ">Anonymously {{ form_widget(form.anonymously, {'attr':{'class' :'badgebox'}}) }}<span class="badge">&check;</span></label>
+                        </div>
+{{ form_widget(form.etudiant, {'attr': {'class':'hidden'},value: app.user.id})}}
+
+
+
+
+
+                        <div class="col-12 hidden">
+                            <input type="text" id="home-moving-form-botcheck" name="home-moving-form-botcheck" value="" />
+                        </div>
+
+                        <div class="col-12">
+                            {{ form_widget(form.Ajouter, { 'attr': {'class': 'btn bgcolor text-white t500 btn-block py-2 mt-2'} })}}
+
+                        </div>
+
+
+
+                        {{ form_end(form , {'render_rest':false}) }}
+                    </form>
+
+
+                </div>
+            </div>
+{% endblock %}
+
+{% block cloud1  %}
+
+{% endblock %}
+
+    {% block body %}
+
+    {% endblock %}
+
+{% block cloud %}
+
+{% endblock %}
+
+{% block container %}
+
+{% endblock %}
+
+            {% block joinspark %}
+
+            {% endblock %}

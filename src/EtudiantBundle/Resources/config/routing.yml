@@ -22,3 +22,15 @@ etudiant_list:
 etudiant_affectto:
     path:     /affectto/{id}
     defaults: { _controller: EtudiantBundle:Etudiant:affecttoclass }
+etudiant_addmanually :
+    path:     /addStudentManually
+    defaults: { _controller: EtudiantBundle:Etudiant:AddStudentManually }
+etudiant_accountSetting :
+    path:     /accountSetting/{id}
+    defaults: { _controller: EtudiantBundle:Etudiant:Accountsettings }
+etudiant_accountdisable :
+    path:     /disableaccount/{id}
+    defaults: { _controller: EtudiantBundle:Etudiant:disableAccount }
+etudiant_submitreclamation :
+    path:     /reclamation
+    defaults: { _controller: EtudiantBundle:Reclamation:submitReclamation }

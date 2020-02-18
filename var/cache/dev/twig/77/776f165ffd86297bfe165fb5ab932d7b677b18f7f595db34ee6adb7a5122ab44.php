@@ -87,38 +87,94 @@ class __TwigTemplate_ff7c26441939d07b6236c86e8bf7126712620301080ba5e24f21238fe4b
                         </div>
                     </div>
                 </div>
-                                               )
-                             ";
+                              ";
+        // line 33
+        $context["id"] = $this->getAttribute(($context["students"] ?? $this->getContext($context, "students")), "id", []);
         // line 34
+        echo "
+
+
+                <form class=\"new-added-form\" method=\"post\" >
+                    ";
+        // line 38
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_start');
         echo "
-                                                             ";
-        // line 35
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\DumpExtension')->dump($this->env, $context, ($context["students"] ?? $this->getContext($context, "students")));
+";
+        // line 39
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "username", []), 'widget', ["attr" => ["class" => "hidden"]]);
         echo "
-                <form class=\"new-added-form\" method=\"post\">
+                    ";
+        // line 40
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "id", []), 'widget', ["attr" => ["class" => "hidden"]]);
+        echo "
+                    ";
+        // line 41
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "email", []), 'widget', ["attr" => ["class" => "hidden"]]);
+        echo "
+                    ";
+        // line 42
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "firstName", []), 'widget', ["attr" => ["class" => "hidden"]]);
+        echo "
+                    ";
+        // line 43
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "lastName", []), 'widget', ["attr" => ["class" => "hidden"]]);
+        echo "
+                    ";
+        // line 44
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "gender", []), 'widget', ["attr" => ["class" => "hidden"]]);
+        echo "
+                    ";
+        // line 45
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "joiningDate", []), 'widget', ["attr" => ["class" => "hidden"]]);
+        echo "
+                    ";
+        // line 46
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "address", []), 'widget', ["attr" => ["class" => "hidden"]]);
+        echo "
+                    ";
+        // line 47
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "phone", []), 'widget', ["attr" => ["class" => "hidden"]]);
+        echo "
+                    ";
+        // line 48
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "bloodGroup", []), 'widget', ["attr" => ["class" => "hidden"]]);
+        echo "
+                    ";
+        // line 49
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "birthDay", []), 'widget', ["attr" => ["class" => "hidden"]]);
+        echo "
+                    ";
+        // line 50
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "placeobirth", []), 'widget', ["attr" => ["class" => "hidden"]]);
+        echo "
+
+
                     <div class=\"row\">
+                        ";
+        // line 54
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "_token", []), 'row');
+        echo "
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>Student Name *</label>
-                            <input type=\"text\" placeholder=\"";
-        // line 40
+                            <input type=\"text\" value=\"";
+        // line 57
         echo twig_escape_filter($this->env, (($this->getAttribute(($context["students"] ?? $this->getContext($context, "students")), "lastName", []) . " ") . $this->getAttribute(($context["students"] ?? $this->getContext($context, "students")), "firstName", [])), "html", null, true);
-        echo "\" class=\"form-control\" disabled  >
+        echo "\" class=\"form-control\"  >
                         </div>
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>ID No</label>
-                            <input type=\"text\" placeholder=\"";
-        // line 44
+                            <input type=\"text\" value=\"";
+        // line 61
         echo twig_escape_filter($this->env, $this->getAttribute(($context["students"] ?? $this->getContext($context, "students")), "id", []), "html", null, true);
-        echo "\" class=\"form-control\" disabled>
+        echo "\" class=\"form-control\" >
                         </div>
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>Gender *</label>
 
-                                <input type=\"text\" placeholder=\"";
-        // line 49
+                                <input type=\"text\" value=\"";
+        // line 66
         echo twig_escape_filter($this->env, $this->getAttribute(($context["students"] ?? $this->getContext($context, "students")), "gender", []), "html", null, true);
-        echo "\" class=\"form-control\" disabled>
+        echo "\" class=\"form-control\" >
 
                         </div>
 
@@ -131,7 +187,7 @@ class __TwigTemplate_ff7c26441939d07b6236c86e8bf7126712620301080ba5e24f21238fe4b
 
 
                             ";
-        // line 61
+        // line 78
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "classe", []), 'widget', ["attr" => ["class" => "select2"]]);
         echo "
 
@@ -140,29 +196,41 @@ class __TwigTemplate_ff7c26441939d07b6236c86e8bf7126712620301080ba5e24f21238fe4b
                         </div>
 
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
+                            <label>Academic year</label>
+
+                            ";
+        // line 87
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "academicyear", []), 'widget', ["attr" => ["class" => "select2"]]);
+        echo "
+
+
+
+                        </div>
+
+                        <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>E-Mail *</label>
 
-                            <input type=\"email\" placeholder=\"";
-        // line 70
+                            <input type=\"email\" value=\"";
+        // line 96
         echo twig_escape_filter($this->env, $this->getAttribute(($context["students"] ?? $this->getContext($context, "students")), "email", []), "html", null, true);
-        echo "\" class=\"form-control\" disabled>
+        echo "\" class=\"form-control\" >
                         </div>
                         <div class=\"col-md-6 form-group\"></div>
                         <div class=\"col-12 form-group mg-t-8\">
                               ";
-        // line 74
+        // line 100
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "Ajouter", []), 'widget', ["attr" => ["class" => "btn-fill-lg btn-gradient-yellow btn-hover-bluedark"]]);
         echo "
                    
                             <button type=\"reset\" class=\"btn-fill-lg bg-blue-dark btn-hover-yellow\">Reset</button>
                         </div>
                     </div>
-
-                </form>
-                            ";
-        // line 81
+                    ";
+        // line 105
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end', ["render_rest" => false]);
         echo "
+                </form>
+
             </div>
         </div>
         <!-- Add Class Area End Here -->
@@ -191,7 +259,7 @@ class __TwigTemplate_ff7c26441939d07b6236c86e8bf7126712620301080ba5e24f21238fe4b
 
     public function getDebugInfo()
     {
-        return array (  164 => 81,  154 => 74,  147 => 70,  135 => 61,  120 => 49,  112 => 44,  105 => 40,  97 => 35,  93 => 34,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  230 => 105,  222 => 100,  215 => 96,  203 => 87,  191 => 78,  176 => 66,  168 => 61,  161 => 57,  155 => 54,  148 => 50,  144 => 49,  140 => 48,  136 => 47,  132 => 46,  128 => 45,  124 => 44,  120 => 43,  116 => 42,  112 => 41,  108 => 40,  104 => 39,  100 => 38,  94 => 34,  92 => 33,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -236,23 +304,40 @@ class __TwigTemplate_ff7c26441939d07b6236c86e8bf7126712620301080ba5e24f21238fe4b
                         </div>
                     </div>
                 </div>
-                                               )
-                             {{ form_start(form)}}
-                                                             {{ dump(students) }}
-                <form class=\"new-added-form\" method=\"post\">
+                              {% set id = students.id %}
+
+
+
+                <form class=\"new-added-form\" method=\"post\" >
+                    {{ form_start(form)}}
+{{ form_widget(form.username, {'attr': {'class':'hidden'}}) }}
+                    {{ form_widget(form.id, {'attr': {'class':'hidden'}}) }}
+                    {{ form_widget(form.email, {'attr': {'class':'hidden'}}) }}
+                    {{ form_widget(form.firstName, {'attr': {'class':'hidden'}}) }}
+                    {{ form_widget(form.lastName, {'attr': {'class':'hidden'}}) }}
+                    {{ form_widget(form.gender, {'attr': {'class':'hidden'}}) }}
+                    {{ form_widget(form.joiningDate, {'attr': {'class':'hidden'}}) }}
+                    {{ form_widget(form.address, {'attr': {'class':'hidden'}}) }}
+                    {{ form_widget(form.phone, {'attr': {'class':'hidden'}}) }}
+                    {{ form_widget(form.bloodGroup, {'attr': {'class':'hidden'}}) }}
+                    {{ form_widget(form.birthDay, {'attr': {'class':'hidden'}}) }}
+                    {{ form_widget(form.placeobirth, {'attr': {'class':'hidden'}}) }}
+
+
                     <div class=\"row\">
+                        {{ form_row(form._token) }}
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>Student Name *</label>
-                            <input type=\"text\" placeholder=\"{{ students.lastName~\" \"~students.firstName }}\" class=\"form-control\" disabled  >
+                            <input type=\"text\" value=\"{{ students.lastName~\" \"~students.firstName }}\" class=\"form-control\"  >
                         </div>
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>ID No</label>
-                            <input type=\"text\" placeholder=\"{{ students.id }}\" class=\"form-control\" disabled>
+                            <input type=\"text\" value=\"{{ students.id }}\" class=\"form-control\" >
                         </div>
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>Gender *</label>
 
-                                <input type=\"text\" placeholder=\"{{ students.gender }}\" class=\"form-control\" disabled>
+                                <input type=\"text\" value=\"{{ students.gender }}\" class=\"form-control\" >
 
                         </div>
 
@@ -271,9 +356,18 @@ class __TwigTemplate_ff7c26441939d07b6236c86e8bf7126712620301080ba5e24f21238fe4b
                         </div>
 
                         <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
+                            <label>Academic year</label>
+
+                            {{ form_widget(form.academicyear, {'attr': {'class':'select2'}}) }}
+
+
+
+                        </div>
+
+                        <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                             <label>E-Mail *</label>
 
-                            <input type=\"email\" placeholder=\"{{ students.email }}\" class=\"form-control\" disabled>
+                            <input type=\"email\" value=\"{{ students.email }}\" class=\"form-control\" >
                         </div>
                         <div class=\"col-md-6 form-group\"></div>
                         <div class=\"col-12 form-group mg-t-8\">
@@ -282,9 +376,9 @@ class __TwigTemplate_ff7c26441939d07b6236c86e8bf7126712620301080ba5e24f21238fe4b
                             <button type=\"reset\" class=\"btn-fill-lg bg-blue-dark btn-hover-yellow\">Reset</button>
                         </div>
                     </div>
-
+                    {{ form_end(form , {'render_rest':false})}}
                 </form>
-                            {{ form_end(form , {'render_rest':false})}}
+
             </div>
         </div>
         <!-- Add Class Area End Here -->

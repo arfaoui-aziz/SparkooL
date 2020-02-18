@@ -204,7 +204,7 @@ class __TwigTemplate_2ffffb40812f595b288e8b8a5f895373d1793bbb641a41b232c17033044
                             <div class=\"col-12\">
                                 ";
         // line 112
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "Ajouter", []), 'widget', ["attr" => ["class" => "buttonajou"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "Ajouter", []), 'widget', ["attr" => ["class" => "btn bgcolor text-white t500 btn-block py-2 mt-2"]]);
         echo "
 
                             </div>
@@ -416,7 +416,7 @@ class __TwigTemplate_2ffffb40812f595b288e8b8a5f895373d1793bbb641a41b232c17033044
                             </div>
 
                             <div class=\"col-12\">
-                                {{ form_widget(form.Ajouter, { 'attr': {'class': 'buttonajou'} })}}
+                                {{ form_widget(form.Ajouter, { 'attr': {'class': 'btn bgcolor text-white t500 btn-block py-2 mt-2'} })}}
 
                             </div>
 

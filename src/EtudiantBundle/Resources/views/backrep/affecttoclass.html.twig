@@ -30,23 +30,40 @@
                         </div>
                     </div>
                 </div>
-                                               )
-                             {{ form_start(form)}}
-                                                             {{ dump(students) }}
-                <form class="new-added-form" method="post">
+                              {% set id = students.id %}
+
+
+
+                <form class="new-added-form" method="post" >
+                    {{ form_start(form)}}
+{{ form_widget(form.username, {'attr': {'class':'hidden'}}) }}
+                    {{ form_widget(form.id, {'attr': {'class':'hidden'}}) }}
+                    {{ form_widget(form.email, {'attr': {'class':'hidden'}}) }}
+                    {{ form_widget(form.firstName, {'attr': {'class':'hidden'}}) }}
+                    {{ form_widget(form.lastName, {'attr': {'class':'hidden'}}) }}
+                    {{ form_widget(form.gender, {'attr': {'class':'hidden'}}) }}
+                    {{ form_widget(form.joiningDate, {'attr': {'class':'hidden'}}) }}
+                    {{ form_widget(form.address, {'attr': {'class':'hidden'}}) }}
+                    {{ form_widget(form.phone, {'attr': {'class':'hidden'}}) }}
+                    {{ form_widget(form.bloodGroup, {'attr': {'class':'hidden'}}) }}
+                    {{ form_widget(form.birthDay, {'attr': {'class':'hidden'}}) }}
+                    {{ form_widget(form.placeobirth, {'attr': {'class':'hidden'}}) }}
+
+
                     <div class="row">
+                        {{ form_row(form._token) }}
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>Student Name *</label>
-                            <input type="text" placeholder="{{ students.lastName~" "~students.firstName }}" class="form-control" disabled  >
+                            <input type="text" value="{{ students.lastName~" "~students.firstName }}" class="form-control"  >
                         </div>
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>ID No</label>
-                            <input type="text" placeholder="{{ students.id }}" class="form-control" disabled>
+                            <input type="text" value="{{ students.id }}" class="form-control" >
                         </div>
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>Gender *</label>
 
-                                <input type="text" placeholder="{{ students.gender }}" class="form-control" disabled>
+                                <input type="text" value="{{ students.gender }}" class="form-control" >
 
                         </div>
 
@@ -65,9 +82,18 @@
                         </div>
 
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label>Academic year</label>
+
+                            {{ form_widget(form.academicyear, {'attr': {'class':'select2'}}) }}
+
+
+
+                        </div>
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>E-Mail *</label>
 
-                            <input type="email" placeholder="{{ students.email }}" class="form-control" disabled>
+                            <input type="email" value="{{ students.email }}" class="form-control" >
                         </div>
                         <div class="col-md-6 form-group"></div>
                         <div class="col-12 form-group mg-t-8">
@@ -76,9 +102,9 @@
                             <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
                         </div>
                     </div>
-
+                    {{ form_end(form , {'render_rest':false})}}
                 </form>
-                            {{ form_end(form , {'render_rest':false})}}
+
             </div>
         </div>
         <!-- Add Class Area End Here -->

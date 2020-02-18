@@ -25,6 +25,7 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
             'cloud1' => [$this, 'block_cloud1'],
             'body' => [$this, 'block_body'],
             'cloud' => [$this, 'block_cloud'],
+            'container' => [$this, 'block_container'],
             'joinspark' => [$this, 'block_joinspark'],
         ];
     }
@@ -309,144 +310,12 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
         echo "            ";
         $this->displayBlock('cloud', $context, $blocks);
         // line 404
-        echo "                <div class=\"container\">
-                    <div class=\"divcenter\" style=\"max-width: 1200px; padding: 120px 0 50px;\">
-
-                        <div class=\"row row-eq-height justify-content-center\">
-
-
-
-
-                            <div class=\"col-md-6 mt-3 mt-md-0\">
-                                <div class=\"bg-white shadow-sm d-flex justify-content-center flex-column mb-3 rounded p-5\">
-                                    <div class=\"testimonial small nobg noshadow noborder p-0\">
-                                        <div class=\"d-flex flex-row mb-4 align-items-center\">
-                                            <svg xmlns=\"http://www.w3.org/2000/svg\" x=\"0px\" y=\"0px\"
-                                                 width=\"80\" height=\"80\"
-                                                 viewBox=\"0 0 64 64\"
-                                                 style=\" fill:#000000;\"><path fill=\"#efd8be\" d=\"M13 11H51V17H13zM15 5H49V11H15z\"></path><path fill=\"#acb7d0\" d=\"M61 43L42 43 37 47 27 47 22.313 43 3 43 9 29 55 29z\"></path><path fill=\"#faefde\" d=\"M11 17H53V47H11z\"></path><path fill=\"#fff7f0\" d=\"M53 17L53 47 22.225 47.225 52.46 17z\"></path><path fill=\"#cda1a7\" d=\"M59,59H5c-1.105,0-2-0.895-2-2V43h19.313L26,47h12.438L42,43h19v14C61,58.105,60.105,59,59,59z\"></path><path fill=\"#deb4ba\" d=\"M4 46h21.078l-1.843-2H4c-.552 0-1 .448-1 1C3 45.552 3.448 46 4 46zM60 44H41.11l-1.781 2H60c.552 0 1-.448 1-1C61 44.448 60.552 44 60 44z\"></path><path fill=\"#fff7f0\" d=\"M48.06 17L22.06 43 16.06 43 42.06 17zM39.06 17L13.07 43 10.07 43 36.06 17z\"></path><path fill=\"#fff\" d=\"M21.502 29.996L22.74 32.26 25.004 33.498 22.74 34.736 21.502 37 20.264 34.736 18 33.498 20.264 32.26zM45.581 23L46.436 24.564 48 25.419 46.436 26.274 45.581 27.838 44.726 26.274 43.162 25.419 44.726 24.564zM40.648 34L41.231 35.065 42.296 35.648 41.231 36.231 40.648 37.296 40.065 36.231 39 35.648 40.065 35.065z\"></path><g><path fill=\"#8d6c9f\" d=\"M61.472,39.708l-5.025-10.05c-0.476-0.952-1.401-1.561-2.447-1.642V18c0-1.103-0.897-2-2-2v-4 c0-1.103-0.897-2-2-2V6c0-1.103-0.897-2-2-2H16c-1.103,0-2,0.897-2,2v4c-1.103,0-2,0.897-2,2v4c-1.103,0-2,0.897-2,2v10.016 c-1.047,0.081-1.971,0.69-2.447,1.642l-5.025,10.05C2.183,40.399,2,41.172,2,41.944V57c0,1.654,1.346,3,3,3h54c1.654,0,3-1.346,3-3 V41.944C62,41.172,61.817,40.399,61.472,39.708z M16,6h32v4H16V6z M14,12h36v4H14V12z M4.317,40.603l5.025-10.05 c0.134-0.268,0.376-0.452,0.658-0.52V39c0,0.552,0.448,1,1,1s1-0.448,1-1V18h40v21c0,0.552,0.448,1,1,1s1-0.448,1-1v-8.967 c0.282,0.068,0.524,0.252,0.658,0.52l5.025,10.05C59.891,41.017,60,41.481,60,41.944V42H41.829c-0.801,0-1.555,0.312-2.122,0.879 l-2.828,2.828C36.69,45.896,36.438,46,36.171,46h-8.343c-0.267,0-0.519-0.104-0.708-0.293l-2.828-2.828 C23.727,42.312,22.973,42,22.171,42H4v-0.056C4,41.481,4.109,41.017,4.317,40.603z M59,58H5c-0.551,0-1-0.449-1-1V44h18.171 c0.267,0,0.519,0.104,0.708,0.293l2.828,2.828C26.273,47.688,27.027,48,27.829,48h8.343c0.801,0,1.555-0.312,2.122-0.879 l2.828-2.828C41.31,44.104,41.562,44,41.829,44H60v13C60,57.551,59.551,58,59,58z\"></path><path fill=\"#8d6c9f\" d=\"M7 50c-.552 0-1 .448-1 1v2c0 .552.448 1 1 1s1-.448 1-1v-2C8 50.448 7.552 50 7 50zM12 50c-.552 0-1 .448-1 1v2c0 .552.448 1 1 1s1-.448 1-1v-2C13 50.448 12.552 50 12 50zM17 50c-.552 0-1 .448-1 1v2c0 .552.448 1 1 1s1-.448 1-1v-2C18 50.448 17.552 50 17 50zM22 50c-.552 0-1 .448-1 1v2c0 .552.448 1 1 1s1-.448 1-1v-2C23 50.448 22.552 50 22 50zM27 50c-.552 0-1 .448-1 1v2c0 .552.448 1 1 1s1-.448 1-1v-2C28 50.448 27.552 50 27 50zM32 50c-.552 0-1 .448-1 1v2c0 .552.448 1 1 1s1-.448 1-1v-2C33 50.448 32.552 50 32 50zM37 50c-.552 0-1 .448-1 1v2c0 .552.448 1 1 1s1-.448 1-1v-2C38 50.448 37.552 50 37 50zM42 50c-.552 0-1 .448-1 1v2c0 .552.448 1 1 1s1-.448 1-1v-2C43 50.448 42.552 50 42 50zM47 50c-.552 0-1 .448-1 1v2c0 .552.448 1 1 1s1-.448 1-1v-2C48 50.448 47.552 50 47 50zM52 50c-.552 0-1 .448-1 1v2c0 .552.448 1 1 1s1-.448 1-1v-2C53 50.448 52.552 50 52 50zM57 50c-.552 0-1 .448-1 1v2c0 .552.448 1 1 1s1-.448 1-1v-2C58 50.448 57.552 50 57 50zM31 24h6c.552 0 1-.448 1-1s-.448-1-1-1h-6c-.552 0-1 .448-1 1S30.448 24 31 24zM17 24h10c.552 0 1-.448 1-1s-.448-1-1-1H17c-.552 0-1 .448-1 1S16.448 24 17 24zM17 28h15c.552 0 1-.448 1-1s-.448-1-1-1H17c-.552 0-1 .448-1 1S16.448 28 17 28z\"></path></g></svg>
-                                            &nbsp;&nbsp;<h4 class=\"ml-1 mb-0\">School Records Management</h4>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class=\"bg-white shadow-sm d-flex justify-content-center flex-column mb-3 rounded p-5\">
-                                    <div class=\"testimonial small nobg noshadow noborder p-0\">
-                                        <div class=\"d-flex flex-row mb-4 align-items-center\">
-                                            <img src=\"https://img.icons8.com/dusk/80/000000/bonds.png\">
-                                            &nbsp;&nbsp;<h4 class=\"ml-1 mb-0\">
-                                                Payroll Management</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class=\"bg-white shadow-sm d-flex justify-content-center flex-column rounded p-5\">
-                                    <div class=\"testimonial small nobg noshadow noborder p-0\">
-                                        <div class=\"d-flex flex-row mb-4 align-items-center\">
-                                            <img src=\"https://img.icons8.com/dusk/80/000000/overtime.png\">
-                                            &nbsp;&nbsp;<h4 class=\"ml-1 mb-0\">School Scheduling Organization</h4>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class=\"col-md-6 mt-3 mt-md-0\">
-                                <div class=\"bg-white shadow-sm d-flex justify-content-center flex-column mb-3 rounded p-5\">
-                                    <div class=\"testimonial small nobg noshadow noborder p-0\">
-                                        <div class=\"d-flex flex-row mb-4 align-items-center\">
-                                            <img src=\"https://img.icons8.com/dusk/80/000000/survey.png\">
-                                            &nbsp;&nbsp;<h4 class=\"ml-1 mb-0\">Absence Management</h4>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class=\"bg-white shadow-sm d-flex justify-content-center flex-column mb-3 rounded p-5\">
-                                    <div class=\"testimonial small nobg noshadow noborder p-0\">
-                                        <div class=\"d-flex flex-row mb-4 align-items-center\">
-                                            <img src=\"https://img.icons8.com/dusk/80/000000/event-accepted.png\">
-                                            &nbsp;&nbsp;<h4 class=\"ml-1 mb-0\">Events Management</h4>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class=\"bg-white shadow-sm d-flex justify-content-center flex-column rounded p-5\">
-                                    <div class=\"testimonial small nobg noshadow noborder p-0\">
-                                        <div class=\"d-flex flex-row mb-4 align-items-center\">
-                                            <img src=\"https://img.icons8.com/dusk/80/000000/exam.png\">
-                                            &nbsp;&nbsp;<h4 class=\"ml-1 mb-0\">Exam Management</h4>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class=\"grid-bg d-none d-md-block\">
-                            <img src=\"";
-        // line 477
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/demos/movers/images/dot-grid.svg"), "html", null, true);
-        echo "\" alt=\"Dot Image\">
-                        </div>
-                    </div>
-                </div>
+        echo "                ";
+        $this->displayBlock('container', $context, $blocks);
+        // line 538
+        echo "                </div>
             </div>
 
-            <div class=\"container mb-5\">
-                <div class=\"section-clients divcenter\" style=\"max-width: 700px\">
-
-                    <div class=\"clear\"></div>
-
-                    <div class=\"toggle mt-5\" data-state=\"open\">
-                        <div class=\"togglet t500\"><i class=\"toggle-closed icon-line-circle-plus\"></i><i class=\"toggle-open icon-line-circle-cross\"></i>Administration</div>
-                        <div class=\"togglec text-black-50\">
-                            <ul class=\"list list-unstyled\">
-                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>School Records Management</div></li>
-                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>Teachers Management</div></li>
-                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>Employees Management</div></li>
-                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>Classrooms Management</div></li>
-                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>Certification Management</div></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class=\"toggle\">
-                        <div class=\"togglet t500\"><i class=\"toggle-closed icon-line-circle-plus\"></i><i class=\"toggle-open icon-line-circle-cross\"></i>Parents</div>
-                        <div class=\"togglec text-black-50\">
-                            <ul class=\"list list-unstyled\">
-                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>Schoool Timetable Consultation</div></li>
-                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>Absence Consultation</div></li>
-                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>School Marks Consultation</div></li>
-                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>Stay In Contact With Our School </div></li>
-                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div></div></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class=\"toggle \">
-                        <div class=\"togglet t500\"><i class=\"toggle-closed icon-line-circle-plus\"></i><i class=\"toggle-open icon-line-circle-cross\"></i>Teachers</div>
-                        <div class=\"togglec text-black-50\">
-                            <ul class=\"list list-unstyled\">
-                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>Marks Entry</div></li>
-                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>Automate report card Generation</div></li>
-                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>School Textbook Entry</div></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class=\"toggle noborder\">
-                        <div class=\"togglet t500\"><i class=\"toggle-closed icon-line-circle-plus\"></i><i class=\"toggle-open icon-line-circle-cross\"></i>Students</div>
-                        <div class=\"togglec text-black-50\">
-                            <ul class=\"list list-unstyled\">
-                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>Marks Consultation</div></li>
-                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>Absence Consultation</div></li>
-                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>Schoool Timetable Consultation</div></li>
-                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>Events & News Consultation</div></li>
-                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>Access to our Quiz Space</div></li>
-
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
 
             <div class=\"clear\"></div>
 
@@ -455,9 +324,9 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
 
     </section><!-- #content end -->
 ";
-        // line 546
+        // line 548
         $this->displayBlock('joinspark', $context, $blocks);
-        // line 566
+        // line 568
         echo "    <!-- Footer
     ============================================= -->
     <footer id=\"footer\" class=\"mt-0\" style=\"background-color: #111c22;\">
@@ -466,7 +335,7 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
                 <div class=\"col-lg-2 align-self-center mb-5 mb-lg-0\">
                     <a href=\"#\"></a>
                     <img src=\"";
-        // line 573
+        // line 575
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/img/LogoFooter.png"), "html", null, true);
         echo "\" class=\"img-fluid\" alt=\"Demo SEO\" width=\"100\" />
                     </a>
@@ -550,24 +419,24 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
 <!-- External JavaScripts
 ============================================= -->
 <script src=\"";
-        // line 654
+        // line 656
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/js/jquery.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 655
+        // line 657
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/js/plugins.js"), "html", null, true);
         echo "\"></script>
 
 <!-- DatePicker JS -->
 <script src=\"";
-        // line 658
+        // line 660
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/js/components/datepicker.js"), "html", null, true);
         echo "\"></script>
 
 <!-- Footer Scripts
 ============================================= -->
 <script src=\"";
-        // line 662
+        // line 664
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/js/functions.js"), "html", null, true);
         echo "\"></script>
 
@@ -926,7 +795,161 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
 
     }
 
-    // line 546
+    // line 404
+    public function block_container($context, array $blocks = [])
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "container"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "container"));
+
+        // line 405
+        echo "                <div class=\"container\">
+                    <div class=\"divcenter\" style=\"max-width: 1200px; padding: 120px 0 50px;\">
+
+                        <div class=\"row row-eq-height justify-content-center\">
+
+
+
+
+                            <div class=\"col-md-6 mt-3 mt-md-0\">
+                                <div class=\"bg-white shadow-sm d-flex justify-content-center flex-column mb-3 rounded p-5\">
+                                    <div class=\"testimonial small nobg noshadow noborder p-0\">
+                                        <div class=\"d-flex flex-row mb-4 align-items-center\">
+                                            <svg xmlns=\"http://www.w3.org/2000/svg\" x=\"0px\" y=\"0px\"
+                                                 width=\"80\" height=\"80\"
+                                                 viewBox=\"0 0 64 64\"
+                                                 style=\" fill:#000000;\"><path fill=\"#efd8be\" d=\"M13 11H51V17H13zM15 5H49V11H15z\"></path><path fill=\"#acb7d0\" d=\"M61 43L42 43 37 47 27 47 22.313 43 3 43 9 29 55 29z\"></path><path fill=\"#faefde\" d=\"M11 17H53V47H11z\"></path><path fill=\"#fff7f0\" d=\"M53 17L53 47 22.225 47.225 52.46 17z\"></path><path fill=\"#cda1a7\" d=\"M59,59H5c-1.105,0-2-0.895-2-2V43h19.313L26,47h12.438L42,43h19v14C61,58.105,60.105,59,59,59z\"></path><path fill=\"#deb4ba\" d=\"M4 46h21.078l-1.843-2H4c-.552 0-1 .448-1 1C3 45.552 3.448 46 4 46zM60 44H41.11l-1.781 2H60c.552 0 1-.448 1-1C61 44.448 60.552 44 60 44z\"></path><path fill=\"#fff7f0\" d=\"M48.06 17L22.06 43 16.06 43 42.06 17zM39.06 17L13.07 43 10.07 43 36.06 17z\"></path><path fill=\"#fff\" d=\"M21.502 29.996L22.74 32.26 25.004 33.498 22.74 34.736 21.502 37 20.264 34.736 18 33.498 20.264 32.26zM45.581 23L46.436 24.564 48 25.419 46.436 26.274 45.581 27.838 44.726 26.274 43.162 25.419 44.726 24.564zM40.648 34L41.231 35.065 42.296 35.648 41.231 36.231 40.648 37.296 40.065 36.231 39 35.648 40.065 35.065z\"></path><g><path fill=\"#8d6c9f\" d=\"M61.472,39.708l-5.025-10.05c-0.476-0.952-1.401-1.561-2.447-1.642V18c0-1.103-0.897-2-2-2v-4 c0-1.103-0.897-2-2-2V6c0-1.103-0.897-2-2-2H16c-1.103,0-2,0.897-2,2v4c-1.103,0-2,0.897-2,2v4c-1.103,0-2,0.897-2,2v10.016 c-1.047,0.081-1.971,0.69-2.447,1.642l-5.025,10.05C2.183,40.399,2,41.172,2,41.944V57c0,1.654,1.346,3,3,3h54c1.654,0,3-1.346,3-3 V41.944C62,41.172,61.817,40.399,61.472,39.708z M16,6h32v4H16V6z M14,12h36v4H14V12z M4.317,40.603l5.025-10.05 c0.134-0.268,0.376-0.452,0.658-0.52V39c0,0.552,0.448,1,1,1s1-0.448,1-1V18h40v21c0,0.552,0.448,1,1,1s1-0.448,1-1v-8.967 c0.282,0.068,0.524,0.252,0.658,0.52l5.025,10.05C59.891,41.017,60,41.481,60,41.944V42H41.829c-0.801,0-1.555,0.312-2.122,0.879 l-2.828,2.828C36.69,45.896,36.438,46,36.171,46h-8.343c-0.267,0-0.519-0.104-0.708-0.293l-2.828-2.828 C23.727,42.312,22.973,42,22.171,42H4v-0.056C4,41.481,4.109,41.017,4.317,40.603z M59,58H5c-0.551,0-1-0.449-1-1V44h18.171 c0.267,0,0.519,0.104,0.708,0.293l2.828,2.828C26.273,47.688,27.027,48,27.829,48h8.343c0.801,0,1.555-0.312,2.122-0.879 l2.828-2.828C41.31,44.104,41.562,44,41.829,44H60v13C60,57.551,59.551,58,59,58z\"></path><path fill=\"#8d6c9f\" d=\"M7 50c-.552 0-1 .448-1 1v2c0 .552.448 1 1 1s1-.448 1-1v-2C8 50.448 7.552 50 7 50zM12 50c-.552 0-1 .448-1 1v2c0 .552.448 1 1 1s1-.448 1-1v-2C13 50.448 12.552 50 12 50zM17 50c-.552 0-1 .448-1 1v2c0 .552.448 1 1 1s1-.448 1-1v-2C18 50.448 17.552 50 17 50zM22 50c-.552 0-1 .448-1 1v2c0 .552.448 1 1 1s1-.448 1-1v-2C23 50.448 22.552 50 22 50zM27 50c-.552 0-1 .448-1 1v2c0 .552.448 1 1 1s1-.448 1-1v-2C28 50.448 27.552 50 27 50zM32 50c-.552 0-1 .448-1 1v2c0 .552.448 1 1 1s1-.448 1-1v-2C33 50.448 32.552 50 32 50zM37 50c-.552 0-1 .448-1 1v2c0 .552.448 1 1 1s1-.448 1-1v-2C38 50.448 37.552 50 37 50zM42 50c-.552 0-1 .448-1 1v2c0 .552.448 1 1 1s1-.448 1-1v-2C43 50.448 42.552 50 42 50zM47 50c-.552 0-1 .448-1 1v2c0 .552.448 1 1 1s1-.448 1-1v-2C48 50.448 47.552 50 47 50zM52 50c-.552 0-1 .448-1 1v2c0 .552.448 1 1 1s1-.448 1-1v-2C53 50.448 52.552 50 52 50zM57 50c-.552 0-1 .448-1 1v2c0 .552.448 1 1 1s1-.448 1-1v-2C58 50.448 57.552 50 57 50zM31 24h6c.552 0 1-.448 1-1s-.448-1-1-1h-6c-.552 0-1 .448-1 1S30.448 24 31 24zM17 24h10c.552 0 1-.448 1-1s-.448-1-1-1H17c-.552 0-1 .448-1 1S16.448 24 17 24zM17 28h15c.552 0 1-.448 1-1s-.448-1-1-1H17c-.552 0-1 .448-1 1S16.448 28 17 28z\"></path></g></svg>
+                                            &nbsp;&nbsp;<h4 class=\"ml-1 mb-0\">School Records Management</h4>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class=\"bg-white shadow-sm d-flex justify-content-center flex-column mb-3 rounded p-5\">
+                                    <div class=\"testimonial small nobg noshadow noborder p-0\">
+                                        <div class=\"d-flex flex-row mb-4 align-items-center\">
+                                            <img src=\"https://img.icons8.com/dusk/80/000000/bonds.png\">
+                                            &nbsp;&nbsp;<h4 class=\"ml-1 mb-0\">
+                                                Payroll Management</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=\"bg-white shadow-sm d-flex justify-content-center flex-column rounded p-5\">
+                                    <div class=\"testimonial small nobg noshadow noborder p-0\">
+                                        <div class=\"d-flex flex-row mb-4 align-items-center\">
+                                            <img src=\"https://img.icons8.com/dusk/80/000000/overtime.png\">
+                                            &nbsp;&nbsp;<h4 class=\"ml-1 mb-0\">School Scheduling Organization</h4>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class=\"col-md-6 mt-3 mt-md-0\">
+                                <div class=\"bg-white shadow-sm d-flex justify-content-center flex-column mb-3 rounded p-5\">
+                                    <div class=\"testimonial small nobg noshadow noborder p-0\">
+                                        <div class=\"d-flex flex-row mb-4 align-items-center\">
+                                            <img src=\"https://img.icons8.com/dusk/80/000000/survey.png\">
+                                            &nbsp;&nbsp;<h4 class=\"ml-1 mb-0\">Absence Management</h4>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class=\"bg-white shadow-sm d-flex justify-content-center flex-column mb-3 rounded p-5\">
+                                    <div class=\"testimonial small nobg noshadow noborder p-0\">
+                                        <div class=\"d-flex flex-row mb-4 align-items-center\">
+                                            <img src=\"https://img.icons8.com/dusk/80/000000/event-accepted.png\">
+                                            &nbsp;&nbsp;<h4 class=\"ml-1 mb-0\">Events Management</h4>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class=\"bg-white shadow-sm d-flex justify-content-center flex-column rounded p-5\">
+                                    <div class=\"testimonial small nobg noshadow noborder p-0\">
+                                        <div class=\"d-flex flex-row mb-4 align-items-center\">
+                                            <img src=\"https://img.icons8.com/dusk/80/000000/exam.png\">
+                                            &nbsp;&nbsp;<h4 class=\"ml-1 mb-0\">Exam Management</h4>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class=\"grid-bg d-none d-md-block\">
+                            <img src=\"";
+        // line 478
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEnd/demos/movers/images/dot-grid.svg"), "html", null, true);
+        echo "\" alt=\"Dot Image\">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class=\"container mb-5\">
+                <div class=\"section-clients divcenter\" style=\"max-width: 700px\">
+
+                    <div class=\"clear\"></div>
+
+                    <div class=\"toggle mt-5\" data-state=\"open\">
+                        <div class=\"togglet t500\"><i class=\"toggle-closed icon-line-circle-plus\"></i><i class=\"toggle-open icon-line-circle-cross\"></i>Administration</div>
+                        <div class=\"togglec text-black-50\">
+                            <ul class=\"list list-unstyled\">
+                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>School Records Management</div></li>
+                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>Teachers Management</div></li>
+                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>Employees Management</div></li>
+                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>Classrooms Management</div></li>
+                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>Certification Management</div></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class=\"toggle\">
+                        <div class=\"togglet t500\"><i class=\"toggle-closed icon-line-circle-plus\"></i><i class=\"toggle-open icon-line-circle-cross\"></i>Parents</div>
+                        <div class=\"togglec text-black-50\">
+                            <ul class=\"list list-unstyled\">
+                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>Schoool Timetable Consultation</div></li>
+                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>Absence Consultation</div></li>
+                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>School Marks Consultation</div></li>
+                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>Stay In Contact With Our School </div></li>
+                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div></div></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class=\"toggle \">
+                        <div class=\"togglet t500\"><i class=\"toggle-closed icon-line-circle-plus\"></i><i class=\"toggle-open icon-line-circle-cross\"></i>Teachers</div>
+                        <div class=\"togglec text-black-50\">
+                            <ul class=\"list list-unstyled\">
+                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>Marks Entry</div></li>
+                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>Automate report card Generation</div></li>
+                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>School Textbook Entry</div></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class=\"toggle noborder\">
+                        <div class=\"togglet t500\"><i class=\"toggle-closed icon-line-circle-plus\"></i><i class=\"toggle-open icon-line-circle-cross\"></i>Students</div>
+                        <div class=\"togglec text-black-50\">
+                            <ul class=\"list list-unstyled\">
+                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>Marks Consultation</div></li>
+                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>Absence Consultation</div></li>
+                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>Schoool Timetable Consultation</div></li>
+                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>Events & News Consultation</div></li>
+                                <li class=\"d-flex align-items-baseline\"><i class=\"far fa-dot-circle text-color-primary mr-3\"></i><div>Access to our Quiz Space</div></li>
+
+                            </ul>
+                        </div>
+                    </div>
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 548
     public function block_joinspark($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -935,7 +958,7 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "joinspark"));
 
-        // line 547
+        // line 549
         echo "    <div class=\"section dark pt-0 mb-0 bgcolor\" >
         <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1960 206.8\" class=\"bg-white\">
             <path class=\"svg-themecolor\" style=\"opacity:0.2;\" d=\"M0,142.8A2337.49,2337.49,0,0,1,297.5,56.3C569.33-3.53,783.89.22,849.5,2.3c215.78,6.86,382.12,45.39,503.25,73.45,158.87,36.8,283.09,79.13,458.75,54.55A816.49,816.49,0,0,0,1983,86.8v110H0Z\"/>
@@ -975,7 +998,7 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
 
     public function getDebugInfo()
     {
-        return array (  939 => 547,  930 => 546,  904 => 387,  895 => 386,  837 => 338,  826 => 330,  815 => 322,  804 => 314,  783 => 296,  775 => 291,  757 => 276,  729 => 258,  707 => 240,  698 => 239,  602 => 147,  593 => 146,  571 => 662,  564 => 658,  558 => 655,  554 => 654,  470 => 573,  461 => 566,  459 => 546,  387 => 477,  312 => 404,  309 => 386,  307 => 258,  300 => 253,  298 => 239,  290 => 234,  286 => 232,  284 => 146,  261 => 125,  255 => 123,  250 => 121,  245 => 120,  243 => 119,  186 => 67,  180 => 66,  152 => 41,  145 => 37,  141 => 36,  137 => 35,  131 => 32,  126 => 30,  122 => 29,  118 => 28,  114 => 27,  109 => 25,  105 => 24,  101 => 23,  94 => 19,  90 => 18,  86 => 17,  82 => 16,  78 => 15,  74 => 14,  70 => 13,  66 => 12,  62 => 11,  58 => 10,  54 => 9,  50 => 8,  41 => 1,);
+        return array (  962 => 549,  953 => 548,  883 => 478,  808 => 405,  799 => 404,  773 => 387,  764 => 386,  706 => 338,  695 => 330,  684 => 322,  673 => 314,  652 => 296,  644 => 291,  626 => 276,  598 => 258,  576 => 240,  567 => 239,  471 => 147,  462 => 146,  440 => 664,  433 => 660,  427 => 657,  423 => 656,  339 => 575,  330 => 568,  328 => 548,  316 => 538,  313 => 404,  310 => 386,  308 => 258,  301 => 253,  299 => 239,  291 => 234,  287 => 232,  285 => 146,  262 => 125,  256 => 123,  251 => 121,  246 => 120,  244 => 119,  187 => 67,  181 => 66,  153 => 41,  146 => 37,  142 => 36,  138 => 35,  132 => 32,  127 => 30,  123 => 29,  119 => 28,  115 => 27,  110 => 25,  106 => 24,  102 => 23,  95 => 19,  91 => 18,  87 => 17,  83 => 16,  79 => 15,  75 => 14,  71 => 13,  67 => 12,  63 => 11,  59 => 10,  55 => 9,  51 => 8,  42 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -1391,6 +1414,7 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
                     </div>
                 </div>
                 {% endblock %}
+                {% block container %}
                 <div class=\"container\">
                     <div class=\"divcenter\" style=\"max-width: 1200px; padding: 120px 0 50px;\">
 
@@ -1523,9 +1547,10 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
                             </ul>
                         </div>
                     </div>
-
+{% endblock %}
                 </div>
             </div>
+
 
             <div class=\"clear\"></div>
 

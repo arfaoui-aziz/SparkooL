@@ -149,6 +149,16 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudiant_affectto']), array (  '_controller' => 'EtudiantBundle\\Controller\\EtudiantController::affecttoclassAction',));
                 }
 
+                // etudiant_addmanually
+                if ('/etudiant/addStudentManually' === $pathinfo) {
+                    return array (  '_controller' => 'EtudiantBundle\\Controller\\EtudiantController::AddStudentManuallyAction',  '_route' => 'etudiant_addmanually',);
+                }
+
+                // etudiant_accountSetting
+                if (0 === strpos($pathinfo, '/etudiant/accountSetting') && preg_match('#^/etudiant/accountSetting/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudiant_accountSetting']), array (  '_controller' => 'EtudiantBundle\\Controller\\EtudiantController::AccountsettingsAction',));
+                }
+
             }
 
             // etudiant_delete
@@ -156,9 +166,19 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudiant_delete']), array (  '_controller' => 'EtudiantBundle\\Controller\\EtudiantController::deleteapproveAction',));
             }
 
+            // etudiant_accountdisable
+            if (0 === strpos($pathinfo, '/etudiant/disableaccount') && preg_match('#^/etudiant/disableaccount/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudiant_accountdisable']), array (  '_controller' => 'EtudiantBundle\\Controller\\EtudiantController::disableAccountAction',));
+            }
+
             // etudiant_list
             if ('/etudiant/listeStudents' === $pathinfo) {
                 return array (  '_controller' => 'EtudiantBundle\\Controller\\EtudiantController::allstudentsAction',  '_route' => 'etudiant_list',);
+            }
+
+            // etudiant_submitreclamation
+            if ('/etudiant/reclamation' === $pathinfo) {
+                return array (  '_controller' => 'EtudiantBundle\\Controller\\ReclamationController::submitReclamationAction',  '_route' => 'etudiant_submitreclamation',);
             }
 
         }

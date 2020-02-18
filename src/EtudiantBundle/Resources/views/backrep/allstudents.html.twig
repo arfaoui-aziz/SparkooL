@@ -88,9 +88,14 @@
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right">
                                                 <a class="dropdown-item" href="{{ path('etudiant_delete', {'id': student.id}) }}"><i
-                                                            class="fas fa-times text-orange-red"></i>Dismiss</a>
+                                                            class="fas fa-times text-orange-red"></i>Delete Student</a>
+                                                <a class="dropdown-item" href="{{ path('etudiant_accountdisable', {'id': student.id}) }}"><i
+                                                            class="fas fa-times text-orange-red"></i>Disable Account</a>
                                                 <a class="dropdown-item" href="{{ path('etudiant_affectto', {'id': student.id}) }}"><i
                                                             class="fas fa-cogs text-dark-pastel-green"></i>Affect to class</a>
+                                                <a class="dropdown-item" href="{{ path('etudiant_accountSetting', {'id': student.id}) }}"><i
+                                                            class="fas fa-cogs text-dark-pastel-green"></i>Modify account settings</a>
+
                                             </div>
                                         </div>
                                     </td>

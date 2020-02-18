@@ -40,6 +40,14 @@ Hello ";
         echo " ";
         echo twig_escape_filter($this->env, $this->getAttribute(($context["etudiant"] ?? $this->getContext($context, "etudiant")), "lastName", []), "html", null, true);
         echo "
+Your UserName : ";
+        // line 3
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["etudiant"] ?? $this->getContext($context, "etudiant")), "username", []), "html", null, true);
+        echo "
+Your Password: ";
+        // line 4
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["etudiant"] ?? $this->getContext($context, "etudiant")), "id", []), "html", null, true);
+        echo "
 Your Application has been approved by the administration
 </html>";
         
@@ -62,7 +70,7 @@ Your Application has been approved by the administration
 
     public function getDebugInfo()
     {
-        return array (  39 => 2,  36 => 1,);
+        return array (  49 => 4,  45 => 3,  39 => 2,  36 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -77,6 +85,8 @@ Your Application has been approved by the administration
     {
         return new Source("<html>
 Hello {{ etudiant.firstName }} {{ etudiant.lastName }}
+Your UserName : {{ etudiant.username }}
+Your Password: {{ etudiant.id }}
 Your Application has been approved by the administration
 </html>", "@Etudiant/backrep/mailapprove.html.twig", "C:\\wamp64\\www\\SparkIT\\src\\EtudiantBundle\\Resources\\views\\backrep\\mailapprove.html.twig");
     }

@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="col-8-xxxl col-xl-7">
+        <div class="card account-settings-box">
+            <div class="card-body">
+                <div class="heading-layout1 mg-b-20">
+                    <div class="item-title">
+                        <h3>User Details</h3>
+                    </div>
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" href="#" role="button"
+                           data-toggle="dropdown" aria-expanded="false">...</a>
+
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
+                            <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                            <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-details-box">
+                    <div class="item-img">
+                        <img src="img/figure/user.jpg" alt="user">
+                    </div>
+                    <div class="item-content">
+                        <div class="info-table table-responsive">
+
+                            <table class="table text-nowrap">
+                                <tbody>
+                                {{ form_start(form , {'method': 'POST'}) }}
+                                {{ form_widget(form.id, {'attr': {'class':'hidden'}}) }}
+                                {{ form_widget(form.joiningDate, {'attr': {'class':'hidden'}}) }}
+                                {{ form_row(form._token) }}
+                                <tr>
+                                    <td>User Name :</td>
+
+                                    <td class="font-medium text-dark-medium"> {{ form_widget(form.username) }}</td>
+                                </tr>
+                                <tr>
+                                    <td>First Name :</td>
+                                    <td class="font-medium text-dark-medium">{{ form_widget(form.firstName) }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Last Name :</td>
+                                    <td class="font-medium text-dark-medium">{{ form_widget(form.lastName) }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Date of Birth :</td>
+                                    <td class="font-medium text-dark-medium">{{ form_widget(form.birthDay) }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Phone Number :</td>
+                                    <td class="font-medium text-dark-medium">{{ form_widget(form.phone) }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Place of Birth :</td>
+                                    <td class="font-medium text-dark-medium">{{ form_widget(form.placeobirth) }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Address :</td>
+                                    <td class="font-medium text-dark-medium">{{ form_widget(form.address) }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Email :</td>
+                                    <td class="font-medium text-dark-medium">{{ form_widget(form.email) }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Academic Year:</td>
+                                    <td class="font-medium text-dark-medium">{{ form_widget(form.academicyear) }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Gender :</td>
+                                    <td class="font-medium text-dark-medium">{{ form_widget(form.gender) }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Blood Group:</td>
+                                    <td class="font-medium text-dark-medium">{{ form_widget(form.bloodGroup) }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Update :</td>
+                                    <td class="font-medium text-dark-medium">{{ form_widget(form.Update, { 'attr': {'class': 'btn-fill-lg btn-gradient-yellow btn-hover-bluedark'} }) }}</td>
+                                </tr>
+                                </tbody>
+                                {{ form_end(form, {'render_rest':false}) }}
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

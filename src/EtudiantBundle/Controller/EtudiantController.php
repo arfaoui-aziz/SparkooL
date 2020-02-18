@@ -81,7 +81,7 @@ class EtudiantController extends Controller
         $em = $this->getDoctrine()->getManager();
         $em->persist($etudiant);
         $em->flush();
-        $message = (new \Swift_Message('Hello Email'))
+        $message = (new \Swift_Message('Approved'))
             ->setFrom('sparkool.sparkit@gmail.com')
             ->setTo('mohamedalialhammi@gmail.com');
         $message->setBody(
@@ -104,25 +104,94 @@ class EtudiantController extends Controller
         ));
     }
 
-    public function affecttoclassAction(Request $request, $id)
+    public function affecttoclassAction($id,Request $request)
     {
-        $etudiant = new User();
+
         $em=$this->getDoctrine()->getManager();
-        $etudiant=$this->getDoctrine()->getRepository(User::class)->find($id);
+        $etudiant=$em->getRepository(User::class)->find($id);
         $Form=$this->createForm(EtudiantFormType::class,$etudiant
         )->add('Ajouter',SubmitType::class);
+        $oldclass = $etudiant->getClasse();
         $Form->handleRequest($request);
-        if($Form->isSubmitted() && $Form->isValid())
-        {
+        if ($Form->isSubmitted()) {
+            $oldclassup = $this->getDoctrine()->getRepository('EtudiantBundle:Classe')->find($oldclass);
+            $oldnbrPlace = $oldclassup->getClassNbr();
+            $oldclassup->setClassNbr($oldnbrPlace+1);
+            $class = $etudiant->getClasse();
+            $classtoup = $this->getDoctrine()->getRepository('EtudiantBundle:Classe')->find($class);
+            $oldnbrp = $classtoup->getClassNbr();
+            $classtoup->setClassNbr($oldnbrp-1);
             $em->persist($etudiant);
             $em->flush();
-dump($etudiant);
-
+            return $this->redirectToRoute('etudiant_list');
         }
 
         return $this->render('@Etudiant/backrep/affecttoclass.html.twig',
             array('form' =>$Form->createView(),
                 'students'=>$etudiant));
+    }
+
+    public function AddStudentManuallyAction(Request $request)
+    {
+        $user= new User();
+        $form = $this->createForm(EtudiantFormType::class,$user);
+        $form->add('Ajouter',SubmitType::class);
+        $form->handleRequest($request);
+        if ($form->isSubmitted()) {
+            $pic = $user->getPicture();
+            $id = random_int(1, 10000);
+            $firstName = $user->getFirstName();
+            $lastName = $user->getLastName();
+            $username = $firstName . '.' . $lastName;
+            $email = $user->getEmail();
+            $pwd = password_hash($id, PASSWORD_BCRYPT);
+            $user->setPassword($pwd);
+            $user->setUsername($username);
+            $user->setPicture($pic);
+            $user->setJoiningDate('tawa');
+            $user->setId($id);
+            $user->setEmail($email);
+            $user->setFirstName($firstName);
+            $user->setEnabled(true);
+            $user->setLastName($lastName);
+            $em = $this->getDoctrine()->getManager();
+            $user->setUserType("Etudiant");
+            $em->persist($user);
+            $em->flush();
+            return $this->redirectToRoute('etudiant_list');
+        }
+
+        return $this->render('@Etudiant/backrep/AddStudentManually.html.twig',array(
+            'form'=>$form->createView(),
+            'user'=>$user
+        ));
+    }
+
+    public function AccountsettingsAction($id , Request $request)
+    {
+        $em=$this->getDoctrine()->getManager();
+        $etudiant=$em->getRepository(User::class)->find($id);
+        $Form=$this->createForm(EtudiantFormType::class,$etudiant
+        )->add('Update',SubmitType::class);
+        $Form->handleRequest($request);
+        if ($Form->isValid() && $Form->isSubmitted()) {
+            $em->persist($etudiant);
+            $em->flush();
+            return $this->redirectToRoute('etudiant_list');
+        }
+        return $this->render('@Etudiant/backrep/accountSettingsStudent.html.twig',array(
+            'form'=>$Form->createView()));
+    }
+
+    public function disableAccountAction($id , Request $request)
+    {
+
+            $etudiant = $this->getDoctrine()->getRepository(User::class)->find($id);
+            $etudiant->setEnabled(false);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($etudiant);
+            $em->flush();
+            return $this->redirectToRoute("etudiant_list");
     }
 
 

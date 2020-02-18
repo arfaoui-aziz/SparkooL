@@ -10,4 +10,20 @@ namespace EtudiantBundle\Repository;
  */
 class EtudiantRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findClasses($idclasse)
+    {
+
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            'SELECT c.class_name
+            FROM EtudiantBundle\Entity\Classe c, AppBundle\Entity\User U 
+            WHERE c.id = U.id
+            AND c.id = :idclasse
+            '
+        )->setParameter('idclasse', $idclasse);
+
+        // returns an array of Product objects
+        return $query->getResult();
+    }
 }

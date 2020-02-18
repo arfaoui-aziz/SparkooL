@@ -201,25 +201,36 @@ class __TwigTemplate_07fb98dbd4551e975a3a0141083bca741b4d64969eb7161eefdd22d92e2
                 // line 90
                 echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("etudiant_delete", ["id" => $this->getAttribute($context["student"], "id", [])]), "html", null, true);
                 echo "\"><i
-                                                            class=\"fas fa-times text-orange-red\"></i>Dismiss</a>
+                                                            class=\"fas fa-times text-orange-red\"></i>Delete Student</a>
                                                 <a class=\"dropdown-item\" href=\"";
                 // line 92
+                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("etudiant_accountdisable", ["id" => $this->getAttribute($context["student"], "id", [])]), "html", null, true);
+                echo "\"><i
+                                                            class=\"fas fa-times text-orange-red\"></i>Disable Account</a>
+                                                <a class=\"dropdown-item\" href=\"";
+                // line 94
                 echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("etudiant_affectto", ["id" => $this->getAttribute($context["student"], "id", [])]), "html", null, true);
                 echo "\"><i
                                                             class=\"fas fa-cogs text-dark-pastel-green\"></i>Affect to class</a>
+                                                <a class=\"dropdown-item\" href=\"";
+                // line 96
+                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("etudiant_accountSetting", ["id" => $this->getAttribute($context["student"], "id", [])]), "html", null, true);
+                echo "\"><i
+                                                            class=\"fas fa-cogs text-dark-pastel-green\"></i>Modify account settings</a>
+
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
                             ";
             }
-            // line 99
+            // line 104
             echo "                        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['student'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 100
+        // line 105
         echo "                        </tbody>
                     </table>
                 </div>
@@ -247,7 +258,7 @@ class __TwigTemplate_07fb98dbd4551e975a3a0141083bca741b4d64969eb7161eefdd22d92e2
 
     public function getDebugInfo()
     {
-        return array (  223 => 100,  217 => 99,  207 => 92,  202 => 90,  191 => 82,  187 => 81,  183 => 80,  179 => 79,  175 => 78,  171 => 77,  167 => 76,  163 => 74,  157 => 72,  154 => 71,  148 => 69,  145 => 68,  139 => 66,  136 => 65,  130 => 63,  128 => 62,  122 => 58,  119 => 57,  115 => 56,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  234 => 105,  228 => 104,  217 => 96,  212 => 94,  207 => 92,  202 => 90,  191 => 82,  187 => 81,  183 => 80,  179 => 79,  175 => 78,  171 => 77,  167 => 76,  163 => 74,  157 => 72,  154 => 71,  148 => 69,  145 => 68,  139 => 66,  136 => 65,  130 => 63,  128 => 62,  122 => 58,  119 => 57,  115 => 56,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -350,9 +361,14 @@ class __TwigTemplate_07fb98dbd4551e975a3a0141083bca741b4d64969eb7161eefdd22d92e2
                                             </a>
                                             <div class=\"dropdown-menu dropdown-menu-right\">
                                                 <a class=\"dropdown-item\" href=\"{{ path('etudiant_delete', {'id': student.id}) }}\"><i
-                                                            class=\"fas fa-times text-orange-red\"></i>Dismiss</a>
+                                                            class=\"fas fa-times text-orange-red\"></i>Delete Student</a>
+                                                <a class=\"dropdown-item\" href=\"{{ path('etudiant_accountdisable', {'id': student.id}) }}\"><i
+                                                            class=\"fas fa-times text-orange-red\"></i>Disable Account</a>
                                                 <a class=\"dropdown-item\" href=\"{{ path('etudiant_affectto', {'id': student.id}) }}\"><i
                                                             class=\"fas fa-cogs text-dark-pastel-green\"></i>Affect to class</a>
+                                                <a class=\"dropdown-item\" href=\"{{ path('etudiant_accountSetting', {'id': student.id}) }}\"><i
+                                                            class=\"fas fa-cogs text-dark-pastel-green\"></i>Modify account settings</a>
+
                                             </div>
                                         </div>
                                     </td>

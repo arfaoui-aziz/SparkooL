@@ -42,8 +42,7 @@ class EtudiantFormType extends AbstractType {
                     'O-' => 'O-',
                 ],
             ])
-            ->add('picture', FileType::class)
-        ->add('classe', EntityType::class,[
+          ->add('classe', EntityType::class,[
             'class' => 'EtudiantBundle\Entity\Classe',
             'placeholder' => 'Select Class *',
             'mapped' => true
