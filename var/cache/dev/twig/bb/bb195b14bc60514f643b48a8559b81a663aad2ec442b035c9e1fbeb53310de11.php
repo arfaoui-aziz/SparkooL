@@ -72,7 +72,7 @@ class __TwigTemplate_5846030aad9526c8ad61af5717550d67555bbc349d2a7eda1b99130e969
         echo "\">All Teachers</a></li>
                 </li>
 
-                <li><a href=\"\">  Teacher Dtails</a>
+                <li><a href=\"\">  Teacher Details</a>
                 </li>
                 <li>Teacher Absences</li>
             </ul>
@@ -99,7 +99,7 @@ class __TwigTemplate_5846030aad9526c8ad61af5717550d67555bbc349d2a7eda1b99130e969
                         <div class=\"col-3-xxxl col-xl-3 col-lg-3 col-12 form-group\">
                             <input type=\"text\" placeholder=\"Search by date ...\" class=\"form-control\">
                         </div>
-                      
+
                         <div class=\"col-1-xxxl col-xl-2 col-lg-3 col-12 form-group\">
                             <button type=\"submit\" class=\"fw-btn-fill btn-gradient-yellow\">SEARCH</button>
                         </div>
@@ -228,7 +228,7 @@ class __TwigTemplate_5846030aad9526c8ad61af5717550d67555bbc349d2a7eda1b99130e969
                 <li><a href=\"{{ path('showTeacher') }}\">All Teachers</a></li>
                 </li>
 
-                <li><a href=\"\">  Teacher Dtails</a>
+                <li><a href=\"\">  Teacher Details</a>
                 </li>
                 <li>Teacher Absences</li>
             </ul>
@@ -248,7 +248,7 @@ class __TwigTemplate_5846030aad9526c8ad61af5717550d67555bbc349d2a7eda1b99130e969
                         <div class=\"col-3-xxxl col-xl-3 col-lg-3 col-12 form-group\">
                             <input type=\"text\" placeholder=\"Search by date ...\" class=\"form-control\">
                         </div>
-                      
+
                         <div class=\"col-1-xxxl col-xl-2 col-lg-3 col-12 form-group\">
                             <button type=\"submit\" class=\"fw-btn-fill btn-gradient-yellow\">SEARCH</button>
                         </div>

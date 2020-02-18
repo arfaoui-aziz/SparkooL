@@ -48,6 +48,33 @@ class TeacherController extends Controller
             $user->setFirstName($firstName);
             $user->setLastName($lastName);
             $user->setUserType("Teacher");
+            /******************************/
+            $email = $user->getEmail();
+            $message = (new \Swift_Message('SPARKOOL'))
+                ->setFrom('sparkool.sparkit@gmail.com')
+                ->setTo('amenallah.ba98@gmail.com');
+            $logoPrinc = $message->embed(\Swift_Image::fromPath('LogoPrinc.png'));
+            $hero = $message->embed(\Swift_Image::fromPath('reminder-hero-graph.png'));
+            $logoFooter = $message->embed(\Swift_Image::fromPath('LogoFooter.png'));
+
+            $message->setBody(
+                $this->renderView(
+                    '@Teacher/Teacher/mail.html.twig',
+                    array( 'name' => $firstName,
+                        'lname' => $lastName,
+                        'username' => $username,
+                        'pwd' => $id,
+                        'logoPrinc'=>$logoPrinc,
+                        'logoFooter'=>$logoFooter,
+                        'hero'=>$hero
+
+                    )
+                ),
+                'text/html'
+            );
+
+            $this->get('mailer')->send($message);
+            /********************************************/
             $em->persist($user);
             $em->flush();
             return $this->redirectToRoute('addDiploma',['id' => $id]);

@@ -245,7 +245,7 @@ class __TwigTemplate_4ae240a64639b29c11c0a6d23c9648e201f6e74699bed0d2bae32452040
             // line 120
             echo "                            <a> ";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", []), "username", []), "html", null, true);
-            echo " &nbsp;&nbsp;&nbsp;</a>
+            echo " </a>
                             <a href=\"";
             // line 121
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fos_user_security_logout");
@@ -1015,7 +1015,7 @@ class __TwigTemplate_4ae240a64639b29c11c0a6d23c9648e201f6e74699bed0d2bae32452040
                     ============================================= -->
                     <div class=\"header-buttons d-none d-sm-inline-block\">
                         {% if is_granted('ROLE_USER') %}
-                            <a> {{ app.user.username }} &nbsp;&nbsp;&nbsp;</a>
+                            <a> {{ app.user.username }} </a>
                             <a href=\"{{ path('fos_user_security_logout')}}\" class=\"button button-rounded button-white button-light button-small m-0\">Log Out</a>
                         {% else %}
                             <a href=\"{{ path('fos_user_security_login') }}\"   class=\"button button-rounded button-white button-light button-small m-0\">LOGIN</a>

@@ -1,3 +1,4 @@
+
 addTeacher:
     path:     /addTeacher
     defaults: { _controller: TeacherBundle:Teacher:AddTeacher }
