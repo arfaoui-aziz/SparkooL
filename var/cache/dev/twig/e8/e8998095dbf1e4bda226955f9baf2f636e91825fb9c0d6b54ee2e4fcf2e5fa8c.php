@@ -96,10 +96,10 @@ class __TwigTemplate_ac0b669fe116b8c963441b7e0d443e4763a47a19443c0410f2baeadb266
      <form class=\"mg-b-20\">
       <div class=\"row gutters-8\">
        <div class=\"col-3-xxxl col-xl-3 col-lg-3 col-12 form-group\">
-        <input type=\"text\"x placeholder=\"Search by ID ...\" class=\"form-control search\" >
+        <input  type=\"text\" placeholder=\"Search by ID ...\" class=\"form-control search\">
        </div>
        <div class=\"col-4-xxxl col-xl-4 col-lg-3 col-12 form-group\">
-        <input type=\"text\" placeholder=\"Search by Name ...\" class=\"form-control search\">
+        <input id=\"ser\" name=\"q\" type=\"text\" placeholder=\"Search by Name ...\" class=\"form-control search\">
        </div>
        <div class=\"col-4-xxxl col-xl-3 col-lg-3 col-12 form-group\">
         <input type=\"text\" placeholder=\"Search by Joinig Date\" class=\"form-control search\">
@@ -124,18 +124,19 @@ class __TwigTemplate_ac0b669fe116b8c963441b7e0d443e4763a47a19443c0410f2baeadb266
      <script type=\"text/javascript\">
       jQuery(document).ready(function() {
        var searchRequest = null;
-       \$(\".search\").keyup(function() {
+       \$(\"#ser\").keyup(function() {
         var minlength = 1;
         var that = this;
         var value = \$(this).val();
-        var entitySelector = \$(\"#entitiesNav\").html('');
+        var entitySelector = \$(\"#search\").html('');
+        entitySelector.hide();
         if (value.length >= minlength ) {
          if (searchRequest != null)
           searchRequest.abort();
          searchRequest = \$.ajax({
           type: \"GET\",
           url: \"";
-        // line 83
+        // line 84
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("ajax");
         echo "\",
           data: {
@@ -150,9 +151,11 @@ class __TwigTemplate_ac0b669fe116b8c963441b7e0d443e4763a47a19443c0410f2baeadb266
              \$.each(arr, function(id, value) {
               if (key === 'posts') {
                if (id !== 'error') {
+
                 console.log(value[1]);
-                var large= '<div class=\"table-responsive\"> <table class=\"table display data-table text-nowrap\"> <thead> <tr> <th>ID</th> <th>Name</th> <th>Gender</th> <th>Occupation</th><th>E-mail</th><th>Adress</th><th>Phone</th><th>Date of Birth</th><th>Joining Date </th><th>PHOTO</th><th>Budget</th><th>Price</th><th></th> </tr> </thead> <tbody> <tr> <td> '+value[0]+'</td> <td>'+value[1]+'</td> <td> '+value[2]+'</td><td> '+value[3]+'</td><td> '+value[4]+'</td><td> '+ value[5]+'</td><td> '+ value[6]+'</td><td> '+ value[7]+'</td> <td> '+ value[8]+'</td><td> '+ value[9]+'</td><td> '+ value[10]+'</td></tbody> </table> </div>';
-                entitySelector.append(large) ; }
+                var large= '<tbody><tr> <td> '+value[0]+'</td> <td>'+value[1]+'</td> <td> '+value[2]+'</td><td> '+value[3]+'</td><td> '+value[4]+'</td><td> '+ value[5]+'</td><td> '+ value[6]+'</td><td> '+ value[7]+'</td> <td> '+ value[8]+'</td><td> '+ value[9]+'</td><td> '+ value[10]+'</td></tr></tbody>';
+                entitySelector.replaceWith(large) ;
+               }
                else {
                 entitySelector.append('<li class=\"errorLi\">'+value+'</li>');
                }
@@ -172,7 +175,7 @@ class __TwigTemplate_ac0b669fe116b8c963441b7e0d443e4763a47a19443c0410f2baeadb266
 
 
 
-     <div class=\"table-responsive\">
+     <div class=\"table-responsive\"  >
       <table class=\"table display data-table text-nowrap\">
        <thead>
        <tr>
@@ -190,59 +193,60 @@ class __TwigTemplate_ac0b669fe116b8c963441b7e0d443e4763a47a19443c0410f2baeadb266
        </tr>
        </thead>
        ";
-        // line 135
+        // line 138
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["var"]) ? $context["var"] : $this->getContext($context, "var")));
         foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-            // line 136
-            echo "       <tbody>
-       <tr>
+            // line 139
+            echo "       <tbody  id=\"search\">
+       <tr >
+
         <td>
          <div class=\"form-check\">
           <input type=\"checkbox\" class=\"form-check-input \">
           <label class=\"form-check-label\">#";
-            // line 141
+            // line 145
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "id", []), "html", null, true);
             echo "</label>
          </div>
         </td>
         <td> ";
-            // line 144
+            // line 148
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "firstName", []), "html", null, true);
             echo " ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "lastName", []), "html", null, true);
             echo "</td>
 
         <td> ";
-            // line 146
+            // line 150
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "gender", []), "html", null, true);
             echo " </td>
         <td> ";
-            // line 147
+            // line 151
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "occupation", []), "html", null, true);
             echo " </td>
         <td> ";
-            // line 148
+            // line 152
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "email", []), "html", null, true);
             echo " </td>
         <td> ";
-            // line 149
+            // line 153
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "address", []), "html", null, true);
             echo " </td>
         <td> ";
-            // line 150
+            // line 154
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "phone", []), "html", null, true);
             echo " </td>
         <td> ";
-            // line 151
+            // line 155
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "birthDay", []), "html", null, true);
             echo " </td>
         <td> ";
-            // line 152
+            // line 156
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "joiningDate", []), "html", null, true);
             echo " </td>
         <td> ";
-            // line 153
+            // line 157
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "picture", []), "html", null, true);
             echo " </td>
 
@@ -254,26 +258,26 @@ class __TwigTemplate_ac0b669fe116b8c963441b7e0d443e4763a47a19443c0410f2baeadb266
           </a>
           <div class=\"dropdown-menu dropdown-menu-right\">
            <a class=\"dropdown-item\" href=\"";
-            // line 162
+            // line 166
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("supprimer_parent", ["id" => $this->getAttribute($context["i"], "id", [])]), "html", null, true);
             echo "\"><i
                     class=\"fas fa-times text-orange-red\"></i> Delete</a>
            <a class=\"dropdown-item\" href=\"";
-            // line 164
+            // line 168
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("modifier_parent", ["id" => $this->getAttribute($context["i"], "id", [])]), "html", null, true);
             echo "\"><i
                     class=\"fas fa-cogs text-dark-pastel-green\"></i> Edit</a>
            <a class=\"dropdown-item\" href=\"";
-            // line 166
+            // line 170
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("detail_parent", ["id" => $this->getAttribute($context["i"], "id", [])]), "html", null, true);
             echo "\"><i
                     class=\"fas fa-eye text-orange-peel\"></i> Show Details</a>
            <a class=\"dropdown-item\" href=\"";
-            // line 168
+            // line 172
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("accepter_parent", ["id" => $this->getAttribute($context["i"], "id", [])]), "html", null, true);
             echo "\"><i class=\"fas fa-check\"></i> Accept parent</a>
            <a class=\"dropdown-item\" href=\"";
-            // line 169
+            // line 173
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("refuser_parent", ["id" => $this->getAttribute($context["i"], "id", [])]), "html", null, true);
             echo "\"><i class=\"fas fa-minus-circle\"></i> Refuse parent</a>
 
@@ -289,7 +293,7 @@ class __TwigTemplate_ac0b669fe116b8c963441b7e0d443e4763a47a19443c0410f2baeadb266
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 179
+        // line 183
         echo "      </table>
      </div>
     </div>
@@ -321,7 +325,7 @@ class __TwigTemplate_ac0b669fe116b8c963441b7e0d443e4763a47a19443c0410f2baeadb266
 
     public function getDebugInfo()
     {
-        return array (  293 => 179,  277 => 169,  273 => 168,  268 => 166,  263 => 164,  258 => 162,  246 => 153,  242 => 152,  238 => 151,  234 => 150,  230 => 149,  226 => 148,  222 => 147,  218 => 146,  211 => 144,  205 => 141,  198 => 136,  194 => 135,  139 => 83,  60 => 6,  51 => 5,  29 => 3,);
+        return array (  297 => 183,  281 => 173,  277 => 172,  272 => 170,  267 => 168,  262 => 166,  250 => 157,  246 => 156,  242 => 155,  238 => 154,  234 => 153,  230 => 152,  226 => 151,  222 => 150,  215 => 148,  209 => 145,  201 => 139,  197 => 138,  140 => 84,  60 => 6,  51 => 5,  29 => 3,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -378,10 +382,10 @@ class __TwigTemplate_ac0b669fe116b8c963441b7e0d443e4763a47a19443c0410f2baeadb266
      <form class=\"mg-b-20\">
       <div class=\"row gutters-8\">
        <div class=\"col-3-xxxl col-xl-3 col-lg-3 col-12 form-group\">
-        <input type=\"text\"x placeholder=\"Search by ID ...\" class=\"form-control search\" >
+        <input  type=\"text\" placeholder=\"Search by ID ...\" class=\"form-control search\">
        </div>
        <div class=\"col-4-xxxl col-xl-4 col-lg-3 col-12 form-group\">
-        <input type=\"text\" placeholder=\"Search by Name ...\" class=\"form-control search\">
+        <input id=\"ser\" name=\"q\" type=\"text\" placeholder=\"Search by Name ...\" class=\"form-control search\">
        </div>
        <div class=\"col-4-xxxl col-xl-3 col-lg-3 col-12 form-group\">
         <input type=\"text\" placeholder=\"Search by Joinig Date\" class=\"form-control search\">
@@ -406,11 +410,12 @@ class __TwigTemplate_ac0b669fe116b8c963441b7e0d443e4763a47a19443c0410f2baeadb266
      <script type=\"text/javascript\">
       jQuery(document).ready(function() {
        var searchRequest = null;
-       \$(\".search\").keyup(function() {
+       \$(\"#ser\").keyup(function() {
         var minlength = 1;
         var that = this;
         var value = \$(this).val();
-        var entitySelector = \$(\"#entitiesNav\").html('');
+        var entitySelector = \$(\"#search\").html('');
+        entitySelector.hide();
         if (value.length >= minlength ) {
          if (searchRequest != null)
           searchRequest.abort();
@@ -429,9 +434,11 @@ class __TwigTemplate_ac0b669fe116b8c963441b7e0d443e4763a47a19443c0410f2baeadb266
              \$.each(arr, function(id, value) {
               if (key === 'posts') {
                if (id !== 'error') {
+
                 console.log(value[1]);
-                var large= '<div class=\"table-responsive\"> <table class=\"table display data-table text-nowrap\"> <thead> <tr> <th>ID</th> <th>Name</th> <th>Gender</th> <th>Occupation</th><th>E-mail</th><th>Adress</th><th>Phone</th><th>Date of Birth</th><th>Joining Date </th><th>PHOTO</th><th>Budget</th><th>Price</th><th></th> </tr> </thead> <tbody> <tr> <td> '+value[0]+'</td> <td>'+value[1]+'</td> <td> '+value[2]+'</td><td> '+value[3]+'</td><td> '+value[4]+'</td><td> '+ value[5]+'</td><td> '+ value[6]+'</td><td> '+ value[7]+'</td> <td> '+ value[8]+'</td><td> '+ value[9]+'</td><td> '+ value[10]+'</td></tbody> </table> </div>';
-                entitySelector.append(large) ; }
+                var large= '<tbody><tr> <td> '+value[0]+'</td> <td>'+value[1]+'</td> <td> '+value[2]+'</td><td> '+value[3]+'</td><td> '+value[4]+'</td><td> '+ value[5]+'</td><td> '+ value[6]+'</td><td> '+ value[7]+'</td> <td> '+ value[8]+'</td><td> '+ value[9]+'</td><td> '+ value[10]+'</td></tr></tbody>';
+                entitySelector.replaceWith(large) ;
+               }
                else {
                 entitySelector.append('<li class=\"errorLi\">'+value+'</li>');
                }
@@ -451,7 +458,7 @@ class __TwigTemplate_ac0b669fe116b8c963441b7e0d443e4763a47a19443c0410f2baeadb266
 
 
 
-     <div class=\"table-responsive\">
+     <div class=\"table-responsive\"  >
       <table class=\"table display data-table text-nowrap\">
        <thead>
        <tr>
@@ -469,8 +476,9 @@ class __TwigTemplate_ac0b669fe116b8c963441b7e0d443e4763a47a19443c0410f2baeadb266
        </tr>
        </thead>
        {% for i in var %}
-       <tbody>
-       <tr>
+       <tbody  id=\"search\">
+       <tr >
+
         <td>
          <div class=\"form-check\">
           <input type=\"checkbox\" class=\"form-check-input \">

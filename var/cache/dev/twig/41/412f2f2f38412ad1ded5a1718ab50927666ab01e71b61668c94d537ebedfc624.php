@@ -77,9 +77,9 @@ class __TwigTemplate_17ac9e12b18b282a224b5c29e3e4b815fc99ac8d62f84195d69909b21e4
                 <div class=\"tab-content rounded-bottom shadow bg-white py-4 px-5\">
                     <div class=\"tab-pane fade show active\" id=\"home-moving\" role=\"tabpanel\" aria-labelledby=\"home-moving-tab\">
 
-                        <div class=\"form-widget\">
+
                             <div class=\"form-result\"></div>
-                            <form class=\"row home-moving-form position-relative mb-0\" method=\"post\">
+                            <form class=\"row home-moving-form position-relative mb-0\" method=\"post\" novalidate>
                                 ";
         // line 26
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start');
@@ -98,27 +98,33 @@ class __TwigTemplate_17ac9e12b18b282a224b5c29e3e4b815fc99ac8d62f84195d69909b21e4
         // line 34
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "type", []), 'widget', ["attr" => ["class" => "select2"]]);
         echo "
-
-                                </div>
-
-                                <div class=\"col-sm-6 input-group form-group\">
-                                    <div class=\"input-group-prepend\">
-                                        <span class=\"input-group-text nobg\"><i class=\"icon-line2-user\"></i></span>
-                                    </div>
                                     ";
-        // line 42
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "parent", []), 'widget', ["value" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", []), "id", [])]);
+        // line 35
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "type", []), 'errors');
         echo "
 
                                 </div>
+
+
+                                    ";
+        // line 40
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "parent", []), 'widget', ["attr" => ["class" => "hidden", "value" => "{{app.user.id}}"]]);
+        echo "
+
+
+
 
                                 <div class=\"col-sm-6 input-group form-group\">
                                     <div class=\"input-group-prepend\">
                                         <span class=\"input-group-text nobg\"><i class=\"fas fa-key\"></i></span>
                                     </div>
                                     ";
-        // line 50
+        // line 49
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "message", []), 'widget', ["attr" => ["class" => "form-control"]]);
+        echo "
+                                    ";
+        // line 50
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "message", []), 'errors');
         echo "
                                 </div>
 
@@ -146,7 +152,7 @@ class __TwigTemplate_17ac9e12b18b282a224b5c29e3e4b815fc99ac8d62f84195d69909b21e4
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end', ["render_rest" => false]);
         echo "
                             </form>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -212,7 +218,7 @@ class __TwigTemplate_17ac9e12b18b282a224b5c29e3e4b815fc99ac8d62f84195d69909b21e4
 
     public function getDebugInfo()
     {
-        return array (  187 => 97,  156 => 76,  146 => 69,  139 => 65,  121 => 50,  110 => 42,  99 => 34,  89 => 27,  85 => 26,  61 => 6,  52 => 5,  30 => 3,);
+        return array (  193 => 97,  162 => 76,  152 => 69,  145 => 65,  127 => 50,  123 => 49,  111 => 40,  103 => 35,  99 => 34,  89 => 27,  85 => 26,  61 => 6,  52 => 5,  30 => 3,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -247,9 +253,9 @@ class __TwigTemplate_17ac9e12b18b282a224b5c29e3e4b815fc99ac8d62f84195d69909b21e4
                 <div class=\"tab-content rounded-bottom shadow bg-white py-4 px-5\">
                     <div class=\"tab-pane fade show active\" id=\"home-moving\" role=\"tabpanel\" aria-labelledby=\"home-moving-tab\">
 
-                        <div class=\"form-widget\">
+
                             <div class=\"form-result\"></div>
-                            <form class=\"row home-moving-form position-relative mb-0\" method=\"post\">
+                            <form class=\"row home-moving-form position-relative mb-0\" method=\"post\" novalidate>
                                 {{ form_start(form) }}
                                 {{ form_row(form._token) }}
                                 <div class=\"form-process\"></div>
@@ -259,22 +265,22 @@ class __TwigTemplate_17ac9e12b18b282a224b5c29e3e4b815fc99ac8d62f84195d69909b21e4
                                         <span class=\"input-group-text nobg\"><i class=\"fas fa-sticky-note\"></i></span>
                                     </div>
                                     {{ form_widget (form.type , {'attr': {'class':'select2'}}) }}
+                                    {{ form_errors(form.type) }}
 
                                 </div>
 
-                                <div class=\"col-sm-6 input-group form-group\">
-                                    <div class=\"input-group-prepend\">
-                                        <span class=\"input-group-text nobg\"><i class=\"icon-line2-user\"></i></span>
-                                    </div>
-                                    {{ form_widget(form.parent, {'value' : app.user.id },{'class': 'hidden'}) }}
 
-                                </div>
+                                    {{ form_widget(form.parent,{'attr': {'class':'hidden','value' : '{{app.user.id}}' }} ) }}
+
+
+
 
                                 <div class=\"col-sm-6 input-group form-group\">
                                     <div class=\"input-group-prepend\">
                                         <span class=\"input-group-text nobg\"><i class=\"fas fa-key\"></i></span>
                                     </div>
                                     {{ form_widget (form.message , {'attr': {'class':'form-control'}}) }}
+                                    {{ form_errors(form.message) }}
                                 </div>
 
 
@@ -295,7 +301,7 @@ class __TwigTemplate_17ac9e12b18b282a224b5c29e3e4b815fc99ac8d62f84195d69909b21e4
 
                                 {{ form_end(form,{'render_rest': false}) }}
                             </form>
-                        </div>
+
                     </div>
                 </div>
             </div>

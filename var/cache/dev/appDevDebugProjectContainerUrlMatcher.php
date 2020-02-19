@@ -297,6 +297,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        // PDF
+        if (0 === strpos($pathinfo, '/PDF') && preg_match('#^/PDF/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, ['_route' => 'PDF']), array (  '_controller' => 'ParentBundle\\Controller\\ParentController::DisplayPDFAction',));
+        }
+
         // fos_user_security_login
         if ('' === $trimmedPathinfo) {
             $ret = array (  '_controller' => 'fos_user.security.controller:loginAction',  '_route' => 'fos_user_security_login',);

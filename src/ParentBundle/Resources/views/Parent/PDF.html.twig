@@ -1,0 +1,145 @@
+<!doctype html>
+
+<html class="no-js" lang="">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>SparkIT Dashboard</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href=" {{ base_dir ~ asset('img/favicon.png') }} ">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href=" {{ base_dir ~ asset('css/normalize.css') }}">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet"  href=" {{ base_dir ~ asset('css/main.css') }} ">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href=" {{ base_dir ~ asset('css/bootstrap.min.css') }} " >
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href=" {{ base_dir ~ asset('css/all.min.css') }} ">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet"  href=" {{ base_dir ~ asset('fonts/flaticon.css') }} " >
+    <!-- Full Calender CSS -->
+    <link rel="stylesheet" href=" {{ base_dir ~ asset('css/fullcalendar.min.css') }} ">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href=" {{ base_dir ~ asset('css/animate.min.css') }} " >
+    <!-- Select 2 CSS -->
+    <link rel="stylesheet" href="{{ base_dir ~ asset('css/select2.min.css') }} ">
+    <!-- Date Picker CSS -->
+    <link rel="stylesheet" href="{{  base_dir ~ asset('css/datepicker.min.css') }}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href=" {{ base_dir ~ asset('style.css') }} " >
+    <!-- Modernize js -->
+    <script href=" {{ base_dir ~ asset('js/modernizr-3.6.0.min.js') }} "></script>
+</head>
+<body>
+
+<div class="dashboard-content-one">
+
+    <!-- Breadcubs Area End Here -->
+    <!-- Student Details Area Start Here -->
+    <div class="card height-auto">
+        <div class="card-body">
+
+            <div class="single-info-details">
+                <div class="item-img">
+                    <img src="{{ base_dir ~ asset('img/figure/teacher.jpg') }}" alt="student">
+                </div>
+                <div class="item-content">
+                    <div class="header-inline item-header">
+                        <h3 class="text-dark-medium font-medium">{{ var.firstName }} {{ var.lastName }}</h3>
+
+
+                    </div>
+
+                    <div class="info-table table-responsive">
+                        <table class="table text-nowrap">
+                            <tbody>
+                            <tr>
+                                <td>Name:</td>
+                                <td class="font-medium text-dark-medium">{{ var.firstName }}</td>
+                            </tr>
+                            <tr>
+                                <td>Last Name:</td>
+                                <td class="font-medium text-dark-medium">{{ var.lastName }}</td>
+                            </tr>
+                            <tr>
+                                <td>E-mail:</td>
+                                <td class="font-medium text-dark-medium">{{ var.email }}</td>
+                            </tr>
+                            <tr>
+                                <td>Gender:</td>
+                                <td class="font-medium text-dark-medium">{{ var.gender }}</td>
+                            </tr>
+                            <tr>
+                                <td>Phone:</td>
+                                <td class="font-medium text-dark-medium">{{ var.phone }}</td>
+                            </tr>
+                            <tr>
+                                <td>Adress:</td>
+                                <td class="font-medium text-dark-medium">{{ var.address }}</td>
+                            </tr>
+                            <tr>
+                                <td>Birth Day:</td>
+                                <td class="font-medium text-dark-medium">{{ var.birthDay }}</td>
+                            </tr>
+                            <tr>
+                                <td>Joining Date:</td>
+                                <td class="font-medium text-dark-medium">{{ var.joiningDate }}</td>
+                            </tr>
+
+                            <tr>
+                                <td>Occupation:</td>
+                                <td class="font-medium text-dark-medium">Business</td>
+                            </tr>
+                            <tr>
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Student Details Area End Here -->
+    <footer class="footer-wrap-layout1">
+        <div class="copyright">© Copyrights <a href="#">akkhor</a> 2019. All rights reserved. Designed by <a href="#">PsdBosS</a></div>
+    </footer>
+</div>
+
+    </div>
+</div>
+<!-- Page Area End Here -->
+<!-- jquery-->
+<script src=" {{ base_dir ~ asset('js/jquery-3.3.1.min.js') }} " ></script>
+<!-- Plugins js -->
+<script src=" {{ base_dir ~ asset('js/plugins.js') }} " ></script>
+<!-- Popper js -->
+<script src=" {{ base_dir ~ asset('js/popper.min.js') }} "></script>
+<!-- Bootstrap js -->
+<script src=" {{ base_dir ~ asset('js/bootstrap.min.js') }} " ></script>
+<!-- Counterup Js -->
+<script src=" {{ base_dir ~ asset('js/jquery.counterup.min.js') }} " ></script>
+<!-- Moment Js -->
+<script  src=" {{ base_dir ~ asset('js/moment.min.js') }} " ></script>
+<!-- Scroll Up Js -->
+<script src=" {{ base_dir ~ asset('js/jquery.scrollUp.min.js') }} " ></script>
+<!-- Waypoints Js -->
+<script  src=" {{ base_dir ~ asset('js/jquery.waypoints.min.js') }} " ></script>
+<!-- Select 2 Js -->
+<script src="{{ base_dir ~ asset('js/select2.min.js') }}"></script>
+<!-- Date Picker Js -->
+<script src="{{ base_dir ~ asset('js/datepicker.min.js') }}"></script>
+<!-- Full Calender Js -->
+<script src=" {{ base_dir ~ asset('js/fullcalendar.min.js') }} "></script>
+<!-- Chart Js -->
+<script  src=" {{ base_dir ~ asset('js/Chart.min.js') }} " ></script>
+
+<!-- Custom Js -->
+<script  src=" {{ base_dir ~ asset('js/main.js') }} " ></script>
+</body>
+</html>

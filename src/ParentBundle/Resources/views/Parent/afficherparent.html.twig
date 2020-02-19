@@ -42,10 +42,10 @@
      <form class="mg-b-20">
       <div class="row gutters-8">
        <div class="col-3-xxxl col-xl-3 col-lg-3 col-12 form-group">
-        <input type="text"x placeholder="Search by ID ..." class="form-control search" >
+        <input  type="text" placeholder="Search by ID ..." class="form-control search">
        </div>
        <div class="col-4-xxxl col-xl-4 col-lg-3 col-12 form-group">
-        <input type="text" placeholder="Search by Name ..." class="form-control search">
+        <input id="ser" name="q" type="text" placeholder="Search by Name ..." class="form-control search">
        </div>
        <div class="col-4-xxxl col-xl-3 col-lg-3 col-12 form-group">
         <input type="text" placeholder="Search by Joinig Date" class="form-control search">
@@ -70,11 +70,12 @@
      <script type="text/javascript">
       jQuery(document).ready(function() {
        var searchRequest = null;
-       $(".search").keyup(function() {
+       $("#ser").keyup(function() {
         var minlength = 1;
         var that = this;
         var value = $(this).val();
-        var entitySelector = $("#entitiesNav").html('');
+        var entitySelector = $("#search").html('');
+        entitySelector.hide();
         if (value.length >= minlength ) {
          if (searchRequest != null)
           searchRequest.abort();
@@ -93,9 +94,11 @@
              $.each(arr, function(id, value) {
               if (key === 'posts') {
                if (id !== 'error') {
+
                 console.log(value[1]);
-                var large= '<div class="table-responsive"> <table class="table display data-table text-nowrap"> <thead> <tr> <th>ID</th> <th>Name</th> <th>Gender</th> <th>Occupation</th><th>E-mail</th><th>Adress</th><th>Phone</th><th>Date of Birth</th><th>Joining Date </th><th>PHOTO</th><th>Budget</th><th>Price</th><th></th> </tr> </thead> <tbody> <tr> <td> '+value[0]+'</td> <td>'+value[1]+'</td> <td> '+value[2]+'</td><td> '+value[3]+'</td><td> '+value[4]+'</td><td> '+ value[5]+'</td><td> '+ value[6]+'</td><td> '+ value[7]+'</td> <td> '+ value[8]+'</td><td> '+ value[9]+'</td><td> '+ value[10]+'</td></tbody> </table> </div>';
-                entitySelector.append(large) ; }
+                var large= '<tbody><tr> <td> '+value[0]+'</td> <td>'+value[1]+'</td> <td> '+value[2]+'</td><td> '+value[3]+'</td><td> '+value[4]+'</td><td> '+ value[5]+'</td><td> '+ value[6]+'</td><td> '+ value[7]+'</td> <td> '+ value[8]+'</td><td> '+ value[9]+'</td><td> '+ value[10]+'</td></tr></tbody>';
+                entitySelector.replaceWith(large) ;
+               }
                else {
                 entitySelector.append('<li class="errorLi">'+value+'</li>');
                }
@@ -115,7 +118,7 @@
 
 
 
-     <div class="table-responsive">
+     <div class="table-responsive"  >
       <table class="table display data-table text-nowrap">
        <thead>
        <tr>
@@ -133,8 +136,9 @@
        </tr>
        </thead>
        {% for i in var %}
-       <tbody>
-       <tr>
+       <tbody  id="search">
+       <tr >
+
         <td>
          <div class="form-check">
           <input type="checkbox" class="form-check-input ">

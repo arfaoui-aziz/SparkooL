@@ -52,3 +52,7 @@ search_parent:
 ajax:
     path:     /ajax
     defaults: { _controller: ParentBundle:Parent:search }
+
+PDF:
+    path:     /PDF/{id}
+    defaults: { _controller: ParentBundle:Parent:DisplayPDF }

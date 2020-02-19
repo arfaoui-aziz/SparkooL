@@ -11,14 +11,4 @@ namespace ParentBundle\Repository;
 class ParentRepository extends \Doctrine\ORM\EntityRepository
 {
 
-    public function findEntitiesByString($str){
-        return $this->getEntityManager()
-            ->createQuery(
-                'SELECT par
-                FROM AppBundle:Parents par
-                WHERE par.id LIKE :str or par.lastName LIKE :str or  par.joiningDate LIKE :str'
-            )
-            ->setParameter('str', '%'.$str.'%')
-            ->getResult();
-    }
 }

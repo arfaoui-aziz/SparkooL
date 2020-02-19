@@ -147,7 +147,7 @@ class __TwigTemplate_813ff4014bd6d34e3170db482e3dc6c3bde3bc0b48ad8039e3a20f8b029
         echo "
 
        </div>
-      
+
        <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
         <label>Date Of Birth *</label>
         ";
@@ -312,7 +312,7 @@ class __TwigTemplate_813ff4014bd6d34e3170db482e3dc6c3bde3bc0b48ad8039e3a20f8b029
         {{ form_widget (form.occupation , {'attr': {'class':'form-control'}}) }}
 
        </div>
-      
+
        <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
         <label>Date Of Birth *</label>
         {{ form_widget (form.birthDay , {'attr': {'class':'form-control air-datepicker','placeholder':'dd/mm/yyyy', 'data-position':'bottom right'} }  ) }}                            <i class=\"far fa-calendar-alt\"></i>

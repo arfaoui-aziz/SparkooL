@@ -3,6 +3,7 @@
 namespace ParentBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * reclamation
@@ -25,6 +26,11 @@ class reclamation
      * @var string
      *
      * @ORM\Column(name="type", type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Choice(
+     * choices = { "Parent","Teacher","Etudiant"},
+     * message = "Ghaddoussaa mokrez"
+     * )
      */
     private $type;
 
@@ -46,6 +52,7 @@ class reclamation
      * @var string
      *
      * @ORM\Column(name="message", type="string", length=255)
+     * @Assert\NotBlank
      */
     private $message;
 

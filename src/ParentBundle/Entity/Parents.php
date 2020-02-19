@@ -30,42 +30,42 @@ class Parents
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank
      * @ORM\Column(name="prenom", type="string", length=255)
      */
     private $prenom;
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank
      * @ORM\Column(name="sexe", type="string", length=255)
      */
     private $sexe;
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank
      * @ORM\Column(name="occupation", type="string", length=255)
      */
     private $occupation;
 
     /**
      * @var int
-     *
+     * @Assert\NotBlank
      * @ORM\Column(name="cin", type="integer")
      */
     private $cin;
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank
      * @ORM\Column(name="region", type="string", length=255)
      */
     private $region;
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank
      * @ORM\Column(name="email", type="string", length=255)
      */
     private $email;

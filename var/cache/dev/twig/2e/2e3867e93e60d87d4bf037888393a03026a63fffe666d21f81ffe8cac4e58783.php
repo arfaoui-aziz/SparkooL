@@ -166,9 +166,7 @@ class __TwigTemplate_9804c63e1deb3ac34ecbc5c677fd141444779d6b0dd4f19d3fa6a4c5799
                             ";
         } else {
             // line 86
-            echo "                            <h5 class=\"item-title\">";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", []), "roles", []), 0, [], "array"), "html", null, true);
-            echo "</h5>
+            echo "                            <h5 class=\"item-title\">Admin</h5>
                             <span>Admin</span>
                             ";
         }
@@ -396,10 +394,7 @@ class __TwigTemplate_9804c63e1deb3ac34ecbc5c677fd141444779d6b0dd4f19d3fa6a4c5799
             echo "                                <div class=\"item-title\">";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", []), "username", []), "html", null, true);
             echo "</div>
-                                    <div class=\"item-title1\">";
-            // line 268
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", []), "roles", []), 0, [], "array"), "html", null, true);
-            echo "</div>
+                                    <div class=\"item-title1\">Admin</div>
                                 ";
         } else {
             // line 270
@@ -1025,7 +1020,7 @@ class __TwigTemplate_9804c63e1deb3ac34ecbc5c677fd141444779d6b0dd4f19d3fa6a4c5799
 
     public function getDebugInfo()
     {
-        return array (  1004 => 472,  995 => 471,  767 => 525,  747 => 508,  727 => 491,  708 => 474,  706 => 471,  687 => 454,  678 => 453,  663 => 773,  657 => 770,  652 => 768,  647 => 766,  642 => 764,  637 => 762,  632 => 760,  627 => 758,  622 => 756,  617 => 754,  612 => 752,  607 => 750,  602 => 748,  595 => 743,  593 => 453,  412 => 274,  406 => 270,  401 => 268,  396 => 267,  394 => 266,  386 => 261,  369 => 247,  296 => 177,  278 => 162,  260 => 147,  242 => 132,  221 => 113,  217 => 111,  211 => 109,  209 => 108,  200 => 101,  196 => 99,  190 => 97,  188 => 96,  180 => 91,  176 => 89,  169 => 86,  162 => 83,  160 => 82,  122 => 47,  107 => 35,  102 => 33,  97 => 31,  92 => 29,  87 => 27,  82 => 25,  77 => 23,  72 => 21,  67 => 19,  62 => 17,  56 => 14,  51 => 12,  38 => 1,);
+        return array (  999 => 472,  990 => 471,  762 => 525,  742 => 508,  722 => 491,  703 => 474,  701 => 471,  682 => 454,  673 => 453,  658 => 773,  652 => 770,  647 => 768,  642 => 766,  637 => 764,  632 => 762,  627 => 760,  622 => 758,  617 => 756,  612 => 754,  607 => 752,  602 => 750,  597 => 748,  590 => 743,  588 => 453,  407 => 274,  401 => 270,  394 => 267,  392 => 266,  384 => 261,  367 => 247,  294 => 177,  276 => 162,  258 => 147,  240 => 132,  219 => 113,  215 => 111,  209 => 109,  207 => 108,  198 => 101,  194 => 99,  188 => 97,  186 => 96,  178 => 91,  174 => 89,  169 => 86,  162 => 83,  160 => 82,  122 => 47,  107 => 35,  102 => 33,  97 => 31,  92 => 29,  87 => 27,  82 => 25,  77 => 23,  72 => 21,  67 => 19,  62 => 17,  56 => 14,  51 => 12,  38 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -1123,7 +1118,7 @@ class __TwigTemplate_9804c63e1deb3ac34ecbc5c677fd141444779d6b0dd4f19d3fa6a4c5799
                             <h5 class=\"item-title\">{{ app.user.username }}</h5>
                             <span>Admin</span>
                             {% else %}
-                            <h5 class=\"item-title\">{{ app.user.roles[0] }}</h5>
+                            <h5 class=\"item-title\">Admin</h5>
                             <span>Admin</span>
                             {% endif %}
                         </div>
@@ -1305,7 +1300,7 @@ class __TwigTemplate_9804c63e1deb3ac34ecbc5c677fd141444779d6b0dd4f19d3fa6a4c5799
                             <div class=\"item-content\">
                                 {% if is_granted('ROLE_USER') %}
                                 <div class=\"item-title\">{{ app.user.username }}</div>
-                                    <div class=\"item-title1\">{{ app.user.roles[0] }}</div>
+                                    <div class=\"item-title1\">Admin</div>
                                 {% else %}
                                     <div class=\"item-title\">Aziz Arfaoui</div>
 

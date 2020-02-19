@@ -83,7 +83,7 @@
                             <h5 class="item-title">{{ app.user.username }}</h5>
                             <span>Admin</span>
                             {% else %}
-                            <h5 class="item-title">{{ app.user.roles[0] }}</h5>
+                            <h5 class="item-title">Admin</h5>
                             <span>Admin</span>
                             {% endif %}
                         </div>
@@ -265,7 +265,7 @@
                             <div class="item-content">
                                 {% if is_granted('ROLE_USER') %}
                                 <div class="item-title">{{ app.user.username }}</div>
-                                    <div class="item-title1">{{ app.user.roles[0] }}</div>
+                                    <div class="item-title1">Admin</div>
                                 {% else %}
                                     <div class="item-title">Aziz Arfaoui</div>
 

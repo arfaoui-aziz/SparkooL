@@ -20,9 +20,9 @@
                 <div class="tab-content rounded-bottom shadow bg-white py-4 px-5">
                     <div class="tab-pane fade show active" id="home-moving" role="tabpanel" aria-labelledby="home-moving-tab">
 
-                        <div class="form-widget">
+
                             <div class="form-result"></div>
-                            <form class="row home-moving-form position-relative mb-0" method="post">
+                            <form class="row home-moving-form position-relative mb-0" method="post" novalidate>
                                 {{ form_start(form) }}
                                 {{ form_row(form._token) }}
                                 <div class="form-process"></div>
@@ -32,22 +32,22 @@
                                         <span class="input-group-text nobg"><i class="fas fa-sticky-note"></i></span>
                                     </div>
                                     {{ form_widget (form.type , {'attr': {'class':'select2'}}) }}
+                                    {{ form_errors(form.type) }}
 
                                 </div>
 
-                                <div class="col-sm-6 input-group form-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text nobg"><i class="icon-line2-user"></i></span>
-                                    </div>
-                                    {{ form_widget(form.parent, {'value' : app.user.id },{'class': 'hidden'}) }}
 
-                                </div>
+                                    {{ form_widget(form.parent,{'attr': {'class':'hidden','value':' {{app.user.id}}' }} ) }}
+
+
+
 
                                 <div class="col-sm-6 input-group form-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text nobg"><i class="fas fa-key"></i></span>
                                     </div>
                                     {{ form_widget (form.message , {'attr': {'class':'form-control'}}) }}
+                                    {{ form_errors(form.message) }}
                                 </div>
 
 
@@ -68,7 +68,7 @@
 
                                 {{ form_end(form,{'render_rest': false}) }}
                             </form>
-                        </div>
+
                     </div>
                 </div>
             </div>
