@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
 {% block body %}
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
 <div class="dashboard-content-one">
     <!-- Breadcubs Area Start Here -->
     <div class="breadcrumbs-area">
@@ -21,18 +23,97 @@
                         <input type="text" placeholder="Search by ID ..." class="form-control">
                     </div>
                     <div class="col-4-xxxl col-xl-4 col-lg-3 col-12 form-group">
-                        <input type="text" placeholder="Search by Name ..." class="form-control">
+                        <input id="searchName"  name="searchName" type="text" placeholder="Search by Name ..." class="form-control">
                     </div>
                     <div class="col-4-xxxl col-xl-3 col-lg-3 col-12 form-group">
-                        <input type="text" placeholder="Search by Phone ..." class="form-control">
+
                     </div>
+
                     <div class="col-1-xxxl col-xl-2 col-lg-3 col-12 form-group">
-                        <button type="submit" class="fw-btn-fill btn-gradient-yellow">SEARCH</button>
+
+                        <button type="submit" class="fw-btn-fill radius-30 btn-gradient-yellow " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter By&nbsp;<i class="fas fa-filter"></i></button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Admin</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
                     </div>
+
+               
                 </div>
             </form>
+
+
+
+
+
+            <script type="text/javascript">
+                jQuery(document).ready(function() {
+                    var searchRequest = null;
+
+                        $("#searchName").keyup(function () {
+                            var minlength = 1;
+                            var that = this;
+                            var value = $(this).val();
+                            var entitySelector = $("#searchResult").html('');
+
+
+                            if (value.length >= minlength) {
+                                if (searchRequest != null)
+                                    searchRequest.abort();
+                                searchRequest = $.ajax({
+                                    type: "GET",
+                                    url: "{{ path('admin_SearchAjax') }}",
+                                    data: {
+                                        'searchName': value
+                                    },
+                                    dataType: "text",
+                                    success: function (msg) {
+                                        //we need to check if the value is the same
+                                        if (value === $(that).val()) {
+                                            var result = JSON.parse(msg);
+
+                                            $.each(result, function (key, arr) {
+                                                $.each(arr, function (id, value) {
+                                                    if (key === 'users') {
+                                                        if (id !== 'error') {
+
+                                                            var assetsBaseDir = "{{ asset('img/figure/user.jpg') }}";
+                                                            var large =
+                                                                ' <tr>' +
+                                                                '<td> <div class="form-check"> <input type="checkbox" class="form-check-input"> <label class="form-check-label">#' + value[0] + '</label> </div> </td>' +
+                                                                ' <td class="text-center"> <img src="' + assetsBaseDir + '" class="media-img-auto" alt="student"> </td>' +
+                                                                ' <td>' + value[1] + '</td> ' +
+                                                                ' <td>' + value[2] + '</td> ' +
+                                                                '<td>' + value[3] + '</td> ' +
+                                                                '<td>' + value[4] + '</td> ' +
+                                                                '<td>' + value[5] + '</td> ' +
+                                                                '<td>' + value[6] + '</td> ' +
+                                                                '<td>' + value[7] + '</td>' +
+                                                                '</tr> ';
+                                                            entitySelector.append(large);
+                                                        } else {
+                                                            entitySelector.append('<li class="errorLi">' + value + '</li>');
+
+                                                        }
+                                                    }
+
+                                                });
+                                            });
+                                        }
+                                    }
+                                });
+                            }else {location.reload(false);}
+                        });
+
+               });
+            </script>
+
+
             <div class="table-responsive">
-                <table class="table display data-table text-nowrap">
+                <table class="table display data-table text-nowrap" >
                     <thead>
 
                     <tr>
@@ -53,9 +134,10 @@
                         <th></th>
                     </tr>
                     </thead>
-                    <tbody>
+
+                    <tbody id="searchResult">
                     {% for au in allUsers %}
-                    <tr>
+                    <tr  >
                         <td>
                             <div class="form-check">
                                 <input type="checkbox" class="form-check-input">
@@ -104,5 +186,8 @@
     </footer>
 </div>
     </div>
+
+{% endblock %}
+{% block jq %}
 
 {% endblock %}

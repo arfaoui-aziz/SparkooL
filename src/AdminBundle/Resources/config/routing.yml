@@ -13,6 +13,9 @@ admin_AccountSettings:
 admin_AllAccounts:
     path:     /AllAccounts
     defaults: { _controller: AdminBundle:Account:AllAccounts }
+admin_SearchAjax:
+    path:     /SearchAjax
+    defaults: { _controller: AdminBundle:Account:search }
 admin_UserDetails:
     path:     /UserDetails
     defaults: { _controller: AdminBundle:Account:UserDetails }

@@ -142,4 +142,26 @@ class AccountController extends Controller
         );
     }
 
+   public function searchAction(Request $request)
+    {        $em = $this->getDoctrine()->getManager();
+        $searchName = $request->get('searchName');
+        $users = $em->getRepository('AppBundle:User')->findUserByName($searchName);
+        if (!$users) {
+            $result['users']['error'] = "Post Not found :( ";
+        } else {
+            $result['users'] = $this->getUsers($users);
+        }
+        return new Response(json_encode($result));
+    }
+    public function getUsers($users)
+    {
+      foreach ($users as $users) {
+            $realEntities[$users->getId()] = [$users->getId(),$users->getFirstName(), $users->getLastName(),$users->getGender(),$users->getUserType(),$users->getAddress(),$users->getPhone(),$users->getEmail()];
+
+        }
+        return $realEntities;
+    }
+
+
+
 }

@@ -218,6 +218,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
             }
 
+            // admin_SearchAjax
+            if ('/admin/SearchAjax' === $pathinfo) {
+                return array (  '_controller' => 'AdminBundle\\Controller\\AccountController::searchAction',  '_route' => 'admin_SearchAjax',);
+            }
+
             // admin_ScheduleFront
             if ('/admin/ScheduleFront' === $pathinfo) {
                 return array (  '_controller' => 'AdminBundle\\Controller\\ScheduleController::ScheduleFrontAction',  '_route' => 'admin_ScheduleFront',);
