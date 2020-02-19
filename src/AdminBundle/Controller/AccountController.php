@@ -147,12 +147,13 @@ class AccountController extends Controller
         $searchName = $request->get('searchName');
         $users = $em->getRepository('AppBundle:User')->findUserByName($searchName);
         if (!$users) {
-            $result['users']['error'] = "Post Not found :( ";
+            $result['users']['error'] = "There is no User with this name ";
         } else {
             $result['users'] = $this->getUsers($users);
         }
         return new Response(json_encode($result));
     }
+
     public function getUsers($users)
     {
       foreach ($users as $users) {
@@ -161,6 +162,20 @@ class AccountController extends Controller
         }
         return $realEntities;
     }
+
+
+    public function SortAdminAction(Request $request)
+    {        $em = $this->getDoctrine()->getManager();
+
+        $users = $em->getRepository('AppBundle:User')->findAdmin();
+        if (!$users) {
+            $result['users']['error'] = "There is no User with this Role";
+        } else {
+            $result['users'] = $this->getUsers($users);
+        }
+        return new Response(json_encode($result));
+    }
+
 
 
 

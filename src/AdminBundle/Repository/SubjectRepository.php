@@ -10,4 +10,24 @@ namespace AdminBundle\Repository;
  */
 class SubjectRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findSubjectByName($searchName){
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT s
+                FROM AdminBundle:Subject s
+                WHERE s.subjectName LIKE :searchName '
+            )
+            ->setParameter('searchName', '%'.$searchName.'%')
+            ->getResult();
+    }
+
+    public function findHighest(){
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT s
+                FROM AdminBundle:Subject s
+                ORDER BY s.coefficient ASC '
+            )
+            ->getResult();
+    }
 }

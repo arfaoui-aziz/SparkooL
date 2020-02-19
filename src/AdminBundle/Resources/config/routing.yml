@@ -16,6 +16,9 @@ admin_AllAccounts:
 admin_SearchAjax:
     path:     /SearchAjax
     defaults: { _controller: AdminBundle:Account:search }
+admin_SortAdmin:
+    path:     /SortAdmin
+    defaults: { _controller: AdminBundle:Account:SortAdmin }
 admin_UserDetails:
     path:     /UserDetails
     defaults: { _controller: AdminBundle:Account:UserDetails }
@@ -37,6 +40,9 @@ admin_AddSubject:
 admin_UpdateSubject:
     path:     /UpdateSubject/{subjectId}
     defaults: { _controller: AdminBundle:Subject:UpdateSubject }
+admin_searchSubject:
+    path:     /searchSubject
+    defaults: { _controller: AdminBundle:Subject:searchSubject }
 admin_DeleteSubject:
     path:     /DeleteSubject/{subjectId}
     defaults: { _controller: AdminBundle:Subject:DeleteSubject }

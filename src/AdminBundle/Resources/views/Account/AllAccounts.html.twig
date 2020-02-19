@@ -33,7 +33,7 @@
 
                         <button type="submit" class="fw-btn-fill radius-30 btn-gradient-yellow " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter By&nbsp;<i class="fas fa-filter"></i></button>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Admin</a>
+                            <p id="admin" class="dropdown-item" href="#">Admin</p>
                             <a class="dropdown-item" href="#">Another action</a>
                             <a class="dropdown-item" href="#">Something else here</a>
                             <div class="dropdown-divider"></div>
@@ -110,6 +110,59 @@
 
                });
             </script>
+
+
+            <script type="text/javascript">
+                jQuery(document).ready(function() {
+
+
+                    $("#admin").click(function () {
+                        var entitySelector = $("#searchResult").html('');
+                        $.ajax({
+                                type: "GET",
+                                url: "{{ path('admin_SortAdmin') }}",
+                                success: function (msg) {
+                                    //we need to check if the value is the same
+
+                                        var result = JSON.parse(msg);
+
+                                        $.each(result, function (key, arr) {
+                                            $.each(arr, function (id, value) {
+                                                if (key === 'users') {
+                                                    if (id !== 'error') {
+
+                                                        var assetsBaseDir = "{{ asset('img/figure/user.jpg') }}";
+                                                        var large =
+                                                            ' <tr>' +
+                                                            '<td> <div class="form-check"> <input type="checkbox" class="form-check-input"> <label class="form-check-label">#' + value[0] + '</label> </div> </td>' +
+                                                            ' <td class="text-center"> <img src="' + assetsBaseDir + '" class="media-img-auto" alt="student"> </td>' +
+                                                            ' <td>' + value[1] + '</td> ' +
+                                                            ' <td>' + value[2] + '</td> ' +
+                                                            '<td>' + value[3] + '</td> ' +
+                                                            '<td>' + value[4] + '</td> ' +
+                                                            '<td>' + value[5] + '</td> ' +
+                                                            '<td>' + value[6] + '</td> ' +
+                                                            '<td>' + value[7] + '</td>' +
+                                                            '</tr> ';
+                                                        entitySelector.append(large);
+                                                    } else {
+                                                        entitySelector.append('<li class="errorLi">' + value + '</li>');
+
+                                                    }
+                                                }
+
+                                            });
+                                        });
+
+                                }
+                            });
+
+                    });
+
+                });
+            </script>
+
+
 
 
             <div class="table-responsive">

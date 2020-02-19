@@ -218,14 +218,27 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
             }
 
-            // admin_SearchAjax
-            if ('/admin/SearchAjax' === $pathinfo) {
-                return array (  '_controller' => 'AdminBundle\\Controller\\AccountController::searchAction',  '_route' => 'admin_SearchAjax',);
+            elseif (0 === strpos($pathinfo, '/admin/S')) {
+                // admin_SearchAjax
+                if ('/admin/SearchAjax' === $pathinfo) {
+                    return array (  '_controller' => 'AdminBundle\\Controller\\AccountController::searchAction',  '_route' => 'admin_SearchAjax',);
+                }
+
+                // admin_SortAdmin
+                if ('/admin/SortAdmin' === $pathinfo) {
+                    return array (  '_controller' => 'AdminBundle\\Controller\\AccountController::SortAdminAction',  '_route' => 'admin_SortAdmin',);
+                }
+
+                // admin_ScheduleFront
+                if ('/admin/ScheduleFront' === $pathinfo) {
+                    return array (  '_controller' => 'AdminBundle\\Controller\\ScheduleController::ScheduleFrontAction',  '_route' => 'admin_ScheduleFront',);
+                }
+
             }
 
-            // admin_ScheduleFront
-            if ('/admin/ScheduleFront' === $pathinfo) {
-                return array (  '_controller' => 'AdminBundle\\Controller\\ScheduleController::ScheduleFrontAction',  '_route' => 'admin_ScheduleFront',);
+            // admin_searchSubject
+            if ('/admin/searchSubject' === $pathinfo) {
+                return array (  '_controller' => 'AdminBundle\\Controller\\SubjectController::searchSubjectAction',  '_route' => 'admin_searchSubject',);
             }
 
             // chart

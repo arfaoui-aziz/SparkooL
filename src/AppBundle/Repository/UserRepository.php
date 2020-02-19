@@ -20,4 +20,15 @@ class UserRepository extends \Doctrine\ORM\EntityRepository
             ->setParameter('searchName', '%'.$searchName.'%')
             ->getResult();
     }
+
+    public function findAdmin(){
+        return $this->getEntityManager()
+            ->createQuery(
+                "SELECT u
+    FROM AppBundle:User u Where u.userType= 'Administrator' "
+            )
+            ->getResult();
+    }
+
+
 }
