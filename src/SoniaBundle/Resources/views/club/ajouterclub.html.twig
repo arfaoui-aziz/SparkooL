@@ -28,31 +28,67 @@
                     <div class="row">
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>Name *</label>
+                        {% if form_errors(f.nomClub)|length <= 0 %}
                             {{ form_widget (f.nomClub, {'attr': {'class':'form-control'}}) }}
+                        {% else %}
+                            {{ form_widget (f.nomClub , {'attr': {'class':'form-control is-invalid'}}) }}
+                            <div class="invalid-feedback">
+                                {{ form_errors(f.nomClub) }}
+                            </div>
+                        {% endif %}
                         </div>
 
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>Members *</label>
-                            {{ form_widget (f.members , {'attr': {'class':'form-control','placeholder':'ed'}}) }}
+                            {% if form_errors(f.members)|length <= 0 %}
+                                {{ form_widget (f.members , {'attr': {'class':'form-control'}}) }}
+                            {% else %}
+                                {{ form_widget (f.members , {'attr': {'class':'form-control is-invalid'}}) }}
+                                <div class="invalid-feedback">
+                                    {{ form_errors(f.members) }}
+                                </div>
+                            {% endif %}
                         </div>
-
 
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>Type Of Activity *</label>
-                            {{ form_widget (f.activity , {'attr': {'class':'form-control'}}) }}
+                            {% if form_errors(f.activity)|length <= 0 %}
+                                {{ form_widget (f.activity , {'attr': {'class':'select2' }}) }}
+                            {% else %}
+                                {{ form_widget (f.activity , {'attr': {'class':'select2 is-invalid'}}) }}
+                                <div class="invalid-feedback">
+                                    {{ form_errors(f.activity) }}
+                                </div>
+                            {% endif %}
                         </div>
 
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label> Budget *</label>
-                            {{ form_widget (f.budget , {'attr': {'class':'form-control'}}) }}
+                            {% if form_errors(f.budget)|length <= 0 %}
+                                {{ form_widget (f.budget , {'attr': {'class':'form-control'}}) }}
+                            {% else %}
+                                {{ form_widget (f.budget , {'attr': {'class':'form-control is-invalid'}}) }}
+                                <div class="invalid-feedback">
+                                    {{ form_errors(f.budget) }}
+                                </div>
+                            {% endif %}
                         </div>
+
 
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label> Date Of Creation *</label>
+                            {% if form_errors(f.dateCreation)|length <= 0 %}
                             {{ form_widget ( f.dateCreation , {'attr': {'class':'form-control air-datepicker','placeholder':'dd/mm/yyyy', 'data-position':'bottom right'} }  ) }}
                             <i class="far fa-calendar-alt"></i>
+                            {% else %}
+                                {{ form_widget (f.dateCreation , {'attr': {'class':'form-control air-datepicker is-invalid'}}) }}
+                                <div class="invalid-feedback">
+                                    {{ form_errors(f.dateCreation) }}
+                                    <i class="far fa-calendar-alt"></i>
+                                </div>
+                            {% endif %}
                         </div>
-                        <br>
+                                            <br>
                     </div>
              {{form_end(f)}}
             </form>
@@ -67,6 +103,7 @@
                     </div>
                 </div>
             </section>
+
             <!-- Student Table Area End Here -->
             <footer class="footer-wrap-layout1">
                 <div class="copyright">© Copyrights <a href="#">SparkIT</a> 2020. All rights reserved</div>

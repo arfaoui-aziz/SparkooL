@@ -238,6 +238,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $this->mergeDefaults(array_replace($matches, ['_route' => 'participateClub']), array (  '_controller' => 'SoniaBundle\\Controller\\ClubController::ParticipateClubAction',));
             }
 
+            // Rating
+            if (0 === strpos($pathinfo, '/sonia/Rating') && preg_match('#^/sonia/Rating/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'Rating']), array (  '_controller' => 'SoniaBundle\\Controller\\ClubController::RatingAction',));
+            }
+
         }
 
         // fos_user_security_login

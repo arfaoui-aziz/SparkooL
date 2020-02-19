@@ -28,58 +28,123 @@
                     <div class="row">
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>Name *</label>
-                            {{ form_widget (f.nomEvent, {'attr': {'class':'form-control''placeholder':'Kids Event'}}) }}
-                        </div>
+                       {% if form_errors(f.nomEvent)|length <= 0 %}
+                            {{ form_widget (f.nomEvent, {'attr': {'class':'form-control','placeholder':'Kids Competiton'}}) }}
+                        {% else %}
+                            {{ form_widget (f.nomEvent , {'attr': {'class':'form-control is-invalid'}}) }}
+                            <div class="invalid-feedback">
+                                {{ form_errors(f.nomEvent) }}
+                            </div>
 
+                        {% endif %}
+                        </div>
                         {%  do f.typeEvent.setRendered() %}
 
 
-                        <div class="col-xl-3 col-lg-6 col-12 form-group">
-                            <label>Description *</label>
-                            {{ form_widget (f.description , {'attr': {'class':'form-control','placeholder':'The Competition is about'}}) }}
-                        </div>
+                            <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                <label>Description *</label>
+                                {% if form_errors(f.description)|length <= 0 %}
+                                    {{ form_widget (f.description , {'attr': {'class':'form-control','placeholder':'The Competition is about'}}) }}
+                                {% else %}
+                                    {{ form_widget (f.description , {'attr': {'class':'form-control is-invalid'}}) }}
+                                    <div class="invalid-feedback">
+                                        {{ form_errors(f.description) }}
+                                    </div>
+                                {% endif %}
+                            </div>
 
 
-                        <div class="col-xl-3 col-lg-6 col-12 form-group">
-                            <label>Date *</label>
-                            {{ form_widget ( f.dateEvent , {'attr': {'class':'form-control air-datepicker','placeholder':'dd/mm/yyyy', 'data-position':'bottom right'} }  ) }}
-                            <i class="far fa-calendar-alt"></i>
-                        </div>
+                            <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                <label>Date *</label>
+                                {% if form_errors(f.dateEvent)|length <= 0 %}
+                                    {{ form_widget ( f.dateEvent , {'attr': {'class':'form-control air-datepicker','placeholder':'dd/mm/yyyy', 'data-position':'bottom right'  } }  ) }}
+                                    <i class="far fa-calendar-alt"></i>
+                                {% else %}
+                                    {{ form_widget (f.dateEvent , {'attr': {'class':'form-control air-datepicker is-invalid'}}) }}
+                                    <div class="invalid-feedback">
+                                        {{ form_errors(f.dateEvent) }}
+                                    </div>
+                                {% endif %}
+                            </div>
 
-                        <div class="col-xl-3 col-lg-6 col-12 form-group">
-                            <label>Place of Event *</label>
-                            {{ form_widget (f.placeEvent , {'attr': {'class':'form-control''placeholder':'Classroom'}}) }}
-                        </div>
+                            <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                <label>Place of Event *</label>
+                                {% if form_errors(f.placeEvent)|length <= 0 %}
+                                    {{ form_widget (f.placeEvent , {'attr': {'class':'form-control','placeholder':'Classroom'}}) }}
+                                {% else %}
+                                    {{ form_widget (f.placeEvent , {'attr': {'class':'form-control is-invalid'}}) }}
+                                    <div class="invalid-feedback">
+                                        {{ form_errors(f.placeEvent) }}
+                                    </div>
+                                {% endif %}
+                            </div>
 
-                        <div class="col-xl-3 col-lg-6 col-12 form-group">
-                            <label> Participants *</label>
-                            {{ form_widget (f.nbParticipants , {'attr': {'class':'form-control'}}) }}
-                        </div>
 
+                            <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                <label>  Participants  *</label>
+                                {% if form_errors(f.nbParticipants)|length <= 0 %}
+                                    {{ form_widget (f.nbParticipants , {'attr': {'class':'form-control'}}) }}
+                                {% else %}
+                                    {{ form_widget (f.nbParticipants , {'attr': {'class':'form-control is-invalid'}}) }}
+                                    <div class="invalid-feedback">
+                                        {{ form_errors(f.nbParticipants) }}
+                                    </div>
+                                {% endif %}
+                            </div>
 
-
-                        <div class="col-xl-3 col-lg-6 col-12 form-group">
-                            <label> Theme *</label>
-                            {{ form_widget (f.theme , {'attr': {'class':'form-control''placeholder':'Food'}}) }}
-                        </div>
+                            <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                <label> Theme *</label>
+                                {% if form_errors(f.theme)|length <= 0 %}
+                                    {{ form_widget (f.theme , {'attr': {'class':'select2'}}) }}
+                                {% else %}
+                                    {{ form_widget (f.theme , {'attr': {'class':'select2 is-invalid'}}) }}
+                                    <div class="invalid-feedback">
+                                        {{ form_errors(f.theme) }}
+                                    </div>
+                                {% endif %}
+                            </div>
 
                         {%  do f.destination.setRendered() %}
 
 
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label> Award *</label>
-                            {{ form_widget (f.award , {'attr': {'class':'form-control'}}) }}
+                            {% if form_errors(f.award)|length <= 0 %}
+                                {{ form_widget (f.award , {'attr': {'class':'form-control'}}) }}
+                            {% else %}
+                                {{ form_widget (f.award , {'attr': {'class':'form-control is-invalid'}}) }}
+                                <div class="invalid-feedback">
+                                    {{ form_errors(f.award) }}
+                                </div>
+                            {% endif %}
                         </div>
 
-                        <div class="col-xl-3 col-lg-6 col-12 form-group">
-                            <label> Budget *</label>
-                            {{ form_widget (f.budget , {'attr': {'class':'form-control'}}) }}
-                        </div>
 
-                        <div class="col-xl-3 col-lg-6 col-12 form-group">
-                            <label> Price of Participation *</label>
-                            {{ form_widget (f.price , {'attr': {'class':'form-control''placeholder':'Free'}}) }}
-                        </div>
+                            <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                <label> Budget *</label>
+                                {% if form_errors(f.budget)|length <= 0 %}
+                                    {{ form_widget (f.budget , {'attr': {'class':'form-control'}}) }}
+                                {% else %}
+                                    {{ form_widget (f.budget , {'attr': {'class':'form-control is-invalid'}}) }}
+                                    <div class="invalid-feedback">
+                                        {{ form_errors(f.budget) }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                <label> Price of Participation *</label>
+                                {% if form_errors(f.budget)|length <= 0 %}
+                                    {{ form_widget (f.price , {'attr': {'class':'form-control','placeholder':'Free'}}) }}
+
+                                {% else %}
+                                    {{ form_widget (f.price , {'attr': {'class':'form-control is-invalid'}}) }}
+                                    <div class="invalid-feedback">
+                                        {{ form_errors(f.price) }}
+                                    </div>
+                                {% endif %}
+
+                            </div>
 <br>
                     </div>
 

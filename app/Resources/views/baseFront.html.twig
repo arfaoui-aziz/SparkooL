@@ -67,6 +67,7 @@
                 <a href="index.html" class="retina-logo" data-dark-logo="img/LogoPrinc.png"><img class="divcenter" src="{{ asset('FrontEnd/img/LogoPrinc.png')}}" alt="SparkooL Logo"></a>
             </div><!-- #logo end -->
 
+
             <ul class="header-extras">
 
                 <li>
@@ -84,7 +85,6 @@
                     </div>
 
                 </li>
-
 
 
 
@@ -132,6 +132,8 @@
                         <li><a href="#"><div>Contact Us</div></a></li>
 
 
+
+
                     </ul>
 
                     <!-- Header Buttons
@@ -145,8 +147,13 @@
                         {% else %}
                             <a href="{{ path('fos_user_security_login') }}"   class="button button-rounded button-white button-light button-small m-0">LOGIN</a>
                         {% endif %}
-
                     </div>
+
+
+
+
+
+
 
 
                     <!-- Top Search
@@ -162,40 +169,34 @@
 
                 </div>
 
-
-                <!-- NOTIF-->
-
-
-                {{ render(controller('SoniaBundle:Notification:display')) }}
-
-                {# Call NotificationsBundles's assets #}
-                {{ notifications_assets() }}
-                <script>
-                    /**
-                     * After calling notifications_assets() "pusher" is now available
-                     * and you can use it this way
-                     */
-
-                        // select the channel you want to listen to
-                    var channel = pusher.subscribe("notifications");// notifications channel
-                    channel.bind("my-event", function(data) {
-                        console.log('from notifications channel', data);
-                    });
-
-                    var channel = pusher.subscribe("messages");// messages channel
-                    channel.bind("my-event", function(data) {
-                        console.log('from messages channel', data);
-                    });
-                </script>
-
-
-
-
-
             </nav><!-- #primary-menu end -->
 
 
         </div>
+        <!-- NOTIF-->
+
+
+        {{ render(controller('SoniaBundle:Notification:display')) }}
+
+        {# Call NotificationsBundles's assets #}
+        {{ notifications_assets() }}
+        <script>
+            /**
+             * After calling notifications_assets() "pusher" is now available
+             * and you can use it this way
+             */
+
+                // select the channel you want to listen to
+            var channel = pusher.subscribe("notifications");// notifications channel
+            channel.bind("my-event", function(data) {
+                console.log('from notifications channel', data);
+            });
+
+            var channel = pusher.subscribe("messages");// messages channel
+            channel.bind("my-event", function(data) {
+                console.log('from messages channel', data);
+            });
+        </script>
 
     </header><!-- #header end -->
 

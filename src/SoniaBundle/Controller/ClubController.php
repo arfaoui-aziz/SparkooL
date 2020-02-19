@@ -7,7 +7,9 @@ use SoniaBundle\Entity\Event;
 use AppBundle\Entity\User;
 
 
+use SoniaBundle\Entity\Rating;
 use SoniaBundle\Form\ClubType;
+use SoniaBundle\Form\RatingType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -28,8 +30,38 @@ class ClubController extends Controller
         $Form->handleRequest($request);
         if($Form->isSubmitted() && $Form->isValid()){
             $em=$this->getDoctrine()->getManager();
+            $nomclub=$club->getNomClub();
             $em->persist($club);
             $em->flush();
+
+            //MAILING
+              $message = (new \Swift_Message('New Club'))
+                   ->setFrom('sparkool.sparkit@gmail.com')
+                   ->setTo('sonia.hadouej@esprit.tn');
+               //$message->setBody("Message Test");
+
+            $logoPrinc = $message->embed(\Swift_Image::fromPath('LogoPrinc.png'));
+            $logoFooter = $message->embed(\Swift_Image::fromPath('LogoFooter.png'));
+            $conf = $message->embed(\Swift_Image::fromPath('conf.png'));
+
+
+            $message->setBody(
+                $this->renderView(
+                // app/Resources/views/Emails/registration.html.twig
+                    '@Sonia/club/mailing.html.twig',
+                    array(
+                        'logoPrinc'=>$logoPrinc,
+                        'logoFooter'=>$logoFooter,
+                        'nom'=>$nomclub,
+                        'conf'=>$conf
+                        )
+                ),
+                'text/html'
+            );
+
+               $this->get('mailer')->send($message);
+
+
 
             $this->addFlash(
                 'info' , 'Added Successfully'
@@ -119,5 +151,29 @@ class ClubController extends Controller
         return $this->redirectToRoute('afficherClubFront');
 
     }
+
+    #ratiiing
+    function RatingAction(Request $request, $id){
+        $rate=new Rating();
+        $em=$this->getDoctrine()->getManager();
+            $club=$this->getDoctrine()->getRepository(Club::class)->find($id);
+            $user = $this->getUser()->getId();
+            $club1=$club->getIdClub();
+
+        if($request->isMethod('POST') ) {
+            $rate->setIdClub($club1);
+            $rate->setIdUser($user);
+            $em->persist($rate);
+            $em->flush();
+            $this->addFlash('success', "Your vote has been saved!");
+
+            return $this->redirectToRoute('afficherClubFront');
+        }
+
+        return $this->render('@Sonia/frontClub/afficherclubfrontRate.html.twig',
+            array('rate' =>$rate) );
+    }
+
+
 
 }

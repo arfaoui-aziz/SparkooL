@@ -10,4 +10,12 @@ namespace SoniaBundle\Repository;
  */
 class NotificationRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findEntitiesByNumber(){
+        $query= $this->getEntityManager()
+            ->createQuery(
+                'SELECT COUNT (p.id)
+                FROM SoniaBundle:Notification p '
+            );
+           return $result= $query->getSingleScalarResult();
+    }
 }

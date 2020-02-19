@@ -26,7 +26,8 @@
                             <label>Name *</label>
                             {{ form_widget (f.nomEvent, {'attr': {'class':'form-control'}}) }}
                         </div>
-                        {%  do f.typeEvent.setRendered() %}
+
+                      {#  {%   do f.typeEvent.setRendered() %} #}
 
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>Description *</label>
@@ -50,10 +51,10 @@
                             <label>Participant *</label>
                             {{ form_widget (f.nbParticipants , {'attr': {'class':'form-control'}}) }}
                         </div>
-
+{#
                         {%  do f.theme.setRendered() %}
                         {%  do f.destination.setRendered() %}
-                        {%  do f.award.setRendered() %}
+                        {%  do f.award.setRendered() %} #}
 
 
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
@@ -252,7 +253,7 @@
 
                     </div>
                     {% endif %}
-                    {{form_end(f)}}
+                    {{form_end(f, {'render_rest': false} )}}
 
                 </form>
                 <section class="content-header">

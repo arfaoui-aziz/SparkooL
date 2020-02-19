@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Notification Dropdown</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }} ">
+    <link rel="stylesheet" href= https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+
+
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script>
@@ -16,10 +19,50 @@
 </head>
 <body>
 
+<style>
+    .notification_icon{
+        width: 60px;
+        height: 60px;
+        background: #fff;
+        border-radius: 30px;
+        box-sizing: border-box;
+        text-align: center;
+
+    }
+
+    .notification_icon .fas{
+        color: #cecece;
+        line-height: 30px;
+        font-size: 30px;
+
+    }
+    .notification_icon .num{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #ff2c74;
+        color: #fff;
+        line-height: 20px ;
+        font-family: Sans-serif;
+        text-align: center;
+        font-size: 15px;
+
+    }
+
+</style>
+
+
+
+
 <div class="wrapper">
     <div class="notification_wrap">
         <div class="notification_icon">
-            <i class="far fa-bell"></i>
+            <i class="fas fa-bell"></i>
+                <span class="num"> {{ num }}</span>
+                <div class="item-title d-md-none text-16 mg-l-10">Notification</div>
         </div>
         <div class="dropdown">
             {% for notif in notifications %}

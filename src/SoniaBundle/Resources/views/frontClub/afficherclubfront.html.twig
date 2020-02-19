@@ -43,6 +43,9 @@
 
          {% endfor %}
 
+
+
+
          <!-- event Table Area Start Here -->
          {% for ff in var %}
          <div class="card height-auto">
@@ -62,6 +65,7 @@
                                  <ul>
                                      <li><a href="{{ path('afficherClubDetail',{'id':ff.idClub }) }}"><i class="fas fa-search-plus"></i></a></li>
                                  </ul>
+
                              </div>
                          </div>
 
@@ -76,13 +80,22 @@
                                      <td>Members:</td>
                                      <td class="font-medium text-dark-medium">{{ ff.members }}</td>
                                  </tr>
-                                 <tr>
+
+                                     <tr>
+                                     </tr>
+
+
 
                                  </tr>
 
                                  </tbody>
 
                              </table>
+                               <th> {{ twitterButton() }}</th>
+                             <th>{{ facebookButton() }}</th>
+                             <th>    {{ linkedinButton() }}</th>
+                             <th>   {{ googleplusButton() }}</th>
+                             </tr>
                          </div>
 
                      </div>
@@ -94,7 +107,6 @@
      </div>
      {% endfor %}
      <!-- ends Here -->
-
 
 
      <section class="content-header">
@@ -137,4 +149,7 @@
 
      <!-- Custom Js -->
      <script  src=" {{ asset('js/main.js') }} " ></script>
+
+
  {% endblock %}
+

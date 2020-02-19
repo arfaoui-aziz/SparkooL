@@ -12,6 +12,8 @@ use Doctrine\ORM\Mapping\ManyToMany;
 use SBC\NotificationsBundle\Builder\NotificationBuilder;
 use SBC\NotificationsBundle\Model\NotifiableInterface;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
 /**
  * @ORM\Entity(repositoryClass="SoniaBundle\Repository\EventRepository")
  */
@@ -22,6 +24,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @ORM\Table(name="event")
  * @ORM\Entity(repositoryClass="SoniaBundle\Repository\EventRepository")
+ * @UniqueEntity("nomEvent",message="This name is already taken  by other Event ")
+ * @UniqueEntity("dateEvent",message="This date is already used")
  */
 class Event implements NotifiableInterface
 {
@@ -38,6 +42,13 @@ class Event implements NotifiableInterface
      * @var string
      *
      * @ORM\Column(name="nomEvent", type="string", length=255)
+     * @Assert\NotBlank(message="Please insert an Name")
+     * @Assert\Length(
+     *     min= "3",
+     *     max= "15",
+     *     minMessage = "Name is too short",
+     *     maxMessage = "Name is too long"
+     * )
      */
     private $nomEvent;
 
@@ -52,6 +63,11 @@ class Event implements NotifiableInterface
      * @var string
      *
      * @ORM\Column(name="description", type="string", length=255)
+     * @Assert\NotBlank(message="Please insert an Description")
+     * @Assert\Length(
+     *     min= "3",
+     *     minMessage="The Description is too short"
+     * )
      */
     private $description;
 
@@ -59,6 +75,7 @@ class Event implements NotifiableInterface
      * @var string
      *
      * @ORM\Column(name="dateEvent", type="string", length=255)
+     * @Assert\NotBlank(message="Please choose a Date")
      */
     private $dateEvent;
 
@@ -66,12 +83,13 @@ class Event implements NotifiableInterface
      * @var string
      *
      * @ORM\Column(name="placeEvent", type="string", length=255, nullable=true)
+     * @Assert\NotBlank(message="Please choose a Place ")
      */
     private $placeEvent;
 
     /**
      * @var int
-     *
+     * @Assert\NotBlank(message="Please choose a number ")
      * @ORM\Column(name="nbParticipants", type="integer")
      */
     private $nbParticipants;
@@ -94,6 +112,10 @@ class Event implements NotifiableInterface
      * @var float
      *
      * @ORM\Column(name="award", type="float", nullable=true)
+     * *@Assert\GreaterThan(
+     *     value =0,
+     * )
+     *@Assert\Type(type="float",message="Award must contain only numbers")
      */
     private $award;
 
@@ -102,7 +124,10 @@ class Event implements NotifiableInterface
      *@Assert\GreaterThan(
      *     value =0,
      * )
+     *@Assert\Type(type="float",message="Budget must contain only numbers")
      * @ORM\Column(name="budget", type="float", nullable=true)
+     *@Assert\NotBlank(message="Please choose a budget ")
+     *
      */
     private $budget;
 
@@ -110,9 +135,10 @@ class Event implements NotifiableInterface
      * @var float
      *@Assert\GreaterThan(
      *     value =0,
-     *     message = "price > 0"
      * )
+     *@Assert\Type(type="float",message="Price must contain only numbers")
      * @ORM\Column(name="price", type="float", nullable=true)
+     * @Assert\NotBlank(message="Please choose a price ")
      */
     private $price;
 
@@ -279,7 +305,12 @@ class Event implements NotifiableInterface
     public function setDateEvent($dateEvent)
     {
         $this->dateEvent = $dateEvent;
-    
+        /*$day = $dateEvent->format('d');
+        $month =$dateEvent->format('m');
+        $year = $dateEvent->format('Y');
+
+        $dateEvent = $day.'/'.$month.'/'.$year;
+*/
         return $this;
     }
 

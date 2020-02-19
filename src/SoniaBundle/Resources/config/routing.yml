@@ -62,3 +62,6 @@ afficherClubDetail:
 participateClub:
     path:     /participateClub/{id}
     defaults: { _controller: SoniaBundle:Club:ParticipateClub }
+Rating:
+    path:     /Rating/{id}
+    defaults: { _controller: SoniaBundle:Club:Rating }

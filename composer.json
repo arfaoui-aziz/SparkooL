@@ -15,8 +15,11 @@
     },
     "require": {
         "php": ">=5.5.9",
+        "ext-json": "*",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/orm": "^2.5",
+        "friendsofsymfony/user-bundle": "~2.0",
+        "ideato/star-rating-bundle": "dev-master",
         "incenteev/composer-parameter-handler": "^2.0",
         "mrad/notifications-bundle": "^1.3",
         "sensio/distribution-bundle": "^5.0.19",
@@ -26,7 +29,7 @@
         "symfony/swiftmailer-bundle": "^2.6.4",
         "symfony/symfony": "3.4.*",
         "twig/twig": "^1.0||^2.0",
-      "ext-json": "*"
+        "nomaya/social-bundle": "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

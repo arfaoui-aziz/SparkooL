@@ -40,14 +40,6 @@ class EventController extends Controller
             $em->flush();
 
 
-            //MAILING
-            /*   $message = (new \Swift_Message('Hello Email'))
-                   ->setFrom('sparkool.sparkit@gmail.com')
-                   ->setTo('aziz.arfaou.98@gmail.com');
-               $message->setBody("Message Test");
-               $this->get('mailer')->send($message);
-   */
-
             $this->addFlash(
                 'info', 'Added Successfully'
             );
@@ -169,6 +161,7 @@ class EventController extends Controller
         $posts = $em->getRepository('SoniaBundle:Event')->findEntitiesByString($requestString);
         if (!$posts) {
             $result['posts']['error'] = "Post Not found :( ";
+
         } else {
             $result['posts'] = $this->getRealEntities($posts);
         }

@@ -264,6 +264,20 @@ class ComposerStaticInitae1f920b2fe0ef9350b4cd4bfba2c5f1
                 0 => __DIR__ . '/..' . '/mrad/notifications-bundle',
             ),
         ),
+        'N' => 
+        array (
+            'Nomaya\\SocialBundle\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/nomaya/social-bundle',
+            ),
+        ),
+        'I' => 
+        array (
+            'Ideato\\StarRatingBundle' => 
+            array (
+                0 => __DIR__ . '/..' . '/ideato/star-rating-bundle',
+            ),
+        ),
         'D' => 
         array (
             'Doctrine\\ORM\\' => 

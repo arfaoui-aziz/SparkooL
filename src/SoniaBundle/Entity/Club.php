@@ -8,11 +8,15 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\JoinTable;
 use Doctrine\ORM\Mapping\ManyToMany;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 /**
  * Club
  *
  * @ORM\Table(name="club")
  * @ORM\Entity(repositoryClass="SoniaBundle\Repository\ClubRepository")
+ * @UniqueEntity("nomClub",message="This name is already taken  by other Club ")
+ * @UniqueEntity("dateCreation",message="This date is already used")
  */
 class Club
 {
@@ -29,33 +33,45 @@ class Club
      * @var string
      *
      * @ORM\Column(name="nomClub", type="string", length=255)
+     * @Assert\NotBlank(message="Please insert an Name")
+     * @Assert\Length(
+     *     min= "3",
+     *     max= "15",
+     *     minMessage = "Name is too short",
+     *     maxMessage = "Name is too long"
+     * )
      */
     private $nomClub;
 
     /**
      * @var int
-     *
+     * @Assert\NotBlank(message="Please choose a number ")
      * @ORM\Column(name="members", type="integer")
      */
     private $members;
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank(message="Please choose an Activity ")
      * @ORM\Column(name="activity", type="string", length=255)
      */
     private $activity;
 
     /**
      * @var float
-     *
      * @ORM\Column(name="budget", type="float")
+     * @Assert\GreaterThan(
+     *     value =0,
+     * )
+     *@Assert\Type(type="float",message="Budget must contain only numbers")
+     *@Assert\NotBlank(message="Please choose a budget ")
+     *
      */
     private $budget;
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank(message="Please choose a Date")
      * @ORM\Column(name="dateCreation", type="string", length=255)
      */
     private $dateCreation;

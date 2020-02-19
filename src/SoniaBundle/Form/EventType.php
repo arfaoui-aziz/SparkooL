@@ -16,17 +16,26 @@ class EventType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nomEvent')
+        $builder->add('nomEvent',null, array('required'=> false))
             ->add('typeEvent')
             ->add('description',TextareaType::class)
-            ->add('dateEvent')
-            ->add('placeEvent')
-            ->add('nbParticipants')
-            ->add('theme')
-            ->add('destination')
-            ->add('award')
-            ->add('budget')
-            ->add('price')
+            ->add('dateEvent',null, array('required'=> false ,
+                   ) )
+            ->add('placeEvent',null, array('required'=> false))
+            ->add('nbParticipants',null, array('required'=> false))
+            ->add('theme',ChoiceType::class,[
+                'choices'=>[
+                    'Please Select*'=>false,
+                    'Soccer'=>'Soccer',
+                    'Basketball'=>'Basketball',
+                    'Volley-Ball'=>'Volley-Ball',
+                    'Hand-Ball'=>'Hand-Ball',
+                ],
+                'required' =>true
+            ])->add('destination',null, array('required'=> false))
+            ->add('award',null, array('required'=> false))
+            ->add('budget',null, array('required'=> false))
+            ->add('price',null, array('required'=> false))
             ->add('Add',SubmitType::class ,  [
                 'attr'=>  [
                     'class' => 'btn-fill-lg btn-gradient-yellow btn-hover-bluedark'  ]]);
