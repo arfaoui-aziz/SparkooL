@@ -180,7 +180,7 @@ class __TwigTemplate_c16eba87661a7ee2a53647badad8d0879dfb0a5d0803bb948d83940d5e5
             echo "\"><i
                     class=\"fas fa-times text-orange-red\"></i> Delete</a>
 
-         
+
           </div>
          </div>
         </td>
@@ -340,7 +340,7 @@ class __TwigTemplate_c16eba87661a7ee2a53647badad8d0879dfb0a5d0803bb948d83940d5e5
            <a class=\"dropdown-item\" href=\"{{ path('supprimer_reclamation',{'id':i.id }) }}\"><i
                     class=\"fas fa-times text-orange-red\"></i> Delete</a>
 
-         
+
           </div>
          </div>
         </td>
