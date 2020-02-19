@@ -135,7 +135,12 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        elseif (0 === strpos($pathinfo, '/show')) {
+        // ajax
+        if ('/ajax' === $pathinfo) {
+            return array (  '_controller' => 'TeacherBundle\\Controller\\TeacherController::searchAction',  '_route' => 'ajax',);
+        }
+
+        if (0 === strpos($pathinfo, '/show')) {
             // showTeacher
             if ('/showTeacher' === $pathinfo) {
                 return array (  '_controller' => 'TeacherBundle\\Controller\\TeacherController::ShowTeacherAction',  '_route' => 'showTeacher',);
@@ -207,6 +212,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         // interfaceTeacher
         if (0 === strpos($pathinfo, '/interfaceTeacher') && preg_match('#^/interfaceTeacher/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, ['_route' => 'interfaceTeacher']), array (  '_controller' => 'TeacherBundle\\Controller\\TeacherController::InterfaceAction',));
+        }
+
+        // PDF
+        if (0 === strpos($pathinfo, '/PDF') && preg_match('#^/PDF/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, ['_route' => 'PDF']), array (  '_controller' => 'TeacherBundle\\Controller\\TeacherController::DisplayPDFAction',));
         }
 
         // fos_user_security_login

@@ -144,7 +144,7 @@ class __TwigTemplate_9e8603aff345adcd25cb7900709273333ffd68d176c96fb84b2d0ab79b6
                                 <td>";
             // line 63
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "duree", []), "html", null, true);
-            echo "</td>
+            echo " Minutes</td>
 
 
 
@@ -272,7 +272,7 @@ class __TwigTemplate_9e8603aff345adcd25cb7900709273333ffd68d176c96fb84b2d0ab79b6
                                 <td>{{ user.lastName }}</td>
                                 <td>{{ i.jour }}</td>
 
-                                <td>{{ i.duree }}</td>
+                                <td>{{ i.duree }} Minutes</td>
 
 
 

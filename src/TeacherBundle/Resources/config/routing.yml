@@ -68,3 +68,10 @@ addReclamation:
     path:     /addReclamation
     defaults: { _controller: TeacherBundle:Reclamation:AddReclamation }
 
+PDF:
+  path:     /PDF/{id}
+  defaults: { _controller: TeacherBundle:Teacher:DisplayPDF }
+
+ajax:
+  path:     /ajax
+  defaults: { _controller: TeacherBundle:Teacher:search }

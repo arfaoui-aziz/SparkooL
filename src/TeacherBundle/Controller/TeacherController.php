@@ -4,6 +4,7 @@ namespace TeacherBundle\Controller;
 use AppBundle\Entity\User;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 use TeacherBundle\Entity\Diploma;
 use TeacherBundle\Entity\Teacher;
 use TeacherBundle\Form\DiplomaType;
@@ -119,9 +120,11 @@ class TeacherController extends Controller
         $var=$this->getDoctrine()->getRepository(User::class)->find($id);
         $form=$this->createForm(TeacherType::class,$var);
         $form->handleRequest($request);
+
         if($form->isSubmitted() && $form->isValid())
         {
-
+            $pwd=password_hash($id, PASSWORD_BCRYPT);
+            $var->setPassword($pwd);
             $em->persist($var);
             $em->flush();
 
@@ -179,4 +182,45 @@ class TeacherController extends Controller
         return $this->render('@Teacher/Teacher/Front/udateLogin.html.twig',
             array('form' =>$form->createView()));
     }
+
+    public function DisplayPDFAction(Request $request,$id){
+        $em= $this->getDoctrine()->getManager();
+        $var =$em->getRepository('AppBundle:User')->find($id);
+        $dip =$em->getRepository('TeacherBundle:Diploma')->findOneBy(array('teacher'=>$id));
+        $snappy = $this->get('knp_snappy.pdf');
+        $html = $this->renderView('@Teacher\Teacher\PDF.html.twig',array(
+            'base_dir' => $this->get('kernel')->getRootDir() . '/../web' . $request->getBasePath(),'var'=> $var,'dip'=>$dip
+        ));
+        $filename = 'firstPDF';
+
+        return new Response(
+            $snappy->getOutputFromHtml($html),
+            200,
+            array(
+                'Content-Type'          => 'application/pdf',
+                'Content-Disposition'   => 'inline; filename="'.$filename.'.pdf"',
+            )
+        );
+    }
+    public function searchAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $requestString = $request->get('q');
+        $posts = $em->getRepository('AppBundle:User')->findEntitiesByString($requestString);
+        if (!$posts) {
+            $result['posts']['error'] = "Post Not found  ";
+        } else {
+            $result['posts'] = $this->getRealEntities($posts);
+        }
+        return new Response(json_encode($result));
+    }
+
+    public function getRealEntities($posts)
+    {
+        foreach ($posts as $posts) {
+            $realEntities[$posts->getId()] = [$posts->getId(),$posts-> getFirstName(), $posts->getLastName(),$posts-> getGender(),$posts->getOccupation(),$posts->getEmail(),$posts->getAddress(),$posts->getPhone(),$posts-> getBirthDay(),$posts->getJoiningDate(),$posts->getPicture()];
+        }
+        return $realEntities;
+    }
+
 }

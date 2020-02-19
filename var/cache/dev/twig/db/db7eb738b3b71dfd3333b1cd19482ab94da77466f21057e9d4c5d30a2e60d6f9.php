@@ -308,7 +308,7 @@ class __TwigTemplate_cdc51a0bf3b96980dc6ee4ce4679d54fda7da7f63f51e39ca994a899984
                                     <!--[if mso]><table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\"><tr><td style=\"padding-right: 38px; padding-left: 38px; padding-top: 20px; padding-bottom: 15px; font-family: Arial, sans-serif\"><![endif]-->
                                     <div style=\"color:#555555;font-family:Helvetica Neue, Helvetica, Arial, sans-serif;line-height:1.2;padding-top:20px;padding-right:38px;padding-bottom:15px;padding-left:38px;\">
                                         <div style=\"line-height: 1.2; font-size: 12px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; color: #555555; mso-line-height-alt: 14px;\">
-                                            <p style=\"font-size: 42px; line-height: 1.2; word-break: break-word; text-align: center; font-family: inherit; mso-line-height-alt: 50px; margin: 0;\"><span style=\"font-size: 42px; color: #2a272b;\"><strong>Congratulation you are now A SparkooL Teacher</strong></span></p>
+                                            <p style=\"font-size: 42px; line-height: 1.2; word-break: break-word; text-align: center; font-family: inherit; mso-line-height-alt: 50px; margin: 0;\"><span style=\"font-size: 42px; color: #2a272b;\"><strong>Congratulation you are now A Sparkool Teacher</strong></span></p>
                                         </div>
                                     </div>
                                     <!--[if mso]></td></tr></table><![endif]-->
@@ -836,7 +836,7 @@ class __TwigTemplate_cdc51a0bf3b96980dc6ee4ce4679d54fda7da7f63f51e39ca994a899984
                                     <!--[if mso]><table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\"><tr><td style=\"padding-right: 38px; padding-left: 38px; padding-top: 20px; padding-bottom: 15px; font-family: Arial, sans-serif\"><![endif]-->
                                     <div style=\"color:#555555;font-family:Helvetica Neue, Helvetica, Arial, sans-serif;line-height:1.2;padding-top:20px;padding-right:38px;padding-bottom:15px;padding-left:38px;\">
                                         <div style=\"line-height: 1.2; font-size: 12px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; color: #555555; mso-line-height-alt: 14px;\">
-                                            <p style=\"font-size: 42px; line-height: 1.2; word-break: break-word; text-align: center; font-family: inherit; mso-line-height-alt: 50px; margin: 0;\"><span style=\"font-size: 42px; color: #2a272b;\"><strong>Congratulation you are now A SparkooL Teacher</strong></span></p>
+                                            <p style=\"font-size: 42px; line-height: 1.2; word-break: break-word; text-align: center; font-family: inherit; mso-line-height-alt: 50px; margin: 0;\"><span style=\"font-size: 42px; color: #2a272b;\"><strong>Congratulation you are now A Sparkool Teacher</strong></span></p>
                                         </div>
                                     </div>
                                     <!--[if mso]></td></tr></table><![endif]-->
