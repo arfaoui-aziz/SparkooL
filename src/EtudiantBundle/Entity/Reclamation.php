@@ -38,7 +38,7 @@ class Reclamation
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
-     * @ORM\JoinColumn(name="etudiant_id",referencedColumnName="id")
+     * @ORM\JoinColumn(name="etudiant_id",referencedColumnName="id", onDelete="CASCADE")
      */
     private $etudiant;
 

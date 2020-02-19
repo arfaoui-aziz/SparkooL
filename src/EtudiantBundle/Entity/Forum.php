@@ -31,6 +31,30 @@ class Forum
     /**
      * @var string
      *
+     * @ORM\Column(name="type", type="string", length=255)
+     */
+    private $type;
+
+    /**
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param string $type
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
+
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="subject", type="text")
      */
     private $subject;
@@ -98,7 +122,7 @@ class Forum
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
-     * @ORM\JoinColumn(name="auteur_id",referencedColumnName="id")
+     * @ORM\JoinColumn(name="auteur_id",referencedColumnName="id", onDelete="CASCADE")
      */
     private $auteur;
 
@@ -210,5 +234,11 @@ class Forum
     {
         return $this->subject;
     }
+
+    public function __toString()
+    {
+        return $this->subject;
+    }
+
 }
 

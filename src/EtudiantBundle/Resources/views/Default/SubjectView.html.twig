@@ -1,0 +1,127 @@
+{% extends 'baseFront.html.twig' %}
+
+{% block formetud %}
+    <link href="https://astatic.ccmbg.com/fc/css/componentsLightA?v=20200113153959" rel="stylesheet" type="text/css" media="screen" />
+    <link href="https://astatic.ccmbg.com/fc/css/ckeditor-outer?v=20190702113640" rel="stylesheet" type="text/css" media="screen" />
+    <link href="https://astatic.ccmbg.com/www.commentcamarche.net/css/main?v=20200218162836" rel="stylesheet" type="text/css" media="all" />
+
+
+
+{% endblock %}
+{% block taswira %}
+    <div class="col-lg-5 d-none d-lg-flex flex-wrap justify-content-center">
+
+
+    </div>
+{% endblock %}
+{% block cloud1 %}
+
+{% endblock %}
+
+{% block body %}
+    <ul>
+
+            <li class="ccm_forum_ctn--deco__item noAnswers">
+                <h2>
+                    <a href="/forum/affich-36469727-blocage-de-touches-active-impossible-a-desactiver">
+                        {{subject.title}}             </a>
+                </h2>
+                <p>
+                    {{ subject.subject }}       </p>
+                <footer>
+                    <div class="ccm_forum_ctn--deco__datas">
+                        <figure >
+
+                            {% if subject.auteur.gender == "Male"  %}
+                                <img src="{{ asset('https://i.pinimg.com/originals/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.png') }}" alt="Maths" style="
+    width: 60px;
+">
+                            {% endif %}
+                            {% if subject.auteur.gender == 'Female'  %}
+                                <img src="{{ asset('https://freeiconshop.com/wp-content/uploads/edd/person-girl-flat.png') }}" alt="Physics" style="
+    width: 60px;
+">
+                            {% endif %}
+                        </figure>
+                        <a href="/forum/affich-36469727-blocage-de-touches-active-impossible-a-desactiver" >{{subject.auteur}}</a>
+                        | <a href="/forum/telecommande-171">{{subject.type}}</a>
+
+                        | Derni&egrave;re r&eacute;ponse :                     <a href="/forum/affich-36469727-blocage-de-touches-active-impossible-a-desactiver#dernier" >
+                            titinez8                    </a>
+                        <span  class="ccm_forum_ctn--deco__datas--newer">11:24</span>
+                    </div>
+                </footer>
+
+            </li>
+
+    </ul>
+<h2>
+    <span itemprop="answerCount">  {{ subject.nbreponse}} Responds</span>
+</h2>
+    <hr>
+
+<div>
+
+    <ul>
+{% for comments in comments %}
+            <li class="ccm_forum_ctn--deco__item noAnswers">
+                <p>
+                  {{comments.commentaire}}    </p>
+                <footer>
+                    <div class="ccm_forum_ctn--deco__datas">
+                        <figure >
+                            {% if comments.comentor.gender == "Male"  %}
+                                <img src="{{ asset('https://i.pinimg.com/originals/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.png') }}" alt="Maths" style="
+    width: 60px;
+">
+                            {% endif %}
+                            {% if comments.comentor.gender == 'Female'  %}
+                                <img src="{{ asset('https://freeiconshop.com/wp-content/uploads/edd/person-girl-flat.png') }}" alt="Physics" style="
+    width: 60px;
+">
+                            {% endif %}
+                        </figure>
+                        <a href="/forum/affich-36469727-blocage-de-touches-active-impossible-a-desactiver" > {{ comments.comentor }}</a>
+
+                        | Responded:
+                        <span  class="ccm_forum_ctn--deco__datas--newer">{{ comments.commentdate }}</span>
+                        {% if comments.comentor == app.user.username%}
+                            <a href="{{ path('etudaint_deletcomment', {'id': comments.id}) }}" class="btn btn-inverse"><i class="icon-white icon-trash"></i>Delete Comment</a>
+                        {% endif %}
+                    </div>
+                </footer>
+
+            </li>
+{% endfor %}
+    </ul>
+</div>
+<hr>
+    <div style="
+    width: 49%;
+    margin: 0% 0% 0% 21%;
+">
+        {{ form_start(form )}}
+        {{ form_row(form._token) }}
+        Message:
+
+    {{ form_widget(form.commentaire , {'attr': {'class':'form-control required'}}) }}
+        {{ form_widget(form.Reply , {'attr': {'class':'form-control required'}}) }}
+        {{ form_widget(form.comentor, {'attr': {'class':'hidden'},value: app.user.id})}}
+        {{ form_widget(form.subject, {'attr': {'class':'hidden'},value: subject.id})}}
+
+        {{ form_end(form , {'render_rest':false}) }}
+    </div>
+
+{% endblock %}
+
+{% block cloud %}
+
+{% endblock %}
+
+{% block container %}
+
+{% endblock %}
+
+    {% block joinspark %}
+
+    {% endblock %}

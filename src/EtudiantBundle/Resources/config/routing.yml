@@ -43,3 +43,19 @@ etudaint_subjectreview :
 etudaint_subjectapprove :
     path:     /subjectaprove/{id}
     defaults: { _controller: EtudiantBundle:Forum:approveSubject}
+etudaint_forumlist :
+    path:     /forum
+    defaults: { _controller: EtudiantBundle:Forum:getForumList}
+etudaint_subjectview :
+    path:     /forum/subject/{id}
+    defaults: { _controller: EtudiantBundle:Forum:getForumSubject}
+etudaint_deletcomment :
+    path:     /deletecomment/{id}
+    defaults: { _controller: EtudiantBundle:Forum:deleteComment}
+etudaint_getmyforum :
+    path:     /mysubjects
+    defaults: { _controller: EtudiantBundle:Forum:getmyForumSub}
+etudaint_deletesubject :
+    path:     /mysubjects/delete/{id}
+    defaults: { _controller: EtudiantBundle:Forum:deleteSubject}
+

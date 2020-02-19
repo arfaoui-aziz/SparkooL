@@ -11,7 +11,7 @@
         <div class="col-lg-6" style="margin: 0% 26%;">
             <ul class="nav nav-tabs nav-justified flex-column border-bottom-0 flex-md-row bgcolor mt-4" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link py-3" id="home-moving-tab" data-toggle="tab" href="#home-moving" role="tab" aria-controls="home-moving" aria-selected="true">Request A Demo</a>
+                    <a class="nav-link py-3" id="home-moving-tab" data-toggle="tab" href="#home-moving" role="tab" aria-controls="home-moving" aria-selected="true">Fill this form to submit</a>
                 </li>
 
             </ul>
@@ -45,6 +45,13 @@
 
                             <div class=" input-group form-group">
 
+                            </div>
+
+                            <div class=" input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text nobg"><i class="icon-line2-envelope"></i></span>
+                                </div>
+                                {{ form_widget(form.type , {'attr': {'class':'form-control required'}}) }}
                             </div>
 
 

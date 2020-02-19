@@ -76,7 +76,7 @@ class __TwigTemplate_fad5838dd98bd0d98a6de1675ec07d0d8fe601e5ea33b4619dc9dd8906b
         <div class=\"col-lg-6\" style=\"margin: 0% 26%;\">
             <ul class=\"nav nav-tabs nav-justified flex-column border-bottom-0 flex-md-row bgcolor mt-4\" role=\"tablist\">
                 <li class=\"nav-item\">
-                    <a class=\"nav-link py-3\" id=\"home-moving-tab\" data-toggle=\"tab\" href=\"#home-moving\" role=\"tab\" aria-controls=\"home-moving\" aria-selected=\"true\">Request A Demo</a>
+                    <a class=\"nav-link py-3\" id=\"home-moving-tab\" data-toggle=\"tab\" href=\"#home-moving\" role=\"tab\" aria-controls=\"home-moving\" aria-selected=\"true\">Fill this form to submit</a>
                 </li>
 
             </ul>
@@ -124,6 +124,16 @@ class __TwigTemplate_fad5838dd98bd0d98a6de1675ec07d0d8fe601e5ea33b4619dc9dd8906b
 
                             </div>
 
+                            <div class=\" input-group form-group\">
+                                <div class=\"input-group-prepend\">
+                                    <span class=\"input-group-text nobg\"><i class=\"icon-line2-envelope\"></i></span>
+                                </div>
+                                ";
+        // line 54
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "type", []), 'widget', ["attr" => ["class" => "form-control required"]]);
+        echo "
+                            </div>
+
 
                             <div class=\"col-12 hidden\">
                                 <input type=\"text\" id=\"home-moving-form-botcheck\" name=\"home-moving-form-botcheck\" value=\"\" />
@@ -131,13 +141,13 @@ class __TwigTemplate_fad5838dd98bd0d98a6de1675ec07d0d8fe601e5ea33b4619dc9dd8906b
 
                             <div class=\"col-12\">
                             ";
-        // line 56
+        // line 63
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "Add", []), 'widget', ["attr" => ["class" => "btn bgcolor text-white t500 btn-block py-2 mt-2"]]);
         echo "
                             </div>
 
                             ";
-        // line 59
+        // line 66
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end', ["render_rest" => false]);
         echo "
                         </form>
@@ -154,7 +164,7 @@ class __TwigTemplate_fad5838dd98bd0d98a6de1675ec07d0d8fe601e5ea33b4619dc9dd8906b
 
     }
 
-    // line 66
+    // line 73
     public function block_taswira($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -163,7 +173,7 @@ class __TwigTemplate_fad5838dd98bd0d98a6de1675ec07d0d8fe601e5ea33b4619dc9dd8906b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "taswira"));
 
-        // line 67
+        // line 74
         echo "                <div class=\"col-lg-5 d-none d-lg-flex flex-wrap justify-content-center\">
 
 
@@ -177,7 +187,7 @@ class __TwigTemplate_fad5838dd98bd0d98a6de1675ec07d0d8fe601e5ea33b4619dc9dd8906b
 
     }
 
-    // line 72
+    // line 79
     public function block_cloud1($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -186,7 +196,7 @@ class __TwigTemplate_fad5838dd98bd0d98a6de1675ec07d0d8fe601e5ea33b4619dc9dd8906b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "cloud1"));
 
-        // line 73
+        // line 80
         echo "
 ";
         
@@ -197,7 +207,7 @@ class __TwigTemplate_fad5838dd98bd0d98a6de1675ec07d0d8fe601e5ea33b4619dc9dd8906b
 
     }
 
-    // line 76
+    // line 83
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -206,7 +216,7 @@ class __TwigTemplate_fad5838dd98bd0d98a6de1675ec07d0d8fe601e5ea33b4619dc9dd8906b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 77
+        // line 84
         echo "
 ";
         
@@ -217,7 +227,7 @@ class __TwigTemplate_fad5838dd98bd0d98a6de1675ec07d0d8fe601e5ea33b4619dc9dd8906b
 
     }
 
-    // line 80
+    // line 87
     public function block_cloud($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -226,7 +236,7 @@ class __TwigTemplate_fad5838dd98bd0d98a6de1675ec07d0d8fe601e5ea33b4619dc9dd8906b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "cloud"));
 
-        // line 81
+        // line 88
         echo "
 ";
         
@@ -237,7 +247,7 @@ class __TwigTemplate_fad5838dd98bd0d98a6de1675ec07d0d8fe601e5ea33b4619dc9dd8906b
 
     }
 
-    // line 84
+    // line 91
     public function block_container($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -246,7 +256,7 @@ class __TwigTemplate_fad5838dd98bd0d98a6de1675ec07d0d8fe601e5ea33b4619dc9dd8906b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "container"));
 
-        // line 85
+        // line 92
         echo "
 ";
         
@@ -257,7 +267,7 @@ class __TwigTemplate_fad5838dd98bd0d98a6de1675ec07d0d8fe601e5ea33b4619dc9dd8906b
 
     }
 
-    // line 88
+    // line 95
     public function block_joinspark($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -266,7 +276,7 @@ class __TwigTemplate_fad5838dd98bd0d98a6de1675ec07d0d8fe601e5ea33b4619dc9dd8906b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "joinspark"));
 
-        // line 89
+        // line 96
         echo "
             ";
         
@@ -289,7 +299,7 @@ class __TwigTemplate_fad5838dd98bd0d98a6de1675ec07d0d8fe601e5ea33b4619dc9dd8906b
 
     public function getDebugInfo()
     {
-        return array (  270 => 89,  261 => 88,  250 => 85,  241 => 84,  230 => 81,  221 => 80,  210 => 77,  201 => 76,  190 => 73,  181 => 72,  167 => 67,  158 => 66,  141 => 59,  135 => 56,  119 => 43,  111 => 38,  102 => 32,  92 => 25,  66 => 3,  57 => 2,  35 => 1,);
+        return array (  280 => 96,  271 => 95,  260 => 92,  251 => 91,  240 => 88,  231 => 87,  220 => 84,  211 => 83,  200 => 80,  191 => 79,  177 => 74,  168 => 73,  151 => 66,  145 => 63,  133 => 54,  119 => 43,  111 => 38,  102 => 32,  92 => 25,  66 => 3,  57 => 2,  35 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -315,7 +325,7 @@ class __TwigTemplate_fad5838dd98bd0d98a6de1675ec07d0d8fe601e5ea33b4619dc9dd8906b
         <div class=\"col-lg-6\" style=\"margin: 0% 26%;\">
             <ul class=\"nav nav-tabs nav-justified flex-column border-bottom-0 flex-md-row bgcolor mt-4\" role=\"tablist\">
                 <li class=\"nav-item\">
-                    <a class=\"nav-link py-3\" id=\"home-moving-tab\" data-toggle=\"tab\" href=\"#home-moving\" role=\"tab\" aria-controls=\"home-moving\" aria-selected=\"true\">Request A Demo</a>
+                    <a class=\"nav-link py-3\" id=\"home-moving-tab\" data-toggle=\"tab\" href=\"#home-moving\" role=\"tab\" aria-controls=\"home-moving\" aria-selected=\"true\">Fill this form to submit</a>
                 </li>
 
             </ul>
@@ -349,6 +359,13 @@ class __TwigTemplate_fad5838dd98bd0d98a6de1675ec07d0d8fe601e5ea33b4619dc9dd8906b
 
                             <div class=\" input-group form-group\">
 
+                            </div>
+
+                            <div class=\" input-group form-group\">
+                                <div class=\"input-group-prepend\">
+                                    <span class=\"input-group-text nobg\"><i class=\"icon-line2-envelope\"></i></span>
+                                </div>
+                                {{ form_widget(form.type , {'attr': {'class':'form-control required'}}) }}
                             </div>
 
 

@@ -171,9 +171,17 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
             }
 
-            // etudiant_delete
-            if (0 === strpos($pathinfo, '/etudiant/delete') && preg_match('#^/etudiant/delete/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudiant_delete']), array (  '_controller' => 'EtudiantBundle\\Controller\\EtudiantController::deleteapproveAction',));
+            elseif (0 === strpos($pathinfo, '/etudiant/delete')) {
+                // etudiant_delete
+                if (preg_match('#^/etudiant/delete/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudiant_delete']), array (  '_controller' => 'EtudiantBundle\\Controller\\EtudiantController::deleteapproveAction',));
+                }
+
+                // etudaint_deletcomment
+                if (0 === strpos($pathinfo, '/etudiant/deletecomment') && preg_match('#^/etudiant/deletecomment/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudaint_deletcomment']), array (  '_controller' => 'EtudiantBundle\\Controller\\ForumController::deleteCommentAction',));
+                }
+
             }
 
             // etudiant_accountdisable
@@ -194,6 +202,32 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             // etudaint_subjectapprove
             if (0 === strpos($pathinfo, '/etudiant/subjectaprove') && preg_match('#^/etudiant/subjectaprove/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudaint_subjectapprove']), array (  '_controller' => 'EtudiantBundle\\Controller\\ForumController::approveSubjectAction',));
+            }
+
+            if (0 === strpos($pathinfo, '/etudiant/forum')) {
+                // etudaint_forumlist
+                if ('/etudiant/forum' === $pathinfo) {
+                    return array (  '_controller' => 'EtudiantBundle\\Controller\\ForumController::getForumListAction',  '_route' => 'etudaint_forumlist',);
+                }
+
+                // etudaint_subjectview
+                if (0 === strpos($pathinfo, '/etudiant/forum/subject') && preg_match('#^/etudiant/forum/subject/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudaint_subjectview']), array (  '_controller' => 'EtudiantBundle\\Controller\\ForumController::getForumSubjectAction',));
+                }
+
+            }
+
+            elseif (0 === strpos($pathinfo, '/etudiant/mysubjects')) {
+                // etudaint_getmyforum
+                if ('/etudiant/mysubjects' === $pathinfo) {
+                    return array (  '_controller' => 'EtudiantBundle\\Controller\\ForumController::getmyForumSubAction',  '_route' => 'etudaint_getmyforum',);
+                }
+
+                // etudaint_deletesubject
+                if (0 === strpos($pathinfo, '/etudiant/mysubjects/delete') && preg_match('#^/etudiant/mysubjects/delete/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudaint_deletesubject']), array (  '_controller' => 'EtudiantBundle\\Controller\\ForumController::deleteSubjectAction',));
+                }
+
             }
 
         }

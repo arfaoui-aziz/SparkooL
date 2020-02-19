@@ -28,11 +28,63 @@ class Commentaire
      */
     private $commentaire;
 
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\JoinColumn(name="comentor_id",referencedColumnName="id", onDelete="CASCADE")
+     */
+    private $comentor;
+
+    /**
+     * @return mixed
+     */
+    public function getComentor()
+    {
+        return $this->comentor;
+    }
+
+    /**
+     * @param mixed $comentor
+     */
+    public function setComentor($comentor)
+    {
+        $this->comentor = $comentor;
+    }
+
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="commentdate", type="string", length=255)
+     */
+    private $commentdate;
+
+
+
+
+
     /**
      * @ORM\ManyToOne(targetEntity="EtudiantBundle\Entity\Forum")
-     * @ORM\JoinColumn(name="subject",referencedColumnName="id")
+     * @ORM\JoinColumn(name="subject",referencedColumnName="id", onDelete="CASCADE")
      */
     private $subject;
+
+    /**
+     * @return string
+     */
+    public function getCommentor()
+    {
+        return $this->commentor;
+    }
+
+    /**
+     * @param string $commentor
+     */
+    public function setCommentor($commentor)
+    {
+        $this->commentor = $commentor;
+    }
 
     /**
      * @return mixed
@@ -83,5 +135,23 @@ class Commentaire
     {
         return $this->commentaire;
     }
+
+    /**
+     * @return string
+     */
+    public function getCommentdate()
+    {
+        return $this->commentdate;
+    }
+
+    /**
+     * @param string $commentdate
+     */
+    public function setCommentdate($commentdate)
+    {
+        $this->commentdate = $commentdate;
+    }
+
+
 }
 

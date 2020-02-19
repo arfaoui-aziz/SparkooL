@@ -1,0 +1,97 @@
+{% extends 'baseFront.html.twig' %}
+
+{% block formetud %}
+    <link href="https://astatic.ccmbg.com/fc/css/componentsLightA?v=20200113153959" rel="stylesheet" type="text/css" media="screen" />
+    <link href="https://astatic.ccmbg.com/fc/css/ckeditor-outer?v=20190702113640" rel="stylesheet" type="text/css" media="screen" />
+    <link href="https://astatic.ccmbg.com/www.commentcamarche.net/css/main?v=20200218162836" rel="stylesheet" type="text/css" media="all" />
+
+
+
+{% endblock %}
+{% block taswira %}
+    <div class="col-lg-5 d-none d-lg-flex flex-wrap justify-content-center">
+
+
+    </div>
+{% endblock %}
+{% block cloud1 %}
+
+{% endblock %}
+
+{% block body %}
+
+    <ul>
+        {% for subject in subjects %}
+          {% if subject.auteur.id == app.user.id %}
+            <li class="ccm_forum_ctn--deco__item noAnswers">
+                <h2>
+                    <a href="{{ path('etudaint_subjectview', {'id': subject.id}) }}">
+                        {{subject.title}}             </a>
+                </h2>
+                <p style="
+    width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+">
+                    {{ subject.subject }}       </p>
+                <footer>
+                    <div class="ccm_forum_ctn--deco__datas">
+                        <figure >
+
+                            {% if subject.auteur.gender == "Male"  %}
+                                <img src="{{ asset('https://i.pinimg.com/originals/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.png') }}" alt="Maths" style="
+    width: 60px;
+">
+                            {% endif %}
+                            {% if subject.auteur.gender == 'Female'  %}
+                                <img src="{{ asset('https://freeiconshop.com/wp-content/uploads/edd/person-girl-flat.png') }}" alt="Physics" style="
+    width: 60px;
+">
+                            {% endif %}
+                        </figure>
+                        <a href="/forum/affich-36469727-blocage-de-touches-active-impossible-a-desactiver" >{{subject.auteur}}</a>
+                        | <a href="/forum/telecommande-171">{{subject.type}}</a>
+
+                        | Derni&egrave;re r&eacute;ponse :
+                        <a href="" >
+                            titinez8                    </a>
+                        <span  class="ccm_forum_ctn--deco__datas--newer">11:24</span>
+                    </div>
+                    <a href="/forum/affich-36469727-blocage-de-touches-active-impossible-a-desactiver#dernier">
+                        <div class="ccm_forum_ctn--deco__response">
+                    <span>
+                    {{ subject.nbreponse }}                   </span>
+                            r&eacute;ponse                    </div>
+                    </a>
+                </footer>
+                <div style="
+    margin: 3% 0% 2% 1%;
+">
+                <a href="{{ path('etudaint_deletesubject', {'id': subject.id}) }}" class="btn btn-inverse"><i class="icon-white icon-trash"></i>Delete Subject</a>
+            {% if subject.etat == 0 %}
+                <a href="#" class="btn btn-lg btn-danger" data-toggle="modal" data-target="#smallModal">Disabled</a>
+                {% endif %}
+                    {% if subject.solved == 1 %}
+                        <a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#basicModal">Solved</a>
+                        {% endif %}
+                </div>
+            </li>
+{% endif %}
+        {% endfor %}
+    </ul>
+    <!-- Student Table Area End Here -->
+
+{% endblock %}
+
+{% block cloud %}
+
+{% endblock %}
+
+{% block container %}
+
+{% endblock %}
+
+    {% block joinspark %}
+
+    {% endblock %}
