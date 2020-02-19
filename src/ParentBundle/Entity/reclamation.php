@@ -28,8 +28,8 @@ class reclamation
      * @ORM\Column(name="type", type="string", length=255)
      * @Assert\NotBlank()
      * @Assert\Choice(
-     * choices = { "Parent","Teacher","Etudiant"},
-     * message = "Ghaddoussaa mokrez"
+     * choices = { "Parent","Teacher","Student"},
+     * message = "choose one "
      * )
      */
     private $type;

@@ -42,7 +42,7 @@
      <form class="mg-b-20">
       <div class="row gutters-8">
        <div class="col-3-xxxl col-xl-3 col-lg-3 col-12 form-group">
-        <input  type="text" placeholder="Search by ID ..." class="form-control search">
+        <input id="ser" name="q" type="text" placeholder="Search by ID ..." class="form-control search">
        </div>
        <div class="col-4-xxxl col-xl-4 col-lg-3 col-12 form-group">
         <input id="ser" name="q" type="text" placeholder="Search by Name ..." class="form-control search">
@@ -122,7 +122,7 @@
       <table class="table display data-table text-nowrap">
        <thead>
        <tr>
-        <th>ID</th>
+        <th>{{ knp_pagination_sortable(var,'id','pa.id') }}</th>
         <th>Name</th>
         <th>Gender</th>
         <th>Occupation</th>
@@ -130,7 +130,7 @@
         <th>Adress</th>
         <th>Phone</th>
         <th>Date of Birth</th>
-        <th>Joining Date </th>
+        <th>{{ knp_pagination_sortable(var,'Joing Date','pa.joiningDate') }} </th>
         <th>PHOTO</th>
         <th></th>
        </tr>
@@ -178,9 +178,15 @@
 
        </tr>
 
+
+
        </tbody>
        {% endfor %}
+
       </table>
+      <div class="navigation">
+       {{ knp_pagination_render(var) }}
+      </div>
      </div>
     </div>
    </div>

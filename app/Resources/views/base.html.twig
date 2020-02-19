@@ -267,7 +267,7 @@
                                 <div class="item-title">{{ app.user.username }}</div>
                                     <div class="item-title1">Admin</div>
                                 {% else %}
-                                    <div class="item-title">Aziz Arfaoui</div>
+                                    <div class="item-title"></div>
 
                                 <div class="item-title1">ADMIN</div>
                                 {% endif %}
@@ -345,18 +345,23 @@
                     <li class="nav-item sidebar-nav-item">
                         <a href="#" class="nav-link"><i class="flaticon-couple"></i><span>Parents</span></a>
                         <ul class="nav sub-group-menu">
+
                             <li class="nav-item">
-                                <a href="all-parents.html" class="nav-link"><i class="fas fa-angle-right"></i>All
-                                    Parents</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="parents-details.html" class="nav-link"><i
-                                            class="fas fa-angle-right"></i>Parents Details</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="add-parents.html" class="nav-link"><i class="fas fa-angle-right"></i>Add
+                                <a href ="{{ path('inscription_parent' )}}" class="nav-link"><i class="fas fa-angle-right"></i>Add
                                     Parent</a>
                             </li>
+
+                            <li class="nav-item">
+                                <a href="{{ path('afficher_parent' )}}" class="nav-link"><i class="fas fa-angle-right"></i>All
+                                    Parents</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{{ path('afficher_reclamation' )}}" class="nav-link"><i class="fas fa-angle-right"></i>All
+                                    Reclamations</a>
+                            </li>
+
+
                         </ul>
                     </li>
                     <li class="nav-item sidebar-nav-item">

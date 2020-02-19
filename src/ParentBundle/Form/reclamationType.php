@@ -22,7 +22,7 @@ class reclamationType extends AbstractType
                     'Please Select type*'=>false,
                     'Parent'=>'Parent',
                     'Teacher'=>'Teacher',
-                    'Etudiant'=>'Etudiant'
+                    'Student'=>'Student'
                 ],
                 'required'=>true
             ])

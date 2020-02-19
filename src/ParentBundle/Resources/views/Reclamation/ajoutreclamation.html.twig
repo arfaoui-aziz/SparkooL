@@ -1,5 +1,3 @@
-
-
 {% extends 'baseFront.html.twig'%}
 
 {% block ghasoussa %}
@@ -21,53 +19,57 @@
                     <div class="tab-pane fade show active" id="home-moving" role="tabpanel" aria-labelledby="home-moving-tab">
 
 
-                            <div class="form-result"></div>
-                            <form class="row home-moving-form position-relative mb-0" method="post" novalidate>
-                                {{ form_start(form) }}
-                                {{ form_row(form._token) }}
-                                <div class="form-process"></div>
+                        <div class="form-result"></div>
+                        <form class="row home-moving-form position-relative mb-0" method="post" novalidate>
+                            {{ form_start(form) }}
+                            {{ form_row(form._token) }}
+                            <div class="form-process"></div>
 
-                                <div class="col-sm-6 input-group form-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text nobg"><i class="fas fa-sticky-note"></i></span>
-                                    </div>
-                                    {{ form_widget (form.type , {'attr': {'class':'select2'}}) }}
-                                    {{ form_errors(form.type) }}
-
+                            <div class="col-sm-6 input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text nobg"><i class="fas fa-sticky-note"></i></span>
                                 </div>
+                                {{ form_widget (form.type , {'attr': {'class':'select2'}}) }}
+                                {{ form_errors(form.type) }}
+
+                            </div>
 
 
-                                    {{ form_widget(form.parent,{'attr': {'class':'hidden','value':' {{app.user.id}}' }} ) }}
-
-
-
-
-                                <div class="col-sm-6 input-group form-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text nobg"><i class="fas fa-key"></i></span>
-                                    </div>
-                                    {{ form_widget (form.message , {'attr': {'class':'form-control'}}) }}
-                                    {{ form_errors(form.message) }}
+                            <div class="col-sm-6 input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text nobg"><i class="fas fa-user-shield"></i></span>
                                 </div>
+                            {{ form_widget(form.parent,{'attr': {'value':' {{app.user.id}}' }} ) }}
+                            </div>
 
 
 
-
-
-
-
-
-
-
-
-
-                                <div class="col-12">
-                                    {{ form_widget(form.Submit) }}
+                            <div class="col-sm-6 input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text nobg"><i class="fas fa-envelope-open-text"></i></span>
                                 </div>
+                                {{ form_widget (form.message , {'attr': {'class':'form-control'}}) }}
+                                {{ form_errors(form.message) }}
+                            </div>
 
 
-                                {{ form_end(form,{'render_rest': false}) }}
-                            </form>
+
+
+
+
+
+
+
+
+
+
+                            <div class="col-12">
+                                {{ form_widget(form.Submit) }}
+                            </div>
+
+
+                            {{ form_end(form,{'render_rest': false}) }}
+                        </form>
 
                     </div>
                 </div>

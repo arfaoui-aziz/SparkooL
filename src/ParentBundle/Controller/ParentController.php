@@ -16,14 +16,25 @@ class ParentController extends Controller
 {
 
 
-    public function AfficherParentAction()
+    public function AfficherParentAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
 
-        $var = $this->getDoctrine()->getRepository(User::class)->findBy(array('userType' => "Parent"));
+        $dql= "SELECT pa FROM AppBundle:User  pa WHERE pa.userType = 'Parent'";
+        $query=$em->createQuery($dql);
+       /**
+        * @var @paginator \knp\Component\Pager\Paginator
+        */
+        $paginator  = $this->get('knp_paginator');
+        $request= $pagination = $paginator->paginate(
+            $query, /* query NOT result */
+            $request->query->getInt('page', 1), /*page number*/
+            3 /*limit per page*/
 
+       );
 
         return $this->render('@Parent/Parent/afficherparent.html.twig',
-            array('var' => $var));
+            array('var' => $request));
 
 
     }
@@ -123,7 +134,7 @@ class ParentController extends Controller
             $pwd = password_hash($id, PASSWORD_BCRYPT);
             $user->setPassword($pwd);
             $user->setUsername($username);
-            $user->setEnabled(1);
+            $user->setEnabled(0);
             $user->setPicture($pic);
             $user->setId($id);
             $user->setJoiningDate(date('d-m-Y'));
