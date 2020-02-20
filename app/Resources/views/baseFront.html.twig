@@ -99,15 +99,15 @@
                     <ul>
                         <li class="current"><a href="#"><div>Home</div></a></li>
                         <li><a href="#"><div>About Us</div></a></li>
-                        <li><a href="#"><div>Program</div></a>
+                        <li><a href="#"><div>Forum</div></a>
                             <ul>
-                                <li><a href="#"><div><i class="icon-line2-home"></i>Courses</div></a></li>
-                                <li><a href="#"><div><i class="icon-building2"></i>Grades</div></a></li>
-                                <li><a href="#"><div><i class="icon-line2-globe"></i>Test</div></a></li>
+                                <li><a href="{{ path('etudaint_addsubject') }}"><div><i class="icon-line2-home"></i>Add A New Subject</div></a></li>
+                                <li><a href="{{ path('etudaint_forumlist') }}"><div><i class="icon-line2-home"></i>All subjects</div></a></li>
+                                <li><a href="{{ path('etudaint_getmyforum') }}"><div><i class="icon-building2"></i>My Subjects</div></a></li>
 
                             </ul>
                         </li>
-                        <li><a href="#"><div>School Life</div></a></li>
+                        <li><a href="{{ path('etudiant_submitreclamation') }}"><div>Reclamation</div></a></li>
                         <li><a href="#"><div>News & Events</div></a></li>
                         <li><a href="#"><div>Admissions</div></a></li>
                         <li><a href="#"><div>Contact Us</div></a></li>
@@ -596,7 +596,7 @@
                             <a class="link-hover-style-1"  data-hash data-hash-offset="95" href="#about">About Us</a>
                         </li>
                         <li class="mb-1">
-                            <a class="link-hover-style-1"  data-hash data-hash-offset="95" href="#solutions">Program</a>
+                            <a class="link-hover-style-1"  data-hash data-hash-offset="95" href="#solutions">Forum</a>
                         </li>
                         <li class="mb-1">
                             <a class="link-hover-style-1"  data-hash data-hash-offset="95" href="#pricing">School Life</a>

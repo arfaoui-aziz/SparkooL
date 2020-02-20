@@ -10,4 +10,5 @@ namespace EtudiantBundle\Repository;
  */
 class ForumRepository extends \Doctrine\ORM\EntityRepository
 {
+
 }

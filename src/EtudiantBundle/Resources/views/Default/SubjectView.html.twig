@@ -49,6 +49,21 @@
                         | Derni&egrave;re r&eacute;ponse :                     <a href="/forum/affich-36469727-blocage-de-touches-active-impossible-a-desactiver#dernier" >
                             titinez8                    </a>
                         <span  class="ccm_forum_ctn--deco__datas--newer">11:24</span>
+{% for voter in voters %}
+{% if voter.subjectvoted == subject %}
+    {% if voter.voter == app.user %}
+        {% set voted = "true" %}
+    {% else %}
+    {% endif %}
+{% endif %}
+{% endfor %}
+                        {% if voted == "true" %}
+                        <a><i class="far fa-thumbs-up" ></i>{{ yesvotes }}Likes</a>
+                        <a><i class="far fa-thumbs-down"></i>{{ novotes }}Dislikes</a>
+                        {% else %}
+                            <a href="{{ path('etudaint_votesyes',{'id_voter':app.user.id, 'id_subject':subject.id }) }}"><i class="far fa-thumbs-up" ></i>{{ yesvotes }}Likes</a>
+                            <a href="{{ path('etudaint_votesno',{'id_voter':app.user.id, 'id_subject':subject.id }) }}"><i class="far fa-thumbs-down"></i>{{ novotes }}Dislikes</a>
+                        {% endif %}
                     </div>
                 </footer>
 
@@ -100,16 +115,22 @@
     width: 49%;
     margin: 0% 0% 0% 21%;
 ">
+
         {{ form_start(form )}}
         {{ form_row(form._token) }}
         Message:
-
-    {{ form_widget(form.commentaire , {'attr': {'class':'form-control required'}}) }}
-        {{ form_widget(form.Reply , {'attr': {'class':'form-control required'}}) }}
+        {% if subject.solved == 1 %}
+    {{ form_widget(form.commentaire , {'attr': {'class':'form-control required' },'disabled': 'disabled' })  }}
+        {{ form_widget(form.Reply ,{'attr': {'class':'form-control required' },'disabled': 'disabled' }) }}
+            {% else %}
+                {{ form_widget(form.commentaire , {'attr': {'class':'form-control required' }})  }}
+                {{ form_widget(form.Reply ,{'attr': {'class':'form-control required' }}) }}
+        {% endif %}
         {{ form_widget(form.comentor, {'attr': {'class':'hidden'},value: app.user.id})}}
         {{ form_widget(form.subject, {'attr': {'class':'hidden'},value: subject.id})}}
 
         {{ form_end(form , {'render_rest':false}) }}
+
     </div>
 
 {% endblock %}

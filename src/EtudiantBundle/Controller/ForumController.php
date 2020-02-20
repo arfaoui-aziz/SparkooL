@@ -76,6 +76,10 @@ public function getSubjectsAction()
         $comments = $this->getDoctrine()->getRepository(Commentaire::class)->findBy(array(
             'subject'=>$id
         ));
+        $novotes= $this->getDoctrine()->getRepository('EtudiantBundle:Votes')->dislikes($id);
+        $yesvotes = $this->getDoctrine()->getRepository('EtudiantBundle:Votes')->findyesvotes($id);
+        $voters = $this->getDoctrine()->getRepository('EtudiantBundle:Votes')->findAll();
+        $voted="false";
         $comment->setSubject($subject);
         if ($form->isSubmitted()) {
            $oldresp = $subject->getNbreponse();
@@ -89,7 +93,11 @@ public function getSubjectsAction()
         return $this->render('@Etudiant/Default/SubjectView.html.twig',array(
             'subject'=>$subject,
             'comments'=>$comments,
-            'form'=>$form->createView()
+            'form'=>$form->createView(),
+            'yesvotes'=>$yesvotes,
+            'novotes'=>$novotes,
+            'voters'=>$voters,
+            'voted'=>$voted
         ));
     }
 
@@ -114,18 +122,53 @@ public function getSubjectsAction()
             'subjects'=>$allsubjects
         ));
     }
+    public function solvedAction($id)
+    {
+        $subject = new Forum();
+        $em=$this->getDoctrine()->getManager();
+        $subject = $em->getRepository(Forum::class)->find($id);
+        $subject->setSolved('1');
+        $em->persist($subject);
+        $em->flush();
+        return $this->redirectToRoute('etudaint_getmyforum');
+    }
 
     public function deleteSubjectAction($id)
     {
         $em = $this->getDoctrine()->getManager();
         $subject = $this->getDoctrine()->getRepository('EtudiantBundle:Forum')->find($id);
         $subject->setAuteur(null);
-        dump($subject);
         $em->remove($subject);
         $em->flush();
         return $this->redirectToRoute("etudaint_getmyforum");
     }
 
+    public function modifySubjectAction($id, Request $request)
+    {
+        $subject = $this->getDoctrine()->getRepository(Forum::class)->find($id);
+        $form = $this->createForm(ForumType::class,$subject);
+        $form->add('Modify',SubmitType::class);
+        $form->handleRequest($request);
+        if ($form->isSubmitted()) {
+           $subject = $form->getData();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($subject);
+            $em->flush();
+            return $this->redirectToRoute('etudaint_forumlist', ['page' => 1]);
+        }
+        return $this->render('@Etudiant/Default/ModifySubject.html.twig',array(
+            'subject'=>$subject,
+            'form'=>$form->createView()
+        ));
+    }
 
+    public function deleteSubjecBacktAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $subject = $this->getDoctrine()->getRepository('EtudiantBundle:Forum')->find($id);
+        $em->remove($subject);
+        $em->flush();
+        return $this->redirectToRoute("etudaint_subjectreview");
+    }
 
 }

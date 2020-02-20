@@ -58,7 +58,7 @@
                             titinez8                    </a>
                         <span  class="ccm_forum_ctn--deco__datas--newer">11:24</span>
                     </div>
-                    <a href="/forum/affich-36469727-blocage-de-touches-active-impossible-a-desactiver#dernier">
+                    <a>
                         <div class="ccm_forum_ctn--deco__response">
                     <span>
                     {{ subject.nbreponse }}                   </span>
@@ -70,11 +70,15 @@
 ">
                 <a href="{{ path('etudaint_deletesubject', {'id': subject.id}) }}" class="btn btn-inverse"><i class="icon-white icon-trash"></i>Delete Subject</a>
             {% if subject.etat == 0 %}
-                <a href="#" class="btn btn-lg btn-danger" data-toggle="modal" data-target="#smallModal">Disabled</a>
+                <a href="" class="btn btn-lg btn-danger disabled" data-toggle="modal" data-target="#smallModal">Disabled</a>
                 {% endif %}
                     {% if subject.solved == 1 %}
-                        <a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#basicModal">Solved</a>
-                        {% endif %}
+                        <a href="" class="btn btn-lg btn-success disabled" data-toggle="modal" data-target="#basicModal">Solved</a>
+
+                    {% else %}
+                        <a href="{{ path('etudaint_solved', {'id': subject.id}) }}" class="btn btn-lg btn-success">Mark As Solved</a>
+                    <a href="{{ path('etudaint_modifysubject', {'id': subject.id}) }}" class="btn btn-inverse"><i class="fas fa-cog"></i>Modify Subject</a>
+                    {% endif %}
                 </div>
             </li>
 {% endif %}

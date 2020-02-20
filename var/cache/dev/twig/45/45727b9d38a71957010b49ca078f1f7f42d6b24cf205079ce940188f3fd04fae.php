@@ -223,15 +223,27 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
                     <ul>
                         <li class=\"current\"><a href=\"#\"><div>Home</div></a></li>
                         <li><a href=\"#\"><div>About Us</div></a></li>
-                        <li><a href=\"#\"><div>Program</div></a>
+                        <li><a href=\"#\"><div>Forum</div></a>
                             <ul>
-                                <li><a href=\"#\"><div><i class=\"icon-line2-home\"></i>Courses</div></a></li>
-                                <li><a href=\"#\"><div><i class=\"icon-building2\"></i>Grades</div></a></li>
-                                <li><a href=\"#\"><div><i class=\"icon-line2-globe\"></i>Test</div></a></li>
+                                <li><a href=\"";
+        // line 104
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("etudaint_addsubject");
+        echo "\"><div><i class=\"icon-line2-home\"></i>Add A New Subject</div></a></li>
+                                <li><a href=\"";
+        // line 105
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("etudaint_forumlist");
+        echo "\"><div><i class=\"icon-line2-home\"></i>All subjects</div></a></li>
+                                <li><a href=\"";
+        // line 106
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("etudaint_getmyforum");
+        echo "\"><div><i class=\"icon-building2\"></i>My Subjects</div></a></li>
 
                             </ul>
                         </li>
-                        <li><a href=\"#\"><div>School Life</div></a></li>
+                        <li><a href=\"";
+        // line 110
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("etudiant_submitreclamation");
+        echo "\"><div>Reclamation</div></a></li>
                         <li><a href=\"#\"><div>News & Events</div></a></li>
                         <li><a href=\"#\"><div>Admissions</div></a></li>
                         <li><a href=\"#\"><div>Contact Us</div></a></li>
@@ -357,7 +369,7 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
                             <a class=\"link-hover-style-1\"  data-hash data-hash-offset=\"95\" href=\"#about\">About Us</a>
                         </li>
                         <li class=\"mb-1\">
-                            <a class=\"link-hover-style-1\"  data-hash data-hash-offset=\"95\" href=\"#solutions\">Program</a>
+                            <a class=\"link-hover-style-1\"  data-hash data-hash-offset=\"95\" href=\"#solutions\">Forum</a>
                         </li>
                         <li class=\"mb-1\">
                             <a class=\"link-hover-style-1\"  data-hash data-hash-offset=\"95\" href=\"#pricing\">School Life</a>
@@ -1023,7 +1035,7 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
 
     public function getDebugInfo()
     {
-        return array (  987 => 552,  978 => 551,  908 => 481,  833 => 408,  824 => 407,  798 => 390,  789 => 389,  731 => 341,  720 => 333,  709 => 325,  698 => 317,  677 => 299,  669 => 294,  651 => 279,  623 => 261,  601 => 243,  592 => 242,  578 => 236,  575 => 235,  566 => 234,  470 => 147,  461 => 146,  439 => 667,  432 => 663,  426 => 660,  422 => 659,  338 => 578,  329 => 571,  327 => 551,  315 => 541,  312 => 407,  309 => 389,  307 => 261,  300 => 256,  298 => 242,  294 => 240,  292 => 234,  288 => 232,  286 => 146,  263 => 125,  257 => 123,  252 => 121,  247 => 120,  245 => 119,  188 => 67,  182 => 66,  154 => 41,  147 => 37,  143 => 36,  139 => 35,  133 => 32,  128 => 30,  124 => 29,  120 => 28,  116 => 27,  111 => 25,  107 => 24,  103 => 23,  96 => 19,  92 => 18,  88 => 17,  84 => 16,  80 => 15,  76 => 14,  72 => 13,  68 => 12,  64 => 11,  60 => 10,  56 => 9,  52 => 8,  43 => 1,);
+        return array (  999 => 552,  990 => 551,  920 => 481,  845 => 408,  836 => 407,  810 => 390,  801 => 389,  743 => 341,  732 => 333,  721 => 325,  710 => 317,  689 => 299,  681 => 294,  663 => 279,  635 => 261,  613 => 243,  604 => 242,  590 => 236,  587 => 235,  578 => 234,  482 => 147,  473 => 146,  451 => 667,  444 => 663,  438 => 660,  434 => 659,  350 => 578,  341 => 571,  339 => 551,  327 => 541,  324 => 407,  321 => 389,  319 => 261,  312 => 256,  310 => 242,  306 => 240,  304 => 234,  300 => 232,  298 => 146,  275 => 125,  269 => 123,  264 => 121,  259 => 120,  257 => 119,  245 => 110,  238 => 106,  234 => 105,  230 => 104,  188 => 67,  182 => 66,  154 => 41,  147 => 37,  143 => 36,  139 => 35,  133 => 32,  128 => 30,  124 => 29,  120 => 28,  116 => 27,  111 => 25,  107 => 24,  103 => 23,  96 => 19,  92 => 18,  88 => 17,  84 => 16,  80 => 15,  76 => 14,  72 => 13,  68 => 12,  64 => 11,  60 => 10,  56 => 9,  52 => 8,  43 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -1137,15 +1149,15 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
                     <ul>
                         <li class=\"current\"><a href=\"#\"><div>Home</div></a></li>
                         <li><a href=\"#\"><div>About Us</div></a></li>
-                        <li><a href=\"#\"><div>Program</div></a>
+                        <li><a href=\"#\"><div>Forum</div></a>
                             <ul>
-                                <li><a href=\"#\"><div><i class=\"icon-line2-home\"></i>Courses</div></a></li>
-                                <li><a href=\"#\"><div><i class=\"icon-building2\"></i>Grades</div></a></li>
-                                <li><a href=\"#\"><div><i class=\"icon-line2-globe\"></i>Test</div></a></li>
+                                <li><a href=\"{{ path('etudaint_addsubject') }}\"><div><i class=\"icon-line2-home\"></i>Add A New Subject</div></a></li>
+                                <li><a href=\"{{ path('etudaint_forumlist') }}\"><div><i class=\"icon-line2-home\"></i>All subjects</div></a></li>
+                                <li><a href=\"{{ path('etudaint_getmyforum') }}\"><div><i class=\"icon-building2\"></i>My Subjects</div></a></li>
 
                             </ul>
                         </li>
-                        <li><a href=\"#\"><div>School Life</div></a></li>
+                        <li><a href=\"{{ path('etudiant_submitreclamation') }}\"><div>Reclamation</div></a></li>
                         <li><a href=\"#\"><div>News & Events</div></a></li>
                         <li><a href=\"#\"><div>Admissions</div></a></li>
                         <li><a href=\"#\"><div>Contact Us</div></a></li>
@@ -1634,7 +1646,7 @@ class __TwigTemplate_5cc889781e1674a78cf11a0465be72fa26f808ae0d166f9a9f3ddda3bcb
                             <a class=\"link-hover-style-1\"  data-hash data-hash-offset=\"95\" href=\"#about\">About Us</a>
                         </li>
                         <li class=\"mb-1\">
-                            <a class=\"link-hover-style-1\"  data-hash data-hash-offset=\"95\" href=\"#solutions\">Program</a>
+                            <a class=\"link-hover-style-1\"  data-hash data-hash-offset=\"95\" href=\"#solutions\">Forum</a>
                         </li>
                         <li class=\"mb-1\">
                             <a class=\"link-hover-style-1\"  data-hash data-hash-offset=\"95\" href=\"#pricing\">School Life</a>

@@ -1,0 +1,80 @@
+{% extends 'baseFront.html.twig' %}
+
+{% block formetud %}
+    <link href="https://astatic.ccmbg.com/fc/css/componentsLightA?v=20200113153959" rel="stylesheet" type="text/css" media="screen" />
+    <link href="https://astatic.ccmbg.com/fc/css/ckeditor-outer?v=20190702113640" rel="stylesheet" type="text/css" media="screen" />
+    <link href="https://astatic.ccmbg.com/www.commentcamarche.net/css/main?v=20200218162836" rel="stylesheet" type="text/css" media="all" />
+
+
+
+{% endblock %}
+{% block taswira %}
+    <div class="col-lg-5 d-none d-lg-flex flex-wrap justify-content-center">
+
+
+    </div>
+{% endblock %}
+{% block cloud1 %}
+
+{% endblock %}
+
+{% block body %}
+    <ul>
+{{ form_start(form) }}
+        <li class="ccm_forum_ctn--deco__item noAnswers">
+            <h2>
+                <a>
+                    {{ form_widget(form.auteur, {'attr': {'class':'hidden'},value: app.user.id})}}
+                    {{ form_widget(form.type, {'attr': {'class':'hidden'}})}}
+                    {{ form_widget(form.dateajout, {'attr': {'class':'hidden'}})}}
+                    {{ form_widget(form.nbreponse, {'attr': {'class':'hidden'}})}}
+                    {{ form_widget(form.title , {'attr': {'class':'form-control required','placeholder':'Type Your Reclamation'}}) }}       </a>
+            </h2>
+            <p>
+                {{ form_widget(form.subject , {'attr': {'class':'form-control required','placeholder':'Type Your Reclamation'}}) }}      </p>
+            <footer>
+                <div class="ccm_forum_ctn--deco__datas">
+                    <figure >
+
+                        {% if subject.auteur.gender == "Male"  %}
+                            <img src="{{ asset('https://i.pinimg.com/originals/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.png') }}" alt="Maths" style="
+    width: 60px;
+">
+                        {% endif %}
+                        {% if subject.auteur.gender == 'Female'  %}
+                            <img src="{{ asset('https://freeiconshop.com/wp-content/uploads/edd/person-girl-flat.png') }}" alt="Physics" style="
+    width: 60px;
+">
+                        {% endif %}
+                    </figure>
+                    <a href="/forum/affich-36469727-blocage-de-touches-active-impossible-a-desactiver" >{{subject.auteur}}</a>
+                    | <a href="/forum/telecommande-171">{{subject.type}}</a>
+
+                    | Derni&egrave;re r&eacute;ponse :                     <a href="/forum/affich-36469727-blocage-de-touches-active-impossible-a-desactiver#dernier" >
+                        titinez8                    </a>
+                    <span  class="ccm_forum_ctn--deco__datas--newer">11:24</span>
+                    {{ form_widget(form.Modify, { 'attr': {'class': 'btn bgcolor text-white t500 btn-block py-2 mt-2'} })}}
+                </div>
+            </footer>
+
+        </li>
+  {{ form_end(form , {'render_rest':false}) }}
+    </ul>
+    <h2>
+        <span itemprop="answerCount">  {{ subject.nbreponse}} Responds</span>
+    </h2>
+    <hr>
+
+{% endblock %}
+
+{% block cloud %}
+
+{% endblock %}
+
+{% block container %}
+
+{% endblock %}
+
+    {% block joinspark %}
+
+    {% endblock %}

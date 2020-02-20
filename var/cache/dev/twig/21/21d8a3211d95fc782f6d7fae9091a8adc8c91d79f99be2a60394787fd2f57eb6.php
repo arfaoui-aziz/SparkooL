@@ -205,7 +205,7 @@ class __TwigTemplate_50b8aa51bad154b10d651d54029f23c98e1840531bf48e9186edb9d23c1
                             titinez8                    </a>
                         <span  class=\"ccm_forum_ctn--deco__datas--newer\">11:24</span>
                     </div>
-                    <a href=\"/forum/affich-36469727-blocage-de-touches-active-impossible-a-desactiver#dernier\">
+                    <a>
                         <div class=\"ccm_forum_ctn--deco__response\">
                     <span>
                     ";
@@ -226,28 +226,39 @@ class __TwigTemplate_50b8aa51bad154b10d651d54029f23c98e1840531bf48e9186edb9d23c1
                 // line 72
                 if (($this->getAttribute($context["subject"], "etat", []) == 0)) {
                     // line 73
-                    echo "                <a href=\"#\" class=\"btn btn-lg btn-danger\" data-toggle=\"modal\" data-target=\"#smallModal\">Disabled</a>
+                    echo "                <a href=\"\" class=\"btn btn-lg btn-danger disabled\" data-toggle=\"modal\" data-target=\"#smallModal\">Disabled</a>
                 ";
                 }
                 // line 75
                 echo "                    ";
                 if (($this->getAttribute($context["subject"], "solved", []) == 1)) {
                     // line 76
-                    echo "                        <a href=\"#\" class=\"btn btn-lg btn-success\" data-toggle=\"modal\" data-target=\"#basicModal\">Solved</a>
-                        ";
+                    echo "                        <a href=\"\" class=\"btn btn-lg btn-success disabled\" data-toggle=\"modal\" data-target=\"#basicModal\">Solved</a>
+
+                    ";
+                } else {
+                    // line 79
+                    echo "                        <a href=\"";
+                    echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("etudaint_solved", ["id" => $this->getAttribute($context["subject"], "id", [])]), "html", null, true);
+                    echo "\" class=\"btn btn-lg btn-success\">Mark As Solved</a>
+                    <a href=\"";
+                    // line 80
+                    echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("etudaint_modifysubject", ["id" => $this->getAttribute($context["subject"], "id", [])]), "html", null, true);
+                    echo "\" class=\"btn btn-inverse\"><i class=\"fas fa-cog\"></i>Modify Subject</a>
+                    ";
                 }
-                // line 78
+                // line 82
                 echo "                </div>
             </li>
 ";
             }
-            // line 81
+            // line 85
             echo "        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['subject'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 82
+        // line 86
         echo "    </ul>
     <!-- Student Table Area End Here -->
 
@@ -260,7 +271,7 @@ class __TwigTemplate_50b8aa51bad154b10d651d54029f23c98e1840531bf48e9186edb9d23c1
 
     }
 
-    // line 87
+    // line 91
     public function block_cloud($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -268,26 +279,6 @@ class __TwigTemplate_50b8aa51bad154b10d651d54029f23c98e1840531bf48e9186edb9d23c1
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "cloud"));
-
-        // line 88
-        echo "
-";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 91
-    public function block_container($context, array $blocks = [])
-    {
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "container"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "container"));
 
         // line 92
         echo "
@@ -301,6 +292,26 @@ class __TwigTemplate_50b8aa51bad154b10d651d54029f23c98e1840531bf48e9186edb9d23c1
     }
 
     // line 95
+    public function block_container($context, array $blocks = [])
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "container"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "container"));
+
+        // line 96
+        echo "
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 99
     public function block_joinspark($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -309,7 +320,7 @@ class __TwigTemplate_50b8aa51bad154b10d651d54029f23c98e1840531bf48e9186edb9d23c1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "joinspark"));
 
-        // line 96
+        // line 100
         echo "
     ";
         
@@ -332,7 +343,7 @@ class __TwigTemplate_50b8aa51bad154b10d651d54029f23c98e1840531bf48e9186edb9d23c1
 
     public function getDebugInfo()
     {
-        return array (  313 => 96,  304 => 95,  293 => 92,  284 => 91,  273 => 88,  264 => 87,  251 => 82,  245 => 81,  240 => 78,  236 => 76,  233 => 75,  229 => 73,  227 => 72,  223 => 71,  213 => 64,  200 => 54,  196 => 53,  193 => 52,  185 => 48,  182 => 47,  174 => 43,  172 => 42,  164 => 37,  153 => 29,  149 => 28,  145 => 26,  142 => 25,  138 => 24,  134 => 22,  125 => 21,  114 => 18,  105 => 17,  91 => 12,  82 => 11,  66 => 4,  57 => 3,  35 => 1,);
+        return array (  324 => 100,  315 => 99,  304 => 96,  295 => 95,  284 => 92,  275 => 91,  262 => 86,  256 => 85,  251 => 82,  246 => 80,  241 => 79,  236 => 76,  233 => 75,  229 => 73,  227 => 72,  223 => 71,  213 => 64,  200 => 54,  196 => 53,  193 => 52,  185 => 48,  182 => 47,  174 => 43,  172 => 42,  164 => 37,  153 => 29,  149 => 28,  145 => 26,  142 => 25,  138 => 24,  134 => 22,  125 => 21,  114 => 18,  105 => 17,  91 => 12,  82 => 11,  66 => 4,  57 => 3,  35 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -405,7 +416,7 @@ class __TwigTemplate_50b8aa51bad154b10d651d54029f23c98e1840531bf48e9186edb9d23c1
                             titinez8                    </a>
                         <span  class=\"ccm_forum_ctn--deco__datas--newer\">11:24</span>
                     </div>
-                    <a href=\"/forum/affich-36469727-blocage-de-touches-active-impossible-a-desactiver#dernier\">
+                    <a>
                         <div class=\"ccm_forum_ctn--deco__response\">
                     <span>
                     {{ subject.nbreponse }}                   </span>
@@ -417,11 +428,15 @@ class __TwigTemplate_50b8aa51bad154b10d651d54029f23c98e1840531bf48e9186edb9d23c1
 \">
                 <a href=\"{{ path('etudaint_deletesubject', {'id': subject.id}) }}\" class=\"btn btn-inverse\"><i class=\"icon-white icon-trash\"></i>Delete Subject</a>
             {% if subject.etat == 0 %}
-                <a href=\"#\" class=\"btn btn-lg btn-danger\" data-toggle=\"modal\" data-target=\"#smallModal\">Disabled</a>
+                <a href=\"\" class=\"btn btn-lg btn-danger disabled\" data-toggle=\"modal\" data-target=\"#smallModal\">Disabled</a>
                 {% endif %}
                     {% if subject.solved == 1 %}
-                        <a href=\"#\" class=\"btn btn-lg btn-success\" data-toggle=\"modal\" data-target=\"#basicModal\">Solved</a>
-                        {% endif %}
+                        <a href=\"\" class=\"btn btn-lg btn-success disabled\" data-toggle=\"modal\" data-target=\"#basicModal\">Solved</a>
+
+                    {% else %}
+                        <a href=\"{{ path('etudaint_solved', {'id': subject.id}) }}\" class=\"btn btn-lg btn-success\">Mark As Solved</a>
+                    <a href=\"{{ path('etudaint_modifysubject', {'id': subject.id}) }}\" class=\"btn btn-inverse\"><i class=\"fas fa-cog\"></i>Modify Subject</a>
+                    {% endif %}
                 </div>
             </li>
 {% endif %}

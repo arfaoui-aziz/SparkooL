@@ -58,4 +58,19 @@ etudaint_getmyforum :
 etudaint_deletesubject :
     path:     /mysubjects/delete/{id}
     defaults: { _controller: EtudiantBundle:Forum:deleteSubject}
+etudaint_modifysubject :
+    path:     /mysubjects/modify/{id}
+    defaults: { _controller: EtudiantBundle:Forum:modifySubject}
+etudaint_solved :
+    path:     /mysubjects/solved/{id}
+    defaults: { _controller: EtudiantBundle:Forum:solved}
+etudaint_votesyes :
+    path:     /vote/yes/{id_voter}/{id_subject}
+    defaults: { _controller: EtudiantBundle\Controller\VotesController::votelike}
+etudaint_votesno :
+    path:     /vote/no/{id_voter}/{id_subject}
+    defaults: { _controller: EtudiantBundle\Controller\VotesController::dislike}
+etudaint_deletesubjectback :
+    path:     /back/delete/{id}
+    defaults: { _controller: EtudiantBundle:Forum:deleteSubjecBackt}
 

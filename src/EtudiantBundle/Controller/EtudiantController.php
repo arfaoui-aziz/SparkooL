@@ -194,5 +194,25 @@ class EtudiantController extends Controller
             return $this->redirectToRoute("etudiant_list");
     }
 
+    public function searchByNameAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $allstudents = $this->getDoctrine()->getRepository(User::class)->findBy(
+            ['userType' => 'Etudiant']
+        );
+        if ($request->isMethod('POST'))
+        {
+            $firstName = $request->get('firstName');
+            $allstudents = $em->getRepository('AppBundle:User')->findBy(array(
+                'firstName'=>$firstName,
+                'userType' => 'Etudiant'
+                ));
+        }
+        return $this->render('@Etudiant/backrep/allstudents.html.twig',array(
+            'students'=>$allstudents
+        ));
+
+    }
+
 
 }

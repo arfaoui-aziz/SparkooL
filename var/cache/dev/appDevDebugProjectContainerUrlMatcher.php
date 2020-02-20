@@ -228,6 +228,31 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudaint_deletesubject']), array (  '_controller' => 'EtudiantBundle\\Controller\\ForumController::deleteSubjectAction',));
                 }
 
+                // etudaint_modifysubject
+                if (0 === strpos($pathinfo, '/etudiant/mysubjects/modify') && preg_match('#^/etudiant/mysubjects/modify/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudaint_modifysubject']), array (  '_controller' => 'EtudiantBundle\\Controller\\ForumController::modifySubjectAction',));
+                }
+
+                // etudaint_solved
+                if (0 === strpos($pathinfo, '/etudiant/mysubjects/solved') && preg_match('#^/etudiant/mysubjects/solved/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudaint_solved']), array (  '_controller' => 'EtudiantBundle\\Controller\\ForumController::solvedAction',));
+                }
+
+            }
+
+            // etudaint_votesyes
+            if (0 === strpos($pathinfo, '/etudiant/vote/yes') && preg_match('#^/etudiant/vote/yes/(?P<id_voter>[^/]++)/(?P<id_subject>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudaint_votesyes']), array (  '_controller' => 'EtudiantBundle\\Controller\\VotesController::votelike',));
+            }
+
+            // etudaint_votesno
+            if (0 === strpos($pathinfo, '/etudiant/vote/no') && preg_match('#^/etudiant/vote/no/(?P<id_voter>[^/]++)/(?P<id_subject>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudaint_votesno']), array (  '_controller' => 'EtudiantBundle\\Controller\\VotesController::dislike',));
+            }
+
+            // etudaint_deletesubjectback
+            if (0 === strpos($pathinfo, '/etudiant/back/delete') && preg_match('#^/etudiant/back/delete/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudaint_deletesubjectback']), array (  '_controller' => 'EtudiantBundle\\Controller\\ForumController::deleteSubjecBacktAction',));
             }
 
         }

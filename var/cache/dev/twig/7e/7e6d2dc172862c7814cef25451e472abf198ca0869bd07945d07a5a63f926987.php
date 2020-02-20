@@ -71,10 +71,10 @@ class __TwigTemplate_07fb98dbd4551e975a3a0141083bca741b4d64969eb7161eefdd22d92e2
                     </div>
 
                 </div>
-                <form class=\"mg-b-20\">
+                <form class=\"mg-b-20\" method=\"post\">
                     <div class=\"row gutters-8\">
                         <div class=\"col-3-xxxl col-xl-3 col-lg-3 col-12 form-group\">
-                            <input type=\"text\" placeholder=\"Search by Roll ...\" class=\"form-control\">
+                            <input type=\"text\"  placeholder=\"Search by Roll ...\"  name=\"firstName\" class=\"form-control\">
                         </div>
                         <div class=\"col-4-xxxl col-xl-4 col-lg-3 col-12 form-group\">
                             <input type=\"text\" placeholder=\"Search by Name ...\" class=\"form-control\">
@@ -287,10 +287,10 @@ class __TwigTemplate_07fb98dbd4551e975a3a0141083bca741b4d64969eb7161eefdd22d92e2
                     </div>
 
                 </div>
-                <form class=\"mg-b-20\">
+                <form class=\"mg-b-20\" method=\"post\">
                     <div class=\"row gutters-8\">
                         <div class=\"col-3-xxxl col-xl-3 col-lg-3 col-12 form-group\">
-                            <input type=\"text\" placeholder=\"Search by Roll ...\" class=\"form-control\">
+                            <input type=\"text\"  placeholder=\"Search by Roll ...\"  name=\"firstName\" class=\"form-control\">
                         </div>
                         <div class=\"col-4-xxxl col-xl-4 col-lg-3 col-12 form-group\">
                             <input type=\"text\" placeholder=\"Search by Name ...\" class=\"form-control\">
