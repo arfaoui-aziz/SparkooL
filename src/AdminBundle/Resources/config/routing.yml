@@ -20,10 +20,10 @@ admin_SortAdmin:
     path:     /SortAdmin
     defaults: { _controller: AdminBundle:Account:SortAdmin }
 admin_UserDetails:
-    path:     /UserDetails
+    path:     /UserDetails/{id}
     defaults: { _controller: AdminBundle:Account:UserDetails }
 admin_DisplayPDF:
-    path:     /DisplayPDF
+    path:     /DisplayPDF/{id}
     defaults: { _controller: AdminBundle:Account:DisplayPDF }
 admin_AddClasse:
     path:     /AddClasse

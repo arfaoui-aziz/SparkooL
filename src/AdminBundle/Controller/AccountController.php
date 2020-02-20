@@ -122,13 +122,17 @@ class AccountController extends Controller
         $allUsers = $em->getRepository(User::class)->findAll();
         return $this->render('@Admin\Account\AllAccounts.html.twig',array('allUsers'=>$allUsers));
     }
-    public function UserDetailsAction(Request $request){
-        return $this->render('@Admin\Account\UserDetails.html.twig');
+    public function UserDetailsAction(Request $request,$id){
+        $em = $this->getDoctrine()->getManager();
+        $user =  $em->getRepository(User::class)->find($id);
+        return $this->render('@Admin\Account\UserDetails.html.twig',array('user'=>$user));
     }
-    public function DisplayPDFAction(Request $request){
+    public function DisplayPDFAction(Request $request,$id){
+        $em = $this->getDoctrine()->getManager();
+        $user =  $em->getRepository(User::class)->find($id);
         $snappy = $this->get('knp_snappy.pdf');
         $html = $this->renderView('@Admin\Account\DownloadPDF.html.twig',array(
-            'base_dir' => $this->get('kernel')->getRootDir() . '/../web' . $request->getBasePath()
+            'base_dir' => $this->get('kernel')->getRootDir() . '/../web' . $request->getBasePath(),'user'=>$user
         ));
         $filename = 'firstPDF';
 

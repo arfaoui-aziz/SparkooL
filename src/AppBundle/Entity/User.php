@@ -81,6 +81,9 @@ class User extends BaseUser
      * @var string
      *
      * @ORM\Column(name="joiningDate", type="string", length=255)
+     * @Assert\NotBlank(message="Please Insert a joining Date")
+     * @Assert\NotEqualTo("21/02/2020",message="Please Insert a valid JoiningDate")
+     *
      */
     private $joiningDate;
 
@@ -88,6 +91,13 @@ class User extends BaseUser
      * @var string
      *
      * @ORM\Column(name="address", type="string", length=255)
+     * @Assert\NotBlank(message="Please Insert an Address")
+     * @Assert\Length(
+     *     min= "5",
+     *     max= "30",
+     *     minMessage = "Address must be at least {{ limit }} characters long",
+     *     maxMessage = "Address  cannot be longer than {{ limit }} characters"
+     * )
      */
     private $address;
 
@@ -116,12 +126,15 @@ class User extends BaseUser
      * @var float
      * @ORM\Column(name="salaire", type="float", nullable=true)
      * @Assert\Type(type="float",message="Salaire most contain only numbers")
+     * @Assert\NotBlank(message="Please Insert a Salaire")
      */
     private $salaire;
 
     /**
      * @var string
      * @ORM\Column(name="birthDay", type="string", length=255)
+     * @Assert\NotBlank(message="Please Insert a valid BirthDay")
+     * @Assert\NotEqualTo("21/02/2020",message="Please Insert a valid BirthDay")
      */
     private $birthDay;
 

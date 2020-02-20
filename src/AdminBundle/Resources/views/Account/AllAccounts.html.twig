@@ -19,11 +19,12 @@
             </div>
             <form class="mg-b-20">
                 <div class="row gutters-8">
-                    <div class="col-3-xxxl col-xl-3 col-lg-3 col-12 form-group">
-                        <input type="text" placeholder="Search by ID ..." class="form-control">
-                    </div>
+
                     <div class="col-4-xxxl col-xl-4 col-lg-3 col-12 form-group">
                         <input id="searchName"  name="searchName" type="text" placeholder="Search by Name ..." class="form-control">
+                    </div>
+                    <div class="col-3-xxxl col-xl-3 col-lg-3 col-12 form-group">
+
                     </div>
                     <div class="col-4-xxxl col-xl-3 col-lg-3 col-12 form-group">
 
@@ -34,10 +35,7 @@
                         <button type="submit" class="fw-btn-fill radius-30 btn-gradient-yellow " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter By&nbsp;<i class="fas fa-filter"></i></button>
                         <div class="dropdown-menu">
                             <p id="admin" class="dropdown-item" href="#">Admin</p>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Separated link</a>
+
                         </div>
                     </div>
 
@@ -221,8 +219,8 @@
                                                 class="fas fa-times text-orange-red"></i>Close</a>
                                     <a class="dropdown-item" href="#"><i
                                                 class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                    <a class="dropdown-item" href="#"><i
-                                                class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                    <a class="dropdown-item" href="{{ path('admin_UserDetails',{'id':au.id}) }}"><i
+                                                class="fas fa-redo-alt text-orange-peel"></i>View Detail</a>
                                 </div>
                             </div>
                         </td>

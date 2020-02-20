@@ -77,11 +77,12 @@ class __TwigTemplate_c629ec57f3a0beaee2470a6577a9b3d6a761b7070ebf49539df36d96164
             </div>
             <form class=\"mg-b-20\">
                 <div class=\"row gutters-8\">
-                    <div class=\"col-3-xxxl col-xl-3 col-lg-3 col-12 form-group\">
-                        <input type=\"text\" placeholder=\"Search by ID ...\" class=\"form-control\">
-                    </div>
+
                     <div class=\"col-4-xxxl col-xl-4 col-lg-3 col-12 form-group\">
                         <input id=\"searchName\"  name=\"searchName\" type=\"text\" placeholder=\"Search by Name ...\" class=\"form-control\">
+                    </div>
+                    <div class=\"col-3-xxxl col-xl-3 col-lg-3 col-12 form-group\">
+
                     </div>
                     <div class=\"col-4-xxxl col-xl-3 col-lg-3 col-12 form-group\">
 
@@ -92,10 +93,7 @@ class __TwigTemplate_c629ec57f3a0beaee2470a6577a9b3d6a761b7070ebf49539df36d96164
                         <button type=\"submit\" class=\"fw-btn-fill radius-30 btn-gradient-yellow \" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Filter By&nbsp;<i class=\"fas fa-filter\"></i></button>
                         <div class=\"dropdown-menu\">
                             <p id=\"admin\" class=\"dropdown-item\" href=\"#\">Admin</p>
-                            <a class=\"dropdown-item\" href=\"#\">Another action</a>
-                            <a class=\"dropdown-item\" href=\"#\">Something else here</a>
-                            <div class=\"dropdown-divider\"></div>
-                            <a class=\"dropdown-item\" href=\"#\">Separated link</a>
+
                         </div>
                     </div>
 
@@ -124,7 +122,7 @@ class __TwigTemplate_c629ec57f3a0beaee2470a6577a9b3d6a761b7070ebf49539df36d96164
                                 searchRequest = \$.ajax({
                                     type: \"GET\",
                                     url: \"";
-        // line 68
+        // line 66
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_SearchAjax");
         echo "\",
                                     data: {
@@ -142,7 +140,7 @@ class __TwigTemplate_c629ec57f3a0beaee2470a6577a9b3d6a761b7070ebf49539df36d96164
                                                         if (id !== 'error') {
 
                                                             var assetsBaseDir = \"";
-        // line 83
+        // line 81
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/figure/user.jpg"), "html", null, true);
         echo "\";
                                                             var large =
@@ -185,7 +183,7 @@ class __TwigTemplate_c629ec57f3a0beaee2470a6577a9b3d6a761b7070ebf49539df36d96164
                         \$.ajax({
                                 type: \"GET\",
                                 url: \"";
-        // line 123
+        // line 121
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_SortAdmin");
         echo "\",
                                 success: function (msg) {
@@ -199,7 +197,7 @@ class __TwigTemplate_c629ec57f3a0beaee2470a6577a9b3d6a761b7070ebf49539df36d96164
                                                     if (id !== 'error') {
 
                                                         var assetsBaseDir = \"";
-        // line 134
+        // line 132
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/figure/user.jpg"), "html", null, true);
         echo "\";
                                                         var large =
@@ -260,64 +258,64 @@ class __TwigTemplate_c629ec57f3a0beaee2470a6577a9b3d6a761b7070ebf49539df36d96164
 
                     <tbody id=\"searchResult\">
                     ";
-        // line 192
+        // line 190
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["allUsers"] ?? $this->getContext($context, "allUsers")));
         foreach ($context['_seq'] as $context["_key"] => $context["au"]) {
-            // line 193
+            // line 191
             echo "                    <tr  >
                         <td>
                             <div class=\"form-check\">
                                 <input type=\"checkbox\" class=\"form-check-input\">
                                 <label class=\"form-check-label\">#";
-            // line 197
+            // line 195
             echo twig_escape_filter($this->env, $this->getAttribute($context["au"], "id", []), "html", null, true);
             echo "</label>
                             </div>
                         </td>
                         ";
-            // line 200
+            // line 198
             if (($this->getAttribute($context["au"], "gender", []) == "Male")) {
-                // line 201
+                // line 199
                 echo "                        <td class=\"text-center\"><img src=\"";
                 echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/figure/user.jpg"), "html", null, true);
                 echo "\" class=\"media-img-auto\" alt=\"student\"></td>
                         ";
             } else {
-                // line 203
+                // line 201
                 echo "                            <td class=\"text-center\"><img src=\"";
                 echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/figure/user4.jpg"), "html", null, true);
                 echo "\" alt=\"student\"></td>
                             ";
             }
-            // line 205
+            // line 203
             echo "
                         <td>";
-            // line 206
+            // line 204
             echo twig_escape_filter($this->env, $this->getAttribute($context["au"], "firstName", []), "html", null, true);
             echo "</td>
                         <td>";
-            // line 207
+            // line 205
             echo twig_escape_filter($this->env, $this->getAttribute($context["au"], "lastName", []), "html", null, true);
             echo "</td>
                         <td>";
-            // line 208
+            // line 206
             echo twig_escape_filter($this->env, $this->getAttribute($context["au"], "gender", []), "html", null, true);
             echo "</td>
                         <td>";
-            // line 209
+            // line 207
             echo twig_escape_filter($this->env, $this->getAttribute($context["au"], "userType", []), "html", null, true);
             echo "</td>
                         <td>";
-            // line 210
+            // line 208
             echo twig_escape_filter($this->env, $this->getAttribute($context["au"], "address", []), "html", null, true);
             echo "</td>
                         <td>+216 ";
-            // line 211
+            // line 209
             echo twig_escape_filter($this->env, $this->getAttribute($context["au"], "phone", []), "html", null, true);
             echo "</td>
                         <td>";
-            // line 212
+            // line 210
             echo twig_escape_filter($this->env, $this->getAttribute($context["au"], "email", []), "html", null, true);
             echo "</td>
                         <td>
@@ -331,8 +329,11 @@ class __TwigTemplate_c629ec57f3a0beaee2470a6577a9b3d6a761b7070ebf49539df36d96164
                                                 class=\"fas fa-times text-orange-red\"></i>Close</a>
                                     <a class=\"dropdown-item\" href=\"#\"><i
                                                 class=\"fas fa-cogs text-dark-pastel-green\"></i>Edit</a>
-                                    <a class=\"dropdown-item\" href=\"#\"><i
-                                                class=\"fas fa-redo-alt text-orange-peel\"></i>Refresh</a>
+                                    <a class=\"dropdown-item\" href=\"";
+            // line 222
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_UserDetails", ["id" => $this->getAttribute($context["au"], "id", [])]), "html", null, true);
+            echo "\"><i
+                                                class=\"fas fa-redo-alt text-orange-peel\"></i>View Detail</a>
                                 </div>
                             </div>
                         </td>
@@ -342,7 +343,7 @@ class __TwigTemplate_c629ec57f3a0beaee2470a6577a9b3d6a761b7070ebf49539df36d96164
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['au'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 231
+        // line 229
         echo "                    </tbody>
                 </table>
             </div>
@@ -364,7 +365,7 @@ class __TwigTemplate_c629ec57f3a0beaee2470a6577a9b3d6a761b7070ebf49539df36d96164
 
     }
 
-    // line 244
+    // line 242
     public function block_jq($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -373,7 +374,7 @@ class __TwigTemplate_c629ec57f3a0beaee2470a6577a9b3d6a761b7070ebf49539df36d96164
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "jq"));
 
-        // line 245
+        // line 243
         echo "
 ";
         
@@ -396,7 +397,7 @@ class __TwigTemplate_c629ec57f3a0beaee2470a6577a9b3d6a761b7070ebf49539df36d96164
 
     public function getDebugInfo()
     {
-        return array (  377 => 245,  368 => 244,  346 => 231,  321 => 212,  317 => 211,  313 => 210,  309 => 209,  305 => 208,  301 => 207,  297 => 206,  294 => 205,  288 => 203,  282 => 201,  280 => 200,  274 => 197,  268 => 193,  264 => 192,  203 => 134,  189 => 123,  146 => 83,  128 => 68,  61 => 3,  52 => 2,  30 => 1,);
+        return array (  378 => 243,  369 => 242,  347 => 229,  334 => 222,  319 => 210,  315 => 209,  311 => 208,  307 => 207,  303 => 206,  299 => 205,  295 => 204,  292 => 203,  286 => 201,  280 => 199,  278 => 198,  272 => 195,  266 => 191,  262 => 190,  201 => 132,  187 => 121,  144 => 81,  126 => 66,  61 => 3,  52 => 2,  30 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -430,11 +431,12 @@ class __TwigTemplate_c629ec57f3a0beaee2470a6577a9b3d6a761b7070ebf49539df36d96164
             </div>
             <form class=\"mg-b-20\">
                 <div class=\"row gutters-8\">
-                    <div class=\"col-3-xxxl col-xl-3 col-lg-3 col-12 form-group\">
-                        <input type=\"text\" placeholder=\"Search by ID ...\" class=\"form-control\">
-                    </div>
+
                     <div class=\"col-4-xxxl col-xl-4 col-lg-3 col-12 form-group\">
                         <input id=\"searchName\"  name=\"searchName\" type=\"text\" placeholder=\"Search by Name ...\" class=\"form-control\">
+                    </div>
+                    <div class=\"col-3-xxxl col-xl-3 col-lg-3 col-12 form-group\">
+
                     </div>
                     <div class=\"col-4-xxxl col-xl-3 col-lg-3 col-12 form-group\">
 
@@ -445,10 +447,7 @@ class __TwigTemplate_c629ec57f3a0beaee2470a6577a9b3d6a761b7070ebf49539df36d96164
                         <button type=\"submit\" class=\"fw-btn-fill radius-30 btn-gradient-yellow \" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Filter By&nbsp;<i class=\"fas fa-filter\"></i></button>
                         <div class=\"dropdown-menu\">
                             <p id=\"admin\" class=\"dropdown-item\" href=\"#\">Admin</p>
-                            <a class=\"dropdown-item\" href=\"#\">Another action</a>
-                            <a class=\"dropdown-item\" href=\"#\">Something else here</a>
-                            <div class=\"dropdown-divider\"></div>
-                            <a class=\"dropdown-item\" href=\"#\">Separated link</a>
+
                         </div>
                     </div>
 
@@ -632,8 +631,8 @@ class __TwigTemplate_c629ec57f3a0beaee2470a6577a9b3d6a761b7070ebf49539df36d96164
                                                 class=\"fas fa-times text-orange-red\"></i>Close</a>
                                     <a class=\"dropdown-item\" href=\"#\"><i
                                                 class=\"fas fa-cogs text-dark-pastel-green\"></i>Edit</a>
-                                    <a class=\"dropdown-item\" href=\"#\"><i
-                                                class=\"fas fa-redo-alt text-orange-peel\"></i>Refresh</a>
+                                    <a class=\"dropdown-item\" href=\"{{ path('admin_UserDetails',{'id':au.id}) }}\"><i
+                                                class=\"fas fa-redo-alt text-orange-peel\"></i>View Detail</a>
                                 </div>
                             </div>
                         </td>

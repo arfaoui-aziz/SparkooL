@@ -118,11 +118,11 @@
                     <div class="header-buttons d-none d-sm-inline-block">
                         {% if is_granted('ROLE_SUPER_ADMIN') %}
                     <a> {{ app.user.username }} &nbsp;&nbsp;&nbsp;</a>
-                            <a href="{{ path('back') }}"   class="button button-rounded button-white button-light button-small m-0">Admin Panel</a>
+                            <a href="{{ path('back') }}"   class="button button-rounded button-white button-light button-small m-0">Back</a>
                             <a href="{{ path('fos_user_security_logout') }}"   class="button button-rounded button-white button-light button-small m-0">LOGOUT</a>
                         {% elseif  is_granted('ROLE_ADMIN') %}
                             <a> {{ app.user.username }} &nbsp;&nbsp;&nbsp;</a>
-                            <a href="{{ path('back') }}"   class="button button-rounded button-white button-light button-small m-0">Admin Panel</a>
+                            <a href="{{ path('back') }}"   class="button button-rounded button-white button-light button-small m-0">Back</a>
                             <a href="{{ path('fos_user_security_logout') }}"   class="button button-rounded button-white button-light button-small m-0">LOGOUT</a>
                         {% elseif  is_granted('ROLE_USER') %}
                             <a> {{ app.user.username }} &nbsp;&nbsp;&nbsp;</a>
@@ -134,12 +134,12 @@
 
                     <!-- Top Search
                     ============================================= -->
-                    <div id="top-search" class="mr-4">
+               <!--     <div id="top-search" class="mr-4">
                         <a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
                         <form action="search.html" method="get">
                             <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
                         </form>
-                    </div><!-- #top-search end -->
+                    </div>#top-search end -->
 
                 </div>
 

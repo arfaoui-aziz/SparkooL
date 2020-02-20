@@ -81,7 +81,7 @@ class __TwigTemplate_245f761f5ac7410b8220e5b8d0b660689e8ae729d560260c303cc108d50
                     ";
         // line 22
         $this->displayBlock('update', $context, $blocks);
-        // line 61
+        // line 79
         echo "                </div>
             </div>
         </div>
@@ -106,24 +106,24 @@ class __TwigTemplate_245f761f5ac7410b8220e5b8d0b660689e8ae729d560260c303cc108d50
                                 <button type=\"submit\" class=\"fw-btn-fill radius-30 btn-gradient-yellow \" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Sort By&nbsp;<i class=\"fas fa-filter\"></i></button>
                                 <div class=\"dropdown-menu\">
                                     <p id=\"highest\" class=\"dropdown-item\" >";
-        // line 84
+        // line 102
         echo $this->env->getExtension('Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension')->sortable($this->env, ($context["allSubjects"] ?? $this->getContext($context, "allSubjects")), "Lowest coefficient", "s.coefficient");
         echo "</p>
 
                                     <div class=\"dropdown-divider\"></div>
                                     ";
-        // line 87
+        // line 105
         $context["new_direction"] = "asc";
-        // line 88
+        // line 106
         echo "                                    ";
         if ($this->getAttribute(($context["allSubjects"] ?? $this->getContext($context, "allSubjects")), "isSorted", [0 => "s.coefficient"], "method")) {
-            // line 89
+            // line 107
             echo "                                        ";
             $context["new_direction"] = ((("asc" == $this->getAttribute(($context["allSubjects"] ?? $this->getContext($context, "allSubjects")), "direction", []))) ? ("desc") : ("asc"));
-            // line 90
+            // line 108
             echo "                                    ";
         }
-        // line 91
+        // line 109
         echo "                                    <p id=\"highest\" class=\"dropdown-item\" >";
         echo $this->env->getExtension('Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension')->sortable($this->env, ($context["allSubjects"] ?? $this->getContext($context, "allSubjects")), "Highest coefficient", "s.coefficient");
         echo "</p>
@@ -152,7 +152,7 @@ class __TwigTemplate_245f761f5ac7410b8220e5b8d0b660689e8ae729d560260c303cc108d50
                                     searchRequest = \$.ajax({
                                         type: \"GET\",
                                         url: \"";
-        // line 116
+        // line 134
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_searchSubject");
         echo "\",
                                         data: {
@@ -170,7 +170,7 @@ class __TwigTemplate_245f761f5ac7410b8220e5b8d0b660689e8ae729d560260c303cc108d50
                                                             if (id !== 'error') {
 
                                                                 var assetsBaseDir = \"";
-        // line 131
+        // line 149
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/figure/user.jpg"), "html", null, true);
         echo "\";
                                                                 var large =
@@ -220,36 +220,36 @@ class __TwigTemplate_245f761f5ac7410b8220e5b8d0b660689e8ae729d560260c303cc108d50
                             </thead>
                             <tbody id=\"searchResult\">
         ";
-        // line 178
+        // line 196
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["allSubjects"] ?? $this->getContext($context, "allSubjects")));
         foreach ($context['_seq'] as $context["_key"] => $context["as"]) {
-            // line 179
+            // line 197
             echo "                                <tr >
                                     <td>
                                         <div class=\"form-check\">
                                             <input type=\"checkbox\" class=\"form-check-input\">
                                             <label class=\"form-check-label\">#";
-            // line 183
+            // line 201
             echo twig_escape_filter($this->env, $this->getAttribute($context["as"], "subjectId", []), "html", null, true);
             echo "</label>
                                         </div>
                                     </td>
                                     <td>";
-            // line 186
+            // line 204
             echo twig_escape_filter($this->env, $this->getAttribute($context["as"], "subjectName", []), "html", null, true);
             echo "</td>
                                     <td>";
-            // line 187
+            // line 205
             echo twig_escape_filter($this->env, $this->getAttribute($context["as"], "coefficient", []), "html", null, true);
             echo "</td>
                                     <td>
                                         ";
-            // line 189
+            // line 207
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["as"], "classes", []));
             foreach ($context['_seq'] as $context["_key"] => $context["asb"]) {
-                // line 190
+                // line 208
                 echo "                                        ";
                 echo twig_escape_filter($this->env, $context["asb"], "html", null, true);
                 echo "
@@ -258,7 +258,7 @@ class __TwigTemplate_245f761f5ac7410b8220e5b8d0b660689e8ae729d560260c303cc108d50
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['asb'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 192
+            // line 210
             echo "                                    </td>
 
 
@@ -270,12 +270,12 @@ class __TwigTemplate_245f761f5ac7410b8220e5b8d0b660689e8ae729d560260c303cc108d50
                                             </a>
                                             <div class=\"dropdown-menu dropdown-menu-right\">
                                                 <a class=\"dropdown-item\" href=\"";
-            // line 202
+            // line 220
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_DeleteSubject", ["subjectId" => $this->getAttribute($context["as"], "subjectId", [])]), "html", null, true);
             echo "\"><i
                                                             class=\"fas fa-times text-orange-red\"></i>Delete</a>
                                                 <a class=\"dropdown-item\"  href=\"";
-            // line 204
+            // line 222
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_UpdateSubject", ["subjectId" => $this->getAttribute($context["as"], "subjectId", [])]), "html", null, true);
             echo "\"><i
                                                             class=\"fas fa-cogs text-dark-pastel-green\"></i>Update</a>
@@ -289,7 +289,7 @@ class __TwigTemplate_245f761f5ac7410b8220e5b8d0b660689e8ae729d560260c303cc108d50
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['as'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 212
+        // line 230
         echo "                            </tbody>
                         </table>
                     </div>
@@ -357,34 +357,73 @@ class __TwigTemplate_245f761f5ac7410b8220e5b8d0b660689e8ae729d560260c303cc108d50
                                     <label>Coefficient</label>
                                     ";
         // line 42
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "coefficient", []), 'widget', ["attr" => ["class" => "form-control"]]);
-        echo "
-
-                                </div>
-
-                                <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
-                                    <label>Classe *</label>
+        if ((twig_length_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "coefficient", []), 'errors')) <= 0)) {
+            // line 43
+            echo "                                    ";
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "coefficient", []), 'widget', ["attr" => ["class" => "form-control"]]);
+            echo "
                                     ";
-        // line 48
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "classes", []), 'widget', ["attr" => ["class" => "select2"]]);
-        echo "
+        } else {
+            // line 45
+            echo "                                        ";
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "coefficient", []), 'widget', ["attr" => ["class" => "form-control is-invalid"]]);
+            echo "
+                                        <div class=\"invalid-feedback\">
+                                            ";
+            // line 47
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "coefficient", []), 'errors');
+            echo "
+                                        </div>
+                                    ";
+        }
+        // line 50
+        echo "                                </div>
+                                ";
+        // line 51
+        if ((twig_length_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "subjectName", []), 'errors')) <= 0)) {
+            // line 52
+            echo "                                <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
+                                    <label>Classe *</label>
 
+                                    ";
+            // line 55
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "classes", []), 'widget', ["attr" => ["class" => "select2"]]);
+            echo "
+                                    ";
+        } else {
+            // line 57
+            echo "                                    <div class=\"col-xl-3 col-lg-6 col-12 form-group has-error\">
+                                        <label>Classe *</label>
+
+                                        ";
+            // line 60
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "classes", []), 'widget', ["attr" => ["class" => "select2 "]]);
+            echo "
+                                      <span class=\"text-red\">
+                                          Insert a Classe
+                                         </span>
+
+                                    ";
+        }
+        // line 66
+        echo "
                                 </div>
+
                                 <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
 
                                 </div>
 
                             </div>
                             ";
-        // line 56
+        // line 74
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "Add", []), 'widget');
         echo "
                             ";
-        // line 57
+        // line 75
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "Reset", []), 'widget');
         echo "
                             ";
-        // line 58
+        // line 76
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end', ["render_rest" => false]);
         echo "
                         </form>
@@ -397,7 +436,7 @@ class __TwigTemplate_245f761f5ac7410b8220e5b8d0b660689e8ae729d560260c303cc108d50
 
     }
 
-    // line 220
+    // line 238
     public function block_jq($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -406,7 +445,7 @@ class __TwigTemplate_245f761f5ac7410b8220e5b8d0b660689e8ae729d560260c303cc108d50
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "jq"));
 
-        // line 221
+        // line 239
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -428,7 +467,7 @@ class __TwigTemplate_245f761f5ac7410b8220e5b8d0b660689e8ae729d560260c303cc108d50
 
     public function getDebugInfo()
     {
-        return array (  410 => 221,  401 => 220,  388 => 58,  384 => 57,  380 => 56,  369 => 48,  360 => 42,  354 => 38,  348 => 35,  342 => 33,  336 => 31,  334 => 30,  326 => 25,  322 => 24,  319 => 23,  310 => 22,  293 => 212,  279 => 204,  274 => 202,  262 => 192,  253 => 190,  249 => 189,  244 => 187,  240 => 186,  234 => 183,  228 => 179,  224 => 178,  174 => 131,  156 => 116,  127 => 91,  124 => 90,  121 => 89,  118 => 88,  116 => 87,  110 => 84,  85 => 61,  83 => 22,  62 => 3,  53 => 2,  31 => 1,);
+        return array (  449 => 239,  440 => 238,  427 => 76,  423 => 75,  419 => 74,  409 => 66,  400 => 60,  395 => 57,  390 => 55,  385 => 52,  383 => 51,  380 => 50,  374 => 47,  368 => 45,  362 => 43,  360 => 42,  354 => 38,  348 => 35,  342 => 33,  336 => 31,  334 => 30,  326 => 25,  322 => 24,  319 => 23,  310 => 22,  293 => 230,  279 => 222,  274 => 220,  262 => 210,  253 => 208,  249 => 207,  244 => 205,  240 => 204,  234 => 201,  228 => 197,  224 => 196,  174 => 149,  156 => 134,  127 => 109,  124 => 108,  121 => 107,  118 => 106,  116 => 105,  110 => 102,  85 => 79,  83 => 22,  62 => 3,  53 => 2,  31 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -482,15 +521,33 @@ class __TwigTemplate_245f761f5ac7410b8220e5b8d0b660689e8ae729d560260c303cc108d50
 
                                 <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                                     <label>Coefficient</label>
+                                    {% if form_errors(form.coefficient)|length <= 0 %}
                                     {{ form_widget (form.coefficient, {'attr': {'class':'form-control'}}) }}
-
+                                    {% else %}
+                                        {{ form_widget (form.coefficient, {'attr': {'class':'form-control is-invalid'}}) }}
+                                        <div class=\"invalid-feedback\">
+                                            {{ form_errors(form.coefficient) }}
+                                        </div>
+                                    {% endif %}
                                 </div>
-
+                                {% if form_errors(form.subjectName)|length <= 0 %}
                                 <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
                                     <label>Classe *</label>
+
                                     {{ form_widget (form.classes , {'attr': {'class':'select2'}}) }}
+                                    {% else %}
+                                    <div class=\"col-xl-3 col-lg-6 col-12 form-group has-error\">
+                                        <label>Classe *</label>
+
+                                        {{ form_widget (form.classes , {'attr': {'class':'select2 '}}) }}
+                                      <span class=\"text-red\">
+                                          Insert a Classe
+                                         </span>
+
+                                    {% endif %}
 
                                 </div>
+
                                 <div class=\"col-xl-3 col-lg-6 col-12 form-group\">
 
                                 </div>

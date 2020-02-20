@@ -142,8 +142,8 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
 
             // admin_UserDetails
-            if ('/admin/UserDetails' === $pathinfo) {
-                return array (  '_controller' => 'AdminBundle\\Controller\\AccountController::UserDetailsAction',  '_route' => 'admin_UserDetails',);
+            if (0 === strpos($pathinfo, '/admin/UserDetails') && preg_match('#^/admin/UserDetails/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_UserDetails']), array (  '_controller' => 'AdminBundle\\Controller\\AccountController::UserDetailsAction',));
             }
 
             if (0 === strpos($pathinfo, '/admin/D')) {
@@ -176,8 +176,8 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 }
 
                 // admin_DisplayPDF
-                if ('/admin/DisplayPDF' === $pathinfo) {
-                    return array (  '_controller' => 'AdminBundle\\Controller\\AccountController::DisplayPDFAction',  '_route' => 'admin_DisplayPDF',);
+                if (0 === strpos($pathinfo, '/admin/DisplayPDF') && preg_match('#^/admin/DisplayPDF/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_DisplayPDF']), array (  '_controller' => 'AdminBundle\\Controller\\AccountController::DisplayPDFAction',));
                 }
 
             }

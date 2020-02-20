@@ -19,19 +19,33 @@
                         <br><br>
                     </div>
                     {% block update %}
-                        <form class="new-added-form" method="post" >
+                        <form class="new-added-form" method="post" novalidate>
                             {{ form_start(form) }}
                             {{ form_row(form._token) }}
                             <div class="row">
 
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>Subject Name</label>
+                                    {% if form_errors(form.subjectName)|length <= 0 %}
                                     {{ form_widget (form.subjectName , {'attr': {'class':'form-control'}}) }}
+                                    {% else %}
+                                        {{ form_widget (form.subjectName , {'attr': {'class':'form-control is-invalid'}}) }}
+                                        <div class="invalid-feedback">
+                                            {{ form_errors(form.subjectName) }}
+                                        </div>
+                                    {% endif %}
                                 </div>
 
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>Coefficient</label>
+                                    {% if form_errors(form.coefficient)|length <= 0 %}
                                     {{ form_widget (form.coefficient, {'attr': {'class':'form-control'}}) }}
+                                    {% else %}
+                                        {{ form_widget (form.coefficient, {'attr': {'class':'form-control is-invalid'}}) }}
+                                        <div class="invalid-feedback">
+                                            {{ form_errors(form.coefficient) }}
+                                        </div>
+                                    {% endif %}
 
                                 </div>
 

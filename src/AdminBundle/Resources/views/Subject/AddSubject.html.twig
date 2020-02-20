@@ -39,15 +39,33 @@
 
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>Coefficient</label>
+                                    {% if form_errors(form.coefficient)|length <= 0 %}
                                     {{ form_widget (form.coefficient, {'attr': {'class':'form-control'}}) }}
-
+                                    {% else %}
+                                        {{ form_widget (form.coefficient, {'attr': {'class':'form-control is-invalid'}}) }}
+                                        <div class="invalid-feedback">
+                                            {{ form_errors(form.coefficient) }}
+                                        </div>
+                                    {% endif %}
                                 </div>
-
+                                {% if form_errors(form.subjectName)|length <= 0 %}
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>Classe *</label>
+
                                     {{ form_widget (form.classes , {'attr': {'class':'select2'}}) }}
+                                    {% else %}
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group has-error">
+                                        <label>Classe *</label>
+
+                                        {{ form_widget (form.classes , {'attr': {'class':'select2 '}}) }}
+                                      <span class="text-red">
+                                          Insert a Classe
+                                         </span>
+
+                                    {% endif %}
 
                                 </div>
+
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
 
                                 </div>
