@@ -17,77 +17,168 @@
                             </div>
 
                         </div>
-                        <form class="new-added-form" method="post">
+                        <form class="new-added-form" method="post" novalidate>
                             {{ form_start(form) }}
                             <div class="row">
                                 {{ form_row(form._token) }}
                                 {{ form_widget (form.username , { 'attr': {'class': 'hidden'} }) }}
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label>ID *</label>
-
-                                    {{ form_widget (form.id , {'attr': {'class':'form-control'}}) }}
-
+                                    <label   >ID *</label>
+                                    {% if form_errors(form.id)|length <= 0 %}
+                                        {{ form_widget (form.id , {'attr': {'class':'form-control'}}) }}
+                                    {% else %}
+                                        {{ form_widget (form.id , {'attr': {'class':'form-control is-invalid'}}) }}
+                                        <div class="invalid-feedback">
+                                            {{ form_errors(form.id) }}
+                                        </div>
+                                    {% endif %}
                                 </div>
 
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>First Name *</label>
-                                    {{ form_widget (form.firstName , {'attr': {'class':'form-control'} }) }}
+                                    {% if form_errors(form.firstName)|length <= 0 %}
+                                        {{ form_widget (form.firstName , {'attr': {'class':'form-control'} }) }}
+                                    {% else %}
+                                        {{ form_widget (form.firstName , {'attr': {'class':'form-control is-invalid'} }) }}
+                                        <div class="invalid-feedback">
+                                            {{ form_errors(form.firstName) }}
+                                        </div>
+
+                                    {% endif %}
                                 </div>
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>Last Name *</label>
-                                    {{ form_widget (form.lastName , {'attr': {'class':'form-control'}}) }}
+                                    {% if form_errors(form.lastName)|length <= 0 %}
+                                        {{ form_widget (form.lastName , {'attr': {'class':'form-control'}}) }}
+                                    {% else %}
+                                        {{ form_widget (form.lastName , {'attr': {'class':'form-control is-invalid'}}) }}
+                                        <div class="invalid-feedback">
+                                            {{ form_errors(form.lastName) }}
+                                        </div>
+                                    {% endif %}
                                 </div>
-                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                {% if form_errors(form.gender)|length <= 0 %}
+                                <div class="col-xl-3 col-lg-6 col-12 form-group ">
                                     <label>Gender *</label>
                                     {{ form_widget (form.gender , {'attr': {'class':'select2'}}) }}
-                                </div>
-                                <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label>Role *</label>
-                                    {{ form_widget (form.roles , {'attr': {'class':'select2'}}) }}
-                                </div>
+                                    {% else %}
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group has-error">
+                                        <label>Gender *</label>
+                                        {{ form_widget (form.gender , {'attr': {'class':'select2'}}) }}
+                                        <div class="invalid">
+                                            {{ form_errors(form.gender) }}
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                        <label>Role *</label>
+                                        {{ form_widget (form.roles , {'attr': {'class':'select2'}}) }}
+                                    </div>
+                                    {% if form_errors(form.userType)|length <= 0 %}
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group ">
+                                        <label>User Type *</label>
+                                        {{ form_widget (form.userType , {'attr': {'class':'select2'}}) }}
+                                        {% else %}
+                                        <div class="col-xl-3 col-lg-6 col-12 form-group has-error">
+                                            <label>User Type *</label>
+                                            {{ form_widget (form.userType , {'attr': {'class':'select2'}}) }}
+                                            <div class="invalid">
+                                                {{ form_errors(form.userType) }}
+                                            </div>
+                                            {% endif %}
+                                        </div>
 
-                                <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label>User Type *</label>
-                                    {{ form_widget (form.userType , {'attr': {'class':'select2'}}) }}
-                                </div>
 
-
-                                <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label>Joining Date *</label>
-                                    {{ form_widget (form.joiningDate , {'attr': {'class':'form-control air-datepicker','placeholder':'dd/mm/yyyy', 'data-position':'bottom right'} }  ) }}
-
-                                    <i class="far fa-calendar-alt"></i>
-                                </div>
-                                <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label>BirthDay *</label>
-                                    {{ form_widget (form.birthDay , {'attr': {'class':'form-control air-datepicker','placeholder':'dd/mm/yyyy', 'data-position':'bottom right'} }  ) }}
-
-                                    <i class="far fa-calendar-alt"></i>
-                                </div>
-                                <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label>E-Mail</label>
-                                    {{ form_widget (form.email , {'attr': {'class':'form-control'}}) }}
-
-                                </div>
+                                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                            <label>Joining Date *</label>
+                                            {% if form_errors(form.joiningDate)|length <= 0 %}
+                                                {{ form_widget (form.joiningDate , {'attr': {'class':'form-control air-datepicker ','placeholder':'dd/mm/yyyy', 'data-position':'bottom right'} }  ) }}
+                                                <i class="far fa-calendar-alt"></i>
+                                            {% else %}
+                                                {{ form_widget (form.joiningDate , {'attr': {'class':'form-control air-datepicker is-invalid ','placeholder':'dd/mm/yyyy', 'data-position':'bottom right'} }  ) }}
+                                                <i class="far fa-calendar-alt"></i>
+                                                <div class="invalid-feedback">
+                                                    {{ form_errors(form.joiningDate) }}
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                            <label>BirthDay *</label>
+                                            {% if form_errors(form.birthDay)|length <= 0 %}
+                                                {{ form_widget (form.birthDay , {'attr': {'class':'form-control air-datepicker','placeholder':'dd/mm/yyyy', 'data-position':'bottom right'} }  ) }}
+                                                <i class="far fa-calendar-alt"></i>
+                                            {% else %}
+                                                {{ form_widget (form.birthDay , {'attr': {'class':'form-control air-datepicker is-invalid','placeholder':'dd/mm/yyyy', 'data-position':'bottom right'} }  ) }}
+                                                <i class="far fa-calendar-alt"></i>
+                                                <div class="invalid-feedback">
+                                                    {{ form_errors(form.birthDay) }}
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                            <label>E-Mail</label>
+                                            {% if form_errors(form.email)|length <= 0 %}
+                                                {{ form_widget (form.email , {'attr': {'class':'form-control'}}) }}
+                                            {% else %}
+                                                {{ form_widget (form.email , {'attr': {'class':'form-control is-invalid'}}) }}
+                                                <div class="invalid-feedback">
+                                                    {{ form_errors(form.email) }}
+                                                </div>
+                                            {% endif %}
+                                        </div>
 
 
 
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>Phone</label>
-                                    {{ form_widget (form.phone , {'attr': {'class':'form-control'}}) }}
+                                    {% if form_errors(form.phone)|length <= 0 %}
+                                        {{ form_widget (form.phone , {'attr': {'class':'form-control'}}) }}
+                                    {% else %}
+                                        {{ form_widget (form.phone , {'attr': {'class':'form-control is-invalid'}}) }}
+                                        <div class="invalid-feedback">
+                                            {{ form_errors(form.phone) }}
+                                        </div>
+                                    {% endif %}
                                 </div>
+
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>Salaire *</label>
-                                    {{ form_widget (form.salaire , {'attr': {'class':'form-control'}}) }}
+                                    {% if form_errors(form.salaire)|length <= 0 %}
+                                        {{ form_widget (form.salaire , {'attr': {'class':'form-control'}}) }}
+                                    {% else %}
+                                        {{ form_widget (form.salaire , {'attr': {'class':'form-control is-invalid'}}) }}
+                                        <div class="invalid-feedback">
+                                            {{ form_errors(form.salaire) }}
+                                        </div>
+                                    {% endif %}
 
                                 </div>
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    </div>
+                                </div>
 
                                 <div class="col-lg-6 col-12 form-group">
                                     <label>Address *</label>
-                                    {{ form_widget (form.address , {'attr': {'class':'textarea form-control','cols':'10','rows':'4'}}) }}
+                                    {% if form_errors(form.address)|length <= 0 %}
+                                        {{ form_widget (form.address , {'attr': {'class':'textarea form-control','cols':'10','rows':'4'}}) }}
+                                    {% else %}
+                                        {{ form_widget (form.address , {'attr': {'class':'textarea form-control is-invalid','cols':'10','rows':'4'}}) }}
+                                        <div class="invalid-feedback">
+                                            {{ form_errors(form.address) }}
+                                        </div>
+                                    {% endif %}
 
+                                </div>
+
+
+                                <div class="form-group col-md-2">
+                                    <br>  {% if form_errors(form.captcha)|length <= 0 %}
+                                        {{ form_widget(form.captcha,{'attr': {'class':'form-control '}}) }}
+                                    {% else %}
+                                        {{ form_widget(form.captcha,{'attr': {'class':'form-control is-invalid'}}) }}
+                                        <div class="invalid-feedback">
+                                            {{ form_errors(form.captcha) }}
+                                        </div>
+                                    {% endif %}
                                 </div>
 
                                 <div class="col-12 form-group mg-t-8">

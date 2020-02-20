@@ -42,7 +42,7 @@ class User extends BaseUser
      *     minMessage = "First Name must be at least {{ limit }} characters long",
      *     maxMessage = "First Name  cannot be longer than {{ limit }} characters"
      * )
-     * @Assert\Type(type="ctype_alpha",message="First Name Most contain only characters")
+     * @Assert\Type(type="alpha",message="First Name Most contain only characters")
      */
     private $firstName;
 
@@ -57,7 +57,7 @@ class User extends BaseUser
      *     minMessage = "Last Name must be at least {{ limit }} characters long",
      *     maxMessage = "Last Name  cannot be longer than {{ limit }} characters"
      * )
-     * @Assert\Type(type="ctype_alpha",message="Last Name Most contain only characters")
+     * @Assert\Type(type="alpha",message="Last Name Most contain only characters")
      */
     private $lastName;
 
