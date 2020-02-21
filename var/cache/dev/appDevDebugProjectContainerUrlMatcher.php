@@ -107,6 +107,147 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        elseif (0 === strpos($pathinfo, '/admin')) {
+            // admin_AddAccount
+            if ('/admin' === $trimmedPathinfo) {
+                $ret = array (  '_controller' => 'AdminBundle\\Controller\\AccountController::AddAccountAction',  '_route' => 'admin_AddAccount',);
+                if ('/' === substr($pathinfo, -1)) {
+                    // no-op
+                } elseif ('GET' !== $canonicalMethod) {
+                    goto not_admin_AddAccount;
+                } else {
+                    return array_replace($ret, $this->redirect($rawPathinfo.'/', 'admin_AddAccount'));
+                }
+
+                return $ret;
+            }
+            not_admin_AddAccount:
+
+            if (0 === strpos($pathinfo, '/admin/Update')) {
+                // admin_UpdateAccount
+                if (0 === strpos($pathinfo, '/admin/UpdateAccount') && preg_match('#^/admin/UpdateAccount/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_UpdateAccount']), array (  '_controller' => 'AdminBundle\\Controller\\AccountController::UpdateAccountAction',));
+                }
+
+                // admin_UpdateClasse
+                if (0 === strpos($pathinfo, '/admin/UpdateClasse') && preg_match('#^/admin/UpdateClasse/(?P<classId>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_UpdateClasse']), array (  '_controller' => 'AdminBundle\\Controller\\ClasseController::UpdateClasseAction',));
+                }
+
+                // admin_UpdateSubject
+                if (0 === strpos($pathinfo, '/admin/UpdateSubject') && preg_match('#^/admin/UpdateSubject/(?P<subjectId>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_UpdateSubject']), array (  '_controller' => 'AdminBundle\\Controller\\SubjectController::UpdateSubjectAction',));
+                }
+
+            }
+
+            // admin_UserDetails
+            if (0 === strpos($pathinfo, '/admin/UserDetails') && preg_match('#^/admin/UserDetails/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_UserDetails']), array (  '_controller' => 'AdminBundle\\Controller\\AccountController::UserDetailsAction',));
+            }
+
+            if (0 === strpos($pathinfo, '/admin/D')) {
+                if (0 === strpos($pathinfo, '/admin/Delete')) {
+                    // admin_DeleteAccount
+                    if (0 === strpos($pathinfo, '/admin/DeleteAccount') && preg_match('#^/admin/DeleteAccount/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_DeleteAccount']), array (  '_controller' => 'AdminBundle\\Controller\\AccountController::DeleteAccountAction',));
+                    }
+
+                    // admin_DeleteClasse
+                    if (0 === strpos($pathinfo, '/admin/DeleteClasse') && preg_match('#^/admin/DeleteClasse/(?P<classId>[^/]++)$#sD', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_DeleteClasse']), array (  '_controller' => 'AdminBundle\\Controller\\ClasseController::DeleteClasseAction',));
+                    }
+
+                    // admin_DeleteSubject
+                    if (0 === strpos($pathinfo, '/admin/DeleteSubject') && preg_match('#^/admin/DeleteSubject/(?P<subjectId>[^/]++)$#sD', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_DeleteSubject']), array (  '_controller' => 'AdminBundle\\Controller\\SubjectController::DeleteSubjectAction',));
+                    }
+
+                    // admin_DeleteSchedule
+                    if (0 === strpos($pathinfo, '/admin/DeleteSchedule') && preg_match('#^/admin/DeleteSchedule/(?P<scheduleId>[^/]++)$#sD', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_DeleteSchedule']), array (  '_controller' => 'AdminBundle\\Controller\\ScheduleController::DeleteScheduleAction',));
+                    }
+
+                }
+
+                // admin_DetailSchedule
+                if (0 === strpos($pathinfo, '/admin/DetailSchedule') && preg_match('#^/admin/DetailSchedule/(?P<classeId>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_DetailSchedule']), array (  '_controller' => 'AdminBundle\\Controller\\ScheduleController::DetailScheduleAction',));
+                }
+
+                // admin_DisplayPDF
+                if (0 === strpos($pathinfo, '/admin/DisplayPDF') && preg_match('#^/admin/DisplayPDF/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_DisplayPDF']), array (  '_controller' => 'AdminBundle\\Controller\\AccountController::DisplayPDFAction',));
+                }
+
+            }
+
+            elseif (0 === strpos($pathinfo, '/admin/A')) {
+                // admin_AccountSettings
+                if ('/admin/AccountSettings' === $pathinfo) {
+                    return array (  '_controller' => 'AdminBundle\\Controller\\AccountController::AccountSettingsAction',  '_route' => 'admin_AccountSettings',);
+                }
+
+                // admin_AllAccounts
+                if ('/admin/AllAccounts' === $pathinfo) {
+                    return array (  '_controller' => 'AdminBundle\\Controller\\AccountController::AllAccountsAction',  '_route' => 'admin_AllAccounts',);
+                }
+
+                if (0 === strpos($pathinfo, '/admin/Add')) {
+                    // admin_AddClasse
+                    if ('/admin/AddClasse' === $pathinfo) {
+                        return array (  '_controller' => 'AdminBundle\\Controller\\ClasseController::AddClasseAction',  '_route' => 'admin_AddClasse',);
+                    }
+
+                    // admin_AddSubject
+                    if ('/admin/AddSubject' === $pathinfo) {
+                        return array (  '_controller' => 'AdminBundle\\Controller\\SubjectController::AddSubjectAction',  '_route' => 'admin_AddSubject',);
+                    }
+
+                    // admin_AddSchedule
+                    if ('/admin/AddSchedule' === $pathinfo) {
+                        return array (  '_controller' => 'AdminBundle\\Controller\\ScheduleController::AddScheduleAction',  '_route' => 'admin_AddSchedule',);
+                    }
+
+                    // admin_AddReclamation
+                    if ('/admin/AddReclamation' === $pathinfo) {
+                        return array (  '_controller' => 'AdminBundle\\Controller\\ReclamationController::AddReclamationAction',  '_route' => 'admin_AddReclamation',);
+                    }
+
+                }
+
+            }
+
+            elseif (0 === strpos($pathinfo, '/admin/S')) {
+                // admin_SearchAjax
+                if ('/admin/SearchAjax' === $pathinfo) {
+                    return array (  '_controller' => 'AdminBundle\\Controller\\AccountController::searchAction',  '_route' => 'admin_SearchAjax',);
+                }
+
+                // admin_SortAdmin
+                if ('/admin/SortAdmin' === $pathinfo) {
+                    return array (  '_controller' => 'AdminBundle\\Controller\\AccountController::SortAdminAction',  '_route' => 'admin_SortAdmin',);
+                }
+
+                // admin_ScheduleFront
+                if ('/admin/ScheduleFront' === $pathinfo) {
+                    return array (  '_controller' => 'AdminBundle\\Controller\\ScheduleController::ScheduleFrontAction',  '_route' => 'admin_ScheduleFront',);
+                }
+
+            }
+
+            // admin_searchSubject
+            if ('/admin/searchSubject' === $pathinfo) {
+                return array (  '_controller' => 'AdminBundle\\Controller\\SubjectController::searchSubjectAction',  '_route' => 'admin_searchSubject',);
+            }
+
+            // chart
+            if ('/admin/chart' === $pathinfo) {
+                return array (  '_controller' => 'AdminBundle:Charts:index',  '_route' => 'chart',);
+            }
+
+        }
+
         // fos_user_security_login
         if ('' === $trimmedPathinfo) {
             $ret = array (  '_controller' => 'fos_user.security.controller:loginAction',  '_route' => 'fos_user_security_login',);

@@ -13,6 +13,7 @@ namespace FOS\UserBundle\Model;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Storage agnostic user object.
@@ -39,6 +40,8 @@ abstract class User implements UserInterface, GroupableInterface
 
     /**
      * @var string
+     * @Assert\NotBlank(message="Please Insert an Email")
+     * @Assert\Email(message="Please Insert a valid email address")
      */
     protected $email;
 

@@ -14,6 +14,7 @@ namespace FOS\UserBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -49,7 +50,7 @@ class RegistrationFormType extends AbstractType
                     'Please Select*'=>false,
                     'Male'=>'Male',
                     'Female'=>'Female',
-                ],
+                ], 'required' =>true ,
             ])
             ->add('roles',ChoiceType::class,[
                 'choices'=>[
@@ -60,10 +61,13 @@ class RegistrationFormType extends AbstractType
                 ],
                 'required' =>true ,'multiple' => true,
             ])
+         
             ->add('joiningDate')
             ->add('phone')
             ->add('address',TextareaType::class)
             ->add('birthDay')
+            ->add('BloodGroup')
+            ->add('occupation')
             ->add('email', EmailType::class, array('label' => 'form.email', 'translation_domain' => 'FOSUserBundle'))
             ->add('username', null, array('label' => 'form.username', 'translation_domain' => 'FOSUserBundle'))
             ->add('plainPassword', RepeatedType::class, array(

@@ -6,8 +6,10 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>SparkIT Dashboard</title>
+
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href=" {{ asset('img/favicon.png') }} ">
     <!-- Normalize CSS -->
@@ -31,8 +33,12 @@
     <link rel="stylesheet" href="{{  asset('css/datepicker.min.css') }}">
     <!-- Custom CSS -->
     <link rel="stylesheet" href=" {{ asset('style.css') }} " >
+
     <!-- Modernize js -->
     <script href=" {{ asset('js/modernizr-3.6.0.min.js') }} "></script>
+    <!-- Chart JS -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 </head>
 <body>
 <!-- Preloader Start Here -->
@@ -43,7 +49,7 @@
     <div class="navbar navbar-expand-md header-menu-one bg-light">
         <div class="nav-bar-header-one">
             <div class="header-logo">
-                <a href="index.html">
+                <a href="{{ path('front') }}">
                     <img src="{{ asset('img/LogoPrinc.png') }}" alt="logo" width="155px" height="40px">
                 </a>
             </div>
@@ -79,11 +85,16 @@
                     <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                        aria-expanded="false">
                         <div class="admin-title">
-                            {% if is_granted('ROLE_USER') %}
+                            {% if is_granted('ROLE_SUPER_ADMIN') %}
                             <h5 class="item-title">{{ app.user.username }}</h5>
-                            <span>Admin</span>
+                                <span>SuperAdmin</span>
+
+                                {% elseif  is_granted('ROLE_ADMIN')%}
+                                    <h5 class="item-title">{{ app.user.username }}</h5>
+                                    <div class="item-title1">Admin</div>
+
                             {% else %}
-                            <h5 class="item-title">{{ app.user.roles[0] }}</h5>
+                            <h5 class="item-title">Aziz Arfaoui</h5>
                             <span>Admin</span>
                             {% endif %}
                         </div>
@@ -104,7 +115,7 @@
                                 <li><a href="#"><i class="flaticon-user"></i>My Profile</a></li>
                                 <li><a href="#"><i class="flaticon-list"></i>Task</a></li>
                                 <li><a href="#"><i class="flaticon-chat-comment-oval-speech-bubble-with-text-lines"></i>Message</a></li>
-                                <li><a href="#"><i class="flaticon-gear-loading"></i>Account Settings</a></li>
+                                <li><a href="{{ path('admin_AccountSettings') }}"><i class="flaticon-gear-loading"></i>Account Settings</a></li>
                                 {% if is_granted('ROLE_USER') %}
                                 <li><a href="{{ path('fos_user_security_logout') }}"><i class="flaticon-turn-off"></i>Log Out</a></li>
                                 {% else %}
@@ -265,7 +276,12 @@
                             <div class="item-content">
                                 {% if is_granted('ROLE_USER') %}
                                 <div class="item-title">{{ app.user.username }}</div>
-                                    <div class="item-title1">{{ app.user.roles[0] }}</div>
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <div class="item-title1">Admin</div>
+                                    {% endif %}
+                                    {% if is_granted('ROLE_SUPER_ADMIN') %}
+                                        <div class="item-title1">SuperAdmin</div>
+                                    {% endif %}
                                 {% else %}
                                     <div class="item-title">Aziz Arfaoui</div>
 
@@ -284,7 +300,7 @@
                         <a href="#" class="nav-link"><i class="flaticon-dashboard"></i><span>Dashboard</span></a>
                         <ul class="nav sub-group-menu">
                             <li class="nav-item">
-                                <a href="index.html" class="nav-link"><i class="fas fa-angle-right"></i>Admin</a>
+                                <a href="{{ path('back')}}" class="nav-link"><i class="fas fa-angle-right"></i>Admin</a>
                             </li>
                             <li class="nav-item">
                                 <a href="index3.html" class="nav-link"><i
@@ -389,26 +405,17 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item sidebar-nav-item">
-                        <a href="#" class="nav-link"><i
+                    <li class="nav-item ">
+                        <a href="{{ path('admin_AddClasse') }}" class="nav-link"><i
                                     class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Class</span></a>
-                        <ul class="nav sub-group-menu">
-                            <li class="nav-item">
-                                <a href="all-class.html" class="nav-link"><i class="fas fa-angle-right"></i>All
-                                    Classes</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="add-class.html" class="nav-link"><i class="fas fa-angle-right"></i>Add New
-                                    Class</a>
-                            </li>
-                        </ul>
+
                     </li>
                     <li class="nav-item">
-                        <a href="all-subject.html" class="nav-link"><i
+                        <a href="{{ path('admin_AddSubject') }}" class="nav-link"><i
                                     class="flaticon-open-book"></i><span>Subject</span></a>
                     </li>
                     <li class="nav-item">
-                        <a href="class-routine.html" class="nav-link"><i class="flaticon-calendar"></i><span>Class
+                        <a href="{{ path('admin_AddSchedule') }}" class="nav-link"><i class="flaticon-calendar"></i><span>Class
                                     Routine</span></a>
                     </li>
                     <li class="nav-item">
@@ -433,17 +440,18 @@
                                     class="flaticon-bus-side-view"></i><span>Transport</span></a>
                     </li>
 
-                    <li class="nav-item">
-                        <a href="notice-board.html" class="nav-link"><i
-                                    class="flaticon-script"></i><span>Notice</span></a>
-                    </li>
+
                     <li class="nav-item">
                         <a href="messaging.html" class="nav-link"><i
                                     class="flaticon-chat"></i><span>Messeage</span></a>
                     </li>
                     <li class="nav-item">
-                        <a href="account-settings.html" class="nav-link"><i
-                                    class="flaticon-settings"></i><span>Account</span></a>
+                        <a href="{{ path('admin_AllAccounts') }}" class="nav-link"><i
+                                    class="flaticon-multiple-users-silhouette"></i><span>All Accounts</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ path('admin_AddAccount') }}" class="nav-link"><i
+                                    class="flaticon-settings"></i><span>Add Account</span></a>
                     </li>
                 </ul>
             </div>
@@ -577,7 +585,7 @@
 
                             </div>
                             <hr style="border-width:4px;">
-                            <p>No students absent</p>
+                            <p class="noabs">No students absent</p>
                         </div>
 
                     </div>
@@ -587,21 +595,29 @@
                         <div class="card-body">
                             <div class="heading-layout1">
                                 <div class="item-title">
-                                    <h3>Students</h3>
+                                    <h3>Users Gender Chart</h3>    <br>
                                 </div>
+                            </div>
+                            <div id="GenderChart"  >
 
+                                <script type="text/javascript">
+                                    {{ gc_draw(piechart, 'GenderChart') }}
+                                </script>
                             </div>
-                            <div class="doughnut-chart-wrap">
-                                <canvas id="student-doughnut-chart" width="100" height="300"></canvas>
-                            </div>
+
+
+
+
+
+
                             <div class="student-report">
                                 <div class="student-count pseudo-bg-blue">
-                                    <h4 class="item-title">Female Students</h4>
-                                    <div class="item-number">30 %</div>
+                                    <h4 class="item-title">Female Users</h4>
+                                    <div class="item-number">{{FemalePercentage}} %</div>
                                 </div>
                                 <div class="student-count pseudo-bg-yellow">
-                                    <h4 class="item-title">Male Students</h4>
-                                    <div class="item-number">70 %</div>
+                                    <h4 class="item-title">Male Users</h4>
+                                    <div class="item-number"> {{MalePercentage}} %</div>
                                 </div>
                             </div>
                         </div>
@@ -689,43 +705,18 @@
                         <div class="card-body">
                             <div class="heading-layout1 mg-b-17">
                                 <div class="item-title">
-                                    <h3>Notice Board</h3>
+                                    <h3>Reclamation Board</h3>
                                 </div>
 
                             </div>
                             <div class="notice-box-wrap">
+                                {% for ar in allRec %}
                                 <div class="notice-list">
-                                    <div class="post-date bg-skyblue">16 June, 2019</div>
-                                    <h6 class="notice-title"><a href="#">Great School manag mene esom text of the
-                                            printing.</a></h6>
-                                    <div class="entry-meta"> Jennyfar Lopez / <span>5 min ago</span></div>
+                                    <div class="post-date bg-skyblue">{{ar.userRec}}</div>
+                                    <h6 class="notice-title"><a href="#">{{ ar.contenu }}</a></h6>
+                                    <div class="entry-meta"> {{ ar.sujet }}</div>
                                 </div>
-                                <div class="notice-list">
-                                    <div class="post-date bg-yellow">16 June, 2019</div>
-                                    <h6 class="notice-title"><a href="#">Great School manag printing.</a></h6>
-                                    <div class="entry-meta"> Jennyfar Lopez / <span>5 min ago</span></div>
-                                </div>
-                                <div class="notice-list">
-                                    <div class="post-date bg-pink">16 June, 2019</div>
-                                    <h6 class="notice-title"><a href="#">Great School manag meneesom.</a></h6>
-                                    <div class="entry-meta"> Jennyfar Lopez / <span>5 min ago</span></div>
-                                </div>
-                                <div class="notice-list">
-                                    <div class="post-date bg-skyblue">16 June, 2019</div>
-                                    <h6 class="notice-title"><a href="#">Great School manag mene esom text of the
-                                            printing.</a></h6>
-                                    <div class="entry-meta"> Jennyfar Lopez / <span>5 min ago</span></div>
-                                </div>
-                                <div class="notice-list">
-                                    <div class="post-date bg-yellow">16 June, 2019</div>
-                                    <h6 class="notice-title"><a href="#">Great School manag printing.</a></h6>
-                                    <div class="entry-meta"> Jennyfar Lopez / <span>5 min ago</span></div>
-                                </div>
-                                <div class="notice-list">
-                                    <div class="post-date bg-pink">16 June, 2019</div>
-                                    <h6 class="notice-title"><a href="#">Great School manag meneesom.</a></h6>
-                                    <div class="entry-meta"> Jennyfar Lopez / <span>5 min ago</span></div>
-                                </div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -734,18 +725,23 @@
             <!-- Dashboard Content End Here -->
 
             <!-- Footer Area Start Here -->
+
             <footer class="footer-wrap-layout1">
                 <div class="copyright">© Copyrights <a href="#">SparkIT</a> 2020. All rights reserved</div>
             </footer>
-            <!-- Footer Area End Here -->
 
+            <!-- Footer Area End Here -->
             {% endblock %}
+
 
         </div>
     </div>
     <!-- Page Area End Here -->
     <!-- jquery-->
+
+{% block jq %}
     <script src=" {{ asset('js/jquery-3.3.1.min.js') }} " ></script>
+    {% endblock %}
     <!-- Plugins js -->
     <script src=" {{ asset('js/plugins.js') }} " ></script>
     <!-- Popper js -->
@@ -768,9 +764,10 @@
     <script src=" {{ asset('js/fullcalendar.min.js') }} "></script>
     <!-- Chart Js -->
     <script  src=" {{ asset('js/Chart.min.js') }} " ></script>
-
     <!-- Custom Js -->
     <script  src=" {{ asset('js/main.js') }} " ></script>
+
+</div>
 </body>
 </html>
 

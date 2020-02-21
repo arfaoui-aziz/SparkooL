@@ -10,4 +10,25 @@ namespace AppBundle\Repository;
  */
 class UserRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findUserByName($searchName){
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT u
+                FROM AppBundle:User u
+                WHERE u.firstName LIKE :searchName '
+            )
+            ->setParameter('searchName', '%'.$searchName.'%')
+            ->getResult();
+    }
+
+    public function findAdmin(){
+        return $this->getEntityManager()
+            ->createQuery(
+                "SELECT u
+    FROM AppBundle:User u Where u.userType= 'Administrator' "
+            )
+            ->getResult();
+    }
+
+
 }

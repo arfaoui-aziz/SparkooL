@@ -1,0 +1,66 @@
+admin_AddAccount:
+    path:     /
+    defaults: { _controller: AdminBundle:Account:AddAccount }
+admin_UpdateAccount:
+    path:     /UpdateAccount/{id}
+    defaults: { _controller: AdminBundle:Account:UpdateAccount }
+admin_DeleteAccount:
+    path:     /DeleteAccount/{id}
+    defaults: { _controller: AdminBundle:Account:DeleteAccount }
+admin_AccountSettings:
+    path:     /AccountSettings
+    defaults: { _controller: AdminBundle:Account:AccountSettings }
+admin_AllAccounts:
+    path:     /AllAccounts
+    defaults: { _controller: AdminBundle:Account:AllAccounts }
+admin_SearchAjax:
+    path:     /SearchAjax
+    defaults: { _controller: AdminBundle:Account:search }
+admin_SortAdmin:
+    path:     /SortAdmin
+    defaults: { _controller: AdminBundle:Account:SortAdmin }
+admin_UserDetails:
+    path:     /UserDetails/{id}
+    defaults: { _controller: AdminBundle:Account:UserDetails }
+admin_DisplayPDF:
+    path:     /DisplayPDF/{id}
+    defaults: { _controller: AdminBundle:Account:DisplayPDF }
+admin_AddClasse:
+    path:     /AddClasse
+    defaults: { _controller: AdminBundle:Classe:AddClasse }
+admin_DeleteClasse:
+    path:     /DeleteClasse/{classId}
+    defaults: { _controller: AdminBundle:Classe:DeleteClasse }
+admin_UpdateClasse:
+    path:     /UpdateClasse/{classId}
+    defaults: { _controller: AdminBundle:Classe:UpdateClasse }
+admin_AddSubject:
+    path:     /AddSubject
+    defaults: { _controller: AdminBundle:Subject:AddSubject }
+admin_UpdateSubject:
+    path:     /UpdateSubject/{subjectId}
+    defaults: { _controller: AdminBundle:Subject:UpdateSubject }
+admin_searchSubject:
+    path:     /searchSubject
+    defaults: { _controller: AdminBundle:Subject:searchSubject }
+admin_DeleteSubject:
+    path:     /DeleteSubject/{subjectId}
+    defaults: { _controller: AdminBundle:Subject:DeleteSubject }
+admin_AddSchedule:
+    path:     /AddSchedule
+    defaults: { _controller: AdminBundle:Schedule:AddSchedule }
+admin_DeleteSchedule:
+    path:     /DeleteSchedule/{scheduleId}
+    defaults: { _controller: AdminBundle:Schedule:DeleteSchedule }
+admin_DetailSchedule:
+    path:     /DetailSchedule/{classeId}
+    defaults: { _controller: AdminBundle:Schedule:DetailSchedule }
+admin_AddReclamation:
+    path:     /AddReclamation
+    defaults: { _controller: AdminBundle:Reclamation:AddReclamation }
+admin_ScheduleFront:
+    path:     /ScheduleFront
+    defaults: { _controller: AdminBundle:Schedule:ScheduleFront }
+chart:
+    path:     /chart
+    defaults: { _controller: AdminBundle:Charts:index }
