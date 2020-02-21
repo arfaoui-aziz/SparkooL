@@ -115,11 +115,7 @@ class __TwigTemplate_ced7e48ee9ed0426325d61d41e9df924b622aa6377424d2c49f33e2f0cf
 
 
         <div class=\"dashboard-content-one\">
-            <!-- Breadcubs Area Start Here -->
-            <div class=\"breadcrumbs-area\">
-                <h3>Users</h3>
-            </div>
-            <!-- Breadcubs Area End Here -->
+
             <!-- Student Details Area Start Here -->
             <div class=\"card height-auto\">
                 <div class=\"card-body\">
@@ -130,26 +126,26 @@ class __TwigTemplate_ced7e48ee9ed0426325d61d41e9df924b622aa6377424d2c49f33e2f0cf
                     <div class=\"single-info-details\">
                         <div class=\"item-img\">
                             ";
-        // line 61
+        // line 57
         if (($this->getAttribute(($context["user"] ?? $this->getContext($context, "user")), "gender", []) == "Male")) {
-            // line 62
+            // line 58
             echo "                            <img src=\"";
             echo twig_escape_filter($this->env, (($context["base_dir"] ?? $this->getContext($context, "base_dir")) . $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/figure/parents.jpg")), "html", null, true);
             echo "\" alt=\"student\">
                             ";
         } else {
-            // line 64
+            // line 60
             echo "                                <img src=\"";
             echo twig_escape_filter($this->env, (($context["base_dir"] ?? $this->getContext($context, "base_dir")) . $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/figure/student1.jpg")), "html", null, true);
             echo "\" alt=\"student\">
                             ";
         }
-        // line 66
+        // line 62
         echo "                        </div>
                         <div class=\"item-content\">
                             <div class=\"header-inline item-header\">
                                 <h3 class=\"text-dark-medium font-medium\">";
-        // line 69
+        // line 65
         echo twig_escape_filter($this->env, $this->getAttribute(($context["user"] ?? $this->getContext($context, "user")), "firstName", []), "html", null, true);
         echo " ";
         echo twig_escape_filter($this->env, $this->getAttribute(($context["user"] ?? $this->getContext($context, "user")), "lastName", []), "html", null, true);
@@ -163,35 +159,35 @@ class __TwigTemplate_ced7e48ee9ed0426325d61d41e9df924b622aa6377424d2c49f33e2f0cf
                                     <tr>
                                         <td>ID:</td>
                                         <td class=\"font-medium text-dark-medium\">#";
-        // line 78
+        // line 74
         echo twig_escape_filter($this->env, $this->getAttribute(($context["user"] ?? $this->getContext($context, "user")), "id", []), "html", null, true);
         echo " </td>
                                     </tr>
                                     <tr>
                                         <td>First Name:</td>
                                         <td class=\"font-medium text-dark-medium\">";
-        // line 82
+        // line 78
         echo twig_escape_filter($this->env, $this->getAttribute(($context["user"] ?? $this->getContext($context, "user")), "firstName", []), "html", null, true);
         echo " </td>
                                     </tr>
                                     <tr>
                                         <td>Last Name</td>
                                         <td class=\"font-medium text-dark-medium\">";
-        // line 86
+        // line 82
         echo twig_escape_filter($this->env, $this->getAttribute(($context["user"] ?? $this->getContext($context, "user")), "lastName", []), "html", null, true);
         echo " </td>
                                     </tr>
                                     <tr>
                                         <td>Gender:</td>
                                         <td class=\"font-medium text-dark-medium\">";
-        // line 90
+        // line 86
         echo twig_escape_filter($this->env, $this->getAttribute(($context["user"] ?? $this->getContext($context, "user")), "gender", []), "html", null, true);
         echo " </td>
                                     </tr>
                                     <tr>
                                         <td>Occupation:</td>
                                         <td class=\"font-medium text-dark-medium\">";
-        // line 94
+        // line 90
         echo twig_escape_filter($this->env, $this->getAttribute(($context["user"] ?? $this->getContext($context, "user")), "userType", []), "html", null, true);
         echo " </td>
                                     </tr>
@@ -199,7 +195,7 @@ class __TwigTemplate_ced7e48ee9ed0426325d61d41e9df924b622aa6377424d2c49f33e2f0cf
                                     <tr>
                                         <td>Address:</td>
                                         <td class=\"font-medium text-dark-medium\">House #10, ";
-        // line 99
+        // line 95
         echo twig_escape_filter($this->env, $this->getAttribute(($context["user"] ?? $this->getContext($context, "user")), "address", []), "html", null, true);
         echo "</td>
                                     </tr>
@@ -207,14 +203,14 @@ class __TwigTemplate_ced7e48ee9ed0426325d61d41e9df924b622aa6377424d2c49f33e2f0cf
                                     <tr>
                                         <td>Phone:</td>
                                         <td class=\"font-medium text-dark-medium\">+216 ";
-        // line 104
+        // line 100
         echo twig_escape_filter($this->env, $this->getAttribute(($context["user"] ?? $this->getContext($context, "user")), "phone", []), "html", null, true);
         echo " </td>
                                     </tr>
                                     <tr>
                                         <td>E-mail:</td>
                                         <td class=\"font-medium text-dark-medium\">";
-        // line 108
+        // line 104
         echo twig_escape_filter($this->env, $this->getAttribute(($context["user"] ?? $this->getContext($context, "user")), "email", []), "html", null, true);
         echo "</td>
                                     </tr>
@@ -238,62 +234,62 @@ class __TwigTemplate_ced7e48ee9ed0426325d61d41e9df924b622aa6377424d2c49f33e2f0cf
 
 <!-- Plugins js -->
 <script src=\" ";
-        // line 129
+        // line 125
         echo twig_escape_filter($this->env, (($context["base_dir"] ?? $this->getContext($context, "base_dir")) . $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/plugins.js")), "html", null, true);
         echo " \" ></script>
 <!-- Popper js -->
 <script src=\" ";
-        // line 131
+        // line 127
         echo twig_escape_filter($this->env, (($context["base_dir"] ?? $this->getContext($context, "base_dir")) . $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/popper.min.js")), "html", null, true);
         echo " \"></script>
 <!-- Bootstrap js -->
 <script src=\" ";
-        // line 133
+        // line 129
         echo twig_escape_filter($this->env, (($context["base_dir"] ?? $this->getContext($context, "base_dir")) . $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/bootstrap.min.js")), "html", null, true);
         echo " \" ></script>
 <!-- Counterup Js -->
 <script src=\" ";
-        // line 135
+        // line 131
         echo twig_escape_filter($this->env, (($context["base_dir"] ?? $this->getContext($context, "base_dir")) . $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.counterup.min.js")), "html", null, true);
         echo " \" ></script>
 <!-- Moment Js -->
 <script  src=\" ";
-        // line 137
+        // line 133
         echo twig_escape_filter($this->env, (($context["base_dir"] ?? $this->getContext($context, "base_dir")) . $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/moment.min.js")), "html", null, true);
         echo " \" ></script>
 <!-- Scroll Up Js -->
 <script src=\" ";
-        // line 139
+        // line 135
         echo twig_escape_filter($this->env, (($context["base_dir"] ?? $this->getContext($context, "base_dir")) . $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.scrollUp.min.js")), "html", null, true);
         echo " \" ></script>
 <!-- Waypoints Js -->
 <script  src=\" ";
-        // line 141
+        // line 137
         echo twig_escape_filter($this->env, (($context["base_dir"] ?? $this->getContext($context, "base_dir")) . $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.waypoints.min.js")), "html", null, true);
         echo " \" ></script>
 <!-- Select 2 Js -->
 <script src=\"";
-        // line 143
+        // line 139
         echo twig_escape_filter($this->env, (($context["base_dir"] ?? $this->getContext($context, "base_dir")) . $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/select2.min.js")), "html", null, true);
         echo "\"></script>
 <!-- Date Picker Js -->
 <script src=\"";
-        // line 145
+        // line 141
         echo twig_escape_filter($this->env, (($context["base_dir"] ?? $this->getContext($context, "base_dir")) . $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/datepicker.min.js")), "html", null, true);
         echo "\"></script>
 <!-- Full Calender Js -->
 <script src=\" ";
-        // line 147
+        // line 143
         echo twig_escape_filter($this->env, (($context["base_dir"] ?? $this->getContext($context, "base_dir")) . $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/fullcalendar.min.js")), "html", null, true);
         echo " \"></script>
 <!-- Chart Js -->
 <script  src=\" ";
-        // line 149
+        // line 145
         echo twig_escape_filter($this->env, (($context["base_dir"] ?? $this->getContext($context, "base_dir")) . $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/Chart.min.js")), "html", null, true);
         echo " \" ></script>
 <!-- Custom Js -->
 <script  src=\" ";
-        // line 151
+        // line 147
         echo twig_escape_filter($this->env, (($context["base_dir"] ?? $this->getContext($context, "base_dir")) . $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/main.js")), "html", null, true);
         echo " \" ></script>
 
@@ -322,7 +318,7 @@ class __TwigTemplate_ced7e48ee9ed0426325d61d41e9df924b622aa6377424d2c49f33e2f0cf
 
     public function getDebugInfo()
     {
-        return array (  297 => 151,  292 => 149,  287 => 147,  282 => 145,  277 => 143,  272 => 141,  267 => 139,  262 => 137,  257 => 135,  252 => 133,  247 => 131,  242 => 129,  218 => 108,  211 => 104,  203 => 99,  195 => 94,  188 => 90,  181 => 86,  174 => 82,  167 => 78,  153 => 69,  148 => 66,  142 => 64,  136 => 62,  134 => 61,  106 => 36,  101 => 34,  96 => 32,  91 => 30,  86 => 28,  81 => 26,  76 => 24,  71 => 22,  66 => 20,  61 => 18,  56 => 16,  51 => 14,  36 => 1,);
+        return array (  293 => 147,  288 => 145,  283 => 143,  278 => 141,  273 => 139,  268 => 137,  263 => 135,  258 => 133,  253 => 131,  248 => 129,  243 => 127,  238 => 125,  214 => 104,  207 => 100,  199 => 95,  191 => 90,  184 => 86,  177 => 82,  170 => 78,  163 => 74,  149 => 65,  144 => 62,  138 => 60,  132 => 58,  130 => 57,  106 => 36,  101 => 34,  96 => 32,  91 => 30,  86 => 28,  81 => 26,  76 => 24,  71 => 22,  66 => 20,  61 => 18,  56 => 16,  51 => 14,  36 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -381,11 +377,7 @@ class __TwigTemplate_ced7e48ee9ed0426325d61d41e9df924b622aa6377424d2c49f33e2f0cf
 
 
         <div class=\"dashboard-content-one\">
-            <!-- Breadcubs Area Start Here -->
-            <div class=\"breadcrumbs-area\">
-                <h3>Users</h3>
-            </div>
-            <!-- Breadcubs Area End Here -->
+
             <!-- Student Details Area Start Here -->
             <div class=\"card height-auto\">
                 <div class=\"card-body\">

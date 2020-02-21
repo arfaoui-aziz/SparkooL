@@ -52,14 +52,13 @@ class AccountController extends Controller
             );
             $this->get('mailer')->send($message);
             /***************************************/
-            /*************************SMS**********************************************
+            /*************************SMS**********************************************/
             $basic  = new \Nexmo\Client\Credentials\Basic('22176dc4', 'MLACPrttW58I1hEp');
             $client = new \Nexmo\Client($basic);
             $client->message()->send([
-            'to' => '216'.$phone,
-            'from' => 'Sparkool',
-            'text' => 'Welcome to the SparkooL Family
-            Your username is : '.$username.' Your Password is : '.$id
+                'to' =>  '21698101555',
+                'from' => 'Sparkool',
+                'text' => 'Welcome to the SparkooL Family Check your Email for your username and password'
             ]);
             /***************************************************************************/
 
