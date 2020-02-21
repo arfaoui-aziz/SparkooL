@@ -1,0 +1,204 @@
+{% extends 'base.html.twig'%}
+
+ {% block body %}
+
+         <div class="dashboard-content-one">
+         <!-- Breadcubs Area Start Here -->
+         <div class="breadcrumbs-area">
+             <h3>Events</h3>
+             <ul>
+                 <li>
+                     <a href="index.html">Home</a>
+                 </li>
+                 <li> <a href="{{ path('ajouterEvent') }}">Add New Event</a></li>
+             </ul>
+         </div>
+         <!-- Breadcubs Area End Here -->
+         <!-- Student Table Area Start Here -->
+
+         <div class="card height-auto">
+             <div class="card-body">
+
+
+                 {% for message in app.flashes('info') %}
+                     <div class="alert alert-success">
+                         {{ message }}
+                     </div>
+
+                 {% endfor %}
+<!-- SEEEEARCH ---------->
+
+                 <div class="item-title">
+                     <h3>Search An Event</h3>
+                 </div>
+                 <form class="mg-b-20">
+                     <div class="row gutters-8">
+                         <div class="col-3-xxxl col-xl-3 col-lg-3 col-12 form-group">
+                             <input type="text"x placeholder="Search by Name ..." class="form-control search" >
+                         </div>
+                         <div class="col-4-xxxl col-xl-4 col-lg-3 col-12 form-group">
+                             <input type="text" placeholder="Search by Type ..." class="form-control search">
+                         </div>
+                         <div class="col-4-xxxl col-xl-3 col-lg-3 col-12 form-group">
+                             <input type="text" placeholder="Search by Date ..." class="form-control search">
+                         </div>
+                         <div class="col-1-xxxl col-xl-2 col-lg-3 col-12 form-group">
+                             <button type="submit" class="fw-btn-fill btn-gradient-yellow">SEARCH</button>
+                         </div>
+                     </div>
+                 </form>
+
+
+                 <ul class="nav" id="side-menu">
+                     <li>
+
+                         <ul class="nav nav-second-level" id="entitiesNav">
+                         </ul>
+                     </li>
+                 </ul><br>
+
+                 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+                 <script type="text/javascript">
+                     jQuery(document).ready(function() {
+                         var searchRequest = null;
+                         $(".search").keyup(function() {
+                             var minlength = 1;
+                             var that = this;
+                             var value = $(this).val();
+                             var entitySelector = $("#entitiesNav").html('');
+                             if (value.length >= minlength ) {
+                                 if (searchRequest != null)
+                                     searchRequest.abort();
+                                 searchRequest = $.ajax({
+                                     type: "GET",
+                                     url: "{{ path('ajax') }}",
+                                     data: {
+                                         'q' : value
+                                     },
+                                     dataType: "text",
+                                     success: function(msg){
+                                         //we need to check if the value is the same
+                                         if (value===$(that).val()) {
+                                             var result = JSON.parse(msg);
+                                             $.each(result, function(key, arr) {
+                                                 $.each(arr, function(id, value) {
+                                                     if (key === 'posts') {
+                                                         if (id !== 'error') {
+                                                             console.log(value[1]);
+
+                                 var large= '<div class="table-responsive"> <table class="table display data-table text-nowrap"> <thead> <tr> <th>Id</th> <th>Name</th> <th>Type of Event</th> <th>Description</th><th>Date</th><th>Place</th><th>Participants</th><th>Theme</th><th>Destination</th><th>Award</th><th>Budget</th><th>Price</th><th></th> </tr> </thead> <tbody> <tr> <td> '+value[0]+'</td> <td>'+value[1]+'</td> <td> '+value[2]+'</td><td> '+value[3]+'</td><td> '+value[4]+'</td><td> '+ value[5]+'</td><td> '+ value[6]+'</td><td> '+ value[7]+'</td> <td> '+ value[8]+'</td><td> '+ value[9]+'</td><td> '+ value[10]+'</td><td> '+ value[11]+'</td></tbody> </table> </div>';
+
+                                                             entitySelector.append(large) ; }
+                                                         else {
+                                                             entitySelector.append('<li class="errorLi">'+value+'</li>');
+                                                         }
+                                                     }
+                                                 });
+                                             });
+                                         }
+                                     }
+                                 });
+                             }
+                         });
+                     });
+                 </script>
+
+
+
+                 <div class="heading-layout1">
+                     <div class="item-title">
+                         <h3>All Events Data</h3>
+                     </div>
+
+                 </div>
+
+
+
+
+                 <div class="table-responsive">
+                     <table class="table display data-table text-nowrap">
+                         <thead>
+                         <tr>
+                             <th>Id</th>
+                             <th>Name</th>
+                             <th>Type of Event</th>
+                             <th>Description</th>
+                             <th>Date</th>
+                             <th>Place</th>
+                             <th>Participants </th>
+                             <th>Theme</th>
+                             <th>Destination</th>
+                             <th>Award</th>
+                             <th>Budget</th>
+                             <th>Price</th>
+
+                             <th></th>
+                         </tr>
+                         </thead>
+
+                         {% for ff in var %}
+
+                             <tbody>
+
+                             <tr>
+                                 <td>  {{ ff.id}} </td>
+                                 <td>{{ ff.nomEvent }}</td>
+                                 <td>{{ ff.typeEvent}}</td>
+                                 <td>{{ ff.description}}</td>
+                                 <td>{{ ff.dateEvent}}</td>
+                                 <td>{{ ff.placeEvent}}</td>
+                                 <td>{{ ff.nbParticipants}}</td>
+                                 <td>{{ ff.theme}}</td>
+                                 <td>{{ ff.destination}}</td>
+                                 <td>{{ ff.award}}</td>
+                                 <td>{{ ff.budget}}</td>
+                                 <td>{{ ff.price}}</td>
+
+                                 <td>
+                                     <div class="dropdown">
+                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                            aria-expanded="false">
+                                             <span class="flaticon-more-button-of-three-dots"></span>
+                                         </a>
+                                         <div class="dropdown-menu dropdown-menu-right">
+                                             <a class="dropdown-item" href="{{ path('supprimerEvent',{'id':ff.id }) }}"><i
+                                                         class="fas fa-times text-orange-red"></i> Delete</a>
+                                             <a class="dropdown-item" href="{{ path('modifierEvent',{'id':ff.id }) }}"><i
+                                                         class="fas fa-cogs text-dark-pastel-green"></i> Edit</a>
+                                             <a class="dropdown-item" href="{{ path('afficherEvent') }}"><i
+                                                         class="fas fa-redo-alt text-orange-peel"></i> Refresh</a>
+                                         </div>
+                                     </div>
+                                 </td>
+                             </tr>
+
+
+                             </tbody>
+                         {% endfor %}
+                     </table>
+                 </div>
+             </div>
+         </div>
+
+
+
+
+         <section class="content-header">
+             <div class="container">
+                 <div class="row">
+
+
+
+                 </div>
+             </div>
+         </section>
+         <!-- Student Table Area End Here -->
+         <footer class="footer-wrap-layout1">
+             <div class="copyright">© Copyrights <a href="#">SparkIT</a> 2020. All rights reserved</div>
+         </footer>
+     </div>
+     </div>
+     <!-- Page Area End Here -->
+     </div>
+ {% endblock %}

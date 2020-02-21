@@ -1,0 +1,67 @@
+sonia_homepage:
+    path:     /
+    defaults: { _controller: SoniaBundle:Default:index }
+afficherEvent:
+    path:     /afficherEvent
+    defaults: { _controller: SoniaBundle:Event:AfficherEvent }
+ajouterEvent:
+    path:     /ajouterEvent
+    defaults: { _controller: SoniaBundle:Event:AjouterEvent }
+ajouterActivite:
+    path:     /ajouterActivite
+    defaults: { _controller: SoniaBundle:Event:AjouterActivite }
+ajouterTrip:
+    path:     /ajouterTrip
+    defaults: { _controller: SoniaBundle:Event:AjouterFieldTrip }
+ajouterCompetiton:
+    path:     /ajouterCompetiton
+    defaults: { _controller: SoniaBundle:Event:AjouterCompetition }
+modifierEvent:
+    path:     /modifierEvent/{id}
+    defaults: { _controller: SoniaBundle:Event:UpdateEvent }
+supprimerEvent:
+    path:     /supprimerEvent/{id}
+    defaults: { _controller: SoniaBundle:Event:DeleteEvent }
+ajax:
+    path:     /ajax
+    defaults: { _controller: SoniaBundle:Event:search }
+afficherEventFront:
+    path:     /afficherEventFront
+    defaults: { _controller: SoniaBundle:Event:AfficherEventFront }
+afficherEventDetail:
+    path:     /afficherEventDetail/{id}
+    defaults: { _controller: SoniaBundle:Event:DetailEvent }
+ParticiperEvent:
+    path:     /ParticiperEvent/{id}
+    defaults: { _controller: SoniaBundle:Event:Participate }
+CancelparticipEvent:
+    path:     /CancelparticipEvent/{id}
+    defaults: { _controller: SoniaBundle:Event:CancelParticipEvent }
+ajaxFront:
+    path:     /ajaxFront
+    defaults: { _controller: SoniaBundle:Event:searchFront }
+
+afficherClub:
+    path:     /afficherClub
+    defaults: { _controller: SoniaBundle:Club:AfficherClub }
+ajouterClub:
+    path:     /ajouterClub
+    defaults: { _controller: SoniaBundle:Club:AjouterClub }
+modifierClub:
+    path:     /modifierClub/{id}
+    defaults: { _controller: SoniaBundle:Club:UpdateClub }
+supprimerClub:
+    path:     /supprimerClub/{id}
+    defaults: { _controller: SoniaBundle:Club:DeleteClub }
+afficherClubFront:
+    path:     /afficherClubFront
+    defaults: { _controller: SoniaBundle:Club:AfficherClubFront }
+afficherClubDetail:
+    path:     /afficherClubDetail/{id}
+    defaults: { _controller: SoniaBundle:Club:AfficherClubDetail }
+participateClub:
+    path:     /participateClub/{id}
+    defaults: { _controller: SoniaBundle:Club:ParticipateClub }
+Rating:
+    path:     /Rating/{id}
+    defaults: { _controller: SoniaBundle:Club:Rating }

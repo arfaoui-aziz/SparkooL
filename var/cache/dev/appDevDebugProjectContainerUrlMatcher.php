@@ -107,6 +107,144 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        elseif (0 === strpos($pathinfo, '/sonia')) {
+            // sonia_homepage
+            if ('/sonia' === $trimmedPathinfo) {
+                $ret = array (  '_controller' => 'SoniaBundle\\Controller\\DefaultController::indexAction',  '_route' => 'sonia_homepage',);
+                if ('/' === substr($pathinfo, -1)) {
+                    // no-op
+                } elseif ('GET' !== $canonicalMethod) {
+                    goto not_sonia_homepage;
+                } else {
+                    return array_replace($ret, $this->redirect($rawPathinfo.'/', 'sonia_homepage'));
+                }
+
+                return $ret;
+            }
+            not_sonia_homepage:
+
+            if (0 === strpos($pathinfo, '/sonia/a')) {
+                if (0 === strpos($pathinfo, '/sonia/afficherEvent')) {
+                    // afficherEvent
+                    if ('/sonia/afficherEvent' === $pathinfo) {
+                        return array (  '_controller' => 'SoniaBundle\\Controller\\EventController::AfficherEventAction',  '_route' => 'afficherEvent',);
+                    }
+
+                    // afficherEventFront
+                    if ('/sonia/afficherEventFront' === $pathinfo) {
+                        return array (  '_controller' => 'SoniaBundle\\Controller\\EventController::AfficherEventFrontAction',  '_route' => 'afficherEventFront',);
+                    }
+
+                    // afficherEventDetail
+                    if (0 === strpos($pathinfo, '/sonia/afficherEventDetail') && preg_match('#^/sonia/afficherEventDetail/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, ['_route' => 'afficherEventDetail']), array (  '_controller' => 'SoniaBundle\\Controller\\EventController::DetailEventAction',));
+                    }
+
+                }
+
+                elseif (0 === strpos($pathinfo, '/sonia/afficherClub')) {
+                    // afficherClub
+                    if ('/sonia/afficherClub' === $pathinfo) {
+                        return array (  '_controller' => 'SoniaBundle\\Controller\\ClubController::AfficherClubAction',  '_route' => 'afficherClub',);
+                    }
+
+                    // afficherClubFront
+                    if ('/sonia/afficherClubFront' === $pathinfo) {
+                        return array (  '_controller' => 'SoniaBundle\\Controller\\ClubController::AfficherClubFrontAction',  '_route' => 'afficherClubFront',);
+                    }
+
+                    // afficherClubDetail
+                    if (0 === strpos($pathinfo, '/sonia/afficherClubDetail') && preg_match('#^/sonia/afficherClubDetail/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, ['_route' => 'afficherClubDetail']), array (  '_controller' => 'SoniaBundle\\Controller\\ClubController::AfficherClubDetailAction',));
+                    }
+
+                }
+
+                elseif (0 === strpos($pathinfo, '/sonia/ajouter')) {
+                    // ajouterEvent
+                    if ('/sonia/ajouterEvent' === $pathinfo) {
+                        return array (  '_controller' => 'SoniaBundle\\Controller\\EventController::AjouterEventAction',  '_route' => 'ajouterEvent',);
+                    }
+
+                    // ajouterActivite
+                    if ('/sonia/ajouterActivite' === $pathinfo) {
+                        return array (  '_controller' => 'SoniaBundle\\Controller\\EventController::AjouterActiviteAction',  '_route' => 'ajouterActivite',);
+                    }
+
+                    // ajouterTrip
+                    if ('/sonia/ajouterTrip' === $pathinfo) {
+                        return array (  '_controller' => 'SoniaBundle\\Controller\\EventController::AjouterFieldTripAction',  '_route' => 'ajouterTrip',);
+                    }
+
+                    // ajouterCompetiton
+                    if ('/sonia/ajouterCompetiton' === $pathinfo) {
+                        return array (  '_controller' => 'SoniaBundle\\Controller\\EventController::AjouterCompetitionAction',  '_route' => 'ajouterCompetiton',);
+                    }
+
+                    // ajouterClub
+                    if ('/sonia/ajouterClub' === $pathinfo) {
+                        return array (  '_controller' => 'SoniaBundle\\Controller\\ClubController::AjouterClubAction',  '_route' => 'ajouterClub',);
+                    }
+
+                }
+
+                elseif (0 === strpos($pathinfo, '/sonia/ajax')) {
+                    // ajax
+                    if ('/sonia/ajax' === $pathinfo) {
+                        return array (  '_controller' => 'SoniaBundle\\Controller\\EventController::searchAction',  '_route' => 'ajax',);
+                    }
+
+                    // ajaxFront
+                    if ('/sonia/ajaxFront' === $pathinfo) {
+                        return array (  '_controller' => 'SoniaBundle\\Controller\\EventController::searchFrontAction',  '_route' => 'ajaxFront',);
+                    }
+
+                }
+
+            }
+
+            // modifierEvent
+            if (0 === strpos($pathinfo, '/sonia/modifierEvent') && preg_match('#^/sonia/modifierEvent/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'modifierEvent']), array (  '_controller' => 'SoniaBundle\\Controller\\EventController::UpdateEventAction',));
+            }
+
+            // modifierClub
+            if (0 === strpos($pathinfo, '/sonia/modifierClub') && preg_match('#^/sonia/modifierClub/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'modifierClub']), array (  '_controller' => 'SoniaBundle\\Controller\\ClubController::UpdateClubAction',));
+            }
+
+            // supprimerEvent
+            if (0 === strpos($pathinfo, '/sonia/supprimerEvent') && preg_match('#^/sonia/supprimerEvent/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'supprimerEvent']), array (  '_controller' => 'SoniaBundle\\Controller\\EventController::DeleteEventAction',));
+            }
+
+            // supprimerClub
+            if (0 === strpos($pathinfo, '/sonia/supprimerClub') && preg_match('#^/sonia/supprimerClub/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'supprimerClub']), array (  '_controller' => 'SoniaBundle\\Controller\\ClubController::DeleteClubAction',));
+            }
+
+            // ParticiperEvent
+            if (0 === strpos($pathinfo, '/sonia/ParticiperEvent') && preg_match('#^/sonia/ParticiperEvent/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'ParticiperEvent']), array (  '_controller' => 'SoniaBundle\\Controller\\EventController::ParticipateAction',));
+            }
+
+            // CancelparticipEvent
+            if (0 === strpos($pathinfo, '/sonia/CancelparticipEvent') && preg_match('#^/sonia/CancelparticipEvent/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'CancelparticipEvent']), array (  '_controller' => 'SoniaBundle\\Controller\\EventController::CancelParticipEventAction',));
+            }
+
+            // participateClub
+            if (0 === strpos($pathinfo, '/sonia/participateClub') && preg_match('#^/sonia/participateClub/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'participateClub']), array (  '_controller' => 'SoniaBundle\\Controller\\ClubController::ParticipateClubAction',));
+            }
+
+            // Rating
+            if (0 === strpos($pathinfo, '/sonia/Rating') && preg_match('#^/sonia/Rating/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'Rating']), array (  '_controller' => 'SoniaBundle\\Controller\\ClubController::RatingAction',));
+            }
+
+        }
+
         elseif (0 === strpos($pathinfo, '/admin')) {
             // admin_AddAccount
             if ('/admin' === $trimmedPathinfo) {

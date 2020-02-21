@@ -1,0 +1,158 @@
+{% extends 'base.html.twig'%}
+{% block body %}
+
+
+
+
+    <div class="dashboard-content-one">
+    <!-- Breadcubs Area Start Here -->
+    <div class="breadcrumbs-area">
+        <h3>Events</h3>
+
+    </div>
+    <!-- Breadcubs Area End Here -->
+    <!-- Student Table Area Start Here -->
+    <div class="card height-auto">
+        <div class="card-body">
+            <div class="heading-layout1">
+                <div class="item-title">
+                    <h3>All Events Data</h3>
+                </div>
+
+            </div>
+                <form  class="new-added-form" method="POST" onsubmit="return verifForm(this)">
+                    {{   form_start(f) }}
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label>Name *</label>
+                            {% if form_errors(f.nomEvent)|length <= 0 %}
+
+                               {{ form_widget (f.nomEvent, {'attr': {'class':'form-control','placeholder':'Kids Event'}}) }}
+
+                            {% else %}
+                                {{ form_widget (f.nomEvent , {'attr': {'class':'form-control is-invalid'}}) }}
+                                <div class="invalid-feedback">
+                                    {{ form_errors(f.nomEvent) }}
+                                </div>
+
+                            {% endif %}
+
+
+                        </div>
+
+                        {%  do f.typeEvent.setRendered() %}
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label >Description *</label>
+                            {% if form_errors(f.description)|length <= 0 %}
+                            {{ form_widget (f.description , {'attr': {'class':'form-control','placeholder':'The event is about'}}) }}
+                            {% else %}
+                            {{ form_widget (f.description , {'attr': {'class':'form-control is-invalid'}}) }}
+                            <div class="invalid-feedback">
+                                {{ form_errors(f.description) }}
+                            </div>
+                            {% endif %}
+
+                        </div>
+
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label>Date *</label>
+                            {% if form_errors(f.dateEvent)|length <= 0 %}
+                            {{ form_widget ( f.dateEvent , {'attr': {'class':'form-control air-datepicker','placeholder':'dd/mm/yyyy', 'data-position':'bottom right', } }  ) }}
+                                <i class="far fa-calendar-alt"></i>
+                            {% else %}
+                            {{ form_widget (f.dateEvent, {'attr': {'class':'form-control air-datepicker is-invalid'}}) }}
+                            <div class="invalid-feedback">
+                            {{ form_errors(f.dateEvent) }}
+                            </div>
+                            {% endif %}
+                        </div>
+
+
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label>Place of Event *</label>
+                            {% if form_errors(f.placeEvent)|length <= 0 %}
+                            {{ form_widget (f.placeEvent , {'attr': {'class':'form-control','placeholder':'Classroom'}}) }}
+                            {% else %}
+                                {{ form_widget (f.placeEvent , {'attr': {'class':'form-control is-invalid'}}) }}
+                                <div class="invalid-feedback">
+                                    {{ form_errors(f.placeEvent) }}
+                                </div>
+                            {% endif %}
+
+
+                        </div>
+
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label>  Participants  *</label>
+                            {% if form_errors(f.nbParticipants)|length <= 0 %}
+                            {{ form_widget (f.nbParticipants , {'attr': {'class':'form-control'}}) }}
+                            {% else %}
+                                {{ form_widget (f.nbParticipants , {'attr': {'class':'form-control is-invalid'}}) }}
+                                <div class="invalid-feedback">
+                                    {{ form_errors(f.nbParticipants) }}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        {%  do f.theme.setRendered() %}
+                        {%  do f.destination.setRendered() %}
+                        {%  do f.award.setRendered() %}
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label> Budget *</label>
+                            {% if form_errors(f.budget)|length <= 0 %}
+                                {{ form_widget (f.budget , {'attr': {'class':'form-control'}}) }}
+
+                            {% else %}
+                                {{ form_widget (f.budget , {'attr': {'class':'form-control is-invalid'}}) }}
+                                <div class="invalid-feedback">
+                                    {{ form_errors(f.budget) }}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label> Price of Participation *</label>
+                            {% if form_errors(f.budget)|length <= 0 %}
+                            {{ form_widget (f.price , {'attr': {'class':'form-control','placeholder':'Free'}}) }}
+
+                            {% else %}
+                                {{ form_widget (f.price , {'attr': {'class':'form-control is-invalid'}}) }}
+                                <div class="invalid-feedback">
+                                    {{ form_errors(f.price) }}                                </div>
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+             {{form_end(f)}}
+            </form>
+
+
+            <section class="content-header">
+                <div class="container">
+                    <div class="row">
+
+
+
+                    </div>
+                </div>
+            </section>
+            <!-- Student Table Area End Here -->
+            <footer class="footer-wrap-layout1">
+                <div class="copyright">© Copyrights <a href="#">SparkIT</a> 2020. All rights reserved</div>
+            </footer>
+        </div>
+    </div>
+    <!-- Page Area End Here -->
+</div>
+
+
+
+
+{% endblock  %}
+

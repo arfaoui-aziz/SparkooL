@@ -107,8 +107,13 @@
 
                             </ul>
                         </li>
-                        <li><a href="#"><div>School Life</div></a></li>
-                        <li><a href="#"><div>News & Events</div></a></li>
+                        <li><a href="#"><div>School Life</div></a>
+                            <ul>
+                                <li><a href="{{ path('afficherClubFront') }}"><div><i class="fas fa-users"></i>Clubs</div></a></li>
+                                <li><a href="{{ path('afficherEventFront') }}"><div><i class="far fa-calendar-alt"></i>Events</div></a></li>
+                            </ul>
+                        </li>
+
                         <li><a href="{{ path('admin_ScheduleFront') }}"><div>School Schedule</div></a></li>
                         <li><a href="{{ path('admin_AddReclamation') }}"><div>Reclamation </div></a></li>
                     </ul>
@@ -146,6 +151,28 @@
             </nav><!-- #primary-menu end -->
 
         </div>
+
+        {{ render(controller('SoniaBundle:Notification:display')) }}
+
+        {# Call NotificationsBundles's assets #}
+        {{ notifications_assets() }}
+        <script>
+            /**
+             * After calling notifications_assets() "pusher" is now available
+             * and you can use it this way
+             */
+
+                // select the channel you want to listen to
+            var channel = pusher.subscribe("notifications");// notifications channel
+            channel.bind("my-event", function(data) {
+                console.log('from notifications channel', data);
+            });
+
+            var channel = pusher.subscribe("messages");// messages channel
+            channel.bind("my-event", function(data) {
+                console.log('from messages channel', data);
+            });
+        </script>
 
     </header><!-- #header end -->
 
@@ -594,12 +621,18 @@
                         <li class="mb-1">
                             <a class="link-hover-style-1"  data-hash data-hash-offset="95" href="#solutions">Program</a>
                         </li>
-                        <li class="mb-1">
-                            <a class="link-hover-style-1"  data-hash data-hash-offset="95" href="#pricing">School Life</a>
+
+                        <li><a href="#"><div>School Life</div></a>
+                            <ul>
+                                <li><a href="{{ path('afficherClubFront') }}"><div><i class="fas fa-users"></i>Clubs</div></a></li>
+                            </ul>
                         </li>
-                        <li class="mb-1">
-                            <a class="link-hover-style-1"  data-hash data-hash-offset="95" href="#reviews">News & Events</a>
+                        <li><a href="#"><div>News & Events</div></a>
+                            <ul>
+                                <li><a href="{{ path('afficherEventFront') }}"><div><i class="far fa-calendar-alt"></i>Events</div></a></li>
+                            </ul>
                         </li>
+
                         <li class="mb-1">
                             <a class="link-hover-style-1"  data-hash data-hash-offset="95" href="#news">Admission</a>
                         </li>

@@ -1,0 +1,186 @@
+{% extends 'baseFront.html.twig'%}
+
+ {% block body %}
+     <link rel="shortcut icon" type="image/x-icon" href=" {{ asset('img/favicon.png') }} ">
+     <!-- Normalize CSS -->
+     <link rel="stylesheet" href=" {{ asset('css/normalize.css') }}">
+
+     <!-- Main CSS -->
+     <link rel="stylesheet"  href=" {{ asset('css/main.css') }} ">
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href=" {{ asset('css/bootstrap.min.css') }} " >
+     <!-- Fontawesome CSS -->
+     <link rel="stylesheet" href=" {{ asset('css/all.min.css') }} ">
+     <!-- Flaticon CSS -->
+     <link rel="stylesheet"  href=" {{ asset('fonts/flaticon.css') }} " >
+     <!-- Full Calender CSS -->
+     <link rel="stylesheet" href=" {{ asset('css/fullcalendar.min.css') }} ">
+     <!-- Animate CSS -->
+     <link rel="stylesheet" href=" {{ asset('css/animate.min.css') }} " >
+     <!-- Select 2 CSS -->
+     <link rel="stylesheet" href="{{ asset('css/select2.min.css') }} ">
+     <!-- Date Picker CSS -->
+     <link rel="stylesheet" href="{{  asset('css/datepicker.min.css') }}">
+     <!-- Custom CSS -->
+     <link rel="stylesheet" href=" {{ asset('style.css') }} " >
+     <!-- Modernize js -->
+     <script href=" {{ asset('js/modernizr-3.6.0.min.js') }} "></script>
+     <!-- Breadcubs Area End Here -->
+     <!-- Student Table Area Start Here -->
+
+     <div class="card-body">
+
+         <!-- event Table Area Start Here -->
+
+         <div class="card height-auto">
+             <div class="card-body">
+
+                 <div class="heading-layout1">
+                     <div class="item-title">
+                         <h3>About The Event</h3>
+                     </div>
+
+                 </div>
+
+                 <div class="single-info-details">
+
+                     <div class="item-img">
+
+                         <img src="{{ asset('img/figure/event.png') }}" alt="teacher">
+                     </div>
+                     <div class="item-content">
+                         <div class="header-inline item-header">
+                             <h3 class="text-dark-medium font-medium">{{  var.nomEvent }}</h3>
+                             <div class="header-elements">
+                                 <ul>
+                                     <li><a href="#"><i class="fas fa-print"></i></a></li>
+                                     <li><a href="#"><i class="fas fa-envelope-open-text"></i></a></li>
+                                 </ul>
+                             </div>
+                         </div>
+
+                         <div class="info-table table-responsive">
+                             <table class="table text-nowrap">
+
+                                 <tbody>
+
+                                 <tr>
+                                     <td>Name:</td>
+                                     <td class="font-medium text-dark-medium">{{ var.nomEvent }}</td>
+                                 </tr>
+                                 <tr>
+                                     <td>Type:</td>
+                                     <td class="font-medium text-dark-medium">{{ var.typeEvent }}</td>
+                                 </tr>
+                                 <tr>
+                                     <td>Description: </td>
+                                     <td class="font-medium text-dark-medium">{{ var.description}}</td>
+                                 </tr>
+                                 <tr>
+                                     <td>Date:</td>
+                                     <td class="font-medium text-dark-medium">{{ var.dateEvent}}</td>
+                                 </tr>
+                                 <tr>
+                                     <td>Place:</td>
+                                     <td class="font-medium text-dark-medium">{{ var.placeEvent}}</td>
+                                 </tr>
+                                 <tr>
+                                     <td>Participants:</td>
+                                     <td class="font-medium text-dark-medium">{{ var.nbParticipants}}</td>
+                                 </tr>
+                                 <tr>
+                                     <td>Theme:</td>
+                                     <td class="font-medium text-dark-medium">{{ var.theme}}</td>
+                                 </tr>
+                                 <tr>
+                                     <td>Destination:</td>
+                                     <td class="font-medium text-dark-medium">{{ var.destination}}</td>
+                                 </tr>
+                                 <tr>
+                                     <td>Award</td>
+                                     <td class="font-medium text-dark-medium">{{ var.award}}</td>
+                                 </tr>
+                                 <tr>
+                                     <td>Price of Participation:</td>
+                                     <td class="font-medium text-dark-medium">{{ var.price}}</td>
+                                 </tr>
+
+                                 </tbody>
+
+                             </table>
+                         </div>
+
+                {%  for r in results %}
+                    {% if  r.user_id == idUser and  r.event_id == var.id  %}
+
+                        {% set test=1  %}
+                        <span  class="input-group-append">
+										<a  href="{{ path('CancelparticipEvent',{'id':var.id }) }}" class="btn btn-primary text-color-light text-2 rounded-0 py-3 px-4" type="submit"><strong>Cancel Participation</strong></a>
+
+                             </span>
+
+                    {% endif %}
+                {% endfor %}
+
+                         {% if test ==0 %}
+
+                            <span  class="input-group-append">
+										<a  href="{{ path('ParticiperEvent',{'id':var.id }) }}" class="btn btn-primary text-color-light text-2 rounded-0 py-3 px-4" type="submit"><strong>Participate</strong></a>
+
+                             </span>
+                          {% endif %}
+
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+
+     </div>
+     </div>
+
+     <!-- ends Here -->
+
+
+
+     <section class="content-header">
+         <div class="container">
+             <div class="row">
+
+
+
+             </div>
+         </div>
+     </section>
+     <!-- Student Table Area End Here -->
+
+     </div>
+     </div>
+     <!-- Page Area End Here -->
+     <script src=" {{ asset('js/jquery-3.3.1.min.js') }} " ></script>
+     <!-- Plugins js -->
+     <script src=" {{ asset('js/plugins.js') }} " ></script>
+     <!-- Popper js -->
+     <script src=" {{ asset('js/popper.min.js') }} "></script>
+     <!-- Bootstrap js -->
+     <script src=" {{ asset('js/bootstrap.min.js') }} " ></script>
+     <!-- Counterup Js -->
+     <script src=" {{ asset('js/jquery.counterup.min.js') }} " ></script>
+     <!-- Moment Js -->
+     <script  src=" {{ asset('js/moment.min.js') }} " ></script>
+     <!-- Scroll Up Js -->
+     <script src=" {{ asset('js/jquery.scrollUp.min.js') }} " ></script>
+     <!-- Waypoints Js -->
+     <script  src=" {{ asset('js/jquery.waypoints.min.js') }} " ></script>
+     <!-- Select 2 Js -->
+     <script src="{{ asset('js/select2.min.js') }}"></script>
+     <!-- Date Picker Js -->
+     <script src="{{ asset('js/datepicker.min.js') }}"></script>
+     <!-- Full Calender Js -->
+     <script src=" {{ asset('js/fullcalendar.min.js') }} "></script>
+     <!-- Chart Js -->
+     <script  src=" {{ asset('js/Chart.min.js') }} " ></script>
+
+     <!-- Custom Js -->
+     <script  src=" {{ asset('js/main.js') }} " ></script>
+ {% endblock %}
