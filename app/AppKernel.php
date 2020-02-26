@@ -28,6 +28,7 @@ class AppKernel extends Kernel
             new Nomaya\SocialBundle\NomayaSocialBundle(),
             new ParentBundle\ParentBundle(),
             new EtudiantBundle\EtudiantBundle(),
+            new TeacherBundle\TeacherBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

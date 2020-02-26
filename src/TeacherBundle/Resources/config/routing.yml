@@ -1,0 +1,86 @@
+
+addTeacher:
+    path:     /addTeacher
+    defaults: { _controller: TeacherBundle:Teacher:AddTeacher }
+showTeacher:
+    path:     /showTeacher
+    defaults: { _controller: TeacherBundle:Teacher:ShowTeacher }
+showTeacherDetails:
+    path:     /showTeacherDetails/{id}
+    defaults: { _controller: TeacherBundle:Teacher:ShowTeacherDetails }
+modifyTeacher:
+    path:     /modifyTeacher
+    defaults: { _controller: TeacherBundle:Teacher:ModifyTeacher }
+deleteTeacher:
+    path:     /deleteTeacher/{id}
+    defaults: { _controller: TeacherBundle:Teacher:DeleteTeacher }
+updateTeacher:
+    path:     /updateTeacher/{id}
+    defaults: { _controller: TeacherBundle:Teacher:UpdateTeacher }
+
+addDiploma:
+    path:     /addDiploma/{id}
+    defaults: { _controller: TeacherBundle:Diploma:AddDiploma }
+
+updateDiploma:
+    path:     /updateDiploma/{id}
+    defaults: { _controller: TeacherBundle:Diploma:UpdateDiploma }
+
+addAbsanceTeacher:
+    path:     /addAbsanceTeacher/{id}
+    defaults: { _controller: TeacherBundle:AbsentTeacher:AddAbsanceTeacher }
+
+addDelayTeacher:
+  path:     /addDelayTeacher/{id}
+  defaults: { _controller: TeacherBundle:DelayTeacher:AddDelayTeacher }
+
+
+showAbsence:
+    path:     /showAbsence/{id}
+    defaults: { _controller: TeacherBundle:AbsentTeacher:ShowAbsence }
+
+
+showDelay:
+  path:     /showDelay/{id}
+  defaults: { _controller: TeacherBundle:DelayTeacher:ShowDelay }
+
+deleteAbsence:
+    path:     /DeleteAbsence/{id}/{id2}
+    defaults: { _controller: TeacherBundle:AbsentTeacher:DeleteAbsence }
+
+deleteDelay:
+  path:     /DeleteDelay/{id}/{id2}
+  defaults: { _controller: TeacherBundle:DelayTeacher:DeleteDelay }
+
+showTeacherDetailsF:
+    path:     /showTeacherDetailsF/{id}
+    defaults: { _controller: TeacherBundle:Teacher:ShowTeacherDetailsF }
+
+interfaceTeacher:
+    path:     /interfaceTeacher/{id}
+    defaults: { _controller: TeacherBundle:Teacher:Interface }
+
+updateLogin:
+    path:     /updateLogin/{id}
+    defaults: { _controller: TeacherBundle:Teacher:UpdateLogin }
+
+addReclamation:
+    path:     /addReclamation
+    defaults: { _controller: TeacherBundle:Reclamation:AddReclamation }
+
+PDF:
+  path:     /PDF/{id}
+  defaults: { _controller: TeacherBundle:Teacher:DisplayPDF }
+
+ajax:
+  path:     /ajax
+  defaults: { _controller: TeacherBundle:Teacher:search }
+
+NumberOfAbsent:
+  path:     /NumberOfAbsentAction/{id}
+  defaults: { _controller: TeacherBundle:AbsentTeacher:NumberOfAbsent }
+
+admin_SearchAjax:
+  path:     /SearchAjax
+  defaults: { _controller: TeacherBundle:Teacher:search }
+

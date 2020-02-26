@@ -519,21 +519,21 @@ class __TwigTemplate_cd814c56118be4a010d5ab4e8420041b2bd28e538d74943fcc88f6fd207
                                     class=\"flaticon-multiple-users-silhouette\"></i><span>Teachers</span></a>
                         <ul class=\"nav sub-group-menu\">
                             <li class=\"nav-item\">
-                                <a href=\"all-teacher.html\" class=\"nav-link\"><i class=\"fas fa-angle-right\"></i>All
+                                <a href=\"";
+        // line 348
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("showTeacher");
+        echo "\" class=\"nav-link\"><i class=\"fas fa-angle-right\"></i>All
                                     Teachers</a>
                             </li>
+
                             <li class=\"nav-item\">
-                                <a href=\"teacher-details.html\" class=\"nav-link\"><i
-                                            class=\"fas fa-angle-right\"></i>Teacher Details</a>
-                            </li>
-                            <li class=\"nav-item\">
-                                <a href=\"add-teacher.html\" class=\"nav-link\"><i class=\"fas fa-angle-right\"></i>Add
+                                <a href=\"";
+        // line 353
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("addTeacher");
+        echo "\" class=\"nav-link\"><i class=\"fas fa-angle-right\"></i>Add
                                     Teacher</a>
                             </li>
-                            <li class=\"nav-item\">
-                                <a href=\"teacher-payment.html\" class=\"nav-link\"><i
-                                            class=\"fas fa-angle-right\"></i>Payment</a>
-                            </li>
+
                         </ul>
                     </li>
                     <li class=\"nav-item sidebar-nav-item\">
@@ -541,21 +541,21 @@ class __TwigTemplate_cd814c56118be4a010d5ab4e8420041b2bd28e538d74943fcc88f6fd207
                         <ul class=\"nav sub-group-menu\">
                             <li class=\"nav-item\">
                                 <a href=\"";
-        // line 369
+        // line 363
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("inscription_parent");
         echo "\" class=\"nav-link\"><i class=\"fas fa-angle-right\"></i>Add
                                     Parents</a>
                             </li>
                             <li class=\"nav-item\">
                                 <a href=\"";
-        // line 373
+        // line 367
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("afficher_parent");
         echo "\" class=\"nav-link\"><i
                                             class=\"fas fa-angle-right\"></i>Parents Details</a>
                             </li>
                             <li class=\"nav-item\">
                                 <a href=\"";
-        // line 377
+        // line 371
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("afficher_reclamation");
         echo "\" class=\"nav-link\"><i class=\"fas fa-angle-right\"></i>
                                     Parent Reclamation</a>
@@ -567,7 +567,7 @@ class __TwigTemplate_cd814c56118be4a010d5ab4e8420041b2bd28e538d74943fcc88f6fd207
                         <ul class=\"nav sub-group-menu\">
                             <li class=\"nav-item\">
                                 <a href=\"";
-        // line 386
+        // line 380
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("afficherEvent");
         echo "\" class=\"nav-link\"><i class=\"fas fa-angle-right\"></i>All
                                     Events</a>
@@ -577,26 +577,26 @@ class __TwigTemplate_cd814c56118be4a010d5ab4e8420041b2bd28e538d74943fcc88f6fd207
                                 <ul class=\"nav sub-group-menu\">
                                     <li class=\"nav-item\">
                                         <a href=\"";
-        // line 393
+        // line 387
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("ajouterEvent");
         echo "\" class=\"nav-link\"><i class=\"fas fa-angle-right\"></i>Add
                                             New Event</a>
                                     </li>
                                     <li class=\"nav-item\">
                                         <a href=\"";
-        // line 397
+        // line 391
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("ajouterActivite");
         echo "\" class=\"nav-link\"><i class=\"fas fa-angle-right\"></i></i>Add New Sport Activity</a>
                                     </li>
                                     <li class=\"nav-item\">
                                         <a href=\"";
-        // line 400
+        // line 394
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("ajouterTrip");
         echo "\" class=\"nav-link\"><i class=\"fas fa-angle-right\"></i>Add New Field Trip</a>
                                     </li>
                                     <li class=\"nav-item\">
                                         <a href=\"";
-        // line 403
+        // line 397
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("ajouterCompetiton");
         echo "\" class=\"nav-link\"><i class=\"fas fa-angle-right\"></i>Add new Competition</a>
                                     </li>
@@ -604,14 +604,14 @@ class __TwigTemplate_cd814c56118be4a010d5ab4e8420041b2bd28e538d74943fcc88f6fd207
                             </li>
                             <li class=\"nav-item\">
                                 <a href=\"";
-        // line 408
+        // line 402
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("afficherClub");
         echo "\" class=\"nav-link\"><i class=\"fas fa-angle-right\"></i>All
                                     Clubs</a>
                             </li>
                             <li class=\"nav-item\">
                                 <a href=\"";
-        // line 412
+        // line 406
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("ajouterClub");
         echo "\" class=\"nav-link\"><i class=\"fas fa-angle-right\"></i>Add New
                                     Club</a>
@@ -652,7 +652,7 @@ class __TwigTemplate_cd814c56118be4a010d5ab4e8420041b2bd28e538d74943fcc88f6fd207
                     </li>
                     <li class=\"nav-item \">
                         <a href=\"";
-        // line 450
+        // line 444
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_AddClasse");
         echo "\" class=\"nav-link\"><i
                                     class=\"flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler\"></i><span>Class</span></a>
@@ -660,14 +660,14 @@ class __TwigTemplate_cd814c56118be4a010d5ab4e8420041b2bd28e538d74943fcc88f6fd207
                     </li>
                     <li class=\"nav-item\">
                         <a href=\"";
-        // line 455
+        // line 449
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_AddSubject");
         echo "\" class=\"nav-link\"><i
                                     class=\"flaticon-open-book\"></i><span>Subject</span></a>
                     </li>
                     <li class=\"nav-item\">
                         <a href=\"";
-        // line 459
+        // line 453
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_AddSchedule");
         echo "\" class=\"nav-link\"><i class=\"flaticon-calendar\"></i><span>Class
                                     Routine</span></a>
@@ -701,14 +701,14 @@ class __TwigTemplate_cd814c56118be4a010d5ab4e8420041b2bd28e538d74943fcc88f6fd207
                     </li>
                     <li class=\"nav-item\">
                         <a href=\"";
-        // line 490
+        // line 484
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_AllAccounts");
         echo "\" class=\"nav-link\"><i
                                     class=\"flaticon-multiple-users-silhouette\"></i><span>All Accounts</span></a>
                     </li>
                     <li class=\"nav-item\">
                         <a href=\"";
-        // line 494
+        // line 488
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_AddAccount");
         echo "\" class=\"nav-link\"><i
                                     class=\"flaticon-settings\"></i><span>Add Account</span></a>
@@ -719,9 +719,9 @@ class __TwigTemplate_cd814c56118be4a010d5ab4e8420041b2bd28e538d74943fcc88f6fd207
         <!-- Sidebar Area End Here -->
 
         ";
-        // line 502
+        // line 496
         $this->displayBlock('body', $context, $blocks);
-        // line 776
+        // line 770
         echo "
 
         </div>
@@ -730,67 +730,67 @@ class __TwigTemplate_cd814c56118be4a010d5ab4e8420041b2bd28e538d74943fcc88f6fd207
     <!-- jquery-->
 
 ";
-        // line 783
+        // line 777
         $this->displayBlock('jq', $context, $blocks);
-        // line 786
+        // line 780
         echo "    <!-- Plugins js -->
     <script src=\" ";
-        // line 787
+        // line 781
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/plugins.js"), "html", null, true);
         echo " \" ></script>
     <!-- Popper js -->
     <script src=\" ";
-        // line 789
+        // line 783
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/popper.min.js"), "html", null, true);
         echo " \"></script>
     <!-- Bootstrap js -->
     <script src=\" ";
-        // line 791
+        // line 785
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/bootstrap.min.js"), "html", null, true);
         echo " \" ></script>
     <!-- Counterup Js -->
     <script src=\" ";
-        // line 793
+        // line 787
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.counterup.min.js"), "html", null, true);
         echo " \" ></script>
     <!-- Moment Js -->
     <script  src=\" ";
-        // line 795
+        // line 789
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/moment.min.js"), "html", null, true);
         echo " \" ></script>
     <!-- Scroll Up Js -->
     <script src=\" ";
-        // line 797
+        // line 791
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.scrollUp.min.js"), "html", null, true);
         echo " \" ></script>
     <!-- Waypoints Js -->
     <script  src=\" ";
-        // line 799
+        // line 793
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.waypoints.min.js"), "html", null, true);
         echo " \" ></script>
     <!-- Select 2 Js -->
     <script src=\"";
-        // line 801
+        // line 795
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/select2.min.js"), "html", null, true);
         echo "\"></script>
     <!-- Date Picker Js -->
     <script src=\"";
-        // line 803
+        // line 797
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/datepicker.min.js"), "html", null, true);
         echo "\"></script>
     <!-- Full Calender Js -->
     <script src=\" ";
-        // line 805
+        // line 799
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/fullcalendar.min.js"), "html", null, true);
         echo " \"></script>
     <!-- Chart Js -->
     <script  src=\" ";
-        // line 807
+        // line 801
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/Chart.min.js"), "html", null, true);
         echo " \" ></script>
     <!-- Custom Js -->
     <script  src=\" ";
-        // line 809
+        // line 803
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/main.js"), "html", null, true);
         echo " \" ></script>
 
@@ -807,7 +807,7 @@ class __TwigTemplate_cd814c56118be4a010d5ab4e8420041b2bd28e538d74943fcc88f6fd207
 
     }
 
-    // line 502
+    // line 496
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -816,7 +816,7 @@ class __TwigTemplate_cd814c56118be4a010d5ab4e8420041b2bd28e538d74943fcc88f6fd207
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 503
+        // line 497
         echo "        <div class=\"dashboard-content-one\">
             <!-- Breadcubs Area Start Here -->
             <div class=\"breadcrumbs-area\">
@@ -835,9 +835,9 @@ class __TwigTemplate_cd814c56118be4a010d5ab4e8420041b2bd28e538d74943fcc88f6fd207
 
                                 <div class=\"item-icon bg-light-blue \">
                                     ";
-        // line 520
+        // line 514
         $this->displayBlock('header', $context, $blocks);
-        // line 523
+        // line 517
         echo "                                </div>
 
                             </div>
@@ -856,7 +856,7 @@ class __TwigTemplate_cd814c56118be4a010d5ab4e8420041b2bd28e538d74943fcc88f6fd207
                             <div class=\"col-6\">
                                 <div class=\"item-icon bg-light-blue\">
                                     <img src=\"";
-        // line 540
+        // line 534
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("fonts/teacher.png"), "html", null, true);
         echo "\">
                                 </div>
@@ -876,7 +876,7 @@ class __TwigTemplate_cd814c56118be4a010d5ab4e8420041b2bd28e538d74943fcc88f6fd207
                             <div class=\"col-6\">
                                 <div class=\"item-icon bg-light-yellow\">
                                     <img src=\"";
-        // line 557
+        // line 551
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("fonts/mother.png"), "html", null, true);
         echo "\" width=\"60\">
                                 </div>
@@ -896,7 +896,7 @@ class __TwigTemplate_cd814c56118be4a010d5ab4e8420041b2bd28e538d74943fcc88f6fd207
                             <div class=\"col-6\">
                                 <div class=\"item-icon bg-light-red\">
                                     <img src=\"";
-        // line 574
+        // line 568
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("fonts/boss.png"), "html", null, true);
         echo "\" width=\"55px\" >
                                 </div>
@@ -970,7 +970,7 @@ class __TwigTemplate_cd814c56118be4a010d5ab4e8420041b2bd28e538d74943fcc88f6fd207
 
                                 <script type=\"text/javascript\">
                                     ";
-        // line 645
+        // line 639
         echo $this->env->getExtension('CMEN\GoogleChartsBundle\Twig\GoogleChartsExtension')->gcDraw(($context["piechart"] ?? $this->getContext($context, "piechart")), "GenderChart");
         echo "
                                 </script>
@@ -985,14 +985,14 @@ class __TwigTemplate_cd814c56118be4a010d5ab4e8420041b2bd28e538d74943fcc88f6fd207
                                 <div class=\"student-count pseudo-bg-blue\">
                                     <h4 class=\"item-title\">Female Users</h4>
                                     <div class=\"item-number\">";
-        // line 657
+        // line 651
         echo twig_escape_filter($this->env, ($context["FemalePercentage"] ?? $this->getContext($context, "FemalePercentage")), "html", null, true);
         echo " %</div>
                                 </div>
                                 <div class=\"student-count pseudo-bg-yellow\">
                                     <h4 class=\"item-title\">Male Users</h4>
                                     <div class=\"item-number\"> ";
-        // line 661
+        // line 655
         echo twig_escape_filter($this->env, ($context["MalePercentage"] ?? $this->getContext($context, "MalePercentage")), "html", null, true);
         echo " %</div>
                                 </div>
@@ -1088,22 +1088,22 @@ class __TwigTemplate_cd814c56118be4a010d5ab4e8420041b2bd28e538d74943fcc88f6fd207
                             </div>
                             <div class=\"notice-box-wrap\">
                                 ";
-        // line 754
+        // line 748
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["allRec"] ?? $this->getContext($context, "allRec")));
         foreach ($context['_seq'] as $context["_key"] => $context["ar"]) {
-            // line 755
+            // line 749
             echo "                                <div class=\"notice-list\">
                                     <div class=\"post-date bg-skyblue\">";
-            // line 756
+            // line 750
             echo twig_escape_filter($this->env, $this->getAttribute($context["ar"], "userRec", []), "html", null, true);
             echo "</div>
                                     <h6 class=\"notice-title\"><a href=\"#\">";
-            // line 757
+            // line 751
             echo twig_escape_filter($this->env, $this->getAttribute($context["ar"], "contenu", []), "html", null, true);
             echo "</a></h6>
                                     <div class=\"entry-meta\"> ";
-            // line 758
+            // line 752
             echo twig_escape_filter($this->env, $this->getAttribute($context["ar"], "sujet", []), "html", null, true);
             echo "</div>
                                 </div>
@@ -1112,7 +1112,7 @@ class __TwigTemplate_cd814c56118be4a010d5ab4e8420041b2bd28e538d74943fcc88f6fd207
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['ar'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 761
+        // line 755
         echo "                            </div>
                         </div>
                     </div>
@@ -1136,7 +1136,7 @@ class __TwigTemplate_cd814c56118be4a010d5ab4e8420041b2bd28e538d74943fcc88f6fd207
 
     }
 
-    // line 520
+    // line 514
     public function block_header($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -1145,7 +1145,7 @@ class __TwigTemplate_cd814c56118be4a010d5ab4e8420041b2bd28e538d74943fcc88f6fd207
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
-        // line 521
+        // line 515
         echo "                                        <img src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("fonts/student.png"), "html", null, true);
         echo "\" >
@@ -1158,7 +1158,7 @@ class __TwigTemplate_cd814c56118be4a010d5ab4e8420041b2bd28e538d74943fcc88f6fd207
 
     }
 
-    // line 783
+    // line 777
     public function block_jq($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -1167,7 +1167,7 @@ class __TwigTemplate_cd814c56118be4a010d5ab4e8420041b2bd28e538d74943fcc88f6fd207
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "jq"));
 
-        // line 784
+        // line 778
         echo "    <script src=\" ";
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery-3.3.1.min.js"), "html", null, true);
         echo " \" ></script>
@@ -1192,7 +1192,7 @@ class __TwigTemplate_cd814c56118be4a010d5ab4e8420041b2bd28e538d74943fcc88f6fd207
 
     public function getDebugInfo()
     {
-        return array (  1171 => 784,  1162 => 783,  1149 => 521,  1140 => 520,  1116 => 761,  1107 => 758,  1103 => 757,  1099 => 756,  1096 => 755,  1092 => 754,  996 => 661,  989 => 657,  974 => 645,  900 => 574,  880 => 557,  860 => 540,  841 => 523,  839 => 520,  820 => 503,  811 => 502,  794 => 809,  789 => 807,  784 => 805,  779 => 803,  774 => 801,  769 => 799,  764 => 797,  759 => 795,  754 => 793,  749 => 791,  744 => 789,  739 => 787,  736 => 786,  734 => 783,  725 => 776,  723 => 502,  712 => 494,  705 => 490,  671 => 459,  664 => 455,  656 => 450,  615 => 412,  608 => 408,  600 => 403,  594 => 400,  588 => 397,  581 => 393,  571 => 386,  559 => 377,  552 => 373,  545 => 369,  511 => 338,  505 => 335,  499 => 332,  493 => 329,  487 => 326,  480 => 322,  458 => 303,  443 => 290,  437 => 286,  434 => 285,  430 => 283,  427 => 282,  423 => 280,  421 => 279,  416 => 278,  414 => 277,  406 => 272,  389 => 258,  316 => 188,  298 => 173,  280 => 158,  262 => 143,  241 => 124,  237 => 122,  231 => 120,  229 => 119,  225 => 118,  217 => 112,  213 => 110,  207 => 108,  205 => 107,  197 => 102,  193 => 100,  188 => 97,  180 => 93,  172 => 89,  170 => 88,  132 => 53,  128 => 52,  111 => 38,  105 => 35,  100 => 33,  95 => 31,  90 => 29,  85 => 27,  80 => 25,  75 => 23,  70 => 21,  65 => 19,  59 => 16,  54 => 14,  39 => 1,);
+        return array (  1171 => 778,  1162 => 777,  1149 => 515,  1140 => 514,  1116 => 755,  1107 => 752,  1103 => 751,  1099 => 750,  1096 => 749,  1092 => 748,  996 => 655,  989 => 651,  974 => 639,  900 => 568,  880 => 551,  860 => 534,  841 => 517,  839 => 514,  820 => 497,  811 => 496,  794 => 803,  789 => 801,  784 => 799,  779 => 797,  774 => 795,  769 => 793,  764 => 791,  759 => 789,  754 => 787,  749 => 785,  744 => 783,  739 => 781,  736 => 780,  734 => 777,  725 => 770,  723 => 496,  712 => 488,  705 => 484,  671 => 453,  664 => 449,  656 => 444,  615 => 406,  608 => 402,  600 => 397,  594 => 394,  588 => 391,  581 => 387,  571 => 380,  559 => 371,  552 => 367,  545 => 363,  532 => 353,  524 => 348,  511 => 338,  505 => 335,  499 => 332,  493 => 329,  487 => 326,  480 => 322,  458 => 303,  443 => 290,  437 => 286,  434 => 285,  430 => 283,  427 => 282,  423 => 280,  421 => 279,  416 => 278,  414 => 277,  406 => 272,  389 => 258,  316 => 188,  298 => 173,  280 => 158,  262 => 143,  241 => 124,  237 => 122,  231 => 120,  229 => 119,  225 => 118,  217 => 112,  213 => 110,  207 => 108,  205 => 107,  197 => 102,  193 => 100,  188 => 97,  180 => 93,  172 => 89,  170 => 88,  132 => 53,  128 => 52,  111 => 38,  105 => 35,  100 => 33,  95 => 31,  90 => 29,  85 => 27,  80 => 25,  75 => 23,  70 => 21,  65 => 19,  59 => 16,  54 => 14,  39 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -1552,21 +1552,15 @@ class __TwigTemplate_cd814c56118be4a010d5ab4e8420041b2bd28e538d74943fcc88f6fd207
                                     class=\"flaticon-multiple-users-silhouette\"></i><span>Teachers</span></a>
                         <ul class=\"nav sub-group-menu\">
                             <li class=\"nav-item\">
-                                <a href=\"all-teacher.html\" class=\"nav-link\"><i class=\"fas fa-angle-right\"></i>All
+                                <a href=\"{{ path('showTeacher') }}\" class=\"nav-link\"><i class=\"fas fa-angle-right\"></i>All
                                     Teachers</a>
                             </li>
+
                             <li class=\"nav-item\">
-                                <a href=\"teacher-details.html\" class=\"nav-link\"><i
-                                            class=\"fas fa-angle-right\"></i>Teacher Details</a>
-                            </li>
-                            <li class=\"nav-item\">
-                                <a href=\"add-teacher.html\" class=\"nav-link\"><i class=\"fas fa-angle-right\"></i>Add
+                                <a href=\"{{ path('addTeacher') }}\" class=\"nav-link\"><i class=\"fas fa-angle-right\"></i>Add
                                     Teacher</a>
                             </li>
-                            <li class=\"nav-item\">
-                                <a href=\"teacher-payment.html\" class=\"nav-link\"><i
-                                            class=\"fas fa-angle-right\"></i>Payment</a>
-                            </li>
+
                         </ul>
                     </li>
                     <li class=\"nav-item sidebar-nav-item\">

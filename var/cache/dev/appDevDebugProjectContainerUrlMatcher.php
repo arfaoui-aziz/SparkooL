@@ -107,6 +107,116 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        elseif (0 === strpos($pathinfo, '/teacher')) {
+            if (0 === strpos($pathinfo, '/teacher/add')) {
+                // addTeacher
+                if ('/teacher/addTeacher' === $pathinfo) {
+                    return array (  '_controller' => 'TeacherBundle\\Controller\\TeacherController::AddTeacherAction',  '_route' => 'addTeacher',);
+                }
+
+                // addDiploma
+                if (0 === strpos($pathinfo, '/teacher/addDiploma') && preg_match('#^/teacher/addDiploma/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'addDiploma']), array (  '_controller' => 'TeacherBundle\\Controller\\DiplomaController::AddDiplomaAction',));
+                }
+
+                // addDelayTeacher
+                if (0 === strpos($pathinfo, '/teacher/addDelayTeacher') && preg_match('#^/teacher/addDelayTeacher/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'addDelayTeacher']), array (  '_controller' => 'TeacherBundle\\Controller\\DelayTeacherController::AddDelayTeacherAction',));
+                }
+
+                // addAbsanceTeacher
+                if (0 === strpos($pathinfo, '/teacher/addAbsanceTeacher') && preg_match('#^/teacher/addAbsanceTeacher/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'addAbsanceTeacher']), array (  '_controller' => 'TeacherBundle\\Controller\\AbsentTeacherController::AddAbsanceTeacherAction',));
+                }
+
+                // addReclamation
+                if ('/teacher/addReclamation' === $pathinfo) {
+                    return array (  '_controller' => 'TeacherBundle\\Controller\\ReclamationController::AddReclamationAction',  '_route' => 'addReclamation',);
+                }
+
+            }
+
+            elseif (0 === strpos($pathinfo, '/teacher/show')) {
+                // showTeacher
+                if ('/teacher/showTeacher' === $pathinfo) {
+                    return array (  '_controller' => 'TeacherBundle\\Controller\\TeacherController::ShowTeacherAction',  '_route' => 'showTeacher',);
+                }
+
+                if (0 === strpos($pathinfo, '/teacher/showTeacherDetails')) {
+                    // showTeacherDetails
+                    if (preg_match('#^/teacher/showTeacherDetails/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, ['_route' => 'showTeacherDetails']), array (  '_controller' => 'TeacherBundle\\Controller\\TeacherController::ShowTeacherDetailsAction',));
+                    }
+
+                    // showTeacherDetailsF
+                    if (0 === strpos($pathinfo, '/teacher/showTeacherDetailsF') && preg_match('#^/teacher/showTeacherDetailsF/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, ['_route' => 'showTeacherDetailsF']), array (  '_controller' => 'TeacherBundle\\Controller\\TeacherController::ShowTeacherDetailsFAction',));
+                    }
+
+                }
+
+                // showAbsence
+                if (0 === strpos($pathinfo, '/teacher/showAbsence') && preg_match('#^/teacher/showAbsence/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'showAbsence']), array (  '_controller' => 'TeacherBundle\\Controller\\AbsentTeacherController::ShowAbsenceAction',));
+                }
+
+                // showDelay
+                if (0 === strpos($pathinfo, '/teacher/showDelay') && preg_match('#^/teacher/showDelay/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'showDelay']), array (  '_controller' => 'TeacherBundle\\Controller\\DelayTeacherController::ShowDelayAction',));
+                }
+
+            }
+
+            // modifyTeacher
+            if ('/teacher/modifyTeacher' === $pathinfo) {
+                return array (  '_controller' => 'TeacherBundle\\Controller\\TeacherController::ModifyTeacherAction',  '_route' => 'modifyTeacher',);
+            }
+
+            // deleteTeacher
+            if (0 === strpos($pathinfo, '/teacher/deleteTeacher') && preg_match('#^/teacher/deleteTeacher/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'deleteTeacher']), array (  '_controller' => 'TeacherBundle\\Controller\\TeacherController::DeleteTeacherAction',));
+            }
+
+            if (0 === strpos($pathinfo, '/teacher/update')) {
+                // updateTeacher
+                if (0 === strpos($pathinfo, '/teacher/updateTeacher') && preg_match('#^/teacher/updateTeacher/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'updateTeacher']), array (  '_controller' => 'TeacherBundle\\Controller\\TeacherController::UpdateTeacherAction',));
+                }
+
+                // updateDiploma
+                if (0 === strpos($pathinfo, '/teacher/updateDiploma') && preg_match('#^/teacher/updateDiploma/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'updateDiploma']), array (  '_controller' => 'TeacherBundle\\Controller\\DiplomaController::UpdateDiplomaAction',));
+                }
+
+                // updateLogin
+                if (0 === strpos($pathinfo, '/teacher/updateLogin') && preg_match('#^/teacher/updateLogin/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'updateLogin']), array (  '_controller' => 'TeacherBundle\\Controller\\TeacherController::UpdateLoginAction',));
+                }
+
+            }
+
+            // deleteAbsence
+            if (0 === strpos($pathinfo, '/teacher/DeleteAbsence') && preg_match('#^/teacher/DeleteAbsence/(?P<id>[^/]++)/(?P<id2>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'deleteAbsence']), array (  '_controller' => 'TeacherBundle\\Controller\\AbsentTeacherController::DeleteAbsenceAction',));
+            }
+
+            // deleteDelay
+            if (0 === strpos($pathinfo, '/teacher/DeleteDelay') && preg_match('#^/teacher/DeleteDelay/(?P<id>[^/]++)/(?P<id2>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'deleteDelay']), array (  '_controller' => 'TeacherBundle\\Controller\\DelayTeacherController::DeleteDelayAction',));
+            }
+
+            // interfaceTeacher
+            if (0 === strpos($pathinfo, '/teacher/interfaceTeacher') && preg_match('#^/teacher/interfaceTeacher/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'interfaceTeacher']), array (  '_controller' => 'TeacherBundle\\Controller\\TeacherController::InterfaceAction',));
+            }
+
+            // NumberOfAbsent
+            if (0 === strpos($pathinfo, '/teacher/NumberOfAbsentAction') && preg_match('#^/teacher/NumberOfAbsentAction/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'NumberOfAbsent']), array (  '_controller' => 'TeacherBundle\\Controller\\AbsentTeacherController::NumberOfAbsentAction',));
+            }
+
+        }
+
         elseif (0 === strpos($pathinfo, '/etudiant')) {
             // etudiant_homepage
             if ('/etudiant' === $trimmedPathinfo) {

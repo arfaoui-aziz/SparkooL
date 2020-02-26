@@ -73,7 +73,7 @@ class User extends BaseUser
      * @var string
      *
      * @ORM\Column(name="userType", type="string", length=255, nullable=true)
-     * @Assert\Choice({"Administrator" ,"Responsable Etudiant", "Responsable enseignant","Responsable parent","User","Etudiant"},message="Please Select a valid User Type")
+     * @Assert\Choice({"Administrator" ,"Responsable Etudiant", "Responsable enseignant","Responsable parent","User","Etudiant","Teacher"},message="Please Select a valid User Type")
      */
     private $userType;
 

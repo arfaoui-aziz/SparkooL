@@ -99,7 +99,6 @@
 
                     <ul>
                         {% if is_granted('ROLE_USER') %}
-                        <li class="current"><a href="#"><div>Home</div></a></li>
 
                         <li><a href="#"><div>Student</div></a>
                             <ul>
@@ -110,6 +109,16 @@
 
                             </ul>
                         </li>
+
+                            <li><a href="#"><div>Teacher Space</div></a>
+                                <ul>
+                                    <li><a href="#"><div>Reclamation</div></a></li>
+                                    <li><a href="#"><div><i class="icon-line2-home"></i>Add A New Subject</div></a></li>
+                                    <li><a href="#"><div><i class="icon-line2-home"></i>All subjects</div></a></li>
+                                    <li><a href="#"><div><i class="icon-building2"></i>My Subjects</div></a></li>
+
+                                </ul>
+                            </li>
                         <li><a href="#"><div>Parent Space</div></a>
                             <ul>
                                 <li><a href=" {{ path('ajout_front') }} "><div><i class="icon-line2-home"></i>Inscription</div></a></li>
@@ -122,9 +131,12 @@
                                 <li><a href="{{ path('afficherEventFront') }}"><div><i class="far fa-calendar-alt"></i>Events</div></a></li>
                             </ul>
                         </li>
-
+                        <li><a href="#"><div>Adminstration Space</div></a>
+                            <ul>
                         <li><a href="{{ path('admin_ScheduleFront') }}"><div>School Schedule</div></a></li>
-                        <li><a href="{{ path('admin_AddReclamation') }}"><div>Reclamation </div></a></li>
+                        <li><a href="{{ path('admin_AddReclamation') }}"><div><i class="far fa-calendar-alt"></i>Reclamation </div></a></li>
+                            </ul>
+                        </li>
 {% endif %}
                     </ul>
 
@@ -133,10 +145,12 @@
                     <div class="header-buttons d-none d-sm-inline-block">
                         {% if is_granted('ROLE_SUPER_ADMIN') %}
                     <a> {{ app.user.username }} &nbsp;&nbsp;&nbsp;</a>
+
                             <a href="{{ path('back') }}"   class="button button-rounded button-white button-light button-small m-0">Back</a>
                             <a href="{{ path('fos_user_security_logout') }}"   class="button button-rounded button-white button-light button-small m-0">LOGOUT</a>
                         {% elseif  is_granted('ROLE_ADMIN') %}
                             <a> {{ app.user.username }} &nbsp;&nbsp;&nbsp;</a>
+
                             <a href="{{ path('back') }}"   class="button button-rounded button-white button-light button-small m-0">Back</a>
                             <a href="{{ path('fos_user_security_logout') }}"   class="button button-rounded button-white button-light button-small m-0">LOGOUT</a>
                         {% elseif  is_granted('ROLE_USER') %}

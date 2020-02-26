@@ -28,6 +28,7 @@
       <parameter key="NomayaSocialBundle">Nomaya\SocialBundle\NomayaSocialBundle</parameter>
       <parameter key="ParentBundle">ParentBundle\ParentBundle</parameter>
       <parameter key="EtudiantBundle">EtudiantBundle\EtudiantBundle</parameter>
+      <parameter key="TeacherBundle">TeacherBundle\TeacherBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -129,6 +130,11 @@
         <parameter key="parent">null</parameter>
         <parameter key="path">C:\wamp64\www\SparkIT\src\EtudiantBundle</parameter>
         <parameter key="namespace">EtudiantBundle</parameter>
+      </parameter>
+      <parameter key="TeacherBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">C:\wamp64\www\SparkIT\src\TeacherBundle</parameter>
+        <parameter key="namespace">TeacherBundle</parameter>
       </parameter>
       <parameter key="DebugBundle" type="collection">
         <parameter key="parent">null</parameter>
@@ -1947,14 +1953,6 @@
         <argument>2048</argument>
       </call>
       <call method="addListener">
-        <argument>console.command</argument>
-        <argument type="collection">
-          <argument type="service" id="debug.debug_handlers_listener"/>
-          <argument>configure</argument>
-        </argument>
-        <argument>2048</argument>
-      </call>
-      <call method="addListener">
         <argument>kernel.request</argument>
         <argument type="collection">
           <argument type="service" id="router_listener"/>
@@ -3431,6 +3429,14 @@
         <argument>!Etudiant</argument>
       </call>
       <call method="addPath">
+        <argument>C:\wamp64\www\SparkIT\src\TeacherBundle/Resources/views</argument>
+        <argument>Teacher</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\SparkIT\src\TeacherBundle/Resources/views</argument>
+        <argument>!Teacher</argument>
+      </call>
+      <call method="addPath">
         <argument>C:\wamp64\www\SparkIT\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
         <argument>Debug</argument>
       </call>
@@ -3664,6 +3670,14 @@
       <call method="addPath">
         <argument>C:\wamp64\www\SparkIT\src\EtudiantBundle/Resources/views</argument>
         <argument>!Etudiant</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\SparkIT\src\TeacherBundle/Resources/views</argument>
+        <argument>Teacher</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\SparkIT\src\TeacherBundle/Resources/views</argument>
+        <argument>!Teacher</argument>
       </call>
       <call method="addPath">
         <argument>C:\wamp64\www\SparkIT\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
@@ -4166,6 +4180,7 @@
           <argument key="SoniaBundle">SoniaBundle\Entity</argument>
           <argument key="ParentBundle">ParentBundle\Entity</argument>
           <argument key="EtudiantBundle">EtudiantBundle\Entity</argument>
+          <argument key="TeacherBundle">TeacherBundle\Entity</argument>
         </argument>
       </call>
       <call method="setMetadataCacheImpl">
@@ -4216,6 +4231,7 @@
         <argument>C:\wamp64\www\SparkIT\src\SoniaBundle\Entity</argument>
         <argument>C:\wamp64\www\SparkIT\src\ParentBundle\Entity</argument>
         <argument>C:\wamp64\www\SparkIT\src\EtudiantBundle\Entity</argument>
+        <argument>C:\wamp64\www\SparkIT\src\TeacherBundle\Entity</argument>
       </argument>
     </service>
     <service id="doctrine.orm.default_metadata_driver" class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false">
@@ -4238,6 +4254,10 @@
       <call method="addDriver">
         <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
         <argument>EtudiantBundle\Entity</argument>
+      </call>
+      <call method="addDriver">
+        <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
+        <argument>TeacherBundle\Entity</argument>
       </call>
       <call method="addDriver">
         <argument type="service">
