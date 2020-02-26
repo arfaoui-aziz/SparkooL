@@ -107,6 +107,311 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        elseif (0 === strpos($pathinfo, '/etudiant')) {
+            // etudiant_homepage
+            if ('/etudiant' === $trimmedPathinfo) {
+                $ret = array (  '_controller' => 'EtudiantBundle\\Controller\\DefaultController::indexAction',  '_route' => 'etudiant_homepage',);
+                if ('/' === substr($pathinfo, -1)) {
+                    // no-op
+                } elseif ('GET' !== $canonicalMethod) {
+                    goto not_etudiant_homepage;
+                } else {
+                    return array_replace($ret, $this->redirect($rawPathinfo.'/', 'etudiant_homepage'));
+                }
+
+                return $ret;
+            }
+            not_etudiant_homepage:
+
+            // etudiant_inscrit
+            if ('/etudiant/inscrit' === $pathinfo) {
+                return array (  '_controller' => 'EtudiantBundle\\Controller\\EtudiantController::etudiantinscritAction',  '_route' => 'etudiant_inscrit',);
+            }
+
+            // etudiant_created
+            if ('/etudiant/created' === $pathinfo) {
+                return array (  '_controller' => 'EtudiantBundle\\Controller\\EtudiantController::accoutcreatedAction',  '_route' => 'etudiant_created',);
+            }
+
+            if (0 === strpos($pathinfo, '/etudiant/a')) {
+                // etudiant_approve
+                if ('/etudiant/approve' === $pathinfo) {
+                    return array (  '_controller' => 'EtudiantBundle\\Controller\\EtudiantController::accoutaprovingAction',  '_route' => 'etudiant_approve',);
+                }
+
+                // etudiant_approving
+                if (0 === strpos($pathinfo, '/etudiant/aproved') && preg_match('#^/etudiant/aproved/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudiant_approving']), array (  '_controller' => 'EtudiantBundle\\Controller\\EtudiantController::approveEtudiantAction',));
+                }
+
+                // etudiant_affectto
+                if (0 === strpos($pathinfo, '/etudiant/affectto') && preg_match('#^/etudiant/affectto/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudiant_affectto']), array (  '_controller' => 'EtudiantBundle\\Controller\\EtudiantController::affecttoclassAction',));
+                }
+
+                // etudiant_addmanually
+                if ('/etudiant/addStudentManually' === $pathinfo) {
+                    return array (  '_controller' => 'EtudiantBundle\\Controller\\EtudiantController::AddStudentManuallyAction',  '_route' => 'etudiant_addmanually',);
+                }
+
+                // etudaint_addsubject
+                if ('/etudiant/addsubject' === $pathinfo) {
+                    return array (  '_controller' => 'EtudiantBundle\\Controller\\ForumController::AddSubjectAction',  '_route' => 'etudaint_addsubject',);
+                }
+
+                // etudiant_accountSetting
+                if (0 === strpos($pathinfo, '/etudiant/accountSetting') && preg_match('#^/etudiant/accountSetting/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudiant_accountSetting']), array (  '_controller' => 'EtudiantBundle\\Controller\\EtudiantController::AccountsettingsAction',));
+                }
+
+                // etudaint_subjectreview
+                if ('/etudiant/allsubjects' === $pathinfo) {
+                    return array (  '_controller' => 'EtudiantBundle\\Controller\\ForumController::getSubjectsAction',  '_route' => 'etudaint_subjectreview',);
+                }
+
+            }
+
+            elseif (0 === strpos($pathinfo, '/etudiant/delete')) {
+                // etudiant_delete
+                if (preg_match('#^/etudiant/delete/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudiant_delete']), array (  '_controller' => 'EtudiantBundle\\Controller\\EtudiantController::deleteapproveAction',));
+                }
+
+                // etudaint_deletcomment
+                if (0 === strpos($pathinfo, '/etudiant/deletecomment') && preg_match('#^/etudiant/deletecomment/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudaint_deletcomment']), array (  '_controller' => 'EtudiantBundle\\Controller\\ForumController::deleteCommentAction',));
+                }
+
+            }
+
+            // etudiant_accountdisable
+            if (0 === strpos($pathinfo, '/etudiant/disableaccount') && preg_match('#^/etudiant/disableaccount/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudiant_accountdisable']), array (  '_controller' => 'EtudiantBundle\\Controller\\EtudiantController::disableAccountAction',));
+            }
+
+            // etudiant_list
+            if ('/etudiant/listeStudents' === $pathinfo) {
+                return array (  '_controller' => 'EtudiantBundle\\Controller\\EtudiantController::allstudentsAction',  '_route' => 'etudiant_list',);
+            }
+
+            // etudiant_submitreclamation
+            if ('/etudiant/reclamation' === $pathinfo) {
+                return array (  '_controller' => 'EtudiantBundle\\Controller\\ReclamationController::submitReclamationAction',  '_route' => 'etudiant_submitreclamation',);
+            }
+
+            if (0 === strpos($pathinfo, '/etudiant/reach')) {
+                // ajax_search
+                if ('/etudiant/reach' === $pathinfo) {
+                    return array (  '_controller' => 'EtudiantBundle\\Controller\\EtudiantController::searchBacktAction',  '_route' => 'ajax_search',);
+                }
+
+                // ajax_search_with_title
+                if ('/etudiant/reachwithtitle' === $pathinfo) {
+                    return array (  '_controller' => 'EtudiantBundle\\Controller\\ForumController::searchBacktAction',  '_route' => 'ajax_search_with_title',);
+                }
+
+            }
+
+            // etudaint_subjectapprove
+            if (0 === strpos($pathinfo, '/etudiant/subjectaprove') && preg_match('#^/etudiant/subjectaprove/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudaint_subjectapprove']), array (  '_controller' => 'EtudiantBundle\\Controller\\ForumController::approveSubjectAction',));
+            }
+
+            if (0 === strpos($pathinfo, '/etudiant/forum')) {
+                // etudaint_forumlist
+                if ('/etudiant/forum' === $pathinfo) {
+                    return array (  '_controller' => 'EtudiantBundle\\Controller\\ForumController::getForumListAction',  '_route' => 'etudaint_forumlist',);
+                }
+
+                // etudaint_subjectview
+                if (0 === strpos($pathinfo, '/etudiant/forum/subject') && preg_match('#^/etudiant/forum/subject/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudaint_subjectview']), array (  '_controller' => 'EtudiantBundle\\Controller\\ForumController::getForumSubjectAction',));
+                }
+
+            }
+
+            elseif (0 === strpos($pathinfo, '/etudiant/mysubjects')) {
+                // etudaint_getmyforum
+                if ('/etudiant/mysubjects' === $pathinfo) {
+                    return array (  '_controller' => 'EtudiantBundle\\Controller\\ForumController::getmyForumSubAction',  '_route' => 'etudaint_getmyforum',);
+                }
+
+                // etudaint_deletesubject
+                if (0 === strpos($pathinfo, '/etudiant/mysubjects/delete') && preg_match('#^/etudiant/mysubjects/delete/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudaint_deletesubject']), array (  '_controller' => 'EtudiantBundle\\Controller\\ForumController::deleteSubjectAction',));
+                }
+
+                // etudaint_modifysubject
+                if (0 === strpos($pathinfo, '/etudiant/mysubjects/modify') && preg_match('#^/etudiant/mysubjects/modify/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudaint_modifysubject']), array (  '_controller' => 'EtudiantBundle\\Controller\\ForumController::modifySubjectAction',));
+                }
+
+                // etudaint_solved
+                if (0 === strpos($pathinfo, '/etudiant/mysubjects/solved') && preg_match('#^/etudiant/mysubjects/solved/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudaint_solved']), array (  '_controller' => 'EtudiantBundle\\Controller\\ForumController::solvedAction',));
+                }
+
+            }
+
+            // etudaint_votesyes
+            if (0 === strpos($pathinfo, '/etudiant/vote/yes') && preg_match('#^/etudiant/vote/yes/(?P<id_voter>[^/]++)/(?P<id_subject>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudaint_votesyes']), array (  '_controller' => 'EtudiantBundle\\Controller\\VotesController::votelike',));
+            }
+
+            // etudaint_votesno
+            if (0 === strpos($pathinfo, '/etudiant/vote/no') && preg_match('#^/etudiant/vote/no/(?P<id_voter>[^/]++)/(?P<id_subject>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudaint_votesno']), array (  '_controller' => 'EtudiantBundle\\Controller\\VotesController::dislike',));
+            }
+
+            if (0 === strpos($pathinfo, '/etudiant/back')) {
+                if (0 === strpos($pathinfo, '/etudiant/back/delete')) {
+                    // etudaint_deletesubjectback
+                    if (preg_match('#^/etudiant/back/delete/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudaint_deletesubjectback']), array (  '_controller' => 'EtudiantBundle\\Controller\\ForumController::deleteSubjecBacktAction',));
+                    }
+
+                    // etudaint_deletereclamation
+                    if (0 === strpos($pathinfo, '/etudiant/back/deletereclamation') && preg_match('#^/etudiant/back/deletereclamation/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudaint_deletereclamation']), array (  '_controller' => 'EtudiantBundle\\Controller\\ReclamationController::deleteReclamationAction',));
+                    }
+
+                }
+
+                // etudaint_allforumback
+                if ('/etudiant/back/forumlist' === $pathinfo) {
+                    return array (  '_controller' => 'EtudiantBundle\\Controller\\ForumController::getAllforumsBackAction',  '_route' => 'etudaint_allforumback',);
+                }
+
+                // etudaint_allreclamation
+                if ('/etudiant/back/allreclamations' === $pathinfo) {
+                    return array (  '_controller' => 'EtudiantBundle\\Controller\\ReclamationController::getallreclamationsAction',  '_route' => 'etudaint_allreclamation',);
+                }
+
+            }
+
+        }
+
+        elseif (0 === strpos($pathinfo, '/parent')) {
+            // inscription_parent
+            if ('/parent/inscri' === $pathinfo) {
+                return array (  '_controller' => 'ParentBundle\\Controller\\ParentController::AjoutParentAction',  '_route' => 'inscription_parent',);
+            }
+
+            if (0 === strpos($pathinfo, '/parent/a')) {
+                // afficher_parent
+                if ('/parent/afficher' === $pathinfo) {
+                    return array (  '_controller' => 'ParentBundle\\Controller\\ParentController::AfficherParentAction',  '_route' => 'afficher_parent',);
+                }
+
+                // afficher_reclamation
+                if ('/parent/affichreclamation' === $pathinfo) {
+                    return array (  '_controller' => 'ParentBundle\\Controller\\ReclamationController::AfficherReclamationAction',  '_route' => 'afficher_reclamation',);
+                }
+
+                // ajouter_reclamation
+                if ('/parent/ajoutreclamation' === $pathinfo) {
+                    return array (  '_controller' => 'ParentBundle\\Controller\\ReclamationController::AjoutReclamationAction',  '_route' => 'ajouter_reclamation',);
+                }
+
+                // ajout_front
+                if ('/parent/ajoutfront' === $pathinfo) {
+                    return array (  '_controller' => 'ParentBundle\\Controller\\ParentController::AjoutFrontAction',  '_route' => 'ajout_front',);
+                }
+
+                // accepter_parent
+                if (0 === strpos($pathinfo, '/parent/accepter') && preg_match('#^/parent/accepter/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'accepter_parent']), array (  '_controller' => 'ParentBundle\\Controller\\ParentController::AccepterParentAction',));
+                }
+
+            }
+
+            // modifier_parent
+            if (0 === strpos($pathinfo, '/parent/modifier') && preg_match('#^/parent/modifier/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'modifier_parent']), array (  '_controller' => 'ParentBundle\\Controller\\ParentController::ModifierParentAction',));
+            }
+
+            if (0 === strpos($pathinfo, '/parent/s')) {
+                // supprimer_parent
+                if (0 === strpos($pathinfo, '/parent/supprimer') && preg_match('#^/parent/supprimer/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'supprimer_parent']), array (  '_controller' => 'ParentBundle\\Controller\\ParentController::SupprimerParentAction',));
+                }
+
+                // supprimer_reclamation
+                if (0 === strpos($pathinfo, '/parent/supprecla') && preg_match('#^/parent/supprecla/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'supprimer_reclamation']), array (  '_controller' => 'ParentBundle\\Controller\\ReclamationController::SupprimerReclamationAction',));
+                }
+
+                // search_parent
+                if ('/parent/search' === $pathinfo) {
+                    return array (  '_controller' => 'ParentBundle\\Controller\\ParentController::searchParentAction',  '_route' => 'search_parent',);
+                }
+
+            }
+
+            // detail_parent
+            if (0 === strpos($pathinfo, '/parent/detail') && preg_match('#^/parent/detail/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'detail_parent']), array (  '_controller' => 'ParentBundle\\Controller\\ParentController::DetailParentAction',));
+            }
+
+            // refuser_parent
+            if (0 === strpos($pathinfo, '/parent/refuser') && preg_match('#^/parent/refuser/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'refuser_parent']), array (  '_controller' => 'ParentBundle\\Controller\\ParentController::RefuserParentAction',));
+            }
+
+            // PDF
+            if (0 === strpos($pathinfo, '/parent/PDF') && preg_match('#^/parent/PDF/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'PDF']), array (  '_controller' => 'ParentBundle\\Controller\\ParentController::DisplayPDFAction',));
+            }
+
+        }
+
+        elseif (0 === strpos($pathinfo, '/profile')) {
+            // fos_user_profile_show
+            if ('/profile' === $trimmedPathinfo) {
+                $ret = array (  '_controller' => 'fos_user.profile.controller:showAction',  '_route' => 'fos_user_profile_show',);
+                if ('/' === substr($pathinfo, -1)) {
+                    // no-op
+                } elseif ('GET' !== $canonicalMethod) {
+                    goto not_fos_user_profile_show;
+                } else {
+                    return array_replace($ret, $this->redirect($rawPathinfo.'/', 'fos_user_profile_show'));
+                }
+
+                if (!in_array($canonicalMethod, ['GET'])) {
+                    $allow = array_merge($allow, ['GET']);
+                    goto not_fos_user_profile_show;
+                }
+
+                return $ret;
+            }
+            not_fos_user_profile_show:
+
+            // fos_user_profile_edit
+            if ('/profile/edit' === $pathinfo) {
+                $ret = array (  '_controller' => 'fos_user.profile.controller:editAction',  '_route' => 'fos_user_profile_edit',);
+                if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                    $allow = array_merge($allow, ['GET', 'POST']);
+                    goto not_fos_user_profile_edit;
+                }
+
+                return $ret;
+            }
+            not_fos_user_profile_edit:
+
+            // fos_user_change_password
+            if ('/profile/change-password' === $pathinfo) {
+                $ret = array (  '_controller' => 'fos_user.change_password.controller:changePasswordAction',  '_route' => 'fos_user_change_password',);
+                if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                    $allow = array_merge($allow, ['GET', 'POST']);
+                    goto not_fos_user_change_password;
+                }
+
+                return $ret;
+            }
+            not_fos_user_change_password:
+
+        }
+
         elseif (0 === strpos($pathinfo, '/sonia')) {
             // sonia_homepage
             if ('/sonia' === $trimmedPathinfo) {
@@ -430,54 +735,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
         not_fos_user_security_logout:
 
-        if (0 === strpos($pathinfo, '/profile')) {
-            // fos_user_profile_show
-            if ('/profile' === $trimmedPathinfo) {
-                $ret = array (  '_controller' => 'fos_user.profile.controller:showAction',  '_route' => 'fos_user_profile_show',);
-                if ('/' === substr($pathinfo, -1)) {
-                    // no-op
-                } elseif ('GET' !== $canonicalMethod) {
-                    goto not_fos_user_profile_show;
-                } else {
-                    return array_replace($ret, $this->redirect($rawPathinfo.'/', 'fos_user_profile_show'));
-                }
-
-                if (!in_array($canonicalMethod, ['GET'])) {
-                    $allow = array_merge($allow, ['GET']);
-                    goto not_fos_user_profile_show;
-                }
-
-                return $ret;
-            }
-            not_fos_user_profile_show:
-
-            // fos_user_profile_edit
-            if ('/profile/edit' === $pathinfo) {
-                $ret = array (  '_controller' => 'fos_user.profile.controller:editAction',  '_route' => 'fos_user_profile_edit',);
-                if (!in_array($canonicalMethod, ['GET', 'POST'])) {
-                    $allow = array_merge($allow, ['GET', 'POST']);
-                    goto not_fos_user_profile_edit;
-                }
-
-                return $ret;
-            }
-            not_fos_user_profile_edit:
-
-            // fos_user_change_password
-            if ('/profile/change-password' === $pathinfo) {
-                $ret = array (  '_controller' => 'fos_user.change_password.controller:changePasswordAction',  '_route' => 'fos_user_change_password',);
-                if (!in_array($canonicalMethod, ['GET', 'POST'])) {
-                    $allow = array_merge($allow, ['GET', 'POST']);
-                    goto not_fos_user_change_password;
-                }
-
-                return $ret;
-            }
-            not_fos_user_change_password:
-
-        }
-
-        elseif (0 === strpos($pathinfo, '/register')) {
+        if (0 === strpos($pathinfo, '/register')) {
             // fos_user_registration_register
             if ('/register' === $trimmedPathinfo) {
                 $ret = array (  '_controller' => 'fos_user.registration.controller:registerAction',  '_route' => 'fos_user_registration_register',);

@@ -1,0 +1,90 @@
+etudiant_homepage:
+    path:     /
+    defaults: { _controller: EtudiantBundle:Default:index }
+etudiant_inscrit:
+    path:     /inscrit
+    defaults: { _controller: EtudiantBundle:Etudiant:etudiantinscrit }
+etudiant_created:
+    path:     /created
+    defaults: { _controller: EtudiantBundle:Etudiant:accoutcreated }
+etudiant_approve:
+    path:     /approve
+    defaults: { _controller: EtudiantBundle:Etudiant:accoutaproving }
+etudiant_delete:
+    path:     /delete/{id}
+    defaults: { _controller: EtudiantBundle:Etudiant:deleteapprove }
+etudiant_approving:
+    path:     /aproved/{id}
+    defaults: { _controller: EtudiantBundle:Etudiant:approveEtudiant }
+etudiant_list:
+    path:     /listeStudents
+    defaults: { _controller: EtudiantBundle:Etudiant:allstudents }
+etudiant_affectto:
+    path:     /affectto/{id}
+    defaults: { _controller: EtudiantBundle:Etudiant:affecttoclass }
+etudiant_addmanually :
+    path:     /addStudentManually
+    defaults: { _controller: EtudiantBundle:Etudiant:AddStudentManually }
+etudiant_accountSetting :
+    path:     /accountSetting/{id}
+    defaults: { _controller: EtudiantBundle:Etudiant:Accountsettings }
+etudiant_accountdisable :
+    path:     /disableaccount/{id}
+    defaults: { _controller: EtudiantBundle:Etudiant:disableAccount }
+etudiant_submitreclamation :
+    path:     /reclamation
+    defaults: { _controller: EtudiantBundle:Reclamation:submitReclamation }
+etudaint_addsubject :
+    path:     /addsubject
+    defaults: { _controller: EtudiantBundle:Forum:AddSubject}
+etudaint_subjectreview :
+    path:     /allsubjects
+    defaults: { _controller: EtudiantBundle:Forum:getSubjects}
+etudaint_subjectapprove :
+    path:     /subjectaprove/{id}
+    defaults: { _controller: EtudiantBundle:Forum:approveSubject}
+etudaint_forumlist :
+    path:     /forum
+    defaults: { _controller: EtudiantBundle:Forum:getForumList}
+etudaint_subjectview :
+    path:     /forum/subject/{id}
+    defaults: { _controller: EtudiantBundle:Forum:getForumSubject}
+etudaint_deletcomment :
+    path:     /deletecomment/{id}
+    defaults: { _controller: EtudiantBundle:Forum:deleteComment}
+etudaint_getmyforum :
+    path:     /mysubjects
+    defaults: { _controller: EtudiantBundle:Forum:getmyForumSub}
+etudaint_deletesubject :
+    path:     /mysubjects/delete/{id}
+    defaults: { _controller: EtudiantBundle:Forum:deleteSubject}
+etudaint_modifysubject :
+    path:     /mysubjects/modify/{id}
+    defaults: { _controller: EtudiantBundle:Forum:modifySubject}
+etudaint_solved :
+    path:     /mysubjects/solved/{id}
+    defaults: { _controller: EtudiantBundle:Forum:solved}
+etudaint_votesyes :
+    path:     /vote/yes/{id_voter}/{id_subject}
+    defaults: { _controller: EtudiantBundle\Controller\VotesController::votelike}
+etudaint_votesno :
+    path:     /vote/no/{id_voter}/{id_subject}
+    defaults: { _controller: EtudiantBundle\Controller\VotesController::dislike}
+etudaint_deletesubjectback :
+    path:     /back/delete/{id}
+    defaults: { _controller: EtudiantBundle:Forum:deleteSubjecBackt}
+etudaint_allforumback :
+    path:     /back/forumlist
+    defaults: { _controller: EtudiantBundle:Forum:getAllforumsBack}
+ajax_search :
+    path:     /reach
+    defaults: { _controller: EtudiantBundle:Etudiant:searchBackt}
+ajax_search_with_title :
+    path:     /reachwithtitle
+    defaults: { _controller: EtudiantBundle:Forum:searchBackt}
+etudaint_allreclamation :
+    path:     /back/allreclamations
+    defaults: { _controller: EtudiantBundle:Reclamation:getallreclamations}
+etudaint_deletereclamation :
+    path:     /back/deletereclamation/{id}
+    defaults: { _controller: EtudiantBundle:Reclamation:deleteReclamation}

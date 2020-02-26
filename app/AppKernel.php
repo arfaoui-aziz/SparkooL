@@ -26,6 +26,8 @@ class AppKernel extends Kernel
             new SoniaBundle\SoniaBundle(),
             new SBC\NotificationsBundle\NotificationsBundle(),
             new Nomaya\SocialBundle\NomayaSocialBundle(),
+            new ParentBundle\ParentBundle(),
+            new EtudiantBundle\EtudiantBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

@@ -319,21 +319,25 @@
                         <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Students</span></a>
                         <ul class="nav sub-group-menu">
                             <li class="nav-item">
-                                <a href="all-student.html" class="nav-link"><i class="fas fa-angle-right"></i>All
+                                <a href="{{path('etudiant_list')}}" class="nav-link"><i class="fas fa-angle-right"></i>All
                                     Students</a>
                             </li>
                             <li class="nav-item">
-                                <a href="student-details.html" class="nav-link"><i
-                                            class="fas fa-angle-right"></i>Student Details</a>
+                                <a href="{{ path('etudiant_approve') }}" class="nav-link"><i class="fas fa-angle-right"></i>Attendance list</a>
                             </li>
                             <li class="nav-item">
-                                <a href="admit-form.html" class="nav-link"><i
-                                            class="fas fa-angle-right"></i>Admission Form</a>
+                                <a href="{{ path('etudiant_addmanually') }}" class="nav-link"><i class="fas fa-angle-right"></i>Add a Student manually</a>
                             </li>
                             <li class="nav-item">
-                                <a href="student-promotion.html" class="nav-link"><i
-                                            class="fas fa-angle-right"></i>Student Promotion</a>
+                                <a href="{{ path('etudaint_subjectreview') }}" class="nav-link"><i class="fas fa-angle-right"></i>Forum to approve</a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{ path('etudaint_allforumback') }}" class="nav-link"><i class="fas fa-angle-right"></i>Forum List</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ path('etudaint_allreclamation') }}" class="nav-link"><i class="fas fa-angle-right"></i>Reclamations List</a>
+                            </li>
+
                         </ul>
                     </li>
                     <li class="nav-item sidebar-nav-item">
@@ -362,16 +366,16 @@
                         <a href="#" class="nav-link"><i class="flaticon-couple"></i><span>Parents</span></a>
                         <ul class="nav sub-group-menu">
                             <li class="nav-item">
-                                <a href="all-parents.html" class="nav-link"><i class="fas fa-angle-right"></i>All
+                                <a href="{{ path('inscription_parent') }}" class="nav-link"><i class="fas fa-angle-right"></i>Add
                                     Parents</a>
                             </li>
                             <li class="nav-item">
-                                <a href="parents-details.html" class="nav-link"><i
+                                <a href="{{ path('afficher_parent') }}" class="nav-link"><i
                                             class="fas fa-angle-right"></i>Parents Details</a>
                             </li>
                             <li class="nav-item">
-                                <a href="add-parents.html" class="nav-link"><i class="fas fa-angle-right"></i>Add
-                                    Parent</a>
+                                <a href="{{ path('afficher_reclamation') }}" class="nav-link"><i class="fas fa-angle-right"></i>
+                                    Parent Reclamation</a>
                             </li>
                         </ul>
                     </li>

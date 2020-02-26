@@ -32,6 +32,30 @@ class Classe
     private $className;
 
     /**
+     * @var int
+     *
+     * @ORM\Column(name="class_nbr", type="integer", nullable=true)
+     */
+    private $class_nbr;
+
+    /**
+     * @return int
+     */
+    public function getClassNbr()
+    {
+        return $this->class_nbr;
+    }
+
+    /**
+     * @param int $class_nbr
+     */
+    public function setClassNbr($class_nbr)
+    {
+        $this->class_nbr = $class_nbr;
+    }
+
+
+    /**
      *
      * @return string
      */

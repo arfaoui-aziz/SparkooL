@@ -73,7 +73,7 @@ class User extends BaseUser
      * @var string
      *
      * @ORM\Column(name="userType", type="string", length=255, nullable=true)
-     * @Assert\Choice({"Administrator" ,"Responsable Etudiant", "Responsable enseignant","Responsable parent","User"},message="Please Select a valid User Type")
+     * @Assert\Choice({"Administrator" ,"Responsable Etudiant", "Responsable enseignant","Responsable parent","User","Etudiant"},message="Please Select a valid User Type")
      */
     private $userType;
 
@@ -81,7 +81,6 @@ class User extends BaseUser
      * @var string
      *
      * @ORM\Column(name="joiningDate", type="string", length=255)
-     * @Assert\NotBlank(message="Please Insert a joining Date")
      * @Assert\NotEqualTo("21/02/2020",message="Please Insert a valid JoiningDate")
      *
      */
@@ -126,7 +125,6 @@ class User extends BaseUser
      * @var float
      * @ORM\Column(name="salaire", type="float", nullable=true)
      * @Assert\Type(type="float",message="Salaire most contain only numbers")
-     * @Assert\NotBlank(message="Please Insert a Salaire")
      */
     private $salaire;
 
@@ -144,6 +142,83 @@ class User extends BaseUser
      * @ORM\Column(name="occupation", type="string", length=255, nullable=true)
      */
     private $occupation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="placeobirth", type="string", length=255, nullable=true)
+     */
+    private $placeobirth;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="academicyear", type="string", length=255, nullable=true)
+     */
+    private $academicyear;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AdminBundle\Entity\Classe")
+     * @ORM\JoinColumn(name="classe_id",referencedColumnName="class_id", nullable=true)
+     */
+    private $classe;
+
+    /**
+     * @return string
+     */
+    public function getAcademicyear()
+    {
+        return $this->academicyear;
+    }
+
+    /**
+     * @param string $academicyear
+     */
+    public function setAcademicyear($academicyear)
+    {
+        $this->academicyear = $academicyear;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getClasse()
+    {
+        return $this->classe;
+    }
+
+    /**
+     * @param mixed $classe
+     */
+    public function setClasse($classe)
+    {
+        $this->classe = $classe;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPlaceobirth()
+    {
+        return $this->placeobirth;
+    }
+
+    /**
+     * @param string $placeobirth
+     */
+    public function setPlaceobirth($placeobirth)
+    {
+        $this->placeobirth = $placeobirth;
+    }
+
+
+    /**
+     *
+     * @return string
+     */
+    public function __toString(){
+        return $this->id;
+    }
 
     /**
      * @return string

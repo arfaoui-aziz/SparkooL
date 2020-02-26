@@ -1,0 +1,58 @@
+
+inscription_parent:
+    path:     /inscri
+    defaults: { _controller: ParentBundle:Parent:AjoutParent }
+
+afficher_parent:
+    path:     /afficher
+    defaults: { _controller: ParentBundle:Parent:AfficherParent }
+
+
+modifier_parent:
+    path:     /modifier/{id}
+    defaults: { _controller: ParentBundle:Parent:ModifierParent }
+
+supprimer_parent:
+    path:     /supprimer/{id}
+    defaults: { _controller: ParentBundle:Parent:SupprimerParent }
+
+detail_parent:
+    path:     /detail/{id}
+    defaults: { _controller: ParentBundle:Parent:DetailParent }
+
+ajouter_reclamation:
+    path:     /ajoutreclamation
+    defaults: { _controller: ParentBundle:Reclamation:AjoutReclamation }
+
+afficher_reclamation:
+    path:     /affichreclamation
+    defaults: { _controller: ParentBundle:Reclamation:AfficherReclamation }
+
+supprimer_reclamation:
+    path:     /supprecla/{id}
+    defaults: { _controller: ParentBundle:Reclamation:SupprimerReclamation }
+
+
+ajout_front:
+    path:     /ajoutfront
+    defaults: { _controller: ParentBundle:Parent:AjoutFront }
+
+accepter_parent:
+    path:     /accepter/{id}
+    defaults: { _controller: ParentBundle:Parent:AccepterParent }
+
+refuser_parent:
+    path:     /refuser/{id}
+    defaults: { _controller: ParentBundle:Parent:RefuserParent }
+
+search_parent:
+    path:     /search
+    defaults: { _controller: ParentBundle:Parent:searchParent }
+
+ajax:
+    path:     /ajax
+    defaults: { _controller: ParentBundle:Parent:search }
+
+PDF:
+    path:     /PDF/{id}
+    defaults: { _controller: ParentBundle:Parent:DisplayPDF }

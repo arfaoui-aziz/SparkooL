@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="dashboard-content-one">
+        <!-- Breadcubs Area Start Here -->
+        <div class="breadcrumbs-area">
+            <h3>Form Approving List</h3>
+
+        </div>
+        <div class="card height-auto">
+            <div class="card-body">
+
+                <div class="table-responsive">
+                    <table class="table display data-table text-nowrap">
+                        <thead>
+                        <tr>
+                            <th>Auteur</th>
+                            <th>Title</th>
+                            <th>Subject</th>
+                            <th>Submition Date</th>
+                            <th>number of responses</th>
+                            <th>Options</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for subject in subjects  %}
+                            {% if subject.etat == 0 %}
+                                <tr>
+                                    <td>
+
+
+                                            {{ subject.auteur }}
+                                    </td>
+                                    <td>{{ subject.title }}</td>
+                                    <td >{{ subject.subject }}</td>
+                                    <td>{{ subject.dateajout }}</td>
+                                    <td>{{ subject.nbreponse }}<</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                               aria-expanded="false">
+                                                <span class="flaticon-more-button-of-three-dots"></span>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item" href="{{ path('etudaint_subjectapprove', {'id': subject.id}) }}"><i
+                                                            class="fas fa-cogs text-dark-pastel-green"></i>Accept</a>
+                                                <a class="dropdown-item" href="{{ path('etudaint_deletesubjectback', {'id': subject.id}) }}"><i
+                                                            class="fas fa-cogs text-dark-pastel-green"></i>Dismiss</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% endif %}
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

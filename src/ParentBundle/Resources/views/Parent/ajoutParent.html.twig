@@ -1,0 +1,131 @@
+
+
+{% extends 'baseFront.html.twig'%}
+
+{% block ghasoussa %}
+    <section id="slider" class="slider-element bgcolor clearfix" style="height: auto; padding: 60px 0; background: url('demos/movers/images/bg-2.png') no-repeat center center / 100% 100%;">
+
+        <div class="container" style="z-index: 2">
+            <div class="center">
+                <h2 class="text-white h2 t600 mb-2">Parent Space</h2>
+                <p class="text-white-50">SparkooL Is An All In­-One School Management Application</p>
+            </div>
+<br><br>
+            <ul class="nav nav-tabs nav-justified flex-column border-bottom-0 flex-md-row bgcolor mt-4" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link py-3" id="home-moving-tab" data-toggle="tab" href="#home-moving" role="tab" aria-controls="home-moving" aria-selected="true">Parent Name</a>
+                </li>
+
+            </ul>
+            <div class="tab-content rounded-bottom shadow bg-white py-4 px-5">
+                <div class="tab-pane fade show active" id="home-moving" role="tabpanel" aria-labelledby="home-moving-tab">
+
+
+
+                        <div class="form-result"></div>
+                        <form class="row home-moving-form position-relative mb-0" method="post">
+                            {{ form_start(form) }}
+
+                            <div class="form-process"></div>
+
+                            <div class="col-sm-6 input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text nobg"><i class="icon-line2-user"></i></span>
+                                </div>
+                                {{ form_widget (form.firstName , {'attr': {'class':'form-control','placeholder':'First Name'}}) }}
+                            </div>
+
+                            <div class="col-sm-6 input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text nobg"><i class="icon-line2-user"></i></span>
+                                </div>
+                                {{ form_widget (form.lastName , {'attr': {'class':'form-control','placeholder':'Last Name'}}) }}
+                            </div>
+
+                            <div class="col-sm-6 input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text nobg"><i class="fas fa-map-marker-alt"></i></span>
+                                </div>
+                                {{ form_widget (form.address , {'attr': {'class':'form-control','placeholder':'address'}}) }}
+                            </div>
+
+
+                            <div class="col-sm-6 input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text nobg"><i class="fa fa-venus-mars"></i></span>
+                                </div>
+                                {{ form_widget (form.gender , {'attr': {'class':'select2'}}) }}
+                            </div>
+
+
+
+                            <div class="col-sm-6 input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text nobg"><i class="fas fa-user-md"></i></span>
+                                </div>
+                                {{ form_widget (form.occupation , {'attr': {'class':'form-control','placeholder':'Occupation'}}) }}
+                            </div>
+
+
+
+
+                            <div class="col-sm-6 input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text nobg"><i class="icon-line2-envelope"></i></span>
+                                </div>
+                                {{ form_widget (form.email , {'attr': {'class':'form-control','placeholder':'E-Mail'}}) }}
+                            </div>
+
+                            <div class="col-sm-6 input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text nobg"><i class="icon-line2-call-out"></i></span>
+                                </div>
+                                {{ form_widget (form.phone , {'attr': {'class':'form-control','placeholder':'Phone Number'}}) }}
+                            </div>
+
+                            <div class="col-sm-6 input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text nobg"><i class="fas fa-id-card"></i></span>
+                                </div>
+                                {{ form_widget (form.id , {'attr': {'class':'form-control','placeholder':'id'}}) }}
+                            </div>
+
+
+
+                            <div class="col-sm-6 input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text nobg"><i class="fas fa-portrait"></i></span>
+                                </div>
+                                {{ form_widget (form.picture , {'attr': {'class':'form-control'}}) }}
+                            </div>
+
+
+                            <div class="col-sm-6 input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text nobg"><i class="far fa-calendar-alt"></i></span>
+                                </div>
+                                {{ form_widget (form.birthDay , {'attr': {'class':'form-control air-datepicker','placeholder':'dd/mm/yyyy', 'data-position':'bottom right'} }  ) }}
+                            </div>
+
+
+
+
+                            <div class="col-12">
+                                {{ form_widget(form.Submit) }}
+                            </div>
+
+                            <input type="hidden" name="prefix" value="home-moving-form-">
+                            <input type="hidden" name="subject" value="Home Moving Request">
+                            <input type="hidden" name="html_title" value="Home Moving">
+
+
+                            {{ form_end(form,{'render_rest': false}) }}
+                        </form>
+
+                </div>
+
+
+    </section>
+{% endblock  %}
+{% block body %}
+{% endblock %}

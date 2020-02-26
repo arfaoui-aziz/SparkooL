@@ -26,6 +26,8 @@
       <parameter key="SoniaBundle">SoniaBundle\SoniaBundle</parameter>
       <parameter key="NotificationsBundle">SBC\NotificationsBundle\NotificationsBundle</parameter>
       <parameter key="NomayaSocialBundle">Nomaya\SocialBundle\NomayaSocialBundle</parameter>
+      <parameter key="ParentBundle">ParentBundle\ParentBundle</parameter>
+      <parameter key="EtudiantBundle">EtudiantBundle\EtudiantBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -117,6 +119,16 @@
         <parameter key="parent">null</parameter>
         <parameter key="path">C:\wamp64\www\SparkIT\vendor\nomaya\social-bundle\Nomaya\SocialBundle</parameter>
         <parameter key="namespace">Nomaya\SocialBundle</parameter>
+      </parameter>
+      <parameter key="ParentBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">C:\wamp64\www\SparkIT\src\ParentBundle</parameter>
+        <parameter key="namespace">ParentBundle</parameter>
+      </parameter>
+      <parameter key="EtudiantBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">C:\wamp64\www\SparkIT\src\EtudiantBundle</parameter>
+        <parameter key="namespace">EtudiantBundle</parameter>
       </parameter>
       <parameter key="DebugBundle" type="collection">
         <parameter key="parent">null</parameter>
@@ -3403,6 +3415,22 @@
         <argument>!NomayaSocial</argument>
       </call>
       <call method="addPath">
+        <argument>C:\wamp64\www\SparkIT\src\ParentBundle/Resources/views</argument>
+        <argument>Parent</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\SparkIT\src\ParentBundle/Resources/views</argument>
+        <argument>!Parent</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\SparkIT\src\EtudiantBundle/Resources/views</argument>
+        <argument>Etudiant</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\SparkIT\src\EtudiantBundle/Resources/views</argument>
+        <argument>!Etudiant</argument>
+      </call>
+      <call method="addPath">
         <argument>C:\wamp64\www\SparkIT\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
         <argument>Debug</argument>
       </call>
@@ -3620,6 +3648,22 @@
       <call method="addPath">
         <argument>C:\wamp64\www\SparkIT\vendor\nomaya\social-bundle\Nomaya\SocialBundle/Resources/views</argument>
         <argument>!NomayaSocial</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\SparkIT\src\ParentBundle/Resources/views</argument>
+        <argument>Parent</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\SparkIT\src\ParentBundle/Resources/views</argument>
+        <argument>!Parent</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\SparkIT\src\EtudiantBundle/Resources/views</argument>
+        <argument>Etudiant</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\SparkIT\src\EtudiantBundle/Resources/views</argument>
+        <argument>!Etudiant</argument>
       </call>
       <call method="addPath">
         <argument>C:\wamp64\www\SparkIT\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
@@ -4120,6 +4164,8 @@
           <argument key="AppBundle">AppBundle\Entity</argument>
           <argument key="AdminBundle">AdminBundle\Entity</argument>
           <argument key="SoniaBundle">SoniaBundle\Entity</argument>
+          <argument key="ParentBundle">ParentBundle\Entity</argument>
+          <argument key="EtudiantBundle">EtudiantBundle\Entity</argument>
         </argument>
       </call>
       <call method="setMetadataCacheImpl">
@@ -4168,6 +4214,8 @@
         <argument>C:\wamp64\www\SparkIT\src\AppBundle\Entity</argument>
         <argument>C:\wamp64\www\SparkIT\src\AdminBundle\Entity</argument>
         <argument>C:\wamp64\www\SparkIT\src\SoniaBundle\Entity</argument>
+        <argument>C:\wamp64\www\SparkIT\src\ParentBundle\Entity</argument>
+        <argument>C:\wamp64\www\SparkIT\src\EtudiantBundle\Entity</argument>
       </argument>
     </service>
     <service id="doctrine.orm.default_metadata_driver" class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false">
@@ -4182,6 +4230,14 @@
       <call method="addDriver">
         <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
         <argument>SoniaBundle\Entity</argument>
+      </call>
+      <call method="addDriver">
+        <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
+        <argument>ParentBundle\Entity</argument>
+      </call>
+      <call method="addDriver">
+        <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
+        <argument>EtudiantBundle\Entity</argument>
       </call>
       <call method="addDriver">
         <argument type="service">
