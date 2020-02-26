@@ -19,6 +19,7 @@ class __TwigTemplate_e90d377a3e8dff8734e76e49a0d5ddf71e53bc9daf4a724d788cb8cce95
         parent::__construct($env);
 
         $this->blocks = [
+            'sonia' => [$this, 'block_sonia'],
             'formetud' => [$this, 'block_formetud'],
             'taswira' => [$this, 'block_taswira'],
             'cloud1' => [$this, 'block_cloud1'],
@@ -54,6 +55,23 @@ class __TwigTemplate_e90d377a3e8dff8734e76e49a0d5ddf71e53bc9daf4a724d788cb8cce95
     }
 
     // line 2
+    public function block_sonia($context, array $blocks = [])
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sonia"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sonia"));
+
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 4
     public function block_formetud($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -62,7 +80,7 @@ class __TwigTemplate_e90d377a3e8dff8734e76e49a0d5ddf71e53bc9daf4a724d788cb8cce95
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "formetud"));
 
-        // line 3
+        // line 5
         echo "<section id=\"slider\" class=\"slider-element bgcolor clearfix\" style=\"height: auto; padding: 60px 0; background: url(\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("FrontEndimgg-2.png"), "html", null, true);
         echo "\") no-repeat center center / 100% 100%;\">
@@ -88,12 +106,12 @@ class __TwigTemplate_e90d377a3e8dff8734e76e49a0d5ddf71e53bc9daf4a724d788cb8cce95
 
                         <form class=\"row home-moving-form position-relative mb-0\"  method=\"post\" novalidate>
                             ";
-        // line 25
+        // line 27
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_start');
         echo "
                             <div class=\"form-process\" ></div>
                             ";
-        // line 27
+        // line 29
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "_token", []), 'row');
         echo "
                             <div class=\"input-group form-group\">
@@ -101,34 +119,34 @@ class __TwigTemplate_e90d377a3e8dff8734e76e49a0d5ddf71e53bc9daf4a724d788cb8cce95
                                     <span class=\"input-group-text nobg\"><i class=\"icon-line2-user\"></i></span>
                                 </div>
                                 ";
-        // line 32
+        // line 34
         if ((twig_length_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "title", []), 'errors')) <= 0)) {
-            // line 33
+            // line 35
             echo "                                ";
             echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "title", []), 'widget', ["attr" => ["class" => "form-control", "placeholder" => "Subject Title"]]);
             echo "
                                 ";
         } else {
-            // line 35
+            // line 37
             echo "                                    ";
             echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "title", []), 'widget', ["attr" => ["class" => "form-control is-invalid", "placeholder" => "Subject Title"]]);
             echo "
                                 <div class=\"invalid-feedback\">
                                     ";
-            // line 37
+            // line 39
             echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "title", []), 'errors');
             echo "
                                 </div>
                                 ";
         }
-        // line 40
+        // line 42
         echo "                            </div>
 
                             <div class=\" input-group form-group\">
 
                             </div>
                             ";
-        // line 45
+        // line 47
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "auteur", []), 'widget', ["attr" => ["class" => "hidden"], "value" => $this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", []), "id", [])]);
         echo "
                             <div class=\" input-group form-group\">
@@ -136,27 +154,27 @@ class __TwigTemplate_e90d377a3e8dff8734e76e49a0d5ddf71e53bc9daf4a724d788cb8cce95
                                     <span class=\"input-group-text nobg\"><i class=\"icon-line2-envelope\"></i></span>
                                 </div>
                                 ";
-        // line 50
+        // line 52
         if ((twig_length_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "subject", []), 'errors')) <= 0)) {
-            // line 51
+            // line 53
             echo "                                ";
             echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "subject", []), 'widget', ["attr" => ["class" => "form-control required", "placeholder" => "Subject"]]);
             echo "
                                 ";
         } else {
-            // line 53
+            // line 55
             echo "                                    ";
             echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "subject", []), 'widget', ["attr" => ["class" => "form-control is-invalid", "placeholder" => "Subject"]]);
             echo "
                                     <div class=\"invalid-feedback\">
                                         ";
-            // line 55
+            // line 57
             echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "subject", []), 'errors');
             echo "
                                     </div>
                                 ";
         }
-        // line 58
+        // line 60
         echo "                            </div>
 
                             <div class=\" input-group form-group\">
@@ -168,27 +186,27 @@ class __TwigTemplate_e90d377a3e8dff8734e76e49a0d5ddf71e53bc9daf4a724d788cb8cce95
                                     <span class=\"input-group-text nobg\"><i class=\"icon-line2-envelope\"></i></span>
                                 </div>
                                 ";
-        // line 68
+        // line 70
         if ((twig_length_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "type", []), 'errors')) <= 0)) {
-            // line 69
+            // line 71
             echo "                                ";
             echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "type", []), 'widget', ["attr" => ["class" => "form-control"]]);
             echo "
                                 ";
         } else {
-            // line 71
+            // line 73
             echo "                                    ";
             echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "type", []), 'widget', ["attr" => ["class" => "form-control is-invalid"]]);
             echo "
                                     <div class=\"invalid-feedback\">
                                         ";
-            // line 73
+            // line 75
             echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "type", []), 'errors');
             echo "
                                     </div>
                                 ";
         }
-        // line 76
+        // line 78
         echo "                            </div>
 
 
@@ -198,13 +216,13 @@ class __TwigTemplate_e90d377a3e8dff8734e76e49a0d5ddf71e53bc9daf4a724d788cb8cce95
 
                             <div class=\"col-12\">
                             ";
-        // line 84
+        // line 86
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "Add", []), 'widget', ["attr" => ["class" => "btn bgcolor text-white t500 btn-block py-2 mt-2"]]);
         echo "
                             </div>
 
                             ";
-        // line 87
+        // line 89
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end', ["render_rest" => false]);
         echo "
                         </form>
@@ -221,7 +239,7 @@ class __TwigTemplate_e90d377a3e8dff8734e76e49a0d5ddf71e53bc9daf4a724d788cb8cce95
 
     }
 
-    // line 94
+    // line 96
     public function block_taswira($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -230,7 +248,7 @@ class __TwigTemplate_e90d377a3e8dff8734e76e49a0d5ddf71e53bc9daf4a724d788cb8cce95
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "taswira"));
 
-        // line 95
+        // line 97
         echo "                <div class=\"col-lg-5 d-none d-lg-flex flex-wrap justify-content-center\">
 
 
@@ -244,7 +262,7 @@ class __TwigTemplate_e90d377a3e8dff8734e76e49a0d5ddf71e53bc9daf4a724d788cb8cce95
 
     }
 
-    // line 100
+    // line 102
     public function block_cloud1($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -253,7 +271,7 @@ class __TwigTemplate_e90d377a3e8dff8734e76e49a0d5ddf71e53bc9daf4a724d788cb8cce95
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "cloud1"));
 
-        // line 101
+        // line 103
         echo "
 ";
         
@@ -264,7 +282,7 @@ class __TwigTemplate_e90d377a3e8dff8734e76e49a0d5ddf71e53bc9daf4a724d788cb8cce95
 
     }
 
-    // line 104
+    // line 106
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -273,7 +291,7 @@ class __TwigTemplate_e90d377a3e8dff8734e76e49a0d5ddf71e53bc9daf4a724d788cb8cce95
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 105
+        // line 107
         echo "
 ";
         
@@ -284,7 +302,7 @@ class __TwigTemplate_e90d377a3e8dff8734e76e49a0d5ddf71e53bc9daf4a724d788cb8cce95
 
     }
 
-    // line 108
+    // line 110
     public function block_cloud($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -293,7 +311,7 @@ class __TwigTemplate_e90d377a3e8dff8734e76e49a0d5ddf71e53bc9daf4a724d788cb8cce95
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "cloud"));
 
-        // line 109
+        // line 111
         echo "
 ";
         
@@ -304,7 +322,7 @@ class __TwigTemplate_e90d377a3e8dff8734e76e49a0d5ddf71e53bc9daf4a724d788cb8cce95
 
     }
 
-    // line 112
+    // line 114
     public function block_container($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -313,7 +331,7 @@ class __TwigTemplate_e90d377a3e8dff8734e76e49a0d5ddf71e53bc9daf4a724d788cb8cce95
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "container"));
 
-        // line 113
+        // line 115
         echo "
 ";
         
@@ -324,7 +342,7 @@ class __TwigTemplate_e90d377a3e8dff8734e76e49a0d5ddf71e53bc9daf4a724d788cb8cce95
 
     }
 
-    // line 116
+    // line 118
     public function block_joinspark($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -333,7 +351,7 @@ class __TwigTemplate_e90d377a3e8dff8734e76e49a0d5ddf71e53bc9daf4a724d788cb8cce95
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "joinspark"));
 
-        // line 117
+        // line 119
         echo "
             ";
         
@@ -356,7 +374,7 @@ class __TwigTemplate_e90d377a3e8dff8734e76e49a0d5ddf71e53bc9daf4a724d788cb8cce95
 
     public function getDebugInfo()
     {
-        return array (  337 => 117,  328 => 116,  317 => 113,  308 => 112,  297 => 109,  288 => 108,  277 => 105,  268 => 104,  257 => 101,  248 => 100,  234 => 95,  225 => 94,  208 => 87,  202 => 84,  192 => 76,  186 => 73,  180 => 71,  174 => 69,  172 => 68,  160 => 58,  154 => 55,  148 => 53,  142 => 51,  140 => 50,  132 => 45,  125 => 40,  119 => 37,  113 => 35,  107 => 33,  105 => 32,  97 => 27,  92 => 25,  66 => 3,  57 => 2,  35 => 1,);
+        return array (  355 => 119,  346 => 118,  335 => 115,  326 => 114,  315 => 111,  306 => 110,  295 => 107,  286 => 106,  275 => 103,  266 => 102,  252 => 97,  243 => 96,  226 => 89,  220 => 86,  210 => 78,  204 => 75,  198 => 73,  192 => 71,  190 => 70,  178 => 60,  172 => 57,  166 => 55,  160 => 53,  158 => 52,  150 => 47,  143 => 42,  137 => 39,  131 => 37,  125 => 35,  123 => 34,  115 => 29,  110 => 27,  84 => 5,  75 => 4,  58 => 2,  36 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -370,6 +388,8 @@ class __TwigTemplate_e90d377a3e8dff8734e76e49a0d5ddf71e53bc9daf4a724d788cb8cce95
     public function getSourceContext()
     {
         return new Source("{% extends 'baseFront.html.twig' %}
+{% block sonia %}
+{% endblock %}
 {% block  formetud %}
 <section id=\"slider\" class=\"slider-element bgcolor clearfix\" style=\"height: auto; padding: 60px 0; background: url(\"{{ asset('FrontEnd\\img\\bg-2.png')}}\") no-repeat center center / 100% 100%;\">
 

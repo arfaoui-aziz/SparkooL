@@ -8,6 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use TeacherBundle\Entity\AbsentTeacher;
+use TeacherBundle\Entity\DelayTeacher;
 use TeacherBundle\Entity\Diploma;
 use TeacherBundle\Form\AbsentTeacherType;
 use TeacherBundle\Form\DiplomaType;
@@ -46,6 +47,8 @@ class AbsentTeacherController extends Controller
 
         $user=$this->getDoctrine()->getRepository(User::class)->find($id);
         $var = $this->getDoctrine()->getRepository(AbsentTeacher::class)->findBy(array('teacher' => $id));
+
+
         return $this->render('@Teacher/Teacher/AbsentDelay/showAbsent.html.twig',
             array(
                 'var' => $var,'user'=>$user
@@ -77,19 +80,33 @@ class AbsentTeacherController extends Controller
 
     }
 
-    public function ShowAbsencePDF(Request $request,$id)
+    public function ShowAbsencePDFAction(Request $request,$id)
     {
         $em = $this->getDoctrine()->getManager();
-        $users = $this->getDoctrine()->getRepository(User::class)->findBy(array('userType' => "Teacher"));
-        foreach ($users as $users){
-          $Fname=$users->getFirstName();
-          $Lname=$users->getLastName();
-          $name=$Fname. ' ' .$Lname;
+        $user = $this->getDoctrine()->getRepository(User::class)->find($id);
+        $var = $this->getDoctrine()->getRepository(AbsentTeacher::class)->findAb($id);
+        $var2 = $this->getDoctrine()->getRepository(DelayTeacher::class)->finddel($id);
+
+
+        $snappy = $this->get('knp_snappy.pdf');
+        $html = $this->renderView('@Teacher\Teacher\PDF.html.twig', array(
+            'base_dir' => $this->get('kernel')->getRootDir() . '/../web' . $request->getBasePath(), 'var' => $var, 'var2' => $var2  , 'user' => $user
+        ));
+        $filename = 'AbsencePDF';
+
+        return new Response(
+            $snappy->getOutputFromHtml($html),
+            200,
+            array(
+                'Content-Type' => 'application/pdf',
+                'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"',
+            )
+        );
 
 
     }
 
-    }
+
 
 
 }

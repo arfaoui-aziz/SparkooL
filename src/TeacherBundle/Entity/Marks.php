@@ -28,6 +28,9 @@ class Marks
      */
     private $cC;
 
+    
+
+
     /**
      * @var int
      *
@@ -36,9 +39,8 @@ class Marks
     private $exam;
 
 
+
     /**
-     * Get id
-     *
      * @return int
      */
     public function getId()
@@ -47,22 +49,14 @@ class Marks
     }
 
     /**
-     * Set cC
-     *
-     * @param integer $cC
-     *
-     * @return Marks
+     * @param int $id
      */
-    public function setCC($cC)
+    public function setId($id)
     {
-        $this->cC = $cC;
-
-        return $this;
+        $this->id = $id;
     }
 
     /**
-     * Get cC
-     *
      * @return int
      */
     public function getCC()
@@ -71,27 +65,45 @@ class Marks
     }
 
     /**
-     * Set exam
-     *
-     * @param integer $exam
-     *
-     * @return Marks
+     * @param int $cC
      */
-    public function setExam($exam)
+    public function setCC($cC)
     {
-        $this->exam = $exam;
-
-        return $this;
+        $this->cC = $cC;
     }
 
     /**
-     * Get exam
-     *
+     * @return string
+     */
+    public function getSubject()
+    {
+        return $this->subject;
+    }
+
+    /**
+     * @param string $subject
+     */
+    public function setSubject($subject)
+    {
+        $this->subject = $subject;
+    }
+
+    /**
      * @return int
      */
     public function getExam()
     {
         return $this->exam;
     }
-}
+
+    /**
+     * @param int $exam
+     */
+    public function setExam($exam)
+    {
+        $this->exam = $exam;
+    }
+
+
+   }
 

@@ -107,6 +107,10 @@ class ClubController extends Controller
     public function AfficherClubFrontAction()
     {
         $var=$this->getDoctrine()->getRepository(Club::class)->findAll();
+        $em = $this->getDoctrine()->getManager();
+
+
+
         return $this->render('@Sonia/frontClub/afficherclubfront.html.twig',
             array(
                 'var'=>$var
@@ -166,13 +170,11 @@ class ClubController extends Controller
         $rate->setNbEtoile($star);
         $rate->setIdClub($club1);
         $rate->setIdUser($user);
-        $em->persist($rate);
-        $em->flush();
 
         $rating = $em->getRepository('SoniaBundle:Rating')->findAll();
-        return $this->redirectToRoute('afficherClubFront');
-       /* return $this->render('@Sonia/frontClub/afficherclubfrontRate.html.twig',
-            array('var' => $var, 'rating' => $rating, 'idu' => $user, 'idc' => $club1));*/
+      //  return $this->redirectToRoute('afficherClubFront');
+  return $this->render('@Sonia/frontClub/afficherclubfrontRate.html.twig',
+            array('var' => $var, 'rating' => $rating, 'idu' => $user, 'idc' => $club1));
     }
 
 

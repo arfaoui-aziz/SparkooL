@@ -30,6 +30,17 @@ class AbsentTeacherRepository extends \Doctrine\ORM\EntityRepository
     public function findAb($id)
     {
 
+
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT t
+                FROM TeacherBundle:AbsentTeacher t
+                WHERE t.teacher = :id ORDER BY t.jour DESC '
+            )
+            ->setParameter('id',$id)
+            ->getResult();
     }
+
+
 
 }

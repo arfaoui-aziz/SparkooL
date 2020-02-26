@@ -121,7 +121,7 @@ class __TwigTemplate_33860522ed6811a510c2227442fa256234720793c531db7b71c60ead109
         echo "\"><i class=\"fas fa-check-square\"></i></a></li>
                                     <li><a href=\"";
         // line 41
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("PDF", ["id" => $this->getAttribute(($context["var"] ?? $this->getContext($context, "var")), "id", [])]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("PDF_amen", ["id" => $this->getAttribute(($context["var"] ?? $this->getContext($context, "var")), "id", [])]), "html", null, true);
         echo "\"><i class=\"fas fa-print\"></i></a></li>
 
                                 </ul>
@@ -457,7 +457,7 @@ class __TwigTemplate_33860522ed6811a510c2227442fa256234720793c531db7b71c60ead109
                                     <li><a href=\"{{ path('updateTeacher',{'id':var.id }) }}\"><i class=\"far fa-edit\"></i></a></li>
                                     <li><a href=\"{{ path('showAbsence',{'id':var.id }) }}\"><i class=\"fas fa-calendar-check\"></i></a></li>
                                     <li><a href=\"{{ path('showDelay',{'id':var.id }) }}\"><i class=\"fas fa-check-square\"></i></a></li>
-                                    <li><a href=\"{{ path('PDF',{'id':var.id }) }}\"><i class=\"fas fa-print\"></i></a></li>
+                                    <li><a href=\"{{ path('PDF_amen',{'id':var.id }) }}\"><i class=\"fas fa-print\"></i></a></li>
 
                                 </ul>
                             </div>

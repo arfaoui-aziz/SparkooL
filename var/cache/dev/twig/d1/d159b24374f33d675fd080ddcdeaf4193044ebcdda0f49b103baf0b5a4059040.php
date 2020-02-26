@@ -159,12 +159,8 @@ class __TwigTemplate_2368b5b9b09e9432e517a260513dcbcc8179112afe59e770a90fde84e27
         $context['_seq'] = twig_ensure_traversable(($context["var"] ?? $this->getContext($context, "var")));
         foreach ($context['_seq'] as $context["_key"] => $context["ff"]) {
             // line 52
-            echo "         ";
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(($context["rating"] ?? $this->getContext($context, "rating")));
-            foreach ($context['_seq'] as $context["_key"] => $context["r"]) {
-                // line 53
-                echo "         <div class=\"card height-auto\">
+            echo "
+         <div class=\"card height-auto\">
              <div class=\"card-body\">
 
 
@@ -173,22 +169,22 @@ class __TwigTemplate_2368b5b9b09e9432e517a260513dcbcc8179112afe59e770a90fde84e27
                      <div class=\"item-img\">
 
                          <img src=\"";
-                // line 61
-                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/figure/youth.png"), "html", null, true);
-                echo "\" alt=\"teacher\">
+            // line 61
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/figure/youth.png"), "html", null, true);
+            echo "\" alt=\"teacher\">
                      </div>
                      <div class=\"item-content\">
                          <div class=\"header-inline item-header\">
                              <h3 class=\"text-dark-medium font-medium\">";
-                // line 65
-                echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "nomClub", []), "html", null, true);
-                echo "</h3>
+            // line 65
+            echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "nomClub", []), "html", null, true);
+            echo "</h3>
                              <div class=\"header-elements\">
                                  <ul>
                                      <li><a href=\"";
-                // line 68
-                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("afficherClubDetail", ["id" => $this->getAttribute($context["ff"], "idClub", [])]), "html", null, true);
-                echo "\"><i class=\"fas fa-search-plus\"></i></a></li>
+            // line 68
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("afficherClubDetail", ["id" => $this->getAttribute($context["ff"], "idClub", [])]), "html", null, true);
+            echo "\"><i class=\"fas fa-search-plus\"></i></a></li>
                                  </ul>
 
                              </div>
@@ -200,16 +196,16 @@ class __TwigTemplate_2368b5b9b09e9432e517a260513dcbcc8179112afe59e770a90fde84e27
                                  <tr>
                                      <td>Name:</td>
                                      <td class=\"font-medium text-dark-medium\">";
-                // line 79
-                echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "nomClub", []), "html", null, true);
-                echo "</td>
+            // line 79
+            echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "nomClub", []), "html", null, true);
+            echo "</td>
                                  </tr>
                                  <tr>
                                      <td>Members:</td>
                                      <td class=\"font-medium text-dark-medium\">";
-                // line 83
-                echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "members", []), "html", null, true);
-                echo "</td>
+            // line 83
+            echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "members", []), "html", null, true);
+            echo "</td>
                                  </tr>
 
                                  <tr>
@@ -218,153 +214,28 @@ class __TwigTemplate_2368b5b9b09e9432e517a260513dcbcc8179112afe59e770a90fde84e27
                                  <tr>
 
                                  </tr>
-                                 <tr>
 
 
-                                     <script src=\"https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js\"></script>
-                                     <script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>
-                                     <style>
-                                         .btn-grey{
-                                             background-color:#D8D8D8;
-                                             color:#FFF;
-                                         }
-                                         .rating-block{
-                                             background-color:#FAFAFA;
-                                             border:1px solid #EFEFEF;
-                                             padding:15px 15px 20px 15px;
-                                             border-radius:3px;
-                                         }
-                                         .bold{
-                                             font-weight:700;
-                                         }
-                                         .padding-bottom-7{
-                                             padding-bottom:7px;
-                                         }
-
-                                         .review-block{
-                                             background-color:#FAFAFA;
-                                             border:1px solid #EFEFEF;
-                                             padding:15px;
-                                             border-radius:3px;
-                                             margin-bottom:15px;
-                                         }
-                                         .review-block-name{
-                                             font-size:12px;
-                                             margin:10px 0;
-                                         }
-                                         .review-block-date{
-                                             font-size:12px;
-                                         }
-                                         .review-block-rate{
-                                             font-size:13px;
-                                             margin-bottom:15px;
-                                         }
-                                         .review-block-title{
-                                             font-size:15px;
-                                             font-weight:700;
-                                             margin-bottom:10px;
-                                         }
-                                         .review-block-description{
-                                             font-size:13px;
-                                         }
-                                         .average {
-                                             background-color:#388e3c;
-                                             line-height: normal;
-                                             display: inline-block;
-                                             color: #fff;
-                                             padding: 2px 4px 2px 6px;
-                                             border-radius: 3px;
-                                             font-weight: 500;
-                                             font-size: 12px;
-                                             vertical-align: middle;
-                                         }
-                                         .rating-reviews {
-                                             padding-left: 8px;
-                                             font-weight: 500;
-                                             color: #878787;
-                                         }
-                                     </style>
-
-
-                                     ";
-                // line 160
-                if ((($this->getAttribute($context["r"], "idUser", []) != ($context["idu"] ?? $this->getContext($context, "idu"))) && ($this->getAttribute($context["r"], "idClub", []) != ($context["idc"] ?? $this->getContext($context, "idc"))))) {
-                    // line 161
-                    echo "
-                                         <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css\">
-                                         <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js\"></script>
-                                         <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js\"></script>
-
-                                         <div class=\"row\" style=\"margin-left: 50px;\">
-                                             <div class=\"col-sm-12\">
-
-                                                 <form method=\"POST\">
-                                                     <div class=\"form-group\">
-
-                                                         <a href=\" ";
-                    // line 172
-                    echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("Rating", ["id" => $this->getAttribute($context["ff"], "idClub", []), "star" => "1"]), "html", null, true);
-                    echo "\" >  <button type=\"button\" class=\"btn btn-warning btn-sm rateButton\" aria-label=\"Left Align\">
-                                                                 <span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\"></span>
-                                                             </button> </a>
-                                                         <a href=\"";
-                    // line 175
-                    echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("Rating", ["id" => $this->getAttribute($context["ff"], "idClub", []), "star" => "2"]), "html", null, true);
-                    echo "\" >   <button type=\"button\" class=\"btn btn-default btn-grey btn-sm rateButton\" aria-label=\"Left Align\">
-                                                                 <span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\"></span>
-                                                             </button> </a>
-                                                         <a href=\"";
-                    // line 178
-                    echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("Rating", ["id" => $this->getAttribute($context["ff"], "idClub", []), "star" => "3"]), "html", null, true);
-                    echo "\" >  <button type=\"button\" class=\"btn btn-default btn-grey btn-sm rateButton\" aria-label=\"Left Align\">
-                                                                 <span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\"></span>
-                                                             </button> </a>
-                                                         <a href=\"";
-                    // line 181
-                    echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("Rating", ["id" => $this->getAttribute($context["ff"], "idClub", []), "star" => "4"]), "html", null, true);
-                    echo "\" > <button type=\"button\" class=\"btn btn-default btn-grey btn-sm rateButton\" aria-label=\"Left Align\">
-                                                                 <span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\"></span>
-                                                             </button> </a>
-                                                         <a href=\"";
-                    // line 184
-                    echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("Rating", ["id" => $this->getAttribute($context["ff"], "idClub", []), "star" => "5"]), "html", null, true);
-                    echo "\" > <button type=\"button\" class=\"btn btn-default btn-grey btn-sm rateButton\" aria-label=\"Left Align\">
-                                                                 <span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\"></span>
-                                                             </button> </a>
-                                                         <input type=\"hidden\"  class=\"form-control\" id=\"rating\" name=\"rating\" value=\"1\">
-                                                     </div>
-
-
-                                                 </form>
-
-                                             </div>
-                                         </div>
-
-                                     ";
-                }
-                // line 197
-                echo "
-                                 </tr>
 
                                  </tbody>
 
                              </table>
                              <th> ";
-                // line 203
-                echo $this->env->getExtension('Nomaya\SocialBundle\Twig\Extension\NomayaTwigSocialBar')->getTwitterButton();
-                echo "</th>
+            // line 98
+            echo $this->env->getExtension('Nomaya\SocialBundle\Twig\Extension\NomayaTwigSocialBar')->getTwitterButton();
+            echo "</th>
                              <th>";
-                // line 204
-                echo $this->env->getExtension('Nomaya\SocialBundle\Twig\Extension\NomayaTwigSocialBar')->getFacebookLikeButton();
-                echo "</th>
+            // line 99
+            echo $this->env->getExtension('Nomaya\SocialBundle\Twig\Extension\NomayaTwigSocialBar')->getFacebookLikeButton();
+            echo "</th>
                              <th>    ";
-                // line 205
-                echo $this->env->getExtension('Nomaya\SocialBundle\Twig\Extension\NomayaTwigSocialBar')->getLinkedinButton();
-                echo "</th>
+            // line 100
+            echo $this->env->getExtension('Nomaya\SocialBundle\Twig\Extension\NomayaTwigSocialBar')->getLinkedinButton();
+            echo "</th>
                              <th>   ";
-                // line 206
-                echo $this->env->getExtension('Nomaya\SocialBundle\Twig\Extension\NomayaTwigSocialBar')->getGoogleplusButton();
-                echo "</th>
+            // line 101
+            echo $this->env->getExtension('Nomaya\SocialBundle\Twig\Extension\NomayaTwigSocialBar')->getGoogleplusButton();
+            echo "</th>
                              </tr>
                          </div>
 
@@ -375,18 +246,14 @@ class __TwigTemplate_2368b5b9b09e9432e517a260513dcbcc8179112afe59e770a90fde84e27
 
      </div>
      </div>
+
+
      ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['r'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 218
-            echo "     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['ff'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 219
+        // line 115
         echo "     <!-- ends Here -->
 
 
@@ -433,68 +300,68 @@ class __TwigTemplate_2368b5b9b09e9432e517a260513dcbcc8179112afe59e770a90fde84e27
 
      <!-- Page Area End Here -->
      <script src=\" ";
-        // line 264
+        // line 160
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery-3.3.1.min.js"), "html", null, true);
         echo " \" ></script>
      <!-- Plugins js -->
      <script src=\" ";
-        // line 266
+        // line 162
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/plugins.js"), "html", null, true);
         echo " \" ></script>
      <!-- Popper js -->
      <script src=\" ";
-        // line 268
+        // line 164
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/popper.min.js"), "html", null, true);
         echo " \"></script>
      <!-- Bootstrap js -->
      <script src=\" ";
-        // line 270
+        // line 166
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/bootstrap.min.js"), "html", null, true);
         echo " \" ></script>
      <!-- Counterup Js -->
      <script src=\" ";
-        // line 272
+        // line 168
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.counterup.min.js"), "html", null, true);
         echo " \" ></script>
      <!-- Moment Js -->
      <script  src=\" ";
-        // line 274
+        // line 170
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/moment.min.js"), "html", null, true);
         echo " \" ></script>
      <!-- Scroll Up Js -->
      <script src=\" ";
-        // line 276
+        // line 172
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.scrollUp.min.js"), "html", null, true);
         echo " \" ></script>
      <!-- Waypoints Js -->
      <script  src=\" ";
-        // line 278
+        // line 174
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.waypoints.min.js"), "html", null, true);
         echo " \" ></script>
      <!-- Select 2 Js -->
      <script src=\"";
-        // line 280
+        // line 176
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/select2.min.js"), "html", null, true);
         echo "\"></script>
      <!-- Date Picker Js -->
      <script src=\"";
-        // line 282
+        // line 178
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/datepicker.min.js"), "html", null, true);
         echo "\"></script>
      <!-- Full Calender Js -->
      <script src=\" ";
-        // line 284
+        // line 180
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/fullcalendar.min.js"), "html", null, true);
         echo " \"></script>
      <!-- Chart Js -->
      <script  src=\" ";
-        // line 286
+        // line 182
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/Chart.min.js"), "html", null, true);
         echo " \" ></script>
 
      <!-- Custom Js -->
      <script  src=\" ";
-        // line 289
+        // line 185
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/main.js"), "html", null, true);
         echo " \" ></script>
 
@@ -520,7 +387,7 @@ class __TwigTemplate_2368b5b9b09e9432e517a260513dcbcc8179112afe59e770a90fde84e27
 
     public function getDebugInfo()
     {
-        return array (  498 => 289,  492 => 286,  487 => 284,  482 => 282,  477 => 280,  472 => 278,  467 => 276,  462 => 274,  457 => 272,  452 => 270,  447 => 268,  442 => 266,  437 => 264,  390 => 219,  384 => 218,  366 => 206,  362 => 205,  358 => 204,  354 => 203,  346 => 197,  330 => 184,  324 => 181,  318 => 178,  312 => 175,  306 => 172,  293 => 161,  291 => 160,  211 => 83,  204 => 79,  190 => 68,  184 => 65,  177 => 61,  167 => 53,  162 => 52,  158 => 51,  150 => 45,  140 => 41,  137 => 40,  133 => 39,  119 => 28,  114 => 26,  109 => 24,  104 => 22,  99 => 20,  94 => 18,  89 => 16,  84 => 14,  79 => 12,  74 => 10,  68 => 7,  63 => 5,  60 => 4,  51 => 3,  29 => 1,);
+        return array (  365 => 185,  359 => 182,  354 => 180,  349 => 178,  344 => 176,  339 => 174,  334 => 172,  329 => 170,  324 => 168,  319 => 166,  314 => 164,  309 => 162,  304 => 160,  257 => 115,  237 => 101,  233 => 100,  229 => 99,  225 => 98,  207 => 83,  200 => 79,  186 => 68,  180 => 65,  173 => 61,  162 => 52,  158 => 51,  150 => 45,  140 => 41,  137 => 40,  133 => 39,  119 => 28,  114 => 26,  109 => 24,  104 => 22,  99 => 20,  94 => 18,  89 => 16,  84 => 14,  79 => 12,  74 => 10,  68 => 7,  63 => 5,  60 => 4,  51 => 3,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -584,7 +451,7 @@ class __TwigTemplate_2368b5b9b09e9432e517a260513dcbcc8179112afe59e770a90fde84e27
          <!-- event Table Area Start Here -->
 
          {% for ff in var %}
-         {% for r in rating %}
+
          <div class=\"card height-auto\">
              <div class=\"card-body\">
 
@@ -624,113 +491,8 @@ class __TwigTemplate_2368b5b9b09e9432e517a260513dcbcc8179112afe59e770a90fde84e27
                                  <tr>
 
                                  </tr>
-                                 <tr>
 
 
-                                     <script src=\"https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js\"></script>
-                                     <script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>
-                                     <style>
-                                         .btn-grey{
-                                             background-color:#D8D8D8;
-                                             color:#FFF;
-                                         }
-                                         .rating-block{
-                                             background-color:#FAFAFA;
-                                             border:1px solid #EFEFEF;
-                                             padding:15px 15px 20px 15px;
-                                             border-radius:3px;
-                                         }
-                                         .bold{
-                                             font-weight:700;
-                                         }
-                                         .padding-bottom-7{
-                                             padding-bottom:7px;
-                                         }
-
-                                         .review-block{
-                                             background-color:#FAFAFA;
-                                             border:1px solid #EFEFEF;
-                                             padding:15px;
-                                             border-radius:3px;
-                                             margin-bottom:15px;
-                                         }
-                                         .review-block-name{
-                                             font-size:12px;
-                                             margin:10px 0;
-                                         }
-                                         .review-block-date{
-                                             font-size:12px;
-                                         }
-                                         .review-block-rate{
-                                             font-size:13px;
-                                             margin-bottom:15px;
-                                         }
-                                         .review-block-title{
-                                             font-size:15px;
-                                             font-weight:700;
-                                             margin-bottom:10px;
-                                         }
-                                         .review-block-description{
-                                             font-size:13px;
-                                         }
-                                         .average {
-                                             background-color:#388e3c;
-                                             line-height: normal;
-                                             display: inline-block;
-                                             color: #fff;
-                                             padding: 2px 4px 2px 6px;
-                                             border-radius: 3px;
-                                             font-weight: 500;
-                                             font-size: 12px;
-                                             vertical-align: middle;
-                                         }
-                                         .rating-reviews {
-                                             padding-left: 8px;
-                                             font-weight: 500;
-                                             color: #878787;
-                                         }
-                                     </style>
-
-
-                                     {% if r.idUser != idu  and r.idClub!=idc  %}
-
-                                         <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css\">
-                                         <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js\"></script>
-                                         <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js\"></script>
-
-                                         <div class=\"row\" style=\"margin-left: 50px;\">
-                                             <div class=\"col-sm-12\">
-
-                                                 <form method=\"POST\">
-                                                     <div class=\"form-group\">
-
-                                                         <a href=\" {{ path('Rating', {'id':ff.idClub , 'star':'1'}) }}\" >  <button type=\"button\" class=\"btn btn-warning btn-sm rateButton\" aria-label=\"Left Align\">
-                                                                 <span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\"></span>
-                                                             </button> </a>
-                                                         <a href=\"{{ path('Rating', {'id':ff.idClub , 'star':'2'}) }}\" >   <button type=\"button\" class=\"btn btn-default btn-grey btn-sm rateButton\" aria-label=\"Left Align\">
-                                                                 <span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\"></span>
-                                                             </button> </a>
-                                                         <a href=\"{{ path('Rating', {'id':ff.idClub , 'star':'3'}) }}\" >  <button type=\"button\" class=\"btn btn-default btn-grey btn-sm rateButton\" aria-label=\"Left Align\">
-                                                                 <span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\"></span>
-                                                             </button> </a>
-                                                         <a href=\"{{ path('Rating', {'id':ff.idClub , 'star':'4'}) }}\" > <button type=\"button\" class=\"btn btn-default btn-grey btn-sm rateButton\" aria-label=\"Left Align\">
-                                                                 <span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\"></span>
-                                                             </button> </a>
-                                                         <a href=\"{{ path('Rating', {'id':ff.idClub , 'star':'5'}) }}\" > <button type=\"button\" class=\"btn btn-default btn-grey btn-sm rateButton\" aria-label=\"Left Align\">
-                                                                 <span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\"></span>
-                                                             </button> </a>
-                                                         <input type=\"hidden\"  class=\"form-control\" id=\"rating\" name=\"rating\" value=\"1\">
-                                                     </div>
-
-
-                                                 </form>
-
-                                             </div>
-                                         </div>
-
-                                     {% endif %}
-
-                                 </tr>
 
                                  </tbody>
 
@@ -749,7 +511,8 @@ class __TwigTemplate_2368b5b9b09e9432e517a260513dcbcc8179112afe59e770a90fde84e27
 
      </div>
      </div>
-     {% endfor %}
+
+
      {% endfor %}
      <!-- ends Here -->
 

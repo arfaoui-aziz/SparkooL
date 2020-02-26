@@ -26,4 +26,16 @@ class DelayTeacherRepository extends \Doctrine\ORM\EntityRepository
         } catch (NonUniqueResultException $e) {
         }
     }
+
+    public function finddel($id)
+    {
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT t
+                FROM TeacherBundle:DelayTeacher t
+                WHERE t.teacher = :id ORDER BY t.jour DESC '
+            )
+            ->setParameter('id',$id)
+            ->getResult();
+    }
 }

@@ -210,6 +210,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $this->mergeDefaults(array_replace($matches, ['_route' => 'interfaceTeacher']), array (  '_controller' => 'TeacherBundle\\Controller\\TeacherController::InterfaceAction',));
             }
 
+            // PDF_amen
+            if (0 === strpos($pathinfo, '/teacher/PDF') && preg_match('#^/teacher/PDF/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'PDF_amen']), array (  '_controller' => 'TeacherBundle\\Controller\\AbsentTeacherController::ShowAbsencePDFAction',));
+            }
+
             // NumberOfAbsent
             if (0 === strpos($pathinfo, '/teacher/NumberOfAbsentAction') && preg_match('#^/teacher/NumberOfAbsentAction/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, ['_route' => 'NumberOfAbsent']), array (  '_controller' => 'TeacherBundle\\Controller\\AbsentTeacherController::NumberOfAbsentAction',));

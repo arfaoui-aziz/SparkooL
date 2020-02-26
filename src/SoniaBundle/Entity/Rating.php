@@ -25,11 +25,8 @@ class Rating
     private $id;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="idUser", type="integer")
-     * @ORM\OneToOne(targetEntity="User")
-     * @JoinColumn(name="user_id", referencedColumnName="id")
+     * @var string
+     * @ORM\Column(name="idUser", type="string", length=255)
      */
     private $idUser;
 
@@ -61,28 +58,22 @@ class Rating
     }
 
     /**
-     * Set idUser
-     *
-     * @param integer $idUser
-     *
-     * @return Rating
-     */
-    public function setIdUser($idUser)
-    {
-        $this->idUser = $idUser;
-    
-        return $this;
-    }
-
-    /**
-     * Get idUser
-     *
-     * @return integer
+     * @return string
      */
     public function getIdUser()
     {
         return $this->idUser;
     }
+
+    /**
+     * @param string $idUser
+     */
+    public function setIdUser($idUser)
+    {
+        $this->idUser = $idUser;
+    }
+
+
 
     /**
      * Set idClub

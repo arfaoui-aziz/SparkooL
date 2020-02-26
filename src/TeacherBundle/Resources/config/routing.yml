@@ -68,9 +68,9 @@ addReclamation:
     path:     /addReclamation
     defaults: { _controller: TeacherBundle:Reclamation:AddReclamation }
 
-PDF:
+PDF_amen:
   path:     /PDF/{id}
-  defaults: { _controller: TeacherBundle:Teacher:DisplayPDF }
+  defaults: { _controller: TeacherBundle:AbsentTeacher:ShowAbsencePDF }
 
 ajax:
   path:     /ajax

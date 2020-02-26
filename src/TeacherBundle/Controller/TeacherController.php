@@ -147,18 +147,22 @@ class TeacherController extends Controller
             array('form' => $form->createView()));
     }
 
-
+// Front
     public function ShowTeacherDetailsFAction($id)
     {
 
-
+       $activeuser = $this->getUser()->getId();
         $em = $this->getDoctrine()->getManager();
         $var = $em->getRepository('AppBundle:User')->find($id);
-        $dip = $em->getRepository('TeacherBundle:Diploma')->findOneBy(array('teacher' => $id));
-        $ab = $em->getRepository('TeacherBundle:AbsentTeacher')->findOneBy(array('teacher' => $id));
-        return $this->render('@Teacher/Teacher/Front/showTeacherDetailsF.html.twig', array(
-            'var' => $var, 'dip' => $dip, 'ab' => $ab));
+        $userType = $var->getUserType();
+        if( $userType == 'Teacher') {
+            $dip = $em->getRepository('TeacherBundle:Diploma')->findOneBy(array('teacher' => $id));
+            $ab = $em->getRepository('TeacherBundle:AbsentTeacher')->findOneBy(array('teacher' => $id));
+            return $this->render('@Teacher/Teacher/Front/showTeacherDetailsF.html.twig', array(
+                'var' => $var, 'dip' => $dip, 'ab' => $ab));
+        }
 
+        return $this->redirectToRoute("front" );
     }
 
     public function InterfaceAction($id)
