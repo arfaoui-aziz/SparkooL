@@ -22,7 +22,7 @@ public function AddSubjectAction(Request $request)
     $form->handleRequest($request);
     $em = $this->getDoctrine()->getManager();
     if ($form->isSubmitted() && $form->isValid()) {
-        $subject->setDateajout('elyoum');
+        $subject->setDateajout(date('d-m-Y'));
         $subject->setNbreponse(0);
         $subject->setEtat(false);
         $subject->setSolved(false);
@@ -86,7 +86,7 @@ public function getSubjectsAction()
         if ($form->isSubmitted() && $form->isValid()) {
            $oldresp = $subject->getNbreponse();
            $subject->setNbreponse($oldresp+1);
-            $comment->setCommentdate('elyoum');
+            $comment->setCommentdate(date('d-m-Y'));
             $em = $this->getDoctrine()->getManager();
             $em->persist($comment);
             $em->flush();

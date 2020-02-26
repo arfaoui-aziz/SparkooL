@@ -21,7 +21,6 @@ class __TwigTemplate_6f4eb48d3c03dcd5daa4e4f8af3221811c5c092142cfe9202056840309e
         $this->blocks = [
             'form' => [$this, 'block_form'],
             'body' => [$this, 'block_body'],
-            'taswira' => [$this, 'block_taswira'],
             'join' => [$this, 'block_join'],
         ];
     }
@@ -134,8 +133,8 @@ class __TwigTemplate_6f4eb48d3c03dcd5daa4e4f8af3221811c5c092142cfe9202056840309e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 55
-        echo " ";
-        $this->displayBlock('taswira', $context, $blocks);
+        echo "
+";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -144,25 +143,7 @@ class __TwigTemplate_6f4eb48d3c03dcd5daa4e4f8af3221811c5c092142cfe9202056840309e
 
     }
 
-    public function block_taswira($context, array $blocks = [])
-    {
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "taswira"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "taswira"));
-
-        // line 56
-        echo "  ";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 58
+    // line 57
     public function block_join($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -191,7 +172,7 @@ class __TwigTemplate_6f4eb48d3c03dcd5daa4e4f8af3221811c5c092142cfe9202056840309e
 
     public function getDebugInfo()
     {
-        return array (  166 => 58,  156 => 56,  137 => 55,  128 => 54,  112 => 47,  74 => 12,  63 => 3,  54 => 2,  32 => 1,);
+        return array (  147 => 57,  136 => 55,  127 => 54,  111 => 47,  73 => 12,  62 => 3,  53 => 2,  31 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -258,8 +239,7 @@ class __TwigTemplate_6f4eb48d3c03dcd5daa4e4f8af3221811c5c092142cfe9202056840309e
 {% endblock %}
 
 {% block body %}
- {% block taswira %}
-  {% endblock %}
+
 {% endblock %}
 {% block join %}
 {% endblock %}

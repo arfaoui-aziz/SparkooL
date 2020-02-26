@@ -21,7 +21,7 @@ class User extends BaseUser
      * @var string
      * @ORM\Column(name="id", type="string", length=255)
      * @ORM\Id
-     * @Assert\NotBlank(message="Please insert an ID")
+     *
      * @Assert\Length(
      *     min= "3",
      *     max= "9",

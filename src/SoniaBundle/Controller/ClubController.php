@@ -153,27 +153,27 @@ class ClubController extends Controller
     }
 
     #ratiiing
-    function RatingAction(Request $request, $id){
-        $rate=new Rating();
-        $em=$this->getDoctrine()->getManager();
-            $club=$this->getDoctrine()->getRepository(Club::class)->find($id);
-            $user = $this->getUser()->getId();
-            $club1=$club->getIdClub();
+    function RatingAction(Request $request, $id,$star)
+    {
+        $var = $this->getDoctrine()->getRepository(Club::class)->findAll();
 
-        if($request->isMethod('POST') ) {
-            $rate->setIdClub($club1);
-            $rate->setIdUser($user);
-            $em->persist($rate);
-            $em->flush();
-            $this->addFlash('success', "Your vote has been saved!");
+        $rate = new Rating();
+        $em = $this->getDoctrine()->getManager();
+        $club = $this->getDoctrine()->getRepository(Club::class)->find($id);
+        $user = $this->getUser()->getId();
+        $club1 = $club->getIdClub();
 
-            return $this->redirectToRoute('afficherClubFront');
-        }
+        $rate->setNbEtoile($star);
+        $rate->setIdClub($club1);
+        $rate->setIdUser($user);
+        $em->persist($rate);
+        $em->flush();
 
-        return $this->render('@Sonia/frontClub/afficherclubfrontRate.html.twig',
-            array('rate' =>$rate) );
+        $rating = $em->getRepository('SoniaBundle:Rating')->findAll();
+        return $this->redirectToRoute('afficherClubFront');
+       /* return $this->render('@Sonia/frontClub/afficherclubfrontRate.html.twig',
+            array('var' => $var, 'rating' => $rating, 'idu' => $user, 'idc' => $club1));*/
     }
-
 
 
 }

@@ -98,7 +98,7 @@
                     <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
                     <ul>
-
+                        {% if is_granted('ROLE_USER') %}
                         <li class="current"><a href="#"><div>Home</div></a></li>
 
                         <li><a href="#"><div>Student</div></a>
@@ -125,7 +125,7 @@
 
                         <li><a href="{{ path('admin_ScheduleFront') }}"><div>School Schedule</div></a></li>
                         <li><a href="{{ path('admin_AddReclamation') }}"><div>Reclamation </div></a></li>
-
+{% endif %}
                     </ul>
 
                     <!-- Header Buttons
@@ -190,7 +190,7 @@
     <!-- Slider
     ============================================= -->
     {% block ghasoussa %}
-        {% block formetud %}
+
     <section id="slider" class="slider-element bgcolor clearfix" style="height: auto; padding: 60px 0; background: url("{{ asset('FrontEnd\img\bg-2.png')}}") no-repeat center center / 100% 100%;">
 
         <div class="container" style="z-index: 2">
@@ -275,18 +275,18 @@
                             </div>
                         </div>
                     </div>
-                                {% endblock %}
+
                 </div>
-                {% block taswira %}
+
                 <div class="col-lg-5 d-none d-lg-flex flex-wrap justify-content-center">
                     <img src="{{ asset('FrontEnd/img/ed2.png')}}" alt="Image 1" class="d-flex align-self-end ml-5 mt-3">
 
                 </div>
-                    {% endblock %}
+
             </div>
         </div>
 {% endblock %}
-        {%  block cloud1 %}
+{% block cloud %}
         <div class="svg-separator">
             <div>
                 <svg preserveAspectRatio="xMidYMax meet" viewBox="0 0 1600 100"  data-height="100">
@@ -433,7 +433,7 @@
                 </div>
             </div>
 
-            {% block cloud %}
+
             <div class="clear"></div>
             <br><br><br>
 
@@ -449,9 +449,8 @@
                         </svg>
                     </div>
                 </div>
-                {% endblock %}
 
-                {% block container %}
+
                 <div class="container">
                     <div class="divcenter" style="max-width: 1200px; padding: 120px 0 50px;">
 
@@ -584,7 +583,7 @@
                             </ul>
                         </div>
                     </div>
-{% endblock %}
+
                 </div>
             </div>
 
@@ -595,7 +594,7 @@
 
     </section><!-- #content end -->{% endblock %}
     {% block join %}
-        {% block joinspark %}
+
 
     <div class="section dark pt-0 mb-0 bgcolor" >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1960 206.8" class="bg-white">
@@ -615,7 +614,7 @@
         </div>
 
     </div>
-    {% endblock %}
+
     {% endblock %}
     <!-- Footer
     ============================================= -->

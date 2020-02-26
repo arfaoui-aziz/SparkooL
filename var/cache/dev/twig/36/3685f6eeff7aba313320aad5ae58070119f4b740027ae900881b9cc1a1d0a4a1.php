@@ -19,6 +19,8 @@ class __TwigTemplate_7074fe97a1fff90c0a31c70a04e2895b28550d5ecd099d4ca74bc4a6376
         parent::__construct($env);
 
         $this->blocks = [
+            'form' => [$this, 'block_form'],
+            'cloud' => [$this, 'block_cloud'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -47,7 +49,41 @@ class __TwigTemplate_7074fe97a1fff90c0a31c70a04e2895b28550d5ecd099d4ca74bc4a6376
 
     }
 
-    // line 3
+    // line 2
+    public function block_form($context, array $blocks = [])
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "form"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "form"));
+
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 4
+    public function block_cloud($context, array $blocks = [])
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "cloud"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "cloud"));
+
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 6
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -56,66 +92,66 @@ class __TwigTemplate_7074fe97a1fff90c0a31c70a04e2895b28550d5ecd099d4ca74bc4a6376
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 4
+        // line 7
         echo "
      <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\" ";
-        // line 5
+        // line 8
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/favicon.png"), "html", null, true);
         echo " \">
      <!-- Normalize CSS -->
      <link rel=\"stylesheet\" href=\" ";
-        // line 7
+        // line 10
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("css/normalize.css"), "html", null, true);
         echo "\">
 
      <!-- Main CSS -->
      <link rel=\"stylesheet\"  href=\" ";
-        // line 10
+        // line 13
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("css/main.css"), "html", null, true);
         echo " \">
      <!-- Bootstrap CSS -->
      <link rel=\"stylesheet\" href=\" ";
-        // line 12
+        // line 15
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("css/bootstrap.min.css"), "html", null, true);
         echo " \" >
      <!-- Fontawesome CSS -->
      <link rel=\"stylesheet\" href=\" ";
-        // line 14
+        // line 17
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("css/all.min.css"), "html", null, true);
         echo " \">
      <!-- Flaticon CSS -->
      <link rel=\"stylesheet\"  href=\" ";
-        // line 16
+        // line 19
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("fonts/flaticon.css"), "html", null, true);
         echo " \" >
      <!-- Full Calender CSS -->
      <link rel=\"stylesheet\" href=\" ";
-        // line 18
+        // line 21
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("css/fullcalendar.min.css"), "html", null, true);
         echo " \">
      <!-- Animate CSS -->
      <link rel=\"stylesheet\" href=\" ";
-        // line 20
+        // line 23
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("css/animate.min.css"), "html", null, true);
         echo " \" >
      <!-- Select 2 CSS -->
      <link rel=\"stylesheet\" href=\"";
-        // line 22
+        // line 25
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("css/select2.min.css"), "html", null, true);
         echo " \">
      <!-- Date Picker CSS -->
      <link rel=\"stylesheet\" href=\"";
-        // line 24
+        // line 27
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("css/datepicker.min.css"), "html", null, true);
         echo "\">
      <!-- Custom CSS -->
      <link rel=\"stylesheet\" href=\" ";
-        // line 26
+        // line 29
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("style.css"), "html", null, true);
         echo " \" >
      <!-- Modernize js -->
      <script href=\" ";
-        // line 28
+        // line 31
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/modernizr-3.6.0.min.js"), "html", null, true);
         echo " \"></script>
      <!-- Breadcubs Area End Here -->
@@ -129,14 +165,14 @@ class __TwigTemplate_7074fe97a1fff90c0a31c70a04e2895b28550d5ecd099d4ca74bc4a6376
 
          </div>
          ";
-        // line 39
+        // line 42
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "flashes", [0 => "info"], "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 40
+            // line 43
             echo "             <div class=\"alert alert-success\">
                  ";
-            // line 41
+            // line 44
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
             echo "
              </div>
@@ -146,19 +182,21 @@ class __TwigTemplate_7074fe97a1fff90c0a31c70a04e2895b28550d5ecd099d4ca74bc4a6376
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 45
+        // line 48
         echo "
 
 
 
          <!-- event Table Area Start Here -->
+
          ";
-        // line 50
+        // line 54
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["var"] ?? $this->getContext($context, "var")));
         foreach ($context['_seq'] as $context["_key"] => $context["ff"]) {
-            // line 51
-            echo "         <div class=\"card height-auto\">
+            // line 55
+            echo "
+         <div class=\"card height-auto\">
              <div class=\"card-body\">
 
 
@@ -167,20 +205,20 @@ class __TwigTemplate_7074fe97a1fff90c0a31c70a04e2895b28550d5ecd099d4ca74bc4a6376
                      <div class=\"item-img\">
 
                          <img src=\"";
-            // line 59
+            // line 64
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/figure/youth.png"), "html", null, true);
             echo "\" alt=\"teacher\">
                      </div>
                      <div class=\"item-content\">
                          <div class=\"header-inline item-header\">
                              <h3 class=\"text-dark-medium font-medium\">";
-            // line 63
+            // line 68
             echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "nomClub", []), "html", null, true);
             echo "</h3>
                              <div class=\"header-elements\">
                                  <ul>
                                      <li><a href=\"";
-            // line 66
+            // line 71
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("afficherClubDetail", ["id" => $this->getAttribute($context["ff"], "idClub", [])]), "html", null, true);
             echo "\"><i class=\"fas fa-search-plus\"></i></a></li>
                                  </ul>
@@ -194,20 +232,141 @@ class __TwigTemplate_7074fe97a1fff90c0a31c70a04e2895b28550d5ecd099d4ca74bc4a6376
                                  <tr>
                                      <td>Name:</td>
                                      <td class=\"font-medium text-dark-medium\">";
-            // line 77
+            // line 82
             echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "nomClub", []), "html", null, true);
             echo "</td>
                                  </tr>
                                  <tr>
                                      <td>Members:</td>
                                      <td class=\"font-medium text-dark-medium\">";
-            // line 81
+            // line 86
             echo twig_escape_filter($this->env, $this->getAttribute($context["ff"], "members", []), "html", null, true);
             echo "</td>
                                  </tr>
 
-                                     <tr>
-                                     </tr>
+                                 <tr>
+                                 </tr>
+
+                                 <tr>
+
+                                 </tr>
+                                 <tr>
+
+
+                                     <script src=\"https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js\"></script>
+                                     <script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>
+                                     <style>
+                                         .btn-grey{
+                                             background-color:#D8D8D8;
+                                             color:#FFF;
+                                         }
+                                         .rating-block{
+                                             background-color:#FAFAFA;
+                                             border:1px solid #EFEFEF;
+                                             padding:15px 15px 20px 15px;
+                                             border-radius:3px;
+                                         }
+                                         .bold{
+                                             font-weight:700;
+                                         }
+                                         .padding-bottom-7{
+                                             padding-bottom:7px;
+                                         }
+
+                                         .review-block{
+                                             background-color:#FAFAFA;
+                                             border:1px solid #EFEFEF;
+                                             padding:15px;
+                                             border-radius:3px;
+                                             margin-bottom:15px;
+                                         }
+                                         .review-block-name{
+                                             font-size:12px;
+                                             margin:10px 0;
+                                         }
+                                         .review-block-date{
+                                             font-size:12px;
+                                         }
+                                         .review-block-rate{
+                                             font-size:13px;
+                                             margin-bottom:15px;
+                                         }
+                                         .review-block-title{
+                                             font-size:15px;
+                                             font-weight:700;
+                                             margin-bottom:10px;
+                                         }
+                                         .review-block-description{
+                                             font-size:13px;
+                                         }
+                                         .average {
+                                             background-color:#388e3c;
+                                             line-height: normal;
+                                             display: inline-block;
+                                             color: #fff;
+                                             padding: 2px 4px 2px 6px;
+                                             border-radius: 3px;
+                                             font-weight: 500;
+                                             font-size: 12px;
+                                             vertical-align: middle;
+                                         }
+                                         .rating-reviews {
+                                             padding-left: 8px;
+                                             font-weight: 500;
+                                             color: #878787;
+                                         }
+                                     </style>
+
+
+
+                                     <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css\">
+                                     <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js\"></script>
+                                     <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js\"></script>
+
+                                     <div class=\"row\" style=\"margin-left: 50px;\">
+                                         <div class=\"col-sm-12\">
+
+                                             <form method=\"POST\">
+                                                 <div class=\"form-group\">
+
+                                                     <a href=\" ";
+            // line 174
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("Rating", ["id" => $this->getAttribute($context["ff"], "idClub", []), "star" => "1"]), "html", null, true);
+            echo "\" >  <button type=\"button\" class=\"btn btn-warning btn-sm rateButton\" aria-label=\"Left Align\">
+                                                             <span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\"></span>
+                                                         </button> </a>
+                                                     <a href=\"";
+            // line 177
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("Rating", ["id" => $this->getAttribute($context["ff"], "idClub", []), "star" => "2"]), "html", null, true);
+            echo "\" >   <button type=\"button\" class=\"btn btn-default btn-grey btn-sm rateButton\" aria-label=\"Left Align\">
+                                                             <span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\"></span>
+                                                         </button> </a>
+                                                     <a href=\"";
+            // line 180
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("Rating", ["id" => $this->getAttribute($context["ff"], "idClub", []), "star" => "3"]), "html", null, true);
+            echo "\" >  <button type=\"button\" class=\"btn btn-default btn-grey btn-sm rateButton\" aria-label=\"Left Align\">
+                                                             <span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\"></span>
+                                                         </button> </a>
+                                                     <a href=\"";
+            // line 183
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("Rating", ["id" => $this->getAttribute($context["ff"], "idClub", []), "star" => "4"]), "html", null, true);
+            echo "\" > <button type=\"button\" class=\"btn btn-default btn-grey btn-sm rateButton\" aria-label=\"Left Align\">
+                                                             <span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\"></span>
+                                                         </button> </a>
+                                                     <a href=\"";
+            // line 186
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("Rating", ["id" => $this->getAttribute($context["ff"], "idClub", []), "star" => "5"]), "html", null, true);
+            echo "\" > <button type=\"button\" class=\"btn btn-default btn-grey btn-sm rateButton\" aria-label=\"Left Align\">
+                                                             <span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\"></span>
+                                                         </button> </a>
+                                                     <input type=\"hidden\"  class=\"form-control\" id=\"rating\" name=\"rating\" value=\"1\">
+                                                 </div>
+
+
+                                             </form>
+
+                                         </div>
+                                     </div>
 
 
 
@@ -216,20 +375,20 @@ class __TwigTemplate_7074fe97a1fff90c0a31c70a04e2895b28550d5ecd099d4ca74bc4a6376
                                  </tbody>
 
                              </table>
-                               <th> ";
-            // line 94
+                             <th> ";
+            // line 205
             echo $this->env->getExtension('Nomaya\SocialBundle\Twig\Extension\NomayaTwigSocialBar')->getTwitterButton();
             echo "</th>
                              <th>";
-            // line 95
+            // line 206
             echo $this->env->getExtension('Nomaya\SocialBundle\Twig\Extension\NomayaTwigSocialBar')->getFacebookLikeButton();
             echo "</th>
                              <th>    ";
-            // line 96
+            // line 207
             echo $this->env->getExtension('Nomaya\SocialBundle\Twig\Extension\NomayaTwigSocialBar')->getLinkedinButton();
             echo "</th>
                              <th>   ";
-            // line 97
+            // line 208
             echo $this->env->getExtension('Nomaya\SocialBundle\Twig\Extension\NomayaTwigSocialBar')->getGoogleplusButton();
             echo "</th>
                              </tr>
@@ -247,7 +406,7 @@ class __TwigTemplate_7074fe97a1fff90c0a31c70a04e2895b28550d5ecd099d4ca74bc4a6376
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['ff'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 109
+        // line 220
         echo "     <!-- ends Here -->
 
 
@@ -264,70 +423,98 @@ class __TwigTemplate_7074fe97a1fff90c0a31c70a04e2895b28550d5ecd099d4ca74bc4a6376
 
      </div>
      </div>
+
+
+
+
+
+     <script>
+
+         \$( \".rateButton\" ).click(function() {
+             if(\$(this).hasClass('btn-grey')) {
+                 \$(this).removeClass('btn-grey btn-default').addClass('btn-warning star-selected');
+                 \$(this).prevAll('.rateButton').removeClass('btn-grey btn-default').addClass('btn-warning star-selected');
+                 \$(this).nextAll('.rateButton').removeClass('btn-warning star-selected').addClass('btn-grey btn-default');
+                 \$(\"#rating\").val(\$('.star-selected').length);
+
+
+
+             } else {
+                 \$(this).nextAll('.rateButton').removeClass('btn-warning star-selected').addClass('btn-grey btn-default');
+             }
+
+
+         });
+     </script>
+
+
+
+
+
      <!-- Page Area End Here -->
      <script src=\" ";
-        // line 126
+        // line 265
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery-3.3.1.min.js"), "html", null, true);
         echo " \" ></script>
      <!-- Plugins js -->
      <script src=\" ";
-        // line 128
+        // line 267
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/plugins.js"), "html", null, true);
         echo " \" ></script>
      <!-- Popper js -->
      <script src=\" ";
-        // line 130
+        // line 269
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/popper.min.js"), "html", null, true);
         echo " \"></script>
      <!-- Bootstrap js -->
      <script src=\" ";
-        // line 132
+        // line 271
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/bootstrap.min.js"), "html", null, true);
         echo " \" ></script>
      <!-- Counterup Js -->
      <script src=\" ";
-        // line 134
+        // line 273
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.counterup.min.js"), "html", null, true);
         echo " \" ></script>
      <!-- Moment Js -->
      <script  src=\" ";
-        // line 136
+        // line 275
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/moment.min.js"), "html", null, true);
         echo " \" ></script>
      <!-- Scroll Up Js -->
      <script src=\" ";
-        // line 138
+        // line 277
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.scrollUp.min.js"), "html", null, true);
         echo " \" ></script>
      <!-- Waypoints Js -->
      <script  src=\" ";
-        // line 140
+        // line 279
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.waypoints.min.js"), "html", null, true);
         echo " \" ></script>
      <!-- Select 2 Js -->
      <script src=\"";
-        // line 142
+        // line 281
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/select2.min.js"), "html", null, true);
         echo "\"></script>
      <!-- Date Picker Js -->
      <script src=\"";
-        // line 144
+        // line 283
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/datepicker.min.js"), "html", null, true);
         echo "\"></script>
      <!-- Full Calender Js -->
      <script src=\" ";
-        // line 146
+        // line 285
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/fullcalendar.min.js"), "html", null, true);
         echo " \"></script>
      <!-- Chart Js -->
      <script  src=\" ";
-        // line 148
+        // line 287
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/Chart.min.js"), "html", null, true);
         echo " \" ></script>
 
      <!-- Custom Js -->
      <script  src=\" ";
-        // line 151
+        // line 290
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/main.js"), "html", null, true);
         echo " \" ></script>
 
@@ -353,7 +540,7 @@ class __TwigTemplate_7074fe97a1fff90c0a31c70a04e2895b28550d5ecd099d4ca74bc4a6376
 
     public function getDebugInfo()
     {
-        return array (  331 => 151,  325 => 148,  320 => 146,  315 => 144,  310 => 142,  305 => 140,  300 => 138,  295 => 136,  290 => 134,  285 => 132,  280 => 130,  275 => 128,  270 => 126,  251 => 109,  233 => 97,  229 => 96,  225 => 95,  221 => 94,  205 => 81,  198 => 77,  184 => 66,  178 => 63,  171 => 59,  161 => 51,  157 => 50,  150 => 45,  140 => 41,  137 => 40,  133 => 39,  119 => 28,  114 => 26,  109 => 24,  104 => 22,  99 => 20,  94 => 18,  89 => 16,  84 => 14,  79 => 12,  74 => 10,  68 => 7,  63 => 5,  60 => 4,  51 => 3,  29 => 1,);
+        return array (  518 => 290,  512 => 287,  507 => 285,  502 => 283,  497 => 281,  492 => 279,  487 => 277,  482 => 275,  477 => 273,  472 => 271,  467 => 269,  462 => 267,  457 => 265,  410 => 220,  392 => 208,  388 => 207,  384 => 206,  380 => 205,  358 => 186,  352 => 183,  346 => 180,  340 => 177,  334 => 174,  243 => 86,  236 => 82,  222 => 71,  216 => 68,  209 => 64,  198 => 55,  194 => 54,  186 => 48,  176 => 44,  173 => 43,  169 => 42,  155 => 31,  150 => 29,  145 => 27,  140 => 25,  135 => 23,  130 => 21,  125 => 19,  120 => 17,  115 => 15,  110 => 13,  104 => 10,  99 => 8,  96 => 7,  87 => 6,  70 => 4,  53 => 2,  31 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -367,7 +554,10 @@ class __TwigTemplate_7074fe97a1fff90c0a31c70a04e2895b28550d5ecd099d4ca74bc4a6376
     public function getSourceContext()
     {
         return new Source("{% extends 'baseFront.html.twig'%}
-
+ {% block form %}
+{% endblock %}
+{% block cloud %}
+{% endblock %}
  {% block body %}
 
      <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\" {{ asset('img/favicon.png') }} \">
@@ -415,7 +605,9 @@ class __TwigTemplate_7074fe97a1fff90c0a31c70a04e2895b28550d5ecd099d4ca74bc4a6376
 
 
          <!-- event Table Area Start Here -->
+
          {% for ff in var %}
+
          <div class=\"card height-auto\">
              <div class=\"card-body\">
 
@@ -449,8 +641,114 @@ class __TwigTemplate_7074fe97a1fff90c0a31c70a04e2895b28550d5ecd099d4ca74bc4a6376
                                      <td class=\"font-medium text-dark-medium\">{{ ff.members }}</td>
                                  </tr>
 
-                                     <tr>
-                                     </tr>
+                                 <tr>
+                                 </tr>
+
+                                 <tr>
+
+                                 </tr>
+                                 <tr>
+
+
+                                     <script src=\"https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js\"></script>
+                                     <script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>
+                                     <style>
+                                         .btn-grey{
+                                             background-color:#D8D8D8;
+                                             color:#FFF;
+                                         }
+                                         .rating-block{
+                                             background-color:#FAFAFA;
+                                             border:1px solid #EFEFEF;
+                                             padding:15px 15px 20px 15px;
+                                             border-radius:3px;
+                                         }
+                                         .bold{
+                                             font-weight:700;
+                                         }
+                                         .padding-bottom-7{
+                                             padding-bottom:7px;
+                                         }
+
+                                         .review-block{
+                                             background-color:#FAFAFA;
+                                             border:1px solid #EFEFEF;
+                                             padding:15px;
+                                             border-radius:3px;
+                                             margin-bottom:15px;
+                                         }
+                                         .review-block-name{
+                                             font-size:12px;
+                                             margin:10px 0;
+                                         }
+                                         .review-block-date{
+                                             font-size:12px;
+                                         }
+                                         .review-block-rate{
+                                             font-size:13px;
+                                             margin-bottom:15px;
+                                         }
+                                         .review-block-title{
+                                             font-size:15px;
+                                             font-weight:700;
+                                             margin-bottom:10px;
+                                         }
+                                         .review-block-description{
+                                             font-size:13px;
+                                         }
+                                         .average {
+                                             background-color:#388e3c;
+                                             line-height: normal;
+                                             display: inline-block;
+                                             color: #fff;
+                                             padding: 2px 4px 2px 6px;
+                                             border-radius: 3px;
+                                             font-weight: 500;
+                                             font-size: 12px;
+                                             vertical-align: middle;
+                                         }
+                                         .rating-reviews {
+                                             padding-left: 8px;
+                                             font-weight: 500;
+                                             color: #878787;
+                                         }
+                                     </style>
+
+
+
+                                     <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css\">
+                                     <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js\"></script>
+                                     <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js\"></script>
+
+                                     <div class=\"row\" style=\"margin-left: 50px;\">
+                                         <div class=\"col-sm-12\">
+
+                                             <form method=\"POST\">
+                                                 <div class=\"form-group\">
+
+                                                     <a href=\" {{ path('Rating', {'id':ff.idClub , 'star':'1'}) }}\" >  <button type=\"button\" class=\"btn btn-warning btn-sm rateButton\" aria-label=\"Left Align\">
+                                                             <span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\"></span>
+                                                         </button> </a>
+                                                     <a href=\"{{ path('Rating', {'id':ff.idClub , 'star':'2'}) }}\" >   <button type=\"button\" class=\"btn btn-default btn-grey btn-sm rateButton\" aria-label=\"Left Align\">
+                                                             <span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\"></span>
+                                                         </button> </a>
+                                                     <a href=\"{{ path('Rating', {'id':ff.idClub , 'star':'3'}) }}\" >  <button type=\"button\" class=\"btn btn-default btn-grey btn-sm rateButton\" aria-label=\"Left Align\">
+                                                             <span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\"></span>
+                                                         </button> </a>
+                                                     <a href=\"{{ path('Rating', {'id':ff.idClub , 'star':'4'}) }}\" > <button type=\"button\" class=\"btn btn-default btn-grey btn-sm rateButton\" aria-label=\"Left Align\">
+                                                             <span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\"></span>
+                                                         </button> </a>
+                                                     <a href=\"{{ path('Rating', {'id':ff.idClub , 'star':'5'}) }}\" > <button type=\"button\" class=\"btn btn-default btn-grey btn-sm rateButton\" aria-label=\"Left Align\">
+                                                             <span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\"></span>
+                                                         </button> </a>
+                                                     <input type=\"hidden\"  class=\"form-control\" id=\"rating\" name=\"rating\" value=\"1\">
+                                                 </div>
+
+
+                                             </form>
+
+                                         </div>
+                                     </div>
 
 
 
@@ -459,7 +757,7 @@ class __TwigTemplate_7074fe97a1fff90c0a31c70a04e2895b28550d5ecd099d4ca74bc4a6376
                                  </tbody>
 
                              </table>
-                               <th> {{ twitterButton() }}</th>
+                             <th> {{ twitterButton() }}</th>
                              <th>{{ facebookButton() }}</th>
                              <th>    {{ linkedinButton() }}</th>
                              <th>   {{ googleplusButton() }}</th>
@@ -490,6 +788,34 @@ class __TwigTemplate_7074fe97a1fff90c0a31c70a04e2895b28550d5ecd099d4ca74bc4a6376
 
      </div>
      </div>
+
+
+
+
+
+     <script>
+
+         \$( \".rateButton\" ).click(function() {
+             if(\$(this).hasClass('btn-grey')) {
+                 \$(this).removeClass('btn-grey btn-default').addClass('btn-warning star-selected');
+                 \$(this).prevAll('.rateButton').removeClass('btn-grey btn-default').addClass('btn-warning star-selected');
+                 \$(this).nextAll('.rateButton').removeClass('btn-warning star-selected').addClass('btn-grey btn-default');
+                 \$(\"#rating\").val(\$('.star-selected').length);
+
+
+
+             } else {
+                 \$(this).nextAll('.rateButton').removeClass('btn-warning star-selected').addClass('btn-grey btn-default');
+             }
+
+
+         });
+     </script>
+
+
+
+
+
      <!-- Page Area End Here -->
      <script src=\" {{ asset('js/jquery-3.3.1.min.js') }} \" ></script>
      <!-- Plugins js -->
@@ -519,8 +845,6 @@ class __TwigTemplate_7074fe97a1fff90c0a31c70a04e2895b28550d5ecd099d4ca74bc4a6376
      <script  src=\" {{ asset('js/main.js') }} \" ></script>
 
 
- {% endblock %}
-
-", "@Sonia/frontClub/afficherclubfront.html.twig", "C:\\wamp64\\www\\SparkIT\\src\\SoniaBundle\\Resources\\views\\frontClub\\afficherclubfront.html.twig");
+ {% endblock %}", "@Sonia/frontClub/afficherclubfront.html.twig", "C:\\wamp64\\www\\SparkIT\\src\\SoniaBundle\\Resources\\views\\frontClub\\afficherclubfront.html.twig");
     }
 }

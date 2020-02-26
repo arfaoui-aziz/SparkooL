@@ -544,7 +544,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
 
             // Rating
-            if (0 === strpos($pathinfo, '/sonia/Rating') && preg_match('#^/sonia/Rating/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+            if (0 === strpos($pathinfo, '/sonia/Rating') && preg_match('#^/sonia/Rating/(?P<id>[^/]++)/(?P<star>[^/]++)$#sD', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, ['_route' => 'Rating']), array (  '_controller' => 'SoniaBundle\\Controller\\ClubController::RatingAction',));
             }
 

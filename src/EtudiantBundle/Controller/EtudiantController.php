@@ -31,7 +31,7 @@ class EtudiantController extends Controller
             $user->setPassword($pwd);
             $user->setUsername($username);
             $user->setPicture($pic);
-            $user->setJoiningDate('tawa');
+            $user->setJoiningDate(date('d-m-Y'));
             $user->setId($id);
             $user->setEmail($email);
             $user->setFirstName($firstName);
@@ -40,10 +40,7 @@ class EtudiantController extends Controller
             $user->setUserType("Etudiant");
             $em->persist($user);
             $em->flush();
-            return $this->render('@Etudiant/Default/accountcreated.html.twig', array(
-                'firstName'=>$firstName,
-                'lastName'=>$lastName,
-            ));
+            return $this->redirectToRoute("etudiant_inscrit");
 
         }
         return $this->render('@Etudiant/Default/inscritetud.html.twig',array(

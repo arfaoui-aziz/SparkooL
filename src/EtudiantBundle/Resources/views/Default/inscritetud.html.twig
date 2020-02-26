@@ -1,19 +1,8 @@
 {% extends 'baseFront.html.twig' %}
 {% block sonia %}
 {% endblock %}
-{% block formetud%}
-<section id="slider" class="slider-element bgcolor clearfix" style="height: auto; padding: 60px 0; background: url("{{ asset('FrontEnd\img\bg-2.png')}}") no-repeat center center / 100% 100%;">
-
-<div class="container" style="z-index: 2">
-    <div class="center">
-        <h2 class="text-white h2 t600 mb-2">Welcome to SparkooL .</h2>
-        <p class="text-white-50">SparkooL Is An All In­-One School Management Application</p>
-    </div>
-    <div class="row topmargin justify-content-end clearfix">
-        <div class="col-lg-6">
-            <ul class="nav nav-tabs nav-justified flex-column border-bottom-0 flex-md-row bgcolor mt-4" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link py-3" id="home-moving-tab" data-toggle="tab" href="#home-moving" role="tab" aria-controls="home-moving" aria-selected="true">
+{% block form %}
+     <a class="nav-link py-3" id="home-moving-tab" data-toggle="tab" href="#home-moving" role="tab" aria-controls="home-moving" aria-selected="true">
                         Attendance form
                     </a>
                 </li>
@@ -30,12 +19,16 @@
 
                         <form class="row home-moving-form position-relative mb-0"  method="post" novalidate>
                             {{ form_start(form)}}
-
+                            {{ form_row(form._token) }}
                             <div class="col-sm-6 input-group form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text nobg"><i class="icon-line2-user"></i></span>
                                 </div>
+                                {% if form_errors(form.firstName)|length <= 0 %}
                                 {{ form_widget(form.firstName , {'attr': {'class':'form-control','placeholder':'FirstName'}}) }}
+                                {% else %}
+                                    {{ form_widget(form.firstName , {'attr': {'class':'form-control is-invalid','placeholder':'FirstName'}}) }}
+                                {% endif %}
 
                             </div>
 
@@ -43,63 +36,99 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text nobg"><i class="icon-line2-user"></i></span>
                                 </div>
-                                {{ form_widget(form.lastName , {'attr': {'class':'form-control required','placeholder':'LastName'}}) }}
+                                {% if form_errors(form.lastName)|length <= 0 %}
+                                {{ form_widget(form.lastName , {'attr': {'class':'form-control ','placeholder':'LastName'}}) }}
+                                {% else %}
+                                    {{ form_widget(form.lastName , {'attr': {'class':'form-control is-invalid','placeholder':'LastName'}}) }}
+                                {% endif %}
                             </div>
 
                             <div class="col-sm-6 input-group form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text nobg"><i class="icon-line2-envelope"></i></span>
                                 </div>
-                                {{ form_widget(form.birthDay , {'attr': {'class':'form-control required','placeholder':'Date of birth'}}) }}
+                                {% if form_errors(form.birthDay)|length <= 0 %}
+                                {{ form_widget(form.birthDay , {'attr': {'class':'form-control ','placeholder':'Date of birth'}}) }}
+                                {% else %}
+                                    {{ form_widget(form.birthDay , {'attr': {'class':'form-control is-invalid','placeholder':'Date of birth'}}) }}
+                                {% endif %}
                             </div>
 
                             <div class="col-sm-6 input-group form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text nobg"><i class="icon-line2-call-out"></i></span>
                                 </div>
-                                {{ form_widget(form.phone , {'attr': {'class':'form-control required','placeholder':'Phone Number'}}) }}
+                                {% if form_errors(form.phone)|length <= 0 %}
+                                {{ form_widget(form.phone , {'attr': {'class':'form-control ','placeholder':'Phone Number'}}) }}
+                                    {% else %}
+                                    {{ form_widget(form.phone , {'attr': {'class':'form-control is-invalid','placeholder':'Phone Number'}}) }}
+                                {% endif %}
                             </div>
 
                             <div class="col-sm-6 input-group form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text nobg"><i class="icon-line2-home"></i></span>
                                 </div>
-                                {{ form_widget(form.placeobirth , {'attr': {'class':'form-control required','placeholder':'Place of Birth'}}) }}
+                                {% if form_errors(form.phone)|length <= 0 %}
+                                {{ form_widget(form.placeobirth , {'attr': {'class':'form-control','placeholder':'Place of Birth'}}) }}
+                                {% else %}
+                                {{ form_widget(form.placeobirth , {'attr': {'class':'form-control is-invalid','placeholder':'Place of Birth'}}) }}
+                                {% endif %}
                             </div>
 
                             <div class="col-sm-6 input-group form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text nobg"><i class="icon-line2-home"></i></span>
                                 </div>
-                                {{ form_widget(form.address , {'attr': {'class':'form-control required','placeholder':'Address'}}) }}
+                                {% if form_errors(form.address)|length <= 0 %}
+                                {{ form_widget(form.address , {'attr': {'class':'form-control ','placeholder':'Address'}}) }}
+                                {% else %}
+                                    {{ form_widget(form.address , {'attr': {'class':'form-control is-invalid','placeholder':'Address'}}) }}
+                                {% endif %}
                             </div>
 
                             <div class="col-sm-6 input-group form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text nobg"><i class="icon-line2-home"></i></span>
                                 </div>
-                                {{ form_widget(form.email , {'attr': {'class':'form-control required','placeholder':'email'}}) }}
+                                {% if form_errors(form.email)|length <= 0 %}
+                                {{ form_widget(form.email , {'attr': {'class':'form-control ','placeholder':'email'}}) }}
+                                {% else %}
+                                    {{ form_widget(form.email , {'attr': {'class':'form-control is-invalid','placeholder':'email'}}) }}
+                                {% endif %}
                             </div>
 
                             <div class="col-sm-6 input-group form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text nobg"><i class="icon-line2-home"></i></span>
                                 </div>
-                                {{ form_widget(form.academicyear , {'attr': {'class':'form-control required','placeholder':'email'}}) }}
+                                {% if form_errors(form.academicyear)|length <= 0 %}
+                                {{ form_widget(form.academicyear , {'attr': {'class':'form-control ','placeholder':'email'}}) }}
+                                {% else %}
+                                    {{ form_widget(form.academicyear , {'attr': {'class':'form-control is-invalid','placeholder':'academicyear'}}) }}
+                                {% endif %}
                             </div>
 
                             <div class="col-sm-6 input-group form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text nobg"><i class="icon-line2-home"></i></span>
                                 </div>
-                                {{ form_widget(form.gender, {'attr': {'class':'form-control required','placeholder':'email'}}) }}
+                                {% if form_errors(form.gender)|length <= 0 %}
+                                {{ form_widget(form.gender, {'attr': {'class':'form-control','placeholder':'gender'}}) }}
+                                {% else %}
+                                    {{ form_widget(form.gender, {'attr': {'class':'form-control is-invalid','placeholder':'gender'}}) }}
+                                {% endif%}
                             </div>
 
                             <div class="col-sm-6 input-group form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text nobg"><i class="icon-line2-home"></i></span>
                                 </div>
-                                {{ form_widget(form.bloodGroup, {'attr': {'class':'form-control required','placeholder':'email'}}) }}
+                                {% if form_errors(form.bloodGroup)|length <= 0 %}
+                                {{ form_widget(form.bloodGroup, {'attr': {'class':'form-control','placeholder':'bloodGroup'}}) }}
+                                {% else %}
+                                    {{ form_widget(form.bloodGroup, {'attr': {'class':'form-control is-invalid','placeholder':'bloodGroup'}}) }}
+                                {% endif %}
                             </div>
 
 
@@ -118,10 +147,15 @@
 
                             {{ form_end(form , {'render_rest':false}) }}
                         </form>
-
-
                 </div>
             </div>
+    </div>
+    <div class="col-lg-5 d-none d-lg-flex flex-wrap justify-content-center">
+        <img src="{{ asset('FrontEnd/img/ed2.png')}}" alt="Image 1" class="d-flex align-self-end ml-5 mt-3">
+
+    </div>
+    </div>
+    </div>
             <script src="{{ asset('https://unpkg.com/sweetalert/dist/sweetalert.min.js') }}"></script>
 <script>
     $(function(){
@@ -130,11 +164,9 @@
         });
     });
     </script>
-            {% endblock %}
+{% endblock %}
             {% block body %}
 
             {% endblock %}
-
-            {% block joinspark %}
-
+            {% block join %}
 {% endblock %}
