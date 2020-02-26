@@ -219,6 +219,16 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return $this->mergeDefaults(array_replace($matches, ['_route' => 'PDF']), array (  '_controller' => 'TeacherBundle\\Controller\\TeacherController::DisplayPDFAction',));
         }
 
+        // NumberOfAbsent
+        if (0 === strpos($pathinfo, '/NumberOfAbsentAction') && preg_match('#^/NumberOfAbsentAction/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, ['_route' => 'NumberOfAbsent']), array (  '_controller' => 'TeacherBundle\\Controller\\AbsentTeacherController::NumberOfAbsentAction',));
+        }
+
+        // admin_SearchAjax
+        if ('/SearchAjax' === $pathinfo) {
+            return array (  '_controller' => 'TeacherBundle\\Controller\\TeacherController::searchAction',  '_route' => 'admin_SearchAjax',);
+        }
+
         // fos_user_security_login
         if ('' === $trimmedPathinfo) {
             $ret = array (  '_controller' => 'fos_user.security.controller:loginAction',  '_route' => 'fos_user_security_login',);

@@ -20,6 +20,7 @@ class __TwigTemplate_df7bdc957a0872c252f4d7007dc54f8b317dff0f7f5bc2eaec9c90fbf0c
 
         $this->blocks = [
             'body' => [$this, 'block_body'],
+            'jq' => [$this, 'block_jq'],
         ];
     }
 
@@ -57,98 +58,116 @@ class __TwigTemplate_df7bdc957a0872c252f4d7007dc54f8b317dff0f7f5bc2eaec9c90fbf0c
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
-        echo "
+        echo "    <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js\"></script>
+
     <div class=\"dashboard-content-one\">
         <!-- Breadcubs Area Start Here -->
         <div class=\"breadcrumbs-area\">
-            <h3>Teachers</h3>
-            <ul>
-                <li>
-                    <a href=\"index.html\">Home</a>
-                </li>
-                <a href=\"";
-        // line 12
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("showTeacher");
-        echo "\"><li>All Teachers</li></a>
-            </ul>
-        </div>
+            <h3>All Teachers</h3>
 
+        </div>
         <!-- Breadcubs Area End Here -->
         <!-- Teacher Table Area Start Here -->
         <div class=\"card height-auto\">
             <div class=\"card-body\">
                 <div class=\"heading-layout1\">
-
-
+                    <div class=\"item-title\">
+                        <h3>All Teachers</h3>
+                    </div>
                 </div>
                 <form class=\"mg-b-20\">
                     <div class=\"row gutters-8\">
-                        <div class=\"col-3-xxxl col-xl-3 col-lg-3 col-12 form-group\">
-                            <input id=\"ser\" type=\"q\" placeholder=\"Search by ID ...\" class=\"form-control\">
-                        </div>
+
                         <div class=\"col-4-xxxl col-xl-4 col-lg-3 col-12 form-group\">
-                            <input type=\"text\" placeholder=\"Search by Name ...\" class=\"form-control\">
+                            <input id=\"searchName\"  name=\"searchName\" type=\"text\" placeholder=\"Search by Name ...\" class=\"form-control\">
+                        </div>
+                        <div class=\"col-3-xxxl col-xl-3 col-lg-3 col-12 form-group\">
+
                         </div>
                         <div class=\"col-4-xxxl col-xl-3 col-lg-3 col-12 form-group\">
-                            <input type=\"text\" placeholder=\"Search by Phone ...\" class=\"form-control\">
+
                         </div>
-                        <div class=\"col-1-xxxl col-xl-2 col-lg-3 col-12 form-group\">
-                            <button type=\"submit\" class=\"fw-btn-fill btn-gradient-yellow\">SEARCH</button>
-                        </div>
+
+
+
+
                     </div>
                 </form>
-                <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js\"></script>
+
+
+
+
 
                 <script type=\"text/javascript\">
                     jQuery(document).ready(function() {
                         var searchRequest = null;
-                        \$(\"#ser\").keyup(function() {
+
+                        \$(\"#searchName\").keyup(function () {
                             var minlength = 1;
                             var that = this;
                             var value = \$(this).val();
-                            var entitySelector = \$(\"#search\").html('');
-                            entitySelector.hide();
-                            if (value.length >= minlength ) {
+                            var entitySelector = \$(\"#searchResult\").html('');
+
+
+                            if (value.length >= minlength) {
                                 if (searchRequest != null)
                                     searchRequest.abort();
                                 searchRequest = \$.ajax({
                                     type: \"GET\",
                                     url: \"";
-        // line 56
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("ajax");
+        // line 59
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_SearchAjax");
         echo "\",
                                     data: {
-                                        'q' : value
+                                        'searchName': value
                                     },
                                     dataType: \"text\",
-                                    success: function(msg){
+                                    success: function (msg) {
                                         //we need to check if the value is the same
-                                        if (value===\$(that).val()) {
+                                        if (value === \$(that).val()) {
                                             var result = JSON.parse(msg);
-                                            \$.each(result, function(key, arr) {
-                                                \$.each(arr, function(id, value) {
-                                                    if (key === 'posts') {
+
+                                            \$.each(result, function (key, arr) {
+                                                \$.each(arr, function (id, value) {
+                                                    if (key === 'users') {
                                                         if (id !== 'error') {
-                                                            console.log(value[1]);
-                                                            var large= '<tbody><tr> <td> '+value[0]+'</td> <td>'+value[1]+'</td> <td> '+value[2]+'</td><td> '+value[3]+'</td><td> '+value[4]+'</td></tr></tbody>';
-                                                            entitySelector.replaceWith(large) ;
-                                                        }
-                                                        else {
-                                                            entitySelector.append('<li class=\"errorLi\">'+value+'</li>');
+
+                                                            var large =
+                                                                ' <tr>' +
+                                                                '<td> <div class=\"form-check\"> <input type=\"checkbox\" class=\"form-check-input\"> <label class=\"form-check-label\">' + value[0] + '</label> </div> </td>' +
+
+                                                                ' <td>' + value[1] + '</td> ' +
+                                                                ' <td>' + value[2] + '</td> ' +
+                                                                '<td>' + value[3] + '</td> ' +
+                                                                '<td>' + value[4] + '</td> ' +
+                                                                '<td>' + value[5] + '</td> ' +
+                                                                '<td>' + value[6] + '</td> ' +
+                                                                '<td>' + value[7] + '</td>' +
+
+                                                                '</tr> ';
+                                                            entitySelector.append(large);
+                                                        } else {
+                                                            entitySelector.append('<li class=\"errorLi\">' + value + '</li>');
+
                                                         }
                                                     }
+
                                                 });
                                             });
                                         }
                                     }
                                 });
-                            }
+                            }else {location.reload(false);}
                         });
+
                     });
                 </script>
+
+
                 <div class=\"table-responsive\">
-                    <table class=\"table display data-table text-nowrap\">
+                    <table class=\"table display data-table text-nowrap\" >
                         <thead>
+
                         <tr>
                             <th>
                                 <div class=\"form-check\">
@@ -166,96 +185,96 @@ class __TwigTemplate_df7bdc957a0872c252f4d7007dc54f8b317dff0f7f5bc2eaec9c90fbf0c
                             <th></th>
                         </tr>
                         </thead>
+
+                        <tbody id=\"searchResult\">
                         ";
-        // line 106
+        // line 129
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["var"] ?? $this->getContext($context, "var")));
         foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-            // line 107
-            echo "                        <tbody id=\"search\">
-
-                        <tr>
-                            <td>
-                                <div class=\"form-check\">
-                                    <input type=\"checkbox\" class=\"form-check-input\">
+            // line 130
+            echo "                            <tr  >
+                                <td>
+                                    <div class=\"form-check\">
+                                        <input type=\"checkbox\" class=\"form-check-input\">
 
 
                                         <label class=\"form-check-label\">";
-            // line 115
+            // line 136
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "id", []), "html", null, true);
             echo "</label>
 
-                                </div>
-                            </td>
-                            <td>";
-            // line 119
+                                    </div>
+                                </td>
+                                <td>";
+            // line 140
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "picture", []), "html", null, true);
             echo "</td>
-                            <td>";
-            // line 120
+                                <td>";
+            // line 141
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "firstName", []), "html", null, true);
             echo "</td>
-                            <td>";
-            // line 121
+                                <td>";
+            // line 142
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "lastName", []), "html", null, true);
             echo "</td>
-                            <td>";
-            // line 122
+                                <td>";
+            // line 143
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "gender", []), "html", null, true);
             echo "</td>
-                            <td>";
-            // line 123
+                                <td>";
+            // line 144
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "address", []), "html", null, true);
             echo "</td>
-                            <td>";
-            // line 124
+                                <td>";
+            // line 145
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "phone", []), "html", null, true);
             echo "</td>
 
-                            <td>";
-            // line 126
+                                <td>";
+            // line 147
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "email", []), "html", null, true);
             echo "</td>
-                            <td>
-                                <div class=\"dropdown\">
-                                    <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"
-                                       aria-expanded=\"false\">
-                                        <span class=\"flaticon-more-button-of-three-dots\"></span>
-                                    </a>
-                                    <div class=\"dropdown-menu dropdown-menu-right\">
-                                        <a class=\"dropdown-item\" href=\"";
-            // line 134
+                                <td>
+                                    <div class=\"dropdown\">
+                                        <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"
+                                           aria-expanded=\"false\">
+                                            <span class=\"flaticon-more-button-of-three-dots\"></span>
+                                        </a>
+                                        <div class=\"dropdown-menu dropdown-menu-right\">
+                                            <a class=\"dropdown-item\" href=\"";
+            // line 155
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("deleteTeacher", ["id" => $this->getAttribute($context["i"], "id", [])]), "html", null, true);
             echo "\"><i
-                                                    class=\"fas fa-times text-orange-red\"></i> Delete</a>
-                                        <a class=\"dropdown-item\" href=\"";
-            // line 136
+                                                        class=\"fas fa-times text-orange-red\"></i> Delete</a>
+                                            <a class=\"dropdown-item\" href=\"";
+            // line 157
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("addAbsanceTeacher", ["id" => $this->getAttribute($context["i"], "id", [])]), "html", null, true);
             echo "\"><i
-                                                    class=\"fas fa-calendar-check text-dark-pastel-green\"></i> Add Absence</a>
-                                        <a class=\"dropdown-item\" href=\"";
-            // line 138
+                                                        class=\"fas fa-calendar-check text-dark-pastel-green\"></i> Add Absence</a>
+                                            <a class=\"dropdown-item\" href=\"";
+            // line 159
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("addDelayTeacher", ["id" => $this->getAttribute($context["i"], "id", [])]), "html", null, true);
             echo "\"><i
-                                                    class=\"fas fa-check-square text-dark-pastel-green\"></i> Add Delay</a>
+                                                        class=\"fas fa-check-square text-dark-pastel-green\"></i> Add Delay</a>
 
-                                        <a class=\"dropdown-item\" href=\"";
-            // line 141
+                                            <a class=\"dropdown-item\" href=\"";
+            // line 162
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("showTeacherDetails", ["id" => $this->getAttribute($context["i"], "id", [])]), "html", null, true);
             echo "\"><i
-                                                    class=\"fas fa-eye text-orange-peel\"></i> Show Details</a>
+                                                        class=\"fas fa-eye text-orange-peel\"></i> Show Details</a>
+                                        </div>
                                     </div>
-                                </div>
-                            </td>
-                        </tr>
-                        </tbody>
+                                </td>
+                            </tr>
                         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 149
-        echo "                    </table>
+        // line 169
+        echo "                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -264,7 +283,28 @@ class __TwigTemplate_df7bdc957a0872c252f4d7007dc54f8b317dff0f7f5bc2eaec9c90fbf0c
             <div class=\"copyright\">© Copyrights <a href=\"#\">SparkIT</a> 2020. All rights reserved</div>
         </footer>
     </div>
+    </div>
 
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 182
+    public function block_jq($context, array $blocks = [])
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "jq"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "jq"));
+
+        // line 183
+        echo "
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -286,7 +326,7 @@ class __TwigTemplate_df7bdc957a0872c252f4d7007dc54f8b317dff0f7f5bc2eaec9c90fbf0c
 
     public function getDebugInfo()
     {
-        return array (  258 => 149,  244 => 141,  238 => 138,  233 => 136,  228 => 134,  217 => 126,  212 => 124,  208 => 123,  204 => 122,  200 => 121,  196 => 120,  192 => 119,  185 => 115,  175 => 107,  171 => 106,  118 => 56,  71 => 12,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  307 => 183,  298 => 182,  276 => 169,  263 => 162,  257 => 159,  252 => 157,  247 => 155,  236 => 147,  231 => 145,  227 => 144,  223 => 143,  219 => 142,  215 => 141,  211 => 140,  204 => 136,  196 => 130,  192 => 129,  119 => 59,  61 => 3,  52 => 2,  30 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -301,92 +341,113 @@ class __TwigTemplate_df7bdc957a0872c252f4d7007dc54f8b317dff0f7f5bc2eaec9c90fbf0c
     {
         return new Source("{% extends 'base.html.twig' %}
 {% block body %}
+    <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js\"></script>
 
     <div class=\"dashboard-content-one\">
         <!-- Breadcubs Area Start Here -->
         <div class=\"breadcrumbs-area\">
-            <h3>Teachers</h3>
-            <ul>
-                <li>
-                    <a href=\"index.html\">Home</a>
-                </li>
-                <a href=\"{{ path('showTeacher') }}\"><li>All Teachers</li></a>
-            </ul>
-        </div>
+            <h3>All Teachers</h3>
 
+        </div>
         <!-- Breadcubs Area End Here -->
         <!-- Teacher Table Area Start Here -->
         <div class=\"card height-auto\">
             <div class=\"card-body\">
                 <div class=\"heading-layout1\">
-
-
+                    <div class=\"item-title\">
+                        <h3>All Teachers</h3>
+                    </div>
                 </div>
                 <form class=\"mg-b-20\">
                     <div class=\"row gutters-8\">
-                        <div class=\"col-3-xxxl col-xl-3 col-lg-3 col-12 form-group\">
-                            <input id=\"ser\" type=\"q\" placeholder=\"Search by ID ...\" class=\"form-control\">
-                        </div>
+
                         <div class=\"col-4-xxxl col-xl-4 col-lg-3 col-12 form-group\">
-                            <input type=\"text\" placeholder=\"Search by Name ...\" class=\"form-control\">
+                            <input id=\"searchName\"  name=\"searchName\" type=\"text\" placeholder=\"Search by Name ...\" class=\"form-control\">
+                        </div>
+                        <div class=\"col-3-xxxl col-xl-3 col-lg-3 col-12 form-group\">
+
                         </div>
                         <div class=\"col-4-xxxl col-xl-3 col-lg-3 col-12 form-group\">
-                            <input type=\"text\" placeholder=\"Search by Phone ...\" class=\"form-control\">
+
                         </div>
-                        <div class=\"col-1-xxxl col-xl-2 col-lg-3 col-12 form-group\">
-                            <button type=\"submit\" class=\"fw-btn-fill btn-gradient-yellow\">SEARCH</button>
-                        </div>
+
+
+
+
                     </div>
                 </form>
-                <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js\"></script>
+
+
+
+
 
                 <script type=\"text/javascript\">
                     jQuery(document).ready(function() {
                         var searchRequest = null;
-                        \$(\"#ser\").keyup(function() {
+
+                        \$(\"#searchName\").keyup(function () {
                             var minlength = 1;
                             var that = this;
                             var value = \$(this).val();
-                            var entitySelector = \$(\"#search\").html('');
-                            entitySelector.hide();
-                            if (value.length >= minlength ) {
+                            var entitySelector = \$(\"#searchResult\").html('');
+
+
+                            if (value.length >= minlength) {
                                 if (searchRequest != null)
                                     searchRequest.abort();
                                 searchRequest = \$.ajax({
                                     type: \"GET\",
-                                    url: \"{{ path('ajax') }}\",
+                                    url: \"{{ path('admin_SearchAjax') }}\",
                                     data: {
-                                        'q' : value
+                                        'searchName': value
                                     },
                                     dataType: \"text\",
-                                    success: function(msg){
+                                    success: function (msg) {
                                         //we need to check if the value is the same
-                                        if (value===\$(that).val()) {
+                                        if (value === \$(that).val()) {
                                             var result = JSON.parse(msg);
-                                            \$.each(result, function(key, arr) {
-                                                \$.each(arr, function(id, value) {
-                                                    if (key === 'posts') {
+
+                                            \$.each(result, function (key, arr) {
+                                                \$.each(arr, function (id, value) {
+                                                    if (key === 'users') {
                                                         if (id !== 'error') {
-                                                            console.log(value[1]);
-                                                            var large= '<tbody><tr> <td> '+value[0]+'</td> <td>'+value[1]+'</td> <td> '+value[2]+'</td><td> '+value[3]+'</td><td> '+value[4]+'</td></tr></tbody>';
-                                                            entitySelector.replaceWith(large) ;
-                                                        }
-                                                        else {
-                                                            entitySelector.append('<li class=\"errorLi\">'+value+'</li>');
+
+                                                            var large =
+                                                                ' <tr>' +
+                                                                '<td> <div class=\"form-check\"> <input type=\"checkbox\" class=\"form-check-input\"> <label class=\"form-check-label\">' + value[0] + '</label> </div> </td>' +
+
+                                                                ' <td>' + value[1] + '</td> ' +
+                                                                ' <td>' + value[2] + '</td> ' +
+                                                                '<td>' + value[3] + '</td> ' +
+                                                                '<td>' + value[4] + '</td> ' +
+                                                                '<td>' + value[5] + '</td> ' +
+                                                                '<td>' + value[6] + '</td> ' +
+                                                                '<td>' + value[7] + '</td>' +
+
+                                                                '</tr> ';
+                                                            entitySelector.append(large);
+                                                        } else {
+                                                            entitySelector.append('<li class=\"errorLi\">' + value + '</li>');
+
                                                         }
                                                     }
+
                                                 });
                                             });
                                         }
                                     }
                                 });
-                            }
+                            }else {location.reload(false);}
                         });
+
                     });
                 </script>
+
+
                 <div class=\"table-responsive\">
-                    <table class=\"table display data-table text-nowrap\">
+                    <table class=\"table display data-table text-nowrap\" >
                         <thead>
+
                         <tr>
                             <th>
                                 <div class=\"form-check\">
@@ -404,49 +465,49 @@ class __TwigTemplate_df7bdc957a0872c252f4d7007dc54f8b317dff0f7f5bc2eaec9c90fbf0c
                             <th></th>
                         </tr>
                         </thead>
-                        {% for i in var %}
-                        <tbody id=\"search\">
 
-                        <tr>
-                            <td>
-                                <div class=\"form-check\">
-                                    <input type=\"checkbox\" class=\"form-check-input\">
+                        <tbody id=\"searchResult\">
+                        {% for i in var %}
+                            <tr  >
+                                <td>
+                                    <div class=\"form-check\">
+                                        <input type=\"checkbox\" class=\"form-check-input\">
 
 
                                         <label class=\"form-check-label\">{{ i.id }}</label>
 
-                                </div>
-                            </td>
-                            <td>{{ i.picture }}</td>
-                            <td>{{ i.firstName }}</td>
-                            <td>{{ i.lastName }}</td>
-                            <td>{{ i.gender }}</td>
-                            <td>{{ i.address }}</td>
-                            <td>{{ i.phone }}</td>
-
-                            <td>{{ i.email }}</td>
-                            <td>
-                                <div class=\"dropdown\">
-                                    <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"
-                                       aria-expanded=\"false\">
-                                        <span class=\"flaticon-more-button-of-three-dots\"></span>
-                                    </a>
-                                    <div class=\"dropdown-menu dropdown-menu-right\">
-                                        <a class=\"dropdown-item\" href=\"{{ path('deleteTeacher',{'id':i.id }) }}\"><i
-                                                    class=\"fas fa-times text-orange-red\"></i> Delete</a>
-                                        <a class=\"dropdown-item\" href=\"{{ path('addAbsanceTeacher',{'id':i.id }) }}\"><i
-                                                    class=\"fas fa-calendar-check text-dark-pastel-green\"></i> Add Absence</a>
-                                        <a class=\"dropdown-item\" href=\"{{ path('addDelayTeacher',{'id':i.id }) }}\"><i
-                                                    class=\"fas fa-check-square text-dark-pastel-green\"></i> Add Delay</a>
-
-                                        <a class=\"dropdown-item\" href=\"{{ path('showTeacherDetails',{'id':i.id }) }}\"><i
-                                                    class=\"fas fa-eye text-orange-peel\"></i> Show Details</a>
                                     </div>
-                                </div>
-                            </td>
-                        </tr>
-                        </tbody>
+                                </td>
+                                <td>{{ i.picture }}</td>
+                                <td>{{ i.firstName }}</td>
+                                <td>{{ i.lastName }}</td>
+                                <td>{{ i.gender }}</td>
+                                <td>{{ i.address }}</td>
+                                <td>{{ i.phone }}</td>
+
+                                <td>{{ i.email }}</td>
+                                <td>
+                                    <div class=\"dropdown\">
+                                        <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"
+                                           aria-expanded=\"false\">
+                                            <span class=\"flaticon-more-button-of-three-dots\"></span>
+                                        </a>
+                                        <div class=\"dropdown-menu dropdown-menu-right\">
+                                            <a class=\"dropdown-item\" href=\"{{ path('deleteTeacher',{'id':i.id }) }}\"><i
+                                                        class=\"fas fa-times text-orange-red\"></i> Delete</a>
+                                            <a class=\"dropdown-item\" href=\"{{ path('addAbsanceTeacher',{'id':i.id }) }}\"><i
+                                                        class=\"fas fa-calendar-check text-dark-pastel-green\"></i> Add Absence</a>
+                                            <a class=\"dropdown-item\" href=\"{{ path('addDelayTeacher',{'id':i.id }) }}\"><i
+                                                        class=\"fas fa-check-square text-dark-pastel-green\"></i> Add Delay</a>
+
+                                            <a class=\"dropdown-item\" href=\"{{ path('showTeacherDetails',{'id':i.id }) }}\"><i
+                                                        class=\"fas fa-eye text-orange-peel\"></i> Show Details</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
                         {% endfor %}
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -456,7 +517,11 @@ class __TwigTemplate_df7bdc957a0872c252f4d7007dc54f8b317dff0f7f5bc2eaec9c90fbf0c
             <div class=\"copyright\">© Copyrights <a href=\"#\">SparkIT</a> 2020. All rights reserved</div>
         </footer>
     </div>
+    </div>
 
-{% endblock body %}", "@Teacher/Teacher/showTeacher.html.twig", "C:\\wamp64\\www\\SparkIT\\src\\TeacherBundle\\Resources\\views\\Teacher\\showTeacher.html.twig");
+{% endblock %}
+{% block jq %}
+
+{% endblock %}", "@Teacher/Teacher/showTeacher.html.twig", "C:\\wamp64\\www\\SparkIT\\src\\TeacherBundle\\Resources\\views\\Teacher\\showTeacher.html.twig");
     }
 }

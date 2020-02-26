@@ -10,4 +10,6 @@ namespace TeacherBundle\Repository;
  */
 class TeacherRepository extends \Doctrine\ORM\EntityRepository
 {
+
+
 }

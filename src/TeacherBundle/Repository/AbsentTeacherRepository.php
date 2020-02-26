@@ -2,6 +2,9 @@
 
 namespace TeacherBundle\Repository;
 
+use Doctrine\ORM\NonUniqueResultException;
+use Doctrine\ORM\NoResultException;
+
 /**
  * AbsentTeacherRepository
  *
@@ -10,4 +13,18 @@ namespace TeacherBundle\Repository;
  */
 class AbsentTeacherRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function countAbsence($id)
+    {
+        try {
+            return $this->createQueryBuilder('l')
+                ->select('COUNT(l)')
+                ->where('l.teacher = :id')
+                ->setParameter('id', $id)
+                ->getQuery()
+                ->getSingleScalarResult();
+        } catch (NoResultException $e) {
+        } catch (NonUniqueResultException $e) {
+        }
+    }
+
 }

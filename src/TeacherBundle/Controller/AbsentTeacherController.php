@@ -6,6 +6,7 @@ use AppBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use TeacherBundle\Entity\AbsentTeacher;
 use TeacherBundle\Entity\Diploma;
 use TeacherBundle\Form\AbsentTeacherType;
@@ -61,6 +62,18 @@ class AbsentTeacherController extends Controller
         $em->remove($absence);
         $em->flush();
         return $this->redirectToRoute('showAbsence',['id' => $id2]);
+
+    }
+
+    public function NumberOfAbsentAction(Request $request,$id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $nb = $em->getRepository('TeacherBundle:AbsentTeacher')->countAbsence($id);
+        return $this->render('@Teacher/Teacher/AbsentDelay/showNBAbsent.html.twig',
+            array(
+                'nb' => $nb
+            ));
+
 
     }
 

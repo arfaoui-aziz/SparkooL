@@ -10,14 +10,25 @@ namespace AppBundle\Repository;
  */
 class UserRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function findEntitiesByString($str){
+    public function findUserByName($searchName){
         return $this->getEntityManager()
             ->createQuery(
-                ' SELECT par
-                FROM AppBundle:User par
-                WHERE par.firstName LIKE :str or par.id LIKE :str'
+                'SELECT u
+                FROM AppBundle:User u
+                WHERE u.firstName LIKE :searchName '
             )
-            ->setParameter('str', '%'.$str.'%')
+            ->setParameter('searchName', '%'.$searchName.'%')
             ->getResult();
     }
+
+   /* public function findAdmin(){
+        return $this->getEntityManager()
+            ->createQuery(
+                "SELECT u
+    FROM AppBundle:User u Where u.userType= 'Administrator' "
+            )
+            ->getResult();
+    }*/
+
+
 }

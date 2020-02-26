@@ -75,3 +75,12 @@ PDF:
 ajax:
   path:     /ajax
   defaults: { _controller: TeacherBundle:Teacher:search }
+
+NumberOfAbsent:
+  path:     /NumberOfAbsentAction/{id}
+  defaults: { _controller: TeacherBundle:AbsentTeacher:NumberOfAbsent }
+
+admin_SearchAjax:
+  path:     /SearchAjax
+  defaults: { _controller: TeacherBundle:Teacher:search }
+

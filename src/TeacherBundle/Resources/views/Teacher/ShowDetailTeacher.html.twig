@@ -12,7 +12,7 @@
             <li><a href="{{ path('showTeacher') }}">All Teachers</a></li>
             </li>
 
-          <a href=""><li>  Teacher Dtails</li></a>
+          <a href=""><li>  Teacher Dtails {{ nb }}</li></a>
         </ul>
     </div>
 
@@ -128,6 +128,7 @@
 
                                 </tbody>
 
+
                             </table>
 
 
@@ -136,7 +137,26 @@
                     </div>
                 </div>
             </div>
+<br><br><br>
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="dashboard-summery-oneT mg-b-20">
+                        <div class="row align-items-center">
+                            <div class="col-6">
+                                <div class="item-icon bg-light-blue">
+                                    <img src="{{ asset('fonts/teacher.png') }}">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="item-content">
+                                    <div class="item-title">Number of absecne this year</div>
+                                    <div class="item-number"><span class="counter" data-num="{{ nb }}">{{nb}}</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
+
         <!-- Student Table Area End Here -->
         <footer class="footer-wrap-layout1">
             <div class="copyright">© Copyrights <a href="#">SparkIT</a> 2020. All rights reserved</div>

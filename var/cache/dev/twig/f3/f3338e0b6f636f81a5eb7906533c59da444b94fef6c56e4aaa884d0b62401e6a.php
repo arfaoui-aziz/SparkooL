@@ -72,7 +72,10 @@ class __TwigTemplate_7666006be5ff0abcd42970ee97af98a3075e74ac2cc530a66bd952d0dd3
         echo "\">All Teachers</a></li>
             </li>
 
-          <a href=\"\"><li>  Teacher Dtails</li></a>
+          <a href=\"\"><li>  Teacher Dtails ";
+        // line 15
+        echo twig_escape_filter($this->env, ($context["nb"] ?? $this->getContext($context, "nb")), "html", null, true);
+        echo "</li></a>
         </ul>
     </div>
 
@@ -247,6 +250,7 @@ class __TwigTemplate_7666006be5ff0abcd42970ee97af98a3075e74ac2cc530a66bd952d0dd3
 
                                 </tbody>
 
+
                             </table>
 
 
@@ -255,7 +259,34 @@ class __TwigTemplate_7666006be5ff0abcd42970ee97af98a3075e74ac2cc530a66bd952d0dd3
                     </div>
                 </div>
             </div>
+<br><br><br>
+                <div class=\"col-xl-3 col-sm-6 col-12\">
+                    <div class=\"dashboard-summery-oneT mg-b-20\">
+                        <div class=\"row align-items-center\">
+                            <div class=\"col-6\">
+                                <div class=\"item-icon bg-light-blue\">
+                                    <img src=\"";
+        // line 146
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("fonts/teacher.png"), "html", null, true);
+        echo "\">
+                                </div>
+                            </div>
+                            <div class=\"col-6\">
+                                <div class=\"item-content\">
+                                    <div class=\"item-title\">Number of absecne this year</div>
+                                    <div class=\"item-number\"><span class=\"counter\" data-num=\"";
+        // line 152
+        echo twig_escape_filter($this->env, ($context["nb"] ?? $this->getContext($context, "nb")), "html", null, true);
+        echo "\">";
+        echo twig_escape_filter($this->env, ($context["nb"] ?? $this->getContext($context, "nb")), "html", null, true);
+        echo "</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
+
         <!-- Student Table Area End Here -->
         <footer class=\"footer-wrap-layout1\">
             <div class=\"copyright\">© Copyrights <a href=\"#\">SparkIT</a> 2020. All rights reserved</div>
@@ -282,7 +313,7 @@ class __TwigTemplate_7666006be5ff0abcd42970ee97af98a3075e74ac2cc530a66bd952d0dd3
 
     public function getDebugInfo()
     {
-        return array (  244 => 126,  236 => 121,  229 => 117,  222 => 113,  215 => 109,  186 => 83,  179 => 79,  172 => 75,  165 => 71,  158 => 67,  151 => 63,  144 => 59,  137 => 55,  120 => 41,  116 => 40,  112 => 39,  108 => 38,  100 => 35,  93 => 31,  71 => 12,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  279 => 152,  270 => 146,  247 => 126,  239 => 121,  232 => 117,  225 => 113,  218 => 109,  189 => 83,  182 => 79,  175 => 75,  168 => 71,  161 => 67,  154 => 63,  147 => 59,  140 => 55,  123 => 41,  119 => 40,  115 => 39,  111 => 38,  103 => 35,  96 => 31,  77 => 15,  71 => 12,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -309,7 +340,7 @@ class __TwigTemplate_7666006be5ff0abcd42970ee97af98a3075e74ac2cc530a66bd952d0dd3
             <li><a href=\"{{ path('showTeacher') }}\">All Teachers</a></li>
             </li>
 
-          <a href=\"\"><li>  Teacher Dtails</li></a>
+          <a href=\"\"><li>  Teacher Dtails {{ nb }}</li></a>
         </ul>
     </div>
 
@@ -425,6 +456,7 @@ class __TwigTemplate_7666006be5ff0abcd42970ee97af98a3075e74ac2cc530a66bd952d0dd3
 
                                 </tbody>
 
+
                             </table>
 
 
@@ -433,7 +465,26 @@ class __TwigTemplate_7666006be5ff0abcd42970ee97af98a3075e74ac2cc530a66bd952d0dd3
                     </div>
                 </div>
             </div>
+<br><br><br>
+                <div class=\"col-xl-3 col-sm-6 col-12\">
+                    <div class=\"dashboard-summery-oneT mg-b-20\">
+                        <div class=\"row align-items-center\">
+                            <div class=\"col-6\">
+                                <div class=\"item-icon bg-light-blue\">
+                                    <img src=\"{{ asset('fonts/teacher.png') }}\">
+                                </div>
+                            </div>
+                            <div class=\"col-6\">
+                                <div class=\"item-content\">
+                                    <div class=\"item-title\">Number of absecne this year</div>
+                                    <div class=\"item-number\"><span class=\"counter\" data-num=\"{{ nb }}\">{{nb}}</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
+
         <!-- Student Table Area End Here -->
         <footer class=\"footer-wrap-layout1\">
             <div class=\"copyright\">© Copyrights <a href=\"#\">SparkIT</a> 2020. All rights reserved</div>

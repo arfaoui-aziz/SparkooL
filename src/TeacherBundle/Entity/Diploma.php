@@ -3,6 +3,7 @@
 namespace TeacherBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Diploma
@@ -25,6 +26,14 @@ class Diploma
      * @var string
      *
      * @ORM\Column(name="intitule", type="string", length=255)
+     *  @Assert\NotBlank(message="Please Insert a titled")
+     * @Assert\Length(
+     *     min= "3",
+     *     max= "15",
+     *     minMessage = "First Name must be at least {{ limit }} characters long",
+     *     maxMessage = "First Name  cannot be longer than {{ limit }} characters"
+     * )
+     * @Assert\Type(type="ctype_alpha",message="First Name Most contain only characters")
      */
     private $intitule;
 
@@ -32,6 +41,14 @@ class Diploma
      * @var string
      *
      * @ORM\Column(name="ecole", type="string", length=255)
+     *  @Assert\NotBlank(message="Please Insert the school")
+     * @Assert\Length(
+     *     min= "3",
+     *     max= "15",
+     *     minMessage = "First Name must be at least {{ limit }} characters long",
+     *     maxMessage = "First Name  cannot be longer than {{ limit }} characters"
+     * )
+     * @Assert\Type(type="ctype_alpha",message="First Name Most contain only characters")
      */
     private $ecole;
 
@@ -46,6 +63,14 @@ class Diploma
      * @var string
      *
      * @ORM\Column(name="niveau", type="string", length=255)
+     *  @Assert\NotBlank(message="Please Insert a level")
+     * @Assert\Length(
+     *     min= "3",
+     *     max= "15",
+     *     minMessage = "First Name must be at least {{ limit }} characters long",
+     *     maxMessage = "First Name  cannot be longer than {{ limit }} characters"
+     * )
+     * @Assert\Type(type="ctype_alpha",message="First Name Most contain only characters")
      */
     private $niveau;
 
