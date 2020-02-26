@@ -1,0 +1,75 @@
+{% extends 'baseFront.html.twig' %}
+{% block form  %}
+    <a class="nav-link py-3" id="home-moving-tab" data-toggle="tab" href="#home-moving" role="tab" aria-controls="home-moving" aria-selected="true">Send Reclamation</a>
+    </li>
+
+    </ul>
+    <div class="tab-content rounded-bottom shadow bg-white py-4 px-5">
+        <div class="tab-pane fade show active" id="home-moving" role="tabpanel" aria-labelledby="home-moving-tab">
+
+
+            <div class="form-result"></div>
+            <form class="row home-moving-form position-relative mb-0"  method="post" >
+                <div class="form-process"></div>
+{{ form_start(form) }}
+                {{ form_row(form._token) }}
+                <div class="col-sm-12 input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text nobg"><i class="icon-line2-user"></i></span>
+                    </div>
+                    {{ form_widget (form.cC , {'attr': {'class':'form-control required', 'placehoder' : 'cc'}}) }}
+
+                </div>
+
+
+                <div class="col-lg-12-12 col-12 input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text nobg"><i class="icon-line2-paper-plane"></i></span>
+                    </div>
+                    {{ form_widget (form.exam , {'attr': {'class':'form-control required', 'placehoder' : 'exam'}}) }}
+
+                </div>
+
+                <div class="col-lg-12-12 col-12 input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text nobg"><i class="icon-line2-paper-plane"></i></span>
+                    </div>
+                    {{ form_widget (form.subject , {'attr': {'class':'form-control required'}}) }}
+
+                </div>
+
+                <div class="col-lg-12-12 col-12 input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text nobg"><i class="icon-line2-paper-plane"></i></span>
+                    </div>
+                    {{ form_widget (form.student , {'attr': {'class':'form-control required'}}) }}
+
+                </div>
+
+                <div class="col-12 hidden">
+
+                </div>
+
+                <div class="col-12">
+                    {{ form_widget (form.Affect , {'attr': {'class':'btn bgcolor text-white t500 btn-block py-2 mt-2'}}) }}
+
+                </div>
+
+
+            </form>
+{{ form_end(form) }}
+        </div>
+    </div>
+    </div>
+    <div class="col-lg-5 d-none d-lg-flex flex-wrap justify-content-center">
+        <img src="{{ asset('FrontEnd/img/ed2.png')}}" alt="Image 1" class="d-flex align-self-end ml-5 mt-3">
+
+    </div>
+    </div>
+    </div>
+{% endblock %}
+{% block cloud %}
+{% endblock      %}
+{% block body %}
+
+{% endblock %}

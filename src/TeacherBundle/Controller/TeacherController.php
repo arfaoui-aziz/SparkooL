@@ -7,8 +7,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use TeacherBundle\Entity\Diploma;
+use TeacherBundle\Entity\Note;
 use TeacherBundle\Entity\Teacher;
 use TeacherBundle\Form\DiplomaType;
+use TeacherBundle\Form\NoteType;
 use TeacherBundle\Form\TeacherType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
@@ -241,6 +243,20 @@ class TeacherController extends Controller
 
         }
         return $realEntities;
+    }
+
+    public function  AffectMarkAction(Request $request){
+        $em = $this->getDoctrine()->getManager();
+        $note = new Note();
+        $form = $this->createForm(NoteType::class,$note);
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid())
+        {
+            $em->persist($note);
+            $em->flush();
+            return $this->redirectToRoute("AffectMark");
+        }
+        return $this->render('@Teacher\Teacher\AffectMark.html.twig',array('form'=>$form->createView()));
     }
 
 

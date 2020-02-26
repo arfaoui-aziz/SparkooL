@@ -84,3 +84,7 @@ admin_SearchAjax:
   path:     /SearchAjax
   defaults: { _controller: TeacherBundle:Teacher:search }
 
+AffectMark:
+  path:     /AffectMark
+  defaults: { _controller: TeacherBundle:Teacher:AffectMark }
+

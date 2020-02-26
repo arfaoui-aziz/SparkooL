@@ -217,7 +217,7 @@ class User extends BaseUser
      * @return string
      */
     public function __toString(){
-        return $this->id;
+        return $this->username;
     }
 
     /**
@@ -526,5 +526,7 @@ class User extends BaseUser
     {
         return $this->occupation;
     }
+
+
 }
 

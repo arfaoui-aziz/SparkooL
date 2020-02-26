@@ -220,6 +220,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $this->mergeDefaults(array_replace($matches, ['_route' => 'NumberOfAbsent']), array (  '_controller' => 'TeacherBundle\\Controller\\AbsentTeacherController::NumberOfAbsentAction',));
             }
 
+            // AffectMark
+            if ('/teacher/AffectMark' === $pathinfo) {
+                return array (  '_controller' => 'TeacherBundle\\Controller\\TeacherController::AffectMarkAction',  '_route' => 'AffectMark',);
+            }
+
         }
 
         elseif (0 === strpos($pathinfo, '/etudiant')) {
