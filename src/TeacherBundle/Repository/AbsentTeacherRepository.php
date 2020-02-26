@@ -27,4 +27,9 @@ class AbsentTeacherRepository extends \Doctrine\ORM\EntityRepository
         }
     }
 
+    public function findAb($id)
+    {
+
+    }
+
 }

@@ -77,4 +77,19 @@ class AbsentTeacherController extends Controller
 
     }
 
+    public function ShowAbsencePDF(Request $request,$id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $users = $this->getDoctrine()->getRepository(User::class)->findBy(array('userType' => "Teacher"));
+        foreach ($users as $users){
+          $Fname=$users->getFirstName();
+          $Lname=$users->getLastName();
+          $name=$Fname. ' ' .$Lname;
+
+
+    }
+
+    }
+
+
 }

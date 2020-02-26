@@ -20,6 +20,7 @@ class __TwigTemplate_7666006be5ff0abcd42970ee97af98a3075e74ac2cc530a66bd952d0dd3
 
         $this->blocks = [
             'body' => [$this, 'block_body'],
+            'header' => [$this, 'block_header'],
         ];
     }
 
@@ -260,31 +261,99 @@ class __TwigTemplate_7666006be5ff0abcd42970ee97af98a3075e74ac2cc530a66bd952d0dd3
                 </div>
             </div>
 <br><br><br>
-                <div class=\"col-xl-3 col-sm-6 col-12\">
-                    <div class=\"dashboard-summery-oneT mg-b-20\">
-                        <div class=\"row align-items-center\">
-                            <div class=\"col-6\">
-                                <div class=\"item-icon bg-light-blue\">
-                                    <img src=\"";
-        // line 146
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("fonts/teacher.png"), "html", null, true);
-        echo "\">
+                <div class=\"row gutters-20\">
+                    <div class=\"col-xl-3 col-sm-6 col-12\">
+                        <div class=\"dashboard-summery-one mg-b-20\">
+                            <div class=\"row align-items-center\">
+                                <div class=\"col-6\">
+
+                                    <div class=\"item-icon bg-light-blue \">
+                                        ";
+        // line 148
+        $this->displayBlock('header', $context, $blocks);
+        // line 151
+        echo "                                    </div>
+
                                 </div>
-                            </div>
-                            <div class=\"col-6\">
-                                <div class=\"item-content\">
-                                    <div class=\"item-title\">Number of absecne this year</div>
-                                    <div class=\"item-number\"><span class=\"counter\" data-num=\"";
-        // line 152
+                                <div class=\"col-6\">
+                                    <div class=\"item-content\">
+                                        <div class=\"item-title\">Number of Absences this Year</div>
+                                        <div class=\"item-number\"><span class=\"counter\" data-num=\"";
+        // line 157
         echo twig_escape_filter($this->env, ($context["nb"] ?? $this->getContext($context, "nb")), "html", null, true);
         echo "\">";
         echo twig_escape_filter($this->env, ($context["nb"] ?? $this->getContext($context, "nb")), "html", null, true);
         echo "</span></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                    <div class=\"col-xl-3 col-sm-6 col-12\">
+                        <div class=\"dashboard-summery-oneT mg-b-20\">
+                            <div class=\"row align-items-center\">
+                                <div class=\"col-6\">
+                                    <div class=\"item-icon bg-light-blue\">
+                                        <img src=\"";
+        // line 168
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("fonts/teacher.png"), "html", null, true);
+        echo "\">
+                                    </div>
+                                </div>
+                                <div class=\"col-6\">
+                                    <div class=\"item-content\">
+                                        <div class=\"item-title\">Total Delay in minutes</div>
+                                        <div class=\"item-number\"><span class=\"counter\" data-num=\"";
+        // line 174
+        echo twig_escape_filter($this->env, ($context["nb1"] ?? $this->getContext($context, "nb1")), "html", null, true);
+        echo "\">";
+        echo twig_escape_filter($this->env, ($context["nb1"] ?? $this->getContext($context, "nb1")), "html", null, true);
+        echo " Minutes</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=\"col-xl-3 col-sm-6 col-12\">
+                        <div class=\"dashboard-summery-oneP mg-b-20\">
+                            <div class=\"row align-items-center\">
+                                <div class=\"col-6\">
+                                    <div class=\"item-icon bg-light-yellow\">
+                                        <img src=\"";
+        // line 185
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("fonts/mother.png"), "html", null, true);
+        echo "\" width=\"60\">
+                                    </div>
+                                </div>
+                                <div class=\"col-6\">
+                                    <div class=\"item-content\">
+                                        <div class=\"item-title\">Parents</div>
+                                        <div class=\"item-number\"><span class=\"counter\" data-num=\"5690\">5,690</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=\"col-xl-3 col-sm-6 col-12\">
+                        <div class=\"dashboard-summery-oneA mg-b-20\">
+                            <div class=\"row align-items-center\">
+                                <div class=\"col-6\">
+                                    <div class=\"item-icon bg-light-red\">
+                                        <img src=\"";
+        // line 202
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("fonts/boss.png"), "html", null, true);
+        echo "\" width=\"55px\" >
+                                    </div>
+                                </div>
+                                <div class=\"col-6\">
+                                    <div class=\"item-content\">
+                                        <div class=\"item-title\">Admins</div>
+                                        <div class=\"item-number\"><span class=\"counter\" data-num=\"5\"><b>5</b></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
         </div>
 
         <!-- Student Table Area End Here -->
@@ -293,6 +362,28 @@ class __TwigTemplate_7666006be5ff0abcd42970ee97af98a3075e74ac2cc530a66bd952d0dd3
         </footer>
     </div>
 ";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 148
+    public function block_header($context, array $blocks = [])
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
+
+        // line 149
+        echo "                                            <img src=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("fonts/student.png"), "html", null, true);
+        echo "\" >
+                                        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -313,7 +404,7 @@ class __TwigTemplate_7666006be5ff0abcd42970ee97af98a3075e74ac2cc530a66bd952d0dd3
 
     public function getDebugInfo()
     {
-        return array (  279 => 152,  270 => 146,  247 => 126,  239 => 121,  232 => 117,  225 => 113,  218 => 109,  189 => 83,  182 => 79,  175 => 75,  168 => 71,  161 => 67,  154 => 63,  147 => 59,  140 => 55,  123 => 41,  119 => 40,  115 => 39,  111 => 38,  103 => 35,  96 => 31,  77 => 15,  71 => 12,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  383 => 149,  374 => 148,  344 => 202,  324 => 185,  308 => 174,  299 => 168,  283 => 157,  275 => 151,  273 => 148,  248 => 126,  240 => 121,  233 => 117,  226 => 113,  219 => 109,  190 => 83,  183 => 79,  176 => 75,  169 => 71,  162 => 67,  155 => 63,  148 => 59,  141 => 55,  124 => 41,  120 => 40,  116 => 39,  112 => 38,  104 => 35,  97 => 31,  78 => 15,  72 => 12,  61 => 3,  52 => 2,  30 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -466,23 +557,79 @@ class __TwigTemplate_7666006be5ff0abcd42970ee97af98a3075e74ac2cc530a66bd952d0dd3
                 </div>
             </div>
 <br><br><br>
-                <div class=\"col-xl-3 col-sm-6 col-12\">
-                    <div class=\"dashboard-summery-oneT mg-b-20\">
-                        <div class=\"row align-items-center\">
-                            <div class=\"col-6\">
-                                <div class=\"item-icon bg-light-blue\">
-                                    <img src=\"{{ asset('fonts/teacher.png') }}\">
+                <div class=\"row gutters-20\">
+                    <div class=\"col-xl-3 col-sm-6 col-12\">
+                        <div class=\"dashboard-summery-one mg-b-20\">
+                            <div class=\"row align-items-center\">
+                                <div class=\"col-6\">
+
+                                    <div class=\"item-icon bg-light-blue \">
+                                        {% block header %}
+                                            <img src=\"{{ asset('fonts/student.png') }}\" >
+                                        {% endblock  %}
+                                    </div>
+
                                 </div>
-                            </div>
-                            <div class=\"col-6\">
-                                <div class=\"item-content\">
-                                    <div class=\"item-title\">Number of absecne this year</div>
-                                    <div class=\"item-number\"><span class=\"counter\" data-num=\"{{ nb }}\">{{nb}}</span></div>
+                                <div class=\"col-6\">
+                                    <div class=\"item-content\">
+                                        <div class=\"item-title\">Number of Absences this Year</div>
+                                        <div class=\"item-number\"><span class=\"counter\" data-num=\"{{ nb }}\">{{ nb }}</span></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                    <div class=\"col-xl-3 col-sm-6 col-12\">
+                        <div class=\"dashboard-summery-oneT mg-b-20\">
+                            <div class=\"row align-items-center\">
+                                <div class=\"col-6\">
+                                    <div class=\"item-icon bg-light-blue\">
+                                        <img src=\"{{ asset('fonts/teacher.png') }}\">
+                                    </div>
+                                </div>
+                                <div class=\"col-6\">
+                                    <div class=\"item-content\">
+                                        <div class=\"item-title\">Total Delay in minutes</div>
+                                        <div class=\"item-number\"><span class=\"counter\" data-num=\"{{ nb1 }}\">{{ nb1 }} Minutes</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=\"col-xl-3 col-sm-6 col-12\">
+                        <div class=\"dashboard-summery-oneP mg-b-20\">
+                            <div class=\"row align-items-center\">
+                                <div class=\"col-6\">
+                                    <div class=\"item-icon bg-light-yellow\">
+                                        <img src=\"{{ asset('fonts/mother.png') }}\" width=\"60\">
+                                    </div>
+                                </div>
+                                <div class=\"col-6\">
+                                    <div class=\"item-content\">
+                                        <div class=\"item-title\">Parents</div>
+                                        <div class=\"item-number\"><span class=\"counter\" data-num=\"5690\">5,690</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=\"col-xl-3 col-sm-6 col-12\">
+                        <div class=\"dashboard-summery-oneA mg-b-20\">
+                            <div class=\"row align-items-center\">
+                                <div class=\"col-6\">
+                                    <div class=\"item-icon bg-light-red\">
+                                        <img src=\"{{ asset('fonts/boss.png') }}\" width=\"55px\" >
+                                    </div>
+                                </div>
+                                <div class=\"col-6\">
+                                    <div class=\"item-content\">
+                                        <div class=\"item-title\">Admins</div>
+                                        <div class=\"item-number\"><span class=\"counter\" data-num=\"5\"><b>5</b></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
         </div>
 
         <!-- Student Table Area End Here -->

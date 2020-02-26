@@ -138,23 +138,79 @@
                 </div>
             </div>
 <br><br><br>
-                <div class="col-xl-3 col-sm-6 col-12">
-                    <div class="dashboard-summery-oneT mg-b-20">
-                        <div class="row align-items-center">
-                            <div class="col-6">
-                                <div class="item-icon bg-light-blue">
-                                    <img src="{{ asset('fonts/teacher.png') }}">
+                <div class="row gutters-20">
+                    <div class="col-xl-3 col-sm-6 col-12">
+                        <div class="dashboard-summery-one mg-b-20">
+                            <div class="row align-items-center">
+                                <div class="col-6">
+
+                                    <div class="item-icon bg-light-blue ">
+                                        {% block header %}
+                                            <img src="{{ asset('fonts/student.png') }}" >
+                                        {% endblock  %}
+                                    </div>
+
                                 </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="item-content">
-                                    <div class="item-title">Number of absecne this year</div>
-                                    <div class="item-number"><span class="counter" data-num="{{ nb }}">{{nb}}</span></div>
+                                <div class="col-6">
+                                    <div class="item-content">
+                                        <div class="item-title">Number of Absences this Year</div>
+                                        <div class="item-number"><span class="counter" data-num="{{ nb }}">{{ nb }}</span></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                    <div class="col-xl-3 col-sm-6 col-12">
+                        <div class="dashboard-summery-oneT mg-b-20">
+                            <div class="row align-items-center">
+                                <div class="col-6">
+                                    <div class="item-icon bg-light-blue">
+                                        <img src="{{ asset('fonts/teacher.png') }}">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="item-content">
+                                        <div class="item-title">Total Delay in minutes</div>
+                                        <div class="item-number"><span class="counter" data-num="{{ nb1 }}">{{ nb1 }} Minutes</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-12">
+                        <div class="dashboard-summery-oneP mg-b-20">
+                            <div class="row align-items-center">
+                                <div class="col-6">
+                                    <div class="item-icon bg-light-yellow">
+                                        <img src="{{ asset('fonts/mother.png') }}" width="60">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="item-content">
+                                        <div class="item-title">Parents</div>
+                                        <div class="item-number"><span class="counter" data-num="5690">5,690</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-12">
+                        <div class="dashboard-summery-oneA mg-b-20">
+                            <div class="row align-items-center">
+                                <div class="col-6">
+                                    <div class="item-icon bg-light-red">
+                                        <img src="{{ asset('fonts/boss.png') }}" width="55px" >
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="item-content">
+                                        <div class="item-title">Admins</div>
+                                        <div class="item-number"><span class="counter" data-num="5"><b>5</b></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
         </div>
 
         <!-- Student Table Area End Here -->

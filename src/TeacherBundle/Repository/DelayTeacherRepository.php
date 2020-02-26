@@ -2,6 +2,9 @@
 
 namespace TeacherBundle\Repository;
 
+use Doctrine\ORM\NonUniqueResultException;
+use Doctrine\ORM\NoResultException;
+
 /**
  * DelayTeacherRepository
  *
@@ -10,4 +13,17 @@ namespace TeacherBundle\Repository;
  */
 class DelayTeacherRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function countDelay($id)
+    {
+        try {
+            return $this->createQueryBuilder('l')
+                ->select('SUM(l.duree)')
+                ->where('l.teacher = :id')
+                ->setParameter('id', $id)
+                ->getQuery()
+                ->getSingleScalarResult();
+        } catch (NoResultException $e) {
+        } catch (NonUniqueResultException $e) {
+        }
+    }
 }

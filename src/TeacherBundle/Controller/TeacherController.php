@@ -106,10 +106,11 @@ class TeacherController extends Controller
         $em = $this->getDoctrine()->getManager();
         $var = $em->getRepository('AppBundle:User')->find($id);
         $nb = $em->getRepository('TeacherBundle:AbsentTeacher')->countAbsence($id);
+        $nb1 = $em->getRepository('TeacherBundle:DelayTeacher')->countDelay($id);
         $dip = $em->getRepository('TeacherBundle:Diploma')->findOneBy(array('teacher' => $id));
         $ab = $em->getRepository('TeacherBundle:AbsentTeacher')->findOneBy(array('teacher' => $id));
         return $this->render('@Teacher/Teacher/showDetailTeacher.html.twig', array(
-            'var' => $var, 'dip' => $dip, 'ab' => $ab,'nb' => $nb));
+            'var' => $var, 'dip' => $dip, 'ab' => $ab,'nb' => $nb,'nb1' => $nb1));
 
     }
 
