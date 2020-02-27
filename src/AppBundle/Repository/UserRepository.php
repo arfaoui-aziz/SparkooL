@@ -30,5 +30,19 @@ class UserRepository extends \Doctrine\ORM\EntityRepository
             ->getResult();
     }
 
+    public function countParent()
+    {
+        try {
+            return $this->createQueryBuilder('p')
+                ->select('COUNT(p)')
+                ->where('p.userType = :parent')
+                ->setParameter('parent', 'Parent')
+                ->getQuery()
+                ->getSingleScalarResult();
+        } catch (NoResultException $e) {
+        } catch (NonUniqueResultException $e) {
+        }
+    }
+
 
 }

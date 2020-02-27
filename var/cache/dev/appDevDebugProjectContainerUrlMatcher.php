@@ -373,6 +373,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
             }
 
+            // etudaint_markview
+            if ('/etudiant/marksview' === $pathinfo) {
+                return array (  '_controller' => 'EtudiantBundle\\Controller\\EtudiantController::marksViewAction',  '_route' => 'etudaint_markview',);
+            }
+
             // etudaint_votesyes
             if (0 === strpos($pathinfo, '/etudiant/vote/yes') && preg_match('#^/etudiant/vote/yes/(?P<id_voter>[^/]++)/(?P<id_subject>[^/]++)$#sD', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, ['_route' => 'etudaint_votesyes']), array (  '_controller' => 'EtudiantBundle\\Controller\\VotesController::votelike',));
@@ -428,14 +433,22 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     return array (  '_controller' => 'ParentBundle\\Controller\\ReclamationController::AfficherReclamationAction',  '_route' => 'afficher_reclamation',);
                 }
 
-                // ajouter_reclamation
-                if ('/parent/ajoutreclamation' === $pathinfo) {
-                    return array (  '_controller' => 'ParentBundle\\Controller\\ReclamationController::AjoutReclamationAction',  '_route' => 'ajouter_reclamation',);
-                }
+                if (0 === strpos($pathinfo, '/parent/aj')) {
+                    // ajouter_reclamation
+                    if ('/parent/ajoutreclamation' === $pathinfo) {
+                        return array (  '_controller' => 'ParentBundle\\Controller\\ReclamationController::AjoutReclamationAction',  '_route' => 'ajouter_reclamation',);
+                    }
 
-                // ajout_front
-                if ('/parent/ajoutfront' === $pathinfo) {
-                    return array (  '_controller' => 'ParentBundle\\Controller\\ParentController::AjoutFrontAction',  '_route' => 'ajout_front',);
+                    // ajout_front
+                    if ('/parent/ajoutfront' === $pathinfo) {
+                        return array (  '_controller' => 'ParentBundle\\Controller\\ParentController::AjoutFrontAction',  '_route' => 'ajout_front',);
+                    }
+
+                    // ajax_parent
+                    if ('/parent/ajax' === $pathinfo) {
+                        return array (  '_controller' => 'ParentBundle\\Controller\\ParentController::searchAction',  '_route' => 'ajax_parent',);
+                    }
+
                 }
 
                 // accepter_parent
@@ -476,11 +489,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             // refuser_parent
             if (0 === strpos($pathinfo, '/parent/refuser') && preg_match('#^/parent/refuser/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, ['_route' => 'refuser_parent']), array (  '_controller' => 'ParentBundle\\Controller\\ParentController::RefuserParentAction',));
-            }
-
-            // PDF
-            if (0 === strpos($pathinfo, '/parent/PDF') && preg_match('#^/parent/PDF/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, ['_route' => 'PDF']), array (  '_controller' => 'ParentBundle\\Controller\\ParentController::DisplayPDFAction',));
             }
 
         }

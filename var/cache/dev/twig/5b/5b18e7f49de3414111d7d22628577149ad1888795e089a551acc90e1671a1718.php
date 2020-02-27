@@ -277,7 +277,7 @@ class __TwigTemplate_33860522ed6811a510c2227442fa256234720793c531db7b71c60ead109
                                 </div>
                                 <div class=\"col-6\">
                                     <div class=\"item-content\">
-                                        <div class=\"item-title\">Number of Absences this Year</div>
+                                        <div class=\"item-title\">Absences this Year</div>
                                         <div class=\"item-number\"><span class=\"counter\" data-num=\"";
         // line 157
         echo twig_escape_filter($this->env, ($context["nb"] ?? $this->getContext($context, "nb")), "html", null, true);
@@ -314,46 +314,7 @@ class __TwigTemplate_33860522ed6811a510c2227442fa256234720793c531db7b71c60ead109
                             </div>
                         </div>
                     </div>
-                    <div class=\"col-xl-3 col-sm-6 col-12\">
-                        <div class=\"dashboard-summery-oneP mg-b-20\">
-                            <div class=\"row align-items-center\">
-                                <div class=\"col-6\">
-                                    <div class=\"item-icon bg-light-yellow\">
-                                        <img src=\"";
-        // line 185
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("fonts/mother.png"), "html", null, true);
-        echo "\" width=\"60\">
-                                    </div>
-                                </div>
-                                <div class=\"col-6\">
-                                    <div class=\"item-content\">
-                                        <div class=\"item-title\">Parents</div>
-                                        <div class=\"item-number\"><span class=\"counter\" data-num=\"5690\">5,690</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class=\"col-xl-3 col-sm-6 col-12\">
-                        <div class=\"dashboard-summery-oneA mg-b-20\">
-                            <div class=\"row align-items-center\">
-                                <div class=\"col-6\">
-                                    <div class=\"item-icon bg-light-red\">
-                                        <img src=\"";
-        // line 202
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("fonts/boss.png"), "html", null, true);
-        echo "\" width=\"55px\" >
-                                    </div>
-                                </div>
-                                <div class=\"col-6\">
-                                    <div class=\"item-content\">
-                                        <div class=\"item-title\">Admins</div>
-                                        <div class=\"item-number\"><span class=\"counter\" data-num=\"5\"><b>5</b></span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
         </div>
 
         <!-- Student Table Area End Here -->
@@ -404,7 +365,7 @@ class __TwigTemplate_33860522ed6811a510c2227442fa256234720793c531db7b71c60ead109
 
     public function getDebugInfo()
     {
-        return array (  383 => 149,  374 => 148,  344 => 202,  324 => 185,  308 => 174,  299 => 168,  283 => 157,  275 => 151,  273 => 148,  248 => 126,  240 => 121,  233 => 117,  226 => 113,  219 => 109,  190 => 83,  183 => 79,  176 => 75,  169 => 71,  162 => 67,  155 => 63,  148 => 59,  141 => 55,  124 => 41,  120 => 40,  116 => 39,  112 => 38,  104 => 35,  97 => 31,  78 => 15,  72 => 12,  61 => 3,  52 => 2,  30 => 1,);
+        return array (  344 => 149,  335 => 148,  308 => 174,  299 => 168,  283 => 157,  275 => 151,  273 => 148,  248 => 126,  240 => 121,  233 => 117,  226 => 113,  219 => 109,  190 => 83,  183 => 79,  176 => 75,  169 => 71,  162 => 67,  155 => 63,  148 => 59,  141 => 55,  124 => 41,  120 => 40,  116 => 39,  112 => 38,  104 => 35,  97 => 31,  78 => 15,  72 => 12,  61 => 3,  52 => 2,  30 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -572,7 +533,7 @@ class __TwigTemplate_33860522ed6811a510c2227442fa256234720793c531db7b71c60ead109
                                 </div>
                                 <div class=\"col-6\">
                                     <div class=\"item-content\">
-                                        <div class=\"item-title\">Number of Absences this Year</div>
+                                        <div class=\"item-title\">Absences this Year</div>
                                         <div class=\"item-number\"><span class=\"counter\" data-num=\"{{ nb }}\">{{ nb }}</span></div>
                                     </div>
                                 </div>
@@ -596,40 +557,7 @@ class __TwigTemplate_33860522ed6811a510c2227442fa256234720793c531db7b71c60ead109
                             </div>
                         </div>
                     </div>
-                    <div class=\"col-xl-3 col-sm-6 col-12\">
-                        <div class=\"dashboard-summery-oneP mg-b-20\">
-                            <div class=\"row align-items-center\">
-                                <div class=\"col-6\">
-                                    <div class=\"item-icon bg-light-yellow\">
-                                        <img src=\"{{ asset('fonts/mother.png') }}\" width=\"60\">
-                                    </div>
-                                </div>
-                                <div class=\"col-6\">
-                                    <div class=\"item-content\">
-                                        <div class=\"item-title\">Parents</div>
-                                        <div class=\"item-number\"><span class=\"counter\" data-num=\"5690\">5,690</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class=\"col-xl-3 col-sm-6 col-12\">
-                        <div class=\"dashboard-summery-oneA mg-b-20\">
-                            <div class=\"row align-items-center\">
-                                <div class=\"col-6\">
-                                    <div class=\"item-icon bg-light-red\">
-                                        <img src=\"{{ asset('fonts/boss.png') }}\" width=\"55px\" >
-                                    </div>
-                                </div>
-                                <div class=\"col-6\">
-                                    <div class=\"item-content\">
-                                        <div class=\"item-title\">Admins</div>
-                                        <div class=\"item-number\"><span class=\"counter\" data-num=\"5\"><b>5</b></span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
         </div>
 
         <!-- Student Table Area End Here -->

@@ -19,22 +19,23 @@ class ParentController extends Controller
     public function AfficherParentAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
+        $nbp= $em->getRepository(User::class)->countParent();
 
         $dql= "SELECT pa FROM AppBundle:User  pa WHERE pa.userType = 'Parent'";
         $query=$em->createQuery($dql);
-       /**
-        * @var @paginator \knp\Component\Pager\Paginator
-        */
+        /**
+         * @var @paginator \knp\Component\Pager\Paginator
+         */
         $paginator  = $this->get('knp_paginator');
         $request= $pagination = $paginator->paginate(
             $query, /* query NOT result */
             $request->query->getInt('page', 1), /*page number*/
             3 /*limit per page*/
 
-       );
+        );
 
         return $this->render('@Parent/Parent/afficherparent.html.twig',
-            array('var' => $request));
+            array('var' => $request,'nbp'=>$nbp));
 
 
     }
@@ -178,7 +179,7 @@ class ParentController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $requestString = $request->get('q');
-        $posts = $em->getRepository('AppBundle:User')->findEntitiesByString($requestString);
+        $posts = $em->getRepository('AppBundle:User')->findUserByName($requestString);
         if (!$posts) {
             $result['posts']['error'] = "Post Not found  ";
         } else {
@@ -195,24 +196,7 @@ class ParentController extends Controller
         return $realEntities;
     }
 
-    public function DisplayPDFAction(Request $request,$id){
-        $em = $this->getDoctrine()->getManager();
-        $var = $this->getDoctrine()->getRepository(User::class)->find($id);
-        $snappy = $this->get('knp_snappy.pdf');
-        $html = $this->renderView('@Parent\Parent\PDF.html.twig',array(
-            'base_dir' => $this->get('kernel')->getRootDir() . '/../web' . $request->getBasePath(),'var'=>$var
-        ));
-        $filename = 'firstPDF';
 
-        return new Response(
-            $snappy->getOutputFromHtml($html),
-            200,
-            array(
-                'Content-Type'          => 'application/pdf',
-                'Content-Disposition'   => 'inline; filename="'.$filename.'.pdf"'
-            )
-        );
-    }
 
 
 }

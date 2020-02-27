@@ -25,7 +25,7 @@ class __TwigTemplate_92ead3c1b7b3e815574ff0ebc6e744c3a4baca9c960c5c6b2c8536a77f7
 
     protected function doGetParent(array $context)
     {
-        // line 3
+        // line 1
         return "base.html.twig";
     }
 
@@ -37,7 +37,7 @@ class __TwigTemplate_92ead3c1b7b3e815574ff0ebc6e744c3a4baca9c960c5c6b2c8536a77f7
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@Parent/Parent/afficherparent.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "@Parent/Parent/afficherparent.html.twig", 3);
+        $this->parent = $this->loadTemplate("base.html.twig", "@Parent/Parent/afficherparent.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -47,7 +47,7 @@ class __TwigTemplate_92ead3c1b7b3e815574ff0ebc6e744c3a4baca9c960c5c6b2c8536a77f7
 
     }
 
-    // line 5
+    // line 3
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -56,7 +56,7 @@ class __TwigTemplate_92ead3c1b7b3e815574ff0ebc6e744c3a4baca9c960c5c6b2c8536a77f7
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 4
         echo "  <div class=\"dashboard-content-one\">
    <!-- Breadcubs Area Start Here -->
    <div class=\"breadcrumbs-area\">
@@ -136,8 +136,8 @@ class __TwigTemplate_92ead3c1b7b3e815574ff0ebc6e744c3a4baca9c960c5c6b2c8536a77f7
          searchRequest = \$.ajax({
           type: \"GET\",
           url: \"";
-        // line 84
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("ajax");
+        // line 82
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("ajax_parent");
         echo "\",
           data: {
            'q' : value
@@ -180,7 +180,7 @@ class __TwigTemplate_92ead3c1b7b3e815574ff0ebc6e744c3a4baca9c960c5c6b2c8536a77f7
        <thead>
        <tr>
         <th>";
-        // line 125
+        // line 123
         echo $this->env->getExtension('Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension')->sortable($this->env, ($context["var"] ?? $this->getContext($context, "var")), "id", "pa.id");
         echo "</th>
         <th>Name</th>
@@ -191,7 +191,7 @@ class __TwigTemplate_92ead3c1b7b3e815574ff0ebc6e744c3a4baca9c960c5c6b2c8536a77f7
         <th>Phone</th>
         <th>Date of Birth</th>
         <th>";
-        // line 133
+        // line 131
         echo $this->env->getExtension('Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension')->sortable($this->env, ($context["var"] ?? $this->getContext($context, "var")), "Joing Date", "pa.joiningDate");
         echo " </th>
         <th>PHOTO</th>
@@ -199,120 +199,149 @@ class __TwigTemplate_92ead3c1b7b3e815574ff0ebc6e744c3a4baca9c960c5c6b2c8536a77f7
        </tr>
        </thead>
        ";
-        // line 138
+        // line 136
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["var"] ?? $this->getContext($context, "var")));
         foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-            // line 139
-            echo "       <tbody  id=\"search\">
-       <tr >
+            // line 137
+            echo "        <tbody  id=\"search\">
+        <tr >
 
-        <td>
-         <div class=\"form-check\">
-          <input type=\"checkbox\" class=\"form-check-input \">
-          <label class=\"form-check-label\">#";
-            // line 145
+         <td>
+          <div class=\"form-check\">
+           <input type=\"checkbox\" class=\"form-check-input \">
+           <label class=\"form-check-label\">#";
+            // line 143
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "id", []), "html", null, true);
             echo "</label>
-         </div>
-        </td>
-        <td> ";
-            // line 148
+          </div>
+         </td>
+         <td> ";
+            // line 146
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "firstName", []), "html", null, true);
             echo " ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "lastName", []), "html", null, true);
             echo "</td>
 
-        <td> ";
-            // line 150
+         <td> ";
+            // line 148
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "gender", []), "html", null, true);
             echo " </td>
-        <td> ";
-            // line 151
+         <td> ";
+            // line 149
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "occupation", []), "html", null, true);
             echo " </td>
-        <td> ";
-            // line 152
+         <td> ";
+            // line 150
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "email", []), "html", null, true);
             echo " </td>
-        <td> ";
-            // line 153
+         <td> ";
+            // line 151
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "address", []), "html", null, true);
             echo " </td>
-        <td> ";
-            // line 154
+         <td> ";
+            // line 152
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "phone", []), "html", null, true);
             echo " </td>
-        <td> ";
-            // line 155
+         <td> ";
+            // line 153
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "birthDay", []), "html", null, true);
             echo " </td>
-        <td> ";
-            // line 156
+         <td> ";
+            // line 154
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "joiningDate", []), "html", null, true);
             echo " </td>
-        <td> ";
-            // line 157
+         <td> ";
+            // line 155
             echo twig_escape_filter($this->env, $this->getAttribute($context["i"], "picture", []), "html", null, true);
             echo " </td>
 
-        <td>
-         <div class=\"dropdown\">
-          <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"
-             aria-expanded=\"false\">
-           <span class=\"flaticon-more-button-of-three-dots\"></span>
-          </a>
-          <div class=\"dropdown-menu dropdown-menu-right\">
-           <a class=\"dropdown-item\" href=\"";
-            // line 166
+         <td>
+          <div class=\"dropdown\">
+           <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"
+              aria-expanded=\"false\">
+            <span class=\"flaticon-more-button-of-three-dots\"></span>
+           </a>
+           <div class=\"dropdown-menu dropdown-menu-right\">
+            <a class=\"dropdown-item\" href=\"";
+            // line 164
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("supprimer_parent", ["id" => $this->getAttribute($context["i"], "id", [])]), "html", null, true);
             echo "\"><i
-                    class=\"fas fa-times text-orange-red\"></i> Delete</a>
-           <a class=\"dropdown-item\" href=\"";
-            // line 168
+                     class=\"fas fa-times text-orange-red\"></i> Delete</a>
+            <a class=\"dropdown-item\" href=\"";
+            // line 166
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("modifier_parent", ["id" => $this->getAttribute($context["i"], "id", [])]), "html", null, true);
             echo "\"><i
-                    class=\"fas fa-cogs text-dark-pastel-green\"></i> Edit</a>
-           <a class=\"dropdown-item\" href=\"";
-            // line 170
+                     class=\"fas fa-cogs text-dark-pastel-green\"></i> Edit</a>
+            <a class=\"dropdown-item\" href=\"";
+            // line 168
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("detail_parent", ["id" => $this->getAttribute($context["i"], "id", [])]), "html", null, true);
             echo "\"><i
-                    class=\"fas fa-eye text-orange-peel\"></i> Show Details</a>
-           <a class=\"dropdown-item\" href=\"";
-            // line 172
+                     class=\"fas fa-eye text-orange-peel\"></i> Show Details</a>
+            <a class=\"dropdown-item\" href=\"";
+            // line 170
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("accepter_parent", ["id" => $this->getAttribute($context["i"], "id", [])]), "html", null, true);
             echo "\"><i class=\"fas fa-check\"></i> Accept parent</a>
-           <a class=\"dropdown-item\" href=\"";
-            // line 173
+            <a class=\"dropdown-item\" href=\"";
+            // line 171
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("refuser_parent", ["id" => $this->getAttribute($context["i"], "id", [])]), "html", null, true);
             echo "\"><i class=\"fas fa-minus-circle\"></i> Refuse parent</a>
 
+           </div>
           </div>
-         </div>
-        </td>
+         </td>
 
-       </tr>
-
+        </tr>
 
 
-       </tbody>
+
+        </tbody>
        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 185
+        // line 183
         echo "
       </table>
       <div class=\"navigation\">
        ";
-        // line 188
+        // line 186
         echo $this->env->getExtension('Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension')->render($this->env, ($context["var"] ?? $this->getContext($context, "var")));
         echo "
       </div>
+
+
      </div>
+     <br><br>
+     <div class=\"col-xl-3 col-sm-6 col-12\">
+      <div class=\"dashboard-summery-oneP mg-b-20\">
+       <div class=\"row align-items-center\">
+        <div class=\"col-6\">
+         <div class=\"item-icon bg-light-yellow\">
+          <img src=\"";
+        // line 197
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("fonts/mother.png"), "html", null, true);
+        echo "\" width=\"60\">
+         </div>
+        </div>
+        <div class=\"col-6\">
+         <div class=\"item-content\">
+          <div class=\"item-title\">Parents</div>
+          <div class=\"item-number\"><span class=\"counter\" data-num=\"";
+        // line 203
+        echo twig_escape_filter($this->env, ($context["nbp"] ?? $this->getContext($context, "nbp")), "html", null, true);
+        echo "\"></span></div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+
     </div>
+
    </div>
+
    <!-- Teacher Table Area End Here -->
    <footer class=\"footer-wrap-layout1\">
     <div class=\"copyright\">© Copyrights <a href=\"#\">SparkIT</a> 2020. All rights reserved</div>
@@ -340,7 +369,7 @@ class __TwigTemplate_92ead3c1b7b3e815574ff0ebc6e744c3a4baca9c960c5c6b2c8536a77f7
 
     public function getDebugInfo()
     {
-        return array (  310 => 188,  305 => 185,  287 => 173,  283 => 172,  278 => 170,  273 => 168,  268 => 166,  256 => 157,  252 => 156,  248 => 155,  244 => 154,  240 => 153,  236 => 152,  232 => 151,  228 => 150,  221 => 148,  215 => 145,  207 => 139,  203 => 138,  195 => 133,  184 => 125,  140 => 84,  60 => 6,  51 => 5,  29 => 3,);
+        return array (  333 => 203,  324 => 197,  310 => 186,  305 => 183,  287 => 171,  283 => 170,  278 => 168,  273 => 166,  268 => 164,  256 => 155,  252 => 154,  248 => 153,  244 => 152,  240 => 151,  236 => 150,  232 => 149,  228 => 148,  221 => 146,  215 => 143,  207 => 137,  203 => 136,  195 => 131,  184 => 123,  140 => 82,  60 => 4,  51 => 3,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -353,9 +382,7 @@ class __TwigTemplate_92ead3c1b7b3e815574ff0ebc6e744c3a4baca9c960c5c6b2c8536a77f7
 
     public function getSourceContext()
     {
-        return new Source("
-
-{% extends 'base.html.twig' %}
+        return new Source("{% extends 'base.html.twig' %}
 
  {% block body %}
   <div class=\"dashboard-content-one\">
@@ -436,7 +463,7 @@ class __TwigTemplate_92ead3c1b7b3e815574ff0ebc6e744c3a4baca9c960c5c6b2c8536a77f7
           searchRequest.abort();
          searchRequest = \$.ajax({
           type: \"GET\",
-          url: \"{{ path('ajax') }}\",
+          url: \"{{ path('ajax_parent') }}\",
           data: {
            'q' : value
           },
@@ -491,60 +518,83 @@ class __TwigTemplate_92ead3c1b7b3e815574ff0ebc6e744c3a4baca9c960c5c6b2c8536a77f7
        </tr>
        </thead>
        {% for i in var %}
-       <tbody  id=\"search\">
-       <tr >
+        <tbody  id=\"search\">
+        <tr >
 
-        <td>
-         <div class=\"form-check\">
-          <input type=\"checkbox\" class=\"form-check-input \">
-          <label class=\"form-check-label\">#{{  i.id }}</label>
-         </div>
-        </td>
-        <td> {{  i.firstName }} {{  i.lastName }}</td>
-
-        <td> {{  i.gender }} </td>
-        <td> {{  i.occupation }} </td>
-        <td> {{  i.email }} </td>
-        <td> {{  i.address }} </td>
-        <td> {{  i.phone}} </td>
-        <td> {{  i.birthDay }} </td>
-        <td> {{  i.joiningDate}} </td>
-        <td> {{  i.picture }} </td>
-
-        <td>
-         <div class=\"dropdown\">
-          <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"
-             aria-expanded=\"false\">
-           <span class=\"flaticon-more-button-of-three-dots\"></span>
-          </a>
-          <div class=\"dropdown-menu dropdown-menu-right\">
-           <a class=\"dropdown-item\" href=\"{{ path('supprimer_parent',{'id':i.id }) }}\"><i
-                    class=\"fas fa-times text-orange-red\"></i> Delete</a>
-           <a class=\"dropdown-item\" href=\"{{ path('modifier_parent',{'id':i.id }) }}\"><i
-                    class=\"fas fa-cogs text-dark-pastel-green\"></i> Edit</a>
-           <a class=\"dropdown-item\" href=\"{{ path('detail_parent',{'id':i.id }) }}\"><i
-                    class=\"fas fa-eye text-orange-peel\"></i> Show Details</a>
-           <a class=\"dropdown-item\" href=\"{{ path('accepter_parent',{'id':i.id }) }}\"><i class=\"fas fa-check\"></i> Accept parent</a>
-           <a class=\"dropdown-item\" href=\"{{ path('refuser_parent',{'id':i.id }) }}\"><i class=\"fas fa-minus-circle\"></i> Refuse parent</a>
-
+         <td>
+          <div class=\"form-check\">
+           <input type=\"checkbox\" class=\"form-check-input \">
+           <label class=\"form-check-label\">#{{  i.id }}</label>
           </div>
-         </div>
-        </td>
+         </td>
+         <td> {{  i.firstName }} {{  i.lastName }}</td>
 
-       </tr>
+         <td> {{  i.gender }} </td>
+         <td> {{  i.occupation }} </td>
+         <td> {{  i.email }} </td>
+         <td> {{  i.address }} </td>
+         <td> {{  i.phone}} </td>
+         <td> {{  i.birthDay }} </td>
+         <td> {{  i.joiningDate}} </td>
+         <td> {{  i.picture }} </td>
+
+         <td>
+          <div class=\"dropdown\">
+           <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"
+              aria-expanded=\"false\">
+            <span class=\"flaticon-more-button-of-three-dots\"></span>
+           </a>
+           <div class=\"dropdown-menu dropdown-menu-right\">
+            <a class=\"dropdown-item\" href=\"{{ path('supprimer_parent',{'id':i.id }) }}\"><i
+                     class=\"fas fa-times text-orange-red\"></i> Delete</a>
+            <a class=\"dropdown-item\" href=\"{{ path('modifier_parent',{'id':i.id }) }}\"><i
+                     class=\"fas fa-cogs text-dark-pastel-green\"></i> Edit</a>
+            <a class=\"dropdown-item\" href=\"{{ path('detail_parent',{'id':i.id }) }}\"><i
+                     class=\"fas fa-eye text-orange-peel\"></i> Show Details</a>
+            <a class=\"dropdown-item\" href=\"{{ path('accepter_parent',{'id':i.id }) }}\"><i class=\"fas fa-check\"></i> Accept parent</a>
+            <a class=\"dropdown-item\" href=\"{{ path('refuser_parent',{'id':i.id }) }}\"><i class=\"fas fa-minus-circle\"></i> Refuse parent</a>
+
+           </div>
+          </div>
+         </td>
+
+        </tr>
 
 
 
-       </tbody>
+        </tbody>
        {% endfor %}
 
       </table>
       <div class=\"navigation\">
        {{ knp_pagination_render(var) }}
       </div>
+
+
      </div>
+     <br><br>
+     <div class=\"col-xl-3 col-sm-6 col-12\">
+      <div class=\"dashboard-summery-oneP mg-b-20\">
+       <div class=\"row align-items-center\">
+        <div class=\"col-6\">
+         <div class=\"item-icon bg-light-yellow\">
+          <img src=\"{{ asset('fonts/mother.png') }}\" width=\"60\">
+         </div>
+        </div>
+        <div class=\"col-6\">
+         <div class=\"item-content\">
+          <div class=\"item-title\">Parents</div>
+          <div class=\"item-number\"><span class=\"counter\" data-num=\"{{ nbp }}\"></span></div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+
     </div>
+
    </div>
+
    <!-- Teacher Table Area End Here -->
    <footer class=\"footer-wrap-layout1\">
     <div class=\"copyright\">© Copyrights <a href=\"#\">SparkIT</a> 2020. All rights reserved</div>

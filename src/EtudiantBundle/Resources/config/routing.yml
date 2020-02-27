@@ -88,3 +88,6 @@ etudaint_allreclamation :
 etudaint_deletereclamation :
     path:     /back/deletereclamation/{id}
     defaults: { _controller: EtudiantBundle:Reclamation:deleteReclamation}
+etudaint_markview :
+    path:     /marksview
+    defaults: { _controller: EtudiantBundle:Etudiant:marksView}

@@ -106,6 +106,7 @@
                                 <li><a href="{{ path('etudaint_addsubject') }}"><div><i class="icon-line2-home"></i>Add A New Subject</div></a></li>
                                 <li><a href="{{ path('etudaint_forumlist') }}"><div><i class="icon-line2-home"></i>All subjects</div></a></li>
                                 <li><a href="{{ path('etudaint_getmyforum') }}"><div><i class="icon-building2"></i>My Subjects</div></a></li>
+                                <li><a href="{{ path('etudaint_markview') }}"><div><i class="icon-building2"></i>My Mark</div></a></li>
 
                             </ul>
                         </li>
@@ -124,6 +125,7 @@
                             <ul>
                                 <li><a href=" {{ path('ajout_front') }} "><div><i class="icon-line2-home"></i>Inscription</div></a></li>
                                 <li><a href="{{ path('ajouter_reclamation') }}"><div><i class="icon-building2"></i>Reclamation</div></a></li>
+                                <li><a href="{{ path('etudaint_markview') }}"><div><i class="icon-building2"></i>My Child</div></a></li>
                             </ul>
                         </li>
                         <li><a href="#"><div>School Life</div></a>
@@ -623,7 +625,12 @@
 
                 <h2 class="t600 ls0 nott mb-3" style="font-size: 44px; line-height: 1.3">Join SparkooL
                     Now</h2>
-                <a href="#" class="button button-white button-light button-rounded t500 m-0">Apply Now</a>
+                {% if is_granted('ROLE_USER') %}
+                    <a href="#" class="button button-white button-light button-rounded t500 m-0">Apply Now</a>
+
+                {% else %}
+                    <a href="{{ path('etudiant_inscrit') }}" class="button button-white button-light button-rounded t500 m-0">Apply Now</a>
+                {% endif %}
             </div>
 
         </div>

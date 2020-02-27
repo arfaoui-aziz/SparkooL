@@ -1,5 +1,3 @@
-
-
 {% extends 'base.html.twig' %}
 
  {% block body %}
@@ -81,7 +79,7 @@
           searchRequest.abort();
          searchRequest = $.ajax({
           type: "GET",
-          url: "{{ path('ajax') }}",
+          url: "{{ path('ajax_parent') }}",
           data: {
            'q' : value
           },
@@ -136,60 +134,83 @@
        </tr>
        </thead>
        {% for i in var %}
-       <tbody  id="search">
-       <tr >
+        <tbody  id="search">
+        <tr >
 
-        <td>
-         <div class="form-check">
-          <input type="checkbox" class="form-check-input ">
-          <label class="form-check-label">#{{  i.id }}</label>
-         </div>
-        </td>
-        <td> {{  i.firstName }} {{  i.lastName }}</td>
-
-        <td> {{  i.gender }} </td>
-        <td> {{  i.occupation }} </td>
-        <td> {{  i.email }} </td>
-        <td> {{  i.address }} </td>
-        <td> {{  i.phone}} </td>
-        <td> {{  i.birthDay }} </td>
-        <td> {{  i.joiningDate}} </td>
-        <td> {{  i.picture }} </td>
-
-        <td>
-         <div class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-             aria-expanded="false">
-           <span class="flaticon-more-button-of-three-dots"></span>
-          </a>
-          <div class="dropdown-menu dropdown-menu-right">
-           <a class="dropdown-item" href="{{ path('supprimer_parent',{'id':i.id }) }}"><i
-                    class="fas fa-times text-orange-red"></i> Delete</a>
-           <a class="dropdown-item" href="{{ path('modifier_parent',{'id':i.id }) }}"><i
-                    class="fas fa-cogs text-dark-pastel-green"></i> Edit</a>
-           <a class="dropdown-item" href="{{ path('detail_parent',{'id':i.id }) }}"><i
-                    class="fas fa-eye text-orange-peel"></i> Show Details</a>
-           <a class="dropdown-item" href="{{ path('accepter_parent',{'id':i.id }) }}"><i class="fas fa-check"></i> Accept parent</a>
-           <a class="dropdown-item" href="{{ path('refuser_parent',{'id':i.id }) }}"><i class="fas fa-minus-circle"></i> Refuse parent</a>
-
+         <td>
+          <div class="form-check">
+           <input type="checkbox" class="form-check-input ">
+           <label class="form-check-label">#{{  i.id }}</label>
           </div>
-         </div>
-        </td>
+         </td>
+         <td> {{  i.firstName }} {{  i.lastName }}</td>
 
-       </tr>
+         <td> {{  i.gender }} </td>
+         <td> {{  i.occupation }} </td>
+         <td> {{  i.email }} </td>
+         <td> {{  i.address }} </td>
+         <td> {{  i.phone}} </td>
+         <td> {{  i.birthDay }} </td>
+         <td> {{  i.joiningDate}} </td>
+         <td> {{  i.picture }} </td>
+
+         <td>
+          <div class="dropdown">
+           <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+              aria-expanded="false">
+            <span class="flaticon-more-button-of-three-dots"></span>
+           </a>
+           <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="{{ path('supprimer_parent',{'id':i.id }) }}"><i
+                     class="fas fa-times text-orange-red"></i> Delete</a>
+            <a class="dropdown-item" href="{{ path('modifier_parent',{'id':i.id }) }}"><i
+                     class="fas fa-cogs text-dark-pastel-green"></i> Edit</a>
+            <a class="dropdown-item" href="{{ path('detail_parent',{'id':i.id }) }}"><i
+                     class="fas fa-eye text-orange-peel"></i> Show Details</a>
+            <a class="dropdown-item" href="{{ path('accepter_parent',{'id':i.id }) }}"><i class="fas fa-check"></i> Accept parent</a>
+            <a class="dropdown-item" href="{{ path('refuser_parent',{'id':i.id }) }}"><i class="fas fa-minus-circle"></i> Refuse parent</a>
+
+           </div>
+          </div>
+         </td>
+
+        </tr>
 
 
 
-       </tbody>
+        </tbody>
        {% endfor %}
 
       </table>
       <div class="navigation">
        {{ knp_pagination_render(var) }}
       </div>
+
+
      </div>
+     <br><br>
+     <div class="col-xl-3 col-sm-6 col-12">
+      <div class="dashboard-summery-oneP mg-b-20">
+       <div class="row align-items-center">
+        <div class="col-6">
+         <div class="item-icon bg-light-yellow">
+          <img src="{{ asset('fonts/mother.png') }}" width="60">
+         </div>
+        </div>
+        <div class="col-6">
+         <div class="item-content">
+          <div class="item-title">Parents</div>
+          <div class="item-number"><span class="counter" data-num="{{ nbp }}"></span></div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+
     </div>
+
    </div>
+
    <!-- Teacher Table Area End Here -->
    <footer class="footer-wrap-layout1">
     <div class="copyright">© Copyrights <a href="#">SparkIT</a> 2020. All rights reserved</div>

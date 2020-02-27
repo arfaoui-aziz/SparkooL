@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use TeacherBundle\Entity\Note;
 
 class EtudiantController extends Controller
 {
@@ -212,6 +213,13 @@ class EtudiantController extends Controller
 
         }
         return $realEntities;
+    }
+
+    public function marksViewAction()
+    {
+
+        $mark = $this->getDoctrine()->getRepository(Note::class)->findAll();
+        return $this->render('@Etudiant/Default/MarksView.html.twig',array('mark'=>$mark));
     }
 
 
